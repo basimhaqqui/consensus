@@ -709,6 +709,12 @@ async function enrichSquads(squads: Squad[]): Promise<void> {
 // recent completed match. No provider "probable lineups" involved.
 // ---------------------------------------------------------------------------
 
+// Project a team's XI from its last few matches rather than parroting the
+// single most recent one: starters are scored by recency-weighted selection
+// frequency, the XI fills the most recent formation's shape band by band,
+// and anyone sent off in the latest match is treated as suspended.
+const PREDICT_FROM = 4; // how many recent matches inform the projection
+
 async function lastMatchSquad(
   slug: string,
   teamId: string,
@@ -725,37 +731,114 @@ async function lastMatchSquad(
       .sort(
         (a: any, b: any) =>
           new Date(a.date).getTime() - new Date(b.date).getTime()
-      );
-    const last = done[done.length - 1];
-    if (!last) return null;
+      )
+      .slice(-PREDICT_FROM); // oldest -> newest
+    if (done.length === 0) return null;
 
-    const mres = await fetch(SUMMARY(slug, last.id), {
-      next: { revalidate: 3600 }, // finished match — lineup won't change
-    });
-    if (!mres.ok) return null;
-    const mine = parseSquads(await mres.json()).find(
-      (q) => q.teamId === String(teamId)
+    const squadsSeen: Squad[] = [];
+    await Promise.all(
+      done.map(async (ev: any, i: number) => {
+        const mres = await fetch(SUMMARY(slug, ev.id), {
+          next: { revalidate: 3600 }, // finished match — lineup won't change
+        });
+        if (!mres.ok) return;
+        const mine = parseSquads(await mres.json()).find(
+          (q) => q.teamId === String(teamId)
+        );
+        if (mine && mine.starters.length > 0) squadsSeen[i] = mine;
+      })
     );
-    if (!mine || mine.starters.length === 0) return null;
+    const seen = squadsSeen.filter(Boolean);
+    if (seen.length === 0) return null;
+    const latest = seen[seen.length - 1];
+
+    // recency-weighted selection score per player (starters count full,
+    // bench appearances a little), keyed by name
+    const score = new Map<string, number>();
+    const info = new Map<string, Player>(); // most recent look for each player
+    seen.forEach((sq, i) => {
+      const w = i + 1; // newest squad carries the most weight
+      for (const p of sq.starters) {
+        score.set(p.name, (score.get(p.name) ?? 0) + w);
+        info.set(p.name, p);
+      }
+      for (const p of sq.subs) {
+        if (didAppear(p)) score.set(p.name, (score.get(p.name) ?? 0) + w * 0.25);
+        if (!info.has(p.name)) info.set(p.name, p);
+      }
+    });
+
+    // suspended: sent off in the most recent match
+    for (const p of [...latest.starters, ...latest.subs]) {
+      if (parseInt(p.stats?.redCards ?? "0", 10) > 0) score.delete(p.name);
+    }
+
+    // fill the latest formation band by band from the scored pool
+    const bandCount: Record<Band, number> = { GK: 1, DEF: 0, MID: 0, FWD: 0 };
+    const lines = (latest.formation ?? "")
+      .split("-")
+      .map((n) => parseInt(n, 10))
+      .filter((n) => !Number.isNaN(n));
+    if (lines.length >= 2 && lines.reduce((a, b) => a + b, 0) === 10) {
+      bandCount.DEF = lines[0];
+      bandCount.FWD = lines[lines.length - 1];
+      bandCount.MID = 10 - lines[0] - lines[lines.length - 1];
+    } else {
+      // fallback to the latest XI's own band mix
+      for (const p of latest.starters)
+        if (p.band !== "GK") bandCount[p.band]++;
+    }
+
+    const pool = [...score.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .map(([name]) => info.get(name)!)
+      .filter(Boolean);
+    const clean = (p: Player): Player => ({
+      ...p,
+      subbedIn: false,
+      subbedOut: false,
+      subMinute: undefined,
+      stats: undefined,
+      rating: undefined,
+    });
+    const starters: Player[] = [];
+    const taken = new Set<string>();
+    for (const wantBand of ["GK", "DEF", "MID", "FWD"] as Band[]) {
+      let need = bandCount[wantBand];
+      for (const p of pool) {
+        if (need === 0) break;
+        if (taken.has(p.name) || p.band !== wantBand) continue;
+        starters.push(clean(p));
+        taken.add(p.name);
+        need--;
+      }
+    }
+    // top up from the pool regardless of band if a line came up short
+    for (const p of pool) {
+      if (starters.length >= 11) break;
+      if (!taken.has(p.name)) {
+        starters.push(clean(p));
+        taken.add(p.name);
+      }
+    }
+    if (starters.length < 11) return null; // not enough signal — no projection
 
     return {
-      ...mine,
+      ...latest,
       homeAway,
       predicted: true,
-      // Project the XI only — strip last match's events so nothing reads as
-      // if it already happened in this game.
-      starters: mine.starters.map((p) => ({
-        ...p,
-        subbedIn: false,
-        subbedOut: false,
-        stats: undefined,
-        rating: undefined,
-      })),
+      formation: latest.formation,
+      starters,
       subs: [],
     };
   } catch {
     return null;
   }
+}
+
+// appearance check that tolerates both pre/post sub shapes
+function didAppear(p: Player): boolean {
+  return !!p.subbedIn || (p.stats !== undefined && Object.keys(p.stats).length > 0);
 }
 
 export async function fetchPredictedSquads(
