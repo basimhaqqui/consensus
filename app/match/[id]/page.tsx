@@ -2,9 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getLiveMatches } from "@/lib/live";
 import { fetchMatchDetail, fetchPredictedSquads, type Goal } from "@/lib/match";
-import { winProbSeries } from "@/lib/model";
 import { TEAMS } from "@/lib/data";
-import WinProbChart from "@/components/WinProbChart";
 import MatchTimeline from "@/components/MatchTimeline";
 import Crest from "@/components/Crest";
 import Lineups from "@/components/Lineups";
@@ -83,18 +81,6 @@ export default async function MatchPage({
   const homeScore = detail?.home.score ?? m.score?.home;
   const awayScore = detail?.away.score ?? m.score?.away;
 
-  // win-probability timeline, reconstructed from the events via the in-play
-  // model (red-card aware) — only meaningful once the match is underway
-  const series =
-    detail && (live || decided) && detail.events
-      ? winProbSeries(
-          m.outcome.lambdaHome,
-          m.outcome.lambdaAway,
-          detail.events,
-          live ? "in" : "post",
-          m.minute
-        )
-      : null;
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 pb-20">
@@ -214,19 +200,6 @@ export default async function MatchPage({
             home={m.home.name}
             away={m.away.name}
           />
-        )}
-
-        {/* how the odds moved across the match */}
-        {series && detail && (
-          <div className="mt-4">
-            <WinProbChart
-              series={series}
-              events={detail.events}
-              homeCode={m.home.code}
-              awayCode={m.away.code}
-              live={live}
-            />
-          </div>
         )}
 
         {/* to advance — knockout two-way market (no draw) */}

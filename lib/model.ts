@@ -160,64 +160,6 @@ export function inPlay(
   return { pHome: pHome / t, pDraw: pDraw / t, pAway: pAway / t };
 }
 
-// A sending-off is worth roughly 1.4 goals of swing over a full match:
-// the short-handed side's scoring rate drops ~30%, the opponent's rises ~15%.
-export function redAdjust(
-  lambdaHome: number,
-  lambdaAway: number,
-  redsHome: number,
-  redsAway: number
-) {
-  return {
-    lh: lambdaHome * 0.7 ** redsHome * 1.15 ** redsAway,
-    la: lambdaAway * 0.7 ** redsAway * 1.15 ** redsHome,
-  };
-}
-
-// Minimal event shape the timeline needs (structurally matches MatchEvent).
-type TimelineEvent = {
-  sortMin: number;
-  type: string;
-  side: "home" | "away";
-};
-
-export type WinProbPoint = { m: number } & LiveProb;
-
-// Reconstruct the in-play win/draw/win series minute by minute from the
-// pre-match scoring rates and the match events: at each minute the score and
-// red-card counts so far feed the same inPlay model that powers live cards.
-// Finished matches get a terminal point pinned to the actual result.
-export function winProbSeries(
-  lambdaHome: number,
-  lambdaAway: number,
-  events: TimelineEvent[],
-  status: "in" | "post",
-  currentMinute?: number
-): WinProbPoint[] {
-  const last = status === "post" ? 90 : Math.max(1, Math.min(90, currentMinute ?? 1));
-  const pts: WinProbPoint[] = [];
-  for (let m = 0; m <= last; m++) {
-    let gh = 0;
-    let ga = 0;
-    let rh = 0;
-    let ra = 0;
-    for (const e of events) {
-      if (Math.min(Math.floor(e.sortMin), 90) > m) continue;
-      if (e.type === "goal" || e.type === "pen-goal" || e.type === "own-goal") {
-        if (e.side === "home") gh++;
-        else ga++;
-      } else if (e.type === "red") {
-        if (e.side === "home") rh++;
-        else ra++;
-      }
-    }
-    const { lh, la } = redAdjust(lambdaHome, lambdaAway, rh, ra);
-    // at m=90 nothing remains, so the point pins itself to the actual result
-    pts.push({ m, ...inPlay(lh, la, gh, ga, 90 - m) });
-  }
-  return pts;
-}
-
 export function americanFromProb(p: number): string {
   if (p <= 0) return "—";
   if (p >= 0.5) {
