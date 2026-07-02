@@ -61,12 +61,14 @@ const toDecimal = (american: number) =>
 // Fetch and de-vig. Returns null when no key is configured or the API fails.
 export async function fetchMarketOdds(): Promise<Map<string, MarketOdds> | null> {
   if (!KEY) return null;
+  // one region + hourly cache = ≤24 credits/day, safe inside the free
+  // 500/month tier (cost per refresh = markets × regions)
   const url =
     `https://api.the-odds-api.com/v4/sports/${SPORT}/odds` +
-    `?apiKey=${KEY}&regions=us,eu&markets=h2h&oddsFormat=american`;
+    `?apiKey=${KEY}&regions=us&markets=h2h&oddsFormat=american`;
   let events: any[];
   try {
-    const res = await fetch(url, { next: { revalidate: 900 } }); // 15 min
+    const res = await fetch(url, { next: { revalidate: 3600 } }); // 1 h
     if (!res.ok) return null;
     events = await res.json();
     if (!Array.isArray(events)) return null;
