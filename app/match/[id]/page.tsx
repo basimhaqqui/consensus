@@ -94,63 +94,69 @@ export default async function MatchPage({
         <Nav />
       </header>
 
-      {/* scoreline header */}
-      <div className="rounded-xl border border-line bg-panel/70 p-5">
-        <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4">
-          <TeamHead
-            teamKey={m.homeKey}
-            name={m.home.name}
-            align="right"
-            form={detail?.form?.home}
-          />
-          <div className="text-center">
-            {showScore ? (
-              <div className="text-3xl font-bold tabnums">
-                {homeScore}<span className="text-muted px-1">–</span>{awayScore}
+      {/* scoreline header — compact centered cluster, symmetric whitespace */}
+      <div className="rounded-xl border border-line bg-panel/70 px-5 pt-6 pb-4">
+        <div className="mx-auto w-full max-w-2xl">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-x-5 sm:gap-x-7">
+            <TeamHead
+              teamKey={m.homeKey}
+              name={m.home.name}
+              align="right"
+              form={detail?.form?.home}
+            />
+            <div className="min-w-[92px] text-center">
+              {showScore ? (
+                <div className="text-4xl font-bold tabnums leading-none">
+                  {homeScore}
+                  <span className="px-1.5 text-muted">–</span>
+                  {awayScore}
+                </div>
+              ) : (
+                <div className="text-sm text-muted">{m.date}</div>
+              )}
+              <div
+                className={`mt-1.5 text-[11px] uppercase tracking-wider ${
+                  live ? "text-accent" : "text-muted"
+                }`}
+              >
+                {live && "● "}
+                {detail?.detail ?? (m.status === "final" ? "Full time" : "Upcoming")}
               </div>
-            ) : (
-              <div className="text-sm text-muted">{m.date}</div>
-            )}
-            <div
-              className={`mt-1 text-[11px] uppercase tracking-wider ${
-                live ? "text-accent" : "text-muted"
-              }`}
-            >
-              {live && "● "}
-              {detail?.detail ?? (m.status === "final" ? "Full time" : "Upcoming")}
             </div>
+            <TeamHead
+              teamKey={m.awayKey}
+              name={m.away.name}
+              align="left"
+              form={detail?.form?.away}
+            />
           </div>
-          <TeamHead
-            teamKey={m.awayKey}
-            name={m.away.name}
-            align="left"
-            form={detail?.form?.away}
-          />
+
+          {detail?.goals && detail.goals.length > 0 && (
+            <div className="mt-4 grid grid-cols-[1fr_auto_1fr] items-start gap-x-5 sm:gap-x-7 text-[11px]">
+              <div className="space-y-1 text-right">
+                {detail.goals
+                  .filter((g) => g.side === "home")
+                  .map((g, i) => (
+                    <GoalLine key={i} g={g} />
+                  ))}
+              </div>
+              <div className="mx-auto h-3.5 w-3.5 min-w-[92px] pt-0.5 text-center [&>*]:mx-auto">
+                <span className="block h-3.5 w-3.5">
+                  <BallIcon muted />
+                </span>
+              </div>
+              <div className="space-y-1 text-left">
+                {detail.goals
+                  .filter((g) => g.side === "away")
+                  .map((g, i) => (
+                    <GoalLine key={i} g={g} />
+                  ))}
+              </div>
+            </div>
+          )}
         </div>
 
-        {detail?.goals && detail.goals.length > 0 && (
-          <div className="mt-3 grid grid-cols-[1fr_auto_1fr] items-start gap-4 text-[11px]">
-            <div className="text-right space-y-0.5">
-              {detail.goals
-                .filter((g) => g.side === "home")
-                .map((g, i) => (
-                  <GoalLine key={i} g={g} />
-                ))}
-            </div>
-            <div className="pt-0.5 mx-auto h-3.5 w-3.5">
-              <BallIcon />
-            </div>
-            <div className="text-left space-y-0.5">
-              {detail.goals
-                .filter((g) => g.side === "away")
-                .map((g, i) => (
-                  <GoalLine key={i} g={g} />
-                ))}
-            </div>
-          </div>
-        )}
-
-        <div className="mt-3 text-center text-[11px] text-muted">
+        <div className="mt-5 border-t border-line/50 pt-3 text-center text-[11px] text-muted">
           {m.venue}
           {detail?.venue ? ` · ${detail.venue}` : ""}
           {detail?.referee ? ` · Referee ${detail.referee}` : ""}
