@@ -6,6 +6,8 @@ import {
   type MatchView,
 } from "./compute";
 import { buildUpperMatches, simulate, type SimRow } from "./bracket";
+import { advanceFrom } from "./model";
+import { fetchMarketOdds, type MarketOdds } from "./odds";
 
 const ESPN =
   "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628-20260720";
@@ -143,14 +145,42 @@ async function fetchOverlays(): Promise<{
   return { overlays, events };
 }
 
+// Attach live sportsbook probabilities to a match, reoriented to our
+// home/away, with the market's advance odds derived through the same
+// ET/pens machinery the model uses (apples-to-apples with m.advance).
+function attachMarket(m: MatchView, odds: Map<string, MarketOdds>) {
+  if (m.status === "final") return;
+  const o = odds.get([m.homeKey, m.awayKey].sort().join("|"));
+  if (!o) return;
+  const flipped = o.homeKey !== m.homeKey;
+  const pHome = flipped ? o.pAway : o.pHome;
+  const pAway = flipped ? o.pHome : o.pAway;
+  const adv = advanceFrom(
+    pHome,
+    o.pDraw,
+    m.outcome.lambdaHome,
+    m.outcome.lambdaAway
+  );
+  m.market = {
+    pHome,
+    pDraw: o.pDraw,
+    pAway,
+    advHome: adv.home,
+    books: o.books,
+  };
+}
+
 // R32 + every upper-round tie whose pairing is known, one match list.
 function allMatches(
   overlays: Record<string, LiveOverlay>,
   events: Map<string, KnockoutEvent> | undefined,
-  source: RatingSource = "model"
+  source: RatingSource = "model",
+  odds?: Map<string, MarketOdds> | null
 ): MatchView[] {
   const r32 = applyOverlay(overlays, source);
-  return [...r32, ...buildUpperMatches(r32, events, source)];
+  const all = [...r32, ...buildUpperMatches(r32, events, source)];
+  if (odds) all.forEach((m) => attachMarket(m, odds));
+  return all;
 }
 
 // Live matches (model view), with a safe fallback if ESPN is down.
@@ -179,14 +209,16 @@ export async function getBoards(): Promise<{
   let overlays: Record<string, LiveOverlay> = {};
   let events: Map<string, KnockoutEvent> | undefined;
   let live = false;
-  try {
-    ({ overlays, events } = await fetchOverlays());
+  const [espn, odds] = await Promise.all([
+    fetchOverlays().catch(() => null),
+    fetchMarketOdds(),
+  ]);
+  if (espn) {
+    ({ overlays, events } = espn);
     live = true;
-  } catch {
-    /* fall back to static fixtures */
   }
   const build = (source: RatingSource): Board => {
-    const matches = allMatches(overlays, events, source);
+    const matches = allMatches(overlays, events, source, odds);
     return { matches, sim: simulate(matches, 10000, source) };
   };
   return {

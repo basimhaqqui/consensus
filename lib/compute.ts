@@ -47,6 +47,13 @@ export type MatchView = {
   liveAdvance?: { home: number; away: number }; // in-play advance odds (ET/pens)
   minute?: number; // current match minute, when live
   espnId?: string; // ESPN event id, for dynamic (upper-round) fixtures
+  market?: {
+    pHome: number; // live sportsbook 90' probabilities (de-vigged, averaged)
+    pDraw: number;
+    pAway: number;
+    advHome: number; // market's implied advance odds (our ET/pens machinery)
+    books: number;
+  };
 };
 
 // Build the model-only view for a fixture (no live overlay yet).

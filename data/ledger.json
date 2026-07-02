@@ -1,0 +1,82 @@
+{
+  "entries": [
+    {
+      "id": "r32-11",
+      "kickoffISO": "2026-07-02T19:00:00Z",
+      "home": "ESP",
+      "away": "AUT",
+      "venue": "Los Angeles",
+      "forecasts": {
+        "model": 0.8381,
+        "blend": 0.9282,
+        "market": null
+      },
+      "capturedAt": "2026-07-02T03:47:16.099Z"
+    },
+    {
+      "id": "r32-12",
+      "kickoffISO": "2026-07-02T21:00:00Z",
+      "home": "POR",
+      "away": "CRO",
+      "venue": "Toronto",
+      "forecasts": {
+        "model": 0.6104,
+        "blend": 0.6816,
+        "market": null
+      },
+      "capturedAt": "2026-07-02T03:47:16.100Z"
+    },
+    {
+      "id": "r32-13",
+      "kickoffISO": "2026-07-02T23:30:00Z",
+      "home": "SUI",
+      "away": "ALG",
+      "venue": "Vancouver",
+      "forecasts": {
+        "model": 0.6056,
+        "blend": 0.6595,
+        "market": null
+      },
+      "capturedAt": "2026-07-02T03:47:16.100Z"
+    },
+    {
+      "id": "r32-14",
+      "kickoffISO": "2026-07-03T19:00:00Z",
+      "home": "AUS",
+      "away": "EGY",
+      "venue": "Dallas",
+      "forecasts": {
+        "model": 0.5649,
+        "blend": 0.5326,
+        "market": null
+      },
+      "capturedAt": "2026-07-02T03:47:16.100Z"
+    },
+    {
+      "id": "r32-15",
+      "kickoffISO": "2026-07-03T21:30:00Z",
+      "home": "ARG",
+      "away": "CPV",
+      "venue": "Miami",
+      "forecasts": {
+        "model": 0.956,
+        "blend": 0.9653,
+        "market": null
+      },
+      "capturedAt": "2026-07-02T03:47:16.100Z"
+    },
+    {
+      "id": "r32-16",
+      "kickoffISO": "2026-07-03T23:30:00Z",
+      "home": "COL",
+      "away": "GHA",
+      "venue": "Kansas City",
+      "forecasts": {
+        "model": 0.9199,
+        "blend": 0.8608,
+        "market": null
+      },
+      "capturedAt": "2026-07-02T03:47:16.100Z"
+    }
+  ]
+}

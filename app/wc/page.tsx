@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getBoards } from "@/lib/live";
 import { getStandings } from "@/lib/standings";
+import { ledgerSummary } from "@/lib/ledger";
 import { LAST_UPDATED, TEAMS } from "@/lib/data";
 import LiveBoard from "@/components/LiveBoard";
 import Nav from "@/components/Nav";
@@ -64,6 +65,8 @@ export default async function WorldCup() {
         </section>
       )}
 
+      <LedgerPanel />
+
       <section className="mt-12 rounded-lg border border-line bg-panel/60 p-5 text-xs text-muted leading-relaxed">
         <h2 className="text-[11px] uppercase tracking-wider text-zinc-400 mb-2">
           Methodology
@@ -88,5 +91,45 @@ export default async function WorldCup() {
 
       <Footer />
     </div>
+  );
+}
+
+// Auditable track record: forecasts are snapshotted before kickoff into a
+// git-committed ledger, then graded against results. Lower log loss = better
+// probabilities, not just better picks.
+function LedgerPanel() {
+  const s = ledgerSummary();
+  if (s.graded === 0) return null;
+  const row = (
+    label: string,
+    sc: { n: number; hits: number; logloss: number }
+  ) =>
+    sc.n === 0 ? null : (
+      <div className="flex items-center justify-between tabnums">
+        <span className="text-zinc-400">{label}</span>
+        <span>
+          {sc.hits}/{sc.n} picks · log loss {sc.logloss.toFixed(3)}
+        </span>
+      </div>
+    );
+  return (
+    <section className="mt-10">
+      <div className="mb-3 flex items-center gap-3">
+        <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+          Prediction ledger — graded pre-match forecasts
+        </h2>
+        <span className="text-[11px] text-muted">[{s.graded}]</span>
+        <span className="flex-1 h-px bg-line" />
+      </div>
+      <div className="rounded-lg border border-line bg-panel/60 p-5 text-xs text-muted space-y-1.5">
+        {row("Consensus", s.blend)}
+        {row("Our model", s.model)}
+        {row("Books", s.market)}
+        <p className="pt-2 text-[11px] text-zinc-600">
+          Every forecast is committed to the repo before kickoff and graded
+          after the final whistle — the git history is the receipt.
+        </p>
+      </div>
+    </section>
   );
 }

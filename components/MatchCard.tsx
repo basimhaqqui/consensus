@@ -163,6 +163,33 @@ export default function MatchCard({ m }: { m: MatchView }) {
         </div>
       )}
 
+      {/* live sportsbook comparison — flags model-vs-market discrepancies */}
+      {!isFinal &&
+        m.market &&
+        (() => {
+          const edge = m.advance.home - m.market.advHome;
+          const side = edge > 0 ? m.home.code : m.away.code;
+          const mag = Math.abs(edge);
+          return (
+            <div className="px-4 pt-2 flex items-center justify-between text-[10px] tabnums">
+              <span className="uppercase tracking-wider text-muted">
+                Books ({m.market.books})
+              </span>
+              <span className="text-zinc-400">
+                {m.home.code} {pct(m.market.advHome)} ·{" "}
+                {pct(1 - m.market.advHome)} {m.away.code}
+              </span>
+              {mag >= 0.08 ? (
+                <span className="font-semibold text-warn">
+                  VALUE {side} +{Math.round(mag * 100)}
+                </span>
+              ) : (
+                <span className="text-zinc-600">in line</span>
+              )}
+            </div>
+          );
+        })()}
+
       {/* footer metrics */}
       <div className="mt-2 grid grid-cols-3 divide-x divide-line border-t border-line text-center">
         <Metric
