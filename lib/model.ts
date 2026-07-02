@@ -27,28 +27,38 @@ function poisson(k: number, lambda: number): number {
   return (Math.pow(lambda, k) * Math.exp(-lambda)) / fact;
 }
 
-// Expected goals for each side from rating difference.
-// supremacy (goal expectation gap) scales with rating diff; total goals held
-// roughly constant so blowouts and tight games both look sane.
+// Expected goals for each side from rating difference — multiplicative
+// (log-link) Poisson: supremacy scales scoring rates instead of shifting
+// them, so blowouts get high totals and tight games stay cagey, which is
+// what the data shows (actual totals run 2.36 even / 3.14 blowout, and an
+// additive constant-total link cannot express that).
 //
-// Constants fitted by scripts/backtest.mjs: online replay of 10,789
-// internationals (2015+), minimising W/D/L log loss. div=210 / BASE=1.35 with
-// the Dixon-Coles rho=-0.1 below ranked #1 of the grid and calibrates cleanly
-// (predicted 86% -> actual 88%); the old div=90 / cap=2.2 ranked dead last
-// and called 75% shots that landed 53%.
-function expectedGoals(ratingHome: number, ratingAway: number) {
-  const BASE = 1.35; // average goals per team at even strength
+// Constants fitted by scripts/backtest.mjs (W/D/L) and backtest-goals.mjs
+// (scoreline likelihood + totals calibration) on 10,792 internationals
+// (2015+): exp(0.2 ± diff/300/2) with rho=-0.07 tracks totals within 0.1
+// goals in every mismatch bucket, hits 13.4% of exact scorelines, and
+// matches the additive link on W/D/L log loss.
+//
+// MU is the log of the per-team baseline scoring rate; internationals are
+// lower-scoring than club football, so club surfaces pass MU_CLUB.
+export const MU_INTL = 0.2; // exp(0.2)*2 ~ 2.44 goals at even strength
+export const MU_CLUB = 0.32; // exp(0.32)*2 ~ 2.75, the club-league norm
+function expectedGoals(
+  ratingHome: number,
+  ratingAway: number,
+  mu: number = MU_INTL
+) {
   const diff = ratingHome - ratingAway; // includes any home edge baked into rating
-  const supremacy = Math.max(-3.0, Math.min(3.0, diff / 210)); // cap extremes
-  const lambdaHome = Math.max(0.25, BASE + supremacy / 2);
-  const lambdaAway = Math.max(0.25, BASE - supremacy / 2);
+  const supremacy = Math.max(-3.0, Math.min(3.0, diff / 300));
+  const lambdaHome = Math.exp(mu + supremacy / 2);
+  const lambdaAway = Math.exp(mu - supremacy / 2);
   return { lambdaHome, lambdaAway };
 }
 
 // Dixon-Coles low-score adjustment (fitted rho): independent Poissons
 // under-produce draws; a negative rho inflates 0-0 / 1-1 and deflates the
 // 1-0 / 0-1 cells to match how often real matches actually stay level.
-const RHO = -0.1;
+const RHO = -0.07;
 function tau(h: number, a: number, lh: number, la: number): number {
   if (h === 0 && a === 0) return 1 - lh * la * RHO;
   if (h === 0 && a === 1) return 1 + lh * RHO;
@@ -57,8 +67,12 @@ function tau(h: number, a: number, lh: number, la: number): number {
   return 1;
 }
 
-export function forecast(ratingHome: number, ratingAway: number): Outcome {
-  const { lambdaHome, lambdaAway } = expectedGoals(ratingHome, ratingAway);
+export function forecast(
+  ratingHome: number,
+  ratingAway: number,
+  mu?: number // MU_INTL (default) for nations, MU_CLUB for league surfaces
+): Outcome {
+  const { lambdaHome, lambdaAway } = expectedGoals(ratingHome, ratingAway, mu);
 
   let pHome = 0;
   let pDraw = 0;

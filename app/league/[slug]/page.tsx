@@ -6,7 +6,7 @@ import {
   type LeagueMatch,
 } from "@/lib/leagues";
 import { getStandings, ratingMap } from "@/lib/standings";
-import { forecast, inPlay } from "@/lib/model";
+import { forecast, inPlay, MU_CLUB } from "@/lib/model";
 import {
   getRemainingFixtures,
   priorSeasonRatings,
@@ -236,7 +236,7 @@ function LeagueCard({
   const rh = rmap.get(m.home.abbr);
   const ra = rmap.get(m.away.abbr);
   if (rh && ra && !done) {
-    const o = forecast(rh + 115, ra);
+    const o = forecast(rh + 100, ra, MU_CLUB);
     if (live && m.minute != null && m.home.score != null && m.away.score != null) {
       probs = inPlay(
         o.lambdaHome,

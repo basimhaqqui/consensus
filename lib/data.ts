@@ -54,10 +54,10 @@ export const TEAMS: Record<string, Team> = {
 
 // Overlay our data-derived Elo as the model rating; keep the original
 // market-calibrated value as marketRating (for the Model/Market toggle).
-// The hand-set market gaps were tuned to the old /90 link, so stretch them
-// about a 1900 anchor onto the /210 scale — same implied goal supremacy.
+// The hand-set market gaps were tuned to the original /90 link, so stretch
+// them about a 1900 anchor onto the /300 scale — same implied supremacy.
 for (const [key, t] of Object.entries(TEAMS)) {
-  t.marketRating = Math.round(1900 + (t.rating - 1900) * (210 / 90));
+  t.marketRating = Math.round(1900 + (t.rating - 1900) * (300 / 90));
   if (DERIVED_RATINGS[key] !== undefined) t.rating = DERIVED_RATINGS[key];
 }
 
@@ -73,9 +73,9 @@ export type Fixture = {
   score?: { home: number; away: number };
 };
 
-// Co-host crowd edge, in Elo points, when playing on home soil (~0.3 goals
-// of supremacy on the /210 link). Applied venue-aware: full bump only in the
-// team's own country, half in simulations where the venue isn't known yet.
+// Co-host crowd edge, in Elo points (roughly two-thirds of the fitted
+// 100-Elo standard home advantage). Applied venue-aware: full bump only in
+// the team's own country, half in simulations where the venue isn't known.
 export const HOST_ADV: Record<string, number> = { MEX: 65, USA: 60, CAN: 55 };
 
 const MEX_CITIES = /mexico city|guadalajara|monterrey/i;

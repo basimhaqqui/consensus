@@ -96,7 +96,9 @@ const fmtScore = (s) =>
 const res = await fetch(CSV);
 const matches = parseCSV(await res.text());
 
-const PRODUCTION = { div: 210, base: 1.25, cap: 3.0, rho: 0 }; // shipped link
+// NOTE: production moved to the multiplicative link (see backtest-goals.mjs);
+// this script still evaluates the additive family for W/D/L reference.
+const PRODUCTION = { div: 210, base: 1.25, cap: 3.0, rho: 0 };
 const CANDIDATE = { div: 210, base: 1.35, cap: 3.0, rho: -0.1 }; // grid winner
 const calibBest = [];
 const grid = [];
