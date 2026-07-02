@@ -70,6 +70,8 @@ export default function Lineups({
           teamKey={sel.squad.key}
           teamLogo={sel.squad.logo}
           teamName={sel.squad.name}
+          teamColor={sel.squad.color}
+          teamAlt={sel.squad.alt}
           onClose={() => setSel(null)}
         />
       )}
