@@ -151,10 +151,17 @@ function Bench({
                 </span>
                 {p.subbedIn && (
                   <span
-                    className="inline-grid h-3.5 w-3.5 shrink-0 place-items-center rounded-full bg-accent/15 text-[9px] font-bold leading-none text-accent ring-1 ring-accent/30"
+                    className="inline-flex shrink-0 items-center gap-1"
                     title="Substituted on"
                   >
-                    ↑
+                    <span className="inline-grid h-3.5 w-3.5 place-items-center rounded-full bg-accent/15 text-[9px] font-bold leading-none text-accent ring-1 ring-accent/30">
+                      ↑
+                    </span>
+                    {p.subMinute && (
+                      <span className="text-[10px] tabnums text-muted">
+                        {p.subMinute}
+                      </span>
+                    )}
                   </span>
                 )}
                 <PlayerMarkers p={p} />

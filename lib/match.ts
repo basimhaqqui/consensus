@@ -23,6 +23,7 @@ export type Player = {
   starter: boolean;
   subbedIn?: boolean;
   subbedOut?: boolean;
+  subMinute?: string; // e.g. "51'" — when the player came on / went off
   headshot?: string; // ESPN id-keyed headshot — identity-safe, tried first
   img?: string | null; // TheSportsDB cutout by name search — the fallback
   stats?: Record<string, string>; // per-player match stats (name -> value)
@@ -372,6 +373,18 @@ function parseSquads(s: any): Squad[] {
       });
     }
   }
+  // substitution minutes by athlete id, from the match key events
+  const subMinutes = new Map<string, string>();
+  for (const e of s.keyEvents ?? []) {
+    if (e?.type?.type !== "substitution") continue;
+    const minute = e.clock?.displayValue;
+    if (!minute) continue;
+    for (const a of e.participants ?? e.athletesInvolved ?? []) {
+      const id = a?.id ?? a?.athlete?.id;
+      if (id) subMinutes.set(String(id), minute);
+    }
+  }
+
   return (s.rosters ?? []).map((r: any) => {
     const players: Player[] = (r.roster ?? []).map((p: any) => {
       const pos = p.position?.abbreviation ?? "";
@@ -394,6 +407,10 @@ function parseSquads(s: any): Squad[] {
         starter: !!p.starter,
         subbedIn: didSub(p.subbedIn),
         subbedOut: didSub(p.subbedOut),
+        subMinute:
+          didSub(p.subbedIn) || didSub(p.subbedOut)
+            ? subMinutes.get(String(p.athlete?.id ?? ""))
+            : undefined,
         stats,
         rating:
           appeared && stats ? computeRating(stats, pband === "GK") : undefined,
