@@ -189,6 +189,9 @@ export function PitchDuo({
           p={p}
           x={x}
           y={y}
+          color={sq.color}
+          alt={sq.alt}
+          crest={sq.logo}
           motm={motm !== null && motm.p === p}
           onSelect={() => onSelect?.(p, sq)}
         />
@@ -197,102 +200,201 @@ export function PitchDuo({
   );
 }
 
+// --- card colour theming -----------------------------------------------
+// Cards are built from the team's real identity: both kit/crest colours
+// colour-blocked into the card (country at internationals, club in league
+// games), the crest watermarked behind the player, and a glossy light sweep
+// so they read like collectible cards, not flat chips.
+
+type RGB = [number, number, number];
+
+function hexToRgb(h?: string): RGB | null {
+  const m = (h ?? "").replace("#", "").match(/^[0-9a-f]{6}$/i);
+  if (!m) return null;
+  const n = parseInt(m[0], 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+
+const css = (rgb: RGB) => `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;
+
+const mix = (a: RGB, b: RGB, t: number): RGB =>
+  [0, 1, 2].map((i) => Math.round(a[i] + (b[i] - a[i]) * t)) as RGB;
+
+// t > 0 mixes toward white, t < 0 toward black.
+const shade = (rgb: RGB, t: number): RGB =>
+  mix(rgb, t > 0 ? [255, 255, 255] : [0, 0, 0], Math.abs(t));
+
+const luma = (rgb: RGB) =>
+  (0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2]) / 255;
+
+const GOLD: RGB = [217, 188, 116]; // fallback: FUT gold
+const GOLD_ALT: RGB = [122, 95, 42];
+
+function cardTheme(color?: string, alt?: string) {
+  const rgb = hexToRgb(color) ?? GOLD;
+  // Guard against alt ≈ primary (some feeds repeat the colour): fall back to
+  // a strong shade of the primary so the colour-blocking stays visible.
+  let altRgb = hexToRgb(alt) ?? (hexToRgb(color) ? null : GOLD_ALT);
+  if (!altRgb || altRgb.every((v, i) => Math.abs(v - rgb[i]) < 24)) {
+    altRgb = shade(rgb, luma(rgb) > 0.5 ? -0.55 : 0.55);
+  }
+  const light = luma(rgb) > 0.62;
+  const bandLight = luma(altRgb) > 0.62;
+  return {
+    // stacked: gloss sweep → top glow → primary-to-alt colour blocking
+    grad: [
+      "linear-gradient(115deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0.06) 32%, rgba(255,255,255,0) 45%)",
+      `radial-gradient(130% 85% at 50% -20%, ${css(shade(rgb, 0.45))} 0%, rgba(0,0,0,0) 58%)`,
+      `linear-gradient(160deg, ${css(shade(rgb, 0.12))} 0%, ${css(rgb)} 46%, ${css(
+        mix(rgb, altRgb, 0.5)
+      )} 76%, ${css(altRgb)} 112%)`,
+    ].join(", "),
+    ink: light ? "#181b20" : "#ffffff",
+    sub: light ? "rgba(24,27,32,0.72)" : "rgba(255,255,255,0.8)",
+    bandBg: css(altRgb),
+    bandInk: bandLight ? "#181b20" : "#ffffff",
+  };
+}
+
 export { bandRank };
 
-// FotMob-style pitch marker: circular headshot with badges hung off the rim —
-// rating pill top-right (blue + star for the match's best), sub-off minute and
-// red arrow top-left, goals bottom-right, assists bottom-left, cards on the
-// left edge — and "number Name" as plain text underneath.
+// FIFA Ultimate Team style mini-card in the team's colours, with the match
+// markers hung off the frame FotMob-style: colour-coded rating pill top-right
+// (blue + star for the match's best), substitution minute over a red arrow
+// top-left, goals bottom-right, assists bottom-left, cards on the left edge.
 function DuoDot({
   p,
   x,
   y,
+  color,
+  alt,
+  crest,
   motm,
   onSelect,
 }: {
   p: Player;
   x: number;
   y: number;
+  color?: string;
+  alt?: string;
+  crest?: string;
   motm?: boolean;
   onSelect?: () => void;
 }) {
+  const t = cardTheme(color, alt);
   return (
     <button
       type="button"
       onClick={onSelect}
       style={{ left: `${x}%`, top: `${y}%` }}
-      className="absolute w-[74px] sm:w-[92px] -translate-x-1/2 -translate-y-1/2 group"
+      className="absolute w-[48px] sm:w-[64px] -translate-x-1/2 -translate-y-1/2 group"
     >
       <div className="relative transition-transform duration-150 group-hover:scale-110 group-hover:z-10">
-        {/* avatar + rim badges */}
-        <div className="relative mx-auto h-[42px] w-[42px] sm:h-[52px] sm:w-[52px]">
-          <span className="block h-full w-full overflow-hidden rounded-full bg-zinc-800 ring-1 ring-black/40 shadow-lg shadow-black/50">
-            <PlayerFace
-              srcs={[p.headshot, p.img]}
-              jersey={p.jersey}
-              shape="square"
-            />
-          </span>
-
-          {/* rating pill — top-right, colour-coded; blue + star for MOTM */}
-          {p.rating !== undefined && (
-            <span
-              className="absolute -right-3 -top-1.5 z-10 inline-flex items-center gap-[2px] rounded-full px-[5px] py-[1px] text-[9px] sm:text-[11px] font-bold tabnums leading-[1.4] text-white shadow-md ring-1 ring-black/30"
-              style={{ backgroundColor: motm ? "#2f7cf6" : ratingColor(p.rating) }}
-            >
-              {p.rating.toFixed(1)}
-              {motm && <span className="text-[8px] leading-none">★</span>}
-            </span>
-          )}
-
-          {/* sub-off — minute over a red arrow, top-left (FotMob) */}
-          {p.subbedOut && (
-            <span className="absolute -left-3 -top-1.5 z-10 flex flex-col items-center">
-              {p.subMinute && (
-                <span
-                  className="text-[8px] sm:text-[9px] font-semibold tabnums leading-none text-white"
-                  style={{ textShadow: "0 1px 2px rgba(0,0,0,0.9)" }}
-                >
-                  {p.subMinute}
-                </span>
-              )}
-              <span
-                className="mt-[1px] grid h-3.5 w-3.5 sm:h-4 sm:w-4 place-items-center rounded-full bg-[#e0524f] text-[9px] sm:text-[10px] font-bold leading-none text-white shadow-md ring-1 ring-black/30"
-                title="Substituted off"
-              >
-                ←
-              </span>
-            </span>
-          )}
-
-          {/* goals bottom-right, assists bottom-left, cards on the left edge */}
-          {hasGoals(p) && (
-            <span className="absolute -bottom-1 -right-2 z-10">
-              <Goals p={p} />
-            </span>
-          )}
-          {hasAssists(p) && (
-            <span className="absolute -bottom-1 -left-2 z-10">
-              <Assists p={p} />
-            </span>
-          )}
-          {hasCards(p) && (
-            <span className="absolute -left-2 top-1/2 z-10 -translate-y-1/2">
-              <Cards p={p} />
-            </span>
-          )}
-        </div>
-
-        {/* number + name, plain on the pitch */}
         <div
-          className="mt-1 text-center text-[9px] sm:text-[11px] font-semibold leading-tight text-white"
-          style={{ textShadow: "0 1px 2px rgba(0,0,0,0.9)" }}
+          className="relative overflow-hidden rounded-md sm:rounded-lg shadow-lg shadow-black/50"
+          style={{ background: t.grad }}
         >
-          <span className="mr-1 font-normal text-white/60 tabnums">
-            {p.jersey}
-          </span>
-          {shortName(p.name)}
+          {/* crest watermark — the team's identity behind the player */}
+          {crest && (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={crest}
+              alt=""
+              className="pointer-events-none absolute left-1/2 top-[46%] w-[105%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.16] saturate-[1.4]"
+            />
+          )}
+
+          {/* rim + top shine */}
+          <div
+            className="pointer-events-none absolute inset-0 rounded-md sm:rounded-lg"
+            style={{
+              boxShadow:
+                "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 0 0 1px rgba(0,0,0,0.35)",
+            }}
+          />
+
+          {/* jersey number + position (top-left column; rating lives top-right) */}
+          <div className="absolute left-[3px] top-[3px] sm:left-1.5 sm:top-1.5 z-10 flex flex-col items-start">
+            <span
+              className="text-[9px] sm:text-[11px] font-extrabold tabnums leading-none"
+              style={{ color: t.ink, textShadow: "0 1px 2px rgba(0,0,0,0.25)" }}
+            >
+              {p.jersey}
+            </span>
+            <span
+              className="mt-[2px] text-[6px] sm:text-[8px] font-bold uppercase tracking-wide leading-none"
+              style={{ color: t.sub }}
+            >
+              {p.pos}
+            </span>
+          </div>
+
+          {/* face cutout */}
+          <div
+            className="relative mx-auto mt-1 h-9 w-9 translate-x-[4px] sm:mt-1.5 sm:h-12 sm:w-12 sm:translate-x-[5px]"
+            style={{ color: t.ink }}
+          >
+            <PlayerFace srcs={[p.headshot, p.img]} jersey={p.jersey} shape="square" />
+          </div>
+
+          {/* name band — solid bar in the team's second colour */}
+          <div
+            className="relative z-10 mt-[1px] px-[3px] py-[2px] sm:px-1"
+            style={{ background: t.bandBg, color: t.bandInk }}
+          >
+            <span className="block truncate text-center text-[7px] sm:text-[9px] font-bold uppercase tracking-wide leading-tight">
+              {shortName(p.name)}
+            </span>
+          </div>
         </div>
+
+        {/* rating pill — top-right corner, FotMob colours; blue + star = MOTM */}
+        {p.rating !== undefined && (
+          <span
+            className="absolute -right-2 -top-2 z-20 inline-flex items-center gap-[2px] rounded-full px-[4px] sm:px-[5px] py-[1px] text-[9px] sm:text-[11px] font-bold tabnums leading-[1.35] text-white shadow-md ring-1 ring-black/30"
+            style={{ backgroundColor: motm ? "#2f7cf6" : ratingColor(p.rating) }}
+          >
+            {p.rating.toFixed(1)}
+            {motm && <span className="text-[8px] leading-none">★</span>}
+          </span>
+        )}
+
+        {/* sub-off — minute over a red arrow, top-left (FotMob) */}
+        {p.subbedOut && (
+          <span className="absolute -left-2 -top-2 z-20 flex flex-col items-center">
+            {p.subMinute && (
+              <span
+                className="text-[8px] sm:text-[9px] font-semibold tabnums leading-none text-white"
+                style={{ textShadow: "0 1px 2px rgba(0,0,0,0.9)" }}
+              >
+                {p.subMinute}
+              </span>
+            )}
+            <span
+              className="mt-[1px] grid h-3.5 w-3.5 sm:h-4 sm:w-4 place-items-center rounded-full bg-[#e0524f] text-[9px] sm:text-[10px] font-bold leading-none text-white shadow-md ring-1 ring-black/30"
+              title="Substituted off"
+            >
+              ←
+            </span>
+          </span>
+        )}
+
+        {/* goals bottom-right, assists bottom-left, cards on the left edge */}
+        {hasGoals(p) && (
+          <span className="absolute -bottom-1.5 -right-1.5 z-20">
+            <Goals p={p} />
+          </span>
+        )}
+        {hasAssists(p) && (
+          <span className="absolute -bottom-1.5 -left-1.5 z-20">
+            <Assists p={p} />
+          </span>
+        )}
+        {hasCards(p) && (
+          <span className="absolute -left-2 top-1/2 z-20 -translate-y-1/2">
+            <Cards p={p} />
+          </span>
+        )}
       </div>
     </button>
   );
