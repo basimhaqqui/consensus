@@ -144,7 +144,7 @@ export default function PlayerCard({
           <div className="relative z-10">
             <div className="relative h-[92px] w-[92px]" style={{ color: t.ink }}>
               <PlayerFace
-                srcs={[player.headshot, player.photo, player.img]}
+                srcs={[player.headshot, player.img, player.photo]}
                 jersey={player.jersey}
                 shape="square"
               />

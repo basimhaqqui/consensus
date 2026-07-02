@@ -55,6 +55,25 @@ function whiteKnockout(src: string): Promise<string | null> {
           if (y > 0) push(x, y - 1);
           if (y < h - 1) push(x, y + 1);
         }
+        // feather the silhouette: opaque pixels touching the removed area get
+        // an alpha that fades with brightness, so the edge is soft instead of
+        // a jagged 1px cliff with a white fringe
+        const alphaAt = (x: number, y: number) => d[(y * w + x) * 4 + 3];
+        for (let y = 0; y < h; y++) {
+          for (let x = 0; x < w; x++) {
+            const i4 = (y * w + x) * 4;
+            if (d[i4 + 3] === 0) continue;
+            const nearHole =
+              (x > 0 && alphaAt(x - 1, y) === 0) ||
+              (x < w - 1 && alphaAt(x + 1, y) === 0) ||
+              (y > 0 && alphaAt(x, y - 1) === 0) ||
+              (y < h - 1 && alphaAt(x, y + 1) === 0);
+            if (!nearHole) continue;
+            const br = (d[i4] + d[i4 + 1] + d[i4 + 2]) / 3;
+            // 190 → fully opaque, 255 → fully transparent
+            d[i4 + 3] = Math.max(0, Math.min(255, Math.round(255 - (br - 190) * 3.9)));
+          }
+        }
         ctx.putImageData(im, 0, 0);
         resolve(cv.toDataURL("image/png"));
       } catch {

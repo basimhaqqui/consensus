@@ -149,7 +149,7 @@ function Bench({
             <span className="w-4 shrink-0 text-right text-[10px] tabnums text-muted">
               {p.jersey}
             </span>
-            <PlayerFace srcs={[p.headshot, p.photo, p.img]} jersey={p.jersey} size={28} />
+            <PlayerFace srcs={[p.headshot, p.img, p.photo]} jersey={p.jersey} size={28} />
             <span className="min-w-0 flex-1">
               <span className="flex items-center gap-1.5">
                 <span className="truncate text-[12px] text-zinc-200 group-hover:text-accent">
