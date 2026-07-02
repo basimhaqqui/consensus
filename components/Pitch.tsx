@@ -327,7 +327,7 @@ function DuoDot({
             className="relative mx-auto mt-1 h-9 w-9 translate-x-[4px] sm:mt-1.5 sm:h-12 sm:w-12 sm:translate-x-[5px]"
             style={{ color: t.ink }}
           >
-            <PlayerFace src={p.img} jersey={p.jersey} shape="square" />
+            <PlayerFace srcs={[p.headshot, p.img]} jersey={p.jersey} shape="square" />
           </div>
 
           {/* name band — solid bar in the team's second colour */}

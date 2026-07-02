@@ -97,7 +97,7 @@ export default function PlayerCard({
             ✕
           </button>
           <div className="relative">
-            <PlayerFace src={player.img} jersey={player.jersey} size={76} />
+            <PlayerFace srcs={[player.headshot, player.img]} jersey={player.jersey} size={76} />
             {player.rating !== undefined && (
               <span
                 className="absolute -bottom-1 -right-1 rounded-md px-1.5 py-0.5 text-[11px] font-bold tabnums text-white shadow-md"

@@ -23,11 +23,21 @@ export type Player = {
   starter: boolean;
   subbedIn?: boolean;
   subbedOut?: boolean;
-  img?: string | null; // resolved face cutout, server-side
+  headshot?: string; // ESPN id-keyed headshot — identity-safe, tried first
+  img?: string | null; // TheSportsDB cutout by name search — the fallback
   stats?: Record<string, string>; // per-player match stats (name -> value)
   rating?: number; // our model's performance score (see computeRating)
   bio?: PlayerBio; // profile from TheSportsDB
 };
+
+// ESPN's standardized athlete headshot. Keyed by the same athlete id the
+// lineups feed provides, so it can never show the wrong person (404s for
+// players ESPN hasn't photographed — callers fall back to `img`).
+export function espnHeadshot(id?: string): string | undefined {
+  return id
+    ? `https://a.espncdn.com/i/headshots/soccer/players/full/${id}.png`
+    : undefined;
+}
 
 export type PlayerBio = {
   club?: string;
@@ -376,6 +386,7 @@ function parseSquads(s: any): Squad[] {
       return {
         id: p.athlete?.id,
         name: p.athlete?.displayName ?? p.athlete?.shortName ?? "—",
+        headshot: espnHeadshot(p.athlete?.id ? String(p.athlete.id) : undefined),
         jersey: p.jersey,
         pos,
         band: pband,
