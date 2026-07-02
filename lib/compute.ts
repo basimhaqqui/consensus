@@ -46,6 +46,7 @@ export type MatchView = {
   liveProb?: LiveProb; // in-play win/draw/win, when a match is live
   liveAdvance?: { home: number; away: number }; // in-play advance odds (ET/pens)
   minute?: number; // current match minute, when live
+  espnId?: string; // ESPN event id, for dynamic (upper-round) fixtures
 };
 
 // Build the model-only view for a fixture (no live overlay yet).
@@ -55,7 +56,7 @@ function buildModel(f: Fixture, source: RatingSource): MatchView {
   const rHome = teamRating(f.home, source) + (f.homeAdv ?? 0);
   const rAway = teamRating(f.away, source);
   const outcome = forecast(rHome, rAway);
-  const advance = advanceProb(outcome, rHome, rAway);
+  const advance = advanceProb(outcome);
   const confidence = Math.abs(advance.home - advance.away);
   const modelPickKey = advance.home >= advance.away ? f.home : f.away;
 
@@ -113,49 +114,67 @@ export type LiveOverlay = {
   live?: LiveState;
 };
 
+// Build a full MatchView for one fixture, with an optional live overlay.
+// Used for the static R32 fixtures and for dynamic upper-round pairings.
+export function buildMatchView(
+  f: Fixture,
+  ov: LiveOverlay | undefined,
+  source: RatingSource = "model"
+): MatchView {
+  const m = buildModel(f, source);
+  if (ov) {
+    m.status = ov.status;
+    if (ov.homeScore !== undefined && ov.awayScore !== undefined) {
+      m.score = { home: ov.homeScore, away: ov.awayScore };
+    }
+    m.live = ov.live;
+    if (
+      ov.status === "live" &&
+      m.score &&
+      ov.live?.minute !== undefined
+    ) {
+      m.minute = ov.live.minute;
+      const remaining = Math.max(1, Math.min(90, 90 - ov.live.minute));
+      m.liveProb = inPlay(
+        m.outcome.lambdaHome,
+        m.outcome.lambdaAway,
+        m.score.home,
+        m.score.away,
+        remaining
+      );
+      m.liveAdvance = advanceFrom(
+        m.liveProb.pHome,
+        m.liveProb.pDraw,
+        m.outcome.lambdaHome,
+        m.outcome.lambdaAway
+      );
+    }
+    resolveResult(m, ov.winnerKey);
+  } else {
+    resolveResult(m);
+  }
+  return m;
+}
+
 export function applyOverlay(
   overlays: Record<string, LiveOverlay>,
   source: RatingSource = "model"
 ): MatchView[] {
-  return FIXTURES.map((f) => {
-    const m = buildModel(f, source);
-    const ov = overlays[f.id];
-    if (ov) {
-      m.status = ov.status;
-      if (ov.homeScore !== undefined && ov.awayScore !== undefined) {
-        m.score = { home: ov.homeScore, away: ov.awayScore };
-      }
-      m.live = ov.live;
-      if (
-        ov.status === "live" &&
-        m.score &&
-        ov.live?.minute !== undefined
-      ) {
-        m.minute = ov.live.minute;
-        const remaining = Math.max(1, Math.min(90, 90 - ov.live.minute));
-        m.liveProb = inPlay(
-          m.outcome.lambdaHome,
-          m.outcome.lambdaAway,
-          m.score.home,
-          m.score.away,
-          remaining
-        );
-        const rHome = teamRating(f.home, source) + (f.homeAdv ?? 0);
-        const rAway = teamRating(f.away, source);
-        m.liveAdvance = advanceFrom(
-          m.liveProb.pHome,
-          m.liveProb.pDraw,
-          rHome,
-          rAway
-        );
-      }
-      resolveResult(m, ov.winnerKey);
-    } else {
-      resolveResult(m);
-    }
-    return m;
-  });
+  return FIXTURES.map((f) => buildMatchView(f, overlays[f.id], source));
 }
+
+// A knockout match parsed straight from the ESPN scoreboard, keyed by its
+// unordered team pair — lets the bracket attach live data to upper-round
+// pairings that don't exist in the static fixture list.
+export type KnockoutEvent = {
+  homeKey: string;
+  awayKey: string;
+  overlay: LiveOverlay;
+  date: string; // display, e.g. "Sat Jul 4"
+  kickoffISO: string;
+  venue: string;
+  espnId?: string;
+};
 
 export function trackRecord(matches: MatchView[]) {
   const decided = matches.filter((m) => m.hit !== undefined);

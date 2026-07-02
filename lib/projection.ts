@@ -20,7 +20,7 @@ export async function priorSeasonRatings(
 
 export async function getRemainingFixtures(
   slug: string,
-  months = 6
+  months = 12 // a full year — never truncate the season tail
 ): Promise<RemFixture[]> {
   const now = new Date();
   const ranges: string[] = [];
@@ -91,6 +91,18 @@ export type ProjRow = {
   projPts: number;
 };
 
+// Sample a Poisson count (Knuth) — fine for football-sized lambdas.
+function samplePoisson(lambda: number): number {
+  const L = Math.exp(-lambda);
+  let k = 0;
+  let p = 1;
+  do {
+    k++;
+    p *= Math.random();
+  } while (p > L);
+  return k - 1;
+}
+
 export function projectSeason(
   rows: StandingRow[],
   ratings: Map<string, number>,
@@ -99,16 +111,19 @@ export function projectSeason(
   iters = 3000,
   useCurrentPoints = true
 ): ProjRow[] {
-  // precompute each remaining fixture's outcome probabilities once
-  const fx = fixtures
-    .map((f) => {
-      const rh = ratings.get(f.home);
-      const ra = ratings.get(f.away);
-      if (rh == null || ra == null) return null;
-      const o = forecast(rh + 50, ra); // small home edge
-      return { home: f.home, away: f.away, pH: o.pHome, pHD: o.pHome + o.pDraw };
-    })
-    .filter(Boolean) as { home: string; away: string; pH: number; pHD: number }[];
+  // Teams with no rating (typically promoted sides missing from the prior
+  // season's table) slot in just below the weakest rated team, rather than
+  // having their fixtures dropped from the simulation entirely.
+  const floor =
+    ratings.size > 0 ? Math.min(...ratings.values()) - 25 : 1700;
+
+  // precompute each remaining fixture's scoring rates once
+  const fx = fixtures.map((f) => {
+    const rh = ratings.get(f.home) ?? floor;
+    const ra = ratings.get(f.away) ?? floor;
+    const o = forecast(rh + 115, ra); // home edge (~0.55 goals on the /210 link)
+    return { home: f.home, away: f.away, lh: o.lambdaHome, la: o.lambdaAway };
+  });
 
   const teams = rows.map((r) => r.abbr);
   const basePts: Record<string, number> = {};
@@ -132,16 +147,22 @@ export function projectSeason(
 
   for (let i = 0; i < iters; i++) {
     const pts: Record<string, number> = { ...basePts };
+    const gd: Record<string, number> = { ...baseGd };
     for (const f of fx) {
-      const r = Math.random();
-      if (r < f.pH) pts[f.home] += 3;
-      else if (r < f.pHD) {
+      // sample an actual scoreline so goal difference is simulated too —
+      // tight races are then settled by the real tiebreaker, not a coin flip
+      const gh = samplePoisson(f.lh);
+      const ga = samplePoisson(f.la);
+      if (gh > ga) pts[f.home] += 3;
+      else if (gh === ga) {
         pts[f.home] += 1;
         pts[f.away] += 1;
       } else pts[f.away] += 3;
+      gd[f.home] = (gd[f.home] ?? 0) + gh - ga;
+      gd[f.away] = (gd[f.away] ?? 0) + ga - gh;
     }
     const order = [...teams].sort(
-      (a, b) => pts[b] - pts[a] || baseGd[b] - baseGd[a] || Math.random() - 0.5
+      (a, b) => pts[b] - pts[a] || gd[b] - gd[a] || Math.random() - 0.5
     );
     title[order[0]]++;
     for (let k = 0; k < opts.uclSpots && k < order.length; k++) ucl[order[k]]++;

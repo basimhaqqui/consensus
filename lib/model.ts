@@ -30,10 +30,15 @@ function poisson(k: number, lambda: number): number {
 // Expected goals for each side from rating difference.
 // supremacy (goal expectation gap) scales with rating diff; total goals held
 // roughly constant so blowouts and tight games both look sane.
+//
+// Constants fitted by scripts/backtest.mjs: online replay of 10,789
+// internationals (2015+), minimising W/D/L log loss. div=210 / BASE=1.25
+// ranked #1 of the grid and calibrates cleanly (predicted 86% -> actual 87%);
+// the old div=90 / cap=2.2 ranked dead last and called 75% shots that landed 53%.
 function expectedGoals(ratingHome: number, ratingAway: number) {
-  const BASE = 1.35; // league-average goals per team in a knockout match
+  const BASE = 1.25; // average goals per team at even strength
   const diff = ratingHome - ratingAway; // includes any home edge baked into rating
-  const supremacy = Math.max(-2.2, Math.min(2.2, diff / 90)); // cap extremes
+  const supremacy = Math.max(-3.0, Math.min(3.0, diff / 210)); // cap extremes
   const lambdaHome = Math.max(0.25, BASE + supremacy / 2);
   const lambdaAway = Math.max(0.25, BASE - supremacy / 2);
   return { lambdaHome, lambdaAway };
@@ -70,22 +75,39 @@ export function forecast(ratingHome: number, ratingAway: number): Outcome {
   };
 }
 
-// Probability a side advances given win/draw/win probs — draws resolve via
-// ET + penalties, nudged slightly toward the stronger side.
+// Probability a side advances given win/draw/win probs — draws resolve by
+// replaying the same Poisson model over 30 minutes of extra time (each side's
+// scoring rate scaled to 30/90), and residual ET draws go to penalties as a
+// coin flip. No extra constants: the favourite's ET edge falls straight out
+// of the goal model.
 export function advanceFrom(
   pHome: number,
   pDraw: number,
-  ratingHome: number,
-  ratingAway: number
+  lambdaHome: number,
+  lambdaAway: number
 ) {
-  const edge = Math.max(0, Math.min(0.15, (ratingHome - ratingAway) / 2000));
-  const homeKO = 0.5 + edge; // share of draws the home side wins on
+  const lh = lambdaHome / 3;
+  const la = lambdaAway / 3;
+  let etHome = 0;
+  let etDraw = 0;
+  let etAway = 0;
+  const MAX = 5; // 30 minutes — tails beyond 5 goals are negligible
+  for (let h = 0; h <= MAX; h++) {
+    for (let a = 0; a <= MAX; a++) {
+      const p = poisson(h, lh) * poisson(a, la);
+      if (h > a) etHome += p;
+      else if (h === a) etDraw += p;
+      else etAway += p;
+    }
+  }
+  const t = etHome + etDraw + etAway;
+  const homeKO = (etHome + etDraw / 2) / t; // share of 90' draws home survives
   const pHomeAdv = pHome + pDraw * homeKO;
   return { home: pHomeAdv, away: 1 - pHomeAdv };
 }
 
-export function advanceProb(o: Outcome, ratingHome: number, ratingAway: number) {
-  return advanceFrom(o.pHome, o.pDraw, ratingHome, ratingAway);
+export function advanceProb(o: Outcome) {
+  return advanceFrom(o.pHome, o.pDraw, o.lambdaHome, o.lambdaAway);
 }
 
 export type LiveProb = { pHome: number; pDraw: number; pAway: number };

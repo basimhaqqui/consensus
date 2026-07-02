@@ -84,11 +84,13 @@ export async function getStandings(
 
 // Form-based power rating from a table row (Elo-ish scale for our model).
 // Needs a few games played to be meaningful.
+// Slopes are on the refit link scale (210 Elo = 1 goal of supremacy — see
+// lib/model.ts); they express the same goal gaps as the old 70/25 did at /90.
 export function ratingFromRow(r: StandingRow): number | null {
   if (r.gp < 3) return null;
   const gdpg = r.gd / r.gp;
   const ppg = r.pts / r.gp;
-  return Math.round(1700 + 70 * gdpg + 25 * (ppg - 1.4));
+  return Math.round(1700 + 163 * gdpg + 58 * (ppg - 1.4));
 }
 
 // Build a rating lookup (by abbreviation) across all groups of a competition.

@@ -54,8 +54,10 @@ export const TEAMS: Record<string, Team> = {
 
 // Overlay our data-derived Elo as the model rating; keep the original
 // market-calibrated value as marketRating (for the Model/Market toggle).
+// The hand-set market gaps were tuned to the old /90 link, so stretch them
+// about a 1900 anchor onto the /210 scale — same implied goal supremacy.
 for (const [key, t] of Object.entries(TEAMS)) {
-  t.marketRating = t.rating;
+  t.marketRating = Math.round(1900 + (t.rating - 1900) * (210 / 90));
   if (DERIVED_RATINGS[key] !== undefined) t.rating = DERIVED_RATINGS[key];
 }
 
@@ -66,10 +68,31 @@ export type Fixture = {
   venue: string;
   home: string; // team key
   away: string; // team key
-  homeAdv?: number; // Elo bump if a side plays in its host country
+  homeAdv?: number; // net Elo bump on the home side (host playing in own country)
   status: "scheduled" | "final";
   score?: { home: number; away: number };
 };
+
+// Co-host crowd edge, in Elo points, when playing on home soil (~0.3 goals
+// of supremacy on the /210 link). Applied venue-aware: full bump only in the
+// team's own country, half in simulations where the venue isn't known yet.
+export const HOST_ADV: Record<string, number> = { MEX: 65, USA: 60, CAN: 55 };
+
+const MEX_CITIES = /mexico city|guadalajara|monterrey/i;
+const CAN_CITIES = /toronto|vancouver/i;
+
+// Net home-side Elo bump for a knockout tie at a known venue.
+export function venueHostAdv(home: string, away: string, venue: string): number {
+  const country = MEX_CITIES.test(venue)
+    ? "MEX"
+    : CAN_CITIES.test(venue)
+    ? "CAN"
+    : "USA";
+  let adv = 0;
+  if (home === country) adv += HOST_ADV[home] ?? 0;
+  if (away === country) adv -= HOST_ADV[away] ?? 0;
+  return adv;
+}
 
 // Round of 32 — full 16-match bracket. Two already decided.
 export const FIXTURES: Fixture[] = [

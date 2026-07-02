@@ -1,6 +1,15 @@
-import { FIXTURES, TEAMS, teamRating, type Team, type RatingSource } from "./data";
+import {
+  FIXTURES,
+  HOST_ADV,
+  TEAMS,
+  teamRating,
+  venueHostAdv,
+  type Team,
+  type RatingSource,
+} from "./data";
 import { forecast, advanceProb } from "./model";
-import type { MatchView } from "./compute";
+import { buildMatchView, type MatchView, type KnockoutEvent } from "./compute";
+import type { Fixture } from "./data";
 
 // ---------------------------------------------------------------------------
 // Knockout bracket tree (decoded from ESPN's authoritative feeder data) and a
@@ -49,9 +58,54 @@ function winProbR(ra: number, rb: number): number {
   const hit = wpCache.get(key);
   if (hit !== undefined) return hit;
   const o = forecast(ra, rb);
-  const ap = advanceProb(o, ra, rb);
+  const ap = advanceProb(o);
   wpCache.set(key, ap.home);
   return ap.home;
+}
+
+const pairKey = (a: string, b: string) => [a, b].sort().join("|");
+
+// Build MatchViews for upper-round ties whose pairings are already decided
+// (both feeder winners known). Walks UPPER in dependency order so a decided
+// R16 tie feeds the QF pairing check, and so on. ESPN data (schedule, live
+// score, final winner) attaches by unordered team pair when available.
+export function buildUpperMatches(
+  r32: MatchView[],
+  events: Map<string, KnockoutEvent> | undefined,
+  source: RatingSource = "model"
+): MatchView[] {
+  const winners = new Map<string, string>();
+  for (const m of r32) {
+    if (m.status === "final" && m.winnerKey) winners.set(m.id, m.winnerKey);
+  }
+
+  const out: MatchView[] = [];
+  for (const node of UPPER) {
+    const a = winners.get(node.a);
+    const b = winners.get(node.b);
+    if (!a || !b) continue;
+
+    const ev = events?.get(pairKey(a, b));
+    // trust ESPN's home/away designation when we have the event
+    const home = ev && ev.homeKey === b ? b : a;
+    const away = home === a ? b : a;
+    const venue = ev?.venue ?? "TBD";
+    const f: Fixture = {
+      id: node.id,
+      date: ev?.date ?? "TBD",
+      kickoffISO: ev?.kickoffISO ?? "2099-01-01T00:00:00Z", // sort unscheduled last
+      venue,
+      home,
+      away,
+      homeAdv: ev ? venueHostAdv(home, away, venue) || undefined : undefined,
+      status: "scheduled",
+    };
+    const m = buildMatchView(f, ev?.overlay, source);
+    m.espnId = ev?.espnId;
+    if (m.status === "final" && m.winnerKey) winners.set(node.id, m.winnerKey);
+    out.push(m);
+  }
+  return out;
 }
 
 export type SimRow = {
@@ -84,11 +138,23 @@ export function simulate(
   for (let i = 0; i < iters; i++) {
     const res: Record<string, string> = {};
 
-    // Round of 32
+    // Resolve a match we actually have (any round): decided ties are
+    // respected, live ties use in-play advance odds (current score + time
+    // remaining), scheduled ties use their venue-aware pre-match odds.
+    const resolveKnown = (m: MatchView): string => {
+      if (m.status === "final" && m.winnerKey) return m.winnerKey;
+      const p =
+        m.status === "live" && m.liveAdvance
+          ? m.liveAdvance.home
+          : m.advance.home;
+      return Math.random() < p ? m.homeKey : m.awayKey;
+    };
+
+    // Round of 32 (always fully known)
     for (const fid of R32_IDS) {
       const m = byId.get(fid);
-      if (m && m.status === "final" && m.winnerKey) {
-        res[fid] = m.winnerKey;
+      if (m) {
+        res[fid] = resolveKnown(m);
         continue;
       }
       const f = fixById.get(fid)!;
@@ -98,11 +164,21 @@ export function simulate(
     }
     R32_IDS.forEach((fid) => bump(r16, res[fid])); // R32 winners reach R16
 
-    // Upper rounds (UPPER is in dependency order)
+    // Upper rounds (UPPER is in dependency order); known ties resolve from
+    // real data, hypothetical ones are randomised from ratings.
     for (const node of UPPER) {
+      const m = byId.get(node.id);
+      if (m) {
+        res[node.id] = resolveKnown(m);
+        continue;
+      }
       const a = res[node.a];
       const b = res[node.b];
-      res[node.id] = Math.random() < winProbR(R(a), R(b)) ? a : b;
+      // venue unknown for hypothetical future ties — hosts get half their
+      // crowd bump as the expected value across possible venues
+      const ha = (HOST_ADV[a] ?? 0) / 2;
+      const hb = (HOST_ADV[b] ?? 0) / 2;
+      res[node.id] = Math.random() < winProbR(R(a) + ha, R(b) + hb) ? a : b;
     }
 
     R16_IDS.forEach((id) => bump(qf, res[id])); // R16 winners reach QF
@@ -148,15 +224,14 @@ export type BracketMatch = {
 export function getBracket(matches: MatchView[]) {
   const byId = new Map(matches.map((m) => [m.id, m]));
 
-  // Resolve the team feeding a slot from feeder id (R32 fixture or node).
+  // Resolve the team feeding a slot from feeder id (R32 fixture or node —
+  // dynamic upper-round matches land in byId too, so this works all the way up).
   const resolveSlot = (feeder: string): Slot => {
-    if (feeder.startsWith("r32-")) {
-      const m = byId.get(feeder);
-      if (m && m.status === "final" && m.winnerKey) {
-        return { key: m.winnerKey, label: TEAMS[m.winnerKey].name };
-      }
-      if (m) return { label: `${TEAMS[m.homeKey].code}/${TEAMS[m.awayKey].code}` };
+    const m = byId.get(feeder);
+    if (m && m.status === "final" && m.winnerKey) {
+      return { key: m.winnerKey, label: TEAMS[m.winnerKey].name };
     }
+    if (m) return { label: `${TEAMS[m.homeKey].code}/${TEAMS[m.awayKey].code}` };
     return { label: "TBD" };
   };
 
@@ -174,14 +249,24 @@ export function getBracket(matches: MatchView[]) {
     };
   });
 
-  const upper: BracketMatch[] = UPPER.map((node) => ({
-    id: node.id,
-    round: node.round,
-    home: resolveSlot(node.a),
-    away: resolveSlot(node.b),
-    status: "scheduled" as const,
-    feeders: [node.a, node.b] as [string, string],
-  }));
+  const upper: BracketMatch[] = UPPER.map((node) => {
+    const m = byId.get(node.id); // dynamic match, once the pairing is known
+    return {
+      id: node.id,
+      round: node.round,
+      home: m
+        ? { key: m.homeKey, label: m.home.name }
+        : resolveSlot(node.a),
+      away: m
+        ? { key: m.awayKey, label: m.away.name }
+        : resolveSlot(node.b),
+      score: m?.score,
+      status: m?.status ?? ("scheduled" as const),
+      winnerKey: m?.winnerKey,
+      detail: m?.live?.detail ?? m?.date,
+      feeders: [node.a, node.b] as [string, string],
+    };
+  });
 
   const all = [...r32, ...upper];
   const byRound = (r: Round) => all.filter((m) => m.round === r);

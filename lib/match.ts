@@ -186,9 +186,10 @@ function side(pos: string): number {
 }
 
 export async function fetchMatchDetail(
-  fixtureId: string
+  fixtureId: string,
+  espnId?: string // dynamic upper-round fixtures carry their own event id
 ): Promise<MatchDetail | null> {
-  const id = ESPN_EVENT_ID[fixtureId];
+  const id = espnId ?? ESPN_EVENT_ID[fixtureId];
   if (!id) return null;
   return fetchSummary("fifa.world", id);
 }

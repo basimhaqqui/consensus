@@ -69,6 +69,19 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
   const hitRate =
     record.played > 0 ? Math.round((record.hits / record.played) * 100) : null;
 
+  // current stage = earliest round with an unfinished match
+  const STAGES: [string, string, string][] = [
+    ["r32-", "Round of 32", "32 → 16"],
+    ["r16-", "Round of 16", "16 → 8"],
+    ["qf-", "Quarter-finals", "8 → 4"],
+    ["sf-", "Semi-finals", "4 → 2"],
+    ["final", "Final", "2 → 1"],
+  ];
+  const stage =
+    STAGES.find(([p]) =>
+      matches.some((m) => m.id.startsWith(p) && m.status !== "final")
+    ) ?? STAGES[STAGES.length - 1];
+
   return (
     <>
       {/* source toggle + live status */}
@@ -102,7 +115,7 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
 
       {/* KPI strip */}
       <div className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-px bg-line rounded-lg overflow-hidden border border-line card-shadow">
-        <Kpi label="Stage" value="Round of 32" sub="32 → 16" />
+        <Kpi label="Stage" value={stage[1]} sub={stage[2]} />
         <Kpi
           label="Top seed alive"
           value={fav ? `${fav.code}` : "—"}
@@ -136,7 +149,7 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
         </Section>
       )}
 
-      <Section title="UPCOMING — ROUND OF 32" count={upcoming.length}>
+      <Section title="UPCOMING" count={upcoming.length}>
         <Grid>
           {upcoming.map((m) => (
             <MatchCard key={m.id} m={m} />

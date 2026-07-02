@@ -161,15 +161,40 @@ async function buildProjection(
   let useCurrent = true;
   let label = "Season projection — our model";
 
+  // ESPN season params are start-years; which year is "last season" depends
+  // on where we are in the calendar (autumn: y-1, spring: y-2).
+  const now = new Date();
+  const priorYear =
+    now.getUTCMonth() >= 6
+      ? now.getUTCFullYear() - 1
+      : now.getUTCFullYear() - 2;
+
   if (maxGp === 0) {
     // pre-season: rate from last season's final table
-    ratings = await priorSeasonRatings(slug, new Date().getUTCFullYear() - 1);
+    ratings = await priorSeasonRatings(slug, priorYear);
     useCurrent = false;
     label = "Title race — projected season";
   } else if (maxGp >= full) {
     // last season complete: project the upcoming one from current strength
     useCurrent = false;
     label = "Title race — next season";
+  } else {
+    // mid-season: shrink noisy early-season form toward last season's level,
+    // trusting the current table more as games accumulate
+    const prior = await priorSeasonRatings(slug, priorYear);
+    if (prior.size) {
+      const blended = new Map<string, number>();
+      for (const r of rows) {
+        const cur = rmap.get(r.abbr);
+        const prev = prior.get(r.abbr);
+        if (cur != null && prev != null) {
+          const w = r.gp / (r.gp + 10);
+          blended.set(r.abbr, Math.round(w * cur + (1 - w) * prev));
+        } else if (cur != null) blended.set(r.abbr, cur);
+        else if (prev != null) blended.set(r.abbr, prev);
+      }
+      ratings = blended;
+    }
   }
 
   if (ratings.size < 4) return null;
@@ -211,7 +236,7 @@ function LeagueCard({
   const rh = rmap.get(m.home.abbr);
   const ra = rmap.get(m.away.abbr);
   if (rh && ra && !done) {
-    const o = forecast(rh + 50, ra);
+    const o = forecast(rh + 115, ra);
     if (live && m.minute != null && m.home.score != null && m.away.score != null) {
       probs = inPlay(
         o.lambdaHome,

@@ -27,7 +27,7 @@ export default async function MatchPage({
   if (!m) notFound();
   const adv = m.liveAdvance ?? m.advance;
 
-  const detail = await fetchMatchDetail(id);
+  const detail = await fetchMatchDetail(id, m.espnId);
 
   // Before official lineups drop (~1h pre-kickoff), project each XI from the
   // team's last match — our prediction, badged as such.
