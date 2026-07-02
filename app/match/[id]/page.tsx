@@ -2,7 +2,10 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getLiveMatches } from "@/lib/live";
 import { fetchMatchDetail, fetchPredictedSquads, type Goal } from "@/lib/match";
+import { winProbSeries } from "@/lib/model";
 import { TEAMS } from "@/lib/data";
+import WinProbChart from "@/components/WinProbChart";
+import MatchTimeline from "@/components/MatchTimeline";
 import Crest from "@/components/Crest";
 import Lineups from "@/components/Lineups";
 import { BallIcon } from "@/components/PlayerMarkers";
@@ -14,6 +17,29 @@ export const dynamic = "force-dynamic";
 
 function pct(n: number) {
   return `${Math.round(n * 100)}%`;
+}
+
+// Social/link previews: title carries the scoreline once decided, description
+// carries the consensus advance odds. The card image is opengraph-image.tsx.
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const { matches } = await getLiveMatches();
+  const m = matches.find((x) => x.id === id);
+  if (!m) return { title: "Match — CONSENSUS" };
+  const score =
+    m.score && m.status !== "scheduled"
+      ? `${m.home.code} ${m.score.home}–${m.score.away} ${m.away.code}`
+      : `${m.home.name} vs ${m.away.name}`;
+  return {
+    title: `${score} — CONSENSUS`,
+    description: `Consensus to advance: ${m.home.name} ${pct(
+      m.advance.home
+    )} · ${m.away.name} ${pct(m.advance.away)} — live odds, lineups and our calibrated model.`,
+  };
 }
 
 export default async function MatchPage({
@@ -57,6 +83,19 @@ export default async function MatchPage({
   const homeScore = detail?.home.score ?? m.score?.home;
   const awayScore = detail?.away.score ?? m.score?.away;
 
+  // win-probability timeline, reconstructed from the events via the in-play
+  // model (red-card aware) — only meaningful once the match is underway
+  const series =
+    detail && (live || decided) && detail.events
+      ? winProbSeries(
+          m.outcome.lambdaHome,
+          m.outcome.lambdaAway,
+          detail.events,
+          live ? "in" : "post",
+          m.minute
+        )
+      : null;
+
   return (
     <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 pb-20">
       <header className="pt-6 pb-4 flex items-center justify-between">
@@ -72,7 +111,12 @@ export default async function MatchPage({
       {/* scoreline header */}
       <div className="rounded-xl border border-line bg-panel/70 p-5">
         <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4">
-          <TeamHead teamKey={m.homeKey} name={m.home.name} align="right" />
+          <TeamHead
+            teamKey={m.homeKey}
+            name={m.home.name}
+            align="right"
+            form={detail?.form?.home}
+          />
           <div className="text-center">
             {showScore ? (
               <div className="text-3xl font-bold tabnums">
@@ -90,7 +134,12 @@ export default async function MatchPage({
               {detail?.detail ?? (m.status === "final" ? "Full time" : "Upcoming")}
             </div>
           </div>
-          <TeamHead teamKey={m.awayKey} name={m.away.name} align="left" />
+          <TeamHead
+            teamKey={m.awayKey}
+            name={m.away.name}
+            align="left"
+            form={detail?.form?.away}
+          />
         </div>
 
         {detail?.goals && detail.goals.length > 0 && (
@@ -118,8 +167,22 @@ export default async function MatchPage({
         <div className="mt-3 text-center text-[11px] text-muted">
           {m.venue}
           {detail?.venue ? ` · ${detail.venue}` : ""}
+          {detail?.referee ? ` · Referee ${detail.referee}` : ""}
+          {detail?.attendance
+            ? ` · ${detail.attendance.toLocaleString("en-US")} attendance`
+            : ""}
         </div>
       </div>
+
+      {/* events timeline */}
+      {detail && detail.events.length > 0 && (live || decided) && (
+        <section className="mt-5 rounded-xl border border-line bg-panel/50 p-4">
+          <h2 className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-3">
+            Timeline
+          </h2>
+          <MatchTimeline events={detail.events} />
+        </section>
+      )}
 
       {/* win probability — kickoff vs now */}
       <section className="mt-5 rounded-xl border border-line bg-panel/50 p-4">
@@ -146,11 +209,24 @@ export default async function MatchPage({
           </div>
         ) : (
           <ProbBar
-            label="Pre-match model"
+            label="Consensus · pre-match"
             p={m.outcome}
             home={m.home.name}
             away={m.away.name}
           />
+        )}
+
+        {/* how the odds moved across the match */}
+        {series && detail && (
+          <div className="mt-4">
+            <WinProbChart
+              series={series}
+              events={detail.events}
+              homeCode={m.home.code}
+              awayCode={m.away.code}
+              live={live}
+            />
+          </div>
         )}
 
         {/* to advance — knockout two-way market (no draw) */}
@@ -210,14 +286,22 @@ export default async function MatchPage({
   );
 }
 
+const FORM_STYLE: Record<string, string> = {
+  W: "bg-accent/80 text-black",
+  D: "bg-zinc-600 text-white",
+  L: "bg-danger/80 text-white",
+};
+
 function TeamHead({
   teamKey,
   name,
   align,
+  form,
 }: {
   teamKey: string;
   name: string;
   align: "left" | "right";
+  form?: string[];
 }) {
   return (
     <div
@@ -229,6 +313,25 @@ function TeamHead({
       <div>
         <div className="font-semibold leading-tight">{name}</div>
         <div className="text-[10px] text-muted">{TEAMS[teamKey].titleOdds ?? ""}</div>
+        {form && form.length > 0 && (
+          <div
+            className={`mt-1 flex gap-[3px] ${
+              align === "right" ? "justify-end" : ""
+            }`}
+            title="Last five matches, oldest first"
+          >
+            {form.map((r, i) => (
+              <span
+                key={i}
+                className={`grid h-3.5 w-3.5 place-items-center rounded-[3px] text-[8px] font-bold leading-none ${
+                  FORM_STYLE[r] ?? "bg-zinc-700 text-white"
+                }`}
+              >
+                {r}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

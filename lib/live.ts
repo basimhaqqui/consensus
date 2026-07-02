@@ -183,16 +183,17 @@ function allMatches(
   return all;
 }
 
-// Live matches (model view), with a safe fallback if ESPN is down.
+// Live matches (consensus view — same numbers as the /wc default board),
+// with a safe fallback if ESPN is down.
 export async function getLiveMatches(): Promise<{
   matches: MatchView[];
   live: boolean;
 }> {
   try {
     const { overlays, events } = await fetchOverlays();
-    return { matches: allMatches(overlays, events), live: true };
+    return { matches: allMatches(overlays, events, "blend"), live: true };
   } catch {
-    return { matches: allMatches({}, undefined), live: false };
+    return { matches: allMatches({}, undefined, "blend"), live: false };
   }
 }
 

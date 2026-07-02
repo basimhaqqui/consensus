@@ -98,6 +98,10 @@ export type MatchDetail = {
   h2h: H2HGame[];
   teamStats?: { home: Record<string, string>; away: Record<string, string> };
   goals: Goal[];
+  events: MatchEvent[];
+  form?: { home: string[]; away: string[] }; // last five, W/D/L, oldest first
+  referee?: string;
+  attendance?: number;
 };
 
 export type Goal = {
@@ -106,6 +110,17 @@ export type Goal = {
   assist?: string;
   minute: string;
   tag?: "P" | "OG"; // penalty / own goal
+};
+
+// A structured match event (goals, cards, subs) from ESPN's key events —
+// drives the events timeline and the win-probability reconstruction.
+export type MatchEvent = {
+  minute: string; // display, e.g. "45'+2'"
+  sortMin: number; // 45.02 — base minute + stoppage fraction, for ordering
+  period: number;
+  type: "goal" | "own-goal" | "pen-goal" | "yellow" | "red" | "sub";
+  side: "home" | "away";
+  players: string[]; // scorer/assist, carded player, or [on, off] for subs
 };
 
 const normName = (s: string) =>
@@ -321,6 +336,68 @@ export async function fetchSummary(
     })
     .filter((g: Goal | null): g is Goal => g !== null);
 
+  // structured events (goals / cards / subs) for the timeline + win-prob chart
+  const EVENT_TYPE: Record<string, MatchEvent["type"]> = {
+    goal: "goal",
+    "goal---free-kick": "goal",
+    "goal---header": "goal",
+    "penalty---scored": "pen-goal",
+    "own-goal": "own-goal",
+    "yellow-card": "yellow",
+    "red-card": "red",
+    substitution: "sub",
+  };
+  const sideOfTeam = (name?: string): "home" | "away" | undefined =>
+    name && normName(name) === normName(home.name)
+      ? "home"
+      : name && normName(name) === normName(away.name)
+      ? "away"
+      : undefined;
+  const events: MatchEvent[] = (s.keyEvents ?? [])
+    .map((e: any): MatchEvent | null => {
+      let type = EVENT_TYPE[e.type?.type ?? ""];
+      if (!type) return null;
+      const text: string = e.text ?? "";
+      if (type === "goal" && /own goal/i.test(text)) type = "own-goal";
+      if (type === "goal" && /penalty/i.test(text)) type = "pen-goal";
+      let side = sideOfTeam(e.team?.displayName);
+      if (!side) return null;
+      // ESPN attributes an own goal to the scoring team's benefit — flip to
+      // the side of the player who actually put it in
+      if (type === "own-goal") side = side === "home" ? "away" : "home";
+      const disp: string = e.clock?.displayValue ?? "";
+      const m = disp.match(/(\d+)'(?:\+(\d+)')?/);
+      const base = m ? parseInt(m[1], 10) : 0;
+      const added = m?.[2] ? parseInt(m[2], 10) : 0;
+      const players = (e.participants ?? e.athletesInvolved ?? [])
+        .map((a: any) => a?.athlete?.displayName ?? a?.displayName ?? a?.name)
+        .filter(Boolean);
+      return {
+        minute: disp,
+        sortMin: base + added / 100,
+        period: e.period?.number ?? (base > 45 ? 2 : 1),
+        type,
+        side,
+        players,
+      };
+    })
+    .filter((x: MatchEvent | null): x is MatchEvent => x !== null)
+    .sort((a: MatchEvent, b: MatchEvent) => a.sortMin - b.sortMin);
+
+  // last-five form per side, oldest first (gameResult is from that team's view)
+  let form: MatchDetail["form"];
+  for (const t of s.lastFiveGames ?? []) {
+    const side = sideOfTeam(t.team?.displayName) ??
+      (t.team?.abbreviation === home.abbr ? "home" : t.team?.abbreviation === away.abbr ? "away" : undefined);
+    if (!side) continue;
+    const letters = (t.events ?? [])
+      .map((g: any) => g.gameResult)
+      .filter((r: any) => r === "W" || r === "D" || r === "L")
+      .slice(0, 5)
+      .reverse();
+    form = { home: form?.home ?? [], away: form?.away ?? [], [side]: letters } as MatchDetail["form"];
+  }
+
   // team match stats from the boxscore
   let teamStats: MatchDetail["teamStats"];
   if (s.boxscore?.teams) {
@@ -350,6 +427,13 @@ export async function fetchSummary(
     h2h,
     teamStats,
     goals,
+    events,
+    form,
+    referee: s.gameInfo?.officials?.[0]?.displayName,
+    attendance:
+      typeof s.gameInfo?.attendance === "number"
+        ? s.gameInfo.attendance
+        : undefined,
   };
 }
 
