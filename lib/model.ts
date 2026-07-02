@@ -32,16 +32,29 @@ function poisson(k: number, lambda: number): number {
 // roughly constant so blowouts and tight games both look sane.
 //
 // Constants fitted by scripts/backtest.mjs: online replay of 10,789
-// internationals (2015+), minimising W/D/L log loss. div=210 / BASE=1.25
-// ranked #1 of the grid and calibrates cleanly (predicted 86% -> actual 87%);
-// the old div=90 / cap=2.2 ranked dead last and called 75% shots that landed 53%.
+// internationals (2015+), minimising W/D/L log loss. div=210 / BASE=1.35 with
+// the Dixon-Coles rho=-0.1 below ranked #1 of the grid and calibrates cleanly
+// (predicted 86% -> actual 88%); the old div=90 / cap=2.2 ranked dead last
+// and called 75% shots that landed 53%.
 function expectedGoals(ratingHome: number, ratingAway: number) {
-  const BASE = 1.25; // average goals per team at even strength
+  const BASE = 1.35; // average goals per team at even strength
   const diff = ratingHome - ratingAway; // includes any home edge baked into rating
   const supremacy = Math.max(-3.0, Math.min(3.0, diff / 210)); // cap extremes
   const lambdaHome = Math.max(0.25, BASE + supremacy / 2);
   const lambdaAway = Math.max(0.25, BASE - supremacy / 2);
   return { lambdaHome, lambdaAway };
+}
+
+// Dixon-Coles low-score adjustment (fitted rho): independent Poissons
+// under-produce draws; a negative rho inflates 0-0 / 1-1 and deflates the
+// 1-0 / 0-1 cells to match how often real matches actually stay level.
+const RHO = -0.1;
+function tau(h: number, a: number, lh: number, la: number): number {
+  if (h === 0 && a === 0) return 1 - lh * la * RHO;
+  if (h === 0 && a === 1) return 1 + lh * RHO;
+  if (h === 1 && a === 0) return 1 + la * RHO;
+  if (h === 1 && a === 1) return 1 - RHO;
+  return 1;
 }
 
 export function forecast(ratingHome: number, ratingAway: number): Outcome {
@@ -55,7 +68,10 @@ export function forecast(ratingHome: number, ratingAway: number): Outcome {
   const MAX = 8;
   for (let h = 0; h <= MAX; h++) {
     for (let a = 0; a <= MAX; a++) {
-      const p = poisson(h, lambdaHome) * poisson(a, lambdaAway);
+      const p =
+        poisson(h, lambdaHome) *
+        poisson(a, lambdaAway) *
+        tau(h, a, lambdaHome, lambdaAway);
       if (h > a) pHome += p;
       else if (h === a) pDraw += p;
       else pAway += p;

@@ -11,6 +11,7 @@ import TitleRace from "./TitleRace";
 type Board = { matches: MatchView[]; sim: SimRow[] };
 type Payload = {
   live: boolean;
+  blend: Board;
   model: Board;
   market: Board;
   updatedAt: string;
@@ -20,7 +21,7 @@ const REFRESH_MS = 30_000;
 
 export default function LiveBoard({ initial }: { initial: Payload }) {
   const [data, setData] = useState<Payload>(initial);
-  const [source, setSource] = useState<RatingSource>("model");
+  const [source, setSource] = useState<RatingSource>("blend");
   const [mounted, setMounted] = useState(false);
   const [ago, setAgo] = useState(0);
 
@@ -87,6 +88,9 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
       {/* source toggle + live status */}
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
         <div className="inline-flex rounded-lg border border-line bg-panel2/60 p-0.5 text-[11px] uppercase tracking-wider">
+          <Toggle active={source === "blend"} onClick={() => setSource("blend")}>
+            Consensus
+          </Toggle>
           <Toggle active={source === "model"} onClick={() => setSource("model")}>
             Our model
           </Toggle>
@@ -108,7 +112,9 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
       </div>
 
       <p className="mt-1.5 text-[11px] text-muted">
-        {source === "model"
+        {source === "blend"
+          ? "Consensus — our data Elo blended 50/50 with market-implied strength."
+          : source === "model"
           ? "Our model — Elo ratings computed from 49,000+ real international results."
           : "Market view — strength implied by pre-tournament betting odds."}
       </p>
@@ -119,10 +125,18 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
         <Kpi
           label="Top seed alive"
           value={fav ? `${fav.code}` : "—"}
-          sub={source === "market" ? fav?.titleOdds ?? "" : `Elo ${fav?.rating ?? ""}`}
+          sub={
+            source === "market"
+              ? fav?.titleOdds ?? ""
+              : source === "blend" && fav
+              ? `Elo ${Math.round((fav.rating + (fav.marketRating ?? fav.rating)) / 2)}`
+              : `Elo ${fav?.rating ?? ""}`
+          }
         />
         <Kpi
-          label={`${source === "model" ? "Model" : "Market"} record`}
+          label={`${
+            source === "blend" ? "Consensus" : source === "model" ? "Model" : "Market"
+          } record`}
           value={hitRate === null ? "—" : `${hitRate}%`}
           sub={`${record.hits}/${record.played} KO picks`}
         />

@@ -1,4 +1,4 @@
-import { FIXTURES } from "./data";
+import { FIXTURES, type RatingSource } from "./data";
 import {
   applyOverlay,
   type KnockoutEvent,
@@ -147,7 +147,7 @@ async function fetchOverlays(): Promise<{
 function allMatches(
   overlays: Record<string, LiveOverlay>,
   events: Map<string, KnockoutEvent> | undefined,
-  source: "model" | "market" = "model"
+  source: RatingSource = "model"
 ): MatchView[] {
   const r32 = applyOverlay(overlays, source);
   return [...r32, ...buildUpperMatches(r32, events, source)];
@@ -168,9 +168,11 @@ export async function getLiveMatches(): Promise<{
 
 export type Board = { matches: MatchView[]; sim: SimRow[] };
 
-// Both rating views (our model + market) from a single live fetch.
+// All three rating views (consensus blend + our model + market) from a
+// single live fetch.
 export async function getBoards(): Promise<{
   live: boolean;
+  blend: Board;
   model: Board;
   market: Board;
 }> {
@@ -183,9 +185,14 @@ export async function getBoards(): Promise<{
   } catch {
     /* fall back to static fixtures */
   }
-  const build = (source: "model" | "market"): Board => {
+  const build = (source: RatingSource): Board => {
     const matches = allMatches(overlays, events, source);
     return { matches, sim: simulate(matches, 10000, source) };
   };
-  return { live, model: build("model"), market: build("market") };
+  return {
+    live,
+    blend: build("blend"),
+    model: build("model"),
+    market: build("market"),
+  };
 }

@@ -164,12 +164,17 @@ export const FIXTURES: Fixture[] = [
 
 export const LAST_UPDATED = "29 Jun 2026, Round of 32";
 
-// Which rating powers the forecast: our data-derived Elo, or the market.
-export type RatingSource = "model" | "market";
+// Which rating powers the forecast: our data-derived Elo, the market, or the
+// consensus blend (50/50 — the market prices information our Elo can't see,
+// injuries and squad news; our Elo is immune to public sentiment biases).
+export type RatingSource = "blend" | "model" | "market";
 export function teamRating(key: string, source: RatingSource = "model"): number {
   const t = TEAMS[key];
   if (!t) return 1700;
-  return source === "market" ? t.marketRating ?? t.rating : t.rating;
+  const market = t.marketRating ?? t.rating;
+  if (source === "market") return market;
+  if (source === "blend") return Math.round((t.rating + market) / 2);
+  return t.rating;
 }
 
 // ESPN country-crest URL for a team key (a couple of codes differ from ours).

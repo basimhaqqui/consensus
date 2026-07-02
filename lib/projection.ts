@@ -151,6 +151,8 @@ export function projectSeason(
     for (const f of fx) {
       // sample an actual scoreline so goal difference is simulated too —
       // tight races are then settled by the real tiebreaker, not a coin flip
+      // (plain Poisson: the Dixon-Coles low-score tweak is skipped here, a
+      // ~2pt draw-rate difference that isn't worth grid-sampling per fixture)
       const gh = samplePoisson(f.lh);
       const ga = samplePoisson(f.la);
       if (gh > ga) pts[f.home] += 3;

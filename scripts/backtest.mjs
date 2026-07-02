@@ -44,8 +44,18 @@ function poisson(k, lambda) {
   return (Math.pow(lambda, k) * Math.exp(-lambda)) / fact;
 }
 
+// Dixon-Coles low-score adjustment: negative rho inflates 0-0 / 1-1 and
+// deflates 1-0 / 0-1, fixing the draw shortfall of independent Poissons.
+function tau(h, a, lh, la, rho) {
+  if (h === 0 && a === 0) return 1 - lh * la * rho;
+  if (h === 0 && a === 1) return 1 + lh * rho;
+  if (h === 1 && a === 0) return 1 + la * rho;
+  if (h === 1 && a === 1) return 1 - rho;
+  return 1;
+}
+
 // W/D/L from a rating diff under a given link parameterisation
-function forecastDiff(diff, { div, base, cap }) {
+function forecastDiff(diff, { div, base, cap, rho = 0 }) {
   const supremacy = Math.max(-cap, Math.min(cap, diff / div));
   const lh = Math.max(0.25, base + supremacy / 2);
   const la = Math.max(0.25, base - supremacy / 2);
@@ -54,7 +64,7 @@ function forecastDiff(diff, { div, base, cap }) {
     pA = 0;
   for (let h = 0; h <= 8; h++) {
     for (let a = 0; a <= 8; a++) {
-      const p = poisson(h, lh) * poisson(a, la);
+      const p = poisson(h, lh) * poisson(a, la) * tau(h, a, lh, la, rho);
       if (h > a) pH += p;
       else if (h === a) pD += p;
       else pA += p;
@@ -86,13 +96,14 @@ const fmtScore = (s) =>
 const res = await fetch(CSV);
 const matches = parseCSV(await res.text());
 
-const PRODUCTION = { div: 90, base: 1.35, cap: 2.2 };
-const CANDIDATE = { div: 210, base: 1.25, cap: 3.0 }; // grid winner
+const PRODUCTION = { div: 210, base: 1.25, cap: 3.0, rho: 0 }; // shipped link
+const CANDIDATE = { div: 210, base: 1.35, cap: 3.0, rho: -0.1 }; // grid winner
 const calibBest = [];
 const grid = [];
-for (const div of [150, 180, 210, 240, 270, 300, 340])
-  for (const base of [1.05, 1.15, 1.25, 1.35])
-    grid.push({ div, base, cap: 3.0 });
+for (const div of [190, 210, 230])
+  for (const base of [1.15, 1.25, 1.35])
+    for (const rho of [-0.15, -0.1, -0.05, 0])
+      grid.push({ div, base, cap: 3.0, rho });
 
 // slices we report separately
 const slices = {
@@ -110,7 +121,7 @@ const get = (t) => ratings.get(t) ?? 1500;
 
 // scores: per-model overall + per-slice for production and (later) best
 const overall = new Map(); // model key -> score
-const key = (m) => `div${m.div}/base${m.base}`;
+const key = (m) => `div${m.div}/base${m.base}/rho${m.rho}`;
 overall.set("production", makeScore());
 grid.forEach((g) => overall.set(key(g), makeScore()));
 const sliceScores = {}; // slice -> {production, candidates: Map}
