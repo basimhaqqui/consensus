@@ -1,6 +1,11 @@
 import { ESPN_EVENT_ID } from "./data";
 import { resolveBatch } from "./faces";
-import { squadIndex, squadLookup } from "./apifootball";
+import {
+  afConfirmedLineups,
+  afPlayerPhoto,
+  squadIndex,
+  squadLookup,
+} from "./apifootball";
 import { nationalBadge } from "./badges";
 
 const SUMMARY = (slug: string, id: string) =>
@@ -251,11 +256,20 @@ export async function fetchSummary(
     winner: c?.winner,
   });
 
-  const squads = parseSquads(s);
-  await enrichSquads(squads);
-
   const home = mk(comp("home"));
   const away = mk(comp("away"));
+
+  let squads = parseSquads(s);
+  // ESPN's rosters often lag the official announcement — when they're still
+  // empty pre-match, take the confirmed XIs from api-football instead.
+  if (
+    (st.state ?? "pre") === "pre" &&
+    !squads.some((q) => q.starters.length > 0)
+  ) {
+    const af = await afConfirmedSquads(s, home, away, hc.date ?? "");
+    if (af) squads = af;
+  }
+  await enrichSquads(squads);
 
   // Previous meetings: ESPN reports each game from one reference team's
   // perspective (gameResult W/L/D) — remap to home/away so we can show the
@@ -444,6 +458,88 @@ export async function fetchSummary(
 // confirmed lineup doesn't render everyone as substituted.
 function didSub(v: any): boolean {
   return typeof v === "object" && v !== null ? !!v.didSub : !!v;
+}
+
+// Build Squads from api-football's confirmed lineups (grid gives left-to-right
+// columns per formation row; photos come id-keyed from the same record).
+async function afConfirmedSquads(
+  s: any,
+  home: SideInfo,
+  away: SideInfo,
+  dateISO: string
+): Promise<Squad[] | null> {
+  if (!home.name || !away.name || !dateISO) return null;
+  const lineups = await afConfirmedLineups(
+    home.name,
+    away.name,
+    dateISO.slice(0, 10),
+    home.abbr,
+    away.abbr
+  );
+  if (!lineups) return null;
+
+  // header competitors carry the kit colours parseSquads normally reads
+  const colorOf = (abbr?: string) => {
+    const c = (s.header?.competitions?.[0]?.competitors ?? []).find(
+      (x: any) => x.team?.abbreviation === abbr
+    );
+    return { color: c?.team?.color, alt: c?.team?.alternateColor };
+  };
+
+  const POS_LABEL: Record<string, string> = { G: "GK", D: "DEF", M: "MID", F: "FWD" };
+
+  const build = (
+    side: SideInfo,
+    lineup: import("./apifootball").AfLineup,
+    homeAway: string
+  ): Squad => {
+    // columns per grid row, for left/centre/right placement
+    const rowWidth = new Map<number, number>();
+    for (const p of lineup.startXI) {
+      const m = p.grid?.match(/^(\d+):(\d+)$/);
+      if (m) {
+        const r = Number(m[1]);
+        rowWidth.set(r, Math.max(rowWidth.get(r) ?? 0, Number(m[2])));
+      }
+    }
+    const toPlayer = (p: import("./apifootball").AfLineupPlayer, starter: boolean): Player => {
+      const letter = (p.pos ?? "").toUpperCase().slice(0, 1);
+      const pband = band(letter || "M");
+      let sideNum = 0;
+      const m = p.grid?.match(/^(\d+):(\d+)$/);
+      if (m) {
+        const width = rowWidth.get(Number(m[1])) ?? 1;
+        const t = width > 1 ? (Number(m[2]) - 1) / (width - 1) : 0.5;
+        sideNum = t < 0.34 ? -1 : t > 0.66 ? 1 : 0;
+      }
+      return {
+        id: undefined, // no ESPN athlete id on this path
+        name: p.name,
+        photo: afPlayerPhoto(p.id),
+        jersey: p.number != null ? String(p.number) : undefined,
+        pos: POS_LABEL[letter] ?? "",
+        band: pband,
+        side: sideNum,
+        starter,
+      };
+    };
+    const cols = colorOf(side.abbr);
+    return {
+      key: side.key,
+      teamId: side.id,
+      abbr: side.abbr,
+      name: side.name,
+      logo: side.logo,
+      color: cols.color,
+      alt: cols.alt,
+      homeAway,
+      formation: lineup.formation,
+      starters: lineup.startXI.map((p) => toPlayer(p, true)),
+      subs: lineup.substitutes.map((p) => toPlayer(p, false)),
+    };
+  };
+
+  return [build(home, lineups.home, "home"), build(away, lineups.away, "away")];
 }
 
 // Map ESPN's raw summary rosters to our Squad shape (no face resolution).

@@ -118,6 +118,97 @@ export async function squadIndex(
   return squad(id);
 }
 
+// --- confirmed lineups (fallback when ESPN's rosters lag) -------------------
+
+const WC_LEAGUE = 1;
+const WC_SEASON = 2026;
+
+export type AfLineupPlayer = {
+  id: number;
+  name: string;
+  number: number | null;
+  pos: string | null; // G / D / M / F
+  grid: string | null; // "row:col", left-to-right columns
+};
+
+export type AfLineup = {
+  teamId: number;
+  formation?: string;
+  coach?: string;
+  startXI: AfLineupPlayer[];
+  substitutes: AfLineupPlayer[];
+};
+
+const fixturesByDate = new Map<string, Promise<any[] | null>>();
+
+function fixturesOn(dateYMD: string): Promise<any[] | null> {
+  if (!fixturesByDate.has(dateYMD)) {
+    fixturesByDate.set(
+      dateYMD,
+      af(`/fixtures?league=${WC_LEAGUE}&season=${WC_SEASON}&date=${dateYMD}`)
+    );
+  }
+  return fixturesByDate.get(dateYMD)!;
+}
+
+// Confirmed lineups for the tie between two teams (ESPN names) on a date.
+// Returns null until api-football publishes both starting XIs.
+export async function afConfirmedLineups(
+  homeName: string,
+  awayName: string,
+  dateYMD: string,
+  homeCode?: string,
+  awayCode?: string
+): Promise<{ home: AfLineup; away: AfLineup } | null> {
+  if (!KEY) return null;
+  const [hid, aid, fixtures] = await Promise.all([
+    teamId(homeName, homeCode),
+    teamId(awayName, awayCode),
+    fixturesOn(dateYMD),
+  ]);
+  if (!hid || !aid || !fixtures) return null;
+  const fx = fixtures.find(
+    (f: any) =>
+      (f.teams?.home?.id === hid && f.teams?.away?.id === aid) ||
+      (f.teams?.home?.id === aid && f.teams?.away?.id === hid)
+  );
+  if (!fx?.fixture?.id) return null;
+
+  // lineups flip from empty to filled ~40min before kickoff — short cache
+  let resp: any[] | null = null;
+  try {
+    const r = await fetch(
+      `${BASE}/fixtures/lineups?fixture=${fx.fixture.id}`,
+      { headers: { "x-apisports-key": KEY }, next: { revalidate: 120 } }
+    );
+    if (r.ok) {
+      const j = await r.json();
+      if (Array.isArray(j.response)) resp = j.response;
+    }
+  } catch {
+    return null;
+  }
+  if (!resp || resp.length < 2) return null;
+
+  const mk = (t: any): AfLineup => ({
+    teamId: t.team?.id,
+    formation: t.formation || undefined,
+    coach: t.coach?.name || undefined,
+    startXI: (t.startXI ?? []).map((p: any) => p.player),
+    substitutes: (t.substitutes ?? []).map((p: any) => p.player),
+  });
+  const homeL = resp.find((t: any) => t.team?.id === hid);
+  const awayL = resp.find((t: any) => t.team?.id === aid);
+  if (!homeL || !awayL) return null;
+  const h = mk(homeL);
+  const a = mk(awayL);
+  if (h.startXI.length < 11 || a.startXI.length < 11) return null;
+  return { home: h, away: a };
+}
+
+export const afPlayerPhoto = (id: number) =>
+  `https://media.api-sports.io/football/players/${id}.png`;
+
 // Match one lineup player against the squad: jersey number first (exact
 // within the team), then full name, then last name.
 export function squadLookup(
