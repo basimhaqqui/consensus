@@ -10,7 +10,8 @@ import { useCallback, useState } from "react";
 
 // ESPN headshots are already head-and-shoulders crops; TheSportsDB cutouts
 // are full-body renders that need an aggressive zoom to read as a headshot.
-const isHeadshot = (u: string) => u.includes("/i/headshots/");
+const isHeadshot = (u: string) =>
+  u.includes("/i/headshots/") || u.includes("media.api-sports.io");
 
 function crop(u: string, shape: "circle" | "square") {
   if (isHeadshot(u)) {

@@ -1,5 +1,6 @@
 import { ESPN_EVENT_ID } from "./data";
 import { resolveBatch } from "./faces";
+import { squadIndex, squadLookup } from "./apifootball";
 import { nationalBadge } from "./badges";
 
 const SUMMARY = (slug: string, id: string) =>
@@ -25,7 +26,8 @@ export type Player = {
   subbedOut?: boolean;
   subMinute?: string; // e.g. "51'" — when the player came on / went off
   headshot?: string; // ESPN id-keyed headshot — identity-safe, tried first
-  img?: string | null; // TheSportsDB cutout by name search — the fallback
+  photo?: string; // api-football squad photo — id-keyed, matched by jersey
+  img?: string | null; // TheSportsDB cutout by name search — the last resort
   stats?: Record<string, string>; // per-player match stats (name -> value)
   rating?: number; // our model's performance score (see computeRating)
   bio?: PlayerBio; // profile from TheSportsDB
@@ -537,6 +539,24 @@ async function enrichSquads(squads: Squad[]): Promise<void> {
     await badges;
     return;
   }
+
+  // api-football squad photos + position/age, matched by jersey number
+  // within the right team — id-keyed identity, one request per squad
+  const afEnrich = Promise.all(
+    squads.map(async (sq) => {
+      const idx = await squadIndex(sq.name, sq.abbr);
+      if (!idx) return;
+      for (const player of [...sq.starters, ...sq.subs]) {
+        const hit = squadLookup(idx, player.jersey, player.name);
+        if (hit) {
+          player.photo = hit.photo;
+          (player as any)._afPos = hit.position;
+          (player as any)._afAge = hit.age;
+        }
+      }
+    })
+  );
+
   const profiles = await resolveBatch(
     everyone.map((e) => ({
       name: e.player.name,
@@ -551,15 +571,19 @@ async function enrichSquads(squads: Squad[]): Promise<void> {
     4,
     8000
   );
-  await badges;
+  await Promise.all([badges, afEnrich]);
   everyone.forEach((e, i) => {
     const p = profiles[i];
     e.player.img = p.img;
+    const afPos = (e.player as any)._afPos as string | undefined;
+    const afAge = (e.player as any)._afAge as number | undefined;
+    delete (e.player as any)._afPos;
+    delete (e.player as any)._afAge;
     // Replace ESPN's generic "SUB" with the player's real position so the bench
     // shows roles (and sorts GK→DEF→MID→FWD) instead of a wall of "SUB".
     const cur = e.player.pos.toUpperCase();
     if (cur === "SUB" || cur === "") {
-      const sp = shortPos(p.position);
+      const sp = shortPos(p.position ?? afPos);
       if (sp) {
         e.player.pos = sp;
         e.player.band = band(sp);
@@ -574,9 +598,9 @@ async function enrichSquads(squads: Squad[]): Promise<void> {
     }
     e.player.bio = {
       club: p.club,
-      position: p.position,
+      position: p.position ?? afPos,
       nationality: p.nationality,
-      age,
+      age: age ?? afAge,
       height: p.height,
       desc: p.desc,
     };
