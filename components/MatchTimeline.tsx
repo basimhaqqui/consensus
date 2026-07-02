@@ -87,7 +87,10 @@ export default function MatchTimeline({ events }: { events: MatchEvent[] }) {
             <span className="h-px flex-1 bg-line" />
           </div>
         ) : (
-          <div key={i} className="grid grid-cols-[1fr_auto_1fr] items-center gap-2">
+          <div
+            key={i}
+            className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2"
+          >
             <div className="flex items-center justify-end gap-2 text-right">
               {r.side === "home" && (
                 <>

@@ -87,7 +87,11 @@ function TeamTag({ sq, align }: { sq: Squad; align?: "right" }) {
       }`}
     >
       <Crest teamKey={sq.key} src={sq.logo} code={sq.abbr} size={20} />
-      <span className="text-sm font-semibold truncate">{sq.name}</span>
+      {/* full name needs room — codes on phones */}
+      <span className="hidden sm:inline text-sm font-semibold truncate">
+        {sq.name}
+      </span>
+      <span className="sm:hidden text-sm font-semibold">{sq.abbr}</span>
       {sq.formation && (
         <span className="text-[11px] tabnums text-accent shrink-0">
           {sq.formation}

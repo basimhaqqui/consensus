@@ -97,14 +97,14 @@ export default async function MatchPage({
       {/* scoreline header — compact centered cluster, symmetric whitespace */}
       <div className="rounded-xl border border-line bg-panel/70 px-5 pt-6 pb-4">
         <div className="mx-auto w-full max-w-2xl">
-          <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-x-5 sm:gap-x-7">
+          <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-x-3 sm:gap-x-7">
             <TeamHead
               teamKey={m.homeKey}
               name={m.home.name}
               align="right"
               form={detail?.form?.home}
             />
-            <div className="min-w-[92px] text-center">
+            <div className="min-w-[72px] sm:min-w-[92px] text-center">
               {showScore ? (
                 <div className="text-4xl font-bold tabnums leading-none">
                   {homeScore}
@@ -284,17 +284,17 @@ function TeamHead({
 }) {
   return (
     <div
-      className={`flex items-center gap-3 ${
+      className={`flex min-w-0 items-center gap-2 sm:gap-3 ${
         align === "right" ? "flex-row-reverse text-right" : ""
       }`}
     >
       <Crest teamKey={teamKey} code={TEAMS[teamKey].code} size={44} />
-      <div>
+      <div className="min-w-0">
         <div className="font-semibold leading-tight">{name}</div>
         <div className="text-[10px] text-muted">{TEAMS[teamKey].titleOdds ?? ""}</div>
         {form && form.length > 0 && (
           <div
-            className={`mt-1 flex gap-[3px] ${
+            className={`mt-1 flex flex-wrap gap-[3px] ${
               align === "right" ? "justify-end" : ""
             }`}
             title="Last five matches, oldest first"
