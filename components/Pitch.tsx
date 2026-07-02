@@ -258,17 +258,28 @@ function DuoDot({
             }}
           />
 
-          {/* jersey number + position (top-left column; rating lives top-right) */}
-          <div className="absolute left-[3px] top-[3px] sm:left-1.5 sm:top-1.5 z-10 flex flex-col items-start">
+          {/* jersey number + position (top-left column; rating lives top-right;
+              nudged inward when the sub-off badge occupies the corner) */}
+          <div
+            className={`absolute z-10 flex flex-col items-start ${
+              p.subbedOut
+                ? "left-[13px] top-[6px] sm:left-4 sm:top-2"
+                : "left-[3px] top-[3px] sm:left-1.5 sm:top-1.5"
+            }`}
+          >
             <span
               className="text-[9px] sm:text-[11px] font-extrabold tabnums leading-none"
-              style={{ color: t.ink, textShadow: "0 1px 2px rgba(0,0,0,0.25)" }}
+              style={{
+                color: t.ink,
+                // strong enough to read over the white api-football photos
+                textShadow: "0 1px 3px rgba(0,0,0,0.8)",
+              }}
             >
               {p.jersey}
             </span>
             <span
               className="mt-[2px] text-[6px] sm:text-[8px] font-bold uppercase tracking-wide leading-none"
-              style={{ color: t.sub }}
+              style={{ color: t.sub, textShadow: "0 1px 3px rgba(0,0,0,0.7)" }}
             >
               {p.pos}
             </span>
@@ -324,14 +335,15 @@ function DuoDot({
           </span>
         )}
 
-        {/* goals bottom-right, assists bottom-left, cards on the left edge */}
+        {/* goals bottom-right, assists bottom-left — riding the photo/band
+            seam so they never cover the name; cards on the left edge */}
         {hasGoals(p) && (
-          <span className="absolute -bottom-1.5 -right-1.5 z-20">
+          <span className="absolute bottom-2.5 -right-1.5 z-20 sm:bottom-3">
             <Goals p={p} />
           </span>
         )}
         {hasAssists(p) && (
-          <span className="absolute -bottom-1.5 -left-1.5 z-20">
+          <span className="absolute bottom-2.5 -left-1.5 z-20 sm:bottom-3">
             <Assists p={p} />
           </span>
         )}
