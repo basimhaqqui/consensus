@@ -538,7 +538,16 @@ async function enrichSquads(squads: Squad[]): Promise<void> {
     return;
   }
   const profiles = await resolveBatch(
-    everyone.map((e) => ({ name: e.player.name, nat: e.nat })),
+    everyone.map((e) => ({
+      name: e.player.name,
+      nat: e.nat,
+      // position band disambiguates same-name players — only when the
+      // lineup actually states a position (bench "SUB" is a placeholder)
+      band:
+        e.player.pos && e.player.pos.toUpperCase() !== "SUB"
+          ? e.player.band
+          : undefined,
+    })),
     4,
     8000
   );
