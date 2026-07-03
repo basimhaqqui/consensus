@@ -55,7 +55,16 @@
         "blend": 0.6595,
         "market": null
       },
-      "capturedAt": "2026-07-02T03:47:16.100Z"
+      "capturedAt": "2026-07-02T03:47:16.100Z",
+      "result": {
+        "winnerKey": "SUI",
+        "score": {
+          "home": 2,
+          "away": 0
+        },
+        "detail": "FT",
+        "gradedAt": "2026-07-03T07:35:25.623Z"
+      }
     },
     {
       "id": "r32-14",
