@@ -33,7 +33,16 @@
         "blend": 0.6816,
         "market": null
       },
-      "capturedAt": "2026-07-02T03:47:16.100Z"
+      "capturedAt": "2026-07-02T03:47:16.100Z",
+      "result": {
+        "winnerKey": "POR",
+        "score": {
+          "home": 2,
+          "away": 1
+        },
+        "detail": "FT",
+        "gradedAt": "2026-07-03T04:07:23.268Z"
+      }
     },
     {
       "id": "r32-13",
