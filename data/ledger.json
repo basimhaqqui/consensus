@@ -144,6 +144,19 @@
         "market": 0.2856
       },
       "capturedAt": "2026-07-04T15:29:57.902Z"
+    },
+    {
+      "id": "r16-1",
+      "kickoffISO": "2026-07-04T21:00Z",
+      "home": "PAR",
+      "away": "FRA",
+      "venue": "Philadelphia, Pennsylvania",
+      "forecasts": {
+        "model": 0.2083,
+        "blend": 0.0226,
+        "market": 0.1047
+      },
+      "capturedAt": "2026-07-04T19:35:52.610Z"
     }
   ]
 }
