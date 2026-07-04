@@ -121,7 +121,16 @@
         "blend": 0.8608,
         "market": null
       },
-      "capturedAt": "2026-07-02T03:47:16.100Z"
+      "capturedAt": "2026-07-02T03:47:16.100Z",
+      "result": {
+        "winnerKey": "COL",
+        "score": {
+          "home": 1,
+          "away": 0
+        },
+        "detail": "FT",
+        "gradedAt": "2026-07-04T07:13:41.097Z"
+      }
     }
   ]
 }
