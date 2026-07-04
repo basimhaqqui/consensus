@@ -131,6 +131,19 @@
         "detail": "FT",
         "gradedAt": "2026-07-04T07:13:41.097Z"
       }
+    },
+    {
+      "id": "r16-2",
+      "kickoffISO": "2026-07-04T17:00Z",
+      "home": "CAN",
+      "away": "MAR",
+      "venue": "Houston, Texas",
+      "forecasts": {
+        "model": 0.3341,
+        "blend": 0.2385,
+        "market": 0.2856
+      },
+      "capturedAt": "2026-07-04T15:29:57.902Z"
     }
   ]
 }
