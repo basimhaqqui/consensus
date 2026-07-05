@@ -1,4 +1,48 @@
 {
-  "generated": null,
-  "briefs": {}
+  "generated": "2026-07-05T09:32:56.454Z",
+  "briefs": {
+    "BRA|NOR": {
+      "text": "Brazil face Norway in the last 16, with model projections favouring Brazil to advance (76%-24%). Norway are appearing at their first World Cup in 28 years and seeking to reach the quarter-finals for the first time. The tie features Erling Haaland leading the Norwegian attack.",
+      "sources": [
+        {
+          "headline": "World Cup Daily live: Mexico fans try to give England sleepless night",
+          "href": "https://www.espn.com/soccer/story/_/id/49274470/mexico-england-brazil-norway-round-16"
+        },
+        {
+          "headline": "Stay humble - the Premier League feud about to hit world stage",
+          "href": "https://www.bbc.co.uk/sport/football/articles/c2ky2x52kwlo?at_medium=RSS&amp;at_campaign=rss"
+        },
+        {
+          "headline": "Brazil going out? Chris Sutton predicts World Cup's last-16 matches",
+          "href": "https://www.bbc.co.uk/sport/football/articles/c1my20zyn2eo?at_medium=RSS&amp;at_campaign=rss"
+        }
+      ]
+    },
+    "ENG|MEX": {
+      "text": "England enter as clear favorites for this round-of-16 tie, with manager Thomas Tuchel and captain Harry Kane both emphasizing the challenge of playing in Mexico. Mexico coach Javier Aguirre has said his side will need \"an almost perfect match\" to advance. The match carries added complications for England, including altitude in Mexico City and a difficult record playing there historically.",
+      "sources": [
+        {
+          "headline": "World Cup Daily live: Mexico fans try to give England sleepless night",
+          "href": "https://www.espn.com/soccer/story/_/id/49274470/mexico-england-brazil-norway-round-16"
+        },
+        {
+          "headline": "Fast-food chain Greggs benches Mexican sandwich ahead on England World Cup match",
+          "href": "https://www.espn.com/soccer/story/_/id/49274751/fast-food-chain-greggs-benches-mexican-sandwich-ahead-england-world-cup-match"
+        },
+        {
+          "headline": "Aguirre: Mexico will need an almost perfect match to beat England",
+          "href": "https://www.espn.com/video/clip/_/id/49274699/mexico-need-almost-perfect-match-beat-england"
+        }
+      ]
+    },
+    "BEL|USA": {
+      "text": "Belgium enter as the stronger side per the model (72% to advance). \n\nNote: The provided source refers to Senegal's World Cup exit and internal disputes, not this fixture, so no relevant team news is available for USA v Belgium.",
+      "sources": [
+        {
+          "headline": "Senegal's Ismaila Sarr refutes rumours of Pape Gueye 'altercation'; urges 'unity' after World Cup exit",
+          "href": "https://www.espn.com/espn/story/_/id/49272642/senegal-ismaila-sarr-refutes-rumours-pape-gueye-altercation-urges-unity-world-cup-exit"
+        }
+      ]
+    }
+  }
 }
