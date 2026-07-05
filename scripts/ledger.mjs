@@ -81,3 +81,23 @@ if (captured || graded) {
 console.log(
   `ledger: +${captured} captured, +${graded} graded, ${ledger.entries.length} total`
 );
+
+// --- odds history: append a movement snapshot every run ---------------------
+const HFILE = new URL("../data/odds-history.json", import.meta.url);
+const hist = JSON.parse(readFileSync(HFILE, "utf8"));
+const champ = {};
+for (const r of boards.blend.sim ?? []) champ[r.key] = +r.champ.toFixed(4);
+const matchSnap = {};
+for (const [id, m] of blend) {
+  if (m.status === "final") continue;
+  matchSnap[id] = {
+    model: +m.advance.home.toFixed(4),
+    books: m.market ? +m.market.advHome.toFixed(4) : null,
+  };
+}
+hist.snapshots.push({ at: new Date().toISOString(), champ, match: matchSnap });
+// keep a week of history
+const cutoff = Date.now() - 7 * 24 * 3600_000;
+hist.snapshots = hist.snapshots.filter((s) => Date.parse(s.at) >= cutoff);
+writeFileSync(HFILE, JSON.stringify(hist) + "\n");
+console.log(`odds history: ${hist.snapshots.length} snapshots`);

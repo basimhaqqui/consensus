@@ -8,6 +8,7 @@ import {
 import { buildUpperMatches, simulate, type SimRow } from "./bracket";
 import { advanceFrom } from "./model";
 import { fetchMarketOdds, type MarketOdds } from "./odds";
+import { booksDelta, champDelta } from "./oddsHistory";
 
 const ESPN =
   "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628-20260720";
@@ -167,6 +168,7 @@ function attachMarket(m: MatchView, odds: Map<string, MarketOdds>) {
     pAway,
     advHome: adv.home,
     books: o.books,
+    delta: booksDelta(m.id, adv.home),
   };
 }
 
@@ -220,7 +222,27 @@ export async function getBoards(): Promise<{
   }
   const build = (source: RatingSource): Board => {
     const matches = allMatches(overlays, events, source, odds);
-    return { matches, sim: simulate(matches, 10000, source) };
+    const sim = simulate(matches, 10000, source);
+
+    // annotate each surviving team with its next tie + advance odds, and
+    // (consensus board only — the default view) title-odds movement
+    const upcoming = matches
+      .filter((m) => m.status !== "final")
+      .sort((a, b) => a.kickoffISO.localeCompare(b.kickoffISO));
+    for (const r of sim) {
+      const nx = upcoming.find((m) => m.homeKey === r.key || m.awayKey === r.key);
+      if (nx) {
+        const homeSide = nx.homeKey === r.key;
+        const advP = nx.liveAdvance ?? nx.advance;
+        r.next = {
+          opp: homeSide ? nx.awayKey : nx.homeKey,
+          p: homeSide ? advP.home : advP.away,
+          live: nx.status === "live",
+        };
+      }
+      if (source === "blend") r.dChamp = champDelta(r.key, r.champ);
+    }
+    return { matches, sim };
   };
   return {
     live,

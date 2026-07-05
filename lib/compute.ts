@@ -53,6 +53,7 @@ export type MatchView = {
     pAway: number;
     advHome: number; // market's implied advance odds (our ET/pens machinery)
     books: number;
+    delta?: number; // books' advance movement vs ~a day ago
   };
 };
 

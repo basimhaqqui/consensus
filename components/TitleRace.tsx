@@ -31,7 +31,8 @@ const ROUNDS: { label: string; get: (r: SimRow) => number }[] = [
   { label: "Fin", get: (r) => r.final },
 ];
 
-// Tailwind needs literal class strings — one grid variant per column count.
+// Tailwind needs literal class strings — one grid variant per column count,
+// with and without the Next column.
 const GRID = [
   "sm:grid-cols-[1.4fr_3fr]",
   "sm:grid-cols-[1.4fr_3fr_2.4rem]",
@@ -39,9 +40,29 @@ const GRID = [
   "sm:grid-cols-[1.4fr_3fr_repeat(3,2.4rem)]",
   "sm:grid-cols-[1.4fr_3fr_repeat(4,2.4rem)]",
 ];
+const GRID_NEXT = [
+  "sm:grid-cols-[1.4fr_3fr_5.5rem]",
+  "sm:grid-cols-[1.4fr_3fr_5.5rem_2.4rem]",
+  "sm:grid-cols-[1.4fr_3fr_5.5rem_repeat(2,2.4rem)]",
+  "sm:grid-cols-[1.4fr_3fr_5.5rem_repeat(3,2.4rem)]",
+  "sm:grid-cols-[1.4fr_3fr_5.5rem_repeat(4,2.4rem)]",
+];
+
+// subtle movement suffix on the title odds — only when it actually moved
+function Delta({ d }: { d?: number }) {
+  if (d === undefined || Math.abs(d) < 0.01) return null;
+  const up = d > 0;
+  return (
+    <span className={`ml-1 text-[10px] ${up ? "text-accent" : "text-danger"}`}>
+      {up ? "▲" : "▼"}
+      {Math.abs(Math.round(d * 100))}
+    </span>
+  );
+}
 
 export default function TitleRace({ rows }: { rows: SimRow[] }) {
   const [expanded, setExpanded] = useState(false);
+  const [open, setOpen] = useState<string | null>(null);
   const max = Math.max(...rows.map((r) => r.champ), 0.001);
   const shown = expanded ? rows : rows.slice(0, TOP);
   const hidden = rows.length - TOP;
@@ -49,7 +70,10 @@ export default function TitleRace({ rows }: { rows: SimRow[] }) {
   const rounds = ROUNDS.filter((c) =>
     rows.some((r) => c.get(r) > 0 && c.get(r) < 0.9995)
   );
-  const grid = `grid grid-cols-[1fr_auto] ${GRID[rounds.length]} gap-2 px-4`;
+  const hasNext = rows.some((r) => r.next);
+  const grid = `grid grid-cols-[1fr_auto] ${
+    (hasNext ? GRID_NEXT : GRID)[rounds.length]
+  } gap-2 px-4`;
 
   return (
     <div className="rounded-lg border border-line bg-panel/70 overflow-hidden card-shadow">
@@ -57,6 +81,7 @@ export default function TitleRace({ rows }: { rows: SimRow[] }) {
       <div className={`${grid} py-2 border-b border-line bg-panel2/60 text-[10px] uppercase tracking-wider text-muted`}>
         <span>Team</span>
         <span className="hidden sm:block">Win title</span>
+        {hasNext && <span className="hidden sm:block text-right">Next</span>}
         {rounds.map((c) => (
           <span key={c.label} className="hidden sm:block text-right">
             {c.label}
@@ -67,48 +92,91 @@ export default function TitleRace({ rows }: { rows: SimRow[] }) {
 
       <div className="divide-y divide-line/60">
         {shown.map((r, i) => (
-          <div
-            key={r.key}
-            className={`${grid} py-1.5 items-center text-sm hover:bg-panel2/40`}
-          >
-            {/* team */}
-            <div className="flex items-center gap-2 min-w-0">
-              <span className="text-xs text-muted w-4 tabnums text-right">
-                {i + 1}
-              </span>
-              <Crest teamKey={r.key} code={r.key} size={18} />
-              <span className="truncate">{r.name}</span>
-            </div>
-
-            {/* champ bar (desktop) */}
-            <div className="hidden sm:flex items-center gap-2">
-              <div className="flex-1 h-2.5 rounded-full bg-zinc-800 overflow-hidden">
-                <div
-                  className={`h-full ${
-                    i === 0 ? "bg-accent" : i < 4 ? "bg-accent/70" : "bg-accent/40"
-                  }`}
-                  style={{ width: `${Math.max(2, (r.champ / max) * 100)}%` }}
-                />
+          <div key={r.key}>
+            <button
+              type="button"
+              onClick={() => setOpen(open === r.key ? null : r.key)}
+              className={`${grid} w-full py-1.5 items-center text-left text-sm hover:bg-panel2/40`}
+            >
+              {/* team */}
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="text-xs text-muted w-4 tabnums text-right">
+                  {i + 1}
+                </span>
+                <Crest teamKey={r.key} code={r.key} size={18} />
+                <span className="truncate">{r.name}</span>
               </div>
-              <span className="tabnums text-xs w-12 text-right text-text">
+
+              {/* champ bar (desktop) */}
+              <div className="hidden sm:flex items-center gap-2">
+                <div className="flex-1 h-2.5 rounded-full bg-zinc-800 overflow-hidden">
+                  <div
+                    className={`h-full ${
+                      i === 0 ? "bg-accent" : i < 4 ? "bg-accent/70" : "bg-accent/40"
+                    }`}
+                    style={{ width: `${Math.max(2, (r.champ / max) * 100)}%` }}
+                  />
+                </div>
+                <span className="tabnums text-xs w-[4.5rem] text-right text-text">
+                  {champPct(r.champ)}
+                  <Delta d={r.dChamp} />
+                </span>
+              </div>
+
+              {/* next tie (desktop) */}
+              {hasNext && (
+                <span className="hidden sm:block tabnums text-right text-xs text-muted">
+                  {r.next ? (
+                    <>
+                      <span className="text-zinc-600">v</span> {r.next.opp}{" "}
+                      <span className={r.next.live ? "text-accent" : "text-zinc-400"}>
+                        {Math.round(r.next.p * 100)}%
+                      </span>
+                    </>
+                  ) : (
+                    "·"
+                  )}
+                </span>
+              )}
+
+              {/* round columns (desktop) — only rounds still in play */}
+              {rounds.map((c) => (
+                <span
+                  key={c.label}
+                  className="hidden sm:block tabnums text-right text-xs text-muted"
+                >
+                  {p(c.get(r))}
+                </span>
+              ))}
+
+              {/* champ only (mobile) */}
+              <span className="sm:hidden tabnums text-right text-xs text-accent">
                 {champPct(r.champ)}
+                <Delta d={r.dChamp} />
               </span>
-            </div>
+            </button>
 
-            {/* round columns (desktop) — only rounds still in play */}
-            {rounds.map((c) => (
-              <span
-                key={c.label}
-                className="hidden sm:block tabnums text-right text-xs text-muted"
-              >
-                {p(c.get(r))}
-              </span>
-            ))}
-
-            {/* champ only (mobile) */}
-            <span className="sm:hidden tabnums text-right text-xs text-accent">
-              {champPct(r.champ)}
-            </span>
+            {/* the path — likely opponents per remaining round */}
+            {open === r.key && r.path && r.path.length > 0 && (
+              <div className="px-4 pb-2 pt-0.5 pl-[3.25rem] text-[11px] text-muted space-y-0.5">
+                {r.path.map((pr) => (
+                  <div key={pr.round} className="flex items-baseline gap-2 tabnums">
+                    <span className="w-8 shrink-0 uppercase tracking-wider text-zinc-500">
+                      {pr.round}
+                    </span>
+                    <span>
+                      {pr.opps.map((o, j) => (
+                        <span key={o.key}>
+                          {j > 0 && <span className="text-zinc-600"> · </span>}
+                          <span className="text-zinc-300">{o.key}</span>{" "}
+                          {o.p >= 0.9995 ? "" : `${Math.round(o.p * 100)}%`}
+                        </span>
+                      ))}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>

@@ -108,6 +108,11 @@ export function buildUpperMatches(
   return out;
 }
 
+export type PathRound = {
+  round: string; // R16 / QF / SF / Final
+  opps: { key: string; p: number }[]; // most likely opponents, given they get there
+};
+
 export type SimRow = {
   key: string;
   name: string;
@@ -117,6 +122,9 @@ export type SimRow = {
   sf: number;
   qf: number;
   r16: number;
+  dChamp?: number; // title-odds movement vs ~a day ago (consensus board)
+  next?: { opp: string; p: number; live?: boolean }; // team's next tie + advance odds
+  path?: PathRound[]; // likely opponents per remaining round
 };
 
 export function simulate(
@@ -134,6 +142,21 @@ export function simulate(
   const qf: Record<string, number> = {};
   const r16: Record<string, number> = {};
   const bump = (o: Record<string, number>, k: string) => (o[k] = (o[k] || 0) + 1);
+
+  // who meets whom, per round: opp[team][round][opponent] pairing counts and
+  // part[team][round] appearances — their ratio is "likely opponent given
+  // you get there", which powers the path-to-the-final view
+  const opp: Record<string, Record<string, Record<string, number>>> = {};
+  const part: Record<string, Record<string, number>> = {};
+  const meet = (round: string, a: string, b: string) => {
+    for (const [x, y] of [
+      [a, b],
+      [b, a],
+    ]) {
+      ((opp[x] ??= {})[round] ??= {})[y] = (opp[x][round][y] ?? 0) + 1;
+      (part[x] ??= {})[round] = (part[x][round] ?? 0) + 1;
+    }
+  };
 
   for (let i = 0; i < iters; i++) {
     const res: Record<string, string> = {};
@@ -169,11 +192,13 @@ export function simulate(
     for (const node of UPPER) {
       const m = byId.get(node.id);
       if (m) {
+        meet(node.round, m.homeKey, m.awayKey);
         res[node.id] = resolveKnown(m);
         continue;
       }
       const a = res[node.a];
       const b = res[node.b];
+      meet(node.round, a, b);
       // venue unknown for hypothetical future ties — hosts get half their
       // crowd bump as the expected value across possible venues
       const ha = (HOST_ADV[a] ?? 0) / 2;
@@ -187,6 +212,31 @@ export function simulate(
     bump(champ, res["final"]); // final winner = champion
   }
 
+  // likely opponents per round for each team, conditioned on getting there;
+  // rounds the team has already played (or can't reach) are left out
+  const played: Record<string, Set<string>> = {};
+  for (const node of UPPER) {
+    const m = byId.get(node.id);
+    if (m && m.status === "final") {
+      (played[m.homeKey] ??= new Set()).add(node.round);
+      (played[m.awayKey] ??= new Set()).add(node.round);
+    }
+  }
+  const ROUND_ORDER = ["R16", "QF", "SF", "Final"];
+  const pathFor = (key: string): PathRound[] => {
+    const out: PathRound[] = [];
+    for (const round of ROUND_ORDER) {
+      const n = part[key]?.[round] ?? 0;
+      if (n === 0 || played[key]?.has(round)) continue;
+      const opps = Object.entries(opp[key][round])
+        .map(([k, c]) => ({ key: k, p: c / n }))
+        .sort((a, b) => b.p - a.p)
+        .slice(0, 3);
+      out.push({ round, opps });
+    }
+    return out;
+  };
+
   return Object.entries(TEAMS)
     .map(([key, t]: [string, Team]) => ({
       key,
@@ -197,6 +247,7 @@ export function simulate(
       sf: (sf[key] || 0) / iters,
       qf: (qf[key] || 0) / iters,
       r16: (r16[key] || 0) / iters,
+      path: pathFor(key),
     }))
     .filter((r) => r.r16 > 0)
     .sort((a, b) => b.champ - a.champ || b.final - a.final);

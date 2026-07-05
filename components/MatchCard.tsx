@@ -176,8 +176,20 @@ export default function MatchCard({ m }: { m: MatchView }) {
                 Books ({m.market.books})
               </span>
               <span className="text-zinc-400">
-                {m.home.code} {pct(m.market.advHome)} ·{" "}
-                {pct(1 - m.market.advHome)} {m.away.code}
+                {m.home.code} {pct(m.market.advHome)}
+                {m.market.delta !== undefined &&
+                  Math.abs(m.market.delta) >= 0.04 && (
+                    <span
+                      className={
+                        m.market.delta > 0 ? "text-accent" : "text-danger"
+                      }
+                    >
+                      {" "}
+                      {m.market.delta > 0 ? "▲" : "▼"}
+                      {Math.abs(Math.round(m.market.delta * 100))}
+                    </span>
+                  )}{" "}
+                · {pct(1 - m.market.advHome)} {m.away.code}
               </span>
               {mag >= 0.08 ? (
                 <span className="font-semibold text-warn">
