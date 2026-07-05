@@ -6,7 +6,12 @@
 // the whole tournament where a market price exists (top contenders only).
 // ---------------------------------------------------------------------------
 
-import { DERIVED_RATINGS } from "./derivedRatings";
+import { DERIVED_RATINGS, TEAM_STYLE } from "./derivedRatings";
+
+// Attack/concede style residuals for the goals model (see compute-ratings).
+export function teamStyle(key: string) {
+  return TEAM_STYLE[key];
+}
 
 export type Team = {
   name: string;

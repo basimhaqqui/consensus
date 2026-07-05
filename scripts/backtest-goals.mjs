@@ -50,8 +50,9 @@ function tau(h, a, lh, la, rho) {
   return 1;
 }
 
-// additive: the shipped link. log: multiplicative, supremacy scales rates.
-function lambdas(m, diff) {
+// additive: the old shipped link. log: multiplicative, supremacy scales
+// rates. style: log link plus per-team attack/concede residuals.
+function lambdas(m, diff, homeTeam, awayTeam) {
   if (m.kind === "add") {
     const s = Math.max(-m.cap, Math.min(m.cap, diff / m.div));
     return {
@@ -60,14 +61,47 @@ function lambdas(m, diff) {
     };
   }
   const s = Math.max(-3, Math.min(3, diff / m.div));
+  if (m.kind === "style") {
+    const g = (map, t) => map.get(t) ?? 0;
+    return {
+      lh: Math.exp(m.mu + s / 2 + g(m.att, homeTeam) + g(m.con, awayTeam)),
+      la: Math.exp(m.mu - s / 2 + g(m.att, awayTeam) + g(m.con, homeTeam)),
+    };
+  }
   return { lh: Math.exp(m.mu + s / 2), la: Math.exp(m.mu - s / 2) };
 }
 
-const MODELS = [{ name: "shipped add/210/1.35", kind: "add", div: 210, base: 1.35, cap: 3, rho: -0.1 }];
-for (const div of [250, 300, 350, 400, 450])
-  for (const mu of [0.2, 0.25, 0.3])
-    for (const rho of [-0.13, -0.1, -0.07])
-      MODELS.push({ name: `log/${div}/mu${mu}/rho${rho}`, kind: "log", div, mu, rho });
+// online SGD on the Poisson log-likelihood, with a light pull toward zero so
+// old form fades; clamped to keep any team inside a sane style band
+function styleUpdate(m, homeTeam, awayTeam, diff, hs, as) {
+  if (m.kind !== "style") return;
+  const { lh, la } = lambdas(m, diff, homeTeam, awayTeam);
+  const clamp = (v) => Math.max(-0.35, Math.min(0.35, v));
+  const upd = (map, t, grad) =>
+    map.set(t, clamp(((map.get(t) ?? 0) * 0.995) + m.eta * grad));
+  upd(m.att, homeTeam, hs - lh);
+  upd(m.con, awayTeam, hs - lh);
+  upd(m.att, awayTeam, as - la);
+  upd(m.con, homeTeam, as - la);
+}
+
+const MODELS = [
+  { name: "shipped log/300/mu0.2", kind: "log", div: 300, mu: 0.2, rho: -0.07 },
+];
+// attack/defence residual variants: per-team style offsets on the shipped
+// link, learned online by Poisson SGD (att = scores more than rating says,
+// con = concedes more). eta is the learning rate.
+for (const eta of [0.01, 0.02, 0.04])
+  MODELS.push({
+    name: `style eta=${eta}`,
+    kind: "style",
+    div: 300,
+    mu: 0.2,
+    rho: -0.07,
+    eta,
+    att: new Map(),
+    con: new Map(),
+  });
 
 // --- scoring ----------------------------------------------------------------
 
@@ -83,8 +117,8 @@ function mkStat() {
 }
 const bucketOf = (adiff) => (adiff < 100 ? 0 : adiff < 250 ? 1 : 2);
 
-function scoreMatch(stat, m, diff, hs, as) {
-  const { lh, la } = lambdas(m, diff);
+function scoreMatch(stat, m, diff, hs, as, homeTeam, awayTeam) {
+  const { lh, la } = lambdas(m, diff, homeTeam, awayTeam);
   let T = 0;
   let pCell = 0;
   let best = -1;
@@ -150,15 +184,17 @@ for (const m of matches) {
     (played.get(m.away) ?? 0) >= MIN_MATCHES
   ) {
     const diff = Ra + hfa - Rb;
-    for (const mod of MODELS) scoreMatch(stats.get(mod.name), mod, diff, hs, as);
+    for (const mod of MODELS) scoreMatch(stats.get(mod.name), mod, diff, hs, as, m.home, m.away);
     const K = weight(m.tournament);
-    const { lh, la } = lambdas(REF, diff);
+    const { lh, la } = lambdas(REF, diff, m.home, m.away);
     const c = ctx.get(K) ?? { pred: 0, act: 0, n: 0 };
     c.pred += lh + la;
     c.act += hs + as;
     c.n++;
     ctx.set(K, c);
   }
+
+  for (const mod of MODELS) styleUpdate(mod, m.home, m.away, Ra + hfa - Rb, hs, as);
 
   const dr = Ra + hfa - Rb;
   const We = 1 / (1 + Math.pow(10, -dr / 400));

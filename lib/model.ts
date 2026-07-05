@@ -43,15 +43,28 @@ function poisson(k: number, lambda: number): number {
 // lower-scoring than club football, so club surfaces pass MU_CLUB.
 export const MU_INTL = 0.2; // exp(0.2)*2 ~ 2.44 goals at even strength
 export const MU_CLUB = 0.32; // exp(0.32)*2 ~ 2.75, the club-league norm
+
+// Per-team attack/concede residuals (see compute-ratings.mjs) — one rating
+// can't distinguish 3-1 teams from 1-0 teams; these can. Validated by
+// backtest-goals.mjs: they improve scoreline likelihood, exact-score hits,
+// totals calibration and even W/D/L log loss.
+export type Style = { att: number; con: number };
+
 function expectedGoals(
   ratingHome: number,
   ratingAway: number,
-  mu: number = MU_INTL
+  mu: number = MU_INTL,
+  styleHome?: Style,
+  styleAway?: Style
 ) {
   const diff = ratingHome - ratingAway; // includes any home edge baked into rating
   const supremacy = Math.max(-3.0, Math.min(3.0, diff / 300));
-  const lambdaHome = Math.exp(mu + supremacy / 2);
-  const lambdaAway = Math.exp(mu - supremacy / 2);
+  const lambdaHome = Math.exp(
+    mu + supremacy / 2 + (styleHome?.att ?? 0) + (styleAway?.con ?? 0)
+  );
+  const lambdaAway = Math.exp(
+    mu - supremacy / 2 + (styleAway?.att ?? 0) + (styleHome?.con ?? 0)
+  );
   return { lambdaHome, lambdaAway };
 }
 
@@ -70,9 +83,17 @@ function tau(h: number, a: number, lh: number, la: number): number {
 export function forecast(
   ratingHome: number,
   ratingAway: number,
-  mu?: number // MU_INTL (default) for nations, MU_CLUB for league surfaces
+  mu?: number, // MU_INTL (default) for nations, MU_CLUB for league surfaces
+  styleHome?: Style,
+  styleAway?: Style
 ): Outcome {
-  const { lambdaHome, lambdaAway } = expectedGoals(ratingHome, ratingAway, mu);
+  const { lambdaHome, lambdaAway } = expectedGoals(
+    ratingHome,
+    ratingAway,
+    mu,
+    styleHome,
+    styleAway
+  );
 
   let pHome = 0;
   let pDraw = 0;

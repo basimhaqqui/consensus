@@ -9,6 +9,9 @@ import Lineups from "@/components/Lineups";
 import { BallIcon } from "@/components/PlayerMarkers";
 import TeamStats from "@/components/TeamStats";
 import RecentMeetings from "@/components/RecentMeetings";
+import NewsPanel from "@/components/NewsPanel";
+import { fetchNews, newsFor } from "@/lib/news";
+import { briefFor } from "@/lib/briefs";
 import Nav from "@/components/Nav";
 
 export const dynamic = "force-dynamic";
@@ -51,7 +54,12 @@ export default async function MatchPage({
   if (!m) notFound();
   const adv = m.liveAdvance ?? m.advance;
 
-  const detail = await fetchMatchDetail(id, m.espnId);
+  const [detail, allNews] = await Promise.all([
+    fetchMatchDetail(id, m.espnId),
+    fetchNews(),
+  ]);
+  const news = newsFor(allNews, [m.home.name, m.away.name]);
+  const brief = m.status === "scheduled" ? briefFor(m.homeKey, m.awayKey) : undefined;
 
   // Before official lineups drop (~1h pre-kickoff), project each XI from the
   // team's last match — our prediction, badged as such.
@@ -261,6 +269,38 @@ export default async function MatchPage({
 
       {/* head to head */}
       {detail && <RecentMeetings games={detail.h2h} />}
+
+      {brief && (
+        <section className="mt-10">
+          <div className="mb-3 flex items-center gap-3">
+            <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+              Briefing
+            </h2>
+            <div className="h-px flex-1 bg-line" />
+          </div>
+          <div className="rounded-xl border border-line bg-panel card-shadow p-4 text-sm leading-relaxed text-zinc-200">
+            <p>{brief.text}</p>
+            {brief.sources.length > 0 && (
+              <p className="mt-2 text-[11px] text-muted">
+                {brief.sources.map((s, i) => (
+                  <a
+                    key={s.href}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-zinc-300"
+                  >
+                    {i > 0 && " · "}
+                    {s.headline}
+                  </a>
+                ))}
+              </p>
+            )}
+          </div>
+        </section>
+      )}
+
+      <NewsPanel items={news} title="In the news" limit={3} />
     </div>
   );
 }

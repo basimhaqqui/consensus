@@ -2,6 +2,7 @@ import {
   FIXTURES,
   TEAMS,
   teamRating,
+  teamStyle,
   type Fixture,
   type Team,
   type RatingSource,
@@ -63,7 +64,13 @@ function buildModel(f: Fixture, source: RatingSource): MatchView {
   const away = TEAMS[f.away];
   const rHome = teamRating(f.home, source) + (f.homeAdv ?? 0);
   const rAway = teamRating(f.away, source);
-  const outcome = forecast(rHome, rAway);
+  const outcome = forecast(
+    rHome,
+    rAway,
+    undefined,
+    teamStyle(f.home),
+    teamStyle(f.away)
+  );
   const advance = advanceProb(outcome);
   const confidence = Math.abs(advance.home - advance.away);
   const modelPickKey = advance.home >= advance.away ? f.home : f.away;

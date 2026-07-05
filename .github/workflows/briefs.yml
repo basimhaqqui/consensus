@@ -1,0 +1,38 @@
+name: match-briefs
+
+on:
+  schedule:
+    - cron: "41 */4 * * *" # every 4 hours, offset from the ledger cron
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install SDK
+        run: npm install --no-save --no-audit --no-fund @anthropic-ai/sdk
+
+      - name: Generate match briefs
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+        run: node scripts/briefs.mjs
+
+      - name: Commit brief updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase
+          git add data/briefs.json
+          git diff --cached --quiet || git commit -m "Update match briefs"
+          git push

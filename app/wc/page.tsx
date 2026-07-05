@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getBoards } from "@/lib/live";
 import { getStandings } from "@/lib/standings";
+import { fetchNews } from "@/lib/news";
+import NewsPanel from "@/components/NewsPanel";
 import { ledgerSummary } from "@/lib/ledger";
 import { LAST_UPDATED, TEAMS } from "@/lib/data";
 import LiveBoard from "@/components/LiveBoard";
@@ -12,9 +14,10 @@ import Footer from "@/components/Footer";
 export const dynamic = "force-dynamic";
 
 export default async function WorldCup() {
-  const [boards, groups] = await Promise.all([
+  const [boards, groups, news] = await Promise.all([
     getBoards(),
     getStandings("fifa.world"),
+    fetchNews(),
   ]);
   const initial = { ...boards, updatedAt: new Date().toISOString() };
 
@@ -64,6 +67,8 @@ export default async function WorldCup() {
           <Standings groups={groups} highlightTop={2} />
         </section>
       )}
+
+      <NewsPanel items={news} />
 
       <LedgerPanel />
 

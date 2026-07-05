@@ -3,6 +3,7 @@ import {
   HOST_ADV,
   TEAMS,
   teamRating,
+  teamStyle,
   venueHostAdv,
   type Team,
   type RatingSource,
@@ -53,11 +54,16 @@ const SF_IDS = UPPER.filter((n) => n.round === "SF").map((n) => n.id);
 
 // Neutral-venue win probability between two ratings (memoised).
 const wpCache = new Map<string, number>();
-function winProbR(ra: number, rb: number): number {
-  const key = `${ra}|${rb}`;
+function winProbR(
+  aKey: string,
+  bKey: string,
+  ra: number,
+  rb: number
+): number {
+  const key = `${aKey}|${bKey}|${ra}|${rb}`;
   const hit = wpCache.get(key);
   if (hit !== undefined) return hit;
-  const o = forecast(ra, rb);
+  const o = forecast(ra, rb, undefined, teamStyle(aKey), teamStyle(bKey));
   const ap = advanceProb(o);
   wpCache.set(key, ap.home);
   return ap.home;
@@ -183,7 +189,7 @@ export function simulate(
       const f = fixById.get(fid)!;
       const ra = R(f.home) + (f.homeAdv ?? 0);
       const rb = R(f.away);
-      res[fid] = Math.random() < winProbR(ra, rb) ? f.home : f.away;
+      res[fid] = Math.random() < winProbR(f.home, f.away, ra, rb) ? f.home : f.away;
     }
     R32_IDS.forEach((fid) => bump(r16, res[fid])); // R32 winners reach R16
 
@@ -203,7 +209,7 @@ export function simulate(
       // crowd bump as the expected value across possible venues
       const ha = (HOST_ADV[a] ?? 0) / 2;
       const hb = (HOST_ADV[b] ?? 0) / 2;
-      res[node.id] = Math.random() < winProbR(R(a) + ha, R(b) + hb) ? a : b;
+      res[node.id] = Math.random() < winProbR(a, b, R(a) + ha, R(b) + hb) ? a : b;
     }
 
     R16_IDS.forEach((id) => bump(qf, res[id])); // R16 winners reach QF

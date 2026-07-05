@@ -3,35 +3,168 @@
 
 export const DERIVED_RATINGS: Record<string, number> = {
   "RSA": 1698,
-  "CAN": 1875,
-  "BRA": 2097,
-  "JPN": 1995,
-  "GER": 1999,
-  "PAR": 1904,
-  "NED": 2047,
-  "MAR": 2027,
-  "IVO": 1861,
-  "NOR": 1984,
-  "FRA": 2190,
-  "SWE": 1806,
-  "MEX": 2018,
-  "ECU": 1995,
-  "ENG": 2110,
-  "COD": 1821,
-  "BEL": 1966,
-  "SEN": 1907,
-  "USA": 1881,
-  "BIH": 1678,
-  "ESP": 2211,
-  "AUT": 1909,
-  "POR": 2057,
-  "CRO": 1968,
-  "SUI": 1980,
-  "ALG": 1895,
-  "AUS": 1913,
-  "EGY": 1861,
-  "ARG": 2227,
-  "CPV": 1693,
-  "COL": 2089,
-  "GHA": 1677
+  "CAN": 1844,
+  "BRA": 2118,
+  "JPN": 1974,
+  "GER": 1991,
+  "PAR": 1903,
+  "NED": 2046,
+  "MAR": 2059,
+  "IVO": 1841,
+  "NOR": 2003,
+  "FRA": 2210,
+  "SWE": 1795,
+  "MEX": 2048,
+  "ECU": 1965,
+  "ENG": 2120,
+  "COD": 1812,
+  "BEL": 1991,
+  "SEN": 1882,
+  "USA": 1894,
+  "BIH": 1665,
+  "ESP": 2226,
+  "AUT": 1893,
+  "POR": 2080,
+  "CRO": 1945,
+  "SUI": 2014,
+  "ALG": 1861,
+  "AUS": 1909,
+  "EGY": 1865,
+  "ARG": 2230,
+  "CPV": 1690,
+  "COL": 2094,
+  "GHA": 1672
+};
+
+// Attack/concede style residuals (log-goal scale) — att > 0 scores more
+// than the rating implies, con > 0 concedes more. See compute-ratings.mjs.
+export const TEAM_STYLE: Record<string, { att: number; con: number }> = {
+  "RSA": {
+    "att": -0.079,
+    "con": -0.145
+  },
+  "CAN": {
+    "att": 0.09,
+    "con": -0.144
+  },
+  "BRA": {
+    "att": 0.14,
+    "con": -0.117
+  },
+  "JPN": {
+    "att": 0.182,
+    "con": -0.114
+  },
+  "GER": {
+    "att": 0.268,
+    "con": 0.112
+  },
+  "PAR": {
+    "att": -0.04,
+    "con": -0.185
+  },
+  "NED": {
+    "att": 0.165,
+    "con": 0.032
+  },
+  "MAR": {
+    "att": 0.025,
+    "con": -0.263
+  },
+  "IVO": {
+    "att": 0.056,
+    "con": -0.168
+  },
+  "NOR": {
+    "att": 0.284,
+    "con": -0.046
+  },
+  "FRA": {
+    "att": 0.06,
+    "con": -0.027
+  },
+  "SWE": {
+    "att": 0.198,
+    "con": 0.059
+  },
+  "MEX": {
+    "att": 0.024,
+    "con": -0.134
+  },
+  "ECU": {
+    "att": -0.054,
+    "con": -0.237
+  },
+  "ENG": {
+    "att": 0.03,
+    "con": -0.149
+  },
+  "COD": {
+    "att": -0.037,
+    "con": -0.185
+  },
+  "BEL": {
+    "att": 0.179,
+    "con": -0.002
+  },
+  "SEN": {
+    "att": 0.061,
+    "con": -0.099
+  },
+  "USA": {
+    "att": 0.189,
+    "con": 0.001
+  },
+  "BIH": {
+    "att": 0.038,
+    "con": -0.086
+  },
+  "ESP": {
+    "att": 0.111,
+    "con": -0.053
+  },
+  "AUT": {
+    "att": 0.127,
+    "con": -0.048
+  },
+  "POR": {
+    "att": 0.138,
+    "con": -0.067
+  },
+  "CRO": {
+    "att": 0.024,
+    "con": 0.007
+  },
+  "SUI": {
+    "att": 0.143,
+    "con": -0.044
+  },
+  "ALG": {
+    "att": 0.149,
+    "con": -0.056
+  },
+  "AUS": {
+    "att": 0.049,
+    "con": -0.158
+  },
+  "EGY": {
+    "att": -0.042,
+    "con": -0.178
+  },
+  "ARG": {
+    "att": 0.013,
+    "con": -0.186
+  },
+  "CPV": {
+    "att": -0.022,
+    "con": -0.136
+  },
+  "COL": {
+    "att": 0.078,
+    "con": -0.179
+  },
+  "GHA": {
+    "att": -0.028,
+    "con": -0.144
+  }
 };
