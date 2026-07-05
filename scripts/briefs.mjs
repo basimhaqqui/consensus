@@ -144,7 +144,9 @@ for (const m of upcoming) {
     system:
       "You write terse pre-match briefings for a football intelligence site. " +
       "2-3 sentences, factual, no hype, no betting language. Only include " +
-      "information supported by the sources. If sources are thin, say less.",
+      "information supported by the sources. Output the briefing text alone - " +
+      "never mention the sources, their quality, or these instructions. If the " +
+      "sources contain nothing relevant to this match, reply with exactly SKIP.",
     messages: [
       {
         role: "user",
@@ -163,7 +165,7 @@ for (const m of upcoming) {
     .map((b) => b.text)
     .join("")
     .trim();
-  if (!text) continue;
+  if (!text || /^SKIP\.?$/i.test(text)) continue;
 
   briefs[key(m)] = {
     text,
