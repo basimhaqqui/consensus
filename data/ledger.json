@@ -187,7 +187,16 @@
         "blend": 0.6114,
         "market": 0.6773
       },
-      "capturedAt": "2026-07-05T17:31:57.547Z"
+      "capturedAt": "2026-07-05T17:31:57.547Z",
+      "result": {
+        "winnerKey": "NOR",
+        "score": {
+          "home": 1,
+          "away": 2
+        },
+        "detail": "FT",
+        "gradedAt": "2026-07-05T23:17:27.580Z"
+      }
     },
     {
       "id": "r16-4",
