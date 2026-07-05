@@ -1,37 +1,46 @@
 {
-  "generated": "2026-07-05T09:35:33.154Z",
+  "generated": "2026-07-05T14:19:21.794Z",
   "briefs": {
     "BRA|NOR": {
-      "text": "Brazil meet Norway in the last 16, with the winner advancing to the quarter-finals. Norway are appearing at their first World Cup in 28 years and have never previously reached the last eight. Erling Haaland leads the Norwegian side against Brazil.",
+      "text": "Brazil face Norway in the World Cup round of 16, with Norway making their first World Cup appearance in 28 years and seeking to reach the quarter-finals for the first time. The tie carries a subplot in the meeting of Premier League rivals Erling Haaland and Gabriel, whose club feud extends to the international stage.",
       "sources": [
         {
           "headline": "World Cup Daily live: Mexico fans try to give England sleepless night",
           "href": "https://www.espn.com/soccer/story/_/id/49274470/mexico-england-brazil-norway-round-16"
+        },
+        {
+          "headline": "Brazil vs. Norway: Gabriel and Haaland take rivalry to international stage",
+          "href": "https://www.espn.com/soccer/story/_/id/49275459/brazil-vs-norway-gabriel-haaland-take-rivalry-international-stage"
         },
         {
           "headline": "Stay humble - the Premier League feud about to hit world stage",
           "href": "https://www.bbc.co.uk/sport/football/articles/c2ky2x52kwlo?at_medium=RSS&amp;at_campaign=rss"
-        },
-        {
-          "headline": "Brazil going out? Chris Sutton predicts World Cup's last-16 matches",
-          "href": "https://www.bbc.co.uk/sport/football/articles/c1my20zyn2eo?at_medium=RSS&amp;at_campaign=rss"
         }
       ]
     },
     "ENG|MEX": {
-      "text": "England meet host nation Mexico in the World Cup round of 16, with the match being played in Mexico City. Mexico coach Javier Aguirre said his side will need an almost perfect performance to advance, while England manager Thomas Tuchel expects the conditions to bring out his team's best. Altitude and the venue's history present added challenges for England.",
+      "text": "England meet Mexico in the World Cup round of 16, with the match played in Mexico. Mexico coach Javier Aguirre said his side will need an almost perfect performance to win, while Thomas Tuchel and Jordan Henderson dismissed local media claims regarding altitude preparation. Harry Kane is targeting a place in the quarterfinals.",
       "sources": [
         {
           "headline": "World Cup Daily live: Mexico fans try to give England sleepless night",
           "href": "https://www.espn.com/soccer/story/_/id/49274470/mexico-england-brazil-norway-round-16"
         },
         {
-          "headline": "Fast-food chain Greggs benches Mexican sandwich ahead on England World Cup match",
-          "href": "https://www.espn.com/soccer/story/_/id/49274751/fast-food-chain-greggs-benches-mexican-sandwich-ahead-england-world-cup-match"
+          "headline": "2026 FIFA World Cup match schedule: Fixtures, results, features",
+          "href": "https://www.espn.com/soccer/story/_/id/48939282/2026-fifa-world-cup-fixtures-results-match-schedule-group-stage-knockout-rounds-bracket"
         },
         {
-          "headline": "Aguirre: Mexico will need an almost perfect match to beat England",
-          "href": "https://www.espn.com/video/clip/_/id/49274699/mexico-need-almost-perfect-match-beat-england"
+          "headline": "Tuchel and Henderson laugh off Mexico media Viagra altitude claim",
+          "href": "https://www.espn.com/video/clip/_/id/49275333/tuchel-henderson-laugh-mexico-media-viagra-altitude-claim"
+        }
+      ]
+    },
+    "BEL|USA": {
+      "text": "Belgium reached this stage with a 3-2 win over Senegal. Head coach Rudi Garcia has since sought to clarify post-match comments that drew accusations of racism.",
+      "sources": [
+        {
+          "headline": "Belgium's Rudi Garcia moves to clear up 'those teams' comments after win over Senegal",
+          "href": "https://www.espn.com/espn/story/_/id/49275122/belgium-rudi-garcia-moves-clear-teams-comments-win-senegal"
         }
       ]
     }
