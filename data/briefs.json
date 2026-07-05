@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-05T09:34:14.839Z",
+  "generated": "2026-07-05T09:35:33.154Z",
   "briefs": {
     "BRA|NOR": {
-      "text": "Brazil face Norway in the World Cup last 16, with the model favouring Brazil to advance. Norway are appearing at their first World Cup in 28 years and are seeking a maiden quarter-final berth. The tie also features a meeting involving Erling Haaland as Norway take on Brazil.",
+      "text": "Brazil meet Norway in the last 16, with the winner advancing to the quarter-finals. Norway are appearing at their first World Cup in 28 years and have never previously reached the last eight. Erling Haaland leads the Norwegian side against Brazil.",
       "sources": [
         {
           "headline": "World Cup Daily live: Mexico fans try to give England sleepless night",
@@ -19,7 +19,7 @@
       ]
     },
     "ENG|MEX": {
-      "text": "England, given a strong advance edge, face hosts Mexico in the World Cup round of 16, with the match played at altitude in Mexico City. Mexico manager Javier Aguirre acknowledged his side will need an almost perfect performance to win, while England's Thomas Tuchel expects the conditions to bring out his team's best. Captain Harry Kane has called on fans back home to stay up for the late kick-off.",
+      "text": "England meet host nation Mexico in the World Cup round of 16, with the match being played in Mexico City. Mexico coach Javier Aguirre said his side will need an almost perfect performance to advance, while England manager Thomas Tuchel expects the conditions to bring out his team's best. Altitude and the venue's history present added challenges for England.",
       "sources": [
         {
           "headline": "World Cup Daily live: Mexico fans try to give England sleepless night",
@@ -32,15 +32,6 @@
         {
           "headline": "Aguirre: Mexico will need an almost perfect match to beat England",
           "href": "https://www.espn.com/video/clip/_/id/49274699/mexico-need-almost-perfect-match-beat-england"
-        }
-      ]
-    },
-    "BEL|USA": {
-      "text": "Belgium enter as the stronger side per the model (72% to advance). \n\nNote: The provided source refers to Senegal's World Cup exit and internal disputes, not this fixture, so no relevant team news is available for USA v Belgium.",
-      "sources": [
-        {
-          "headline": "Senegal's Ismaila Sarr refutes rumours of Pape Gueye 'altercation'; urges 'unity' after World Cup exit",
-          "href": "https://www.espn.com/espn/story/_/id/49272642/senegal-ismaila-sarr-refutes-rumours-pape-gueye-altercation-urges-unity-world-cup-exit"
         }
       ]
     }
