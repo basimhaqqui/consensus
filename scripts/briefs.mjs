@@ -119,6 +119,7 @@ try {
 } catch {}
 
 const briefs = {};
+const dropped = new Set(); // processed but skipped - evict any stale entry
 for (const m of upcoming) {
   const names = [m.home.name, m.away.name];
   const relevant = pool.filter((a) => {
@@ -126,7 +127,10 @@ for (const m of upcoming) {
     return names.some((n) => hay.includes(n.toLowerCase()));
   });
   const posts = await xPosts(m.home.name, m.away.name);
-  if (!relevant.length && !posts.length) continue;
+  if (!relevant.length && !posts.length) {
+    dropped.add(key(m));
+    continue;
+  }
 
   const src = relevant
     .slice(0, 8)
@@ -165,7 +169,10 @@ for (const m of upcoming) {
     .map((b) => b.text)
     .join("")
     .trim();
-  if (!text || /^SKIP\.?$/i.test(text)) continue;
+  if (!text || /^SKIP\.?$/i.test(text)) {
+    dropped.add(key(m));
+    continue;
+  }
 
   briefs[key(m)] = {
     text,
@@ -174,7 +181,9 @@ for (const m of upcoming) {
   console.log(`briefed ${key(m)}`);
 }
 
-if (!Object.keys(briefs).length) {
+for (const k of dropped) delete existing.briefs[k];
+
+if (!Object.keys(briefs).length && !dropped.size) {
   console.log("no briefs produced - keeping existing file");
   process.exit(0);
 }
@@ -187,4 +196,4 @@ writeFileSync(
     2
   ) + "\n"
 );
-console.log(`wrote ${Object.keys(briefs).length} brief(s)`);
+console.log(`wrote ${Object.keys(briefs).length} brief(s), evicted ${dropped.size}`);
