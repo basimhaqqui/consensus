@@ -24,7 +24,7 @@ jobs:
       - name: Generate match briefs
         env:
           SITE_URL: ${{ vars.SITE_URL }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY || secrets.ANTHROPIC }}
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: node scripts/briefs.mjs
 
