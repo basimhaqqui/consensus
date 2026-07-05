@@ -188,6 +188,19 @@
         "market": 0.6773
       },
       "capturedAt": "2026-07-05T17:31:57.547Z"
+    },
+    {
+      "id": "r16-4",
+      "kickoffISO": "2026-07-06T00:00Z",
+      "home": "MEX",
+      "away": "ENG",
+      "venue": "Mexico City",
+      "forecasts": {
+        "model": 0.4859,
+        "blend": 0.4849,
+        "market": 0.4573
+      },
+      "capturedAt": "2026-07-05T21:19:10.410Z"
     }
   ]
 }
