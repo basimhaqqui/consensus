@@ -1,8 +1,8 @@
 {
-  "generated": "2026-07-05T14:19:21.794Z",
+  "generated": "2026-07-05T17:40:43.190Z",
   "briefs": {
     "BRA|NOR": {
-      "text": "Brazil face Norway in the World Cup round of 16, with Norway making their first World Cup appearance in 28 years and seeking to reach the quarter-finals for the first time. The tie carries a subplot in the meeting of Premier League rivals Erling Haaland and Gabriel, whose club feud extends to the international stage.",
+      "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
       "sources": [
         {
           "headline": "World Cup Daily live: Mexico fans try to give England sleepless night",
@@ -19,28 +19,36 @@
       ]
     },
     "ENG|MEX": {
-      "text": "England meet Mexico in the World Cup round of 16, with the match played in Mexico. Mexico coach Javier Aguirre said his side will need an almost perfect performance to win, while Thomas Tuchel and Jordan Henderson dismissed local media claims regarding altitude preparation. Harry Kane is targeting a place in the quarterfinals.",
+      "text": "Mexico host England in the World Cup round of 16, with Mexican fans gathering outside the England team hotel overnight in an attempt to disrupt players' sleep. Mexico manager Aguirre said his side will need an almost perfect performance to win, while England's Tuchel dismissed local media claims about altitude and said the venue would bring out England's best. Mexico's squad were also required to return luxury watches gifted to them by a YouTuber.",
       "sources": [
+        {
+          "headline": "Mexico fans blast horns, set off fireworks outside England's hotel to try and disrupt players' sleep",
+          "href": "https://www.espn.com/soccer/story/_/id/49276691/mexico-fans-disruption-england-hotel-team-sleep-fifa-world-cup"
+        },
+        {
+          "headline": "Mexico squad return luxury watches gifted by influencer",
+          "href": "https://www.espn.com/soccer/story/_/id/49276146/mexico-luxury-watches-return-fifa-rules-stevewilldoit-world-cup-2026"
+        },
         {
           "headline": "World Cup Daily live: Mexico fans try to give England sleepless night",
           "href": "https://www.espn.com/soccer/story/_/id/49274470/mexico-england-brazil-norway-round-16"
-        },
-        {
-          "headline": "2026 FIFA World Cup match schedule: Fixtures, results, features",
-          "href": "https://www.espn.com/soccer/story/_/id/48939282/2026-fifa-world-cup-fixtures-results-match-schedule-group-stage-knockout-rounds-bracket"
-        },
-        {
-          "headline": "Tuchel and Henderson laugh off Mexico media Viagra altitude claim",
-          "href": "https://www.espn.com/video/clip/_/id/49275333/tuchel-henderson-laugh-mexico-media-viagra-altitude-claim"
         }
       ]
     },
     "BEL|USA": {
-      "text": "Belgium reached this stage with a 3-2 win over Senegal. Head coach Rudi Garcia has since sought to clarify post-match comments that drew accusations of racism.",
+      "text": "USA striker Folarin Balogun is available to face Belgium after FIFA suspended the red card he received against Bosnia-Herzegovina. Belgium coach Rudi Garcia has sought to clarify comments made after his side's 3-2 win over Senegal in the previous round, following accusations of racism.",
       "sources": [
+        {
+          "headline": "USMNT's Folarin Balogun has red card suspended by FIFA, available to face Belgium",
+          "href": "https://www.espn.com/soccer/story/_/id/49277378/usmnt-folarin-balogun-red-card-suspended-belgium"
+        },
         {
           "headline": "Belgium's Rudi Garcia moves to clear up 'those teams' comments after win over Senegal",
           "href": "https://www.espn.com/espn/story/_/id/49275122/belgium-rudi-garcia-moves-clear-teams-comments-win-senegal"
+        },
+        {
+          "headline": "USA striker Balogun's one-game ban suspended by Fifa",
+          "href": "https://www.bbc.co.uk/sport/football/articles/cewqq5q8v41o?at_medium=RSS&amp;at_campaign=rss"
         }
       ]
     }
