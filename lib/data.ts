@@ -7,6 +7,7 @@
 // ---------------------------------------------------------------------------
 
 import { DERIVED_RATINGS, TEAM_STYLE } from "./derivedRatings";
+import marketRatingsFile from "../data/market-ratings.json";
 
 // Attack/concede style residuals for the goals model (see compute-ratings).
 export function teamStyle(key: string) {
@@ -64,6 +65,22 @@ export const TEAMS: Record<string, Team> = {
 for (const [key, t] of Object.entries(TEAMS)) {
   t.marketRating = Math.round(1900 + (t.rating - 1900) * (300 / 90));
   if (DERIVED_RATINGS[key] !== undefined) t.rating = DERIVED_RATINGS[key];
+}
+
+// LIVE market ratings — scripts/market-ratings.mjs recalibrates surviving
+// teams from the books' title-outright odds (committed by the ledger cron,
+// refreshed on deploy). Overrides the stale pre-tournament values above.
+const LIVE_MARKET = marketRatingsFile as {
+  generated: string | null;
+  ratings: Record<string, number>;
+};
+if (
+  LIVE_MARKET.generated &&
+  Date.now() - Date.parse(LIVE_MARKET.generated) < 72 * 3600e3
+) {
+  for (const [key, r] of Object.entries(LIVE_MARKET.ratings)) {
+    if (TEAMS[key]) TEAMS[key].marketRating = r;
+  }
 }
 
 export type Fixture = {

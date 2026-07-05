@@ -61,14 +61,18 @@ const toDecimal = (american: number) =>
 // Fetch and de-vig. Returns null when no key is configured or the API fails.
 export async function fetchMarketOdds(): Promise<Map<string, MarketOdds> | null> {
   if (!KEY) return null;
-  // one region + hourly cache = ≤24 credits/day, safe inside the free
-  // 500/month tier (cost per refresh = markets × regions)
+  // local dev restarts wipe the fetch cache and the 30s live poll turns every
+  // session into a quota fire — opt in explicitly with ODDS_DEV=1
+  if (process.env.NODE_ENV === "development" && !process.env.ODDS_DEV)
+    return null;
+  // one region + 12h cache = ~2 credits/day; the free tier is 500/month and
+  // most of it is already spent this cycle
   const url =
     `https://api.the-odds-api.com/v4/sports/${SPORT}/odds` +
     `?apiKey=${KEY}&regions=us&markets=h2h&oddsFormat=american`;
   let events: any[];
   try {
-    const res = await fetch(url, { next: { revalidate: 3600 } }); // 1 h
+    const res = await fetch(url, { next: { revalidate: 43200 } }); // 12 h
     if (!res.ok) return null;
     events = await res.json();
     if (!Array.isArray(events)) return null;

@@ -18,6 +18,12 @@ jobs:
         with:
           node-version: 22
 
+      - name: Refresh market ratings from title outrights
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: node scripts/market-ratings.mjs
+
       - name: Capture and grade forecasts
         env:
           SITE_URL: ${{ vars.SITE_URL }}
