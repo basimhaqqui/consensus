@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-06T16:03:58.940Z",
+  "generated": "2026-07-06T18:28:33.229Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -36,8 +36,12 @@
       ]
     },
     "BEL|USA": {
-      "text": "USA leading scorer Folarin Balogun is available after FIFA rescinded his red card suspension, a decision Belgium's soccer federation has challenged over his eligibility and UEFA has publicly criticised. Balogun's return has shortened USA's odds to advance in this Round of 32 tie.",
+      "text": "U.S. forward Folarin Balogun remains cleared to play after FIFA rejected Belgium's request for an explanation of his suspended red card, deeming it \"inadmissible.\" UEFA has criticized the decision, saying FIFA \"crossed a red line\" in rescinding the ban.",
       "sources": [
+        {
+          "headline": "FIFA rejects Belgium request; Balogun still clear to play vs. Belgium",
+          "href": "https://www.espn.com/soccer/story/_/id/49287344/fifa-reject-belgium-request-balogun-clear-play-belgium"
+        },
         {
           "headline": "2026 World Cup: How to bet on U.S. vs. Belgium",
           "href": "https://www.espn.com/espn/betting/story/_/id/49247825/2026-world-cup-how-bet-usa-belgium-round-16-best-picks-odds-props"
@@ -45,15 +49,11 @@
         {
           "headline": "World Cup: USA odds shorten versus Belgium after Balogun red card reprieve",
           "href": "https://www.espn.com/espn/betting/story/_/id/49286368/world-cup-usa-belgium-odds-balogun-red-card"
-        },
-        {
-          "headline": "World Cup Daily live: Harry Kane loses voice in hilarious interview, USMNT prepares for Belgium",
-          "href": "https://www.espn.com/soccer/story/_/id/49284373/world-cup-daily-live-usmnt-belgium-spain-portugal-cristiano-ronaldo-round-16"
         }
       ]
     },
     "ESP|POR": {
-      "text": "Spain enter this knockout tie yet to concede at the 2026 World Cup, closing in on a tournament record for defensive shutouts. The model favours Spain to advance at 61% against Portugal's 39%.",
+      "text": "Spain enter this knockout tie without conceding a goal at the tournament, closing in on a defensive record. The model favours Spain to advance at 61% against Portugal's 39%.",
       "sources": [
         {
           "headline": "World Cup Daily live: Harry Kane loses voice in hilarious interview, USMNT prepares for Belgium",
