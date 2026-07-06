@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-06T04:55:33.888Z",
+  "generated": "2026-07-06T12:26:40.819Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -36,19 +36,32 @@
       ]
     },
     "BEL|USA": {
-      "text": "Folarin Balogun is available for the United States after his one-game ban was suspended by FIFA. Belgium reach this last-16 tie having eliminated Senegal in the previous round. Projection models give the USA a narrow edge to advance at 54%-46%.",
+      "text": "Folarin Balogun is available for the United States after FIFA rescinded his red card suspension, a decision UEFA publicly criticized. The reinstatement makes the striker eligible for this round-of-16 tie against Belgium.",
       "sources": [
         {
-          "headline": "USMNT World Cup bracket scenarios, odds to advance, predicted path to knockouts",
-          "href": "https://www.espn.com/soccer/story/_/id/48953200/usmnt-usa-world-cup-scenarios-bracket-permutations-qualify-betting-odds-projections-predictions"
+          "headline": "Two things can be true about Balogun's World Cup reprieve",
+          "href": "https://www.espn.com/soccer/story/_/id/49283694/two-things-true-baloguns-world-cup-reprieve"
         },
         {
-          "headline": "Senegal delegation members still awaiting flight home five days after World Cup elimination - sources",
-          "href": "https://www.espn.com/soccer/story/_/id/49281930/senegal-world-cup-delegation-members-awaiting-flight-home-five-days-elimination-sources"
+          "headline": "UEFA says FIFA 'crossed a red line' with Folarin Balogun red card ban U-turn",
+          "href": "https://www.espn.com/soccer/story/_/id/49284889/uefa-fifa-folarin-balogun-red-card-ban-overturned-usmnt"
         },
         {
-          "headline": "Trump thanks Fifa after USA striker Balogun's ban suspended",
-          "href": "https://www.bbc.co.uk/sport/football/articles/cewqq5q8v41o?at_medium=RSS&amp;at_campaign=rss"
+          "headline": "World Cup Daily live: Harry Kane loses voice in hilarious interview, USMNT prepares for Belgium",
+          "href": "https://www.espn.com/soccer/story/_/id/49284373/world-cup-daily-live-usmnt-belgium-spain-portugal-cristiano-ronaldo-round-16"
+        }
+      ]
+    },
+    "ESP|POR": {
+      "text": "Spain enter this knockout tie yet to concede a goal at the 2026 World Cup, approaching a tournament defensive record. The model favours Spain to advance at 61% to Portugal's 39%.",
+      "sources": [
+        {
+          "headline": "World Cup Daily live: Harry Kane loses voice in hilarious interview, USMNT prepares for Belgium",
+          "href": "https://www.espn.com/soccer/story/_/id/49284373/world-cup-daily-live-usmnt-belgium-spain-portugal-cristiano-ronaldo-round-16"
+        },
+        {
+          "headline": "The numbers behind Spain defence chasing World Cup history",
+          "href": "https://www.bbc.co.uk/sport/football/articles/cwy00jx3y91o?at_medium=RSS&amp;at_campaign=rss"
         }
       ]
     }
