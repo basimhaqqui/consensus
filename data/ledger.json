@@ -219,6 +219,19 @@
         "detail": "FT",
         "gradedAt": "2026-07-06T04:38:11.903Z"
       }
+    },
+    {
+      "id": "r16-5",
+      "kickoffISO": "2026-07-06T19:00Z",
+      "home": "POR",
+      "away": "ESP",
+      "venue": "Arlington, Texas",
+      "forecasts": {
+        "model": 0.3485,
+        "blend": 0.3937,
+        "market": 0.3546
+      },
+      "capturedAt": "2026-07-06T18:23:30.087Z"
     }
   ]
 }
