@@ -231,7 +231,29 @@
         "blend": 0.3937,
         "market": 0.3546
       },
-      "capturedAt": "2026-07-06T18:23:30.087Z"
+      "capturedAt": "2026-07-06T18:23:30.087Z",
+      "result": {
+        "winnerKey": "ESP",
+        "score": {
+          "home": 0,
+          "away": 1
+        },
+        "detail": "FT",
+        "gradedAt": "2026-07-06T21:46:56.491Z"
+      }
+    },
+    {
+      "id": "r16-6",
+      "kickoffISO": "2026-07-07T00:00Z",
+      "home": "USA",
+      "away": "BEL",
+      "venue": "Seattle, Washington",
+      "forecasts": {
+        "model": 0.4571,
+        "blend": 0.5395,
+        "market": 0.5146
+      },
+      "capturedAt": "2026-07-06T21:46:56.490Z"
     }
   ]
 }
