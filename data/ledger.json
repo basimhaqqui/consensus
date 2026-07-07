@@ -253,7 +253,16 @@
         "blend": 0.5395,
         "market": 0.5146
       },
-      "capturedAt": "2026-07-06T21:46:56.490Z"
+      "capturedAt": "2026-07-06T21:46:56.490Z",
+      "result": {
+        "winnerKey": "BEL",
+        "score": {
+          "home": 1,
+          "away": 4
+        },
+        "detail": "FT",
+        "gradedAt": "2026-07-07T04:16:01.299Z"
+      }
     }
   ]
 }
