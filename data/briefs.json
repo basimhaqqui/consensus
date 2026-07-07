@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-07T08:01:17.147Z",
+  "generated": "2026-07-07T11:26:26.724Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -66,11 +66,28 @@
       ]
     },
     "ARG|EGY": {
-      "text": "Argentina coach Scaloni says his side \"will give everything\" ahead of the knockout tie against Egypt.",
+      "text": "Argentina, strong favourites to advance, face Egypt in the World Cup knockout stage. Coach Lionel Scaloni said his side \"will give everything\" in the clash.",
       "sources": [
+        {
+          "headline": "World Cup Daily live: Messi fans troll Speed after Ronaldo exit; Argentina, Colombia in action",
+          "href": "https://www.espn.com/soccer/story/_/id/49293140/world-cup-daily-live-messi-fans-troll-speed-ronaldo-exit-argentina-colombia-action"
+        },
         {
           "headline": "Scaloni: Argentina 'will give everything' in Egypt clash",
           "href": "https://www.espn.com/video/clip/_/id/49293733/argentina-give-everything-egypt-clash"
+        }
+      ]
+    },
+    "COL|SUI": {
+      "text": "Colombia manager Lorenzo has stressed the need for \"tactical discipline\" against Switzerland in this World Cup knockout tie. The model gives Colombia a 62% chance of advancing.",
+      "sources": [
+        {
+          "headline": "Lorenzo: Colombia wil need 'tactical discipline' vs. Switzerland",
+          "href": "https://www.espn.com/video/clip/_/id/49294310/colombia-wil-need-tactical-discipline-vs-switzerland"
+        },
+        {
+          "headline": "World Cup Daily live: Messi fans troll Speed after Ronaldo exit; Argentina, Colombia in action",
+          "href": "https://www.espn.com/soccer/story/_/id/49293140/world-cup-daily-live-messi-fans-troll-speed-ronaldo-exit-argentina-colombia-action"
         }
       ]
     }
