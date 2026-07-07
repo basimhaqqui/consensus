@@ -275,7 +275,29 @@
         "blend": 0.8275,
         "market": 0.8457
       },
-      "capturedAt": "2026-07-07T15:13:49.318Z"
+      "capturedAt": "2026-07-07T15:13:49.318Z",
+      "result": {
+        "winnerKey": "ARG",
+        "score": {
+          "home": 3,
+          "away": 2
+        },
+        "detail": "FT",
+        "gradedAt": "2026-07-07T18:19:29.952Z"
+      }
+    },
+    {
+      "id": "r16-8",
+      "kickoffISO": "2026-07-07T20:00Z",
+      "home": "SUI",
+      "away": "COL",
+      "venue": "Vancouver",
+      "forecasts": {
+        "model": 0.3881,
+        "blend": 0.3806,
+        "market": 0.4098
+      },
+      "capturedAt": "2026-07-07T18:19:29.952Z"
     }
   ]
 }
