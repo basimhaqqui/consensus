@@ -70,7 +70,7 @@ for (const [key, t] of Object.entries(TEAMS)) {
 // LIVE market ratings — scripts/market-ratings.mjs recalibrates surviving
 // teams from the books' title-outright odds (committed by the ledger cron,
 // refreshed on deploy). Overrides the stale pre-tournament values above.
-const LIVE_MARKET = marketRatingsFile as {
+const LIVE_MARKET = marketRatingsFile as unknown as {
   generated: string | null;
   ratings: Record<string, number>;
 };

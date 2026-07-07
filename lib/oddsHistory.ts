@@ -10,7 +10,8 @@ type Snapshot = {
   match: Record<string, { model: number; books: number | null }>; // advance, home side
 };
 
-const snapshots = (history as { snapshots: Snapshot[] }).snapshots;
+const snapshots = (history as unknown as { snapshots: Snapshot[] })
+  .snapshots;
 
 // Baseline = the oldest snapshot inside the window, so "since yesterday"
 // degrades gracefully to "since this morning" early on. Requires some age,

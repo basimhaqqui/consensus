@@ -12,7 +12,7 @@ type BriefsFile = {
   briefs: Record<string, Brief>;
 };
 
-const FILE = briefsFile as BriefsFile;
+const FILE = briefsFile as unknown as BriefsFile;
 const MAX_AGE_H = 24; // stale briefs are worse than none
 
 export function briefFor(homeKey: string, awayKey: string): Brief | undefined {
