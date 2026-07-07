@@ -43,10 +43,16 @@ export default async function LeaguePage({
   const tableMaxGp = rawStandings
     ? Math.max(0, ...rawStandings.flatMap((g) => g.rows.map((r) => r.gp)))
     : 0;
+  // ESPN attaches zone notes to table POSITIONS, and a pre-season table is
+  // alphabetical — so "Champions League" lands on whoever sorts first. Strip
+  // notes entirely until the table is positional.
   const standings =
     rawStandings && tableMaxGp > 0
       ? applyZoneNotes(slug, rawStandings)
-      : rawStandings;
+      : rawStandings?.map((g) => ({
+          ...g,
+          rows: g.rows.map((r) => ({ ...r, note: undefined })),
+        })) ?? null;
   const rmap = await leagueRatings(slug, standings);
 
   // season projection — single-table leagues (mid-season, pre-season, or finished)
