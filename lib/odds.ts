@@ -65,14 +65,14 @@ export async function fetchMarketOdds(): Promise<Map<string, MarketOdds> | null>
   // session into a quota fire — opt in explicitly with ODDS_DEV=1
   if (process.env.NODE_ENV === "development" && !process.env.ODDS_DEV)
     return null;
-  // one region + 12h cache = ~2 credits/day; the free tier is 500/month and
-  // most of it is already spent this cycle
+  // one region + 24h cache = ~1 credit/day; 16 credits must last to the
+  // Jul 19 final (free tier nearly spent this cycle)
   const url =
     `https://api.the-odds-api.com/v4/sports/${SPORT}/odds` +
     `?apiKey=${KEY}&regions=us&markets=h2h&oddsFormat=american`;
   let events: any[];
   try {
-    const res = await fetch(url, { next: { revalidate: 43200 } }); // 12 h
+    const res = await fetch(url, { next: { revalidate: 86400 } }); // 24 h
     if (!res.ok) return null;
     events = await res.json();
     if (!Array.isArray(events)) return null;

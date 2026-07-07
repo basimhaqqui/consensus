@@ -16,7 +16,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 const KEY = process.env.ODDS_API_KEY;
 const SITE = process.env.SITE_URL ?? "https://consensus-football.vercel.app";
 const OUT = new URL("../data/market-ratings.json", import.meta.url);
-const FRESH_H = 48;
+const FRESH_H = 72;
 
 if (!KEY) {
   console.log("ODDS_API_KEY not set - skipping market ratings");
