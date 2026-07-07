@@ -13,6 +13,7 @@ import {
   priorSeasonRatings,
   projectSeason,
   qualStructure,
+  type ProjRow,
 } from "@/lib/projection";
 import { applyZoneNotes, zoneCounts } from "@/lib/qualification";
 import Crest from "@/components/Crest";
@@ -54,6 +55,13 @@ export default async function LeaguePage({
   if (standings && standings.length === 1) {
     projection = await buildProjection(slug, standings[0].rows, rmap,
       CLUBELO_SLUGS.has(slug) && rmap.size >= standings[0].rows.length * 0.7);
+  }
+
+  // conference leagues (MLS): project each conference to playoff odds —
+  // cross-conference fixtures still count toward each side's own table
+  let confProjections: { name: string; rows: ProjRow[] }[] = [];
+  if (slug === "usa.1" && standings && standings.length > 1) {
+    confProjections = await buildConferenceProjections(slug, standings, rmap);
   }
 
   // group by date
@@ -135,6 +143,24 @@ export default async function LeaguePage({
         </section>
       )}
 
+      {confProjections.map((cp) => (
+        <section key={cp.name} className="mt-10">
+          <div className="mb-3 flex items-center gap-3">
+            <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+              {cp.name} — projection
+            </h2>
+            <span className="flex-1 h-px bg-line" />
+          </div>
+          <LeagueProjection
+            rows={cp.rows}
+            showUcl
+            showReleg={false}
+            topLabel="PLAYOFF"
+            titleLabel="Win conference"
+          />
+        </section>
+      ))}
+
       {standings && standings.length > 0 && (
         <section className="mt-10">
           <div className="mb-3 flex items-center gap-3">
@@ -148,6 +174,36 @@ export default async function LeaguePage({
       )}
     </div>
   );
+}
+
+// MLS-style conference projection: playoff odds per conference. Fixtures are
+// league-wide (teams play cross-conference), which is correct — every result
+// counts toward a team's own conference table.
+async function buildConferenceProjections(
+  slug: string,
+  groups: import("@/lib/standings").StandingsGroup[],
+  rmap: Map<string, number>
+): Promise<{ name: string; rows: ProjRow[] }[]> {
+  const fixtures = await getRemainingFixtures(slug, 6);
+  if (fixtures.length < 1) return [];
+  const out: { name: string; rows: ProjRow[] }[] = [];
+  for (const g of groups) {
+    const maxGp = Math.max(0, ...g.rows.map((r) => r.gp));
+    if (maxGp === 0) continue; // pre-season: form ratings don't exist yet
+    const playoffSpots =
+      g.rows.filter((r) => /playoff|wild card/i.test(r.note?.text ?? ""))
+        .length || 9;
+    const rows = projectSeason(
+      g.rows,
+      rmap,
+      fixtures,
+      { uclSpots: playoffSpots, uelSpots: 0, ueclSpots: 0, relegSpots: 0 },
+      3000,
+      true
+    );
+    if (rows.length) out.push({ name: g.name, rows });
+  }
+  return out;
 }
 
 async function buildProjection(

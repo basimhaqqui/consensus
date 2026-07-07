@@ -22,12 +22,14 @@ export default function LeagueProjection({
   showUecl,
   showReleg,
   topLabel = "UCL",
+  titleLabel = "Win league",
 }: {
   rows: ProjRow[];
   showUcl: boolean;
   showUecl?: boolean;
   showReleg: boolean;
   topLabel?: string;
+  titleLabel?: string;
 }) {
   const max = Math.max(...rows.map((r) => r.title), 0.001);
   const cols = ["1.6fr", "3fr", "3rem"];
@@ -43,7 +45,7 @@ export default function LeagueProjection({
         style={grid}
       >
         <span>Team</span>
-        <span>Win league</span>
+        <span>{titleLabel}</span>
         <span className="text-right">Pts</span>
         {showUcl && <span className="text-right">{topLabel}</span>}
         {showUecl && <span className="text-right">CON</span>}
@@ -103,8 +105,10 @@ export default function LeagueProjection({
 
       <div className="px-4 py-2 text-[10px] text-muted border-t border-line">
         Projected over the remaining fixtures · 3,000 simulations · Pts =
-        projected final points · {topLabel} / CON / Rel = odds to finish in a
-        Champions League / Conference League / relegation place.
+        projected final points
+        {topLabel === "PLAYOFF"
+          ? " · PLAYOFF = odds to reach the MLS Cup playoffs (incl. wild card)."
+          : ` · ${topLabel} / CON / Rel = odds to finish in a Champions League / Conference League / relegation place.`}
       </div>
     </div>
   );
