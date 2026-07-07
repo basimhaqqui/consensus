@@ -212,7 +212,11 @@ export default function MatchCard({ m }: { m: MatchView }) {
         <Metric
           label="LIKELY"
           value={`${o.topScore.home}–${o.topScore.away}`}
-          sub={`${pct(o.topScore.p)} scoreline`}
+          sub={
+            o.topScores.length > 2
+              ? `${pct(o.topScore.p)} · ${o.topScores[1].home}–${o.topScores[1].away} ${pct(o.topScores[1].p)} · ${o.topScores[2].home}–${o.topScores[2].away} ${pct(o.topScores[2].p)}`
+              : `${pct(o.topScore.p)} scoreline`
+          }
         />
         {isFinal ? (
           <Metric

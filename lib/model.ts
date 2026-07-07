@@ -18,6 +18,7 @@ export type Outcome = {
   lambdaHome: number; // expected goals, home
   lambdaAway: number; // expected goals, away
   topScore: { home: number; away: number; p: number }; // most likely scoreline
+  topScores: { home: number; away: number; p: number }[]; // top 3 scorelines
 };
 
 // Poisson PMF
@@ -98,7 +99,7 @@ export function forecast(
   let pHome = 0;
   let pDraw = 0;
   let pAway = 0;
-  let topScore = { home: 0, away: 0, p: 0 };
+  const cells: { home: number; away: number; p: number }[] = [];
 
   const MAX = 8;
   for (let h = 0; h <= MAX; h++) {
@@ -110,19 +111,24 @@ export function forecast(
       if (h > a) pHome += p;
       else if (h === a) pDraw += p;
       else pAway += p;
-      if (p > topScore.p) topScore = { home: h, away: a, p };
+      cells.push({ home: h, away: a, p });
     }
   }
 
   // normalise (tail beyond MAX is tiny but keep it exact)
   const total = pHome + pDraw + pAway;
+  cells.sort((a, b) => b.p - a.p);
+  const topScores = cells
+    .slice(0, 3)
+    .map((c) => ({ ...c, p: c.p / total }));
   return {
     pHome: pHome / total,
     pDraw: pDraw / total,
     pAway: pAway / total,
     lambdaHome,
     lambdaAway,
-    topScore,
+    topScore: topScores[0],
+    topScores,
   };
 }
 
