@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-07T15:32:17.863Z",
+  "generated": "2026-07-07T18:33:49.970Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -83,11 +83,15 @@
       ]
     },
     "COL|SUI": {
-      "text": "Colombia manager Lorenzo has stressed the need for \"tactical discipline\" against Switzerland in this World Cup knockout tie. The model favours Colombia to advance, giving them a 62% edge over Switzerland's 38%.",
+      "text": "Colombia coach Lorenzo has stressed the need for \"tactical discipline\" against Switzerland in this knockout tie. The model favours Colombia to advance, 62% to 38%.",
       "sources": [
         {
           "headline": "Lorenzo: Colombia wil need 'tactical discipline' vs. Switzerland",
           "href": "https://www.espn.com/video/clip/_/id/49294310/colombia-wil-need-tactical-discipline-vs-switzerland"
+        },
+        {
+          "headline": "Qarabag's Duran poised for Celtic medical",
+          "href": "https://www.bbc.co.uk/sport/football/articles/c5yzzxv8yw0o?at_medium=RSS&amp;at_campaign=rss"
         }
       ]
     }
