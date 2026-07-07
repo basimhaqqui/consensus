@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-07T04:35:51.750Z",
+  "generated": "2026-07-07T08:01:17.147Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -65,12 +65,12 @@
         }
       ]
     },
-    "COL|SUI": {
-      "text": "Switzerland breakout performer Johan Manzambi left training early on Monday, along with two other players, ahead of Tuesday's round of 16 match against Colombia. The model gives Switzerland a 38% chance of advancing against Colombia's 62%.",
+    "ARG|EGY": {
+      "text": "Argentina coach Scaloni says his side \"will give everything\" ahead of the knockout tie against Egypt.",
       "sources": [
         {
-          "headline": "Switzerland fear 'huge issue' as Manzambi, 2 others leave training",
-          "href": "https://www.espn.com/soccer/story/_/id/49290967/switzerland-johan-manzambi-injury-colombia-2006-world-cup"
+          "headline": "Scaloni: Argentina 'will give everything' in Egypt clash",
+          "href": "https://www.espn.com/video/clip/_/id/49293733/argentina-give-everything-egypt-clash"
         }
       ]
     }
