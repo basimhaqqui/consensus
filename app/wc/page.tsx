@@ -46,6 +46,12 @@ export default async function WorldCup() {
             </p>
           </div>
           <div className="flex items-center gap-3">
+            <Link
+              href="/builder"
+              className="rounded-md border border-accent/40 bg-accent/10 px-2.5 py-1 text-[11px] uppercase tracking-wider text-accent hover:bg-accent/20"
+            >
+              Bet builder
+            </Link>
             <Nav />
             <span className="hidden sm:inline text-[11px] uppercase tracking-wider text-muted">
               {LAST_UPDATED}

@@ -10,6 +10,7 @@ import { BallIcon } from "@/components/PlayerMarkers";
 import TeamStats from "@/components/TeamStats";
 import RecentMeetings from "@/components/RecentMeetings";
 import NewsPanel from "@/components/NewsPanel";
+import MarketBoard from "@/components/MarketBoard";
 import { fetchNews, newsFor } from "@/lib/news";
 import { briefFor } from "@/lib/briefs";
 import Nav from "@/components/Nav";
@@ -241,6 +242,16 @@ export default async function MatchPage({
           <Stat label="Model pick" value={TEAMS[m.modelPickKey].code} />
         </div>
       </section>
+
+      {/* market fair prices — pre-match only */}
+      {m.status === "scheduled" && (
+        <MarketBoard
+          lambdaHome={m.outcome.lambdaHome}
+          lambdaAway={m.outcome.lambdaAway}
+          homeCode={m.home.code}
+          awayCode={m.away.code}
+        />
+      )}
 
       {/* team match stats */}
       {detail?.teamStats && (
