@@ -5,7 +5,8 @@ import {
   competitionBySlug,
   type LeagueMatch,
 } from "@/lib/leagues";
-import { getStandings, ratingMap } from "@/lib/standings";
+import { getStandings } from "@/lib/standings";
+import { leagueRatings, CLUBELO_SLUGS } from "@/lib/clubelo";
 import { forecast, inPlay, MU_CLUB } from "@/lib/model";
 import {
   getRemainingFixtures,
@@ -46,12 +47,13 @@ export default async function LeaguePage({
     rawStandings && tableMaxGp > 0
       ? applyZoneNotes(slug, rawStandings)
       : rawStandings;
-  const rmap = standings ? ratingMap(standings) : new Map<string, number>();
+  const rmap = await leagueRatings(slug, standings);
 
   // season projection — single-table leagues (mid-season, pre-season, or finished)
   let projection: Awaited<ReturnType<typeof buildProjection>> = null;
   if (standings && standings.length === 1) {
-    projection = await buildProjection(slug, standings[0].rows, rmap);
+    projection = await buildProjection(slug, standings[0].rows, rmap,
+      CLUBELO_SLUGS.has(slug) && rmap.size >= standings[0].rows.length * 0.7);
   }
 
   // group by date
@@ -151,7 +153,10 @@ export default async function LeaguePage({
 async function buildProjection(
   slug: string,
   rows: import("@/lib/standings").StandingRow[],
-  rmap: Map<string, number>
+  rmap: Map<string, number>,
+  // ClubElo-backed maps are results-based and always current, so the
+  // prior-season shrinkage below is unnecessary (and worse) — skip it.
+  realRatings = false
 ) {
   const n = rows.length;
   const full = 2 * (n - 1); // full single round-robin season length
@@ -170,8 +175,8 @@ async function buildProjection(
       : now.getUTCFullYear() - 2;
 
   if (maxGp === 0) {
-    // pre-season: rate from last season's final table
-    ratings = await priorSeasonRatings(slug, priorYear);
+    // pre-season: rate from last season's final table (or ClubElo directly)
+    if (!realRatings) ratings = await priorSeasonRatings(slug, priorYear);
     useCurrent = false;
     label = "Title race — projected season";
   } else if (maxGp >= full) {
@@ -181,7 +186,9 @@ async function buildProjection(
   } else {
     // mid-season: shrink noisy early-season form toward last season's level,
     // trusting the current table more as games accumulate
-    const prior = await priorSeasonRatings(slug, priorYear);
+    const prior = realRatings
+      ? new Map<string, number>()
+      : await priorSeasonRatings(slug, priorYear);
     if (prior.size) {
       const blended = new Map<string, number>();
       for (const r of rows) {

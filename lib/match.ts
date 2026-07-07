@@ -266,7 +266,7 @@ export async function fetchSummary(
     (st.state ?? "pre") === "pre" &&
     !squads.some((q) => q.starters.length > 0)
   ) {
-    const af = await afConfirmedSquads(s, home, away, hc.date ?? "");
+    const af = await afConfirmedSquads(slug, s, home, away, hc.date ?? "");
     if (af) squads = af;
   }
   await enrichSquads(squads);
@@ -463,6 +463,7 @@ function didSub(v: any): boolean {
 // Build Squads from api-football's confirmed lineups (grid gives left-to-right
 // columns per formation row; photos come id-keyed from the same record).
 async function afConfirmedSquads(
+  slug: string,
   s: any,
   home: SideInfo,
   away: SideInfo,
@@ -470,6 +471,7 @@ async function afConfirmedSquads(
 ): Promise<Squad[] | null> {
   if (!home.name || !away.name || !dateISO) return null;
   const lineups = await afConfirmedLineups(
+    slug,
     home.name,
     away.name,
     dateISO.slice(0, 10),

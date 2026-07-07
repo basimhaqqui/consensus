@@ -120,8 +120,29 @@ export async function squadIndex(
 
 // --- confirmed lineups (fallback when ESPN's rosters lag) -------------------
 
-const WC_LEAGUE = 1;
-const WC_SEASON = 2026;
+// ESPN competition slug -> api-football league id. Season is the start year
+// (European seasons roll over in July; the Americas run calendar years).
+const AF_LEAGUE: Record<string, number> = {
+  "fifa.world": 1,
+  "eng.1": 39,
+  "esp.1": 140,
+  "ita.1": 135,
+  "ger.1": 78,
+  "fra.1": 61,
+  "usa.1": 253,
+  "bra.1": 71,
+  "uefa.champions": 2,
+  "uefa.europa": 3,
+  "uefa.europa.conf": 848,
+};
+
+function afSeason(slug: string): number {
+  const now = new Date();
+  const y = now.getUTCFullYear();
+  if (slug === "usa.1" || slug === "bra.1") return y;
+  if (slug === "fifa.world") return 2026;
+  return now.getUTCMonth() >= 6 ? y : y - 1;
+}
 
 export type AfLineupPlayer = {
   id: number;
@@ -141,19 +162,23 @@ export type AfLineup = {
 
 const fixturesByDate = new Map<string, Promise<any[] | null>>();
 
-function fixturesOn(dateYMD: string): Promise<any[] | null> {
-  if (!fixturesByDate.has(dateYMD)) {
+function fixturesOn(slug: string, dateYMD: string): Promise<any[] | null> {
+  const league = AF_LEAGUE[slug];
+  if (!league) return Promise.resolve(null);
+  const key = `${slug}|${dateYMD}`;
+  if (!fixturesByDate.has(key)) {
     fixturesByDate.set(
-      dateYMD,
-      af(`/fixtures?league=${WC_LEAGUE}&season=${WC_SEASON}&date=${dateYMD}`)
+      key,
+      af(`/fixtures?league=${league}&season=${afSeason(slug)}&date=${dateYMD}`)
     );
   }
-  return fixturesByDate.get(dateYMD)!;
+  return fixturesByDate.get(key)!;
 }
 
 // Confirmed lineups for the tie between two teams (ESPN names) on a date.
 // Returns null until api-football publishes both starting XIs.
 export async function afConfirmedLineups(
+  slug: string,
   homeName: string,
   awayName: string,
   dateYMD: string,
@@ -164,7 +189,7 @@ export async function afConfirmedLineups(
   const [hid, aid, fixtures] = await Promise.all([
     teamId(homeName, homeCode),
     teamId(awayName, awayCode),
-    fixturesOn(dateYMD),
+    fixturesOn(slug, dateYMD),
   ]);
   if (!hid || !aid || !fixtures) return null;
   const fx = fixtures.find(

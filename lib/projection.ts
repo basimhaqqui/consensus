@@ -91,6 +91,13 @@ export type ProjRow = {
   projPts: number;
 };
 
+// Standard normal (Box-Muller) for rating-uncertainty draws.
+function sampleNormal(): number {
+  const u = 1 - Math.random();
+  const v = Math.random();
+  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+}
+
 // Sample a Poisson count (Knuth) — fine for football-sized lambdas.
 function samplePoisson(lambda: number): number {
   const L = Math.exp(-lambda);
@@ -117,13 +124,18 @@ export function projectSeason(
   const floor =
     ratings.size > 0 ? Math.min(...ratings.values()) - 25 : 1700;
 
-  // precompute each remaining fixture's scoring rates once
-  const fx = fixtures.map((f) => {
-    const rh = ratings.get(f.home) ?? floor;
-    const ra = ratings.get(f.away) ?? floor;
-    const o = forecast(rh + 100, ra, MU_CLUB); // home edge = the fitted 100 Elo
-    return { home: f.home, away: f.away, lh: o.lambdaHome, la: o.lambdaAway };
-  });
+  // Rating uncertainty: a team's true strength next season isn't its point
+  // estimate (transfers, decline, variance) — point-estimate sims overrate
+  // favourites, so each batch of seasons draws ratings with Gaussian noise
+  // that shrinks as real results accumulate. SIGMA=65 pre-season brings
+  // simulated title odds in line with how books price uncertainty.
+  const n0 = rows.length;
+  const fullSeason = 2 * (n0 - 1);
+  const maxGp0 = Math.max(0, ...rows.map((r) => r.gp));
+  const progress = useCurrentPoints
+    ? Math.min(1, maxGp0 / Math.max(1, fullSeason))
+    : 0;
+  const sigma = 65 * Math.sqrt(1 - progress);
 
   const teams = rows.map((r) => r.abbr);
   const basePts: Record<string, number> = {};
@@ -145,7 +157,25 @@ export function projectSeason(
   // Conference League sits below the UCL + Europa bands in the final order.
   const ueclStart = opts.uclSpots + opts.uelSpots;
 
-  for (let i = 0; i < iters; i++) {
+  // Batched draws: one noisy rating set (and one fixture-rate precompute)
+  // per batch, many seasons simulated under it.
+  const BATCHES = sigma > 1 ? 24 : 1;
+  const perBatch = Math.max(1, Math.round(iters / BATCHES));
+
+  for (let batch = 0; batch < BATCHES; batch++) {
+    const noisy = new Map<string, number>();
+    for (const t of teams) {
+      const r = ratings.get(t) ?? floor;
+      noisy.set(t, r + (sigma > 1 ? sigma * sampleNormal() : 0));
+    }
+    const fx = fixtures.map((f) => {
+      const rh = noisy.get(f.home) ?? floor;
+      const ra = noisy.get(f.away) ?? floor;
+      const o = forecast(rh + 100, ra, MU_CLUB); // home edge = the fitted 100 Elo
+      return { home: f.home, away: f.away, lh: o.lambdaHome, la: o.lambdaAway };
+    });
+
+  for (let i = 0; i < perBatch; i++) {
     const pts: Record<string, number> = { ...basePts };
     const gd: Record<string, number> = { ...baseGd };
     for (const f of fx) {
@@ -178,17 +208,19 @@ export function projectSeason(
       releg[order[order.length - 1 - k]]++;
     teams.forEach((t) => (ptsSum[t] += pts[t]));
   }
+  }
 
+  const total = BATCHES * perBatch;
   return rows
     .map((r) => ({
       abbr: r.abbr,
       name: r.name,
       logo: r.logo,
-      title: title[r.abbr] / iters,
-      ucl: ucl[r.abbr] / iters,
-      uecl: uecl[r.abbr] / iters,
-      releg: releg[r.abbr] / iters,
-      projPts: ptsSum[r.abbr] / iters,
+      title: title[r.abbr] / total,
+      ucl: ucl[r.abbr] / total,
+      uecl: uecl[r.abbr] / total,
+      releg: releg[r.abbr] / total,
+      projPts: ptsSum[r.abbr] / total,
     }))
     .sort((a, b) => b.title - a.title || b.projPts - a.projPts);
 }

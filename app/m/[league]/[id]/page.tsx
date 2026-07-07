@@ -2,8 +2,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { fetchSummary, fetchPredictedSquads, type Goal } from "@/lib/match";
 import { competitionBySlug } from "@/lib/leagues";
-import { getStandings, ratingMap } from "@/lib/standings";
-import { forecast } from "@/lib/model";
+import { getStandings } from "@/lib/standings";
+import { leagueRatings } from "@/lib/clubelo";
+import { forecast, MU_CLUB } from "@/lib/model";
 import Crest from "@/components/Crest";
 import Lineups from "@/components/Lineups";
 import { BallIcon } from "@/components/PlayerMarkers";
@@ -27,11 +28,12 @@ export default async function LeagueMatchPage({
   ]);
   if (!detail) notFound();
 
-  // form-based forecast from the standings — our model, generalised
-  const rmap = standings ? ratingMap(standings) : new Map<string, number>();
+  // our model, generalised — ClubElo-backed where covered, form otherwise
+  const rmap = await leagueRatings(league, standings);
   const rHome = rmap.get(detail.home.abbr);
   const rAway = rmap.get(detail.away.abbr);
-  const outcome = rHome && rAway ? forecast(rHome + 50, rAway) : null;
+  const outcome =
+    rHome && rAway ? forecast(rHome + 100, rAway, MU_CLUB) : null;
 
   const comp = competitionBySlug(league);
   const live = detail.status === "in";
