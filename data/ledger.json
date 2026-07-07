@@ -297,7 +297,16 @@
         "blend": 0.3806,
         "market": 0.4098
       },
-      "capturedAt": "2026-07-07T18:19:29.952Z"
+      "capturedAt": "2026-07-07T18:19:29.952Z",
+      "result": {
+        "winnerKey": "SUI",
+        "score": {
+          "home": 0,
+          "away": 0
+        },
+        "detail": "FT-Pens",
+        "gradedAt": "2026-07-07T23:14:16.989Z"
+      }
     }
   ]
 }
