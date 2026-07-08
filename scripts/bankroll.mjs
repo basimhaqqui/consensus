@@ -249,7 +249,8 @@ async function explainBet(ctx) {
     });
     const text = msg.content.filter((b) => b.type === "text").map((b) => b.text).join("").trim();
     return text || fallback;
-  } catch {
+  } catch (e) {
+    console.log(`analysis fallback (${e?.message ?? e})`);
     return fallback;
   }
 }
