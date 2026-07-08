@@ -24,6 +24,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 
 const SITE = process.env.SITE_URL ?? "https://consensus-football.vercel.app";
 const AF_KEY = process.env.APIFOOTBALL_KEY;
+const ANTHROPIC_KEY = process.env.ANTHROPIC_API_KEY;
 const OUT = new URL("../data/bankroll.json", import.meta.url);
 
 const TARGET = 10000; // milestone, not a deadline or a stop
@@ -206,6 +207,53 @@ async function scorerShares() {
   }
 }
 
+// --- written analysis for each bet ----------------------------------------------
+
+// The model explains its bet: quant context in, 2-3 sharp sentences out.
+// Falls back to a numbers-only template when no key is configured.
+async function explainBet(ctx) {
+  const fallback =
+    `Model prices ${ctx.label} at ${(ctx.pM * 100).toFixed(0)}% but the books' own 1X2 implies only ` +
+    `${(ctx.pB * 100).toFixed(0)}% — model xG ${ctx.mxg} vs books-implied ${ctx.bxg}. ` +
+    `At ${ctx.odds} that's +${(ctx.ev * 100).toFixed(0)}% EV; Kelly says ${(ctx.kelly * 100).toFixed(0)}% of bankroll.`;
+  if (!ANTHROPIC_KEY) return fallback;
+  try {
+    const { default: Anthropic } = await import("@anthropic-ai/sdk");
+    const client = new Anthropic({ apiKey: ANTHROPIC_KEY });
+    const msg = await client.messages.create({
+      model: "claude-opus-4-8",
+      max_tokens: 400,
+      thinking: { type: "adaptive" },
+      system:
+        "You are a football forecasting model explaining a bet you just placed with your own " +
+        "bankroll. 2-3 sentences, first person, sharp and factual. Cite the key numbers from " +
+        "the data. Explain WHERE the edge comes from (whose read differs and why the market " +
+        "may be off). No hype, no hedging boilerplate, no disclaimers.",
+      messages: [
+        {
+          role: "user",
+          content:
+            `Match: ${ctx.match}. Bet: ${ctx.label} at decimal odds ${ctx.odds}, stake $${ctx.stake}.
+` +
+            `My probability: ${(ctx.pM * 100).toFixed(1)}%. Books-implied probability for this market: ${(ctx.pB * 100).toFixed(1)}%.
+` +
+            `My expected goals: ${ctx.mxg}. Books-implied expected goals: ${ctx.bxg}.
+` +
+            `EV: +${(ctx.ev * 100).toFixed(0)}%. Full-Kelly fraction: ${(ctx.kelly * 100).toFixed(0)}%.
+` +
+            (ctx.combo ? `This is a same-match combo priced off my joint score grid (correlation included).
+` : "") +
+            `Write the analysis.`,
+        },
+      ],
+    });
+    const text = msg.content.filter((b) => b.type === "text").map((b) => b.text).join("").trim();
+    return text || fallback;
+  } catch {
+    return fallback;
+  }
+}
+
 // =================================================================================
 
 let state = { start: 1000, target: TARGET, cash: 1000, bets: [], log: [] };
@@ -301,7 +349,7 @@ const equity = () => state.cash + openBets().reduce((a, b) => a + b.stake, 0);
       const pB = gridProb(gb, leg.w);
       if (pB <= 0.02 || pB >= 0.98) return null;
       const odds = +(1 + ((1 / pB) - 1) * MARGIN).toFixed(3);
-      return { legs: [{ key: leg.key }], label: leg.label, pM, odds, ev: pM * odds - 1 };
+      return { legs: [{ key: leg.key }], label: leg.label, pM, pB, odds, ev: pM * odds - 1 };
     };
 
     const candidates = [];
@@ -329,7 +377,7 @@ const equity = () => state.cash + openBets().reduce((a, b) => a + b.stake, 0);
         candidates.push({
           legs: [{ key: fav.key }, { key: other.key }],
           label: `${fav.label} + ${other.label}`,
-          pM, odds, ev, scorer: other.scorer,
+          pM, pB: pB1 * pB2, odds, ev, scorer: other.scorer,
         });
     }
     if (!candidates.length) continue;
@@ -344,8 +392,23 @@ const equity = () => state.cash + openBets().reduce((a, b) => a + b.stake, 0);
     const stake = +Math.min(state.cash, Math.max(5, equity() * frac)).toFixed(2);
     if (stake < 5 || stake > state.cash) continue;
 
+    const analysis = await explainBet({
+      match: `${m.homeKey} v ${m.awayKey} (World Cup ${m.id.startsWith("qf") ? "quarter-final" : m.id.startsWith("sf") ? "semi-final" : m.id === "final" ? "final" : "knockout"})`,
+      label: pick.label,
+      odds: pick.odds,
+      stake,
+      pM: pick.pM,
+      pB: pick.pB,
+      mxg: `${m.outcome.lambdaHome.toFixed(1)}-${m.outcome.lambdaAway.toFixed(1)}`,
+      bxg: `${fit.lh.toFixed(1)}-${fit.la.toFixed(1)}`,
+      ev: pick.ev,
+      kelly,
+      combo: pick.legs.length > 1,
+    });
+
     state.cash = +(state.cash - stake).toFixed(2);
     state.bets.push({
+      analysis,
       matchId: m.id,
       placedAt: now,
       desc: `${pick.label} @ ${pick.odds} (${m.homeKey} v ${m.awayKey})`,

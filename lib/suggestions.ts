@@ -44,18 +44,19 @@ export function buildSuggestions(matches: SuggestionMatch[]): Suggestion[] {
 
   const ctx = matches.map((m) => {
     const grid = scoreGrid(m.lambdaHome, m.lambdaAway);
+    const xg = `${m.lambdaHome.toFixed(1)}–${m.lambdaAway.toFixed(1)}`;
     const legs = [...marketLegs(m.homeCode, m.awayCode), ...playerLegDefs(m.players ?? [])];
     const by = new Map(legs.map((l) => [l.key, l]));
     const p = (key: string) => {
       const l = by.get(key);
       return l ? probOf(grid, l) : 0;
     };
-    return { m, grid, by, p };
+    return { m, grid, by, p, xg };
   });
 
   // --- VALUE: model vs de-vigged books, result family --------------------------
   const values: (Suggestion & { edge: number })[] = [];
-  for (const { m, p } of ctx) {
+  for (const { m, p, xg } of ctx) {
     if (!m.market) continue;
     const rows: [string, number, number, string][] = [
       ["home", p("home"), m.market.pHome, `${m.homeCode} win`],
@@ -69,7 +70,7 @@ export function buildSuggestions(matches: SuggestionMatch[]): Suggestion[] {
       values.push({
         tag: "VALUE",
         title: `${label} — model sees value`,
-        rationale: `Model ${pctStr(model)} vs books ${pctStr(books)} (+${(edge * 100).toFixed(0)}pts). You're betting the model against the market here.`,
+        rationale: `Model ${pctStr(model)} vs books ${pctStr(books)} — a +${(edge * 100).toFixed(0)}pt gap. The model's ${xg} goal projection reads this tie differently than the market; you're backing our Elo against the books' price.`,
         legs: [{ matchId: m.id, legKey: key }],
         prob: model,
         fair: americanFromProbStr(model),
@@ -82,7 +83,7 @@ export function buildSuggestions(matches: SuggestionMatch[]): Suggestion[] {
 
   // --- COMBO: positively-correlated same-match pairs ----------------------------
   const combos: (Suggestion & { corr: number })[] = [];
-  for (const { m, grid, by, p } of ctx) {
+  for (const { m, grid, by, p, xg } of ctx) {
     const favKey = p("home") >= p("away") ? "home" : "away";
     const favCode = favKey === "home" ? m.homeCode : m.awayCode;
     const pairs: [string, string][] = [
@@ -104,7 +105,7 @@ export function buildSuggestions(matches: SuggestionMatch[]): Suggestion[] {
       combos.push({
         tag: b.startsWith("p-") ? "PROP" : "COMBO",
         title: `${favCode} win + ${lb.label}`,
-        rationale: `These legs are +${Math.round(corr * 100)}% correlated — priced independently they'd be ${pctStr(indep)}, jointly they're ${pctStr(joint)}. Take anything above fair.`,
+        rationale: `At ${xg} expected goals these legs rise and fall together: +${Math.round(corr * 100)}% correlated, so independent pricing says ${pctStr(indep)} but the joint score grid says ${pctStr(joint)}. Books price builders near-independently plus margin — take anything above fair.`,
         legs: [
           { matchId: m.id, legKey: a },
           { matchId: m.id, legKey: b },
@@ -156,9 +157,9 @@ export function buildSuggestions(matches: SuggestionMatch[]): Suggestion[] {
       propSingles.push({
         tag: "PROP",
         title: `${pl.name} to score`,
-        rationale: `Scoring ${pctStr(pl.share)} of ${
+        rationale: `Takes ${pctStr(pl.share)} of ${
           pl.side === "home" ? m.homeCode : m.awayCode
-        }'s goals this tournament; the model's goal projection puts an anytime strike at ${pctStr(prob)}.`,
+        }'s goals this tournament, and the model projects ${(pl.side === "home" ? m.lambdaHome : m.lambdaAway).toFixed(1)} team goals here — integrated over the score grid that's ${pctStr(prob)} to strike.`,
         legs: [{ matchId: m.id, legKey: key }],
         prob,
         fair: americanFromProbStr(prob),
