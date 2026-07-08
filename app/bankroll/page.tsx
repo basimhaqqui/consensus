@@ -13,6 +13,7 @@ type Bet = {
   matchId: string;
   placedAt: string;
   desc: string;
+  analysis?: string;
   stake: number;
   odds: number;
   edge?: number;
@@ -114,6 +115,11 @@ export default async function BankrollPage({
                     {b.ev !== undefined && <> · EV +{(b.ev * 100).toFixed(0)}%</>}
                     {b.edge !== undefined && <> · edge +{(b.edge * 100).toFixed(0)}</>}
                   </div>
+                  {b.analysis && (
+                    <p className="mt-1.5 max-w-md text-[11px] leading-relaxed text-zinc-400">
+                      {b.analysis}
+                    </p>
+                  )}
                 </div>
                 <div className="shrink-0 text-right tabnums">
                   <div className="text-zinc-200">${b.stake.toFixed(2)}</div>
@@ -138,6 +144,11 @@ export default async function BankrollPage({
                 <div className="min-w-0">
                   <div className="text-zinc-200">{b.desc}</div>
                   <div className="text-[10px] text-muted">final {b.result}</div>
+                  {b.analysis && (
+                    <p className="mt-1.5 max-w-md text-[11px] leading-relaxed text-zinc-500">
+                      {b.analysis}
+                    </p>
+                  )}
                 </div>
                 <div
                   className={`shrink-0 tabnums font-semibold ${
