@@ -192,8 +192,11 @@ export async function getLiveMatches(): Promise<{
   live: boolean;
 }> {
   try {
-    const { overlays, events } = await fetchOverlays();
-    return { matches: allMatches(overlays, events, "blend"), live: true };
+    const [{ overlays, events }, odds] = await Promise.all([
+      fetchOverlays(),
+      fetchMarketOdds(),
+    ]);
+    return { matches: allMatches(overlays, events, "blend", odds), live: true };
   } catch {
     return { matches: allMatches({}, undefined, "blend"), live: false };
   }
