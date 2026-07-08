@@ -13,6 +13,7 @@ import NewsPanel from "@/components/NewsPanel";
 import MarketBoard from "@/components/MarketBoard";
 import { fetchNews, newsFor } from "@/lib/news";
 import { briefFor } from "@/lib/briefs";
+import { matchProps } from "@/lib/props";
 import Nav from "@/components/Nav";
 
 export const dynamic = "force-dynamic";
@@ -250,6 +251,7 @@ export default async function MatchPage({
           lambdaAway={m.outcome.lambdaAway}
           homeCode={m.home.code}
           awayCode={m.away.code}
+          players={(await matchProps([m]))[m.id] ?? []}
         />
       )}
 

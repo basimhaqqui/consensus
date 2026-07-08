@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { getLiveMatches } from "@/lib/live";
+import { matchProps } from "@/lib/props";
+import { buildSuggestions } from "@/lib/suggestions";
 import BetBuilder, { type BuilderMatch } from "@/components/BetBuilder";
 import Footer from "@/components/Footer";
 
@@ -13,19 +15,36 @@ export const metadata = {
 
 export default async function BuilderPage() {
   const { matches } = await getLiveMatches();
-  const upcoming: BuilderMatch[] = matches
+  const scheduled = matches
     .filter((m) => m.status === "scheduled")
-    .sort((a, b) => a.kickoffISO.localeCompare(b.kickoffISO))
-    .map((m) => ({
+    .sort((a, b) => a.kickoffISO.localeCompare(b.kickoffISO));
+  const props = await matchProps(
+    scheduled.map((m) => ({ id: m.id, homeKey: m.homeKey, awayKey: m.awayKey }))
+  );
+  const upcoming: BuilderMatch[] = scheduled.map((m) => ({
+    id: m.id,
+    date: m.date,
+    homeCode: m.home.code,
+    awayCode: m.away.code,
+    homeFlag: m.home.flag,
+    awayFlag: m.away.flag,
+    lambdaHome: m.outcome.lambdaHome,
+    lambdaAway: m.outcome.lambdaAway,
+    players: props[m.id] ?? [],
+  }));
+  const suggestions = buildSuggestions(
+    scheduled.map((m) => ({
       id: m.id,
-      date: m.date,
       homeCode: m.home.code,
       awayCode: m.away.code,
-      homeFlag: m.home.flag,
-      awayFlag: m.away.flag,
       lambdaHome: m.outcome.lambdaHome,
       lambdaAway: m.outcome.lambdaAway,
-    }));
+      market: m.market
+        ? { pHome: m.market.pHome, pDraw: m.market.pDraw, pAway: m.market.pAway }
+        : null,
+      players: props[m.id] ?? [],
+    }))
+  );
 
   return (
     <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 pb-20">
@@ -55,7 +74,7 @@ export default async function BuilderPage() {
             No upcoming matches to build with right now.
           </div>
         ) : (
-          <BetBuilder matches={upcoming} />
+          <BetBuilder matches={upcoming} suggestions={suggestions} />
         )}
       </div>
 

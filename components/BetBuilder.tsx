@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import {
   scoreGrid,
   marketLegs,
+  playerLegDefs,
   jointProb,
   probOf,
   americanFromProbStr,
@@ -11,7 +12,9 @@ import {
   parseBookOdds,
   type Grid,
   type LegDef,
+  type PlayerProp,
 } from "@/lib/markets";
+import type { Suggestion } from "@/lib/suggestions";
 
 export type BuilderMatch = {
   id: string;
@@ -22,11 +25,18 @@ export type BuilderMatch = {
   awayFlag: string;
   lambdaHome: number;
   lambdaAway: number;
+  players?: PlayerProp[];
 };
 
 type Pick = { matchId: string; legKey: string };
 
-export default function BetBuilder({ matches }: { matches: BuilderMatch[] }) {
+export default function BetBuilder({
+  matches,
+  suggestions = [],
+}: {
+  matches: BuilderMatch[];
+  suggestions?: Suggestion[];
+}) {
   const [picks, setPicks] = useState<Pick[]>([]);
   const [open, setOpen] = useState<string | null>(matches[0]?.id ?? null);
   const [bookInput, setBookInput] = useState("");
@@ -39,7 +49,11 @@ export default function BetBuilder({ matches }: { matches: BuilderMatch[] }) {
 
   const legsFor = useMemo(() => {
     const m = new Map<string, LegDef[]>();
-    for (const x of matches) m.set(x.id, marketLegs(x.homeCode, x.awayCode));
+    for (const x of matches)
+      m.set(x.id, [
+        ...marketLegs(x.homeCode, x.awayCode),
+        ...playerLegDefs(x.players ?? []),
+      ]);
     return m;
   }, [matches]);
 
@@ -71,17 +85,72 @@ export default function BetBuilder({ matches }: { matches: BuilderMatch[] }) {
     for (const [mid, legs] of byMatch) {
       const grid = grids.get(mid);
       if (!grid) continue;
-      prob *= jointProb(grid, legs.map((l) => l.test));
+      prob *= jointProb(grid, legs);
     }
     return { prob, matchCount: byMatch.size };
   }, [picks, grids, legsFor]);
+
+  const loadSuggestion = (sg: Suggestion) => {
+    setPicks(sg.legs.map((l) => ({ matchId: l.matchId, legKey: l.legKey })));
+    setBookInput("");
+  };
 
   const book = parseBookOdds(bookInput);
   const fairDec = decimalFromProb(combined.prob);
   const edge = book !== null ? book * combined.prob - 1 : null;
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[1fr_20rem] items-start">
+    <div className="space-y-6">
+      {suggestions.length > 0 && (
+        <section>
+          <div className="mb-3 flex items-center gap-3">
+            <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+              Suggested slips — what the model likes
+            </h2>
+            <div className="h-px flex-1 bg-line" />
+          </div>
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {suggestions.map((sg, i) => (
+              <button
+                key={i}
+                onClick={() => loadSuggestion(sg)}
+                className="rounded-xl border border-line bg-panel/70 card-shadow p-3 text-left hover:border-accent/50 transition-colors"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <span
+                    className={`rounded px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider ${
+                      sg.tag === "VALUE"
+                        ? "bg-warn/15 text-warn"
+                        : sg.tag === "ACCA"
+                        ? "bg-sky-400/15 text-sky-300"
+                        : sg.tag === "PROP"
+                        ? "bg-fuchsia-400/15 text-fuchsia-300"
+                        : "bg-accent/15 text-accent"
+                    }`}
+                  >
+                    {sg.tag}
+                  </span>
+                  <span className="tabnums text-xs text-zinc-300">
+                    {(sg.prob * 100).toFixed(0)}% ·{" "}
+                    <span className="text-accent">{sg.fair}</span>
+                  </span>
+                </div>
+                <div className="mt-1.5 text-sm font-semibold text-zinc-100">
+                  {sg.title}
+                </div>
+                <p className="mt-1 text-[11px] leading-relaxed text-muted">
+                  {sg.rationale}
+                </p>
+                <div className="mt-2 text-[10px] uppercase tracking-wider text-zinc-600">
+                  Load into slip →
+                </div>
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <div className="grid gap-6 lg:grid-cols-[1fr_20rem] items-start">
       {/* leg picker */}
       <div className="space-y-3">
         {matches.map((m) => {
@@ -235,6 +304,7 @@ export default function BetBuilder({ matches }: { matches: BuilderMatch[] }) {
         <p className="px-4 pb-3 pt-1 text-[10px] text-zinc-600 border-t border-line/50">
           Model probabilities, not guarantees. Entertainment — not betting advice.
         </p>
+      </div>
       </div>
     </div>
   );

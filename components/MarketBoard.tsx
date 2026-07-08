@@ -1,9 +1,11 @@
 import {
   scoreGrid,
   marketLegs,
+  playerLegDefs,
   probOf,
   americanFromProbStr,
   decimalFromProb,
+  type PlayerProp,
 } from "@/lib/markets";
 
 // Model fair prices for the derived markets of one match — what each market
@@ -13,14 +15,16 @@ export default function MarketBoard({
   lambdaAway,
   homeCode,
   awayCode,
+  players = [],
 }: {
   lambdaHome: number;
   lambdaAway: number;
   homeCode: string;
   awayCode: string;
+  players?: PlayerProp[];
 }) {
   const grid = scoreGrid(lambdaHome, lambdaAway);
-  const legs = marketLegs(homeCode, awayCode);
+  const legs = [...marketLegs(homeCode, awayCode), ...playerLegDefs(players)];
   const groups = new Map<string, typeof legs>();
   for (const l of legs) {
     (groups.get(l.group) ?? groups.set(l.group, []).get(l.group)!).push(l);
