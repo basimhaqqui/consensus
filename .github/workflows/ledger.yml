@@ -32,6 +32,7 @@ jobs:
       - name: Run paper bankroll
         env:
           SITE_URL: ${{ vars.SITE_URL }}
+          APIFOOTBALL_KEY: ${{ secrets.APIFOOTBALL_KEY }}
         run: node scripts/bankroll.mjs
 
       - name: Commit ledger updates

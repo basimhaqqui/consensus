@@ -15,9 +15,10 @@ type Bet = {
   desc: string;
   stake: number;
   odds: number;
-  edge: number;
+  edge?: number;
+  ev?: number;
   modelP: number;
-  booksP: number;
+  booksP?: number;
   status: "open" | "won" | "lost";
   settledAt?: string;
   result?: string;
@@ -26,6 +27,7 @@ type Bet = {
 
 type Bankroll = {
   start: number;
+  target?: number;
   cash: number;
   bets: Bet[];
   log: { at: string; msg: string }[];
@@ -47,6 +49,8 @@ export default async function BankrollPage({
   const equity = s.cash + exposure;
   const pnl = equity - s.start;
   const wins = settled.filter((b) => b.status === "won").length;
+  const target = s.target ?? 10000;
+  const progress = Math.min(1, Math.max(0, equity / target));
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 pb-20">
@@ -56,8 +60,8 @@ export default async function BankrollPage({
             <span className="text-accent">▸</span> Model Bankroll
           </h1>
           <p className="mt-1 text-xs text-muted">
-            ${s.start} paper stake · quarter-Kelly on 5pt+ edges vs the books ·
-            settles on 90&apos; results · runs to the final
+            ${s.start.toLocaleString()} paper stake · aim: ${target.toLocaleString()} by the
+            final · full market menu, priced vs the books · settles on 90&apos; data
           </p>
         </div>
         <Link
@@ -68,7 +72,20 @@ export default async function BankrollPage({
         </Link>
       </header>
 
-      <div className="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-px bg-line rounded-lg overflow-hidden border border-line card-shadow">
+      <div className="mt-6">
+        <div className="mb-1 flex justify-between text-[10px] uppercase tracking-wider text-muted">
+          <span>Progress to ${target.toLocaleString()}</span>
+          <span className="tabnums">{(progress * 100).toFixed(1)}%</span>
+        </div>
+        <div className="h-2 rounded-full bg-zinc-800 overflow-hidden border border-line">
+          <div
+            className={`h-full ${equity >= s.start ? "bg-accent" : "bg-danger"}`}
+            style={{ width: `${Math.max(1, progress * 100)}%` }}
+          />
+        </div>
+      </div>
+
+      <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-px bg-line rounded-lg overflow-hidden border border-line card-shadow">
         {[
           ["Equity", `$${equity.toFixed(2)}`, pnl >= 0 ? "text-accent" : "text-danger"],
           ["P/L", `${pnl >= 0 ? "+" : "−"}$${Math.abs(pnl).toFixed(2)}`, pnl >= 0 ? "text-accent" : "text-danger"],
@@ -93,7 +110,9 @@ export default async function BankrollPage({
                 <div className="min-w-0">
                   <div className="text-zinc-200">{b.desc}</div>
                   <div className="text-[10px] text-muted">
-                    model {(b.modelP * 100).toFixed(0)}% vs books {(b.booksP * 100).toFixed(0)}% · edge +{(b.edge * 100).toFixed(0)}
+                    model {(b.modelP * 100).toFixed(0)}%
+                    {b.ev !== undefined && <> · EV +{(b.ev * 100).toFixed(0)}%</>}
+                    {b.edge !== undefined && <> · edge +{(b.edge * 100).toFixed(0)}</>}
                   </div>
                 </div>
                 <div className="shrink-0 text-right tabnums">

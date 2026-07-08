@@ -1,22 +1,215 @@
-// Paper bankroll: the model bets a virtual $100 until the end of the World
-// Cup. Runs in the ledger cron. Strategy: for each upcoming match with book
-// odds, find the result-family outcome (win or double-chance) where the
-// blend's probability beats the de-vigged books by >= EDGE_MIN; stake
-// quarter-Kelly capped at 15% of bankroll. Offered odds are the de-vigged
-// book price with a 3% payout haircut to simulate real margin. One bet per
-// match. 90' results grade bets: a knockout that reached ET/pens was a draw
-// at 90' by definition.
+// Paper bankroll: the model bets a virtual $1,000 with an explicit aim of
+// reaching $10,000 by the end of the World Cup. Runs in the ledger cron.
+//
+// Markets: full menu — result (ML/double chance), totals, BTTS, clean sheets,
+// team-to-score, anytime scorers, and correlated same-match combos.
+//
+// Pricing: the books only quote 1X2, so the bot back-solves the goal
+// expectations implied by the books' own de-vigged 1X2 (fit lambdas to match
+// pH/pD/pA), prices every derived market off THAT grid, and takes a 3% payout
+// haircut per leg (plus 5% extra on combos) as margin. Its edge is then
+// model-vs-books on every market, not model-vs-itself.
+//
+// Policy: aims for TARGET. With equity E and N bets left, it needs growth
+// g = (TARGET/E)^(1/N) per opportunity — it prefers value bets whose odds can
+// carry that pace and stakes the amount a win needs to stay on trajectory,
+// bounded below by quarter-Kelly and above by a 25% cap. Once E >= TARGET it
+// stops betting. High risk of ruin is accepted: that IS the assignment.
+//
+// Grading: 90' data straight from ESPN's event feed (regulation goals =
+// periods 1-2, own goals flipped, scorer names matched by surname) — falls
+// back to "AET/pens means 90' draw" when the event feed is unavailable.
 
 import { readFileSync, writeFileSync } from "node:fs";
 
 const SITE = process.env.SITE_URL ?? "https://consensus-football.vercel.app";
+const AF_KEY = process.env.APIFOOTBALL_KEY;
 const OUT = new URL("../data/bankroll.json", import.meta.url);
-const EDGE_MIN = 0.05;
-const KELLY_FRACTION = 0.25;
-const STAKE_CAP = 0.15; // of current bankroll
-const MARGIN = 0.97; // payout haircut vs de-vigged fair books price
 
-let state = { start: 100, cash: 100, bets: [], log: [] };
+const TARGET = 10000;
+const EV_MIN = 0.08; // bet only when model EV at offered odds >= 8%
+const KELLY_FRACTION = 0.25;
+const STAKE_CAP = 0.25; // per bet, of equity
+const EXPOSURE_CAP = 0.6; // total open stakes, of equity
+const MARGIN = 0.97; // per-leg payout haircut
+const COMBO_MARGIN = 0.95; // extra haircut on combos
+const FUTURE_ROUNDS_PAD = 3; // SFs/final open for betting later
+
+// --- score grid (mirrors lib/model.ts) ---------------------------------------
+
+const RHO = -0.07;
+const MAX = 8;
+const poisson = (k, l) => {
+  let f = 1;
+  for (let i = 2; i <= k; i++) f *= i;
+  return (Math.pow(l, k) * Math.exp(-l)) / f;
+};
+const tau = (h, a, lh, la) =>
+  h === 0 && a === 0 ? 1 - lh * la * RHO
+  : h === 0 && a === 1 ? 1 + lh * RHO
+  : h === 1 && a === 0 ? 1 + la * RHO
+  : h === 1 && a === 1 ? 1 - RHO
+  : 1;
+
+function grid(lh, la) {
+  const p = [];
+  let t = 0;
+  for (let h = 0; h <= MAX; h++) {
+    p[h] = [];
+    for (let a = 0; a <= MAX; a++) {
+      const v = poisson(h, lh) * poisson(a, la) * tau(h, a, lh, la);
+      p[h][a] = v;
+      t += v;
+    }
+  }
+  return { p, t };
+}
+
+const gridProb = (g, w) => {
+  let s = 0;
+  for (let h = 0; h <= MAX; h++)
+    for (let a = 0; a <= MAX; a++) s += g.p[h][a] * w(h, a);
+  return s / g.t;
+};
+
+function resultProbs(g) {
+  let pH = 0, pD = 0, pA = 0;
+  for (let h = 0; h <= MAX; h++)
+    for (let a = 0; a <= MAX; a++) {
+      if (h > a) pH += g.p[h][a];
+      else if (h === a) pD += g.p[h][a];
+      else pA += g.p[h][a];
+    }
+  return { pH: pH / g.t, pD: pD / g.t, pA: pA / g.t };
+}
+
+// Back-solve the goal expectations the books' 1X2 implies.
+function booksLambdas(books) {
+  let best = null;
+  for (let diff = -900; diff <= 900; diff += 25) {
+    for (let mu = 0.05; mu <= 0.55; mu += 0.025) {
+      const s = Math.max(-3, Math.min(3, diff / 300));
+      const lh = Math.exp(mu + s / 2);
+      const la = Math.exp(mu - s / 2);
+      const r = resultProbs(grid(lh, la));
+      const err =
+        (r.pH - books.pHome) ** 2 +
+        (r.pD - books.pDraw) ** 2 +
+        (r.pA - books.pAway) ** 2;
+      if (!best || err < best.err) best = { lh, la, err };
+    }
+  }
+  return best;
+}
+
+// --- market menu ---------------------------------------------------------------
+
+// weight(h,a) in [0,1]; grade(reg) -> true/false against the 90' record
+function legMenu(m, players) {
+  const H = m.homeKey, A = m.awayKey;
+  const legs = [
+    { key: "home", label: `${H} win`, w: (h, a) => (h > a ? 1 : 0), grade: (r) => r.h > r.a },
+    { key: "away", label: `${A} win`, w: (h, a) => (h < a ? 1 : 0), grade: (r) => r.h < r.a },
+    { key: "dc-1x", label: `${H} or draw`, w: (h, a) => (h >= a ? 1 : 0), grade: (r) => r.h >= r.a },
+    { key: "dc-x2", label: `${A} or draw`, w: (h, a) => (h <= a ? 1 : 0), grade: (r) => r.h <= r.a },
+    { key: "o1.5", label: "Over 1.5 goals", w: (h, a) => (h + a > 1 ? 1 : 0), grade: (r) => r.h + r.a > 1 },
+    { key: "u1.5", label: "Under 1.5 goals", w: (h, a) => (h + a < 2 ? 1 : 0), grade: (r) => r.h + r.a < 2 },
+    { key: "o2.5", label: "Over 2.5 goals", w: (h, a) => (h + a > 2 ? 1 : 0), grade: (r) => r.h + r.a > 2 },
+    { key: "u2.5", label: "Under 2.5 goals", w: (h, a) => (h + a < 3 ? 1 : 0), grade: (r) => r.h + r.a < 3 },
+    { key: "o3.5", label: "Over 3.5 goals", w: (h, a) => (h + a > 3 ? 1 : 0), grade: (r) => r.h + r.a > 3 },
+    { key: "btts", label: "Both teams score", w: (h, a) => (h > 0 && a > 0 ? 1 : 0), grade: (r) => r.h > 0 && r.a > 0 },
+    { key: "nbtts", label: "Not both score", w: (h, a) => (h === 0 || a === 0 ? 1 : 0), grade: (r) => r.h === 0 || r.a === 0 },
+    { key: "cs-h", label: `${H} clean sheet`, w: (_h, a) => (a === 0 ? 1 : 0), grade: (r) => r.a === 0 },
+    { key: "cs-a", label: `${A} clean sheet`, w: (h) => (h === 0 ? 1 : 0), grade: (r) => r.h === 0 },
+    { key: "ts-h", label: `${H} to score`, w: (h) => (h > 0 ? 1 : 0), grade: (r) => r.h > 0 },
+    { key: "ts-a", label: `${A} to score`, w: (_h, a) => (a > 0 ? 1 : 0), grade: (r) => r.a > 0 },
+  ];
+  for (const pl of players) {
+    const goals = (h, a) => (pl.side === "home" ? h : a);
+    const surname = pl.name.split(" ").pop().toLowerCase();
+    legs.push({
+      key: `sc-${pl.side}-${surname}`,
+      label: `${pl.name} to score`,
+      w: (h, a) => 1 - Math.pow(1 - pl.share, goals(h, a)),
+      grade: (r) => r.scorers[pl.side].some((n) => n.includes(surname)),
+      scorer: true,
+    });
+  }
+  return legs;
+}
+
+// --- 90' record from ESPN (for grading) ----------------------------------------
+
+async function regulationRecord(espnId, homeName, awayName) {
+  if (!espnId) return null;
+  try {
+    const j = await (
+      await fetch(
+        `https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/summary?event=${espnId}`
+      )
+    ).json();
+    const events = j.keyEvents ?? [];
+    const rec = { h: 0, a: 0, scorers: { home: [], away: [] } };
+    let sawGoalData = false;
+    for (const e of events) {
+      const t = (e.type?.type ?? "").toLowerCase();
+      if (!t.startsWith("goal")) continue;
+      sawGoalData = true;
+      if ((e.period?.number ?? 1) > 2) continue; // ET goals don't count
+      const own = /own goal/i.test(e.text ?? "");
+      let side =
+        e.team?.displayName === homeName ? "home"
+        : e.team?.displayName === awayName ? "away"
+        : null;
+      if (!side) continue;
+      if (own) side = side === "home" ? "away" : "home";
+      if (side === "home") rec.h++;
+      else rec.a++;
+      if (!own) {
+        const scorer = (e.participants?.[0]?.athlete?.displayName ?? "").toLowerCase();
+        if (scorer) rec.scorers[side].push(scorer);
+      }
+    }
+    // a 0-0 has no goal events — only trust the feed if the match summary loaded
+    if (!j.header) return null;
+    return rec;
+  } catch {
+    return null;
+  }
+}
+
+// --- player shares (api-football top scorers) ------------------------------------
+
+async function scorerShares() {
+  if (!AF_KEY) return new Map();
+  try {
+    const j = await (
+      await fetch(
+        "https://v3.football.api-sports.io/players/topscorers?season=2026&league=1",
+        { headers: { "x-apisports-key": AF_KEY } }
+      )
+    ).json();
+    const out = new Map(); // team name (lower) -> [{name, share-ish gpg}]
+    for (const r of j.response ?? []) {
+      const s = r.statistics?.[0];
+      const apps = s?.games?.appearences ?? 0;
+      const goals = s?.goals?.total ?? 0;
+      if (apps < 2 || goals < 2) continue;
+      const team = (s?.team?.name ?? "").toLowerCase();
+      (out.get(team) ?? out.set(team, []).get(team)).push({
+        name: r.player?.name ?? "",
+        gpg: goals / apps,
+      });
+    }
+    return out;
+  } catch {
+    return new Map();
+  }
+}
+
+// =================================================================================
+
+let state = { start: 1000, target: TARGET, cash: 1000, bets: [], log: [] };
 try {
   state = JSON.parse(readFileSync(OUT, "utf8"));
 } catch {}
@@ -29,30 +222,31 @@ const note = (msg) => {
   console.log(msg);
 };
 
-// --- settle finished bets ------------------------------------------------------
+// --- settle -----------------------------------------------------------------------
 
 for (const bet of state.bets.filter((b) => b.status === "open")) {
   const m = matches.find((x) => x.id === bet.matchId);
-  if (!m) continue;
-  if (m.status !== "final" || !m.score) continue;
+  if (!m || m.status !== "final" || !m.score) continue;
 
-  // 90' result: ET/pens implies the 90 minutes ended level
-  const extra = /aet|pen/i.test(m.live?.detail ?? "");
-  const res = extra
-    ? "draw"
-    : m.score.home > m.score.away
-    ? "home"
-    : m.score.home < m.score.away
-    ? "away"
-    : "draw";
-  const won =
-    bet.pick === res ||
-    (bet.pick === "dc-1x" && res !== "away") ||
-    (bet.pick === "dc-x2" && res !== "home");
+  let rec = await regulationRecord(m.espnId, m.home?.name, m.away?.name);
+  if (!rec) {
+    const extra = /aet|pen/i.test(m.live?.detail ?? "");
+    if (bet.scorer) continue; // can't grade a scorer without the event feed — retry next run
+    rec = extra
+      ? { h: 0, a: 0, scorers: { home: [], away: [] } } // level at 90' — result-family only
+      : { h: m.score.home, a: m.score.away, scorers: { home: [], away: [] } };
+    if (extra && !["home", "away", "dc-1x", "dc-x2"].includes(bet.legs[0].key)) continue;
+  }
+
+  const menu = legMenu(m, bet.players ?? []);
+  const won = bet.legs.every((l) => {
+    const leg = menu.find((x) => x.key === l.key);
+    return leg ? leg.grade(rec) : false;
+  });
 
   bet.status = won ? "won" : "lost";
   bet.settledAt = now;
-  bet.result = `${m.score.home}-${m.score.away}${extra ? " (aet/pens)" : ""}`;
+  bet.result = `${rec.h}-${rec.a} (90')`;
   if (won) {
     const ret = +(bet.stake * bet.odds).toFixed(2);
     bet.pnl = +(ret - bet.stake).toFixed(2);
@@ -64,59 +258,120 @@ for (const bet of state.bets.filter((b) => b.status === "open")) {
   }
 }
 
-// --- place new bets -------------------------------------------------------------
+// --- place ------------------------------------------------------------------------
 
-for (const m of matches) {
-  if (m.status !== "scheduled" || !m.market) continue;
-  if (state.bets.some((b) => b.matchId === m.id)) continue;
+const openBets = () => state.bets.filter((b) => b.status === "open");
+const equity = () => state.cash + openBets().reduce((a, b) => a + b.stake, 0);
 
-  const model = { home: m.outcome.pHome, draw: m.outcome.pDraw, away: m.outcome.pAway };
-  const books = { home: m.market.pHome, draw: m.market.pDraw, away: m.market.pAway };
-  const candidates = [
-    { pick: "home", label: `${m.homeKey} win`, p: model.home, bp: books.home },
-    { pick: "away", label: `${m.awayKey} win`, p: model.away, bp: books.away },
-    { pick: "dc-1x", label: `${m.homeKey} or draw`, p: model.home + model.draw, bp: books.home + books.draw },
-    { pick: "dc-x2", label: `${m.awayKey} or draw`, p: model.away + model.draw, bp: books.away + books.draw },
-  ];
-
-  let best = null;
-  for (const c of candidates) {
-    const edge = c.p - c.bp;
-    if (edge >= EDGE_MIN && (!best || edge > best.edge)) best = { ...c, edge };
-  }
-  if (!best) continue;
-
-  const odds = +(((1 / best.bp) - 1) * MARGIN + 1).toFixed(3); // margin on the win part
-  const b = odds - 1;
-  const kelly = (b * best.p - (1 - best.p)) / b;
-  const stake = +Math.min(
-    state.cash * STAKE_CAP,
-    Math.max(1, state.cash * kelly * KELLY_FRACTION)
-  ).toFixed(2);
-  if (stake > state.cash || stake < 1 || kelly <= 0) continue;
-
-  state.cash = +(state.cash - stake).toFixed(2);
-  state.bets.push({
-    matchId: m.id,
-    placedAt: now,
-    desc: `${best.label} @ ${odds} (${m.homeKey} v ${m.awayKey})`,
-    pick: best.pick,
-    stake,
-    odds,
-    edge: +best.edge.toFixed(3),
-    modelP: +best.p.toFixed(3),
-    booksP: +best.bp.toFixed(3),
-    status: "open",
-  });
-  note(
-    `BET $${stake} on ${best.label} @ ${odds} — model ${(best.p * 100).toFixed(0)}% vs books ${(best.bp * 100).toFixed(0)}% (bank $${state.cash})`
+if (equity() >= TARGET) {
+  note(`TARGET REACHED: equity $${equity().toFixed(2)} >= $${TARGET} — standing down.`);
+} else {
+  const bettable = matches.filter(
+    (m) => m.status === "scheduled" && m.market && !state.bets.some((b) => b.matchId === m.id)
   );
+  const N = bettable.length + FUTURE_ROUNDS_PAD;
+  const g = Math.pow(TARGET / equity(), 1 / Math.max(1, N));
+  const shares = await scorerShares();
+
+  for (const m of bettable) {
+    if (state.cash < 5) break;
+    const exposure = openBets().reduce((a, b) => a + b.stake, 0);
+    if (exposure > equity() * EXPOSURE_CAP) {
+      note(`exposure cap hit ($${exposure.toFixed(0)}) — holding fire`);
+      break;
+    }
+
+    // model grid + books-implied grid
+    const gm = grid(m.outcome.lambdaHome, m.outcome.lambdaAway);
+    const fit = booksLambdas(m.market);
+    if (!fit || fit.err > 0.003) continue; // books fit failed — don't trust derived prices
+    const gb = grid(fit.lh, fit.la);
+
+    // players for this match, share vs books-implied team goals-per-game
+    const players = [];
+    for (const [side, key] of [["home", m.home?.name], ["away", m.away?.name]]) {
+      for (const pl of shares.get((key ?? "").toLowerCase()) ?? []) {
+        const teamL = side === "home" ? fit.lh : fit.la;
+        players.push({ name: pl.name, side, share: Math.min(0.6, pl.gpg / Math.max(1, teamL)) });
+      }
+    }
+
+    const menu = legMenu(m, players);
+    const single = (leg) => {
+      const pM = gridProb(gm, leg.w);
+      const pB = gridProb(gb, leg.w);
+      if (pB <= 0.02 || pB >= 0.98) return null;
+      const odds = +(1 + ((1 / pB) - 1) * MARGIN).toFixed(3);
+      return { legs: [{ key: leg.key }], label: leg.label, pM, odds, ev: pM * odds - 1 };
+    };
+
+    const candidates = [];
+    for (const leg of menu) {
+      const c = single(leg);
+      if (c && c.ev >= EV_MIN) candidates.push(c);
+    }
+    // correlated combos: favourite x goals-flavoured legs (+ scorer variants)
+    const favKey = m.outcome.pHome >= m.outcome.pAway ? "home" : "away";
+    const fav = menu.find((l) => l.key === favKey);
+    for (const other of menu.filter((l) =>
+      ["o2.5", "btts", `ts-${favKey === "home" ? "h" : "a"}`].includes(l.key) || l.scorer
+    )) {
+      if (other.scorer && !other.key.includes(`-${favKey}-`)) continue;
+      const w = (h, a) => fav.w(h, a) * other.w(h, a);
+      const pM = gridProb(gm, w);
+      const pB1 = gridProb(gb, fav.w);
+      const pB2 = gridProb(gb, other.w);
+      if (pB1 <= 0.03 || pB2 <= 0.03 || pM < 0.05) continue;
+      const d1 = 1 + ((1 / pB1) - 1) * MARGIN;
+      const d2 = 1 + ((1 / pB2) - 1) * MARGIN;
+      const odds = +((1 + (d1 * d2 - 1) * COMBO_MARGIN)).toFixed(3);
+      const ev = pM * odds - 1;
+      if (ev >= EV_MIN)
+        candidates.push({
+          legs: [{ key: fav.key }, { key: other.key }],
+          label: `${fav.label} + ${other.label}`,
+          pM, odds, ev, scorer: other.scorer,
+        });
+    }
+    if (!candidates.length) continue;
+
+    // goal-aware selection: value first, with a bonus for odds that keep pace
+    candidates.sort(
+      (x, y) => y.ev + (y.odds >= g ? 0.05 : 0) - (x.ev + (x.odds >= g ? 0.05 : 0))
+    );
+    const pick = candidates[0];
+
+    // stake: what a win needs to stay on the g-trajectory, floored by 1/4 Kelly
+    const b = pick.odds - 1;
+    const kelly = Math.max(0, (b * pick.pM - (1 - pick.pM)) / b);
+    const pace = (g - 1) / b;
+    const frac = Math.min(STAKE_CAP, Math.max(kelly * KELLY_FRACTION, Math.min(pace, STAKE_CAP)));
+    const stake = +Math.min(state.cash, Math.max(5, equity() * frac)).toFixed(2);
+    if (stake < 5 || stake > state.cash) continue;
+
+    state.cash = +(state.cash - stake).toFixed(2);
+    state.bets.push({
+      matchId: m.id,
+      placedAt: now,
+      desc: `${pick.label} @ ${pick.odds} (${m.homeKey} v ${m.awayKey})`,
+      legs: pick.legs,
+      players: players.filter((p) => pick.legs.some((l) => l.key === `sc-${p.side}-${p.name.split(" ").pop().toLowerCase()}`)),
+      scorer: !!pick.scorer,
+      stake,
+      odds: pick.odds,
+      modelP: +pick.pM.toFixed(3),
+      ev: +pick.ev.toFixed(3),
+      status: "open",
+    });
+    note(
+      `BET $${stake} on ${pick.label} @ ${pick.odds} — model ${(pick.pM * 100).toFixed(0)}%, EV +${(pick.ev * 100).toFixed(0)}% (bank $${state.cash}, pace needs ${g.toFixed(2)}x)`
+    );
+  }
 }
 
-state.log = state.log.slice(-200);
+state.log = state.log.slice(-300);
 writeFileSync(OUT, JSON.stringify(state, null, 2) + "\n");
-const open = state.bets.filter((b) => b.status === "open");
-const exposure = open.reduce((a, b) => a + b.stake, 0);
+const open = openBets();
 console.log(
-  `bankroll: $${state.cash} cash, $${exposure.toFixed(2)} in ${open.length} open bet(s), equity $${(state.cash + exposure).toFixed(2)}`
+  `bankroll: $${state.cash} cash, $${open.reduce((a, b) => a + b.stake, 0).toFixed(2)} in ${open.length} open bet(s), equity $${equity().toFixed(2)} / target $${TARGET}`
 );
