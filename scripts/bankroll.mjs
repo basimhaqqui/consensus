@@ -216,7 +216,7 @@ async function explainBet(ctx) {
     `Model prices ${ctx.label} at ${(ctx.pM * 100).toFixed(0)}% but the books' own 1X2 implies only ` +
     `${(ctx.pB * 100).toFixed(0)}% — model xG ${ctx.mxg} vs books-implied ${ctx.bxg}. ` +
     `At ${ctx.odds} that's +${(ctx.ev * 100).toFixed(0)}% EV; Kelly says ${(ctx.kelly * 100).toFixed(0)}% of bankroll.`;
-  if (!ANTHROPIC_KEY) return fallback;
+  if (!ANTHROPIC_KEY) return { text: fallback, ai: false };
   try {
     const { default: Anthropic } = await import("@anthropic-ai/sdk");
     const client = new Anthropic({ apiKey: ANTHROPIC_KEY });
@@ -248,10 +248,10 @@ async function explainBet(ctx) {
       ],
     });
     const text = msg.content.filter((b) => b.type === "text").map((b) => b.text).join("").trim();
-    return text || fallback;
+    return text ? { text, ai: true } : { text: fallback, ai: false };
   } catch (e) {
     console.log(`analysis fallback (${e?.message ?? e})`);
-    return fallback;
+    return { text: fallback, ai: false };
   }
 }
 
@@ -393,7 +393,7 @@ const equity = () => state.cash + openBets().reduce((a, b) => a + b.stake, 0);
     const stake = +Math.min(state.cash, Math.max(5, equity() * frac)).toFixed(2);
     if (stake < 5 || stake > state.cash) continue;
 
-    const analysis = await explainBet({
+    const explained = await explainBet({
       match: `${m.homeKey} v ${m.awayKey} (World Cup ${m.id.startsWith("qf") ? "quarter-final" : m.id.startsWith("sf") ? "semi-final" : m.id === "final" ? "final" : "knockout"})`,
       label: pick.label,
       odds: pick.odds,
@@ -409,7 +409,8 @@ const equity = () => state.cash + openBets().reduce((a, b) => a + b.stake, 0);
 
     state.cash = +(state.cash - stake).toFixed(2);
     state.bets.push({
-      analysis,
+      analysis: explained.text,
+      llm: explained.ai,
       matchId: m.id,
       placedAt: now,
       desc: `${pick.label} @ ${pick.odds} (${m.homeKey} v ${m.awayKey})`,
@@ -425,6 +426,46 @@ const equity = () => state.cash + openBets().reduce((a, b) => a + b.stake, 0);
     note(
       `BET $${stake} on ${pick.label} @ ${pick.odds} — model ${(pick.pM * 100).toFixed(0)}%, EV +${(pick.ev * 100).toFixed(0)}%, ${(kelly * 100).toFixed(0)}% Kelly (bank $${state.cash})`
     );
+  }
+}
+
+// Backfill: rewrite template analyses with the model's own words once the
+// key is available (state races with the cron can leave fallbacks behind).
+if (ANTHROPIC_KEY) {
+  for (const bet of state.bets.filter((b) => b.status === "open" && !b.llm)) {
+    const m = matches.find((x) => x.id === bet.matchId);
+    if (!m || !m.market || m.status !== "scheduled") continue;
+    const gm = grid(m.outcome.lambdaHome, m.outcome.lambdaAway);
+    const fit = booksLambdas(m.market);
+    if (!fit) continue;
+    const gb = grid(fit.lh, fit.la);
+    const menu = legMenu(m, bet.players ?? []);
+    const legs = bet.legs.map((l) => menu.find((x) => x.key === l.key)).filter(Boolean);
+    if (legs.length !== bet.legs.length) continue;
+    const w = (h, a) => legs.reduce((acc, L) => acc * L.w(h, a), 1);
+    const pM = gridProb(gm, w);
+    const pB =
+      legs.length > 1
+        ? legs.reduce((acc, L) => acc * gridProb(gb, L.w), 1)
+        : gridProb(gb, w);
+    const explained = await explainBet({
+      match: `${m.homeKey} v ${m.awayKey}`,
+      label: bet.desc.replace(/ @ .*/, ""),
+      odds: bet.odds,
+      stake: bet.stake,
+      pM,
+      pB,
+      mxg: `${m.outcome.lambdaHome.toFixed(1)}-${m.outcome.lambdaAway.toFixed(1)}`,
+      bxg: `${fit.lh.toFixed(1)}-${fit.la.toFixed(1)}`,
+      ev: bet.ev ?? pM * bet.odds - 1,
+      kelly: Math.max(0, ((bet.odds - 1) * pM - (1 - pM)) / (bet.odds - 1)),
+      combo: bet.legs.length > 1,
+    });
+    if (explained.ai) {
+      bet.analysis = explained.text;
+      bet.llm = true;
+      note(`analysis written for: ${bet.desc}`);
+    }
   }
 }
 
