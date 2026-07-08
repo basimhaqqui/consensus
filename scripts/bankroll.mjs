@@ -1,5 +1,5 @@
-// Paper bankroll: the model bets a virtual $1,000 with an explicit aim of
-// reaching $10,000 by the end of the World Cup. Runs in the ledger cron.
+// Paper bankroll: the model bets a virtual $1,000 with a standing aim of
+// growing it to at least $10,000 — no deadline. Runs in the ledger cron.
 //
 // Markets: full menu — result (ML/double chance), totals, BTTS, clean sheets,
 // team-to-score, anytime scorers, and correlated same-match combos.
@@ -10,11 +10,11 @@
 // haircut per leg (plus 5% extra on combos) as margin. Its edge is then
 // model-vs-books on every market, not model-vs-itself.
 //
-// Policy: aims for TARGET. With equity E and N bets left, it needs growth
-// g = (TARGET/E)^(1/N) per opportunity — it prefers value bets whose odds can
-// carry that pace and stakes the amount a win needs to stay on trajectory,
-// bounded below by quarter-Kelly and above by a 25% cap. Once E >= TARGET it
-// stops betting. High risk of ruin is accepted: that IS the assignment.
+// Policy: no deadline means the growth-optimal route to ANY target is Kelly
+// staking — maximize expected log-growth, never chase variance. Quarter-Kelly
+// on the highest-EV market per match (EV >= 8% at offered odds), capped per
+// bet and in total exposure. The target is a milestone, not a stop: the
+// bankroll keeps compounding through the WC and into the league season.
 //
 // Grading: 90' data straight from ESPN's event feed (regulation goals =
 // periods 1-2, own goals flipped, scorer names matched by surname) — falls
@@ -26,14 +26,13 @@ const SITE = process.env.SITE_URL ?? "https://consensus-football.vercel.app";
 const AF_KEY = process.env.APIFOOTBALL_KEY;
 const OUT = new URL("../data/bankroll.json", import.meta.url);
 
-const TARGET = 10000;
+const TARGET = 10000; // milestone, not a deadline or a stop
 const EV_MIN = 0.08; // bet only when model EV at offered odds >= 8%
 const KELLY_FRACTION = 0.25;
-const STAKE_CAP = 0.25; // per bet, of equity
-const EXPOSURE_CAP = 0.6; // total open stakes, of equity
+const STAKE_CAP = 0.15; // per bet, of equity
+const EXPOSURE_CAP = 0.5; // total open stakes, of equity
 const MARGIN = 0.97; // per-leg payout haircut
 const COMBO_MARGIN = 0.95; // extra haircut on combos
-const FUTURE_ROUNDS_PAD = 3; // SFs/final open for betting later
 
 // --- score grid (mirrors lib/model.ts) ---------------------------------------
 
@@ -263,14 +262,14 @@ for (const bet of state.bets.filter((b) => b.status === "open")) {
 const openBets = () => state.bets.filter((b) => b.status === "open");
 const equity = () => state.cash + openBets().reduce((a, b) => a + b.stake, 0);
 
-if (equity() >= TARGET) {
-  note(`TARGET REACHED: equity $${equity().toFixed(2)} >= $${TARGET} — standing down.`);
-} else {
+{
+  if (equity() >= TARGET && !state.hitTarget) {
+    state.hitTarget = true;
+    note(`MILESTONE: equity $${equity().toFixed(2)} passed the $${TARGET} aim — compounding continues.`);
+  }
   const bettable = matches.filter(
     (m) => m.status === "scheduled" && m.market && !state.bets.some((b) => b.matchId === m.id)
   );
-  const N = bettable.length + FUTURE_ROUNDS_PAD;
-  const g = Math.pow(TARGET / equity(), 1 / Math.max(1, N));
   const shares = await scorerShares();
 
   for (const m of bettable) {
@@ -335,17 +334,13 @@ if (equity() >= TARGET) {
     }
     if (!candidates.length) continue;
 
-    // goal-aware selection: value first, with a bonus for odds that keep pace
-    candidates.sort(
-      (x, y) => y.ev + (y.odds >= g ? 0.05 : 0) - (x.ev + (x.odds >= g ? 0.05 : 0))
-    );
+    // growth-optimal selection: quarter-Kelly EV per bet, best first
+    candidates.sort((x, y) => y.ev - x.ev);
     const pick = candidates[0];
 
-    // stake: what a win needs to stay on the g-trajectory, floored by 1/4 Kelly
     const b = pick.odds - 1;
     const kelly = Math.max(0, (b * pick.pM - (1 - pick.pM)) / b);
-    const pace = (g - 1) / b;
-    const frac = Math.min(STAKE_CAP, Math.max(kelly * KELLY_FRACTION, Math.min(pace, STAKE_CAP)));
+    const frac = Math.min(STAKE_CAP, kelly * KELLY_FRACTION);
     const stake = +Math.min(state.cash, Math.max(5, equity() * frac)).toFixed(2);
     if (stake < 5 || stake > state.cash) continue;
 
@@ -364,7 +359,7 @@ if (equity() >= TARGET) {
       status: "open",
     });
     note(
-      `BET $${stake} on ${pick.label} @ ${pick.odds} — model ${(pick.pM * 100).toFixed(0)}%, EV +${(pick.ev * 100).toFixed(0)}% (bank $${state.cash}, pace needs ${g.toFixed(2)}x)`
+      `BET $${stake} on ${pick.label} @ ${pick.odds} — model ${(pick.pM * 100).toFixed(0)}%, EV +${(pick.ev * 100).toFixed(0)}%, ${(kelly * 100).toFixed(0)}% Kelly (bank $${state.cash})`
     );
   }
 }

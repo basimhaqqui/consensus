@@ -60,8 +60,8 @@ export default async function BankrollPage({
             <span className="text-accent">▸</span> Model Bankroll
           </h1>
           <p className="mt-1 text-xs text-muted">
-            ${s.start.toLocaleString()} paper stake · aim: ${target.toLocaleString()} by the
-            final · full market menu, priced vs the books · settles on 90&apos; data
+            ${s.start.toLocaleString()} paper stake · aim: at least ${target.toLocaleString()}, no
+            deadline · growth-optimal staking, full market menu · settles on 90&apos; data
           </p>
         </div>
         <Link
