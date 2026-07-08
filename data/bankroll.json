@@ -1,0 +1,40 @@
+{
+  "start": 100,
+  "cash": 90.02,
+  "bets": [
+    {
+      "matchId": "qf-1",
+      "placedAt": "2026-07-08T00:08:17.139Z",
+      "desc": "MAR or draw @ 2.482 (FRA v MAR)",
+      "pick": "dc-x2",
+      "stake": 5.94,
+      "odds": 2.482,
+      "edge": 0.149,
+      "modelP": 0.545,
+      "booksP": 0.396,
+      "status": "open"
+    },
+    {
+      "matchId": "qf-3",
+      "placedAt": "2026-07-08T00:08:17.139Z",
+      "desc": "NOR or draw @ 2.024 (NOR v ENG)",
+      "pick": "dc-1x",
+      "stake": 4.04,
+      "odds": 2.024,
+      "edge": 0.094,
+      "modelP": 0.581,
+      "booksP": 0.487,
+      "status": "open"
+    }
+  ],
+  "log": [
+    {
+      "at": "2026-07-08T00:08:17.139Z",
+      "msg": "BET $5.94 on MAR or draw @ 2.482 — model 54% vs books 40% (bank $94.06)"
+    },
+    {
+      "at": "2026-07-08T00:08:17.139Z",
+      "msg": "BET $4.04 on NOR or draw @ 2.024 — model 58% vs books 49% (bank $90.02)"
+    }
+  ]
+}
