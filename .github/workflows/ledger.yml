@@ -29,6 +29,9 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
         run: node scripts/ledger.mjs
 
+      - name: Install SDK for bet analysis
+        run: npm install --no-save --no-audit --no-fund @anthropic-ai/sdk
+
       - name: Run paper bankroll
         env:
           SITE_URL: ${{ vars.SITE_URL }}
