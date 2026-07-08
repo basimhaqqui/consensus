@@ -11,10 +11,10 @@
 // model-vs-books on every market, not model-vs-itself.
 //
 // Policy: no deadline means the growth-optimal route to ANY target is Kelly
-// staking — maximize expected log-growth, never chase variance. Quarter-Kelly
-// on the highest-EV market per match (EV >= 8% at offered odds), capped per
-// bet and in total exposure. The target is a milestone, not a stop: the
-// bankroll keeps compounding through the WC and into the league season.
+// staking. FULL Kelly on the highest-EV market per match (EV >= 8% at
+// offered odds) — the most aggressive sizing that still maximizes growth;
+// anything past it trades EV for extra variance. The target is a milestone,
+// not a stop: the bankroll compounds through the WC and into the leagues.
 //
 // Grading: 90' data straight from ESPN's event feed (regulation goals =
 // periods 1-2, own goals flipped, scorer names matched by surname) — falls
@@ -28,9 +28,9 @@ const OUT = new URL("../data/bankroll.json", import.meta.url);
 
 const TARGET = 10000; // milestone, not a deadline or a stop
 const EV_MIN = 0.08; // bet only when model EV at offered odds >= 8%
-const KELLY_FRACTION = 0.25;
-const STAKE_CAP = 0.15; // per bet, of equity
-const EXPOSURE_CAP = 0.5; // total open stakes, of equity
+const KELLY_FRACTION = 1.0; // full Kelly — maximum aggression that is still growth-optimal
+const STAKE_CAP = 0.25; // per bet, of equity
+const EXPOSURE_CAP = 0.8; // total open stakes, of equity
 const MARGIN = 0.97; // per-leg payout haircut
 const COMBO_MARGIN = 0.95; // extra haircut on combos
 

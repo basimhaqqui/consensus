@@ -61,7 +61,7 @@ export default async function BankrollPage({
           </h1>
           <p className="mt-1 text-xs text-muted">
             ${s.start.toLocaleString()} paper stake · aim: at least ${target.toLocaleString()}, no
-            deadline · growth-optimal staking, full market menu · settles on 90&apos; data
+            deadline · full-Kelly staking, full market menu · settles on 90&apos; data
           </p>
         </div>
         <Link

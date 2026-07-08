@@ -1,11 +1,11 @@
 {
   "start": 1000,
   "target": 10000,
-  "cash": 877.19,
+  "cash": 508.73,
   "bets": [
     {
       "matchId": "qf-1",
-      "placedAt": "2026-07-08T00:21:34.996Z",
+      "placedAt": "2026-07-08T00:45:39.196Z",
       "desc": "MAR win @ 6.448 (FRA v MAR)",
       "legs": [
         {
@@ -14,7 +14,7 @@
       ],
       "players": [],
       "scorer": false,
-      "stake": 27.23,
+      "stake": 108.94,
       "odds": 6.448,
       "modelP": 0.247,
       "ev": 0.593,
@@ -22,7 +22,7 @@
     },
     {
       "matchId": "qf-2",
-      "placedAt": "2026-07-08T00:21:34.996Z",
+      "placedAt": "2026-07-08T00:45:39.196Z",
       "desc": "ESP win + Over 2.5 goals @ 3.283 (ESP v BEL)",
       "legs": [
         {
@@ -34,7 +34,7 @@
       ],
       "players": [],
       "scorer": false,
-      "stake": 26.36,
+      "stake": 105.43,
       "odds": 3.283,
       "modelP": 0.378,
       "ev": 0.241,
@@ -42,7 +42,7 @@
     },
     {
       "matchId": "qf-3",
-      "placedAt": "2026-07-08T00:21:34.996Z",
+      "placedAt": "2026-07-08T00:45:39.196Z",
       "desc": "NOR win @ 4.417 (NOR v ENG)",
       "legs": [
         {
@@ -51,7 +51,7 @@
       ],
       "players": [],
       "scorer": false,
-      "stake": 24.56,
+      "stake": 98.25,
       "odds": 4.417,
       "modelP": 0.302,
       "ev": 0.336,
@@ -59,7 +59,7 @@
     },
     {
       "matchId": "qf-4",
-      "placedAt": "2026-07-08T00:21:34.996Z",
+      "placedAt": "2026-07-08T00:45:39.196Z",
       "desc": "ARG win + L. Messi to score @ 2.746 (ARG v SUI)",
       "legs": [
         {
@@ -77,7 +77,7 @@
         }
       ],
       "scorer": true,
-      "stake": 44.66,
+      "stake": 178.65,
       "odds": 2.746,
       "modelP": 0.478,
       "ev": 0.312,
@@ -87,23 +87,23 @@
   "log": [
     {
       "at": "2026-07-08T00:00:00Z",
-      "msg": "Restaked $1,000. Aim: grow to at least $10,000 - no deadline. Growth-optimal (quarter-Kelly) staking on 8%+ EV edges across the full market menu."
+      "msg": "Restaked $1,000. Aim: at least $10,000, no deadline. FULL Kelly on 8%+ EV edges - maximum aggression that is still growth-optimal."
     },
     {
-      "at": "2026-07-08T00:21:34.996Z",
-      "msg": "BET $27.23 on MAR win @ 6.448 — model 25%, EV +59%, 11% Kelly (bank $972.77)"
+      "at": "2026-07-08T00:45:39.196Z",
+      "msg": "BET $108.94 on MAR win @ 6.448 — model 25%, EV +59%, 11% Kelly (bank $891.06)"
     },
     {
-      "at": "2026-07-08T00:21:34.996Z",
-      "msg": "BET $26.36 on ESP win + Over 2.5 goals @ 3.283 — model 38%, EV +24%, 11% Kelly (bank $946.41)"
+      "at": "2026-07-08T00:45:39.196Z",
+      "msg": "BET $105.43 on ESP win + Over 2.5 goals @ 3.283 — model 38%, EV +24%, 11% Kelly (bank $785.63)"
     },
     {
-      "at": "2026-07-08T00:21:34.996Z",
-      "msg": "BET $24.56 on NOR win @ 4.417 — model 30%, EV +34%, 10% Kelly (bank $921.85)"
+      "at": "2026-07-08T00:45:39.196Z",
+      "msg": "BET $98.25 on NOR win @ 4.417 — model 30%, EV +34%, 10% Kelly (bank $687.38)"
     },
     {
-      "at": "2026-07-08T00:21:34.996Z",
-      "msg": "BET $44.66 on ARG win + L. Messi to score @ 2.746 — model 48%, EV +31%, 18% Kelly (bank $877.19)"
+      "at": "2026-07-08T00:45:39.196Z",
+      "msg": "BET $178.65 on ARG win + L. Messi to score @ 2.746 — model 48%, EV +31%, 18% Kelly (bank $508.73)"
     }
   ]
 }
