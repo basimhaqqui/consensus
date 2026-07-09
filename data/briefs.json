@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-09T08:04:11.573Z",
+  "generated": "2026-07-09T11:34:52.070Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -96,15 +96,15 @@
       ]
     },
     "FRA|MAR": {
-      "text": "France meet Morocco in the World Cup quarter-final at Boston Stadium, a rematch of the 2022 semi-final. Morocco will be without forward Ismael Saibari, while France's appeal to overturn Michael Olise's yellow card was rejected by FIFA. Argentinian officials have been appointed for the tie, with Didier Deschamps playing down any concern over the decision.",
+      "text": "Morocco will be without forward Ismael Saibari for the quarterfinal at Boston Stadium. France failed in their attempt to have Michael Olise's yellow card overturned. Argentinian officials have been appointed for the fixture, an appointment Didier Deschamps has downplayed.",
       "sources": [
         {
-          "headline": "Could AFCON final villain Brahim Diaz complete redemption arc for Morocco against Kylian Mbappe's France?",
-          "href": "https://www.espn.com/soccer/story/_/id/49312108/could-afcon-final-villain-brahim-diaz-complete-redemption-arc-france-kylian-mbappe"
+          "headline": "World Cup Daily live: Mexico star Mora's high school graduation, France-Morocco kicks off quarterfinals",
+          "href": "https://www.espn.com/soccer/story/_/id/49309123/world-cup-daily-live-mexico-star-mora-high-school-graduation-france-morocco-quarterfinals"
         },
         {
-          "headline": "Didier Deschamps unconcerned by Argentine officials in France-Morocco World Cup clash",
-          "href": "https://www.espn.com/soccer/story/_/id/49309417/didier-deschamps-unconcerned-argentinian-officials-france-morocco-world-cup-clash"
+          "headline": "Morocco press conference chaos leaves Brahim Diaz forgetting the question",
+          "href": "https://www.espn.com/video/clip/_/id/49312820/morocco-press-conference-chaos-leaves-brahim-diaz-forgetting-question"
         },
         {
           "headline": "Morocco star Saibari to miss World Cup quarterfinal vs. France",
@@ -113,15 +113,19 @@
       ]
     },
     "BEL|ESP": {
-      "text": "Spain meet Belgium in the World Cup quarterfinal on Friday at SoFi Stadium. Goalkeeper Thibaut Courtois will face Spain for the first time in a competitive match. Belgium advanced past the United States in the previous round.",
+      "text": "Spain, tipped by Belgium goalkeeper Thibaut Courtois as one of the tournament favourites, meet Belgium in the World Cup quarterfinal at SoFi Stadium on Friday. Courtois, who faces Spain in an official match for the first time in his career, backs his side as underdogs to cause an upset. Belgium advanced past the USMNT in the previous round.",
       "sources": [
         {
-          "headline": "Courtois backs underdog Belgium to upset Spain in World Cup quarterfinals",
-          "href": "https://www.espn.com/soccer/story/_/id/49311500/courtois-backs-underdog-belgium-upset-spain-world-cup-quarterfinals"
+          "headline": "Courtois: Spain are one of the favourites to win the World Cup",
+          "href": "https://www.espn.com/video/clip/_/id/49313057/spain-one-favourites-win-world-cup"
         },
         {
-          "headline": "Moreno: USMNT 'lacked fight' vs. Belgium",
-          "href": "https://www.espn.com/video/clip/_/id/49309664/usmnt-lacked-fight-vs-belgium"
+          "headline": "Olmo: Spain don't care what the other teams are doing",
+          "href": "https://www.espn.com/video/clip/_/id/49312995/spain-care-other-teams-doing"
+        },
+        {
+          "headline": "Lamine Yamal: 'Incredible' to see Lionel Messi still starring at World Cup",
+          "href": "https://www.espn.com/soccer/story/_/id/49312811/incredible-see-lionel-messi-starring-world-cup"
         }
       ]
     }
