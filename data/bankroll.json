@@ -19,8 +19,11 @@
       "odds": 6.448,
       "modelP": 0.247,
       "ev": 0.593,
-      "status": "open",
-      "llm": true
+      "status": "lost",
+      "llm": true,
+      "settledAt": "2026-07-09T23:36:17.141Z",
+      "result": "2-0 (90')",
+      "pnl": -108.94
     },
     {
       "analysis": "I'm backing ESP win + Over 2.5 at 3.283, staking $105.43 (11% Kelly on a +24% EV edge). My joint score grid puts this combo at 37.8% versus the market's 28.6%, and the gap traces to my defensive read on BEL: I have them conceding more (1.9-1.0 to my model vs 1.8-0.8 implied), which lifts both the Spain win and the Over legs simultaneously. The market is pricing these two outcomes closer to independent, but my correlated grid captures that a high-scoring Spain performance and a Spain win reinforce each other, and that's where the value sits.",
@@ -128,6 +131,10 @@
     {
       "at": "2026-07-08T00:59:17.484Z",
       "msg": "analysis written for: ARG win + L. Messi to score @ 2.746 (ARG v SUI)"
+    },
+    {
+      "at": "2026-07-09T23:36:17.141Z",
+      "msg": "LOST MAR win @ 6.448 (FRA v MAR): -$108.94 (bank $508.73)"
     }
   ]
 }
