@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-09T18:21:24.895Z",
+  "generated": "2026-07-09T22:06:48.013Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -113,7 +113,7 @@
       ]
     },
     "BEL|ESP": {
-      "text": "Spain meet Belgium in the World Cup quarterfinal at SoFi Stadium in Los Angeles on Friday. Coach Luis de la Fuente has highlighted an \"improved\" Lamine Yamal ahead of the tie, while Belgium goalkeeper Thibaut Courtois faces Spain in an official match for the first time in his career.",
+      "text": "Spain reach the quarterfinal against Belgium in Los Angeles, with coach Luis de la Fuente expecting an improved Lamine Yamal to feature. Belgium advanced by beating the United States 4-1 in the last 16. Goalkeeper Thibaut Courtois has named Spain among the tournament favourites.",
       "sources": [
         {
           "headline": "U.S. star Christian Pulisic suffered microfracture vs. Belgium",
@@ -126,6 +126,23 @@
         {
           "headline": "Courtois: Spain are one of the favourites to win the World Cup",
           "href": "https://www.espn.com/video/clip/_/id/49313057/spain-one-favourites-win-world-cup"
+        }
+      ]
+    },
+    "ENG|NOR": {
+      "text": "England will be without fullback Jarell Quansah, serving the second match of a two-game suspension following his red card against Mexico. Norway's Erling Haaland has downplayed his side's chances and placed the pressure on England, while Dan Burn, likely tasked with containing Haaland, said England must improve on their round-of-16 display.",
+      "sources": [
+        {
+          "headline": "Jarell Quansah's extended World Cup ban 'very frustrating' - Bukayo Saka",
+          "href": "https://www.espn.com/soccer/story/_/id/49317664/jarell-quansah-extended-world-cup-ban-very-frustrating-bukayo-saka"
+        },
+        {
+          "headline": "Norway's Haaland: Chances of winning World Cup 'really low', pressure fully on England",
+          "href": "https://www.espn.com/soccer/story/_/id/49317174/norway-erling-haaland-chances-really-low-world-cup-pressure-england-quarterfinal"
+        },
+        {
+          "headline": "Haaland: All the pressure is on England in quarterfinal",
+          "href": "https://www.espn.com/video/clip/_/id/49317036/all-pressure-england-quarterfinal"
         }
       ]
     }
