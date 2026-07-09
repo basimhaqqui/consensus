@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-09T04:40:11.684Z",
+  "generated": "2026-07-09T08:04:11.573Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -96,8 +96,12 @@
       ]
     },
     "FRA|MAR": {
-      "text": "France reach the quarterfinal as favourites in a rematch of the 2022 semifinal, with Argentine officials appointed for the tie. Morocco will be without forward Ismael Saibari, while France's Michael Olise carries a yellow card after FIFA rejected an appeal to rescind it. Ayyoub Bouaddi, who chose Morocco over France, features against the country he turned down.",
+      "text": "France meet Morocco in the World Cup quarter-final at Boston Stadium, a rematch of the 2022 semi-final. Morocco will be without forward Ismael Saibari, while France's appeal to overturn Michael Olise's yellow card was rejected by FIFA. Argentinian officials have been appointed for the tie, with Didier Deschamps playing down any concern over the decision.",
       "sources": [
+        {
+          "headline": "Could AFCON final villain Brahim Diaz complete redemption arc for Morocco against Kylian Mbappe's France?",
+          "href": "https://www.espn.com/soccer/story/_/id/49312108/could-afcon-final-villain-brahim-diaz-complete-redemption-arc-france-kylian-mbappe"
+        },
         {
           "headline": "Didier Deschamps unconcerned by Argentine officials in France-Morocco World Cup clash",
           "href": "https://www.espn.com/soccer/story/_/id/49309417/didier-deschamps-unconcerned-argentinian-officials-france-morocco-world-cup-clash"
@@ -105,10 +109,19 @@
         {
           "headline": "Morocco star Saibari to miss World Cup quarterfinal vs. France",
           "href": "https://www.espn.com/soccer/story/_/id/49310007/morocco-ismael-saibari-injury-france-world-cup-2026-quarterfinal"
+        }
+      ]
+    },
+    "BEL|ESP": {
+      "text": "Spain meet Belgium in the World Cup quarterfinal on Friday at SoFi Stadium. Goalkeeper Thibaut Courtois will face Spain for the first time in a competitive match. Belgium advanced past the United States in the previous round.",
+      "sources": [
+        {
+          "headline": "Courtois backs underdog Belgium to upset Spain in World Cup quarterfinals",
+          "href": "https://www.espn.com/soccer/story/_/id/49311500/courtois-backs-underdog-belgium-upset-spain-world-cup-quarterfinals"
         },
         {
-          "headline": "LeBoeuf: France have to 'respect' Morocco",
-          "href": "https://www.espn.com/video/clip/_/id/49309690/france-respect-morocco"
+          "headline": "Moreno: USMNT 'lacked fight' vs. Belgium",
+          "href": "https://www.espn.com/video/clip/_/id/49309664/usmnt-lacked-fight-vs-belgium"
         }
       ]
     }
