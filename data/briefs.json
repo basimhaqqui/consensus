@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-10T08:01:39.233Z",
+  "generated": "2026-07-10T11:28:59.968Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -113,41 +113,41 @@
       ]
     },
     "BEL|ESP": {
-      "text": "Spain meet Belgium in the World Cup quarterfinal, with the winner facing France in the semifinals. Romelu Lukaku said Belgium will need to \"play the perfect game\" to advance, while Spain arrive with Lamine Yamal central to Luis de la Fuente's side. Belgium beat the United States 4-1 in the last 16, a match in which Christian Pulisic fractured his leg.",
+      "text": "Spain face Belgium in the World Cup quarterfinals on Friday, with each side three wins from the title. Belgium forward Romelu Lukaku said the Red Devils will need to \"play the perfect game\" to advance past Spain.",
       "sources": [
+        {
+          "headline": "World Cup Daily live: Remix of teen Haaland's rap song hits No. 1; Spain to face Belgium",
+          "href": "https://www.espn.com/soccer/story/_/id/49320148/world-cup-daily-live-remix-teen-erling-haaland-rap-song-hits-no-1-spain-face-belgium"
+        },
+        {
+          "headline": "World Cup quarterfinals: How we got here, predictions, odds",
+          "href": "https://www.espn.com/soccer/story/_/id/49294844/fifa-world-cup-quarterfinal-preview-predictions-odds-argentina-belgium-england-france-morocco-norway-spain-switzerland"
+        },
         {
           "headline": "Romelu Lukaku says Belgium need 'perfect game' to beat Spain",
           "href": "https://www.espn.com/soccer/story/_/id/49318578/romelu-lukaku-belgium-perfect-game-beat-spain"
-        },
-        {
-          "headline": "Morocco vow return, can eliminate France at next World Cup",
-          "href": "https://www.espn.com/soccer/story/_/id/49319041/morocco-vow-return-eliminate-france-next-world-cup"
-        },
-        {
-          "headline": "Burley: Spain need more than Yamal to win World Cup",
-          "href": "https://www.espn.com/video/clip/_/id/49319258/spain-need-more-yamal-win-world-cup"
         }
       ]
     },
     "ENG|NOR": {
-      "text": "Norway reach the quarterfinal led by Erling Haaland, who has publicly labelled England the \"clear favourites.\" England defender Marc Guehi is managing a slight hamstring injury and is a doubt, while Declan Rice has been dealing with a bug. Jarell Quansah is suspended after his red card against Mexico.",
+      "text": "England carry fitness concerns into the quarterfinal, with Marc Guéhi managing a hamstring injury that puts him in doubt and Declan Rice reported to be ill with a bug. The tie pits Harry Kane against Erling Haaland, who has publicly labelled England \"clear favourites.\" Jordan Pickford continues in goal on the verge of a World Cup record.",
       "sources": [
+        {
+          "headline": "England have Marc Guéhi, Declan Rice fitness concerns before Norway World Cup quarterfinal - sources",
+          "href": "https://www.espn.com/soccer/story/_/id/49322481/england-marc-guehi-declan-rice-fitness-concerns-norway-world-cup-quarterfinal-sources"
+        },
+        {
+          "headline": "Harry Kane vs. Erling Haaland: How do England, Norway stars compare? Key stats before World Cup clash",
+          "href": "https://www.espn.com/soccer/story/_/id/49313872/harry-kane-erling-haaland-comparison-key-stats-england-norway-world-cup-quarterfinal"
+        },
         {
           "headline": "Nico O'Reilly wary of Erling Haaland 'mind games' ahead of England-Norway World Cup quarterfinal",
           "href": "https://www.espn.com/soccer/story/_/id/49322056/nico-oreilly-erling-haaland-mind-games-england-norway-world-cup-quarterfinal"
-        },
-        {
-          "headline": "On eve of World Cup record, why doesn't England's Pickford get more love?",
-          "href": "https://www.espn.com/soccer/story/_/id/49318195/jordan-pickford-england-goalkeepers-world-cup-peter-shilton-record-thomas-tuchel"
-        },
-        {
-          "headline": "Forget Messi & Co., because this is Erling Haaland's World Cup",
-          "href": "https://www.espn.com/soccer/story/_/id/49316632/erling-haaland-norway-world-cup-manchester-city-england-striker-analysis-lionel-messi"
         }
       ]
     },
     "ARG|SUI": {
-      "text": "Argentina reached the quarter-finals with a second-half comeback to beat Egypt after trailing. Switzerland advanced by defeating Colombia 4-3 on penalties.",
+      "text": "Argentina reached the quarter-finals with a second-half comeback to beat Egypt after trailing earlier in the match. Switzerland advanced by defeating Colombia 4-3 on penalties.",
       "sources": [
         {
           "headline": "Watch every penalty from Switzerland v Colombia shootout",
