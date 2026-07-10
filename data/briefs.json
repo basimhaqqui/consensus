@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-10T15:16:59.298Z",
+  "generated": "2026-07-10T18:10:19.963Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -113,49 +113,53 @@
       ]
     },
     "BEL|ESP": {
-      "text": "Spain, managed by Luis de la Fuente, meet Belgium in the World Cup quarter-finals. Belgium's veteran-laden squad has reached the last eight after being widely discounted among the contenders.",
+      "text": "Spain face Belgium in the World Cup quarterfinals, with the winner three victories from the trophy. Belgium's golden generation has reached the last eight after being widely discounted among the contenders, while Luis de la Fuente's Spain arrive with Lamine Yamal central to their approach.",
       "sources": [
         {
           "headline": "World Cup Daily live: Remix of teen Haaland's rap song hits No. 1; Spain to face Belgium",
           "href": "https://www.espn.com/soccer/story/_/id/49320148/world-cup-daily-live-remix-teen-erling-haaland-rap-song-hits-no-1-spain-face-belgium"
         },
         {
-          "headline": "World Cup quarterfinals: How we got here, predictions, odds",
-          "href": "https://www.espn.com/soccer/story/_/id/49294844/fifa-world-cup-quarterfinal-preview-predictions-odds-argentina-belgium-england-france-morocco-norway-spain-switzerland"
+          "headline": "Every team's championship odds for the 2026 World Cup: France odds shorten, Spain ahead of Argentina, England",
+          "href": "https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups"
         },
         {
-          "headline": "'What old timers can do' - the evolution of Belgium's golden generation",
-          "href": "https://www.bbc.co.uk/sport/football/articles/c5yz0g0mg4no?at_medium=RSS&amp;at_campaign=rss"
+          "headline": "World Cup quarterfinals: How we got here, predictions, odds",
+          "href": "https://www.espn.com/soccer/story/_/id/49294844/fifa-world-cup-quarterfinal-preview-predictions-odds-argentina-belgium-england-france-morocco-norway-spain-switzerland"
         }
       ]
     },
     "ENG|NOR": {
-      "text": "England carry fitness concerns into the quarterfinal, with Marc Guéhi (hamstring) and Declan Rice both in doubt, according to sources. The tie pits Erling Haaland against Harry Kane, and midfielders Martin Ødegaard and Jude Bellingham, both in strong recent form. Thomas Tuchel's side must find a way to contain Haaland after Norway's striker labelled England \"clear favourites.\"",
+      "text": "England, managed by Thomas Tuchel, face Norway in the World Cup quarterfinal, with Marc Guéhi (hamstring) and Declan Rice among fitness concerns. The tie features contrasting attacking threats in Harry Kane and Erling Haaland, while midfielders Jude Bellingham and Martin Ødegaard both arrive in form. Haaland has publicly labelled England \"clear favourites,\" a claim England's Nico O'Reilly has dismissed as mind games.",
       "sources": [
         {
-          "headline": "England's Bellingham, Norway's Ødegaard have World Cup at their feet",
-          "href": "https://www.espn.com/soccer/story/_/id/49323404/england-jude-bellingham-norway-martin-odegaard-world-cup-their-feet"
+          "headline": "McManaman: England should have too much quality for Norway",
+          "href": "https://www.espn.com/video/clip/_/id/49326093/england-too-much-quality-norway"
         },
         {
-          "headline": "England have Marc Guéhi, Declan Rice fitness concerns before Norway World Cup quarterfinal - sources",
-          "href": "https://www.espn.com/soccer/story/_/id/49322481/england-marc-guehi-declan-rice-fitness-concerns-norway-world-cup-quarterfinal-sources"
+          "headline": "Every team's championship odds for the 2026 World Cup: France odds shorten, Spain ahead of Argentina, England",
+          "href": "https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups"
         },
         {
-          "headline": "Harry Kane vs. Erling Haaland: How do England, Norway stars compare? Key stats before World Cup clash",
-          "href": "https://www.espn.com/soccer/story/_/id/49313872/harry-kane-erling-haaland-comparison-key-stats-england-norway-world-cup-quarterfinal"
+          "headline": "Norway scouting report: What can England expect in their World Cup quarterfinal?",
+          "href": "https://www.espn.com/soccer/story/_/id/49309967/norway-scouting-report-england-expect-their-world-cup-quarterfinal"
         }
       ]
     },
     "ARG|SUI": {
-      "text": "Argentina reached the quarter-finals after a second-half comeback to beat Egypt, having trailed in that last-16 tie. Switzerland advanced via a penalty shootout, winning 4-3 against Colombia after their match went the distance.",
+      "text": "Argentina reached this stage with a second-half comeback to overturn a deficit against Egypt, while Switzerland advanced by beating Colombia 4-3 on penalties. The return of Julián Álvarez offers Argentina an alternative to their reliance on Lionel Messi in the knockout rounds.",
       "sources": [
         {
-          "headline": "Watch every penalty from Switzerland v Colombia shootout",
-          "href": "https://www.bbc.co.uk/sport/football/videos/cn0vn94je8qo?at_medium=RSS&amp;at_campaign=rss"
+          "headline": "Every team's championship odds for the 2026 World Cup: France odds shorten, Spain ahead of Argentina, England",
+          "href": "https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups"
         },
         {
-          "headline": "Argentina make incredible late comeback to beat Egypt",
-          "href": "https://www.bbc.co.uk/sport/football/videos/cd95wjv1nedo?at_medium=RSS&amp;at_campaign=rss"
+          "headline": "Álvarez's return could be Argentina's antidote to their Messi dependency",
+          "href": "https://www.espn.com/soccer/story/_/id/49325317/julian-alvarez-return-argentina-antidote-their-lionel-messi-dependency-world-cup"
+        },
+        {
+          "headline": "Hacking worry for Argentine FA over World Cup emails",
+          "href": "https://www.bbc.co.uk/sport/football/articles/cx2j3dglq5jo?at_medium=RSS&amp;at_campaign=rss"
         }
       ]
     }
