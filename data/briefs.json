@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-09T22:06:48.013Z",
+  "generated": "2026-07-10T04:37:06.965Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -113,36 +113,53 @@
       ]
     },
     "BEL|ESP": {
-      "text": "Spain reach the quarterfinal against Belgium in Los Angeles, with coach Luis de la Fuente expecting an improved Lamine Yamal to feature. Belgium advanced by beating the United States 4-1 in the last 16. Goalkeeper Thibaut Courtois has named Spain among the tournament favourites.",
+      "text": "Belgium forward Romelu Lukaku said his side will need to \"play the perfect game\" to eliminate Spain in Friday's quarterfinal. Belgium advanced by beating the United States 4-1 in the last 16, a match in which Christian Pulisic sustained a fractured leg. The winner faces France in the semifinals.",
       "sources": [
         {
-          "headline": "U.S. star Christian Pulisic suffered microfracture vs. Belgium",
-          "href": "https://www.espn.com/soccer/story/_/id/49315041/usa-christian-pulisic-suffered-microfracture-belgium-sources"
+          "headline": "Romelu Lukaku says Belgium need 'perfect game' to beat Spain",
+          "href": "https://www.espn.com/soccer/story/_/id/49318578/romelu-lukaku-belgium-perfect-game-beat-spain"
         },
         {
-          "headline": "Spain's Luis de la Fuente excited to see Lamine Yamal 2.0 vs. Belgium",
-          "href": "https://www.espn.com/soccer/story/_/id/49314604/lamine-yamal-spain-luis-de-la-fuente-excited-belgium"
+          "headline": "Morocco vow return, can eliminate France at next World Cup",
+          "href": "https://www.espn.com/soccer/story/_/id/49319041/morocco-vow-return-eliminate-france-next-world-cup"
         },
         {
-          "headline": "Courtois: Spain are one of the favourites to win the World Cup",
-          "href": "https://www.espn.com/video/clip/_/id/49313057/spain-one-favourites-win-world-cup"
+          "headline": "Burley: Spain need more than Yamal to win World Cup",
+          "href": "https://www.espn.com/video/clip/_/id/49319258/spain-need-more-yamal-win-world-cup"
         }
       ]
     },
     "ENG|NOR": {
-      "text": "England will be without fullback Jarell Quansah, serving the second match of a two-game suspension following his red card against Mexico. Norway's Erling Haaland has downplayed his side's chances and placed the pressure on England, while Dan Burn, likely tasked with containing Haaland, said England must improve on their round-of-16 display.",
+      "text": "England face doubts in defence, with Marc Guehi managing a slight hamstring injury and Declan Rice suffering from illness ahead of the quarter-final. Jarell Quansah is unavailable, serving a two-match ban after his red card against Mexico. Norway striker Erling Haaland has stated the pressure lies with England in a fixture billed as the biggest event in Norwegian football.",
       "sources": [
         {
-          "headline": "Jarell Quansah's extended World Cup ban 'very frustrating' - Bukayo Saka",
-          "href": "https://www.espn.com/soccer/story/_/id/49317664/jarell-quansah-extended-world-cup-ban-very-frustrating-bukayo-saka"
+          "headline": "FA reviewing incident after police called to England media centre",
+          "href": "https://www.espn.com/soccer/story/_/id/49320198/fa-reviewing-incident-cops-called-england-media-centre"
         },
         {
-          "headline": "Norway's Haaland: Chances of winning World Cup 'really low', pressure fully on England",
-          "href": "https://www.espn.com/soccer/story/_/id/49317174/norway-erling-haaland-chances-really-low-world-cup-pressure-england-quarterfinal"
+          "headline": "Guehi a doubt for Norway game and Rice ill with bug",
+          "href": "https://www.bbc.co.uk/sport/football/articles/c3eyqdwq392o?at_medium=RSS&amp;at_campaign=rss"
         },
         {
-          "headline": "Haaland: All the pressure is on England in quarterfinal",
-          "href": "https://www.espn.com/video/clip/_/id/49317036/all-pressure-england-quarterfinal"
+          "headline": "I've changed my mind, we might actually be able to win this thing - Shearer",
+          "href": "https://www.bbc.co.uk/sport/football/articles/cz6vz34yv82o?at_medium=RSS&amp;at_campaign=rss"
+        }
+      ]
+    },
+    "ARG|SUI": {
+      "text": "Argentina reached the quarter-finals after a second-half comeback to defeat Egypt, having trailed earlier in the match. Switzerland advanced via a penalty shootout against Colombia, winning 4-3 after goalkeeper Gregor Kobel saved from Cucho Hernandez.",
+      "sources": [
+        {
+          "headline": "Watch every penalty from Switzerland v Colombia shootout",
+          "href": "https://www.bbc.co.uk/sport/football/videos/cn0vn94je8qo?at_medium=RSS&amp;at_campaign=rss"
+        },
+        {
+          "headline": "Argentina make incredible late comeback to beat Egypt",
+          "href": "https://www.bbc.co.uk/sport/football/videos/cd95wjv1nedo?at_medium=RSS&amp;at_campaign=rss"
+        },
+        {
+          "headline": "Switzerland beat Colombia on penalties to reach quarter-finals",
+          "href": "https://www.bbc.co.uk/sport/football/videos/c6219n0yezno?at_medium=RSS&amp;at_campaign=rss"
         }
       ]
     }
