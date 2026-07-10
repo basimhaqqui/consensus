@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-10T18:10:19.963Z",
+  "generated": "2026-07-10T21:38:11.839Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -130,25 +130,29 @@
       ]
     },
     "ENG|NOR": {
-      "text": "England, managed by Thomas Tuchel, face Norway in the World Cup quarterfinal, with Marc Guéhi (hamstring) and Declan Rice among fitness concerns. The tie features contrasting attacking threats in Harry Kane and Erling Haaland, while midfielders Jude Bellingham and Martin Ødegaard both arrive in form. Haaland has publicly labelled England \"clear favourites,\" a claim England's Nico O'Reilly has dismissed as mind games.",
+      "text": "Norway meet England in the World Cup quarterfinal, with Norway coach Ståle Solbakken naming England as favourites to progress. Norway's attack centres on Erling Haaland, whose containment is England's key tactical concern under Thomas Tuchel. The tie also features the Haaland–Jude Bellingham matchup, though Solbakken has downplayed framing it around individual duels.",
       "sources": [
+        {
+          "headline": "Norway vs. England more than Harry Kane vs. Erling Haaland face-off - Ståle Solbakken",
+          "href": "https://www.espn.com/soccer/story/_/id/49326819/norway-vs-england-more-harry-kane-vs-erling-haaland-face-stale-solbakken"
+        },
+        {
+          "headline": "Jude Bellingham vs. Erling Haaland rivalry could be like Messi vs. Ronaldo - Ezri Konsa",
+          "href": "https://www.espn.com/soccer/story/_/id/49326241/jude-bellingham-erling-haaland-rivalry-messi-ronaldo-ezri-konsa"
+        },
         {
           "headline": "McManaman: England should have too much quality for Norway",
           "href": "https://www.espn.com/video/clip/_/id/49326093/england-too-much-quality-norway"
-        },
-        {
-          "headline": "Every team's championship odds for the 2026 World Cup: France odds shorten, Spain ahead of Argentina, England",
-          "href": "https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups"
-        },
-        {
-          "headline": "Norway scouting report: What can England expect in their World Cup quarterfinal?",
-          "href": "https://www.espn.com/soccer/story/_/id/49309967/norway-scouting-report-england-expect-their-world-cup-quarterfinal"
         }
       ]
     },
     "ARG|SUI": {
-      "text": "Argentina reached this stage with a second-half comeback to overturn a deficit against Egypt, while Switzerland advanced by beating Colombia 4-3 on penalties. The return of Julián Álvarez offers Argentina an alternative to their reliance on Lionel Messi in the knockout rounds.",
+      "text": "Switzerland will be without attacking midfielder Johan Manzambi for the quarterfinal, head coach Murat Yakin confirmed. The Swiss advanced by beating Colombia 4-3 on penalties, while Argentina came through after a late second-half comeback against Egypt. Julián Álvarez's return offers Argentina an attacking option beyond their reliance on Messi.",
       "sources": [
+        {
+          "headline": "Switzerland's Johan Manzambi to miss Argentina World Cup quarterfinal clash - Murat Yakin",
+          "href": "https://www.espn.com/soccer/story/_/id/49326340/switzerland-johan-manzambi-miss-argentina-world-cup-quarterfinal-clash-murat-yakin"
+        },
         {
           "headline": "Every team's championship odds for the 2026 World Cup: France odds shorten, Spain ahead of Argentina, England",
           "href": "https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups"
@@ -156,10 +160,6 @@
         {
           "headline": "Álvarez's return could be Argentina's antidote to their Messi dependency",
           "href": "https://www.espn.com/soccer/story/_/id/49325317/julian-alvarez-return-argentina-antidote-their-lionel-messi-dependency-world-cup"
-        },
-        {
-          "headline": "Hacking worry for Argentine FA over World Cup emails",
-          "href": "https://www.bbc.co.uk/sport/football/articles/cx2j3dglq5jo?at_medium=RSS&amp;at_campaign=rss"
         }
       ]
     }
