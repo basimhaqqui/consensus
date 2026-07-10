@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-10T04:37:06.965Z",
+  "generated": "2026-07-10T08:01:39.233Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -113,7 +113,7 @@
       ]
     },
     "BEL|ESP": {
-      "text": "Belgium forward Romelu Lukaku said his side will need to \"play the perfect game\" to eliminate Spain in Friday's quarterfinal. Belgium advanced by beating the United States 4-1 in the last 16, a match in which Christian Pulisic sustained a fractured leg. The winner faces France in the semifinals.",
+      "text": "Spain meet Belgium in the World Cup quarterfinal, with the winner facing France in the semifinals. Romelu Lukaku said Belgium will need to \"play the perfect game\" to advance, while Spain arrive with Lamine Yamal central to Luis de la Fuente's side. Belgium beat the United States 4-1 in the last 16, a match in which Christian Pulisic fractured his leg.",
       "sources": [
         {
           "headline": "Romelu Lukaku says Belgium need 'perfect game' to beat Spain",
@@ -130,24 +130,24 @@
       ]
     },
     "ENG|NOR": {
-      "text": "England face doubts in defence, with Marc Guehi managing a slight hamstring injury and Declan Rice suffering from illness ahead of the quarter-final. Jarell Quansah is unavailable, serving a two-match ban after his red card against Mexico. Norway striker Erling Haaland has stated the pressure lies with England in a fixture billed as the biggest event in Norwegian football.",
+      "text": "Norway reach the quarterfinal led by Erling Haaland, who has publicly labelled England the \"clear favourites.\" England defender Marc Guehi is managing a slight hamstring injury and is a doubt, while Declan Rice has been dealing with a bug. Jarell Quansah is suspended after his red card against Mexico.",
       "sources": [
         {
-          "headline": "FA reviewing incident after police called to England media centre",
-          "href": "https://www.espn.com/soccer/story/_/id/49320198/fa-reviewing-incident-cops-called-england-media-centre"
+          "headline": "Nico O'Reilly wary of Erling Haaland 'mind games' ahead of England-Norway World Cup quarterfinal",
+          "href": "https://www.espn.com/soccer/story/_/id/49322056/nico-oreilly-erling-haaland-mind-games-england-norway-world-cup-quarterfinal"
         },
         {
-          "headline": "Guehi a doubt for Norway game and Rice ill with bug",
-          "href": "https://www.bbc.co.uk/sport/football/articles/c3eyqdwq392o?at_medium=RSS&amp;at_campaign=rss"
+          "headline": "On eve of World Cup record, why doesn't England's Pickford get more love?",
+          "href": "https://www.espn.com/soccer/story/_/id/49318195/jordan-pickford-england-goalkeepers-world-cup-peter-shilton-record-thomas-tuchel"
         },
         {
-          "headline": "I've changed my mind, we might actually be able to win this thing - Shearer",
-          "href": "https://www.bbc.co.uk/sport/football/articles/cz6vz34yv82o?at_medium=RSS&amp;at_campaign=rss"
+          "headline": "Forget Messi & Co., because this is Erling Haaland's World Cup",
+          "href": "https://www.espn.com/soccer/story/_/id/49316632/erling-haaland-norway-world-cup-manchester-city-england-striker-analysis-lionel-messi"
         }
       ]
     },
     "ARG|SUI": {
-      "text": "Argentina reached the quarter-finals after a second-half comeback to defeat Egypt, having trailed earlier in the match. Switzerland advanced via a penalty shootout against Colombia, winning 4-3 after goalkeeper Gregor Kobel saved from Cucho Hernandez.",
+      "text": "Argentina reached the quarter-finals with a second-half comeback to beat Egypt after trailing. Switzerland advanced by defeating Colombia 4-3 on penalties.",
       "sources": [
         {
           "headline": "Watch every penalty from Switzerland v Colombia shootout",
@@ -156,10 +156,6 @@
         {
           "headline": "Argentina make incredible late comeback to beat Egypt",
           "href": "https://www.bbc.co.uk/sport/football/videos/cd95wjv1nedo?at_medium=RSS&amp;at_campaign=rss"
-        },
-        {
-          "headline": "Switzerland beat Colombia on penalties to reach quarter-finals",
-          "href": "https://www.bbc.co.uk/sport/football/videos/c6219n0yezno?at_medium=RSS&amp;at_campaign=rss"
         }
       ]
     }
