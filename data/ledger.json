@@ -329,6 +329,19 @@
         "detail": "FT",
         "gradedAt": "2026-07-09T23:36:04.753Z"
       }
+    },
+    {
+      "id": "qf-2",
+      "kickoffISO": "2026-07-10T19:00Z",
+      "home": "ESP",
+      "away": "BEL",
+      "venue": "Inglewood, California",
+      "forecasts": {
+        "model": 0.7551,
+        "blend": 0.7336,
+        "market": 0.7327
+      },
+      "capturedAt": "2026-07-10T18:00:56.613Z"
     }
   ]
 }
