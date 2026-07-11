@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-11T03:55:14.533Z",
+  "generated": "2026-07-11T06:39:34.097Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -130,7 +130,7 @@
       ]
     },
     "ENG|NOR": {
-      "text": "England received a fitness boost with Declan Rice, Marc Guéhi and Reece James all training ahead of the quarter-final in Miami. Norway boss Stale Solbakken has labelled England favourites, with attention centred on containing Erling Haaland. Harry Kane downplayed comparisons with Haaland, saying England intend to peak in the tournament's later stages.",
+      "text": "England received a fitness boost as Declan Rice, Marc Guéhi and Reece James all trained ahead of the World Cup quarter-final against Norway in Miami. The tie will be played in high open-air temperatures, unfamiliar conditions for Thomas Tuchel's side. Jordan Pickford enters the match having set a new England record.",
       "sources": [
         {
           "headline": "Harry Kane says Erling Haaland 'completely different player' than me",
@@ -147,8 +147,12 @@
       ]
     },
     "ARG|SUI": {
-      "text": "Argentina defender Cristian Romero has flagged persistent defensive lapses in the knockout rounds as a concern heading into Saturday's quarterfinal against Switzerland at Arrowhead Stadium. The Argentine football association has indicated it may have suffered a cyber attack, after emails from its accounts reportedly criticised the refereeing in the team's win over Egypt.",
+      "text": "Argentina, favoured to advance, carry defensive concerns into the quarterfinal, with Cristian Romero acknowledging the team's need to address issues at the back after leaky knockout performances. Coach Lionel Scaloni confirmed Lionel Messi retains authority over penalty duties despite recent struggles from the spot. The match takes place Saturday at Arrowhead Stadium.",
       "sources": [
+        {
+          "headline": "Scaloni defers to Messi on World Cup penalty duties",
+          "href": "https://www.espn.com/soccer/story/_/id/49330698/scaloni-defers-messi-world-cup-penalty-duties"
+        },
         {
           "headline": "Romero says Argentina bothered by leaky defense in knockouts",
           "href": "https://www.espn.com/soccer/story/_/id/49329795/romero-argentina-bothered-leaky-defense-knockouts"
@@ -156,10 +160,6 @@
         {
           "headline": "Hislop: Argentina face difficult test against Switzerland",
           "href": "https://www.espn.com/video/clip/_/id/49329042/argentina-face-difficult-test-switzerland"
-        },
-        {
-          "headline": "Hacking worry for Argentine FA over World Cup emails",
-          "href": "https://www.bbc.co.uk/sport/football/articles/cx2j3dglq5jo?at_medium=RSS&amp;at_campaign=rss"
         }
       ]
     }
