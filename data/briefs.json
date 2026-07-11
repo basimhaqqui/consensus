@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-11T10:04:10.175Z",
+  "generated": "2026-07-11T14:05:19.909Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -130,24 +130,24 @@
       ]
     },
     "ENG|NOR": {
-      "text": "Norway and England meet in the World Cup quarterfinal, with the tie framed around the individual matchup between captains Harry Kane and Erling Haaland. England received a fitness boost as Marc Guéhi and Declan Rice returned to training ahead of the match in Miami. Kane downplayed comparisons with Haaland, calling him a \"completely different player.\"",
+      "text": "Norway meet England in the World Cup quarterfinals, with Erling Haaland leading the Norwegian attack against a defense Thomas Tuchel is still finalizing, including a decision over Dan Burn. Harry Kane, who downplayed comparisons with Haaland, captains an England side he says is ready to peak in the tournament's latter stages.",
       "sources": [
         {
-          "headline": "World Cup quarterfinals: How we got here, predictions, odds",
-          "href": "https://www.espn.com/soccer/story/_/id/49294844/fifa-world-cup-quarterfinal-preview-predictions-odds-argentina-belgium-england-france-morocco-norway-spain-switzerland"
+          "headline": "Will Thomas Tuchel be sacked if England lose to Norway?",
+          "href": "https://www.espn.com/video/clip/_/id/49333681/will-thomas-tuchel-sacked-england-lose-norway"
         },
         {
-          "headline": "World Cup daily: Free England-Norway ticket for Erling Haaland look-alike",
+          "headline": "World Cup daily: Free England-Norway ticket in Haaland look-alike contest",
           "href": "https://www.espn.com/soccer/story/_/id/49329226/world-cup-daily-england-norway-argentina-switzerland-quarterfinals-erling-haaland"
         },
         {
-          "headline": "Harry Kane vs. Erling Haaland: How do England, Norway stars compare? Key stats before World Cup clash",
-          "href": "https://www.espn.com/soccer/story/_/id/49313872/harry-kane-erling-haaland-comparison-key-stats-england-norway-world-cup-quarterfinal"
+          "headline": "Start Dan Burn? How Norway's Erling Haaland stacks up against England defenders",
+          "href": "https://www.espn.com/soccer/story/_/id/49332313/start-dan-burn-how-norway-erling-haaland-stacks-england-defenders-world-cup-quarterfinal"
         }
       ]
     },
     "ARG|SUI": {
-      "text": "Argentina advance to the quarterfinal against Switzerland at Arrowhead Stadium on Saturday, with defender Cristian Romero acknowledging defensive lapses the team must address after recent knockout matches. Coach Lionel Scaloni confirmed Lionel Messi retains authority over penalty duties despite recent struggles from the spot. Separately, Argentina's football association has signalled it may have suffered a cyber attack, with emails from its accounts reportedly criticising the refereeing in the win over Egypt.",
+      "text": "Argentina enter the quarterfinal at Arrowhead Stadium with Lionel Messi retaining penalty duties despite a recent World Cup miss, a decision Scaloni has confirmed rests with the player. Defender Cristian Romero has acknowledged the team's persistent defensive issues in the knockout rounds. Switzerland lean on midfielder Granit Xhaka, an influential figure for club and country.",
       "sources": [
         {
           "headline": "Scaloni defers to Messi on World Cup penalty duties",
@@ -158,8 +158,8 @@
           "href": "https://www.espn.com/soccer/story/_/id/49329795/romero-argentina-bothered-leaky-defense-knockouts"
         },
         {
-          "headline": "Hislop: Argentina face difficult test against Switzerland",
-          "href": "https://www.espn.com/video/clip/_/id/49329042/argentina-face-difficult-test-switzerland"
+          "headline": "Should Argentina take Messi off penalties?",
+          "href": "https://www.bbc.co.uk/sport/football/articles/c6214y2dlgno?at_medium=RSS&amp;at_campaign=rss"
         }
       ]
     }
