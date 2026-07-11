@@ -364,6 +364,19 @@
         "market": 0.3602
       },
       "capturedAt": "2026-07-11T19:30:58.533Z"
+    },
+    {
+      "id": "qf-4",
+      "kickoffISO": "2026-07-12T01:00Z",
+      "home": "ARG",
+      "away": "SUI",
+      "venue": "Kansas City, Missouri",
+      "forecasts": {
+        "model": 0.7289,
+        "blend": 0.7204,
+        "market": 0.7269
+      },
+      "capturedAt": "2026-07-11T23:10:10.986Z"
     }
   ]
 }
