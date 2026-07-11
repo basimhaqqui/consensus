@@ -351,6 +351,19 @@
         "detail": "FT",
         "gradedAt": "2026-07-10T23:12:40.820Z"
       }
+    },
+    {
+      "id": "qf-3",
+      "kickoffISO": "2026-07-11T21:00Z",
+      "home": "NOR",
+      "away": "ENG",
+      "venue": "Miami Gardens, Florida",
+      "forecasts": {
+        "model": 0.4176,
+        "blend": 0.421,
+        "market": 0.3602
+      },
+      "capturedAt": "2026-07-11T19:30:58.533Z"
     }
   ]
 }
