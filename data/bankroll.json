@@ -1,7 +1,7 @@
 {
   "start": 1000,
   "target": 10000,
-  "cash": 854.86,
+  "cash": 762.9,
   "bets": [
     {
       "analysis": "I'm backing Morocco outright at 6.448 because my model prices their win at 24.7% versus the market's 15.1%, a gap that hands me +59% EV. The edge is in the expected goals: books have France scoring 1.8, but I see their attack closer to 1.3 while Morocco's 0.9 keeps this within one goal — the market is overrating French output and pricing MAR as a near-dead outcome when it's live. At an 11% full-Kelly read I've staked $108.94.",
@@ -96,6 +96,34 @@
       "ev": 0.312,
       "status": "open",
       "llm": true
+    },
+    {
+      "analysis": "I'm backing France to win with Mbappé on the scoresheet at 4.197, staking $91.96. My joint score grid puts this combo at 30.0% versus the market's 22.2%, a +26% edge driven by my read on ESP's defense: books price this game at 1.3-1.1 xG, but I have it level at 1.3-1.3, meaning the market underrates Spain's attacking output and correspondingly overrates France's clean-sheet path. That extra Spanish threat forces a more open game, which lifts both France's scoring ceiling and Mbappé's individual anytime probability inside the correlated grid, and the market isn't capturing that link.",
+      "llm": true,
+      "matchId": "sf-1",
+      "placedAt": "2026-07-11T03:41:22.627Z",
+      "desc": "FRA win + Kylian Mbappé to score @ 4.197 (FRA v ESP)",
+      "legs": [
+        {
+          "key": "home"
+        },
+        {
+          "key": "sc-home-mbappé"
+        }
+      ],
+      "players": [
+        {
+          "name": "Kylian Mbappé",
+          "side": "home",
+          "share": 0.6
+        }
+      ],
+      "scorer": true,
+      "stake": 91.96,
+      "odds": 4.197,
+      "modelP": 0.3,
+      "ev": 0.26,
+      "status": "open"
     }
   ],
   "log": [
@@ -142,6 +170,10 @@
     {
       "at": "2026-07-10T21:19:54.217Z",
       "msg": "WON ESP win + Over 2.5 goals @ 3.283 (ESP v BEL): +$240.7 (bank $854.86)"
+    },
+    {
+      "at": "2026-07-11T03:41:22.627Z",
+      "msg": "BET $91.96 on FRA win + Kylian Mbappé to score @ 4.197 — model 30%, EV +26%, 8% Kelly (bank $762.9)"
     }
   ]
 }
