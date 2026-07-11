@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-11T17:35:07.616Z",
+  "generated": "2026-07-11T21:27:25.238Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -147,19 +147,19 @@
       ]
     },
     "ARG|SUI": {
-      "text": "Argentina carry defensive concerns into this quarterfinal, with Cristian Romero acknowledging the team's need to address issues that have surfaced in the knockout rounds. Lionel Messi retains penalty duties despite a recent miss from the spot, coach Lionel Scaloni confirming the decision rests with the player. Switzerland lean on Granit Xhaka, an increasingly influential figure for club and country. The match is at Arrowhead Stadium on Saturday.",
+      "text": "Argentina reach this knockout tie with a penalty question hanging over Lionel Messi, who has missed from the spot recently; coach Lionel Scaloni confirmed Messi retains authority over whether he continues taking penalties. Switzerland lean on Granit Xhaka, an influential figure for club and country, as they seek to make World Cup history.",
       "sources": [
         {
           "headline": "Scaloni defers to Messi on World Cup penalty duties",
           "href": "https://www.espn.com/soccer/story/_/id/49330698/scaloni-defers-messi-world-cup-penalty-duties"
         },
         {
-          "headline": "Romero says Argentina bothered by leaky defense in knockouts",
-          "href": "https://www.espn.com/soccer/story/_/id/49329795/romero-argentina-bothered-leaky-defense-knockouts"
-        },
-        {
           "headline": "Should Argentina take Messi off penalties?",
           "href": "https://www.bbc.co.uk/sport/football/articles/c6214y2dlgno?at_medium=RSS&amp;at_campaign=rss"
+        },
+        {
+          "headline": "From Arsenal jeers to Swiss tears: Xhaka's redemption",
+          "href": "https://www.bbc.co.uk/sport/football/articles/cy06zgdz728o?at_medium=RSS&amp;at_campaign=rss"
         }
       ]
     }
