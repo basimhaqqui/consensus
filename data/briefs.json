@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-11T14:05:19.909Z",
+  "generated": "2026-07-11T17:35:07.616Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -130,15 +130,15 @@
       ]
     },
     "ENG|NOR": {
-      "text": "Norway meet England in the World Cup quarterfinals, with Erling Haaland leading the Norwegian attack against a defense Thomas Tuchel is still finalizing, including a decision over Dan Burn. Harry Kane, who downplayed comparisons with Haaland, captains an England side he says is ready to peak in the tournament's latter stages.",
+      "text": "Norway and England meet in the World Cup quarterfinal in Miami, where high temperatures and a risk of thunderstorms are forecast, particularly early in the match. England's defensive setup, including a possible start for Dan Burn, is under scrutiny ahead of facing Erling Haaland, with Thomas Tuchel's position also in focus. Harry Kane leads England, framing a contrast with Haaland up front.",
       "sources": [
-        {
-          "headline": "Will Thomas Tuchel be sacked if England lose to Norway?",
-          "href": "https://www.espn.com/video/clip/_/id/49333681/will-thomas-tuchel-sacked-england-lose-norway"
-        },
         {
           "headline": "World Cup daily: Free England-Norway ticket in Haaland look-alike contest",
           "href": "https://www.espn.com/soccer/story/_/id/49329226/world-cup-daily-england-norway-argentina-switzerland-quarterfinals-erling-haaland"
+        },
+        {
+          "headline": "Will Thomas Tuchel be sacked if England lose to Norway?",
+          "href": "https://www.espn.com/video/clip/_/id/49333681/will-thomas-tuchel-sacked-england-lose-norway"
         },
         {
           "headline": "Start Dan Burn? How Norway's Erling Haaland stacks up against England defenders",
@@ -147,7 +147,7 @@
       ]
     },
     "ARG|SUI": {
-      "text": "Argentina enter the quarterfinal at Arrowhead Stadium with Lionel Messi retaining penalty duties despite a recent World Cup miss, a decision Scaloni has confirmed rests with the player. Defender Cristian Romero has acknowledged the team's persistent defensive issues in the knockout rounds. Switzerland lean on midfielder Granit Xhaka, an influential figure for club and country.",
+      "text": "Argentina carry defensive concerns into this quarterfinal, with Cristian Romero acknowledging the team's need to address issues that have surfaced in the knockout rounds. Lionel Messi retains penalty duties despite a recent miss from the spot, coach Lionel Scaloni confirming the decision rests with the player. Switzerland lean on Granit Xhaka, an increasingly influential figure for club and country. The match is at Arrowhead Stadium on Saturday.",
       "sources": [
         {
           "headline": "Scaloni defers to Messi on World Cup penalty duties",
