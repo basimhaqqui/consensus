@@ -109,7 +109,9 @@ async function fetchOverlays(): Promise<{
   events: Map<string, KnockoutEvent>;
 }> {
   const res = await fetch(ESPN, {
-    next: { revalidate: 20 }, // server-cache 20s; client polls more often
+    cache: "no-store", // live minutes must never be served stale — the data
+    // cache once pinned a 60-min-old snapshot mid-match (stale-while-revalidate
+    // with silently failing refreshes); ESPN handles direct hits fine
     headers: { "User-Agent": "wc26-consensus" },
   });
   if (!res.ok) throw new Error(`ESPN ${res.status}`);
