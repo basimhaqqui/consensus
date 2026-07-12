@@ -1,7 +1,7 @@
 {
   "start": 1000,
   "target": 10000,
-  "cash": 513.9,
+  "cash": 303.9,
   "bets": [
     {
       "analysis": "I'm backing Morocco outright at 6.448 because my model prices their win at 24.7% versus the market's 15.1%, a gap that hands me +59% EV. The edge is in the expected goals: books have France scoring 1.8, but I see their attack closer to 1.3 while Morocco's 0.9 keeps this within one goal \u2014 the market is overrating French output and pricing MAR as a near-dead outcome when it's live. At an 11% full-Kelly read I've staked $108.94.",
@@ -196,6 +196,84 @@
       "status": "open",
       "llm": true,
       "analysis": "A diversifier on the same read: my totals distribution puts 4+ goals at 24.2% against the books' implied 20.2% \u2014 +17% EV at 4.821. This one pays even in the chaos scenarios where Switzerland trade goals, so it isn't fully chained to the Argentina-win legs. Kelly-sized at 4.4%: $45."
+    },
+    {
+      "matchId": "sf-1",
+      "placedAt": "2026-07-12T01:45:00.000Z",
+      "desc": "ESP win + Over 2.5 goals @ 6.817 (FRA v ESP)",
+      "legs": [
+        {
+          "key": "away"
+        },
+        {
+          "key": "o2.5"
+        }
+      ],
+      "players": [],
+      "scorer": false,
+      "stake": 70.0,
+      "odds": 6.817,
+      "modelP": 0.199,
+      "ev": 0.357,
+      "status": "open",
+      "llm": true,
+      "analysis": "The books make France favourites at 41%; I have this semifinal dead even \u2014 1.30-1.26 expected goals against their implied 1.33-1.12. That gap is all Spain's attack, and it compounds in the combo: Spain winning in a game that clears 2.5 is 19.9% on my grid versus the 13.6% independent pricing implies, +36% EV at 6.817. When Spain beat France, it won't be 1-0."
+    },
+    {
+      "matchId": "sf-1",
+      "placedAt": "2026-07-12T01:45:00.000Z",
+      "desc": "ESP win + Mikel Oyarzabal to score @ 8.679 (FRA v ESP)",
+      "legs": [
+        {
+          "key": "away"
+        },
+        {
+          "key": "sc-away-oyarzabal"
+        }
+      ],
+      "players": [
+        {
+          "name": "Mikel Oyarzabal",
+          "side": "away",
+          "share": 0.38
+        }
+      ],
+      "scorer": true,
+      "stake": 85.0,
+      "odds": 8.679,
+      "modelP": 0.215,
+      "ev": 0.867,
+      "status": "open",
+      "llm": true,
+      "analysis": "Same Spain conviction, sharpest expression: Oyarzabal takes about 38% of Spain's goals, and in the score-grid worlds where Spain win this, they average nearly two goals \u2014 putting him on the scoresheet in 21.5% of all outcomes versus the 10.6% the books' pricing implies. That's +87% EV at 8.679. The market is underrating Spain's attack twice over here: once in the win price, once in the goals it feeds."
+    },
+    {
+      "matchId": "sf-1",
+      "placedAt": "2026-07-12T01:45:00.000Z",
+      "desc": "FRA win + Kylian Mbapp\u00e9 2+ goals @ 15.642 (FRA v ESP)",
+      "legs": [
+        {
+          "key": "home"
+        },
+        {
+          "key": "sc-home-mbapp\u00e9-2"
+        }
+      ],
+      "players": [
+        {
+          "name": "Kylian Mbapp\u00e9",
+          "side": "home",
+          "share": 0.5
+        }
+      ],
+      "scorer": true,
+      "stake": 55.0,
+      "odds": 15.642,
+      "modelP": 0.11,
+      "ev": 0.726,
+      "status": "open",
+      "llm": true,
+      "analysis": "The hedge with teeth: if France do win this, my grid says it's most often through Mbapp\u00e9 \u2014 he's half their goals, and a France win averages over two scored, making a brace 11.0% of all outcomes versus the 5.8% implied. +73% EV at 15.642, and it pays $860 in exactly the scenarios where my Spain positions die. Both sides of this semifinal are mispriced; I'm holding the better half of each."
     }
   ],
   "log": [
@@ -254,6 +332,10 @@
     {
       "at": "2026-07-12T01:20:00.000Z",
       "msg": "REINFORCED qf-4 on request: +$249 across 3 bets (Messi 2+ combo EV+64%, ARG+O2.5 EV+31%, O3.5 EV+17%). Match exposure now $428."
+    },
+    {
+      "at": "2026-07-12T01:45:00.000Z",
+      "msg": "REINFORCED sf-1 on request: +$210 across 3 bets (ESP+O2.5 EV+36%, ESP+Oyarzabal EV+87%, FRA+Mbappe 2+ EV+73% as the cross-hedge)."
     }
   ]
 }
