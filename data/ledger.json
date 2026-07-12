@@ -385,7 +385,16 @@
         "blend": 0.7204,
         "market": 0.7269
       },
-      "capturedAt": "2026-07-11T23:10:10.986Z"
+      "capturedAt": "2026-07-11T23:10:10.986Z",
+      "result": {
+        "winnerKey": "ARG",
+        "score": {
+          "home": 3,
+          "away": 1
+        },
+        "detail": "AET",
+        "gradedAt": "2026-07-12T04:03:57.287Z"
+      }
     }
   ]
 }
