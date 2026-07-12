@@ -66,8 +66,11 @@
       "odds": 4.417,
       "modelP": 0.302,
       "ev": 0.336,
-      "status": "open",
-      "llm": true
+      "status": "lost",
+      "llm": true,
+      "settledAt": "2026-07-12T00:55:19.087Z",
+      "result": "1-1 (90')",
+      "pnl": -98.25
     },
     {
       "analysis": "I'm backing ARG win + Messi to score at 2.746 with $178.65, because my joint score grid puts this combo at 47.8% versus the book's implied 34.4% — a +31% EV edge. The gap comes from my slightly higher home xG (1.7 vs 1.6) feeding a correlated grid: when Argentina win, Messi scores far more often than an independent-events price assumes, and the market appears to be pricing the two legs too close to independently. I've sized at full-Kelly's 18%, reflecting real conviction in that correlation being underpriced.",
@@ -174,6 +177,10 @@
     {
       "at": "2026-07-11T03:41:22.627Z",
       "msg": "BET $91.96 on FRA win + Kylian Mbappé to score @ 4.197 — model 30%, EV +26%, 8% Kelly (bank $762.9)"
+    },
+    {
+      "at": "2026-07-12T00:55:19.087Z",
+      "msg": "LOST NOR win @ 4.417 (NOR v ENG): -$98.25 (bank $762.9)"
     }
   ]
 }

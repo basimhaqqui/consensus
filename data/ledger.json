@@ -363,7 +363,16 @@
         "blend": 0.421,
         "market": 0.3602
       },
-      "capturedAt": "2026-07-11T19:30:58.533Z"
+      "capturedAt": "2026-07-11T19:30:58.533Z",
+      "result": {
+        "winnerKey": "ENG",
+        "score": {
+          "home": 1,
+          "away": 2
+        },
+        "detail": "AET",
+        "gradedAt": "2026-07-12T00:55:06.524Z"
+      }
     },
     {
       "id": "qf-4",
