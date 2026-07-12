@@ -2,7 +2,7 @@ name: prediction-ledger
 
 on:
   schedule:
-    - cron: "17 */2 * * *" # every 2 hours
+    - cron: "7,37 * * * *" # every 30 min through the final - relax after Jul 19
   workflow_dispatch:
 
 permissions:
