@@ -107,7 +107,7 @@ function Ticket({ b }: { b: TicketBet }) {
 export default function BankrollTickets({ bets }: { bets: TicketBet[] }) {
   if (!bets.length) return <p className="text-xs text-muted">Nothing here yet.</p>;
   return (
-    <div className="grid gap-2.5 sm:grid-cols-2">
+    <div className="grid gap-2.5 sm:grid-cols-2 items-start">
       {bets.map((b, i) => (
         <Ticket key={`${b.matchId}-${i}`} b={b} />
       ))}
