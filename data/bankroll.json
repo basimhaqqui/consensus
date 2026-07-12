@@ -1,10 +1,10 @@
 {
   "start": 1000,
   "target": 10000,
-  "cash": 762.9,
+  "cash": 513.9,
   "bets": [
     {
-      "analysis": "I'm backing Morocco outright at 6.448 because my model prices their win at 24.7% versus the market's 15.1%, a gap that hands me +59% EV. The edge is in the expected goals: books have France scoring 1.8, but I see their attack closer to 1.3 while Morocco's 0.9 keeps this within one goal — the market is overrating French output and pricing MAR as a near-dead outcome when it's live. At an 11% full-Kelly read I've staked $108.94.",
+      "analysis": "I'm backing Morocco outright at 6.448 because my model prices their win at 24.7% versus the market's 15.1%, a gap that hands me +59% EV. The edge is in the expected goals: books have France scoring 1.8, but I see their attack closer to 1.3 while Morocco's 0.9 keeps this within one goal \u2014 the market is overrating French output and pricing MAR as a near-dead outcome when it's live. At an 11% full-Kelly read I've staked $108.94.",
       "matchId": "qf-1",
       "placedAt": "2026-07-08T00:53:57.691Z",
       "desc": "MAR win @ 6.448 (FRA v MAR)",
@@ -51,7 +51,7 @@
       "pnl": 240.7
     },
     {
-      "analysis": "I'm backing Norway at 4.417 with a $98.25 stake because my model gives them a 30.2% win probability versus the market's implied 22.1% — an 8-point gap driving +34% EV. The edge comes from my xG read of 1.2-1.4 for Norway, tighter and higher on the low end than the books' 1.0-1.6 range, suggesting the market is overweighting England's away control and underpricing Norway's home scoring floor. Full-Kelly sizes this at 10%, and I'm taking it at that fraction.",
+      "analysis": "I'm backing Norway at 4.417 with a $98.25 stake because my model gives them a 30.2% win probability versus the market's implied 22.1% \u2014 an 8-point gap driving +34% EV. The edge comes from my xG read of 1.2-1.4 for Norway, tighter and higher on the low end than the books' 1.0-1.6 range, suggesting the market is overweighting England's away control and underpricing Norway's home scoring floor. Full-Kelly sizes this at 10%, and I'm taking it at that fraction.",
       "matchId": "qf-3",
       "placedAt": "2026-07-08T00:53:57.691Z",
       "desc": "NOR win @ 4.417 (NOR v ENG)",
@@ -73,7 +73,7 @@
       "pnl": -98.25
     },
     {
-      "analysis": "I'm backing ARG win + Messi to score at 2.746 with $178.65, because my joint score grid puts this combo at 47.8% versus the book's implied 34.4% — a +31% EV edge. The gap comes from my slightly higher home xG (1.7 vs 1.6) feeding a correlated grid: when Argentina win, Messi scores far more often than an independent-events price assumes, and the market appears to be pricing the two legs too close to independently. I've sized at full-Kelly's 18%, reflecting real conviction in that correlation being underpriced.",
+      "analysis": "I'm backing ARG win + Messi to score at 2.746 with $178.65, because my joint score grid puts this combo at 47.8% versus the book's implied 34.4% \u2014 a +31% EV edge. The gap comes from my slightly higher home xG (1.7 vs 1.6) feeding a correlated grid: when Argentina win, Messi scores far more often than an independent-events price assumes, and the market appears to be pricing the two legs too close to independently. I've sized at full-Kelly's 18%, reflecting real conviction in that correlation being underpriced.",
       "matchId": "qf-4",
       "placedAt": "2026-07-08T00:53:57.691Z",
       "desc": "ARG win + L. Messi to score @ 2.746 (ARG v SUI)",
@@ -101,22 +101,22 @@
       "llm": true
     },
     {
-      "analysis": "I'm backing France to win with Mbappé on the scoresheet at 4.197, staking $91.96. My joint score grid puts this combo at 30.0% versus the market's 22.2%, a +26% edge driven by my read on ESP's defense: books price this game at 1.3-1.1 xG, but I have it level at 1.3-1.3, meaning the market underrates Spain's attacking output and correspondingly overrates France's clean-sheet path. That extra Spanish threat forces a more open game, which lifts both France's scoring ceiling and Mbappé's individual anytime probability inside the correlated grid, and the market isn't capturing that link.",
+      "analysis": "I'm backing France to win with Mbapp\u00e9 on the scoresheet at 4.197, staking $91.96. My joint score grid puts this combo at 30.0% versus the market's 22.2%, a +26% edge driven by my read on ESP's defense: books price this game at 1.3-1.1 xG, but I have it level at 1.3-1.3, meaning the market underrates Spain's attacking output and correspondingly overrates France's clean-sheet path. That extra Spanish threat forces a more open game, which lifts both France's scoring ceiling and Mbapp\u00e9's individual anytime probability inside the correlated grid, and the market isn't capturing that link.",
       "llm": true,
       "matchId": "sf-1",
       "placedAt": "2026-07-11T03:41:22.627Z",
-      "desc": "FRA win + Kylian Mbappé to score @ 4.197 (FRA v ESP)",
+      "desc": "FRA win + Kylian Mbapp\u00e9 to score @ 4.197 (FRA v ESP)",
       "legs": [
         {
           "key": "home"
         },
         {
-          "key": "sc-home-mbappé"
+          "key": "sc-home-mbapp\u00e9"
         }
       ],
       "players": [
         {
-          "name": "Kylian Mbappé",
+          "name": "Kylian Mbapp\u00e9",
           "side": "home",
           "share": 0.6
         }
@@ -127,6 +127,75 @@
       "modelP": 0.3,
       "ev": 0.26,
       "status": "open"
+    },
+    {
+      "matchId": "qf-4",
+      "placedAt": "2026-07-12T01:20:00.000Z",
+      "desc": "ARG win + L. Messi 2+ goals @ 7.651 (ARG v SUI)",
+      "legs": [
+        {
+          "key": "home"
+        },
+        {
+          "key": "sc-home-messi-2"
+        }
+      ],
+      "players": [
+        {
+          "name": "L. Messi",
+          "side": "home",
+          "share": 0.55
+        }
+      ],
+      "scorer": true,
+      "stake": 99.0,
+      "odds": 7.651,
+      "modelP": 0.214,
+      "ev": 0.636,
+      "status": "open",
+      "llm": true,
+      "analysis": "I'm swinging at the biggest edge my board has produced all tournament: Argentina to win with a Messi brace. My joint grid prices it at 21.4% while independent book pricing implies just 12.0% \u2014 a +64% EV at 7.651. Messi is taking roughly 55% of Argentina's goals, so in the worlds where Argentina win by two or more, a second Messi strike is closer to a coin flip than the longshot the multiplication suggests. Full Kelly says 9.6% of bankroll: $99."
+    },
+    {
+      "matchId": "qf-4",
+      "placedAt": "2026-07-12T01:20:00.000Z",
+      "desc": "ARG win + Over 2.5 goals @ 4.073 (ARG v SUI)",
+      "legs": [
+        {
+          "key": "home"
+        },
+        {
+          "key": "o2.5"
+        }
+      ],
+      "players": [],
+      "scorer": false,
+      "stake": 105.0,
+      "odds": 4.073,
+      "modelP": 0.322,
+      "ev": 0.312,
+      "status": "open",
+      "llm": true,
+      "analysis": "Same thesis, second expression: my xG read is 1.67-0.83 against the books' implied 1.57-0.74 \u2014 I see more total goals, and Argentina wins are goal-heavy in my grid. Jointly that's 32.2% versus the 22.9% an independent multiplication implies, +31% EV at 4.073. When Argentina win, they usually win in a game that clears 2.5 \u2014 the correlation the builder price ignores. Full Kelly: 10.1%, $105."
+    },
+    {
+      "matchId": "qf-4",
+      "placedAt": "2026-07-12T01:20:00.000Z",
+      "desc": "Over 3.5 goals @ 4.821 (ARG v SUI)",
+      "legs": [
+        {
+          "key": "o3.5"
+        }
+      ],
+      "players": [],
+      "scorer": false,
+      "stake": 45.0,
+      "odds": 4.821,
+      "modelP": 0.242,
+      "ev": 0.169,
+      "status": "open",
+      "llm": true,
+      "analysis": "A diversifier on the same read: my totals distribution puts 4+ goals at 24.2% against the books' implied 20.2% \u2014 +17% EV at 4.821. This one pays even in the chaos scenarios where Switzerland trade goals, so it isn't fully chained to the Argentina-win legs. Kelly-sized at 4.4%: $45."
     }
   ],
   "log": [
@@ -136,19 +205,19 @@
     },
     {
       "at": "2026-07-08T00:53:57.691Z",
-      "msg": "BET $108.94 on MAR win @ 6.448 — model 25%, EV +59%, 11% Kelly (bank $891.06)"
+      "msg": "BET $108.94 on MAR win @ 6.448 \u2014 model 25%, EV +59%, 11% Kelly (bank $891.06)"
     },
     {
       "at": "2026-07-08T00:53:57.691Z",
-      "msg": "BET $105.43 on ESP win + Over 2.5 goals @ 3.283 — model 38%, EV +24%, 11% Kelly (bank $785.63)"
+      "msg": "BET $105.43 on ESP win + Over 2.5 goals @ 3.283 \u2014 model 38%, EV +24%, 11% Kelly (bank $785.63)"
     },
     {
       "at": "2026-07-08T00:53:57.691Z",
-      "msg": "BET $98.25 on NOR win @ 4.417 — model 30%, EV +34%, 10% Kelly (bank $687.38)"
+      "msg": "BET $98.25 on NOR win @ 4.417 \u2014 model 30%, EV +34%, 10% Kelly (bank $687.38)"
     },
     {
       "at": "2026-07-08T00:53:57.691Z",
-      "msg": "BET $178.65 on ARG win + L. Messi to score @ 2.746 — model 48%, EV +31%, 18% Kelly (bank $508.73)"
+      "msg": "BET $178.65 on ARG win + L. Messi to score @ 2.746 \u2014 model 48%, EV +31%, 18% Kelly (bank $508.73)"
     },
     {
       "at": "2026-07-08T00:59:17.484Z",
@@ -176,11 +245,15 @@
     },
     {
       "at": "2026-07-11T03:41:22.627Z",
-      "msg": "BET $91.96 on FRA win + Kylian Mbappé to score @ 4.197 — model 30%, EV +26%, 8% Kelly (bank $762.9)"
+      "msg": "BET $91.96 on FRA win + Kylian Mbapp\u00e9 to score @ 4.197 \u2014 model 30%, EV +26%, 8% Kelly (bank $762.9)"
     },
     {
       "at": "2026-07-12T00:55:19.087Z",
       "msg": "LOST NOR win @ 4.417 (NOR v ENG): -$98.25 (bank $762.9)"
+    },
+    {
+      "at": "2026-07-12T01:20:00.000Z",
+      "msg": "REINFORCED qf-4 on request: +$249 across 3 bets (Messi 2+ combo EV+64%, ARG+O2.5 EV+31%, O3.5 EV+17%). Match exposure now $428."
     }
   ]
 }
