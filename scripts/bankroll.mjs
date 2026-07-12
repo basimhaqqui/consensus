@@ -134,6 +134,22 @@ function legMenu(m, players) {
       grade: (r) => r.scorers[pl.side].some((n) => n.includes(surname)),
       scorer: true,
     });
+    legs.push({
+      key: `sc-${pl.side}-${surname}-2`,
+      label: `${pl.name} 2+ goals`,
+      w: (h, a) => {
+        const g = goals(h, a);
+        if (g < 2) return 0;
+        return (
+          1 -
+          Math.pow(1 - pl.share, g) -
+          g * pl.share * Math.pow(1 - pl.share, g - 1)
+        );
+      },
+      grade: (r) =>
+        r.scorers[pl.side].filter((n) => n.includes(surname)).length >= 2,
+      scorer: true,
+    });
   }
   return legs;
 }
