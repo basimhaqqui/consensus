@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-11T21:27:25.238Z",
+  "generated": "2026-07-12T21:27:36.670Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -160,6 +160,23 @@
         {
           "headline": "From Arsenal jeers to Swiss tears: Xhaka's redemption",
           "href": "https://www.bbc.co.uk/sport/football/articles/cy06zgdz728o?at_medium=RSS&amp;at_campaign=rss"
+        }
+      ]
+    },
+    "ESP|FRA": {
+      "text": "France and Spain meet in the World Cup semi-finals, with both sides having entered the tournament among FIFA's top four ranked teams. The two are separated by a single point in the model's advance projection. The fixture revives a rivalry that last produced a knockout meeting at the 2006 World Cup, when France beat Spain.",
+      "sources": [
+        {
+          "headline": "FIFA's top four teams make World Cup semifinals for first time",
+          "href": "https://www.espn.com/soccer/story/_/id/49344988/fifa-top-4-teams-world-cup-semifinals-first"
+        },
+        {
+          "headline": "Every team's championship odds for the 2026 World Cup: Favorites France, Spain to meet in semis",
+          "href": "https://www.espn.com/espn/betting/story/_/id/48386952/espn-soccer-futbol-world-cup-betting-odds-championship-groups"
+        },
+        {
+          "headline": "'Written off as too old' - France beat up-and-coming Spain in 2006",
+          "href": "https://www.bbc.co.uk/sport/football/videos/c3vyg507xd2o?at_medium=RSS&amp;at_campaign=rss"
         }
       ]
     }
