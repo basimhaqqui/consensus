@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import bankrollFile from "../../data/bankroll.json";
+import BankrollTickets, { type TicketBet } from "@/components/BankrollTickets";
 
 export const dynamic = "force-dynamic";
 
@@ -9,28 +10,11 @@ export const metadata = {
   robots: { index: false, follow: false },
 };
 
-type Bet = {
-  matchId: string;
-  placedAt: string;
-  desc: string;
-  analysis?: string;
-  stake: number;
-  odds: number;
-  edge?: number;
-  ev?: number;
-  modelP: number;
-  booksP?: number;
-  status: "open" | "won" | "lost";
-  settledAt?: string;
-  result?: string;
-  pnl?: number;
-};
-
 type Bankroll = {
   start: number;
   target?: number;
   cash: number;
-  bets: Bet[];
+  bets: TicketBet[];
   log: { at: string; msg: string }[];
 };
 
@@ -47,6 +31,7 @@ export default async function BankrollPage({
   const open = s.bets.filter((b) => b.status === "open");
   const settled = s.bets.filter((b) => b.status !== "open").reverse();
   const exposure = open.reduce((a, b) => a + b.stake, 0);
+  const potential = open.reduce((a, b) => a + b.stake * b.odds, 0);
   const equity = s.cash + exposure;
   const pnl = equity - s.start;
   const wins = settled.filter((b) => b.status === "won").length;
@@ -90,7 +75,7 @@ export default async function BankrollPage({
         {[
           ["Equity", `$${equity.toFixed(2)}`, pnl >= 0 ? "text-accent" : "text-danger"],
           ["P/L", `${pnl >= 0 ? "+" : "−"}$${Math.abs(pnl).toFixed(2)}`, pnl >= 0 ? "text-accent" : "text-danger"],
-          ["Cash / At risk", `$${s.cash.toFixed(2)} / $${exposure.toFixed(2)}`, "text-text"],
+          ["At risk → returns", `$${exposure.toFixed(0)} → $${potential.toFixed(0)}`, "text-text"],
           ["Record", settled.length ? `${wins}–${settled.length - wins}` : "—", "text-text"],
         ].map(([label, value, cls]) => (
           <div key={label as string} className="bg-panel px-4 py-3">
@@ -100,67 +85,23 @@ export default async function BankrollPage({
         ))}
       </div>
 
-      {open.length > 0 && (
-        <section className="mt-8">
-          <h2 className="mb-2 text-[11px] uppercase tracking-[0.2em] text-zinc-400">
-            Open bets
+      <section className="mt-8">
+        <div className="mb-3 flex items-center gap-3">
+          <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+            Open tickets {open.length > 0 && <span className="text-accent">[{open.length}]</span>}
           </h2>
-          <div className="divide-y divide-line rounded-xl border border-line bg-panel card-shadow text-xs">
-            {open.map((b) => (
-              <div key={b.matchId} className="flex items-center justify-between gap-3 px-4 py-2.5">
-                <div className="min-w-0">
-                  <div className="text-zinc-200">{b.desc}</div>
-                  <div className="text-[10px] text-muted">
-                    model {(b.modelP * 100).toFixed(0)}%
-                    {b.ev !== undefined && <> · EV +{(b.ev * 100).toFixed(0)}%</>}
-                    {b.edge !== undefined && <> · edge +{(b.edge * 100).toFixed(0)}</>}
-                  </div>
-                  {b.analysis && (
-                    <p className="mt-1.5 max-w-md text-[11px] leading-relaxed text-zinc-400">
-                      {b.analysis}
-                    </p>
-                  )}
-                </div>
-                <div className="shrink-0 text-right tabnums">
-                  <div className="text-zinc-200">${b.stake.toFixed(2)}</div>
-                  <div className="text-[10px] text-muted">→ ${(b.stake * b.odds).toFixed(2)}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
+          <span className="text-[10px] text-zinc-600">tap a ticket for the reasoning</span>
+          <span className="h-px flex-1 bg-line" />
+        </div>
+        <BankrollTickets bets={open} />
+      </section>
 
       <section className="mt-8">
-        <h2 className="mb-2 text-[11px] uppercase tracking-[0.2em] text-zinc-400">
-          Settled
-        </h2>
-        {settled.length === 0 ? (
-          <p className="text-xs text-muted">Nothing settled yet.</p>
-        ) : (
-          <div className="divide-y divide-line rounded-xl border border-line bg-panel card-shadow text-xs">
-            {settled.map((b) => (
-              <div key={b.matchId} className="flex items-center justify-between gap-3 px-4 py-2.5">
-                <div className="min-w-0">
-                  <div className="text-zinc-200">{b.desc}</div>
-                  <div className="text-[10px] text-muted">final {b.result}</div>
-                  {b.analysis && (
-                    <p className="mt-1.5 max-w-md text-[11px] leading-relaxed text-zinc-500">
-                      {b.analysis}
-                    </p>
-                  )}
-                </div>
-                <div
-                  className={`shrink-0 tabnums font-semibold ${
-                    b.status === "won" ? "text-accent" : "text-danger"
-                  }`}
-                >
-                  {b.status === "won" ? "+" : "−"}${Math.abs(b.pnl ?? 0).toFixed(2)}
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+        <div className="mb-3 flex items-center gap-3">
+          <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">Settled</h2>
+          <span className="h-px flex-1 bg-line" />
+        </div>
+        <BankrollTickets bets={settled} />
       </section>
 
       <section className="mt-8">
