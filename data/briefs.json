@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-13T18:19:19.392Z",
+  "generated": "2026-07-13T21:31:13.533Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -164,8 +164,12 @@
       ]
     },
     "ESP|FRA": {
-      "text": "France rely on counterattacking play, while Spain enter the semifinal citing a strong collective \"all for one\" mentality built in camp. France's defenders say they are not focusing on any single opponent. The two nations last met at a World Cup in the 2006 last 16, when France won.",
+      "text": "France and Spain meet in the World Cup semifinal, with Kylian Mbappé and Lamine Yamal among the key attacking players. Iván Barton will referee the match. France defenders have said they are not focusing on any single opponent.",
       "sources": [
+        {
+          "headline": "Who is Iván Barton? The South American referee set to take charge of Spain vs. France in the World Cup semifinal",
+          "href": "https://www.espn.com/soccer/story/_/id/49350803/who-ivan-barton-referee-spain-france-world-cup-semifinal"
+        },
         {
           "headline": "France counterattack, Argentina set pieces: How World Cup semifinalists score goals",
           "href": "https://www.espn.com/soccer/story/_/id/49349440/world-cup-semifinalists-score-goals-france-olise-spain-yamal-england-argentina-messi"
@@ -173,10 +177,23 @@
         {
           "headline": "Pau Cubarsí calls for tolerance after Spain's ex-PM questions nationality of France players",
           "href": "https://www.espn.com/soccer/story/_/id/49348546/pau-cubarsi-tolerance-spain-mariano-rajoy-questions-nationality-france-players"
+        }
+      ]
+    },
+    "ARG|ENG": {
+      "text": "England face Argentina in the World Cup semifinal, having reached the last four with a 2-1 win over Norway. Goalkeeper Jordan Pickford has stressed England must stay composed and avoid focusing solely on Lionel Messi, with Argentina posing additional threats through set pieces and other key players. Argentina rank among the tournament's top four sides.",
+      "sources": [
+        {
+          "headline": "Jordan Pickford: England will stay composed during World Cup clash with Argentina, won't focus on Lionel Messi",
+          "href": "https://www.espn.com/soccer/story/_/id/49352486/jordan-pickford-england-composed-world-cup-semifinal-argentina-focus-lionel-messi"
         },
         {
-          "headline": "Inside Spain's World Cup camp: Can good vibes carry them to title?",
-          "href": "https://www.espn.com/soccer/story/_/id/49349006/inside-spain-world-cup-camp-good-vibes-carry-title"
+          "headline": "Pickford: England can't just focus on Messi in semifinal vs. Argentina",
+          "href": "https://www.espn.com/video/clip/_/id/49352322/england-just-focus-messi-semifinal-vs-argentina"
+        },
+        {
+          "headline": "England vs. Argentina - who are Argentina's key players to look out for aside from Messi? Which familiar Premier League faces could pose a threat?",
+          "href": "https://www.espn.com/soccer/story/_/id/49351324/england-argentina-world-cup-2026-semifinal-premier-league-players-lionel-messi-enzo-fernandes-julian-alvarez-emi-martinez"
         }
       ]
     }
