@@ -97,7 +97,7 @@ export default function FightStats({
   const b = data?.[String(bId)] ?? null;
 
   return (
-    <div ref={rootRef} className="border-t border-line">
+    <div ref={rootRef} className="terminal-panel-header">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}

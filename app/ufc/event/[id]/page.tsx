@@ -62,13 +62,15 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
   const cardPane = (
     <>
       {rest.map(
-        (s) =>
+        (s, sectionIndex) =>
           s.fights.length > 0 && (
             <section key={s.title} className="mt-6">
-              <div className="mb-3 flex items-center gap-3">
-                <h2 className="display text-lg font-extrabold text-zinc-300">{s.title}</h2>
+              <div
+                className="section-heading"
+                data-index={String(sectionIndex + 3).padStart(2, "0")}
+              >
+                <h2>{s.title}</h2>
                 <span className="text-[11px] text-muted">[{s.fights.length}]</span>
-                <span className="flex-1 h-px bg-line" />
               </div>
               <div className="grid gap-4 lg:grid-cols-2">
                 {s.fights.map((f) => (
@@ -118,16 +120,13 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
   );
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 pb-20">
-      <div className="pt-5">
-        <Link href="/ufc" className="display text-base font-bold tracking-tight flex items-center gap-1.5">
-          <span className="text-accent">▸</span> UFC CONSENSUS
+    <div>
+      <header className="site-header site-header--compact">
+        <Link href="/ufc" className="back-link">
+          ← UFC desk
         </Link>
-      </div>
-
-      <header className="pt-8 pb-6">
-        <div className="text-[11px] uppercase tracking-[0.25em] text-accent">Event forecast</div>
-        <h1 className="display mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight">
+        <div className="site-kicker mt-6">01 / Event forecast</div>
+        <h1 className="site-title site-title--small">
           {card.name}
         </h1>
         <div className="mt-2 text-sm text-muted tabnums">
@@ -144,9 +143,12 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
       </header>
 
       {mainEvent && (
-        <div className="mb-4">
+        <section className="mt-10 mb-4">
+          <div className="section-heading section-heading--live" data-index="02">
+            <h2>Main event consensus</h2>
+          </div>
           <FaceOff fight={mainEvent} eventId={card.eventId} />
-        </div>
+        </section>
       )}
 
       <LiveNowBar
@@ -170,7 +172,7 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
         ]}
       />
 
-      <footer className="mt-12 rounded-lg border border-line bg-panel/60 p-5 text-xs text-muted leading-relaxed">
+      <footer className="terminal-panel mt-12 p-5 text-xs leading-relaxed text-muted">
         Probabilities are the model&apos;s alone — an online Elo replay of every UFC fight since
         1993 with age, layoff, and finish adjustments. Fighters marked{" "}
         <span className="text-zinc-400">prov</span> have fewer than five UFC fights and carry

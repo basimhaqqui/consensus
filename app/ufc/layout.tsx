@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Barlow_Condensed } from "next/font/google";
+import Link from "next/link";
+import CompetitionNav from "@/components/CompetitionNav";
 
 const barlow = Barlow_Condensed({
   variable: "--font-barlow",
@@ -10,7 +12,7 @@ const barlow = Barlow_Condensed({
 export const metadata: Metadata = {
   title: "UFC CONSENSUS // Fight Terminal",
   description:
-    "An MMA fight terminal: an independent fighter Elo model with win probabilities for every upcoming UFC bout — market odds and a public graded ledger next.",
+    "An integrated MMA fight terminal with independent Elo forecasts, market consensus, fighter pages, official rankings, picks, and a public graded ledger.",
   twitter: {
     card: "summary_large_image",
   },
@@ -22,8 +24,18 @@ export default function UfcLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={`${barlow.variable} ufc-theme flex min-h-screen flex-1 flex-col`}>
-      {children}
+    <div className={`${barlow.variable} ufc-theme min-h-screen`}>
+      <main className="site-shell">
+        <div className="site-topbar">
+          <Link href="/" className="site-wordmark">
+            <span>▸</span>
+            <span>CONSENSUS</span>
+            <span className="hidden text-zinc-600 sm:inline">/ COMBAT DESK</span>
+          </Link>
+          <CompetitionNav active="ufc" />
+        </div>
+        {children}
+      </main>
     </div>
   );
 }

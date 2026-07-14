@@ -71,7 +71,7 @@ function FightPickRow({
   const g = pick?.graded;
 
   return (
-    <div className="rounded-xl border border-line bg-panel/70 p-3">
+    <div className="terminal-panel p-3">
       <div className="flex flex-wrap items-center gap-2">
         {([["a", f.a], ["b", f.b]] as const).map(([side, fighter]) => (
           <button
@@ -230,18 +230,17 @@ export default function Predictor({
 
   return (
     <section className="mt-10">
-      <div className="mb-3 flex items-center gap-3">
-        <h2 className="display text-lg font-extrabold text-zinc-300">Predictor</h2>
+      <div className="section-heading" data-index="05">
+        <h2>Predictor</h2>
         <span className="text-[11px] text-muted">
           pick winner · method · round — scored against the model
         </span>
-        <span className="flex-1 h-px bg-line" />
-        <Link href="/ufc/picks" className="text-[11px] text-muted hover:text-accent">
+        <Link href="/ufc/picks" className="z-10 ml-auto text-[11px] text-muted hover:text-accent">
           My picks →
         </Link>
       </div>
 
-      <div className="mb-3 flex flex-wrap items-center gap-x-5 gap-y-1 rounded-xl border border-line bg-panel/60 px-4 py-2 text-xs tabnums">
+      <div className="terminal-panel mb-3 flex flex-wrap items-center gap-x-5 gap-y-1 px-4 py-2 text-xs tabnums">
         <span>
           <span className="text-muted">picked</span> {onCard.length}/{fights.length}
           {openCount > 0 && <span className="text-zinc-600"> · {openCount} still open</span>}

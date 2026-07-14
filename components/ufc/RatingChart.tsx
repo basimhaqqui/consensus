@@ -45,26 +45,26 @@ export default function RatingChart({ points }: { points: [number, number][] }) 
         setHover(best);
       }}
     >
-      <line x1={PAD.l} x2={W - PAD.r} y1={Y(1500)} y2={Y(1500)} stroke="#23232e" strokeWidth="1" strokeDasharray="3 4" />
-      <text x={W - PAD.r + 6} y={Y(1500) + 3} fontSize="10" fill="#5b5866">
+      <line x1={PAD.l} x2={W - PAD.r} y1={Y(1500)} y2={Y(1500)} stroke="var(--line)" strokeWidth="1" strokeDasharray="3 4" />
+      <text x={W - PAD.r + 6} y={Y(1500) + 3} fontSize="10" fill="var(--muted)">
         1500
       </text>
-      <path d={path} fill="none" stroke="#e21d1d" strokeWidth="2" strokeLinejoin="round" />
-      <circle cx={X(last[0])} cy={Y(last[1])} r="3.5" fill="#e21d1d" />
+      <path d={path} fill="none" stroke="var(--red-corner)" strokeWidth="2" strokeLinejoin="round" />
+      <circle cx={X(last[0])} cy={Y(last[1])} r="3.5" fill="var(--red-corner)" />
       {!hovered && (
-        <text x={X(last[0]) + 8} y={Y(last[1]) + 4} fontSize="12" fill="#eceaf0" fontWeight="700">
+        <text x={X(last[0]) + 8} y={Y(last[1]) + 4} fontSize="12" fill="var(--text)" fontWeight="700">
           {last[1]}
         </text>
       )}
       {hovered && (
         <g>
-          <line x1={X(hovered[0])} x2={X(hovered[0])} y1={PAD.t} y2={H - PAD.b} stroke="#3a3a46" strokeWidth="1" />
-          <circle cx={X(hovered[0])} cy={Y(hovered[1])} r="4" fill="#e21d1d" stroke="#0e0e13" strokeWidth="2" />
+          <line x1={X(hovered[0])} x2={X(hovered[0])} y1={PAD.t} y2={H - PAD.b} stroke="var(--hairline-strong)" strokeWidth="1" />
+          <circle cx={X(hovered[0])} cy={Y(hovered[1])} r="4" fill="var(--red-corner)" stroke="var(--panel)" strokeWidth="2" />
           <text
             x={Math.min(Math.max(X(hovered[0]), 50), W - 90)}
             y={PAD.t + 2}
             fontSize="11"
-            fill="#eceaf0"
+            fill="var(--text)"
             textAnchor="middle"
           >
             {hovered[1]} · {fmt(hovered[0])}

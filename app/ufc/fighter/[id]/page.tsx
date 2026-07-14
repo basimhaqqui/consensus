@@ -46,18 +46,16 @@ export default async function FighterPage({ params }: { params: Promise<{ id: st
   ];
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 pb-20">
-      <div className="pt-5">
-        <Link href="/ufc" className="display text-base font-bold tracking-tight flex items-center gap-1.5">
-          <span className="text-accent">▸</span> UFC CONSENSUS
-        </Link>
-      </div>
-
-      <header className="pt-8 pb-6 flex flex-wrap items-end gap-5">
+    <div>
+      <header className="site-header site-header--compact flex flex-wrap items-end gap-5">
         <FighterFace id={id} name={r.name} size={132} />
         <div className="min-w-0">
+          <Link href="/ufc" className="back-link mb-6">
+            ← UFC desk
+          </Link>
+          <div className="site-kicker">01 / Fighter intelligence</div>
           <div className="display text-lg font-semibold text-muted leading-none">{first}&nbsp;</div>
-          <h1 className="display text-4xl sm:text-6xl font-extrabold leading-[0.95] tracking-tight">
+          <h1 className="site-title">
             {last}
           </h1>
           <div className="mt-2 flex items-baseline gap-4">
@@ -72,38 +70,41 @@ export default async function FighterPage({ params }: { params: Promise<{ id: st
         </div>
       </header>
 
-      <section className="grid grid-cols-3 sm:grid-cols-6 gap-2">
-        {tape.map(([label, value]) => (
-          <div key={label} className="rounded-lg border border-line bg-panel/60 px-3 py-2 text-center">
-            <div className="text-[10px] uppercase tracking-wider text-muted">{label}</div>
-            <div className="mt-0.5 text-sm font-semibold tabnums">{value ?? "—"}</div>
-          </div>
-        ))}
+      <section className="mt-10">
+        <div className="section-heading" data-index="02">
+          <h2>Tale of the tape</h2>
+        </div>
+        <div className="terminal-kpi-grid grid grid-cols-3 gap-px sm:grid-cols-6">
+          {tape.map(([label, value]) => (
+            <div key={label} className="terminal-kpi px-3 py-3 text-center">
+              <div className="text-[10px] uppercase tracking-wider text-muted">{label}</div>
+              <div className="mt-0.5 text-sm font-semibold tabnums">{value ?? "—"}</div>
+            </div>
+          ))}
+        </div>
       </section>
 
       {history.length >= 2 && (
         <section className="mt-8">
-          <div className="mb-3 flex items-center gap-3">
-            <h2 className="display text-lg font-extrabold text-zinc-300">Rating history</h2>
+          <div className="section-heading" data-index="03">
+            <h2>Rating history</h2>
             <span className="text-[11px] text-muted">post-fight Elo, UFC fights only</span>
-            <span className="flex-1 h-px bg-line" />
           </div>
-          <div className="rounded-xl border border-line bg-panel/70 card-shadow p-4">
+          <div className="terminal-panel p-4">
             <RatingChart points={history} />
           </div>
         </section>
       )}
 
       <section className="mt-8">
-        <div className="mb-3 flex items-center gap-3">
-          <h2 className="display text-lg font-extrabold text-zinc-300">Fight log</h2>
+        <div className="section-heading" data-index="04">
+          <h2>Fight log</h2>
           <span className="text-[11px] text-muted">[{log.length}]</span>
-          <span className="flex-1 h-px bg-line" />
         </div>
-        <div className="rounded-xl border border-line bg-panel/70 card-shadow overflow-x-auto">
+        <div className="terminal-panel overflow-x-auto">
           <table className="w-full text-xs">
             <thead>
-              <tr className="border-b border-line bg-panel2/60 text-[10px] uppercase tracking-wider text-muted">
+              <tr className="terminal-panel-header text-[10px] uppercase tracking-wider text-muted">
                 <th className="px-4 py-2 text-left">Date</th>
                 <th className="px-2 py-2 text-center w-8">W/L</th>
                 <th className="px-2 py-2 text-left">Opponent</th>

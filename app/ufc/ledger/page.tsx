@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { splitName } from "@/components/ufc/FaceOff";
 import { getLedger } from "@/lib/ufc/data";
 
@@ -21,19 +20,11 @@ export default function LedgerPage() {
       : null;
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 pb-20">
-      <div className="pt-5">
-        <Link href="/ufc" className="display text-base font-bold tracking-tight flex items-center gap-1.5">
-          <span className="text-accent">▸</span> UFC CONSENSUS
-        </Link>
-      </div>
-
-      <header className="pt-8 pb-6">
-        <div className="text-[11px] uppercase tracking-[0.25em] text-accent">Public record</div>
-        <h1 className="display mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight">
-          The Ledger
-        </h1>
-        <p className="mt-3 text-sm text-muted max-w-2xl leading-relaxed">
+    <div>
+      <header className="site-header">
+        <div className="site-kicker">01 / Public record</div>
+        <h1 className="site-title site-title--small">The Ledger</h1>
+        <p className="site-subtitle">
           Every forecast is frozen into this ledger no later than fight time, alongside the
           de-vigged book consensus at capture. After the fight it gets graded — win or lose —
           and nothing is ever edited or deleted. The score that matters is log loss against
@@ -42,50 +33,54 @@ export default function LedgerPage() {
         </p>
       </header>
 
-      <section className="grid grid-cols-2 sm:grid-cols-5 gap-3">
-        <Stat label="Forecasts" value={`${entries.length}`} sub={`${pending.length} pending`} />
-        <Stat
-          label="Picks hit"
-          value={graded.length ? `${hits}/${graded.length}` : "—"}
-          sub={graded.length ? pct(hits / graded.length) : "awaiting results"}
-        />
-        <Stat
-          label="Model log loss"
-          value={withBooks.length ? avg(withBooks.map((e) => e.result!.llModel!)).toFixed(3) : "—"}
-          sub="lower is better"
-          valueClass="text-accent"
-        />
-        <Stat
-          label="Books log loss"
-          value={withBooks.length ? avg(withBooks.map((e) => e.result!.llBooks!)).toFixed(3) : "—"}
-          sub={withBooks.length ? `n=${withBooks.length}` : "the bar to clear"}
-          valueClass="text-blue"
-        />
-        <Stat
-          label="Consensus LL"
-          value={withBooks.length ? avg(withBooks.map((e) => llBlend(e)!)).toFixed(3) : "—"}
-          sub="50/50 blend"
-          valueClass="text-warn"
-        />
+      <section className="mt-10">
+        <div className="section-heading" data-index="02">
+          <h2>Forecast performance</h2>
+        </div>
+        <div className="terminal-kpi-grid grid grid-cols-2 gap-px sm:grid-cols-5">
+          <Stat label="Forecasts" value={`${entries.length}`} sub={`${pending.length} pending`} />
+          <Stat
+            label="Picks hit"
+            value={graded.length ? `${hits}/${graded.length}` : "—"}
+            sub={graded.length ? pct(hits / graded.length) : "awaiting results"}
+          />
+          <Stat
+            label="Model log loss"
+            value={withBooks.length ? avg(withBooks.map((e) => e.result!.llModel!)).toFixed(3) : "—"}
+            sub="lower is better"
+            valueClass="text-accent"
+          />
+          <Stat
+            label="Books log loss"
+            value={withBooks.length ? avg(withBooks.map((e) => e.result!.llBooks!)).toFixed(3) : "—"}
+            sub={withBooks.length ? `n=${withBooks.length}` : "the bar to clear"}
+            valueClass="text-blue"
+          />
+          <Stat
+            label="Consensus LL"
+            value={withBooks.length ? avg(withBooks.map((e) => llBlend(e)!)).toFixed(3) : "—"}
+            sub="50/50 blend"
+            valueClass="text-warn"
+          />
+        </div>
       </section>
 
       <section className="mt-10">
-        <div className="mb-3 flex items-center gap-3">
-          <h2 className="display text-lg font-extrabold text-zinc-300">All entries</h2>
+        <div className="section-heading" data-index="03">
+          <h2>All entries</h2>
           <span className="text-[11px] text-muted">[{entries.length}]</span>
-          <span className="flex-1 h-px bg-line" />
         </div>
 
         {entries.length === 0 ? (
-          <div className="rounded-xl border border-line bg-panel/60 p-8 text-center text-sm text-muted">
+          <div className="terminal-empty p-8 text-center text-sm">
             No forecasts captured yet — the first entries freeze automatically about 12 hours
             before the next event and get graded after the results land.
           </div>
         ) : (
-          <div className="rounded-xl border border-line bg-panel/70 card-shadow overflow-x-auto">
+          <div className="terminal-panel overflow-x-auto">
             <table className="w-full text-xs">
               <thead>
-                <tr className="border-b border-line bg-panel2/60 text-[10px] uppercase tracking-wider text-muted">
+                <tr className="terminal-panel-header text-[10px] uppercase tracking-wider text-muted">
                   <th className="px-4 py-2 text-left">Date</th>
                   <th className="px-2 py-2 text-left">Fight</th>
                   <th className="px-2 py-2 text-right">Model</th>
@@ -141,16 +136,20 @@ export default function LedgerPage() {
         )}
       </section>
 
-      <section className="mt-10 rounded-lg border border-line bg-panel/60 p-5 text-xs text-muted leading-relaxed">
-        <h2 className="display text-sm font-bold text-zinc-300 mb-2">Methodology</h2>
-        <p>
-          The model is an online Elo over every UFC fight since 1993 — higher K while a fighter
-          establishes themselves, extra weight on finishes, rating decay over long layoffs, and
-          an age curve. Its constants were fitted on 2012–2019 and validated on 2020+ before
-          launch. Book lines are the de-vigged average across US sportsbooks. A VALUE flag means
-          the model and the books disagree by 8+ points — it is a disagreement, not a guarantee.
-          Not betting advice.
-        </p>
+      <section className="mt-10">
+        <div className="section-heading" data-index="04">
+          <h2>Methodology</h2>
+        </div>
+        <div className="terminal-panel p-5 text-xs leading-relaxed text-muted">
+          <p>
+            The model is an online Elo over every UFC fight since 1993 — higher K while a fighter
+            establishes themselves, extra weight on finishes, rating decay over long layoffs, and
+            an age curve. Its constants were fitted on 2012–2019 and validated on 2020+ before
+            launch. Book lines are the de-vigged average across US sportsbooks. A VALUE flag means
+            the model and the books disagree by 8+ points — it is a disagreement, not a guarantee.
+            Not betting advice.
+          </p>
+        </div>
       </section>
     </div>
   );
@@ -168,7 +167,7 @@ function Stat({
   valueClass?: string;
 }) {
   return (
-    <div className="rounded-xl border border-line bg-panel/70 card-shadow p-4 text-center">
+    <div className="terminal-kpi p-4 text-center">
       <div className="text-[10px] uppercase tracking-wider text-muted">{label}</div>
       <div className={`mt-1 display text-2xl font-extrabold tabnums ${valueClass}`}>{value}</div>
       <div className="text-[11px] text-muted tabnums">{sub}</div>

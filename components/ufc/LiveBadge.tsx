@@ -29,7 +29,7 @@ export default function LiveBadge({
   if (bout.state === "in") {
     return (
       <span className="flex items-center gap-1.5 whitespace-nowrap text-accent">
-        <span className="h-1.5 w-1.5 rounded-full bg-accent animate-pulse" />
+        <span className="signal-dot ufc-signal-dot" />
         LIVE{bout.period ? ` R${bout.period} ${bout.clock ?? ""}` : ""}
       </span>
     );

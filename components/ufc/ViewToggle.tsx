@@ -9,7 +9,7 @@ export default function ViewToggle() {
   const set = (e: React.MouseEvent<HTMLButtonElement>, v: string) =>
     e.currentTarget.closest("[data-view]")?.setAttribute("data-view", v);
   return (
-    <span className="flex items-center gap-0.5 rounded-md border border-line bg-panel p-0.5">
+    <span className="segmented-control flex items-center gap-0.5 p-0.5">
       <button
         type="button"
         onClick={(e) => set(e, "cons")}

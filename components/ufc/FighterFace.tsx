@@ -23,11 +23,11 @@ export default function FighterFace({
     .map((w) => w[0])
     .slice(0, 2)
     .join("");
-  const ring = tone === "red" ? "bg-red/25" : tone === "blue" ? "bg-blue/25" : "bg-line";
+  const ring = tone === "red" ? "bg-red/35" : tone === "blue" ? "bg-blue/35" : "bg-line";
 
   return (
     <div className={`octagon shrink-0 ${ring} p-[2px]`} style={{ width: size, height: size }}>
-      <div className="octagon h-full w-full bg-panel2 flex items-end justify-center overflow-hidden">
+      <div className="octagon flex h-full w-full items-end justify-center overflow-hidden bg-panel2 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
         {src && !broken ? (
           <img
             src={src}

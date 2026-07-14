@@ -28,10 +28,10 @@ export default function LiveNowBar({ eventId, fights }: { eventId: string; fight
   return (
     <a
       href={`/ufc/event/${eventId}#bout-${f.boutId}`}
-      className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 flex max-w-[94vw] items-center gap-2.5 whitespace-nowrap rounded-full border border-accent/50 bg-panel/95 px-4 py-2 text-xs card-shadow backdrop-blur hover:bg-panel2"
+      className="terminal-panel fixed bottom-4 left-1/2 z-50 flex max-w-[94vw] -translate-x-1/2 items-center gap-2.5 whitespace-nowrap px-4 py-2 text-xs hover:border-accent/50"
     >
       <span className="flex items-center gap-1.5 text-accent font-bold uppercase tracking-wider">
-        <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
+        <span className="signal-dot ufc-signal-dot" />
         Live{b.period ? ` R${b.period} ${b.clock && b.clock !== "-" ? b.clock : ""}` : ""}
       </span>
       <span className="display text-sm font-extrabold uppercase truncate">

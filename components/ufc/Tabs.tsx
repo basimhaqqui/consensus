@@ -38,8 +38,8 @@ export default function Tabs({
 
   return (
     <div>
-      <div className="sticky top-0 z-40 -mx-4 bg-bg/90 px-4 py-2 backdrop-blur sm:-mx-6 sm:px-6">
-        <div className="flex items-center gap-1 rounded-xl border border-line bg-panel/80 p-1">
+      <div className="sticky top-0 z-40 -mx-2 bg-bg px-2 py-2">
+        <div className="segmented-control flex items-center gap-1 p-1">
           {tabs.map((t) => (
             <button
               key={t.key}

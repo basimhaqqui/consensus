@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import bankrollJson from "@/data/ufc/bankroll.json";
 import BankrollTicket from "@/components/ufc/BankrollTicket";
@@ -72,21 +71,11 @@ export default async function BankrollPage({
   const returned = state.settled.reduce((s, b) => s + (b.payout ?? 0), 0);
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 pb-20">
-      <div className="pt-5">
-        <Link href="/ufc" className="display text-base font-bold tracking-tight flex items-center gap-1.5">
-          <span className="text-accent">▸</span> UFC CONSENSUS
-        </Link>
-      </div>
-
-      <header className="pt-8 pb-6">
-        <div className="text-[11px] uppercase tracking-[0.25em] text-accent">
-          Private experiment · paper money
-        </div>
-        <h1 className="display mt-2 text-3xl sm:text-5xl font-extrabold tracking-tight">
-          The Bankroll
-        </h1>
-        <p className="mt-3 text-sm text-muted max-w-2xl leading-relaxed">
+    <div>
+      <header className="site-header">
+        <div className="site-kicker">01 / Private experiment · paper money</div>
+        <h1 className="site-title site-title--small">The Bankroll</h1>
+        <p className="site-subtitle">
           $1,000 of simulated money, bet automatically every data run at real average book
           prices: three-quarter-Kelly on consensus-probability edges (min +3% EV), moneylines and
           rounds totals, one parlay per card, near-debut fights excluded. Settled by real
@@ -95,23 +84,42 @@ export default async function BankrollPage({
         </p>
       </header>
 
-      <section className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <Stat label="Bankroll" value={usd(total)} sub={`started ${usd(state.start)}`}
-          valueClass={pnl >= 0 ? "text-emerald-400" : "text-danger"} />
-        <Stat label="P&L" value={`${pnl >= 0 ? "+" : ""}${usd(pnl).replace("$-", "-$")}`}
-          sub={staked > 0 ? `ROI ${(((returned - staked) / staked) * 100).toFixed(1)}%` : "no settled bets yet"}
-          valueClass={pnl >= 0 ? "text-emerald-400" : "text-danger"} />
-        <Stat
-          label="In play"
-          value={usd(exposure)}
-          sub={`to win ${usd(state.open.reduce((s, b) => s + b.stake * (b.price - 1), 0))}`}
-        />
-        <Stat label="Record" value={settled.length ? `${wins}-${losses}` : "—"}
-          sub={`${settled.length} settled`} />
+      <section className="mt-10">
+        <div className="section-heading" data-index="02">
+          <h2>Portfolio state</h2>
+        </div>
+        <div className="terminal-kpi-grid grid grid-cols-2 gap-px sm:grid-cols-4">
+          <Stat
+            label="Bankroll"
+            value={usd(total)}
+            sub={`started ${usd(state.start)}`}
+            valueClass={pnl >= 0 ? "text-emerald-400" : "text-danger"}
+          />
+          <Stat
+            label="P&L"
+            value={`${pnl >= 0 ? "+" : ""}${usd(pnl).replace("$-", "-$")}`}
+            sub={
+              staked > 0
+                ? `ROI ${(((returned - staked) / staked) * 100).toFixed(1)}%`
+                : "no settled bets yet"
+            }
+            valueClass={pnl >= 0 ? "text-emerald-400" : "text-danger"}
+          />
+          <Stat
+            label="In play"
+            value={usd(exposure)}
+            sub={`to win ${usd(state.open.reduce((s, b) => s + b.stake * (b.price - 1), 0))}`}
+          />
+          <Stat
+            label="Record"
+            value={settled.length ? `${wins}-${losses}` : "—"}
+            sub={`${settled.length} settled`}
+          />
+        </div>
       </section>
 
-      <BetTable title="Open bets" bets={mergeTickets(state.open)} />
-      <BetTable title="Settled" bets={mergeTickets(settled)} />
+      <BetTable index="03" title="Open bets" bets={mergeTickets(state.open)} />
+      <BetTable index="04" title="Settled" bets={mergeTickets(settled)} />
 
       <p className="mt-6 text-[10px] text-zinc-600">
         Simulation only — no real money is wagered anywhere. Prices are cross-book averages
@@ -122,14 +130,21 @@ export default async function BankrollPage({
   );
 }
 
-function BetTable({ title, bets }: { title: string; bets: (Bet & { toWin: number })[] }) {
+function BetTable({
+  index,
+  title,
+  bets,
+}: {
+  index: string;
+  title: string;
+  bets: (Bet & { toWin: number })[];
+}) {
   if (!bets.length) return null;
   return (
     <section className="mt-8">
-      <div className="mb-2 flex items-center gap-3">
-        <h2 className="display text-base font-extrabold text-zinc-300">{title}</h2>
+      <div className="section-heading" data-index={index}>
+        <h2>{title}</h2>
         <span className="text-[11px] text-muted">[{bets.length}]</span>
-        <span className="flex-1 h-px bg-line" />
       </div>
       <div className="grid gap-3 sm:grid-cols-2">
         {bets.map((b) => (
@@ -140,9 +155,19 @@ function BetTable({ title, bets }: { title: string; bets: (Bet & { toWin: number
   );
 }
 
-function Stat({ label, value, sub, valueClass = "" }: { label: string; value: string; sub: string; valueClass?: string }) {
+function Stat({
+  label,
+  value,
+  sub,
+  valueClass = "",
+}: {
+  label: string;
+  value: string;
+  sub: string;
+  valueClass?: string;
+}) {
   return (
-    <div className="rounded-xl border border-line bg-panel/70 card-shadow p-4 text-center">
+    <div className="terminal-kpi p-4 text-center">
       <div className="text-[10px] uppercase tracking-wider text-muted">{label}</div>
       <div className={`mt-1 display text-2xl font-extrabold tabnums ${valueClass}`}>{value}</div>
       <div className="text-[11px] text-muted tabnums">{sub}</div>

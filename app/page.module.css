@@ -603,6 +603,31 @@
   text-transform: uppercase;
 }
 
+.combatBadge {
+  padding: 3px 5px;
+  border: 1px solid rgba(239, 68, 68, 0.38);
+  border-radius: 3px;
+  color: #f87171;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.competitionCardCombat::before {
+  position: absolute;
+  inset: -1px auto -1px -1px;
+  width: 2px;
+  border-radius: 10px 0 0 10px;
+  background: linear-gradient(to bottom, transparent, rgba(239, 68, 68, 0.8), transparent);
+  content: "";
+  opacity: 0.65;
+}
+
+.competitionCardCombat .competitionTopline span:last-child,
+.competitionCardCombat:hover .cardArrow {
+  color: #f87171;
+}
+
 .competitionFooter {
   position: absolute;
   right: 18px;

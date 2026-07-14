@@ -69,8 +69,8 @@ export default function FaceOff({ fight, label, eventId }: { fight: FightForecas
   const probsA = { c: pA, m: fight.pA, b: book?.pA ?? null };
   const probsB = { c: 1 - pA, m: 1 - fight.pA, b: book ? 1 - book.pA : null };
   return (
-    <div id={`bout-${fight.boutId}`} className="group scroll-mt-4 rounded-xl border border-line bg-panel/80 card-shadow overflow-hidden" data-view="cons">
-      <div className="flex items-center justify-between border-b border-line bg-panel2/60 px-4 py-1.5 text-[11px] uppercase tracking-[0.2em] text-muted">
+    <div id={`bout-${fight.boutId}`} className="terminal-panel terminal-panel--fight group scroll-mt-4" data-view="cons">
+      <div className="terminal-panel-header flex items-center justify-between px-4 py-2 text-[10px] uppercase tracking-[0.18em] text-muted">
         <span className="text-accent whitespace-nowrap">{label ?? "Main event"}</span>
         <span className="flex items-center gap-2">
           {eventId && (
@@ -106,7 +106,7 @@ export default function FaceOff({ fight, label, eventId }: { fight: FightForecas
           {book ? (
             <TriBar c={pA} m={fight.pA} b={book.pA} h="h-3" />
           ) : (
-            <div className="flex h-3 overflow-hidden rounded-full bg-zinc-900">
+            <div className="flex h-3 overflow-hidden rounded-sm bg-zinc-900">
               <div className="bg-red" style={{ width: pct(pA) }} />
               <div className="bg-blue flex-1" />
             </div>

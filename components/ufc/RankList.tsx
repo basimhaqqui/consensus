@@ -16,11 +16,11 @@ export default function RankList({
 }) {
   const rows = limit ? ranks.slice(0, limit) : ranks;
   return (
-    <div className="rounded-xl border border-line bg-panel/70 card-shadow overflow-hidden">
+    <div className="terminal-panel">
       {champion && (
         <Link
           href={champion.id ? `/ufc/fighter/${champion.id}` : "#"}
-          className="flex items-center gap-3 border-b border-warn/30 bg-warn/5 px-4 py-2 hover:bg-warn/10"
+          className="terminal-panel-header flex items-center gap-3 border-warn/30 px-4 py-2 hover:bg-warn/10"
         >
           <FighterFace id={champion.id} name={champion.name} size={40} />
           <div>

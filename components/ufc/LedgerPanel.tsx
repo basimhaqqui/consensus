@@ -7,7 +7,7 @@ export default function LedgerPanel() {
   const entries = getLedger();
   if (!entries.length)
     return (
-      <section className="mb-12 rounded-xl border border-line bg-panel/60 px-5 py-4 flex flex-wrap items-center justify-between gap-3">
+      <section className="terminal-panel mb-12 flex flex-wrap items-center justify-between gap-3 px-5 py-4">
         <p className="text-xs text-muted max-w-xl">
           Every forecast gets frozen ~12 hours before the fight and graded in public — win or
           lose. The first receipts land after the next event.
@@ -27,16 +27,13 @@ export default function LedgerPanel() {
 
   return (
     <section className="mb-12">
-      <div className="mb-3 flex items-center gap-3">
-        <Link href="/ufc/ledger" className="text-[11px] uppercase tracking-[0.2em] text-zinc-400 hover:text-accent">
-          Ledger →
-        </Link>
+      <div className="section-heading" data-index="03">
+        <h2><Link href="/ufc/ledger" className="hover:text-accent">Ledger →</Link></h2>
         <span className="text-[11px] text-muted">
           forecasts frozen pre-fight, graded after — every one, in git history
         </span>
-        <span className="flex-1 h-px bg-line" />
       </div>
-      <div className="rounded-xl border border-line bg-panel/70 card-shadow p-5">
+      <div className="terminal-panel p-5">
         <div className="grid grid-cols-3 gap-4 text-center">
           <div>
             <div className="text-[10px] uppercase tracking-wider text-muted">Graded</div>
@@ -52,7 +49,7 @@ export default function LedgerPanel() {
           </div>
           <div>
             <div className="text-[10px] uppercase tracking-wider text-muted">Books log loss</div>
-            <div className="mt-1 tabnums text-2xl font-bold text-accent2">
+            <div className="mt-1 tabnums text-2xl font-bold text-blue">
               {llBooks !== null ? llBooks.toFixed(3) : "—"}
             </div>
             <div className="text-[11px] text-muted tabnums">

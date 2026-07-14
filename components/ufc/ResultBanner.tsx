@@ -45,7 +45,7 @@ export default function ResultBanner({
 
   return (
     <div
-      className={`mb-2.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-lg border px-3 py-2 ${
+      className={`mb-2.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1 rounded-md border px-3 py-2 ${
         aWon ? "border-red/40 bg-red/10" : "border-blue/40 bg-blue/10"
       }`}
     >

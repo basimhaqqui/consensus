@@ -47,7 +47,7 @@ export default async function Landing() {
       <header className={styles.hero}>
         <div className={styles.heroCopy}>
           <div className={styles.eyebrow}>
-            Football intelligence, distilled
+            Sports intelligence, distilled
           </div>
           <h1 className={styles.heroTitle}>
             See the match
@@ -57,9 +57,8 @@ export default async function Landing() {
 
         <div className={styles.heroAside}>
           <p className={styles.heroDescription}>
-            Live scores, lineups, match stats, and player intelligence across
-            every major competition — backed by our World Cup Elo model and UFC
-            consensus engine.
+            Football and combat intelligence in one terminal — live scores,
+            match and fighter pages, forecasts, rankings, and auditable ledgers.
           </p>
           <div className={styles.heroActions}>
             <Link href="/wc" className={styles.primaryAction}>
@@ -74,15 +73,15 @@ export default async function Landing() {
       <div className={styles.dataRail}>
         <div>
           <span>Coverage</span>
-          <strong>{String(COMPETITIONS.length).padStart(2, "0")} competitions</strong>
+          <strong>{String(COMPETITIONS.length + 1).padStart(2, "0")} competitions</strong>
         </div>
         <div>
-          <span>Match layer</span>
-          <strong>Scores · lineups · stats</strong>
+          <span>Live layer</span>
+          <strong>Scores · fights · stats</strong>
         </div>
         <div>
           <span>Forecasting</span>
-          <strong>Independent Elo model</strong>
+          <strong>Football Elo · UFC consensus</strong>
         </div>
       </div>
 
@@ -90,31 +89,33 @@ export default async function Landing() {
         <div className={styles.ufcGlow} aria-hidden="true" />
         <div className={styles.ufcCopy}>
           <div className={styles.featureLabel}>
-            <span>Featured module</span>
+            <span>Integrated desk</span>
             <span className={styles.featureRule} />
             <span>02 / combat</span>
           </div>
           <h2>UFC Consensus</h2>
           <p>
-            A transparent fight board combining fighter form, no-vig market
-            odds, and analyst pick share into one decisive consensus read.
+            The full combat terminal: upcoming fight boards, dedicated fighter
+            pages, official rankings, and a public ledger that grades every
+            frozen forecast against the result and the market.
           </p>
           <div className={styles.signalTags}>
-            <span>Fighter model</span>
-            <span>No-vig market</span>
-            <span>Analyst share</span>
+            <span>Fight board</span>
+            <span>Fighter pages</span>
+            <span>Graded ledger</span>
+            <span>Rankings</span>
           </div>
         </div>
 
         <div className={styles.ufcSignal} aria-hidden="true">
           <div className={styles.signalHeader}>
-            <span>Signal architecture</span>
-            <span>3-source</span>
+            <span>Product surface</span>
+            <span>Integrated</span>
           </div>
           <div className={styles.signalStack}>
-            <span>MODEL</span>
-            <span>MARKET</span>
-            <span>MEDIA</span>
+            <span>FIGHTS</span>
+            <span>FIGHTERS</span>
+            <span>LEDGER</span>
           </div>
           <div className={styles.consensusRead}>
             <span>CONSENSUS READ</span>
@@ -123,7 +124,7 @@ export default async function Landing() {
         </div>
 
         <Link href="/ufc" className={styles.ufcAction}>
-          <span>Open UFC</span>
+          <span>Open UFC desk</span>
           <span aria-hidden="true">↗</span>
         </Link>
       </section>
@@ -146,7 +147,7 @@ export default async function Landing() {
       <section className={styles.section}>
         <SectionHeading
           label="Competition desk"
-          detail={`${String(COMPETITIONS.length).padStart(2, "0")} tracked`}
+          detail={`${String(COMPETITIONS.length + 1).padStart(2, "0")} tracked`}
         />
         <div className={styles.competitionGrid}>
           {COMPETITIONS.map((c, index) => {
@@ -179,6 +180,23 @@ export default async function Landing() {
               </Link>
             );
           })}
+          <Link
+            href="/ufc"
+            className={`${styles.competitionCard} ${styles.competitionCardCombat}`}
+          >
+            <div className={styles.competitionTopline}>
+              <span>{String(COMPETITIONS.length + 1).padStart(2, "0")}</span>
+              <span>UFC</span>
+            </div>
+            <div className={styles.competitionName}>
+              <h3>Ultimate Fighting Championship</h3>
+              <span className={styles.combatBadge}>Combat</span>
+            </div>
+            <div className={styles.competitionFooter}>
+              <span>Fight desk · rankings · ledger</span>
+              <span className={styles.cardArrow} aria-hidden="true">↗</span>
+            </div>
+          </Link>
         </div>
       </section>
 

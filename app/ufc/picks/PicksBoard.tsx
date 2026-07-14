@@ -62,7 +62,9 @@ export default function PicksBoard() {
 
   return (
     <>
-      <section className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <section>
+        <div className="section-heading" data-index="02"><h2>Scorecard</h2></div>
+        <div className="terminal-kpi-grid grid grid-cols-2 gap-px sm:grid-cols-4">
         <Stat label="Fights picked" value={`${all.length}`} sub={`${graded.length} graded`} />
         <Stat
           label="Winners hit"
@@ -76,23 +78,23 @@ export default function PicksBoard() {
           sub={userPts > modelPts ? "you lead" : userPts < modelPts ? "model leads" : "tied"}
           valueClass="text-accent"
         />
+        </div>
       </section>
 
       {all.length === 0 ? (
-        <p className="mt-8 rounded-xl border border-line bg-panel/60 p-8 text-center text-sm text-muted">
+        <p className="terminal-empty mt-8 p-8 text-center text-sm">
           No picks yet — open an upcoming event and call every fight: winner, method, round.
         </p>
       ) : (
         [...byEvent.entries()].map(([event, list]) => (
           <section key={event} className="mt-8">
-            <div className="mb-2 flex items-center gap-3">
-              <h2 className="display text-base font-extrabold text-zinc-300">{event}</h2>
-              <span className="flex-1 h-px bg-line" />
+            <div className="section-heading" data-index="03">
+              <h2>{event}</h2>
             </div>
-            <div className="rounded-xl border border-line bg-panel/70 card-shadow overflow-x-auto">
+            <div className="terminal-panel overflow-x-auto">
               <table className="w-full text-xs tabnums">
                 <thead>
-                  <tr className="border-b border-line bg-panel2/60 text-[10px] uppercase tracking-wider text-muted">
+                  <tr className="terminal-panel-header text-[10px] uppercase tracking-wider text-muted">
                     <th className="px-4 py-2 text-left">Fight</th>
                     <th className="px-2 py-2 text-left">Your pick</th>
                     <th className="px-2 py-2 text-left max-sm:hidden">Model pick</th>
@@ -158,7 +160,7 @@ function Stat({
   valueClass?: string;
 }) {
   return (
-    <div className="rounded-xl border border-line bg-panel/70 card-shadow p-4 text-center">
+    <div className="terminal-kpi p-4 text-center">
       <div className="text-[10px] uppercase tracking-wider text-muted">{label}</div>
       <div className={`mt-1 display text-2xl font-extrabold tabnums ${valueClass}`}>{value}</div>
       <div className="text-[11px] text-muted tabnums">{sub}</div>

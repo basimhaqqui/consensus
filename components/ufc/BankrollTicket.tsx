@@ -42,11 +42,11 @@ export default function BankrollTicket({ b }: { b: TicketBet }) {
   return (
     <div
       onClick={() => setOpen((o) => !o)}
-      className={`cursor-pointer rounded-xl border card-shadow overflow-hidden transition-colors ${
-        b.outcome === "win" ? "border-emerald-400/40" : b.outcome === "loss" ? "border-danger/40" : "border-line hover:border-zinc-600"
-      } bg-panel/80`}
+      className={`terminal-panel terminal-panel--interactive cursor-pointer transition-colors ${
+        b.outcome === "win" ? "terminal-panel--win" : b.outcome === "loss" ? "terminal-panel--loss" : "hover:border-zinc-600"
+      }`}
     >
-      <div className="flex items-center justify-between border-b border-line bg-panel2/60 px-3 py-1 text-[10px] uppercase tracking-wider text-muted">
+      <div className="terminal-panel-header flex items-center justify-between px-3 py-1.5 text-[10px] uppercase tracking-wider text-muted">
         <span className={b.kind === "parlay" ? "text-accent font-bold" : ""}>
           {b.kind === "parlay" ? `${b.legs.length}-leg parlay` : "single"}
         </span>
@@ -70,11 +70,11 @@ export default function BankrollTicket({ b }: { b: TicketBet }) {
         </div>
 
         <div className="mt-3 grid grid-cols-2 gap-2 text-center">
-          <div className="rounded-lg bg-panel2/70 px-2 py-1.5">
+          <div className="terminal-kpi rounded-md px-2 py-1.5">
             <div className="text-[9px] uppercase tracking-wider text-muted">Risk</div>
             <div className="tabnums text-lg font-bold">{usd(b.stake)}</div>
           </div>
-          <div className="rounded-lg bg-panel2/70 px-2 py-1.5">
+          <div className="terminal-kpi rounded-md px-2 py-1.5">
             <div className="text-[9px] uppercase tracking-wider text-muted">To win</div>
             <div className="tabnums text-lg font-bold text-emerald-400">{usd(b.toWin)}</div>
           </div>

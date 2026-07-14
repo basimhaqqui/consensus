@@ -20,7 +20,7 @@ export function TriBar({ c, m, b, h }: { c: number; m: number; b: number; h: str
       <div className="bg-blue/80 flex-1" />
     </>
   );
-  const base = `${h} overflow-hidden rounded-full bg-zinc-900`;
+  const base = `${h} overflow-hidden rounded-sm bg-zinc-900`;
   return (
     <>
       <div className={`${base} flex group-data-[view=model]:hidden group-data-[view=books]:hidden`}>{inner(c)}</div>

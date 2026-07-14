@@ -45,7 +45,7 @@ const KIND_TONE = { edge: "text-warn border-warn/40", prop: "text-blue border-bl
 
 function SuggestionCard({ s, onLoad }: { s: Suggestion; onLoad: () => void }) {
   return (
-    <div className="rounded-xl border border-line bg-panel/70 card-shadow p-4 flex flex-col">
+    <div className="terminal-panel terminal-panel--interactive flex flex-col p-4">
       <div className="flex items-start justify-between gap-2">
         <div>
           <span className={`rounded border px-1.5 py-0.5 text-[9px] uppercase tracking-wider ${KIND_TONE[s.kind]}`}>
@@ -110,11 +110,10 @@ export default function BetLab({ eventId, fights: allFights }: { eventId: string
 
   return (
     <section className="mt-10">
-      <div className="mb-3 flex items-center gap-3">
-        <h2 className="display text-lg font-extrabold text-zinc-300">Bet Lab</h2>
+      <div className="section-heading" data-index="05">
+        <h2>Bet Lab</h2>
         <span className="text-[11px] text-muted">model-priced lines to compare against your book</span>
-        <span className="flex-1 h-px bg-line" />
-        <div className="flex items-center gap-0.5 rounded-md border border-line bg-panel p-0.5 text-[10px] uppercase tracking-wider">
+        <div className="segmented-control z-10 ml-auto flex items-center gap-0.5 p-0.5 text-[10px] uppercase tracking-wider">
           <button
             type="button"
             onClick={() => setTab("suggestions")}
@@ -133,7 +132,7 @@ export default function BetLab({ eventId, fights: allFights }: { eventId: string
       </div>
 
       {fights.length === 0 ? (
-        <p className="rounded-xl border border-line bg-panel/60 p-5 text-xs text-muted">
+        <p className="terminal-empty p-5 text-xs">
           All fights on this card have started or finished — nothing left to price.
         </p>
       ) : tab === "suggestions" ? (
@@ -149,7 +148,7 @@ export default function BetLab({ eventId, fights: allFights }: { eventId: string
             />
           ))}
           {suggestions.length === 0 && (
-            <p className="rounded-xl border border-line bg-panel/60 p-5 text-xs text-muted lg:col-span-2">
+            <p className="terminal-empty p-5 text-xs lg:col-span-2">
               Nothing on this card stands out enough to suggest — the model and the market mostly
               agree, and no matchup's finish profile is extreme. That happens.
             </p>
@@ -159,7 +158,7 @@ export default function BetLab({ eventId, fights: allFights }: { eventId: string
         <div className="grid gap-4 lg:grid-cols-[1fr_320px]">
           <div className="space-y-2">
             {fights.map((f) => (
-              <div key={f.boutId} className="rounded-xl border border-line bg-panel/70 overflow-hidden">
+              <div key={f.boutId} className="terminal-panel">
                 <button
                   type="button"
                   onClick={() => setOpenBout((o) => (o === f.boutId ? null : f.boutId))}
@@ -189,7 +188,7 @@ export default function BetLab({ eventId, fights: allFights }: { eventId: string
             ))}
           </div>
 
-          <div className="h-fit rounded-xl border border-accent/30 bg-panel/80 card-shadow p-4 lg:sticky lg:top-4">
+          <div className="terminal-panel h-fit border-accent/30 p-4 lg:sticky lg:top-4">
             <h3 className="text-[11px] uppercase tracking-[0.2em] text-accent mb-2">Slip</h3>
             {slip.length === 0 ? (
               <p className="text-xs text-muted">

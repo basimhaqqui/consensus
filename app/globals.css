@@ -315,6 +315,12 @@ input:focus-visible {
   box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.24);
 }
 
+.segmented-control__item--active {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 16%, transparent);
+}
+
 .signal-dot {
   display: inline-block;
   width: 6px;
@@ -401,31 +407,82 @@ input:focus-visible {
   }
 }
 
-/* ── UFC section (app/ufc) ─────────────────────────────────────────────
-   The UFC app ships its own dark-red terminal theme. Its tokens reuse the
-   same custom-property names as the football theme, so they are scoped to
-   the .ufc-theme wrapper rendered by app/ufc/layout.tsx — utilities like
-   text-accent resolve to red inside /ufc and stay green everywhere else. */
+/* ── UFC section (app/ufc) ───────────────────────────────────────────── */
 
 .ufc-theme {
-  --bg: #08080b;
-  --panel: #0e0e13;
-  --panel-2: #14141b;
-  --line: #23232e;
-  --text: #eceaf0;
-  --muted: #8b8797;
-  --accent: #e21d1d;
-  --red-corner: #d20a0a;
-  --blue-corner: #2172e5;
+  --bg: #07090d;
+  --panel: #0d1117;
+  --panel-2: #11161f;
+  --line: #1c2430;
+  --text: #e6edf3;
+  --muted: #7d8896;
+  --accent: #ef4444;
+  --red-corner: #ef4444;
+  --blue-corner: #3b82f6;
   --warn: #f5b40b;
   --danger: #f87171;
 
   background: var(--bg);
   background-image:
-    radial-gradient(1100px 560px at 78% -12%, #1c0b0b 0%, transparent 58%),
-    radial-gradient(900px 500px at -12% 8%, #0d0d18 0%, transparent 55%);
+    linear-gradient(rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.012) 1px, transparent 1px),
+    radial-gradient(1100px 560px at 78% -12%, rgba(59, 130, 246, 0.1), transparent 58%),
+    radial-gradient(900px 500px at -12% 8%, rgba(239, 68, 68, 0.1), transparent 55%);
+  background-size: 48px 48px, 48px 48px, auto, auto;
   background-attachment: fixed;
   color: var(--text);
+}
+
+.ufc-theme .site-shell::before {
+  background:
+    radial-gradient(circle at 18% 8%, rgba(239, 68, 68, 0.1), transparent 30%),
+    radial-gradient(circle at 84% 18%, rgba(59, 130, 246, 0.1), transparent 28%);
+}
+
+.ufc-theme .site-header {
+  border-image: linear-gradient(90deg, rgba(239, 68, 68, 0.32), var(--hairline), rgba(59, 130, 246, 0.28)) 1;
+}
+
+.ufc-theme .terminal-panel--fight::before {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--red-corner), transparent);
+  content: "";
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.ufc-theme .terminal-panel--fight > .terminal-panel-header::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--blue-corner), transparent);
+  content: "";
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.ufc-theme .terminal-panel--fight > .terminal-panel-header {
+  position: relative;
+}
+
+.ufc-theme .ufc-signal-dot {
+  background: var(--red-corner);
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.08), 0 0 14px rgba(239, 68, 68, 0.58);
+}
+
+.ufc-theme .terminal-panel--win {
+  border-color: color-mix(in srgb, #34d399 42%, transparent);
+}
+
+.ufc-theme .terminal-panel--loss {
+  border-color: color-mix(in srgb, var(--danger) 42%, transparent);
 }
 
 .ufc-theme ::selection {
@@ -441,13 +498,6 @@ input:focus-visible {
 
 .octagon {
   clip-path: polygon(29% 0, 71% 0, 100% 29%, 100% 71%, 71% 100%, 29% 100%, 0 71%, 0 29%);
-}
-
-/* UFC panels use a lighter shadow than the football terminal panels */
-.ufc-theme .card-shadow {
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.04),
-    0 10px 30px -18px rgba(0, 0, 0, 0.8);
 }
 
 @media (prefers-reduced-motion: reduce) {

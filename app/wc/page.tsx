@@ -53,7 +53,7 @@ export default async function WorldCup() {
             >
               Bet builder
             </Link>
-            <Nav />
+            <Nav hideUfc />
             <span className="hidden sm:inline text-[11px] uppercase tracking-wider text-muted">
               {LAST_UPDATED}
             </span>
