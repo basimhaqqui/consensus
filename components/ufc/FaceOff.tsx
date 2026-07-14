@@ -38,13 +38,20 @@ function Corner({
   const meta = [fighter.record, age !== null ? `${age} yrs` : null].filter(Boolean).join(" · ");
   const alignCls = align === "left" ? "items-start text-left" : "items-end text-right";
   return (
-    <div className={`flex flex-col gap-2 ${alignCls} min-w-0`}>
-      <FighterFace id={fighter.id} name={fighter.name} size={120} tone={tone} />
+    <div className={`flex min-w-0 flex-col gap-2 ${alignCls}`}>
+      <div className={`mb-1 flex items-center gap-2 text-[8px] font-semibold uppercase tracking-[0.2em] ${tone === "red" ? "text-red" : "text-blue"}`}>
+        {align === "right" && <span className="h-px w-5 bg-blue/50" />}
+        {tone} corner
+        {align === "left" && <span className="h-px w-5 bg-red/50" />}
+      </div>
+      <div className="-mx-[15px] -my-[15px] scale-75 sm:m-0 sm:scale-100">
+        <FighterFace id={fighter.id} name={fighter.name} size={120} tone={tone} />
+      </div>
       <div className="min-w-0">
         <div className="display text-sm font-semibold text-muted leading-none">{first}&nbsp;</div>
         <Link
           href={fighter.id ? `/ufc/fighter/${fighter.id}` : "#"}
-          className="display block text-3xl sm:text-5xl font-extrabold leading-[0.95] truncate hover:text-accent"
+          className="display block truncate text-3xl font-extrabold leading-[0.9] text-zinc-100 hover:text-accent sm:text-5xl"
         >
           {last}
         </Link>
@@ -69,10 +76,13 @@ export default function FaceOff({ fight, label, eventId }: { fight: FightForecas
   const probsA = { c: pA, m: fight.pA, b: book?.pA ?? null };
   const probsB = { c: 1 - pA, m: 1 - fight.pA, b: book ? 1 - book.pA : null };
   return (
-    <div id={`bout-${fight.boutId}`} className="terminal-panel terminal-panel--fight group scroll-mt-4" data-view="cons">
-      <div className="terminal-panel-header flex items-center justify-between px-4 py-2 text-[10px] uppercase tracking-[0.18em] text-muted">
-        <span className="text-accent whitespace-nowrap">{label ?? "Main event"}</span>
-        <span className="flex items-center gap-2">
+    <div id={`bout-${fight.boutId}`} className="terminal-panel terminal-panel--fight group scroll-mt-20" data-view="cons">
+      <div className="terminal-panel-header flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 text-[9px] uppercase tracking-[0.2em] text-muted sm:px-6">
+        <span className="flex items-center gap-2 whitespace-nowrap text-accent">
+          <span className="signal-dot ufc-signal-dot" />
+          {label ?? "Main event signal"}
+        </span>
+        <span className="flex items-center gap-2 tabnums">
           {eventId && (
             <LiveBadge eventId={eventId} boutId={fight.boutId} fightDate={fight.date} />
           )}
@@ -82,7 +92,8 @@ export default function FaceOff({ fight, label, eventId }: { fight: FightForecas
         </span>
       </div>
 
-      <div className="p-5 sm:p-6">
+      <div className="relative p-5 sm:p-7">
+        <div className="pointer-events-none absolute inset-x-[18%] top-1/2 h-40 -translate-y-1/2 bg-[radial-gradient(ellipse,rgba(255,255,255,0.035),transparent_68%)]" />
         {eventId && (
           <ResultBanner
             eventId={eventId}
@@ -94,15 +105,23 @@ export default function FaceOff({ fight, label, eventId }: { fight: FightForecas
             pA={pA}
           />
         )}
-        <div className="grid grid-cols-[1fr_auto_1fr] items-start gap-3 sm:gap-6">
+        <div className="relative grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-start gap-2 sm:gap-8">
           <Corner fighter={fight.a} probs={probsA} tone="red" align="left" />
-          <div className="display self-center text-2xl sm:text-4xl font-extrabold text-zinc-700 pt-8">
-            VS
+          <div className="self-center pt-14 text-center">
+            <div className="display flex h-12 w-12 items-center justify-center rounded-full border border-line bg-bg text-xl font-extrabold text-zinc-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:h-16 sm:w-16 sm:text-3xl">
+              VS
+            </div>
+            <div className="mt-2 text-[7px] uppercase tracking-[0.2em] text-zinc-700">matchup</div>
           </div>
           <Corner fighter={fight.b} probs={probsB} tone="blue" align="right" />
         </div>
 
-        <div className="mt-5 flex flex-col">
+        <div className="relative mt-7 flex flex-col">
+          <div className="mb-1.5 flex items-center justify-between text-[8px] uppercase tracking-[0.18em] text-zinc-600">
+            <span>{splitName(fight.a.name).last}</span>
+            <span>Win probability</span>
+            <span>{splitName(fight.b.name).last}</span>
+          </div>
           {book ? (
             <TriBar c={pA} m={fight.pA} b={book.pA} h="h-3" />
           ) : (
@@ -132,6 +151,23 @@ export default function FaceOff({ fight, label, eventId }: { fight: FightForecas
             )}
           </div>
         )}
+      </div>
+      <div className="terminal-kpi-grid grid grid-cols-3 gap-px rounded-none border-x-0 border-b-0">
+        <div className="terminal-kpi px-3 py-3 sm:px-5">
+          <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Consensus</div>
+          <div className="display mt-1 text-lg font-bold text-zinc-100 tabnums sm:text-2xl">{pct(pA)}</div>
+          <div className="mt-0.5 truncate text-[8px] uppercase tracking-[0.1em] text-zinc-600">{splitName(fight.a.name).last}</div>
+        </div>
+        <div className="terminal-kpi px-3 py-3 sm:px-5">
+          <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Model</div>
+          <div className="display mt-1 text-lg font-bold text-red tabnums sm:text-2xl">{pct(fight.pA)}</div>
+          <div className="mt-0.5 text-[8px] uppercase tracking-[0.1em] text-zinc-600">red corner</div>
+        </div>
+        <div className="terminal-kpi px-3 py-3 sm:px-5">
+          <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Books</div>
+          <div className="display mt-1 text-lg font-bold text-blue tabnums sm:text-2xl">{book ? pct(book.pA) : "—"}</div>
+          <div className="mt-0.5 text-[8px] uppercase tracking-[0.1em] text-zinc-600">market line</div>
+        </div>
       </div>
       {eventId && (
         <FightStats

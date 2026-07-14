@@ -58,21 +58,33 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
   }));
 
   const ordered = [...card.fights].sort((a, b) => (a.matchNumber ?? 99) - (b.matchNumber ?? 99));
+  const eventDate = new Date(card.date);
+  const eventDay = eventDate.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+  const eventWeekday = eventDate.toLocaleDateString("en-US", {
+    weekday: "long",
+    timeZone: "UTC",
+  });
 
   const cardPane = (
     <>
       {rest.map(
         (s, sectionIndex) =>
           s.fights.length > 0 && (
-            <section key={s.title} className="mt-6">
+            <section key={s.title} className="mt-8">
               <div
                 className="section-heading"
                 data-index={String(sectionIndex + 3).padStart(2, "0")}
               >
                 <h2>{s.title}</h2>
-                <span className="text-[11px] text-muted">[{s.fights.length}]</span>
+                <span className="text-[9px] uppercase tracking-[0.14em] text-muted tabnums">
+                  {s.fights.length} {s.fights.length === 1 ? "bout" : "bouts"}
+                </span>
               </div>
-              <div className="grid gap-4 lg:grid-cols-2">
+              <div className="grid gap-3 lg:grid-cols-2">
                 {s.fights.map((f) => (
                   <FightCard key={f.boutId} fight={f} eventId={card.eventId} />
                 ))}
@@ -122,30 +134,69 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
   return (
     <div>
       <header className="site-header site-header--compact">
-        <Link href="/ufc" className="back-link">
-          ← UFC desk
+        <Link href="/ufc" className="back-link mb-7">
+          <span aria-hidden="true">←</span> UFC desk
         </Link>
-        <div className="site-kicker mt-6">01 / Event forecast</div>
-        <h1 className="site-title site-title--small">
-          {card.name}
-        </h1>
-        <div className="mt-2 text-sm text-muted tabnums">
-          {new Date(card.date).toLocaleDateString("en-US", {
-            weekday: "long",
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-            timeZone: "UTC",
-          })}
-          {" · "}
-          {card.fights.length} fights
+
+        <div className="section-heading" data-index="01">
+          <h2>Event command</h2>
+          <span className="hidden text-[9px] text-zinc-600 sm:inline">fight-night intelligence / {card.eventId}</span>
+        </div>
+
+        <div className="terminal-panel">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-px bg-gradient-to-b from-transparent via-red to-transparent opacity-80" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-px bg-gradient-to-b from-transparent via-blue to-transparent opacity-70" />
+          <div className="terminal-panel-header flex items-center justify-between gap-4 px-4 py-2 text-[9px] uppercase tracking-[0.2em] text-muted sm:px-6">
+            <span className="flex items-center gap-2 text-zinc-400">
+              <span className="h-1.5 w-1.5 rounded-full bg-red shadow-[0_0_12px_rgba(239,68,68,0.7)]" />
+              Fight night dossier
+            </span>
+            <span className="tabnums">UFC / forecast active</span>
+          </div>
+
+          <div className="relative overflow-hidden px-5 py-7 sm:px-7 sm:py-9">
+            <div className="pointer-events-none absolute -left-20 top-1/2 h-60 w-60 -translate-y-1/2 bg-[radial-gradient(circle,rgba(239,68,68,0.1),transparent_68%)]" />
+            <div className="pointer-events-none absolute -right-20 top-1/2 h-60 w-60 -translate-y-1/2 bg-[radial-gradient(circle,rgba(59,130,246,0.1),transparent_68%)]" />
+            <div className="relative max-w-4xl">
+              <div className="mb-3 text-[9px] uppercase tracking-[0.22em] text-accent">
+                Independent event forecast
+              </div>
+              <h1 className="site-title text-[clamp(2.35rem,7vw,5.25rem)] leading-[0.9] tracking-[-0.055em]">
+                {card.name}
+              </h1>
+              <p className="mt-4 max-w-2xl text-[11px] leading-relaxed text-muted sm:text-xs">
+                Model signal, market pricing, and live bout status assembled into one fight-night board.
+              </p>
+            </div>
+          </div>
+
+          <div className="terminal-kpi-grid grid grid-cols-2 gap-px rounded-none border-x-0 border-b-0 sm:grid-cols-3">
+            <div className="terminal-kpi px-4 py-3.5 sm:px-5">
+              <div className="text-[9px] uppercase tracking-[0.18em] text-muted">Event date</div>
+              <div className="display mt-1 text-2xl font-bold text-zinc-100 tabnums sm:text-3xl">{eventDay}</div>
+              <div className="mt-1 text-[9px] uppercase tracking-[0.12em] text-zinc-600">
+                {eventWeekday} / {eventDate.getUTCFullYear()}
+              </div>
+            </div>
+            <div className="terminal-kpi px-4 py-3.5 sm:px-5">
+              <div className="text-[9px] uppercase tracking-[0.18em] text-muted">Fight count</div>
+              <div className="display mt-1 text-2xl font-bold text-zinc-100 tabnums sm:text-3xl">{card.fights.length}</div>
+              <div className="mt-1 text-[9px] uppercase tracking-[0.12em] text-zinc-600">scheduled bouts</div>
+            </div>
+            <div className="terminal-kpi px-4 py-3.5 sm:px-5">
+              <div className="text-[9px] uppercase tracking-[0.18em] text-muted">Signal</div>
+              <div className="display mt-1 text-2xl font-bold text-red sm:text-3xl">Consensus</div>
+              <div className="mt-1 text-[9px] uppercase tracking-[0.12em] text-zinc-600">model + market</div>
+            </div>
+          </div>
         </div>
       </header>
 
       {mainEvent && (
-        <section className="mt-10 mb-4">
+        <section className="mb-5 mt-10">
           <div className="section-heading section-heading--live" data-index="02">
-            <h2>Main event consensus</h2>
+            <h2>Main event</h2>
+            <span className="text-[9px] uppercase tracking-[0.14em] text-muted">headline consensus</span>
           </div>
           <FaceOff fight={mainEvent} eventId={card.eventId} />
         </section>
@@ -172,11 +223,16 @@ export default async function EventPage({ params }: { params: Promise<{ id: stri
         ]}
       />
 
-      <footer className="terminal-panel mt-12 p-5 text-xs leading-relaxed text-muted">
-        Probabilities are the model&apos;s alone — an online Elo replay of every UFC fight since
-        1993 with age, layoff, and finish adjustments. Fighters marked{" "}
-        <span className="text-zinc-400">prov</span> have fewer than five UFC fights and carry
-        provisional ratings. Not betting advice.
+      <footer className="terminal-panel mt-12">
+        <div className="terminal-panel-header px-4 py-2 text-[9px] uppercase tracking-[0.18em] text-muted sm:px-5">
+          Methodology / disclosure
+        </div>
+        <p className="p-5 text-[11px] leading-relaxed text-zinc-600">
+          Probabilities are the model&apos;s alone — an online Elo replay of every UFC fight since
+          1993 with age, layoff, and finish adjustments. Fighters marked{" "}
+          <span className="text-zinc-400">prov</span> have fewer than five UFC fights and carry
+          provisional ratings. Not betting advice.
+        </p>
       </footer>
     </div>
   );

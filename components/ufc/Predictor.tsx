@@ -71,21 +71,28 @@ function FightPickRow({
   const g = pick?.graded;
 
   return (
-    <div className="terminal-panel p-3">
-      <div className="flex flex-wrap items-center gap-2">
+    <div className="terminal-panel terminal-panel--interactive">
+      <div className="terminal-panel-header flex items-center justify-between gap-3 px-4 py-2 text-[8px] uppercase tracking-[0.18em] text-muted">
+        <span>Winner / method / round</span>
+        <span className="truncate tabnums">
+          {lastName(f.a.name)} <span className="px-1 text-zinc-700">vs</span> {lastName(f.b.name)}
+        </span>
+      </div>
+      <div className="flex flex-wrap items-center gap-2 p-3 sm:p-4">
         {([["a", f.a], ["b", f.b]] as const).map(([side, fighter]) => (
           <button
             key={side}
             type="button"
             disabled={locked}
             onClick={() => set({ w: side })}
-            className={`flex items-center gap-1.5 rounded-lg border px-2 py-1 text-xs ${
+            aria-pressed={pick?.w === side}
+            className={`flex min-h-9 items-center gap-2 rounded-md border px-2.5 py-1.5 text-xs ${
               pick?.w === side
                 ? side === "a"
-                  ? "border-red/60 bg-red/15"
-                  : "border-blue/60 bg-blue/15"
-                : "border-line"
-            } ${locked ? "opacity-60" : "hover:border-zinc-500"}`}
+                  ? "border-red/60 bg-red/10 text-red"
+                  : "border-blue/60 bg-blue/10 text-blue"
+                : "border-line bg-bg/40 text-zinc-300"
+            } ${locked ? "cursor-not-allowed opacity-50" : "hover:border-zinc-500 hover:bg-white/[0.025]"}`}
           >
             <FighterFace id={fighter.id} name={fighter.name} size={22} />
             <span className="display font-bold">{lastName(fighter.name)}</span>
@@ -101,7 +108,8 @@ function FightPickRow({
                   type="button"
                   disabled={locked}
                   onClick={() => set({ m })}
-                  className={`rounded border px-1.5 py-0.5 text-[10px] uppercase tracking-wider ${
+                  aria-pressed={pick.m === m}
+                  className={`min-h-8 rounded border px-2 py-1 text-[9px] uppercase tracking-[0.12em] ${
                     pick.m === m ? "border-warn/60 bg-warn/15 text-warn" : "border-line text-muted"
                   } ${locked ? "opacity-60" : "hover:border-zinc-500"}`}
                 >
@@ -117,7 +125,8 @@ function FightPickRow({
                     type="button"
                     disabled={locked}
                     onClick={() => set({ r })}
-                    className={`rounded border px-1.5 py-0.5 text-[10px] tabnums ${
+                    aria-pressed={pick.r === r}
+                    className={`min-h-8 min-w-8 rounded border px-1.5 py-1 text-[10px] tabnums ${
                       pick.r === r ? "border-accent/60 bg-accent/15 text-accent" : "border-line text-muted"
                     } ${locked ? "opacity-60" : "hover:border-zinc-500"}`}
                   >
@@ -141,7 +150,7 @@ function FightPickRow({
           ) : locked ? (
             <span className="text-zinc-600">{pick ? "locked" : "no pick"}</span>
           ) : pick ? (
-            <button type="button" onClick={() => onPick(f.boutId, null)} className="text-zinc-600 hover:text-danger">
+            <button type="button" onClick={() => onPick(f.boutId, null)} className="rounded px-1 py-0.5 text-zinc-600 hover:text-danger">
               clear
             </button>
           ) : (
@@ -230,42 +239,48 @@ export default function Predictor({
 
   return (
     <section className="mt-10">
-      <div className="section-heading" data-index="05">
+      <div className="section-heading flex-wrap" data-index="05">
         <h2>Predictor</h2>
-        <span className="text-[11px] text-muted">
+        <span className="hidden text-[9px] uppercase tracking-[0.12em] text-muted sm:inline">
           pick winner · method · round — scored against the model
         </span>
-        <Link href="/ufc/picks" className="z-10 ml-auto text-[11px] text-muted hover:text-accent">
+        <Link href="/ufc/picks" className="z-10 ml-auto text-[9px] uppercase tracking-[0.14em] text-muted hover:text-accent">
           My picks →
         </Link>
       </div>
 
-      <div className="terminal-panel mb-3 flex flex-wrap items-center gap-x-5 gap-y-1 px-4 py-2 text-xs tabnums">
-        <span>
-          <span className="text-muted">picked</span> {onCard.length}/{fights.length}
-          {openCount > 0 && <span className="text-zinc-600"> · {openCount} still open</span>}
-        </span>
-        {graded.length > 0 && (
-          <span className="flex items-center gap-3">
-            <span>
-              <span className="text-muted">you</span>{" "}
-              <span className="font-bold text-emerald-400">{userPts}</span>
-            </span>
-            <span>
-              <span className="text-muted">model</span>{" "}
-              <span className="font-bold text-accent">{modelPts}</span>
-            </span>
-            <span className="display font-extrabold uppercase">
-              {userPts > modelPts ? "you lead" : userPts < modelPts ? "model leads" : "tied"}
-            </span>
-          </span>
-        )}
-        <span className="ml-auto text-[10px] text-zinc-600">
-          win 3 · method +2 · round +1 · picks lock at fight time
-        </span>
+      <div className="terminal-panel mb-4">
+        <div className="terminal-panel-header flex flex-wrap items-center justify-between gap-2 px-4 py-2 text-[8px] uppercase tracking-[0.18em] text-muted sm:px-5">
+          <span>Event scorecard</span>
+          <span>win 3 / method +2 / round +1 / locks at fight time</span>
+        </div>
+        <div className="terminal-kpi-grid grid grid-cols-2 gap-px rounded-none border-x-0 border-b-0 sm:grid-cols-4">
+          <div className="terminal-kpi px-4 py-3">
+            <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Card picked</div>
+            <div className="display mt-1 text-2xl font-bold text-zinc-100 tabnums">{onCard.length}/{fights.length}</div>
+            <div className="mt-0.5 text-[8px] uppercase tracking-[0.1em] text-zinc-600">selections saved</div>
+          </div>
+          <div className="terminal-kpi px-4 py-3">
+            <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Still open</div>
+            <div className="display mt-1 text-2xl font-bold text-warn tabnums">{openCount}</div>
+            <div className="mt-0.5 text-[8px] uppercase tracking-[0.1em] text-zinc-600">available bouts</div>
+          </div>
+          <div className="terminal-kpi px-4 py-3">
+            <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Your score</div>
+            <div className="display mt-1 text-2xl font-bold text-emerald-400 tabnums">{userPts}</div>
+            <div className="mt-0.5 text-[8px] uppercase tracking-[0.1em] text-zinc-600">{graded.length} graded</div>
+          </div>
+          <div className="terminal-kpi px-4 py-3">
+            <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Model score</div>
+            <div className="display mt-1 text-2xl font-bold text-accent tabnums">{modelPts}</div>
+            <div className="mt-0.5 text-[8px] uppercase tracking-[0.1em] text-zinc-600">
+              {graded.length > 0 ? (userPts > modelPts ? "you lead" : userPts < modelPts ? "model leads" : "tied") : "awaiting results"}
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-3">
         {fights.map((f) => (
           <FightPickRow
             key={f.boutId}
@@ -277,7 +292,7 @@ export default function Predictor({
           />
         ))}
       </div>
-      <p className="mt-2 text-[10px] text-zinc-600">
+      <p className="mt-3 text-[10px] leading-relaxed text-zinc-600">
         Picks are saved in this browser and graded automatically as results land.
       </p>
     </section>

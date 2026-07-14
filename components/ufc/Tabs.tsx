@@ -23,7 +23,9 @@ export default function Tabs({
       if (anchorPrefix && anchorTab && h.startsWith(anchorPrefix)) {
         setActive(anchorTab);
         requestAnimationFrame(() => {
-          document.querySelector(h)?.scrollIntoView({ behavior: "smooth" });
+          document.querySelector(h)?.scrollIntoView({
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+          });
         });
         return;
       }
@@ -38,8 +40,8 @@ export default function Tabs({
 
   return (
     <div>
-      <div className="sticky top-0 z-40 -mx-2 bg-bg px-2 py-2">
-        <div className="segmented-control flex items-center gap-1 p-1">
+      <div className="sticky top-0 z-40 -mx-2 bg-bg/95 px-2 py-2.5">
+        <div className="terminal-panel flex items-center gap-1 p-1.5">
           {tabs.map((t) => (
             <button
               key={t.key}
@@ -48,8 +50,12 @@ export default function Tabs({
                 setActive(t.key);
                 history.replaceState(null, "", `#${t.key}`);
               }}
-              className={`display flex-1 rounded-lg px-3 py-1.5 text-sm font-extrabold uppercase tracking-wide ${
-                active === t.key ? "bg-accent/20 text-accent" : "text-muted hover:text-zinc-300"
+              aria-pressed={active === t.key}
+              aria-controls={`tab-panel-${t.key}`}
+              className={`display min-h-10 flex-1 rounded-md border px-2 py-2 text-xs font-extrabold uppercase tracking-[0.08em] sm:px-3 sm:text-sm ${
+                active === t.key
+                  ? "border-accent/30 bg-accent/10 text-accent shadow-[inset_0_0_0_1px_rgba(239,68,68,0.04)]"
+                  : "border-transparent text-muted hover:border-line hover:bg-white/[0.025] hover:text-zinc-300"
               }`}
             >
               {t.label}
@@ -59,7 +65,7 @@ export default function Tabs({
         </div>
       </div>
       {tabs.map((t) => (
-        <div key={t.key} hidden={active !== t.key}>
+        <div key={t.key} id={`tab-panel-${t.key}`} hidden={active !== t.key}>
           {t.content}
         </div>
       ))}

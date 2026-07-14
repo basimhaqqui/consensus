@@ -28,19 +28,23 @@ export default function LiveNowBar({ eventId, fights }: { eventId: string; fight
   return (
     <a
       href={`/ufc/event/${eventId}#bout-${f.boutId}`}
-      className="terminal-panel fixed bottom-4 left-1/2 z-50 flex max-w-[94vw] -translate-x-1/2 items-center gap-2.5 whitespace-nowrap px-4 py-2 text-xs hover:border-accent/50"
+      aria-label={`Live now: ${f.aName} versus ${f.bName}. Jump to bout.`}
+      className="terminal-panel fixed bottom-[max(1rem,env(safe-area-inset-bottom))] left-1/2 z-50 flex w-[min(94vw,680px)] -translate-x-1/2 items-center gap-3 border-accent/35 px-3 py-2.5 shadow-[0_20px_55px_-18px_rgba(0,0,0,0.95)] hover:border-accent/65 sm:px-4"
     >
-      <span className="flex items-center gap-1.5 text-accent font-bold uppercase tracking-wider">
+      <span className="flex shrink-0 items-center gap-2 border-r border-line pr-3 text-[9px] font-bold uppercase tracking-[0.18em] text-accent">
         <span className="signal-dot ufc-signal-dot" />
-        Live{b.period ? ` R${b.period} ${b.clock && b.clock !== "-" ? b.clock : ""}` : ""}
+        Live signal
       </span>
-      <span className="display text-sm font-extrabold uppercase truncate">
+      <span className="display min-w-0 flex-1 truncate text-sm font-extrabold uppercase text-zinc-100 sm:text-base">
         {last(f.aName)} <span className="text-zinc-600">vs</span> {last(f.bName)}
       </span>
-      <span className="tabnums text-muted max-sm:hidden">
-        {(f.pA * 100).toFixed(0)}% / {((1 - f.pA) * 100).toFixed(0)}%
+      <span className="shrink-0 rounded border border-accent/25 bg-accent/[0.06] px-2 py-1 text-[9px] uppercase tracking-[0.12em] text-accent tabnums">
+        {b.period ? `R${b.period} ${b.clock && b.clock !== "-" ? b.clock : ""}` : "In progress"}
       </span>
-      <span className="text-accent">↓</span>
+      <span className="hidden shrink-0 text-[10px] text-muted tabnums md:inline">
+        {(f.pA * 100).toFixed(0)} / {((1 - f.pA) * 100).toFixed(0)}
+      </span>
+      <span aria-hidden="true" className="shrink-0 text-accent">↓</span>
     </a>
   );
 }

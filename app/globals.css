@@ -82,7 +82,9 @@ button {
 
 a:focus-visible,
 button:focus-visible,
-input:focus-visible {
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
@@ -282,6 +284,13 @@ input:focus-visible {
     inset 0 1px 0 rgba(255, 255, 255, 0.06),
     0 26px 48px -34px rgba(0, 0, 0, 1);
   transform: translateY(-2px);
+}
+
+.terminal-panel--interactive:focus-within {
+  border-color: var(--hairline-strong);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 26px 48px -34px rgba(0, 0, 0, 1);
 }
 
 .terminal-panel-header {
