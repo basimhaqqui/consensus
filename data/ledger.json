@@ -407,7 +407,16 @@
         "blend": 0.5114,
         "market": 0.5447
       },
-      "capturedAt": "2026-07-14T16:35:15.575Z"
+      "capturedAt": "2026-07-14T16:35:15.575Z",
+      "result": {
+        "winnerKey": "ESP",
+        "score": {
+          "home": 0,
+          "away": 2
+        },
+        "detail": "FT",
+        "gradedAt": "2026-07-14T21:11:24.561Z"
+      }
     }
   ]
 }
