@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-14T06:26:12.373Z",
+ "computedAt": "2026-07-14T15:49:37.964Z",
  "cards": [
   {
    "eventId": "600059599",
@@ -333,6 +333,35 @@
    "date": "2026-07-25T13:00Z",
    "fights": [
     {
+     "boutId": "401891531",
+     "date": "2026-07-25T13:00Z",
+     "weightClass": "Welterweight",
+     "segment": "Prelims",
+     "matchNumber": 12,
+     "a": {
+      "id": "3043484",
+      "name": "Santiago Ponzinibbio",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+      "record": "31-9-0"
+     },
+     "b": {
+      "id": "5088916",
+      "name": "Sam Patterson",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "record": "14-3-1"
+     },
+     "ratingA": 1373,
+     "ratingB": 1650,
+     "pA": 0.257,
+     "fightsA": 20,
+     "fightsB": 7,
+     "method": {
+      "ko": 0.46,
+      "sub": 0.18,
+      "dec": 0.36
+     }
+    },
+    {
      "boutId": "401886737",
      "date": "2026-07-25T13:00Z",
      "weightClass": "Lightweight",
@@ -391,35 +420,6 @@
      }
     },
     {
-     "boutId": "401874317",
-     "date": "2026-07-25T13:00Z",
-     "weightClass": "Lightweight",
-     "segment": "Main Card",
-     "matchNumber": 6,
-     "a": {
-      "id": "3093513",
-      "name": "Ismael Bonfim",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-      "record": "20-6-0"
-     },
-     "b": {
-      "id": "5245078",
-      "name": "Axel Sola",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-      "record": "11-1-1"
-     },
-     "ratingA": 1503,
-     "ratingB": 1509,
-     "pA": 0.495,
-     "fightsA": 6,
-     "fightsB": 2,
-     "method": {
-      "ko": 0.41,
-      "sub": 0.16,
-      "dec": 0.43
-     }
-    },
-    {
      "boutId": "401873257",
      "date": "2026-07-25T13:00Z",
      "weightClass": "Light Heavyweight",
@@ -446,6 +446,35 @@
       "ko": 0.39,
       "sub": 0.18,
       "dec": 0.43
+     }
+    },
+    {
+     "boutId": "401890156",
+     "date": "2026-07-25T13:00Z",
+     "weightClass": "Welterweight",
+     "segment": "Prelims",
+     "matchNumber": 7,
+     "a": {
+      "id": "3960340",
+      "name": "Abubakar Vagaev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "24-4-0"
+     },
+     "b": {
+      "id": "4276646",
+      "name": "Saygid Izagakhmaev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "22-3-0"
+     },
+     "ratingA": 1444,
+     "ratingB": 1435,
+     "pA": 0.509,
+     "fightsA": 0,
+     "fightsB": 1,
+     "method": {
+      "ko": 0.31,
+      "sub": 0.16,
+      "dec": 0.53
      }
     },
     {
@@ -478,32 +507,32 @@
      }
     },
     {
-     "boutId": "401890156",
+     "boutId": "401874317",
      "date": "2026-07-25T16:00Z",
-     "weightClass": "Welterweight",
-     "segment": "Prelims",
-     "matchNumber": 7,
+     "weightClass": "Lightweight",
+     "segment": "Main Card",
+     "matchNumber": 6,
      "a": {
-      "id": "3960340",
-      "name": "Abubakar Vagaev",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
-      "record": "24-4-0"
+      "id": "3093513",
+      "name": "Ismael Bonfim",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "20-6-0"
      },
      "b": {
-      "id": "4276646",
-      "name": "Saygid Izagakhmaev",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
-      "record": "22-3-0"
+      "id": "5245078",
+      "name": "Axel Sola",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+      "record": "11-1-1"
      },
-     "ratingA": 1444,
-     "ratingB": 1435,
-     "pA": 0.509,
-     "fightsA": 0,
-     "fightsB": 1,
+     "ratingA": 1503,
+     "ratingB": 1509,
+     "pA": 0.495,
+     "fightsA": 6,
+     "fightsB": 2,
      "method": {
-      "ko": 0.31,
+      "ko": 0.41,
       "sub": 0.16,
-      "dec": 0.53
+      "dec": 0.43
      }
     },
     {
@@ -629,26 +658,26 @@
      "segment": "Main Card",
      "matchNumber": 1,
      "a": {
-      "id": "4028627",
-      "name": "Khalil Rountree Jr.",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-      "record": "15-7-0"
-     },
-     "b": {
       "id": "4273399",
       "name": "Magomed Ankalaev",
       "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
       "record": "21-2-1"
      },
-     "ratingA": 1561,
-     "ratingB": 1769,
-     "pA": 0.31,
-     "fightsA": 17,
-     "fightsB": 14,
+     "b": {
+      "id": "5152109",
+      "name": "Bogdan Guskov",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+      "record": "18-3-1"
+     },
+     "ratingA": 1769,
+     "ratingB": 1629,
+     "pA": 0.631,
+     "fightsA": 14,
+     "fightsB": 5,
      "method": {
-      "ko": 0.55,
-      "sub": 0.09,
-      "dec": 0.36
+      "ko": 0.52,
+      "sub": 0.2,
+      "dec": 0.29
      }
     }
    ]
@@ -1347,6 +1376,35 @@
    "date": "2026-08-22T21:00Z",
    "fights": [
     {
+     "boutId": "401891532",
+     "date": "2026-08-22T21:00Z",
+     "weightClass": "Lightweight",
+     "segment": "Prelims",
+     "matchNumber": 8,
+     "a": {
+      "id": "5085318",
+      "name": "Gauge Young",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "11-3-0"
+     },
+     "b": {
+      "id": "5212351",
+      "name": "Kody Steele",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "8-1-0"
+     },
+     "ratingA": 1597,
+     "ratingB": 1509,
+     "pA": 0.584,
+     "fightsA": 4,
+     "fightsB": 3,
+     "method": {
+      "ko": 0.25,
+      "sub": 0.18,
+      "dec": 0.57
+     }
+    },
+    {
      "boutId": "401887543",
      "date": "2026-08-22T21:00Z",
      "weightClass": "W Strawweight",
@@ -1558,7 +1616,7 @@
    "fights": [
     {
      "boutId": "401887538",
-     "date": "2026-08-29T10:00Z",
+     "date": "2026-08-29T08:00Z",
      "weightClass": "Light Heavyweight",
      "segment": "Prelims",
      "matchNumber": 6,
@@ -1583,6 +1641,35 @@
       "ko": 0.5,
       "sub": 0.23,
       "dec": 0.27
+     }
+    },
+    {
+     "boutId": "401891333",
+     "date": "2026-08-29T10:00Z",
+     "weightClass": "Bantamweight",
+     "segment": "Main Card",
+     "matchNumber": 5,
+     "a": {
+      "id": "4336757",
+      "name": "Kai Asakura",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+      "record": "22-6-0"
+     },
+     "b": {
+      "id": "4389085",
+      "name": "Aoriqileng",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/chn.png",
+      "record": "26-13-0"
+     },
+     "ratingA": 1436,
+     "ratingB": 1397,
+     "pA": 0.538,
+     "fightsA": 3,
+     "fightsB": 9,
+     "method": {
+      "ko": 0.35,
+      "sub": 0.23,
+      "dec": 0.43
      }
     },
     {

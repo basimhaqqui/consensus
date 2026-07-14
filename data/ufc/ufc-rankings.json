@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-14T06:26:12.875Z",
+ "updatedAt": "2026-07-14T15:49:38.304Z",
  "divisions": [
   {
    "name": "Men's Pound-for-Pound",
@@ -43,13 +43,13 @@
     },
     {
      "rank": 8,
-     "name": "Alex Pereira",
-     "id": "4705658"
+     "name": "Merab Dvalishvili",
+     "id": "3948572"
     },
     {
      "rank": 9,
-     "name": "Merab Dvalishvili",
-     "id": "3948572"
+     "name": "Alex Pereira",
+     "id": "4705658"
     },
     {
      "rank": 10,
@@ -103,13 +103,13 @@
     },
     {
      "rank": 3,
-     "name": "Tatsuro Taira",
-     "id": "4917772"
+     "name": "Brandon Royval",
+     "id": "4239928"
     },
     {
      "rank": 4,
-     "name": "Brandon Royval",
-     "id": "4239928"
+     "name": "Tatsuro Taira",
+     "id": "4917772"
     },
     {
      "rank": 5,
@@ -193,23 +193,23 @@
     },
     {
      "rank": 4,
+     "name": "Mario Bautista",
+     "id": "4410868"
+    },
+    {
+     "rank": 5,
      "name": "Cory Sandhagen",
      "id": "4294504"
     },
     {
-     "rank": 5,
+     "rank": 6,
      "name": "Song Yadong",
      "id": "3151289"
     },
     {
-     "rank": 6,
+     "rank": 7,
      "name": "Aiemann Zahabi",
      "id": "4079149"
-    },
-    {
-     "rank": 7,
-     "name": "Mario Bautista",
-     "id": "4410868"
     },
     {
      "rank": 8,
@@ -243,13 +243,13 @@
     },
     {
      "rank": 14,
-     "name": "Marcus McGhee",
-     "id": "4895760"
+     "name": "Farid Basharat",
+     "id": "5016786"
     },
     {
      "rank": 15,
-     "name": "Farid Basharat",
-     "id": "5016786"
+     "name": "Marcus McGhee",
+     "id": "4895760"
     }
    ]
   },
@@ -368,13 +368,13 @@
     },
     {
      "rank": 5,
-     "name": "Benoît Saint Denis",
-     "id": "4895362"
+     "name": "Paddy Pimblett",
+     "id": "4008549"
     },
     {
      "rank": 6,
-     "name": "Paddy Pimblett",
-     "id": "4008549"
+     "name": "Benoît Saint Denis",
+     "id": "4895362"
     },
     {
      "rank": 7,
@@ -393,13 +393,13 @@
     },
     {
      "rank": 10,
-     "name": "Rafael Fiziev",
-     "id": "4339488"
-    },
-    {
-     "rank": 10,
      "name": "Renato Moicano",
      "id": "3028863"
+    },
+    {
+     "rank": 11,
+     "name": "Rafael Fiziev",
+     "id": "4339488"
     },
     {
      "rank": 12,
@@ -563,38 +563,33 @@
     },
     {
      "rank": 10,
-     "name": "Robert Whittaker",
-     "id": "3009717"
-    },
-    {
-     "rank": 11,
      "name": "Jared Cannonier",
      "id": "3154860"
     },
     {
-     "rank": 12,
+     "rank": 11,
      "name": "Gregory Rodrigues",
      "id": "4690541"
     },
     {
-     "rank": 13,
+     "rank": 12,
      "name": "Christian Leroy Duncan",
      "id": "4848674"
     },
     {
-     "rank": 14,
-     "name": "Roman Dolidze",
-     "id": "4411508"
-    },
-    {
-     "rank": 15,
+     "rank": 13,
      "name": "Ikram Aliskerov",
      "id": "4684776"
     },
     {
-     "rank": 15,
+     "rank": 14,
      "name": "Bo Nickal",
      "id": "5061870"
+    },
+    {
+     "rank": 15,
+     "name": "Roman Dolidze",
+     "id": "4411508"
     }
    ]
   },
@@ -633,28 +628,28 @@
     },
     {
      "rank": 6,
+     "name": "Paulo Costa",
+     "id": "4080826"
+    },
+    {
+     "rank": 7,
      "name": "Jamahal Hill",
      "id": "4425355"
     },
     {
-     "rank": 7,
+     "rank": 8,
      "name": "Azamat Murzakanov",
      "id": "4227265"
     },
     {
-     "rank": 7,
-     "name": "Paulo Costa",
-     "id": "4080826"
+     "rank": 9,
+     "name": "Bogdan Guskov",
+     "id": "5152109"
     },
     {
      "rank": 9,
      "name": "Volkan Oezdemir",
      "id": "3110836"
-    },
-    {
-     "rank": 10,
-     "name": "Bogdan Guskov",
-     "id": "5152109"
     },
     {
      "rank": 11,
@@ -663,8 +658,8 @@
     },
     {
      "rank": 12,
-     "name": "Nikita Krylov",
-     "id": "3026263"
+     "name": "Robert Whittaker",
+     "id": "3009717"
     },
     {
      "rank": 13,
@@ -678,8 +673,8 @@
     },
     {
      "rank": 15,
-     "name": "Alonzo Menifield",
-     "id": "3948876"
+     "name": "Nikita Krylov",
+     "id": "3026263"
     }
    ]
   },
@@ -737,7 +732,7 @@
      "id": "4065006"
     },
     {
-     "rank": 10,
+     "rank": 9,
      "name": "Ante Delija",
      "id": "3041315"
     },
@@ -753,13 +748,13 @@
     },
     {
      "rank": 13,
-     "name": "Brando Peričić",
-     "id": "5293988"
+     "name": "Valter Walker",
+     "id": "5147389"
     },
     {
      "rank": 14,
-     "name": "Valter Walker",
-     "id": "5147389"
+     "name": "Brando Peričić",
+     "id": "5293988"
     },
     {
      "rank": 15,
@@ -915,8 +910,8 @@
     },
     {
      "rank": 12,
-     "name": "Angela Hill",
-     "id": "3115931"
+     "name": "Alexia Thainara",
+     "id": "5075992"
     },
     {
      "rank": 13,
@@ -925,8 +920,8 @@
     },
     {
      "rank": 14,
-     "name": "Alexia Thainara",
-     "id": "5075992"
+     "name": "Angela Hill",
+     "id": "3115931"
     },
     {
      "rank": 15,
@@ -980,28 +975,28 @@
     },
     {
      "rank": 8,
+     "name": "Wang Cong",
+     "id": "4215200"
+    },
+    {
+     "rank": 9,
      "name": "Tracy Cortez",
      "id": "4243624"
     },
     {
-     "rank": 9,
+     "rank": 10,
      "name": "Miranda Maverick",
      "id": "4065598"
     },
     {
-     "rank": 10,
+     "rank": 11,
      "name": "Karine Silva",
      "id": "3309918"
     },
     {
-     "rank": 11,
+     "rank": 12,
      "name": "Casey O&#039;Neill",
      "id": "4699589"
-    },
-    {
-     "rank": 12,
-     "name": "Wang Cong",
-     "id": "4215200"
     },
     {
      "rank": 13,
