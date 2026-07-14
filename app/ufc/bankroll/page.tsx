@@ -72,23 +72,49 @@ export default async function BankrollPage({
 
   return (
     <div>
-      <header className="site-header">
-        <div className="site-kicker">01 / Private experiment · paper money</div>
-        <h1 className="site-title site-title--small">The Bankroll</h1>
-        <p className="site-subtitle">
-          $1,000 of simulated money, bet automatically every data run at real average book
-          prices: three-quarter-Kelly on consensus-probability edges (min +3% EV), moneylines and
-          rounds totals, one parlay per card, near-debut fights excluded. Settled by real
-          results. If the strategy has edge, this curve proves it — and if it doesn&apos;t,
-          it proves that instead.
-        </p>
+      <header className="site-header site-header--compact">
+        <div className="section-heading" data-index="01">
+          <h2>Positions terminal</h2>
+          <span className="hidden text-[9px] text-zinc-600 sm:inline">private / paper capital</span>
+        </div>
+
+        <div className="terminal-panel">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-px bg-gradient-to-b from-transparent via-red to-transparent opacity-75" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-px bg-gradient-to-b from-transparent via-accent to-transparent opacity-65" />
+          <div className="terminal-panel-header flex items-center justify-between gap-4 px-4 py-2 text-[9px] uppercase tracking-[0.2em] text-muted sm:px-6">
+            <span className="flex items-center gap-2 text-zinc-400">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_12px_rgba(52,211,153,0.65)]" />
+              Strategy book
+            </span>
+            <span className="tabnums">UFC / simulated positions</span>
+          </div>
+
+          <div className="relative overflow-hidden px-5 py-7 sm:px-7 sm:py-9">
+            <div className="pointer-events-none absolute -left-24 top-1/2 h-64 w-64 -translate-y-1/2 bg-[radial-gradient(circle,rgba(239,68,68,0.08),transparent_68%)]" />
+            <div className="pointer-events-none absolute -right-24 top-1/2 h-64 w-64 -translate-y-1/2 bg-[radial-gradient(circle,rgba(52,211,153,0.08),transparent_68%)]" />
+            <div className="relative max-w-4xl">
+              <div className="site-kicker">Risk sized. Results settled.</div>
+              <h1 className="site-title text-[clamp(2.8rem,8vw,5.7rem)] leading-[0.86] tracking-[-0.055em]">
+                Bankroll
+              </h1>
+              <p className="site-subtitle max-w-3xl">
+                $1,000 of simulated money, bet automatically every data run at real average book
+                prices: three-quarter-Kelly on consensus-probability edges (min +3% EV), moneylines
+                and rounds totals, one parlay per card, near-debut fights excluded. Settled by real
+                results. If the strategy has edge, this curve proves it — and if it doesn&apos;t, it
+                proves that instead.
+              </p>
+            </div>
+          </div>
+        </div>
       </header>
 
       <section className="mt-10">
         <div className="section-heading" data-index="02">
-          <h2>Portfolio state</h2>
+          <h2>Performance</h2>
+          <span className="text-[9px] uppercase tracking-[0.14em] text-muted">marked to current exposure</span>
         </div>
-        <div className="terminal-kpi-grid grid grid-cols-2 gap-px sm:grid-cols-4">
+        <div className="terminal-kpi-grid grid grid-cols-2 gap-px lg:grid-cols-4">
           <Stat
             label="Bankroll"
             value={usd(total)}
@@ -106,7 +132,7 @@ export default async function BankrollPage({
             valueClass={pnl >= 0 ? "text-emerald-400" : "text-danger"}
           />
           <Stat
-            label="In play"
+            label="Open exposure"
             value={usd(exposure)}
             sub={`to win ${usd(state.open.reduce((s, b) => s + b.stake * (b.price - 1), 0))}`}
           />
@@ -118,7 +144,7 @@ export default async function BankrollPage({
         </div>
       </section>
 
-      <BetTable index="03" title="Open bets" bets={mergeTickets(state.open)} />
+      <BetTable index="03" title="Open tickets" bets={mergeTickets(state.open)} />
       <BetTable index="04" title="Settled" bets={mergeTickets(settled)} />
 
       <p className="mt-6 text-[10px] text-zinc-600">
@@ -139,18 +165,23 @@ function BetTable({
   title: string;
   bets: (Bet & { toWin: number })[];
 }) {
-  if (!bets.length) return null;
   return (
-    <section className="mt-8">
+    <section className="mt-10">
       <div className="section-heading" data-index={index}>
         <h2>{title}</h2>
-        <span className="text-[11px] text-muted">[{bets.length}]</span>
+        <span className="text-[9px] text-muted tabnums">[{bets.length}]</span>
       </div>
-      <div className="grid gap-3 sm:grid-cols-2">
-        {bets.map((b) => (
-          <BankrollTicket key={`${b.placedAt}-${b.title}`} b={b} />
-        ))}
-      </div>
+      {bets.length === 0 ? (
+        <div className="terminal-empty p-8 text-center text-sm">
+          No {title.toLowerCase()} to display.
+        </div>
+      ) : (
+        <div className="grid gap-4 lg:grid-cols-2">
+          {bets.map((b) => (
+            <BankrollTicket key={`${b.placedAt}-${b.title}`} b={b} />
+          ))}
+        </div>
+      )}
     </section>
   );
 }
@@ -167,10 +198,10 @@ function Stat({
   valueClass?: string;
 }) {
   return (
-    <div className="terminal-kpi p-4 text-center">
-      <div className="text-[10px] uppercase tracking-wider text-muted">{label}</div>
-      <div className={`mt-1 display text-2xl font-extrabold tabnums ${valueClass}`}>{value}</div>
-      <div className="text-[11px] text-muted tabnums">{sub}</div>
+    <div className="terminal-kpi px-4 py-4 sm:px-5">
+      <div className="text-[9px] uppercase tracking-[0.18em] text-muted">{label}</div>
+      <div className={`display mt-1 text-3xl font-extrabold tabnums ${valueClass}`}>{value}</div>
+      <div className="mt-1 text-[9px] uppercase tracking-[0.12em] text-zinc-600 tabnums">{sub}</div>
     </div>
   );
 }

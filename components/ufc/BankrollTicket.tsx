@@ -42,62 +42,102 @@ export default function BankrollTicket({ b }: { b: TicketBet }) {
   return (
     <div
       onClick={() => setOpen((o) => !o)}
-      className={`terminal-panel terminal-panel--interactive cursor-pointer transition-colors ${
-        b.outcome === "win" ? "terminal-panel--win" : b.outcome === "loss" ? "terminal-panel--loss" : "hover:border-zinc-600"
+      className={`terminal-panel terminal-panel--interactive group cursor-pointer ${
+        b.outcome === "win"
+          ? "terminal-panel--win"
+          : b.outcome === "loss"
+            ? "terminal-panel--loss"
+            : "hover:border-zinc-600"
       }`}
     >
-      <div className="terminal-panel-header flex items-center justify-between px-3 py-1.5 text-[10px] uppercase tracking-wider text-muted">
-        <span className={b.kind === "parlay" ? "text-accent font-bold" : ""}>
-          {b.kind === "parlay" ? `${b.legs.length}-leg parlay` : "single"}
-        </span>
-        <span className="truncate pl-2">{b.event.replace("UFC Fight Night: ", "FN: ")}</span>
+      <div className="terminal-panel-header flex items-center justify-between gap-3 px-4 py-2 text-[9px] uppercase tracking-[0.17em] text-muted">
+        <div className="flex shrink-0 items-center gap-2">
+          <span
+            className={`h-1.5 w-1.5 rounded-full ${
+              b.outcome === "win"
+                ? "bg-accent shadow-[0_0_10px_rgba(52,211,153,0.55)]"
+                : b.outcome === "loss"
+                  ? "bg-danger shadow-[0_0_10px_rgba(248,113,113,0.45)]"
+                  : "bg-blue shadow-[0_0_10px_rgba(59,130,246,0.45)]"
+            }`}
+          />
+          <span className={b.kind === "parlay" ? "font-bold text-accent" : "text-zinc-400"}>
+            {b.kind === "parlay" ? `${b.legs.length}-leg parlay` : "single position"}
+          </span>
+        </div>
+        <span className="truncate text-right">{b.event.replace("UFC Fight Night: ", "FN: ")}</span>
       </div>
-      <div className="p-3">
+      <div className="p-4 sm:p-5">
         {b.kind === "parlay" ? (
-          <div className="space-y-0.5">
+          <div className="space-y-1">
             {b.legs.map((l) => (
-              <div key={`${l.boutId}${l.label}`} className="display text-base font-extrabold leading-tight">
-                {l.label} <span className="text-muted text-xs font-normal tabnums">@{l.price}</span>
+              <div key={`${l.boutId}${l.label}`} className="display text-lg font-bold leading-tight text-zinc-100">
+                {l.label} <span className="text-xs font-normal text-muted tabnums">@{l.price}</span>
               </div>
             ))}
           </div>
         ) : (
-          <div className="display text-xl font-extrabold leading-tight">{b.legs[0].label}</div>
+          <div className="display text-2xl font-extrabold leading-none text-zinc-100 group-hover:text-white">
+            {b.legs[0].label}
+          </div>
         )}
-        <div className="mt-1 tabnums text-xs text-muted">
-          @{b.price} ({american(b.price)}) · EV {b.ev >= 0 ? "+" : ""}{(b.ev * 100).toFixed(0)}%
-          <span className="ml-2 text-zinc-600">{open ? "▾ reasoning" : "▸ tap for reasoning"}</span>
+        <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] uppercase tracking-[0.12em] text-muted tabnums">
+          <span>Model {pc(b.p)}</span>
+          <span className="text-zinc-700">/</span>
+          <span className={b.ev >= 0 ? "text-accent" : "text-danger"}>
+            EV {b.ev >= 0 ? "+" : ""}{(b.ev * 100).toFixed(0)}%
+          </span>
+          <span className="text-zinc-700">/</span>
+          <span className="normal-case tracking-normal text-zinc-600">
+            {open ? "▾ reasoning open" : "▸ tap for reasoning"}
+          </span>
         </div>
 
-        <div className="mt-3 grid grid-cols-2 gap-2 text-center">
-          <div className="terminal-kpi rounded-md px-2 py-1.5">
-            <div className="text-[9px] uppercase tracking-wider text-muted">Risk</div>
-            <div className="tabnums text-lg font-bold">{usd(b.stake)}</div>
-          </div>
-          <div className="terminal-kpi rounded-md px-2 py-1.5">
-            <div className="text-[9px] uppercase tracking-wider text-muted">To win</div>
-            <div className="tabnums text-lg font-bold text-emerald-400">{usd(b.toWin)}</div>
-          </div>
+        <div className="terminal-kpi-grid mt-4 grid grid-cols-3 gap-px rounded-md">
+          <TicketStat label="Stake" value={usd(b.stake)} />
+          <TicketStat label="Odds" value={american(b.price)} sub={`@${b.price}`} />
+          <TicketStat
+            label={b.outcome && b.payout !== undefined ? "Payout" : "To win"}
+            value={b.outcome && b.payout !== undefined ? usd(b.payout) : usd(b.toWin)}
+            valueClass={
+              b.outcome === "win"
+                ? "text-accent"
+                : b.outcome === "loss"
+                  ? "text-danger"
+                  : "text-emerald-400"
+            }
+          />
         </div>
 
         {b.outcome && (
           <div
-            className={`mt-2 rounded-lg px-2 py-1.5 text-center display text-lg font-extrabold uppercase ${
-              b.outcome === "win" ? "bg-emerald-400/15 text-emerald-400" : b.outcome === "loss" ? "bg-danger/15 text-danger" : "bg-zinc-800 text-zinc-400"
+            className={`mt-3 flex items-center justify-between rounded border px-3 py-2 ${
+              b.outcome === "win"
+                ? "border-accent/25 bg-accent/[0.07] text-accent"
+                : b.outcome === "loss"
+                  ? "border-danger/25 bg-danger/[0.07] text-danger"
+                  : "border-zinc-700 bg-zinc-800/60 text-zinc-400"
             }`}
           >
-            {b.outcome === "win" ? `WON +${usd((b.payout ?? 0) - b.stake)}` : b.outcome === "loss" ? `LOST −${usd(b.stake)}` : "VOID"}
+            <span className="text-[9px] uppercase tracking-[0.17em]">Settlement</span>
+            <span className="display text-lg font-extrabold uppercase tabnums">
+              {b.outcome === "win"
+                ? `Won +${usd((b.payout ?? 0) - b.stake)}`
+                : b.outcome === "loss"
+                  ? `Lost −${usd(b.stake)}`
+                  : "Void"}
+            </span>
           </div>
         )}
 
         {open && (
-          <div className="mt-3 space-y-3 border-t border-line pt-3" onClick={(e) => e.stopPropagation()}>
+          <div className="mt-4 space-y-4 border-t border-line pt-4" onClick={(e) => e.stopPropagation()}>
             <div>
-              <div className="text-[9px] uppercase tracking-[0.2em] text-accent mb-1">Why this pick</div>
-              <ul className="space-y-1 text-xs text-zinc-300 leading-relaxed">
+              <div className="mb-1.5 text-[9px] uppercase tracking-[0.2em] text-accent">Why this pick</div>
+              <ul className="space-y-1.5 text-xs leading-relaxed text-zinc-300">
                 {b.analysis.split(" · ").map((line, i) => (
                   <li key={i} className="flex gap-1.5">
-                    <span className="text-zinc-600 shrink-0">▸</span>
+                    <span className="shrink-0 text-zinc-600">▸</span>
                     <span>{line}</span>
                   </li>
                 ))}
@@ -105,8 +145,8 @@ export default function BankrollTicket({ b }: { b: TicketBet }) {
             </div>
 
             <div>
-              <div className="text-[9px] uppercase tracking-[0.2em] text-blue mb-1">The math</div>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-0.5 text-xs tabnums">
+              <div className="mb-1.5 text-[9px] uppercase tracking-[0.2em] text-blue">The math</div>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs tabnums">
                 <span className="text-muted">Our probability</span>
                 <span className="text-right">{pc(b.p)}</span>
                 <span className="text-muted">Price implies</span>
@@ -125,12 +165,34 @@ export default function BankrollTicket({ b }: { b: TicketBet }) {
             </div>
 
             <div>
-              <div className="text-[9px] uppercase tracking-[0.2em] text-warn mb-1">The sizing</div>
-              <p className="text-xs text-zinc-300 leading-relaxed">{sizingStory(b)}</p>
+              <div className="mb-1.5 text-[9px] uppercase tracking-[0.2em] text-warn">The sizing</div>
+              <p className="text-xs leading-relaxed text-zinc-300">{sizingStory(b)}</p>
             </div>
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+function TicketStat({
+  label,
+  value,
+  sub,
+  valueClass = "",
+}: {
+  label: string;
+  value: string;
+  sub?: string;
+  valueClass?: string;
+}) {
+  return (
+    <div className="terminal-kpi min-w-0 px-2 py-2.5 text-center sm:px-3">
+      <div className="text-[8px] uppercase tracking-[0.16em] text-muted">{label}</div>
+      <div className={`display mt-0.5 truncate text-lg font-bold tabnums sm:text-xl ${valueClass}`}>
+        {value}
+      </div>
+      {sub ? <div className="mt-0.5 text-[8px] text-zinc-600 tabnums">{sub}</div> : null}
     </div>
   );
 }

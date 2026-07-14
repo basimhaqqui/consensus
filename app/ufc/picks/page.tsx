@@ -5,7 +5,7 @@ export const metadata = { title: "My Picks — UFC CONSENSUS" };
 export default function PicksPage() {
   return (
     <div>
-      <header className="site-header">
+      <header className="site-header site-header--compact">
         <div className="site-kicker">01 / Pick&apos;em</div>
         <h1 className="site-title site-title--small">My Picks</h1>
         <p className="site-subtitle">
