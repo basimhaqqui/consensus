@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-14T19:46:14.736Z",
+ "computedAt": "2026-07-14T21:17:07.028Z",
  "config": {
   "k": 80,
   "provFights": 5,
@@ -1572,7 +1572,7 @@
   "2335754": {
    "name": "Ed Herman",
    "rating": 1556.3,
-   "p4p": 1518.4,
+   "p4p": 1518.3,
    "division": "Light Heavyweight",
    "fights": 25,
    "wins": 13,
@@ -5982,7 +5982,7 @@
   "2504168": {
    "name": "Darren Elkins",
    "rating": 1671.8,
-   "p4p": 1658.8,
+   "p4p": 1658.7,
    "division": "Featherweight",
    "fights": 30,
    "wins": 19,
@@ -7071,7 +7071,7 @@
   "2516135": {
    "name": "Francisco Trinaldo",
    "rating": 1793.7,
-   "p4p": 1548.5,
+   "p4p": 1548.4,
    "division": "Welterweight",
    "fights": 26,
    "wins": 18,
@@ -11886,7 +11886,7 @@
   "3025285": {
    "name": "Scott Holtzman",
    "rating": 1557.9,
-   "p4p": 1512.6,
+   "p4p": 1512.5,
    "division": "Lightweight",
    "fights": 13,
    "wins": 7,
@@ -13200,7 +13200,7 @@
   "3088810": {
    "name": "Colby Covington",
    "rating": 1771,
-   "p4p": 1724,
+   "p4p": 1723.9,
    "division": "Welterweight",
    "fights": 17,
    "wins": 12,
@@ -13722,7 +13722,7 @@
   "3099958": {
    "name": "Charlie Ontiveros",
    "rating": 1379.2,
-   "p4p": 1484.9,
+   "p4p": 1485,
    "division": "Lightweight",
    "fights": 3,
    "wins": 0,
@@ -15972,7 +15972,7 @@
   "3939270": {
    "name": "Kamuela Kirk",
    "rating": 1451.8,
-   "p4p": 1480.9,
+   "p4p": 1481,
    "division": "Lightweight",
    "fights": 4,
    "wins": 1,
@@ -17070,7 +17070,7 @@
   "4030644": {
    "name": "Marcelo Rojo",
    "rating": 1397.8,
-   "p4p": 1477.8,
+   "p4p": 1477.9,
    "division": "Featherweight",
    "fights": 3,
    "wins": 0,
@@ -17925,7 +17925,7 @@
   "4082113": {
    "name": "Gina Mazany",
    "rating": 1347.7,
-   "p4p": 1494.1,
+   "p4p": 1494.2,
    "division": "W Flyweight",
    "fights": 8,
    "wins": 2,
@@ -23010,7 +23010,7 @@
   "4788300": {
    "name": "Josh Quinlan",
    "rating": 1416.1,
-   "p4p": 1443.2,
+   "p4p": 1443.3,
    "division": "Welterweight",
    "fights": 4,
    "wins": 1,
@@ -23856,7 +23856,7 @@
   "4895691": {
    "name": "Ramazan Temirov",
    "rating": 1720.5,
-   "p4p": 1696.2,
+   "p4p": 1696.1,
    "division": "Flyweight",
    "fights": 2,
    "wins": 2,
@@ -24252,7 +24252,7 @@
   "4950355": {
    "name": "Laura Gallardo",
    "rating": 1455.1,
-   "p4p": 1495.8,
+   "p4p": 1495.9,
    "division": null,
    "fights": 1,
    "wins": 0,
@@ -26142,7 +26142,7 @@
   "5157668": {
    "name": "MarQuel Mederos",
    "rating": 1725.2,
-   "p4p": 1718.5,
+   "p4p": 1718.4,
    "division": "Lightweight",
    "fights": 4,
    "wins": 4,
@@ -26547,7 +26547,7 @@
   "5212857": {
    "name": "Arthur Lopes",
    "rating": 1456.3,
-   "p4p": 1467,
+   "p4p": 1467.1,
    "division": "Heavyweight",
    "fights": 1,
    "wins": 0,
