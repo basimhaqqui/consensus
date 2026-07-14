@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-14T06:37:15.403Z",
+  "generated": "2026-07-14T10:21:16.684Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -164,36 +164,36 @@
       ]
     },
     "ESP|FRA": {
-      "text": "France and Spain meet in the World Cup semifinal, a rematch of the Euro 2024 last-four tie won by Spain, with Luis de la Fuente noting France have improved since. Deschamps deflected favourite talk and predicted a \"spectacular\" contest, while attention centres on the Lamine Yamal–Kylian Mbappé matchup after Yamal's pre-match comments, which Jules Koundé said were not meant as disrespect. Iván Barton takes charge as referee.",
+      "text": "France and Spain meet in the World Cup semifinal in Dallas, a rematch of the Euro 2024 semifinal won by Spain. Coach Luis de la Fuente said France are a much better side than two years ago, while Didier Deschamps deflected favorite status and predicted a \"spectacular\" game. The tie features a matchup between Kylian Mbappé and Lamine Yamal, who called it the most important match of his career.",
       "sources": [
+        {
+          "headline": "World Cup Daily live: Haaland latest star to inspire baby name boom",
+          "href": "https://www.espn.com/soccer/story/_/id/49356289/world-cup-daily-live-norway-erling-haaland-latest-star-inspire-baby-name-boom"
+        },
+        {
+          "headline": "Lamine Yamal: Spain, France semifinal my 'most important match,' I'm not afraid",
+          "href": "https://www.espn.com/soccer/story/_/id/49356590/lamine-yamal-spain-france-semifinal-my-most-important-match-not-afraid"
+        },
         {
           "headline": "De La Fuente: Spain know France 'much better' than Euro '24",
           "href": "https://www.espn.com/soccer/story/_/id/49354318/spain-know-france-much-better-euro-24"
-        },
-        {
-          "headline": "France's Deschamps predicts 'spectacular' semifinal vs. Spain",
-          "href": "https://www.espn.com/soccer/story/_/id/49354271/france-deschamps-predicts-spectacular-semifinal-clash-vs-spain"
-        },
-        {
-          "headline": "Koundé says Yamal meant no 'lack of respect' in France gibe",
-          "href": "https://www.espn.com/soccer/story/_/id/49353462/kounde-yamal-lack-respect-france-jibe"
         }
       ]
     },
     "ARG|ENG": {
-      "text": "England are optimistic Declan Rice will be fit to start the semifinal at Mercedes-Benz Stadium, where American referee Ismail Elfath will officiate. Jordan Pickford said England intend to stay composed and won't focus solely on Lionel Messi, while Argentina face the added threat of Harry Kane and several Premier League-based teammates.",
+      "text": "England meet Argentina in the World Cup semifinal at the Mercedes-Benz Stadium, with Nico O'Reilly expected to be tasked with marking Lionel Messi in what is the first senior international meeting between England and Messi. Captain Harry Kane has dismissed suggestions of division within the England squad, insisting there is \"complete togetherness.\" American referee Ismail Elfath has been appointed to oversee the fixture.",
       "sources": [
         {
-          "headline": "American ref Elfath to oversee England-Argentina semifinal",
-          "href": "https://www.espn.com/soccer/story/_/id/49354566/american-ref-elfath-oversee-england-argentina-semifinal"
+          "headline": "England's Nico O'Reilly relishing 'once-in-a-lifetime' opportunity to mark Lionel Messi",
+          "href": "https://www.espn.com/soccer/story/_/id/49356432/england-nico-oreilly-relishing-once-life-opportunity-mark-lionel-messi"
         },
         {
-          "headline": "England vs. Argentina: Declan Rice winning fitness race for World Cup semifinal - sources",
-          "href": "https://www.espn.com/soccer/story/_/id/49354102/england-vs-argentina-declan-rice-winning-fitness-race-world-cup-semifinal-sources"
+          "headline": "Argentina scouting report: How can England stop Lionel Messi and Co. in the World Cup semifinal?",
+          "href": "https://www.espn.com/soccer/story/_/id/49344633/argentina-scouting-report-england-lionel-messi-world-cup-semfinal-2026"
         },
         {
-          "headline": "Moreno: Kane is the best player Argentina have faced this World Cup",
-          "href": "https://www.espn.com/video/clip/_/id/49353729/kane-best-player-argentina-faced-world-cup"
+          "headline": "Hand of God, Beckham vs. Simeone: Ranking the most controversial England-Argentina moments",
+          "href": "https://www.espn.com/soccer/story/_/id/49342647/england-argentina-world-cup-semifinal-2026-hand-god-david-beckham-diego-simeone-ranking-controversial"
         }
       ]
     }
