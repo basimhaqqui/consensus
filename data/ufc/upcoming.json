@@ -1,0 +1,1198 @@
+{
+ "fetchedAt": "2026-07-14T06:26:11.179Z",
+ "cards": [
+  {
+   "eventId": "600059599",
+   "name": "UFC Fight Night: Du Plessis vs. Usman",
+   "shortName": "UFC Fight Night",
+   "date": "2026-07-18T21:00Z",
+   "venue": "Paycom Center",
+   "fights": [
+    {
+     "boutId": "401889642",
+     "date": "2026-07-18T21:00Z",
+     "weightClass": "W Flyweight",
+     "segment": "Prelims",
+     "matchNumber": 11,
+     "a": {
+      "id": "4801725",
+      "name": "Dione Barbosa",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "9-4-0"
+     },
+     "b": {
+      "id": "5334916",
+      "name": "Anna Melisano",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "6-1-0"
+     }
+    },
+    {
+     "boutId": "401889641",
+     "date": "2026-07-18T21:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Prelims",
+     "matchNumber": 10,
+     "a": {
+      "id": "5229339",
+      "name": "Alvin Hines",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "7-1-0"
+     },
+     "b": {
+      "id": "5369555",
+      "name": "RJ Harris",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "5-0-0"
+     }
+    },
+    {
+     "boutId": "401879057",
+     "date": "2026-07-18T21:00Z",
+     "weightClass": "Flyweight",
+     "segment": "Prelims",
+     "matchNumber": 9,
+     "a": {
+      "id": "5099732",
+      "name": "Alden Coria",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "12-3-0"
+     },
+     "b": {
+      "id": "5218177",
+      "name": "Stewart Nicoll",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+      "record": "8-3-0"
+     }
+    },
+    {
+     "boutId": "401881166",
+     "date": "2026-07-18T21:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Prelims",
+     "matchNumber": 8,
+     "a": {
+      "id": "5292014",
+      "name": "Felipe Franco",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "10-2-0"
+     },
+     "b": {
+      "id": "5312089",
+      "name": "Levi Rodrigues Jr.",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "5-0-0"
+     }
+    },
+    {
+     "boutId": "401886726",
+     "date": "2026-07-18T21:00Z",
+     "weightClass": "Welterweight",
+     "segment": "Prelims",
+     "matchNumber": 7,
+     "a": {
+      "id": "4629138",
+      "name": "Jean-Paul Lebosnoyani",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "10-2-0"
+     },
+     "b": {
+      "id": "4701954",
+      "name": "Seokhyeon Ko",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sko.png",
+      "record": "13-2-0"
+     }
+    },
+    {
+     "boutId": "401881164",
+     "date": "2026-07-18T21:00Z",
+     "weightClass": "Featherweight",
+     "segment": "Prelims",
+     "matchNumber": 6,
+     "a": {
+      "id": "5120304",
+      "name": "Austin Bashi",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "14-1-0"
+     },
+     "b": {
+      "id": "5223435",
+      "name": "Jose Miguel Delgado",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+      "record": "11-2-0"
+     }
+    },
+    {
+     "boutId": "401881163",
+     "date": "2026-07-19T00:00Z",
+     "weightClass": "Featherweight",
+     "segment": "Main Card",
+     "matchNumber": 5,
+     "a": {
+      "id": "4571450",
+      "name": "Alberto Montes",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ven.png",
+      "record": "12-1-0"
+     },
+     "b": {
+      "id": "5212849",
+      "name": "Tommy McMillen",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "10-0-0"
+     }
+    },
+    {
+     "boutId": "401881165",
+     "date": "2026-07-19T00:00Z",
+     "weightClass": "W Strawweight",
+     "segment": "Main Card",
+     "matchNumber": 4,
+     "a": {
+      "id": "4868095",
+      "name": "Tabatha Ricci",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "12-4-0"
+     },
+     "b": {
+      "id": "5028019",
+      "name": "Fatima Kline",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "9-1-0"
+     }
+    },
+    {
+     "boutId": "401874064",
+     "date": "2026-07-19T00:00Z",
+     "weightClass": "Lightweight",
+     "segment": "Main Card",
+     "matchNumber": 3,
+     "a": {
+      "id": "4354421",
+      "name": "Chase Hooper",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "16-5-1"
+     },
+     "b": {
+      "id": "4816283",
+      "name": "Mitch Ramirez",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "8-3-0"
+     }
+    },
+    {
+     "boutId": "401874062",
+     "date": "2026-07-19T00:00Z",
+     "weightClass": "Middleweight",
+     "segment": "Main Card",
+     "matchNumber": 2,
+     "a": {
+      "id": "3154860",
+      "name": "Jared Cannonier",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "18-9-0"
+     },
+     "b": {
+      "id": "4848674",
+      "name": "Christian Leroy Duncan",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "record": "14-2-0"
+     }
+    },
+    {
+     "boutId": "401872218",
+     "date": "2026-07-19T00:00Z",
+     "weightClass": "Middleweight",
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "3088812",
+      "name": "Kamaru Usman",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ngr.png",
+      "record": "21-4-0"
+     },
+     "b": {
+      "id": "3166126",
+      "name": "Dricus Du Plessis",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+      "record": "23-3-0"
+     }
+    }
+   ]
+  },
+  {
+   "eventId": "600059667",
+   "name": "UFC Fight Night: Ankalaev vs. Guskov",
+   "shortName": "UFC Fight Night",
+   "date": "2026-07-25T13:00Z",
+   "venue": "Etihad Arena",
+   "fights": [
+    {
+     "boutId": "401886737",
+     "date": "2026-07-25T13:00Z",
+     "weightClass": "Lightweight",
+     "segment": "Prelims",
+     "matchNumber": 11,
+     "a": {
+      "id": "4339145",
+      "name": "Mike Davis",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "12-3-0"
+     },
+     "b": {
+      "id": "5092398",
+      "name": "Nurullo Aliev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/tjk.png",
+      "record": "11-0-0"
+     }
+    },
+    {
+     "boutId": "401874314",
+     "date": "2026-07-25T13:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Prelims",
+     "matchNumber": 10,
+     "a": {
+      "id": "4379328",
+      "name": "Brendson Ribeiro",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "17-10-0"
+     },
+     "b": {
+      "id": "5360467",
+      "name": "Magomed Tuchalov",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "6-0-0"
+     }
+    },
+    {
+     "boutId": "401874317",
+     "date": "2026-07-25T13:00Z",
+     "weightClass": "Lightweight",
+     "segment": "Main Card",
+     "matchNumber": 6,
+     "a": {
+      "id": "3093513",
+      "name": "Ismael Bonfim",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "20-6-0"
+     },
+     "b": {
+      "id": "5245078",
+      "name": "Axel Sola",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+      "record": "11-1-1"
+     }
+    },
+    {
+     "boutId": "401873257",
+     "date": "2026-07-25T13:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Prelims",
+     "matchNumber": 7,
+     "a": {
+      "id": "2594871",
+      "name": "Dustin Jacoby",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "22-9-1"
+     },
+     "b": {
+      "id": "5206516",
+      "name": "Uran Satybaldiev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/kgz.png",
+      "record": "9-1-0"
+     }
+    },
+    {
+     "boutId": "401874312",
+     "date": "2026-07-25T13:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Prelims",
+     "matchNumber": 6,
+     "a": {
+      "id": "4869702",
+      "name": "Thomas Petersen",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "11-4-0"
+     },
+     "b": {
+      "id": "5147389",
+      "name": "Valter Walker",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "15-1-0"
+     }
+    },
+    {
+     "boutId": "401890156",
+     "date": "2026-07-25T16:00Z",
+     "weightClass": "Welterweight",
+     "segment": "Prelims",
+     "matchNumber": 7,
+     "a": {
+      "id": "3960340",
+      "name": "Abubakar Vagaev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "24-4-0"
+     },
+     "b": {
+      "id": "4276646",
+      "name": "Saygid Izagakhmaev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "22-3-0"
+     }
+    },
+    {
+     "boutId": "401874311",
+     "date": "2026-07-25T16:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 5,
+     "a": {
+      "id": "4001837",
+      "name": "Rizvan Kuniev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "13-3-1"
+     },
+     "b": {
+      "id": "4065006",
+      "name": "Tyrell Fortune",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "18-3-0"
+     }
+    },
+    {
+     "boutId": "401886732",
+     "date": "2026-07-25T16:00Z",
+     "weightClass": "Lightweight",
+     "segment": "Main Card",
+     "matchNumber": 4,
+     "a": {
+      "id": "5311034",
+      "name": "Magomed Zaynukov",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "8-0-0"
+     },
+     "b": {
+      "id": "5364334",
+      "name": "Damian Rzepecki",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pol.png",
+      "record": "10-0-0"
+     }
+    },
+    {
+     "boutId": "401874316",
+     "date": "2026-07-25T16:00Z",
+     "weightClass": "Welterweight",
+     "segment": "Main Card",
+     "matchNumber": 3,
+     "a": {
+      "id": "4426282",
+      "name": "Wellington Turman",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "18-8-0"
+     },
+     "b": {
+      "id": "5212748",
+      "name": "Islam Dulatov",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+      "record": "12-1-0"
+     }
+    },
+    {
+     "boutId": "401874315",
+     "date": "2026-07-25T16:00Z",
+     "weightClass": "Flyweight",
+     "segment": "Main Card",
+     "matchNumber": 2,
+     "a": {
+      "id": "4895691",
+      "name": "Ramazan Temirov",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+      "record": "19-3-0"
+     },
+     "b": {
+      "id": "4997217",
+      "name": "Steve Erceg",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+      "record": "14-4-0"
+     }
+    },
+    {
+     "boutId": "401873256",
+     "date": "2026-07-25T16:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "4028627",
+      "name": "Khalil Rountree Jr.",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "15-7-0"
+     },
+     "b": {
+      "id": "4273399",
+      "name": "Magomed Ankalaev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "21-2-1"
+     }
+    }
+   ]
+  },
+  {
+   "eventId": "600059339",
+   "name": "UFC Fight Night: Medić vs. Rodriguez",
+   "shortName": "UFC Fight Night",
+   "date": "2026-08-01T14:00Z",
+   "venue": "Belgrade Arena",
+   "fights": [
+    {
+     "boutId": "401870844",
+     "date": "2026-08-01T14:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Prelims",
+     "matchNumber": 11,
+     "a": {
+      "id": "5312090",
+      "name": "Jovan Leka",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ser.png",
+      "record": "13-2-0"
+     },
+     "b": {
+      "id": "5316622",
+      "name": "Max Gimenis",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "6-2-0"
+     }
+    },
+    {
+     "boutId": "401881924",
+     "date": "2026-08-01T14:00Z",
+     "weightClass": "W Bantamweight",
+     "segment": "Prelims",
+     "matchNumber": 10,
+     "a": {
+      "id": "4374742",
+      "name": "Hailey Cowan",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "7-5-0"
+     },
+     "b": {
+      "id": "5361791",
+      "name": "Nina Milošević",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+      "record": "8-1-0"
+     }
+    },
+    {
+     "boutId": "401875163",
+     "date": "2026-08-01T14:00Z",
+     "weightClass": "Featherweight",
+     "segment": "Prelims",
+     "matchNumber": 9,
+     "a": {
+      "id": "4686735",
+      "name": "Dennis Buzukja",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "12-6-0"
+     },
+     "b": {
+      "id": "5144006",
+      "name": "Bogdan Grad",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+      "record": "15-4-0"
+     }
+    },
+    {
+     "boutId": "401875162",
+     "date": "2026-08-01T14:00Z",
+     "weightClass": "Bantamweight",
+     "segment": "Prelims",
+     "matchNumber": 8,
+     "a": {
+      "id": "5212850",
+      "name": "Josias Musasa",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/drc.png",
+      "record": "8-2-0"
+     },
+     "b": {
+      "id": "5310571",
+      "name": "Mark Vologdin",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "12-4-2"
+     }
+    },
+    {
+     "boutId": "401879329",
+     "date": "2026-08-01T14:00Z",
+     "weightClass": "Welterweight",
+     "segment": "Prelims",
+     "matchNumber": 7,
+     "a": {
+      "id": "4900808",
+      "name": "Oban Elliott",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/wal.png",
+      "record": "12-4-0"
+     },
+     "b": {
+      "id": "5282411",
+      "name": "Michael Oliveira",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "9-0-0"
+     }
+    },
+    {
+     "boutId": "401875161",
+     "date": "2026-08-01T14:00Z",
+     "weightClass": "Lightweight",
+     "segment": "Prelims",
+     "matchNumber": 6,
+     "a": {
+      "id": "4193694",
+      "name": "Ludovit Klein",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/svk.png",
+      "record": "24-5-1"
+     },
+     "b": {
+      "id": "4423264",
+      "name": "Tofiq Musayev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aze.png",
+      "record": "23-6-0"
+     }
+    },
+    {
+     "boutId": "401874462",
+     "date": "2026-08-01T17:00Z",
+     "weightClass": "Middleweight",
+     "segment": "Main Card",
+     "matchNumber": 5,
+     "a": {
+      "id": "4375574",
+      "name": "Gilbert Urbina",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "7-5-0"
+     },
+     "b": {
+      "id": "5351430",
+      "name": "Vlasto Čepo",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ser.png",
+      "record": "14-3-0"
+     }
+    },
+    {
+     "boutId": "401873866",
+     "date": "2026-08-01T17:00Z",
+     "weightClass": "Middleweight",
+     "segment": "Main Card",
+     "matchNumber": 4,
+     "a": {
+      "id": "4421517",
+      "name": "Duško Todorović",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ser.png",
+      "record": "13-6-0"
+     },
+     "b": {
+      "id": "4686237",
+      "name": "Robert Valentin",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+      "record": "12-6-0"
+     }
+    },
+    {
+     "boutId": "401873865",
+     "date": "2026-08-01T17:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 3,
+     "a": {
+      "id": "3093559",
+      "name": "Marcin Tybura",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pol.png",
+      "record": "27-11-0"
+     },
+     "b": {
+      "id": "4079314",
+      "name": "Aleksandar Rakic",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ser.png",
+      "record": "14-6-0"
+     }
+    },
+    {
+     "boutId": "401879328",
+     "date": "2026-08-01T17:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 2,
+     "a": {
+      "id": "2506250",
+      "name": "Jan Blachowicz",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pol.png",
+      "record": "29-11-2"
+     },
+     "b": {
+      "id": "4402367",
+      "name": "Opponent TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     }
+    },
+    {
+     "boutId": "401870843",
+     "date": "2026-08-01T17:00Z",
+     "weightClass": "Welterweight",
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "4426312",
+      "name": "Daniel Rodriguez",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "20-5-0"
+     },
+     "b": {
+      "id": "4685870",
+      "name": "Uroš Medić",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ser.png",
+      "record": "13-3-0"
+     }
+    }
+   ]
+  },
+  {
+   "eventId": "600060621",
+   "name": "UFC Fight Night: Gamrot vs Salkilld",
+   "shortName": "UFC Fight Night",
+   "date": "2026-08-08T18:00Z",
+   "venue": "Meta APEX",
+   "fights": [
+    {
+     "boutId": "401887661",
+     "date": "2026-08-08T18:00Z",
+     "weightClass": null,
+     "segment": "Prelims",
+     "matchNumber": 2,
+     "a": {
+      "id": "2431356",
+      "name": "TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     },
+     "b": {
+      "id": "4402367",
+      "name": "Opponent TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     }
+    },
+    {
+     "boutId": "401886039",
+     "date": "2026-08-08T21:00Z",
+     "weightClass": "Lightweight",
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "3068125",
+      "name": "Mateusz Gamrot",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pol.png",
+      "record": "26-4-0"
+     },
+     "b": {
+      "id": "5157667",
+      "name": "Quillan Salkilld",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+      "record": "12-1-0"
+     }
+    }
+   ]
+  },
+  {
+   "eventId": "600059185",
+   "name": "UFC 330: Makhachev vs. Machado Garry",
+   "shortName": "UFC 330",
+   "date": "2026-08-15T21:00Z",
+   "venue": "Xfinity Mobile Arena",
+   "fights": [
+    {
+     "boutId": "401886763",
+     "date": "2026-08-15T23:00Z",
+     "weightClass": "Welterweight",
+     "segment": "Prelims",
+     "matchNumber": 10,
+     "a": {
+      "id": "3001914",
+      "name": "Neil Magny",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "31-15-0"
+     },
+     "b": {
+      "id": "4297311",
+      "name": "Ramiz Brahimaj",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "13-6-0"
+     }
+    },
+    {
+     "boutId": "401869338",
+     "date": "2026-08-15T21:00Z",
+     "weightClass": "Middleweight",
+     "segment": "Early Prelims",
+     "matchNumber": 9,
+     "a": {
+      "id": "3045887",
+      "name": "Vicente Luque",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "24-12-1"
+     },
+     "b": {
+      "id": "4815999",
+      "name": "Tresean Gore",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "7-4-0"
+     }
+    },
+    {
+     "boutId": "401869337",
+     "date": "2026-08-15T23:00Z",
+     "weightClass": "Welterweight",
+     "segment": "Prelims",
+     "matchNumber": 8,
+     "a": {
+      "id": "2959422",
+      "name": "Chidi Njokuani",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "25-12-0"
+     },
+     "b": {
+      "id": "3111997",
+      "name": "Geoff Neal",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "16-8-0"
+     }
+    },
+    {
+     "boutId": "401881926",
+     "date": "2026-08-15T21:00Z",
+     "weightClass": "Welterweight",
+     "segment": "Prelims",
+     "matchNumber": 7,
+     "a": {
+      "id": "3970873",
+      "name": "Jeremiah Wells",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "13-4-1"
+     },
+     "b": {
+      "id": "5050129",
+      "name": "Myktybek Orolbai",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/kgz.png",
+      "record": "16-2-1"
+     }
+    },
+    {
+     "boutId": "401879330",
+     "date": "2026-08-16T01:00Z",
+     "weightClass": "Lightweight",
+     "segment": "Prelims",
+     "matchNumber": 6,
+     "a": {
+      "id": "2526299",
+      "name": "Edson Barboza",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "24-14-0"
+     },
+     "b": {
+      "id": "5074131",
+      "name": "Esteban Ribovics",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+      "record": "15-3-0"
+     }
+    },
+    {
+     "boutId": "401881928",
+     "date": "2026-08-15T23:00Z",
+     "weightClass": "Middleweight",
+     "segment": "Prelims",
+     "matchNumber": 5,
+     "a": {
+      "id": "4685871",
+      "name": "Dustin Stoltzfus",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "16-8-0"
+     },
+     "b": {
+      "id": "5211221",
+      "name": "Mansur Abdul-Malik",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "9-1-1"
+     }
+    },
+    {
+     "boutId": "401886764",
+     "date": "2026-08-15T23:00Z",
+     "weightClass": "Lightweight",
+     "segment": "Prelims",
+     "matchNumber": 4,
+     "a": {
+      "id": "4339490",
+      "name": "Jalin Turner",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "15-9-0"
+     },
+     "b": {
+      "id": "5172124",
+      "name": "Kauê Fernandes",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "11-2-0"
+     }
+    },
+    {
+     "boutId": "401878092",
+     "date": "2026-08-16T01:00Z",
+     "weightClass": "W Flyweight",
+     "segment": "Main Card",
+     "matchNumber": 3,
+     "a": {
+      "id": "4350796",
+      "name": "Erin Blanchfield",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "14-2-0"
+     },
+     "b": {
+      "id": "4835135",
+      "name": "Jasmine Jasudavicius",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+      "record": "15-4-0"
+     }
+    },
+    {
+     "boutId": "401878072",
+     "date": "2026-08-16T01:00Z",
+     "weightClass": "W Strawweight",
+     "segment": "Main Card",
+     "matchNumber": 2,
+     "a": {
+      "id": "4021217",
+      "name": "Mackenzie Dern",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "16-5-0"
+     },
+     "b": {
+      "id": "4089026",
+      "name": "Gillian Robertson",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+      "record": "17-8-0"
+     }
+    },
+    {
+     "boutId": "401869336",
+     "date": "2026-08-16T01:00Z",
+     "weightClass": "Welterweight",
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "3332412",
+      "name": "Islam Makhachev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "28-1-0"
+     },
+     "b": {
+      "id": "4738092",
+      "name": "Ian Machado Garry",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/irl.png",
+      "record": "17-1-0"
+     }
+    }
+   ]
+  },
+  {
+   "eventId": "600060493",
+   "name": "UFC Fight Night: Hernandez vs. Rodrigues",
+   "shortName": "UFC Fight Night",
+   "date": "2026-08-22T21:00Z",
+   "venue": "Golden 1 Center",
+   "fights": [
+    {
+     "boutId": "401887543",
+     "date": "2026-08-22T21:00Z",
+     "weightClass": "W Strawweight",
+     "segment": "Prelims",
+     "matchNumber": 7,
+     "a": {
+      "id": "4836482",
+      "name": "Elise Reed",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "8-5-0"
+     },
+     "b": {
+      "id": "5157674",
+      "name": "Shanelle Dyer",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "record": "7-1-0"
+     }
+    },
+    {
+     "boutId": "401887542",
+     "date": "2026-08-22T21:00Z",
+     "weightClass": "Middleweight",
+     "segment": "Prelims",
+     "matchNumber": 6,
+     "a": {
+      "id": "5057023",
+      "name": "Wes Schultz",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "9-3-0"
+     },
+     "b": {
+      "id": "5291733",
+      "name": "Jackson McVey",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "7-2-0"
+     }
+    },
+    {
+     "boutId": "401881940",
+     "date": "2026-08-22T21:00Z",
+     "weightClass": "W Strawweight",
+     "segment": "Prelims",
+     "matchNumber": 5,
+     "a": {
+      "id": "5172179",
+      "name": "Carli Judice",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "6-2-0"
+     },
+     "b": {
+      "id": "5308769",
+      "name": "Jeisla Chaves",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "8-0-0"
+     }
+    },
+    {
+     "boutId": "401887541",
+     "date": "2026-08-23T00:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 4,
+     "a": {
+      "id": "4245094",
+      "name": "Kennedy Nzechukwu",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ngr.png",
+      "record": "14-6-1"
+     },
+     "b": {
+      "id": "5145498",
+      "name": "Shamil Gaziev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/brn.png",
+      "record": "14-3-0"
+     }
+    },
+    {
+     "boutId": "401887540",
+     "date": "2026-08-23T00:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 3,
+     "a": {
+      "id": "4421246",
+      "name": "Serghei Spivac",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/mda.png",
+      "record": "18-6-0"
+     },
+     "b": {
+      "id": "5060483",
+      "name": "Vitor Petrino",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "14-2-0"
+     }
+    },
+    {
+     "boutId": "401887539",
+     "date": "2026-08-23T00:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 2,
+     "a": {
+      "id": "4411508",
+      "name": "Roman Dolidze",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/geo.png",
+      "record": "15-5-0"
+     },
+     "b": {
+      "id": "4423880",
+      "name": "Reinier de Ridder",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+      "record": "21-4-0"
+     }
+    },
+    {
+     "boutId": "401881939",
+     "date": "2026-08-23T00:00Z",
+     "weightClass": "Middleweight",
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "4290956",
+      "name": "Anthony Hernandez",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "15-3-0"
+     },
+     "b": {
+      "id": "4690541",
+      "name": "Gregory Rodrigues",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "19-6-0"
+     }
+    }
+   ]
+  },
+  {
+   "eventId": "600060620",
+   "name": "UFC Fight Night: Nurmagomedov vs. Song",
+   "shortName": "UFC Fight Night",
+   "date": "2026-08-29T10:00Z",
+   "venue": "Shanghai Oriental Sports Center",
+   "fights": [
+    {
+     "boutId": "401887538",
+     "date": "2026-08-29T10:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Prelims",
+     "matchNumber": 6,
+     "a": {
+      "id": "5122234",
+      "name": "Junior Tafa",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+      "record": "7-6-0"
+     },
+     "b": {
+      "id": "5292011",
+      "name": "Ce Liu",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/chn.png",
+      "record": "3-1-0"
+     }
+    },
+    {
+     "boutId": "401887537",
+     "date": "2026-08-29T10:00Z",
+     "weightClass": "Flyweight",
+     "segment": "Main Card",
+     "matchNumber": 4,
+     "a": {
+      "id": "5137012",
+      "name": "Rei Tsuruya",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+      "record": "11-1-0"
+     },
+     "b": {
+      "id": "5144066",
+      "name": "Kevin Borjas",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/per.png",
+      "record": "11-5-0"
+     }
+    },
+    {
+     "boutId": "401887536",
+     "date": "2026-08-29T10:00Z",
+     "weightClass": "Flyweight",
+     "segment": "Main Card",
+     "matchNumber": 3,
+     "a": {
+      "id": "3155425",
+      "name": "Alex Perez",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "26-10-0"
+     },
+     "b": {
+      "id": "4405109",
+      "name": "Sumudaerji",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/chn.png",
+      "record": "19-7-0"
+     }
+    },
+    {
+     "boutId": "401887535",
+     "date": "2026-08-29T10:00Z",
+     "weightClass": "W Strawweight",
+     "segment": "Main Card",
+     "matchNumber": 2,
+     "a": {
+      "id": "4275487",
+      "name": "Yan Xiaonan",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/chn.png",
+      "record": "19-5-0"
+     },
+     "b": {
+      "id": "4963343",
+      "name": "Denise Gomes",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "12-3-0"
+     }
+    },
+    {
+     "boutId": "401887532",
+     "date": "2026-08-29T10:00Z",
+     "weightClass": "Bantamweight",
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "3151289",
+      "name": "Song Yadong",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/chn.png",
+      "record": "23-9-1"
+     },
+     "b": {
+      "id": "4569549",
+      "name": "Umar Nurmagomedov",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "20-1-0"
+     }
+    }
+   ]
+  },
+  {
+   "eventId": "600059993",
+   "name": "UFC Fight Night: Paris",
+   "shortName": "UFC Fight Night",
+   "date": "2026-09-05T16:00Z",
+   "venue": "Accor Arena",
+   "fights": [
+    {
+     "boutId": "401875227",
+     "date": "2026-09-05T16:00Z",
+     "weightClass": null,
+     "segment": "Prelims",
+     "matchNumber": 2,
+     "a": {
+      "id": "2431356",
+      "name": "TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     },
+     "b": {
+      "id": "4402367",
+      "name": "Opponent TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     }
+    },
+    {
+     "boutId": "401875226",
+     "date": "2026-09-05T19:00Z",
+     "weightClass": null,
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "2431356",
+      "name": "TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     },
+     "b": {
+      "id": "4402367",
+      "name": "Opponent TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     }
+    }
+   ]
+  }
+ ]
+}

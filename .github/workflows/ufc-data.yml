@@ -1,0 +1,48 @@
+name: ufc-data
+
+on:
+  schedule:
+    - cron: "17 */2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Sync results and cards
+        run: |
+          node scripts/ufc/scrape-fights.mjs
+          node scripts/ufc/enrich-methods.mjs
+          node scripts/ufc/scrape-upcoming.mjs
+          node scripts/ufc/scrape-fighters.mjs
+          node scripts/ufc/snapshot-cards.mjs
+
+      - name: Fetch odds
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: node scripts/ufc/fetch-odds.mjs
+
+      - name: Ratings, forecasts, ledger, bankroll
+        run: |
+          node scripts/ufc/compute-ratings.mjs
+          node scripts/ufc/scrape-rankings.mjs
+          node scripts/ufc/ledger.mjs
+          node scripts/ufc/bankroll.mjs
+
+      - name: Commit
+        run: |
+          git config user.name "data-bot"
+          git config user.email "data-bot@users.noreply.github.com"
+          git add data/ufc/
+          git diff --cached --quiet && exit 0
+          git commit -m "ufc data sync"
+          git pull --rebase
+          git push

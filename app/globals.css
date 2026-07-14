@@ -27,6 +27,10 @@
   --color-accent: var(--accent);
   --color-warn: var(--warn);
   --color-danger: var(--danger);
+  /* UFC-only utilities; the vars they reference are defined on .ufc-theme */
+  --color-red: var(--red-corner);
+  --color-blue: var(--blue-corner);
+  --font-display: var(--font-barlow);
   --font-mono: var(--font-geist-mono);
   --font-sans: var(--font-geist-sans);
 }
@@ -395,6 +399,55 @@ input:focus-visible {
   .section-heading h2 {
     letter-spacing: 0.14em;
   }
+}
+
+/* ── UFC section (app/ufc) ─────────────────────────────────────────────
+   The UFC app ships its own dark-red terminal theme. Its tokens reuse the
+   same custom-property names as the football theme, so they are scoped to
+   the .ufc-theme wrapper rendered by app/ufc/layout.tsx — utilities like
+   text-accent resolve to red inside /ufc and stay green everywhere else. */
+
+.ufc-theme {
+  --bg: #08080b;
+  --panel: #0e0e13;
+  --panel-2: #14141b;
+  --line: #23232e;
+  --text: #eceaf0;
+  --muted: #8b8797;
+  --accent: #e21d1d;
+  --red-corner: #d20a0a;
+  --blue-corner: #2172e5;
+  --warn: #f5b40b;
+  --danger: #f87171;
+
+  background: var(--bg);
+  background-image:
+    radial-gradient(1100px 560px at 78% -12%, #1c0b0b 0%, transparent 58%),
+    radial-gradient(900px 500px at -12% 8%, #0d0d18 0%, transparent 55%);
+  background-attachment: fixed;
+  color: var(--text);
+}
+
+.ufc-theme ::selection {
+  background: rgba(226, 29, 29, 0.32);
+  color: #fff;
+}
+
+.display {
+  font-family: var(--font-barlow);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+}
+
+.octagon {
+  clip-path: polygon(29% 0, 71% 0, 100% 29%, 100% 71%, 71% 100%, 29% 100%, 0 71%, 0 29%);
+}
+
+/* UFC panels use a lighter shadow than the football terminal panels */
+.ufc-theme .card-shadow {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 10px 30px -18px rgba(0, 0, 0, 0.8);
 }
 
 @media (prefers-reduced-motion: reduce) {

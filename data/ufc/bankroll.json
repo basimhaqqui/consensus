@@ -1,0 +1,792 @@
+{
+ "start": 1000,
+ "cash": 573.27,
+ "open": [
+  {
+   "kind": "single",
+   "title": "Yadong ML @ 4.23",
+   "legs": [
+    {
+     "boutId": "401887532",
+     "type": "ml",
+     "pickId": "3151289",
+     "price": 4.23,
+     "label": "Yadong ML"
+    }
+   ],
+   "stake": 38.83,
+   "price": 4.23,
+   "p": 0.355,
+   "ev": 0.502,
+   "event": "UFC Fight Night: Nurmagomedov vs. Song",
+   "analysis": "consensus 35.5% (model 48.3) vs implied 23.6%",
+   "placedAt": "2026-07-12T01:17:39.524Z"
+  },
+  {
+   "kind": "single",
+   "title": "Ricci ML @ 3.87",
+   "legs": [
+    {
+     "boutId": "401881165",
+     "type": "ml",
+     "pickId": "4868095",
+     "price": 3.87,
+     "label": "Ricci ML"
+    }
+   ],
+   "stake": 21.74,
+   "price": 3.87,
+   "p": 0.326,
+   "ev": 0.26,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 32.6% (model 40.3) vs implied 25.8%",
+   "placedAt": "2026-07-12T01:17:39.525Z"
+  },
+  {
+   "kind": "single",
+   "title": "Robertson ML @ 2.77",
+   "legs": [
+    {
+     "boutId": "401878072",
+     "type": "ml",
+     "pickId": "4089026",
+     "price": 2.77,
+     "label": "Robertson ML"
+    }
+   ],
+   "stake": 32.71,
+   "price": 2.77,
+   "p": 0.45,
+   "ev": 0.246,
+   "event": "UFC 330: Makhachev vs. Machado Garry",
+   "analysis": "consensus 45.0% (model 55.6) vs implied 36.1%",
+   "placedAt": "2026-07-12T01:17:39.525Z"
+  },
+  {
+   "kind": "single",
+   "title": "Yadong ML @ 4.23 (top-up)",
+   "legs": [
+    {
+     "boutId": "401887532",
+     "type": "ml",
+     "pickId": "3151289",
+     "price": 4.23,
+     "label": "Yadong ML"
+    }
+   ],
+   "stake": 28.58,
+   "price": 4.23,
+   "p": 0.355,
+   "ev": 0.502,
+   "event": "UFC Fight Night: Nurmagomedov vs. Song",
+   "analysis": "consensus 35.5% (model 48.3) vs implied 23.6%",
+   "placedAt": "2026-07-12T01:31:48.931Z"
+  },
+  {
+   "kind": "single",
+   "title": "Ricci ML @ 3.87 (top-up)",
+   "legs": [
+    {
+     "boutId": "401881165",
+     "type": "ml",
+     "pickId": "4868095",
+     "price": 3.87,
+     "label": "Ricci ML"
+    }
+   ],
+   "stake": 15.47,
+   "price": 3.87,
+   "p": 0.326,
+   "ev": 0.26,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 32.6% (model 40.3) vs implied 25.8%",
+   "placedAt": "2026-07-12T01:31:48.932Z"
+  },
+  {
+   "kind": "single",
+   "title": "Robertson ML @ 2.77 (top-up)",
+   "legs": [
+    {
+     "boutId": "401878072",
+     "type": "ml",
+     "pickId": "4089026",
+     "price": 2.77,
+     "label": "Robertson ML"
+    }
+   ],
+   "stake": 24.24,
+   "price": 2.77,
+   "p": 0.45,
+   "ev": 0.246,
+   "event": "UFC 330: Makhachev vs. Machado Garry",
+   "analysis": "consensus 45.0% (model 55.6) vs implied 36.1%",
+   "placedAt": "2026-07-12T01:31:48.932Z"
+  },
+  {
+   "kind": "single",
+   "title": "Yadong ML @ 4.23 (top-up)",
+   "legs": [
+    {
+     "boutId": "401887532",
+     "type": "ml",
+     "pickId": "3151289",
+     "price": 4.23,
+     "label": "Yadong ML"
+    }
+   ],
+   "stake": 22.81,
+   "price": 4.23,
+   "p": 0.355,
+   "ev": 0.502,
+   "event": "UFC Fight Night: Nurmagomedov vs. Song",
+   "analysis": "consensus 35.5% (model 48.3) vs implied 23.6%",
+   "placedAt": "2026-07-12T01:39:33.959Z"
+  },
+  {
+   "kind": "single",
+   "title": "Ricci ML @ 3.87 (top-up)",
+   "legs": [
+    {
+     "boutId": "401881165",
+     "type": "ml",
+     "pickId": "4868095",
+     "price": 3.87,
+     "label": "Ricci ML"
+    }
+   ],
+   "stake": 11.76,
+   "price": 3.87,
+   "p": 0.326,
+   "ev": 0.26,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 32.6% (model 40.3) vs implied 25.8%",
+   "placedAt": "2026-07-12T01:39:33.960Z"
+  },
+  {
+   "kind": "single",
+   "title": "Robertson ML @ 2.77 (top-up)",
+   "legs": [
+    {
+     "boutId": "401878072",
+     "type": "ml",
+     "pickId": "4089026",
+     "price": 2.77,
+     "label": "Robertson ML"
+    }
+   ],
+   "stake": 19.25,
+   "price": 2.77,
+   "p": 0.45,
+   "ev": 0.246,
+   "event": "UFC 330: Makhachev vs. Machado Garry",
+   "analysis": "consensus 45.0% (model 55.6) vs implied 36.1%",
+   "placedAt": "2026-07-12T01:39:33.960Z"
+  },
+  {
+   "kind": "single",
+   "title": "Ricci ML @ 3.87 (top-up)",
+   "legs": [
+    {
+     "boutId": "401881165",
+     "type": "ml",
+     "pickId": "4868095",
+     "price": 3.87,
+     "label": "Ricci ML"
+    }
+   ],
+   "stake": 1.03,
+   "price": 3.87,
+   "p": 0.326,
+   "ev": 0.26,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 32.6% (model 40.3) vs implied 25.8% · owner floor: $50 minimum",
+   "placedAt": "2026-07-12T01:54:13.858Z"
+  },
+  {
+   "kind": "single",
+   "title": "Ricci-Kline Under 2.5 @ 3.75",
+   "legs": [
+    {
+     "boutId": "401881165",
+     "type": "total",
+     "point": 2.5,
+     "side": "under",
+     "price": 3.75,
+     "label": "Under 2.5 rds"
+    }
+   ],
+   "stake": 50,
+   "price": 3.75,
+   "p": 0.297,
+   "ev": 0.112,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "model P(under)=29.7% vs implied 26.7% (finish 37%)",
+   "placedAt": "2026-07-12T15:17:04.924Z"
+  },
+  {
+   "kind": "single",
+   "title": "Usman-Du Plessis Under 3.5 @ 2.59",
+   "legs": [
+    {
+     "boutId": "401872218",
+     "type": "total",
+     "point": 3.5,
+     "side": "under",
+     "price": 2.59,
+     "label": "Under 3.5 rds"
+    }
+   ],
+   "stake": 50,
+   "price": 2.59,
+   "p": 0.403,
+   "ev": 0.045,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "model P(under)=40.3% vs implied 38.6% (finish 48%)",
+   "placedAt": "2026-07-12T17:19:11.916Z"
+  },
+  {
+   "kind": "parlay",
+   "title": "2-leg parlay @ 9.87: Ricci ML + Under 3.5 rds",
+   "legs": [
+    {
+     "boutId": "401881165",
+     "type": "ml",
+     "pickId": "4868095",
+     "price": 3.81,
+     "label": "Ricci ML"
+    },
+    {
+     "boutId": "401872218",
+     "type": "total",
+     "point": 3.5,
+     "side": "under",
+     "price": 2.59,
+     "label": "Under 3.5 rds"
+    }
+   ],
+   "stake": 50,
+   "price": 9.87,
+   "p": 0.132,
+   "ev": 0.304,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 32.8% (model 40.3) vs implied 26.2% · model P(under)=40.3% vs implied 38.6% (finish 48%)",
+   "placedAt": "2026-07-12T17:19:11.917Z"
+  },
+  {
+   "kind": "single",
+   "title": "Cannonier-Leroy Duncan Under 2.5 @ 2.44",
+   "legs": [
+    {
+     "boutId": "401874062",
+     "type": "total",
+     "point": 2.5,
+     "side": "under",
+     "price": 2.44,
+     "label": "Under 2.5 rds"
+    }
+   ],
+   "stake": 50,
+   "price": 2.44,
+   "p": 0.443,
+   "ev": 0.081,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "model P(under)=44.3% vs implied 41.0% (finish 54%)",
+   "placedAt": "2026-07-13T04:01:24.050Z"
+  }
+ ],
+ "settled": [
+  {
+   "kind": "single",
+   "title": "Sandhagen-Bautista Under 2.5 @ 3.12",
+   "legs": [
+    {
+     "boutId": "401873375",
+     "type": "total",
+     "point": 2.5,
+     "side": "under",
+     "price": 3.12,
+     "label": "Under 2.5 rds"
+    }
+   ],
+   "stake": 18.54,
+   "price": 3.12,
+   "p": 0.376,
+   "ev": 0.173,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "model P(under)=37.6% vs implied 32.1% (finish 49%)",
+   "placedAt": "2026-07-12T01:28:18.387Z",
+   "settledAt": "2026-07-12T03:59:24.498Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Holloway ML @ 1.32",
+   "legs": [
+    {
+     "boutId": "401867788",
+     "type": "ml",
+     "pickId": "2614933",
+     "price": 1.32,
+     "label": "Holloway ML"
+    }
+   ],
+   "stake": 44.41,
+   "price": 1.32,
+   "p": 0.813,
+   "ev": 0.073,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "consensus 81.3% (model 89.5) vs implied 75.8%",
+   "placedAt": "2026-07-12T01:28:18.388Z",
+   "settledAt": "2026-07-12T03:59:24.498Z",
+   "outcome": "win",
+   "payout": 58.62
+  },
+  {
+   "kind": "single",
+   "title": "Royval ML @ 2.94",
+   "legs": [
+    {
+     "boutId": "401873376",
+     "type": "ml",
+     "pickId": "4239928",
+     "price": 2.94,
+     "label": "Royval ML"
+    }
+   ],
+   "stake": 7.95,
+   "price": 2.94,
+   "p": 0.365,
+   "ev": 0.073,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "consensus 36.5% (model 40.2) vs implied 34.0%",
+   "placedAt": "2026-07-12T01:28:18.388Z",
+   "settledAt": "2026-07-12T03:59:24.499Z",
+   "outcome": "win",
+   "payout": 23.37
+  },
+  {
+   "kind": "parlay",
+   "title": "3-leg parlay @ 12.11: Under 2.5 rds + Holloway ML + Royval ML",
+   "legs": [
+    {
+     "boutId": "401873375",
+     "type": "total",
+     "point": 2.5,
+     "side": "under",
+     "price": 3.12,
+     "label": "Under 2.5 rds"
+    },
+    {
+     "boutId": "401867788",
+     "type": "ml",
+     "pickId": "2614933",
+     "price": 1.32,
+     "label": "Holloway ML"
+    },
+    {
+     "boutId": "401873376",
+     "type": "ml",
+     "pickId": "4239928",
+     "price": 2.94,
+     "label": "Royval ML"
+    }
+   ],
+   "stake": 6.61,
+   "price": 12.11,
+   "p": 0.112,
+   "ev": 0.351,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "model P(under)=37.6% vs implied 32.1% (finish 49%) · consensus 81.3% (model 89.5) vs implied 75.8% · consensus 36.5% (model 40.2) vs implied 34.0%",
+   "placedAt": "2026-07-12T01:28:18.388Z",
+   "settledAt": "2026-07-12T03:59:24.499Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Sandhagen-Bautista Under 2.5 @ 3.12 (top-up)",
+   "legs": [
+    {
+     "boutId": "401873375",
+     "type": "total",
+     "point": 2.5,
+     "side": "under",
+     "price": 3.12,
+     "label": "Under 2.5 rds"
+    }
+   ],
+   "stake": 13.33,
+   "price": 3.12,
+   "p": 0.376,
+   "ev": 0.173,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "model P(under)=37.6% vs implied 32.1% (finish 49%)",
+   "placedAt": "2026-07-12T01:31:48.932Z",
+   "settledAt": "2026-07-12T03:59:24.499Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Holloway ML @ 1.32 (top-up)",
+   "legs": [
+    {
+     "boutId": "401867788",
+     "type": "ml",
+     "pickId": "2614933",
+     "price": 1.32,
+     "label": "Holloway ML"
+    }
+   ],
+   "stake": 34.79,
+   "price": 1.32,
+   "p": 0.813,
+   "ev": 0.073,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "consensus 81.3% (model 89.5) vs implied 75.8%",
+   "placedAt": "2026-07-12T01:31:48.932Z",
+   "settledAt": "2026-07-12T03:59:24.499Z",
+   "outcome": "win",
+   "payout": 45.92
+  },
+  {
+   "kind": "single",
+   "title": "Royval ML @ 2.94 (top-up)",
+   "legs": [
+    {
+     "boutId": "401873376",
+     "type": "ml",
+     "pickId": "4239928",
+     "price": 2.94,
+     "label": "Royval ML"
+    }
+   ],
+   "stake": 5.63,
+   "price": 2.94,
+   "p": 0.365,
+   "ev": 0.073,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "consensus 36.5% (model 40.2) vs implied 34.0%",
+   "placedAt": "2026-07-12T01:31:48.932Z",
+   "settledAt": "2026-07-12T03:59:24.499Z",
+   "outcome": "win",
+   "payout": 16.55
+  },
+  {
+   "kind": "single",
+   "title": "Sandhagen-Bautista Under 2.5 @ 3.12 (top-up)",
+   "legs": [
+    {
+     "boutId": "401873375",
+     "type": "total",
+     "point": 2.5,
+     "side": "under",
+     "price": 3.12,
+     "label": "Under 2.5 rds"
+    }
+   ],
+   "stake": 10.16,
+   "price": 3.12,
+   "p": 0.376,
+   "ev": 0.173,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "model P(under)=37.6% vs implied 32.1% (finish 49%)",
+   "placedAt": "2026-07-12T01:39:33.960Z",
+   "settledAt": "2026-07-12T03:59:24.499Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Holloway ML @ 1.32 (top-up)",
+   "legs": [
+    {
+     "boutId": "401867788",
+     "type": "ml",
+     "pickId": "2614933",
+     "price": 1.32,
+     "label": "Holloway ML"
+    }
+   ],
+   "stake": 29.16,
+   "price": 1.32,
+   "p": 0.813,
+   "ev": 0.073,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "consensus 81.3% (model 89.5) vs implied 75.8%",
+   "placedAt": "2026-07-12T01:39:33.960Z",
+   "settledAt": "2026-07-12T03:59:24.499Z",
+   "outcome": "win",
+   "payout": 38.49
+  },
+  {
+   "kind": "single",
+   "title": "Holloway ML @ 1.32 (top-up)",
+   "legs": [
+    {
+     "boutId": "401867788",
+     "type": "ml",
+     "pickId": "2614933",
+     "price": 1.32,
+     "label": "Holloway ML"
+    }
+   ],
+   "stake": 56.8,
+   "price": 1.32,
+   "p": 0.813,
+   "ev": 0.073,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "consensus 81.3% (model 89.5) vs implied 75.8%",
+   "placedAt": "2026-07-12T01:49:34.953Z",
+   "settledAt": "2026-07-12T03:59:24.499Z",
+   "outcome": "win",
+   "payout": 74.98
+  },
+  {
+   "kind": "parlay",
+   "title": "3-leg parlay @ 12.11: Under 2.5 rds + Holloway ML + Royval ML (top-up)",
+   "legs": [
+    {
+     "boutId": "401873375",
+     "type": "total",
+     "point": 2.5,
+     "side": "under",
+     "price": 3.12,
+     "label": "Under 2.5 rds"
+    },
+    {
+     "boutId": "401867788",
+     "type": "ml",
+     "pickId": "2614933",
+     "price": 1.32,
+     "label": "Holloway ML"
+    },
+    {
+     "boutId": "401873376",
+     "type": "ml",
+     "pickId": "4239928",
+     "price": 2.94,
+     "label": "Royval ML"
+    }
+   ],
+   "stake": 43.39,
+   "price": 12.11,
+   "p": 0.112,
+   "ev": 0.351,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "model P(under)=37.6% vs implied 32.1% (finish 49%) · consensus 81.3% (model 89.5) vs implied 75.8% · consensus 36.5% (model 40.2) vs implied 34.0% · owner-ordered top-up to $50 total (Royval leg had just walked out)",
+   "placedAt": "2026-07-12T01:51:54.669Z",
+   "settledAt": "2026-07-12T03:59:24.499Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Sandhagen-Bautista Under 2.5 @ 3.12 (top-up)",
+   "legs": [
+    {
+     "boutId": "401873375",
+     "type": "total",
+     "point": 2.5,
+     "side": "under",
+     "price": 3.12,
+     "label": "Under 2.5 rds"
+    }
+   ],
+   "stake": 7.97,
+   "price": 3.12,
+   "p": 0.376,
+   "ev": 0.173,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "model P(under)=37.6% vs implied 32.1% (finish 49%) · owner floor: $50 minimum",
+   "placedAt": "2026-07-12T01:54:13.858Z",
+   "settledAt": "2026-07-12T03:59:24.499Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Saint Denis ML @ 1.72",
+   "legs": [
+    {
+     "boutId": "401873374",
+     "type": "ml",
+     "pickId": "4895362",
+     "price": 1.72,
+     "label": "Saint Denis ML"
+    }
+   ],
+   "stake": 50,
+   "price": 1.72,
+   "p": 0.561,
+   "ev": -0.035,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "owner-ordered action: consensus 56.1% vs implied 58.1% — slightly -EV at book price, least-bad side of the Pimblett fight",
+   "placedAt": "2026-07-12T01:54:13.858Z",
+   "settledAt": "2026-07-12T03:59:24.499Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Bautista ML @ 2.21",
+   "legs": [
+    {
+     "boutId": "401873375",
+     "type": "ml",
+     "pickId": "4410868",
+     "price": 2.21,
+     "label": "Bautista ML"
+    }
+   ],
+   "stake": 50,
+   "price": 2.21,
+   "p": 0.456,
+   "ev": 0.008,
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "analysis": "owner-ordered action: consensus 45.6% vs implied 45.2% — thin +EV; the Sandhagen side is juiced to -7.5%",
+   "placedAt": "2026-07-12T01:54:13.858Z",
+   "settledAt": "2026-07-12T03:59:24.499Z",
+   "outcome": "win",
+   "payout": 110.5
+  }
+ ],
+ "curve": [
+  {
+   "at": "2026-07-12T01:17:39.526Z",
+   "cash": 906.72,
+   "exposure": 93.28
+  },
+  {
+   "at": "2026-07-12T01:28:18.389Z",
+   "cash": 829.21,
+   "exposure": 170.79
+  },
+  {
+   "at": "2026-07-12T01:31:24.225Z",
+   "cash": 829.21,
+   "exposure": 170.79
+  },
+  {
+   "at": "2026-07-12T01:31:48.933Z",
+   "cash": 707.17,
+   "exposure": 292.83
+  },
+  {
+   "at": "2026-07-12T01:39:33.961Z",
+   "cash": 614.03,
+   "exposure": 385.97
+  },
+  {
+   "at": "2026-07-12T01:49:34.954Z",
+   "cash": 557.23,
+   "exposure": 442.77
+  },
+  {
+   "at": "2026-07-12T03:59:24.500Z",
+   "cash": 773.27,
+   "exposure": 216.42
+  },
+  {
+   "at": "2026-07-12T04:03:34.812Z",
+   "cash": 773.27,
+   "exposure": 216.42
+  },
+  {
+   "at": "2026-07-12T06:47:06.546Z",
+   "cash": 773.27,
+   "exposure": 216.42
+  },
+  {
+   "at": "2026-07-12T10:01:22.872Z",
+   "cash": 773.27,
+   "exposure": 216.42
+  },
+  {
+   "at": "2026-07-12T11:32:24.431Z",
+   "cash": 773.27,
+   "exposure": 216.42
+  },
+  {
+   "at": "2026-07-12T13:57:30.392Z",
+   "cash": 773.27,
+   "exposure": 216.42
+  },
+  {
+   "at": "2026-07-12T15:17:04.925Z",
+   "cash": 723.27,
+   "exposure": 266.42
+  },
+  {
+   "at": "2026-07-12T17:19:11.917Z",
+   "cash": 623.27,
+   "exposure": 366.42
+  },
+  {
+   "at": "2026-07-12T19:32:28.668Z",
+   "cash": 623.27,
+   "exposure": 366.42
+  },
+  {
+   "at": "2026-07-12T21:07:36.792Z",
+   "cash": 623.27,
+   "exposure": 366.42
+  },
+  {
+   "at": "2026-07-12T23:10:06.350Z",
+   "cash": 623.27,
+   "exposure": 366.42
+  },
+  {
+   "at": "2026-07-13T04:01:24.050Z",
+   "cash": 573.27,
+   "exposure": 416.42
+  },
+  {
+   "at": "2026-07-13T07:40:04.982Z",
+   "cash": 573.27,
+   "exposure": 416.42
+  },
+  {
+   "at": "2026-07-13T11:30:05.401Z",
+   "cash": 573.27,
+   "exposure": 416.42
+  },
+  {
+   "at": "2026-07-13T15:13:10.974Z",
+   "cash": 573.27,
+   "exposure": 416.42
+  },
+  {
+   "at": "2026-07-13T18:10:30.233Z",
+   "cash": 573.27,
+   "exposure": 416.42
+  },
+  {
+   "at": "2026-07-13T19:50:46.073Z",
+   "cash": 573.27,
+   "exposure": 416.42
+  },
+  {
+   "at": "2026-07-13T21:13:42.761Z",
+   "cash": 573.27,
+   "exposure": 416.42
+  },
+  {
+   "at": "2026-07-13T23:14:26.885Z",
+   "cash": 573.27,
+   "exposure": 416.42
+  },
+  {
+   "at": "2026-07-14T03:35:55.026Z",
+   "cash": 573.27,
+   "exposure": 416.42
+  },
+  {
+   "at": "2026-07-14T06:26:13.192Z",
+   "cash": 573.27,
+   "exposure": 416.42
+  }
+ ]
+}

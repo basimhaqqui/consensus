@@ -1,0 +1,424 @@
+{
+ "entries": [
+  {
+   "boutId": "401883599",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-11T21:00Z",
+   "weightClass": "Flyweight",
+   "a": {
+    "id": "4686725",
+    "name": "Cody Durden",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "18-10-1"
+   },
+   "b": {
+    "id": "5074121",
+    "name": "Alessandro Costa",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+    "record": "16-5-0"
+   },
+   "model_pA": 0.306,
+   "books_pA": 0.332,
+   "books": 7,
+   "capturedAt": "2026-07-11T09:49:30.891Z",
+   "result": {
+    "aWon": false,
+    "round": 2,
+    "decision": false,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.3653,
+    "llBooks": 0.4035
+   }
+  },
+  {
+   "boutId": "401874061",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-11T21:00Z",
+   "weightClass": "Middleweight",
+   "a": {
+    "id": "5143223",
+    "name": "Zach Reese",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "10-3-0"
+   },
+   "b": {
+    "id": "5291085",
+    "name": "Ryan Gandra",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+    "record": "9-1-0"
+   },
+   "model_pA": 0.431,
+   "books_pA": null,
+   "books": 0,
+   "capturedAt": "2026-07-11T09:49:30.891Z",
+   "result": {
+    "aWon": false,
+    "round": 1,
+    "decision": false,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.5639,
+    "llBooks": null
+   }
+  },
+  {
+   "boutId": "401886658",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-11T21:00Z",
+   "weightClass": "Bantamweight",
+   "a": {
+    "id": "5016786",
+    "name": "Farid Basharat",
+    "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+    "record": "15-0-0"
+   },
+   "b": {
+    "id": "5369414",
+    "name": "John Garza",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "6-1-0"
+   },
+   "model_pA": 0.75,
+   "books_pA": 0.831,
+   "books": 7,
+   "capturedAt": "2026-07-11T09:49:30.891Z",
+   "result": {
+    "aWon": true,
+    "round": 3,
+    "decision": true,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.2877,
+    "llBooks": 0.1851
+   }
+  },
+  {
+   "boutId": "401873379",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-11T21:00Z",
+   "weightClass": "Middleweight",
+   "a": {
+    "id": "5144068",
+    "name": "Cesar Almeida",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+    "record": "7-2-0"
+   },
+   "b": {
+    "id": "5292022",
+    "name": "Damian Pinas",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aru.png",
+    "record": "9-1-0"
+   },
+   "model_pA": 0.272,
+   "books_pA": 0.307,
+   "books": 7,
+   "capturedAt": "2026-07-11T09:49:30.891Z",
+   "result": {
+    "aWon": false,
+    "round": 1,
+    "decision": false,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.3175,
+    "llBooks": 0.3667
+   }
+  },
+  {
+   "boutId": "401873381",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-11T21:00Z",
+   "weightClass": "W Flyweight",
+   "a": {
+    "id": "4215200",
+    "name": "Wang Cong",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/chn.png",
+    "record": "9-1-0"
+   },
+   "b": {
+    "id": "4243624",
+    "name": "Tracy Cortez",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "12-3-0"
+   },
+   "model_pA": 0.449,
+   "books_pA": 0.513,
+   "books": 7,
+   "capturedAt": "2026-07-11T09:49:30.891Z",
+   "result": {
+    "aWon": true,
+    "round": 3,
+    "decision": true,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.8007,
+    "llBooks": 0.6675
+   }
+  },
+  {
+   "boutId": "401873378",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-11T23:00Z",
+   "weightClass": "Featherweight",
+   "a": {
+    "id": "4688447",
+    "name": "Kai Kamaka III",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "18-7-1"
+   },
+   "b": {
+    "id": "5146696",
+    "name": "Luke Riley",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+    "record": "13-0-0"
+   },
+   "model_pA": 0.316,
+   "books_pA": 0.335,
+   "books": 7,
+   "capturedAt": "2026-07-11T11:20:21.326Z",
+   "result": {
+    "aWon": false,
+    "round": 1,
+    "decision": false,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.3798,
+    "llBooks": 0.408
+   }
+  },
+  {
+   "boutId": "401873380",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-11T23:00Z",
+   "weightClass": "Bantamweight",
+   "a": {
+    "id": "3163637",
+    "name": "Cody Garbrandt",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "15-7-0"
+   },
+   "b": {
+    "id": "3998248",
+    "name": "Adrian Yanez",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "17-6-1"
+   },
+   "model_pA": 0.457,
+   "books_pA": 0.222,
+   "books": 7,
+   "capturedAt": "2026-07-11T11:20:21.326Z",
+   "result": {
+    "aWon": false,
+    "round": 1,
+    "decision": false,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.6106,
+    "llBooks": 0.251
+   }
+  },
+  {
+   "boutId": "401868927",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-11T23:00Z",
+   "weightClass": "Heavyweight",
+   "a": {
+    "id": "5214652",
+    "name": "Gable Steveson",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "3-0-0"
+   },
+   "b": {
+    "id": "5293987",
+    "name": "Elisha Ellison",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "5-2-0"
+   },
+   "model_pA": 0.627,
+   "books_pA": 0.908,
+   "books": 7,
+   "capturedAt": "2026-07-11T11:20:21.326Z",
+   "result": {
+    "aWon": true,
+    "round": 1,
+    "decision": false,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.4668,
+    "llBooks": 0.0965
+   }
+  },
+  {
+   "boutId": "401873377",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-11T23:00Z",
+   "weightClass": "Light Heavyweight",
+   "a": {
+    "id": "3009717",
+    "name": "Robert Whittaker",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+    "record": "27-9-0"
+   },
+   "b": {
+    "id": "3026263",
+    "name": "Nikita Krylov",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+    "record": "31-11-0"
+   },
+   "model_pA": 0.658,
+   "books_pA": 0.529,
+   "books": 7,
+   "capturedAt": "2026-07-11T11:20:21.326Z",
+   "result": {
+    "aWon": true,
+    "round": 3,
+    "decision": false,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.4186,
+    "llBooks": 0.6368
+   }
+  },
+  {
+   "boutId": "401881161",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-12T01:00Z",
+   "weightClass": "Lightweight",
+   "a": {
+    "id": "2502364",
+    "name": "King Green",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "35-17-1"
+   },
+   "b": {
+    "id": "4425604",
+    "name": "Terrance McKinney",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "18-8-0"
+   },
+   "model_pA": 0.432,
+   "books_pA": 0.504,
+   "books": 7,
+   "capturedAt": "2026-07-11T13:55:58.844Z",
+   "result": {
+    "aWon": true,
+    "round": 1,
+    "decision": false,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.8393,
+    "llBooks": 0.6852
+   }
+  },
+  {
+   "boutId": "401873376",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-12T01:00Z",
+   "weightClass": "Flyweight",
+   "a": {
+    "id": "4239928",
+    "name": "Brandon Royval",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "17-9-0"
+   },
+   "b": {
+    "id": "5147737",
+    "name": "Lone'er Kavanagh",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+    "record": "10-1-0"
+   },
+   "model_pA": 0.402,
+   "books_pA": 0.339,
+   "books": 7,
+   "capturedAt": "2026-07-11T13:55:58.844Z",
+   "result": {
+    "aWon": true,
+    "round": 3,
+    "decision": false,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.9113,
+    "llBooks": 1.0818
+   }
+  },
+  {
+   "boutId": "401873375",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-12T01:00Z",
+   "weightClass": "Bantamweight",
+   "a": {
+    "id": "4294504",
+    "name": "Cory Sandhagen",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "18-6-0"
+   },
+   "b": {
+    "id": "4410868",
+    "name": "Mario Bautista",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "17-3-0"
+   },
+   "model_pA": 0.523,
+   "books_pA": 0.569,
+   "books": 7,
+   "capturedAt": "2026-07-11T13:55:58.844Z",
+   "result": {
+    "aWon": false,
+    "round": 3,
+    "decision": true,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.7402,
+    "llBooks": 0.8416
+   }
+  },
+  {
+   "boutId": "401873374",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-12T01:00Z",
+   "weightClass": "Lightweight",
+   "a": {
+    "id": "4008549",
+    "name": "Paddy Pimblett",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+    "record": "23-4-0"
+   },
+   "b": {
+    "id": "4895362",
+    "name": "Benoît Saint Denis",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+    "record": "17-3-0"
+   },
+   "model_pA": 0.434,
+   "books_pA": 0.445,
+   "books": 7,
+   "capturedAt": "2026-07-11T13:55:58.844Z",
+   "result": {
+    "aWon": true,
+    "round": 1,
+    "decision": false,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.8347,
+    "llBooks": 0.8097
+   }
+  },
+  {
+   "boutId": "401867788",
+   "event": "UFC 329: McGregor vs. Holloway 2",
+   "date": "2026-07-12T01:00Z",
+   "weightClass": "Welterweight",
+   "a": {
+    "id": "2614933",
+    "name": "Max Holloway",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "27-9-0"
+   },
+   "b": {
+    "id": "3022677",
+    "name": "Conor McGregor",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/irl.png",
+    "record": "22-6-0"
+   },
+   "model_pA": 0.895,
+   "books_pA": 0.691,
+   "books": 7,
+   "capturedAt": "2026-07-11T13:55:58.844Z",
+   "result": {
+    "aWon": true,
+    "round": 1,
+    "decision": false,
+    "gradedAt": "2026-07-12T03:59:24.321Z",
+    "llModel": 0.1109,
+    "llBooks": 0.3696
+   }
+  }
+ ]
+}

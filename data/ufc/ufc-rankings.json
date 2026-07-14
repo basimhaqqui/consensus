@@ -1,0 +1,1109 @@
+{
+ "updatedAt": "2026-07-14T06:26:12.875Z",
+ "divisions": [
+  {
+   "name": "Men's Pound-for-Pound",
+   "p4p": true,
+   "champion": null,
+   "ranks": [
+    {
+     "rank": 1,
+     "name": "Islam Makhachev",
+     "id": "3332412"
+    },
+    {
+     "rank": 2,
+     "name": "Alexander Volkanovski",
+     "id": "3949584"
+    },
+    {
+     "rank": 3,
+     "name": "Petr Yan",
+     "id": "4293517"
+    },
+    {
+     "rank": 4,
+     "name": "Justin Gaethje",
+     "id": "3022345"
+    },
+    {
+     "rank": 5,
+     "name": "Ilia Topuria",
+     "id": "4350812"
+    },
+    {
+     "rank": 6,
+     "name": "Tom Aspinall",
+     "id": "4010976"
+    },
+    {
+     "rank": 7,
+     "name": "Sean Strickland",
+     "id": "3093653"
+    },
+    {
+     "rank": 8,
+     "name": "Alex Pereira",
+     "id": "4705658"
+    },
+    {
+     "rank": 9,
+     "name": "Merab Dvalishvili",
+     "id": "3948572"
+    },
+    {
+     "rank": 10,
+     "name": "Ciryl Gane",
+     "id": "4426000"
+    },
+    {
+     "rank": 11,
+     "name": "Joshua Van",
+     "id": "5120301"
+    },
+    {
+     "rank": 12,
+     "name": "Khamzat Chimaev",
+     "id": "4684751"
+    },
+    {
+     "rank": 13,
+     "name": "Alexandre Pantoja",
+     "id": "2560746"
+    },
+    {
+     "rank": 14,
+     "name": "Arman Tsarukyan",
+     "id": "4419372"
+    },
+    {
+     "rank": 15,
+     "name": "Charles Oliveira",
+     "id": "2504169"
+    }
+   ]
+  },
+  {
+   "name": "Flyweight",
+   "p4p": false,
+   "champion": {
+    "name": "Joshua Van",
+    "id": "5120301"
+   },
+   "ranks": [
+    {
+     "rank": 1,
+     "name": "Alexandre Pantoja",
+     "id": "2560746"
+    },
+    {
+     "rank": 2,
+     "name": "Manel Kape",
+     "id": "4236504"
+    },
+    {
+     "rank": 3,
+     "name": "Tatsuro Taira",
+     "id": "4917772"
+    },
+    {
+     "rank": 4,
+     "name": "Brandon Royval",
+     "id": "4239928"
+    },
+    {
+     "rank": 5,
+     "name": "Kyoji Horiguchi",
+     "id": "2613374"
+    },
+    {
+     "rank": 6,
+     "name": "Lone’er Kavanagh",
+     "id": "5147737"
+    },
+    {
+     "rank": 7,
+     "name": "Asu Almabayev",
+     "id": "4294926"
+    },
+    {
+     "rank": 8,
+     "name": "Amir Albazi",
+     "id": "4684848"
+    },
+    {
+     "rank": 9,
+     "name": "Brandon Moreno",
+     "id": "3027545"
+    },
+    {
+     "rank": 10,
+     "name": "Steve Erceg",
+     "id": "4997217"
+    },
+    {
+     "rank": 11,
+     "name": "Alex Perez",
+     "id": "3155425"
+    },
+    {
+     "rank": 12,
+     "name": "Tim Elliott",
+     "id": "2614020"
+    },
+    {
+     "rank": 13,
+     "name": "Tagir Ulanbekov",
+     "id": "4294924"
+    },
+    {
+     "rank": 14,
+     "name": "Charles Johnson",
+     "id": "4375156"
+    },
+    {
+     "rank": 15,
+     "name": "Edgar Chairez",
+     "id": "5076027"
+    }
+   ]
+  },
+  {
+   "name": "Bantamweight",
+   "p4p": false,
+   "champion": {
+    "name": "Petr Yan",
+    "id": "4293517"
+   },
+   "ranks": [
+    {
+     "rank": 1,
+     "name": "Merab Dvalishvili",
+     "id": "3948572"
+    },
+    {
+     "rank": 2,
+     "name": "Sean O&#039;Malley",
+     "id": "4205093"
+    },
+    {
+     "rank": 3,
+     "name": "Umar Nurmagomedov",
+     "id": "4569549"
+    },
+    {
+     "rank": 4,
+     "name": "Cory Sandhagen",
+     "id": "4294504"
+    },
+    {
+     "rank": 5,
+     "name": "Song Yadong",
+     "id": "3151289"
+    },
+    {
+     "rank": 6,
+     "name": "Aiemann Zahabi",
+     "id": "4079149"
+    },
+    {
+     "rank": 7,
+     "name": "Mario Bautista",
+     "id": "4410868"
+    },
+    {
+     "rank": 8,
+     "name": "David Martinez",
+     "id": "4503229"
+    },
+    {
+     "rank": 9,
+     "name": "Deiveson Figueiredo",
+     "id": "4189320"
+    },
+    {
+     "rank": 10,
+     "name": "Marlon Vera",
+     "id": "3155424"
+    },
+    {
+     "rank": 11,
+     "name": "Payton Talbott",
+     "id": "5144008"
+    },
+    {
+     "rank": 12,
+     "name": "Raul Rosas Jr.",
+     "id": "5088844"
+    },
+    {
+     "rank": 13,
+     "name": "Raoni Barcelos",
+     "id": "3075570"
+    },
+    {
+     "rank": 14,
+     "name": "Marcus McGhee",
+     "id": "4895760"
+    },
+    {
+     "rank": 15,
+     "name": "Farid Basharat",
+     "id": "5016786"
+    }
+   ]
+  },
+  {
+   "name": "Featherweight",
+   "p4p": false,
+   "champion": {
+    "name": "Alexander Volkanovski",
+    "id": "3949584"
+   },
+   "ranks": [
+    {
+     "rank": 1,
+     "name": "Movsar Evloev",
+     "id": "4029275"
+    },
+    {
+     "rank": 2,
+     "name": "Diego Lopes",
+     "id": "4881999"
+    },
+    {
+     "rank": 3,
+     "name": "Lerone Murphy",
+     "id": "4576101"
+    },
+    {
+     "rank": 4,
+     "name": "Aljamain Sterling",
+     "id": "3031559"
+    },
+    {
+     "rank": 5,
+     "name": "Yair Rodriguez",
+     "id": "3155420"
+    },
+    {
+     "rank": 6,
+     "name": "Jean Silva",
+     "id": "5145766"
+    },
+    {
+     "rank": 7,
+     "name": "Arnold Allen",
+     "id": "3902098"
+    },
+    {
+     "rank": 8,
+     "name": "Youssef Zalal",
+     "id": "4351319"
+    },
+    {
+     "rank": 9,
+     "name": "Kevin Vallejos",
+     "id": "5145681"
+    },
+    {
+     "rank": 10,
+     "name": "Steve Garcia",
+     "id": "3023804"
+    },
+    {
+     "rank": 11,
+     "name": "Brian Ortega",
+     "id": "3045737"
+    },
+    {
+     "rank": 12,
+     "name": "Aaron Pico",
+     "id": "4199009"
+    },
+    {
+     "rank": 13,
+     "name": "Melquizael Costa",
+     "id": "4425763"
+    },
+    {
+     "rank": 14,
+     "name": "David Onama",
+     "id": "4897850"
+    },
+    {
+     "rank": 15,
+     "name": "Patricio Pitbull",
+     "id": "2532870"
+    }
+   ]
+  },
+  {
+   "name": "Lightweight",
+   "p4p": false,
+   "champion": {
+    "name": "Justin Gaethje",
+    "id": "3022345"
+   },
+   "ranks": [
+    {
+     "rank": 1,
+     "name": "Ilia Topuria",
+     "id": "4350812"
+    },
+    {
+     "rank": 2,
+     "name": "Arman Tsarukyan",
+     "id": "4419372"
+    },
+    {
+     "rank": 3,
+     "name": "Charles Oliveira",
+     "id": "2504169"
+    },
+    {
+     "rank": 4,
+     "name": "Max Holloway",
+     "id": "2614933"
+    },
+    {
+     "rank": 5,
+     "name": "Benoît Saint Denis",
+     "id": "4895362"
+    },
+    {
+     "rank": 6,
+     "name": "Paddy Pimblett",
+     "id": "4008549"
+    },
+    {
+     "rank": 7,
+     "name": "Mauricio Ruffy",
+     "id": "5122238"
+    },
+    {
+     "rank": 8,
+     "name": "Mateusz Gamrot",
+     "id": "3068125"
+    },
+    {
+     "rank": 9,
+     "name": "Dan Hooker",
+     "id": "3109135"
+    },
+    {
+     "rank": 10,
+     "name": "Rafael Fiziev",
+     "id": "4339488"
+    },
+    {
+     "rank": 10,
+     "name": "Renato Moicano",
+     "id": "3028863"
+    },
+    {
+     "rank": 12,
+     "name": "Quillan Salkilld",
+     "id": "5157667"
+    },
+    {
+     "rank": 13,
+     "name": "Tom Nolan",
+     "id": "5144007"
+    },
+    {
+     "rank": 14,
+     "name": "Beneil Dariush",
+     "id": "3085551"
+    },
+    {
+     "rank": 15,
+     "name": "Manuel Torres",
+     "id": "4896616"
+    }
+   ]
+  },
+  {
+   "name": "Welterweight",
+   "p4p": false,
+   "champion": {
+    "name": "Islam Makhachev",
+    "id": "3332412"
+   },
+   "ranks": [
+    {
+     "rank": 1,
+     "name": "Ian Machado Garry",
+     "id": "4738092"
+    },
+    {
+     "rank": 2,
+     "name": "Carlos Prates",
+     "id": "4294832"
+    },
+    {
+     "rank": 3,
+     "name": "Michael Morales",
+     "id": "4869426"
+    },
+    {
+     "rank": 4,
+     "name": "Jack Della Maddalena",
+     "id": "4828707"
+    },
+    {
+     "rank": 5,
+     "name": "Gabriel Bonfim",
+     "id": "4921516"
+    },
+    {
+     "rank": 6,
+     "name": "Sean Brady",
+     "id": "4295192"
+    },
+    {
+     "rank": 7,
+     "name": "Belal Muhammad",
+     "id": "3172112"
+    },
+    {
+     "rank": 8,
+     "name": "Leon Edwards",
+     "id": "3152929"
+    },
+    {
+     "rank": 9,
+     "name": "Kamaru Usman",
+     "id": "3088812"
+    },
+    {
+     "rank": 10,
+     "name": "Joaquin Buckley",
+     "id": "4024714"
+    },
+    {
+     "rank": 11,
+     "name": "Yaroslav Amosov",
+     "id": "4275020"
+    },
+    {
+     "rank": 12,
+     "name": "Mike Malott",
+     "id": "3165120"
+    },
+    {
+     "rank": 13,
+     "name": "Michael Venom Page",
+     "id": "3022067"
+    },
+    {
+     "rank": 14,
+     "name": "Uroš Medić",
+     "id": "4685870"
+    },
+    {
+     "rank": 15,
+     "name": "Daniel Rodriguez",
+     "id": "4426312"
+    }
+   ]
+  },
+  {
+   "name": "Middleweight",
+   "p4p": false,
+   "champion": {
+    "name": "Sean Strickland",
+    "id": "3093653"
+   },
+   "ranks": [
+    {
+     "rank": 1,
+     "name": "Khamzat Chimaev",
+     "id": "4684751"
+    },
+    {
+     "rank": 2,
+     "name": "Dricus Du Plessis",
+     "id": "3166126"
+    },
+    {
+     "rank": 3,
+     "name": "Nassourdine Imavov",
+     "id": "4690539"
+    },
+    {
+     "rank": 4,
+     "name": "Brendan Allen",
+     "id": "4025699"
+    },
+    {
+     "rank": 5,
+     "name": "Caio Borralho",
+     "id": "4835137"
+    },
+    {
+     "rank": 6,
+     "name": "Anthony Hernandez",
+     "id": "4290956"
+    },
+    {
+     "rank": 7,
+     "name": "Joe Pyfer",
+     "id": "4684135"
+    },
+    {
+     "rank": 8,
+     "name": "Reinier de Ridder",
+     "id": "4423880"
+    },
+    {
+     "rank": 9,
+     "name": "Israel Adesanya",
+     "id": "4285679"
+    },
+    {
+     "rank": 10,
+     "name": "Robert Whittaker",
+     "id": "3009717"
+    },
+    {
+     "rank": 11,
+     "name": "Jared Cannonier",
+     "id": "3154860"
+    },
+    {
+     "rank": 12,
+     "name": "Gregory Rodrigues",
+     "id": "4690541"
+    },
+    {
+     "rank": 13,
+     "name": "Christian Leroy Duncan",
+     "id": "4848674"
+    },
+    {
+     "rank": 14,
+     "name": "Roman Dolidze",
+     "id": "4411508"
+    },
+    {
+     "rank": 15,
+     "name": "Ikram Aliskerov",
+     "id": "4684776"
+    },
+    {
+     "rank": 15,
+     "name": "Bo Nickal",
+     "id": "5061870"
+    }
+   ]
+  },
+  {
+   "name": "Light Heavyweight",
+   "p4p": false,
+   "champion": {
+    "name": "Carlos Ulberg",
+    "id": "4695736"
+   },
+   "ranks": [
+    {
+     "rank": 1,
+     "name": "Magomed Ankalaev",
+     "id": "4273399"
+    },
+    {
+     "rank": 2,
+     "name": "Jiří Procházka",
+     "id": "3156612"
+    },
+    {
+     "rank": 3,
+     "name": "Alex Pereira",
+     "id": "4705658"
+    },
+    {
+     "rank": 4,
+     "name": "Jan Błachowicz",
+     "id": "2506250"
+    },
+    {
+     "rank": 5,
+     "name": "Khalil Rountree Jr.",
+     "id": "4028627"
+    },
+    {
+     "rank": 6,
+     "name": "Jamahal Hill",
+     "id": "4425355"
+    },
+    {
+     "rank": 7,
+     "name": "Azamat Murzakanov",
+     "id": "4227265"
+    },
+    {
+     "rank": 7,
+     "name": "Paulo Costa",
+     "id": "4080826"
+    },
+    {
+     "rank": 9,
+     "name": "Volkan Oezdemir",
+     "id": "3110836"
+    },
+    {
+     "rank": 10,
+     "name": "Bogdan Guskov",
+     "id": "5152109"
+    },
+    {
+     "rank": 11,
+     "name": "Dominick Reyes",
+     "id": "4233039"
+    },
+    {
+     "rank": 12,
+     "name": "Nikita Krylov",
+     "id": "3026263"
+    },
+    {
+     "rank": 13,
+     "name": "Johnny Walker",
+     "id": "3146944"
+    },
+    {
+     "rank": 14,
+     "name": "Aleksandar Rakić",
+     "id": "4079314"
+    },
+    {
+     "rank": 15,
+     "name": "Alonzo Menifield",
+     "id": "3948876"
+    }
+   ]
+  },
+  {
+   "name": "Heavyweight",
+   "p4p": false,
+   "champion": {
+    "name": "Tom Aspinall",
+    "id": "4010976"
+   },
+   "ranks": [
+    {
+     "rank": 1,
+     "name": "Ciryl Gane",
+     "id": "4426000"
+    },
+    {
+     "rank": 2,
+     "name": "Alexander Volkov",
+     "id": "2993650"
+    },
+    {
+     "rank": 3,
+     "name": "Sergei Pavlovich",
+     "id": "4217395"
+    },
+    {
+     "rank": 4,
+     "name": "Josh Hokit",
+     "id": "4049391"
+    },
+    {
+     "rank": 5,
+     "name": "Waldo Cortes Acosta",
+     "id": "4903365"
+    },
+    {
+     "rank": 6,
+     "name": "Serghei Spivac",
+     "id": "4421246"
+    },
+    {
+     "rank": 7,
+     "name": "Curtis Blaydes",
+     "id": "3922557"
+    },
+    {
+     "rank": 8,
+     "name": "Rizvan Kuniev",
+     "id": "4001837"
+    },
+    {
+     "rank": 9,
+     "name": "Tyrell Fortune",
+     "id": "4065006"
+    },
+    {
+     "rank": 10,
+     "name": "Ante Delija",
+     "id": "3041315"
+    },
+    {
+     "rank": 11,
+     "name": "Derrick Lewis",
+     "id": "2560713"
+    },
+    {
+     "rank": 12,
+     "name": "Marcin Tybura",
+     "id": "3093559"
+    },
+    {
+     "rank": 13,
+     "name": "Brando Peričić",
+     "id": "5293988"
+    },
+    {
+     "rank": 14,
+     "name": "Valter Walker",
+     "id": "5147389"
+    },
+    {
+     "rank": 15,
+     "name": "Mick Parkin",
+     "id": "5060505"
+    }
+   ]
+  },
+  {
+   "name": "Women's Pound-for-Pound",
+   "p4p": true,
+   "champion": null,
+   "ranks": [
+    {
+     "rank": 1,
+     "name": "Valentina Shevchenko",
+     "id": "2554705"
+    },
+    {
+     "rank": 2,
+     "name": "Kayla Harrison",
+     "id": "4332765"
+    },
+    {
+     "rank": 3,
+     "name": "Zhang Weili",
+     "id": "4350762"
+    },
+    {
+     "rank": 4,
+     "name": "Natalia Silva",
+     "id": "4054605"
+    },
+    {
+     "rank": 5,
+     "name": "Manon Fiorot",
+     "id": "4608674"
+    },
+    {
+     "rank": 6,
+     "name": "Mackenzie Dern",
+     "id": "4021217"
+    },
+    {
+     "rank": 7,
+     "name": "Alexa Grasso",
+     "id": "3136287"
+    },
+    {
+     "rank": 8,
+     "name": "Erin Blanchfield",
+     "id": "4350796"
+    },
+    {
+     "rank": 9,
+     "name": "Julianna Peña",
+     "id": "2951361"
+    },
+    {
+     "rank": 10,
+     "name": "Tatiana Suarez",
+     "id": "4020435"
+    },
+    {
+     "rank": 11,
+     "name": "Virna Jandiroba",
+     "id": "4289516"
+    },
+    {
+     "rank": 12,
+     "name": "Yan Xiaonan",
+     "id": "4275487"
+    },
+    {
+     "rank": 13,
+     "name": "Raquel Pennington",
+     "id": "2995167"
+    },
+    {
+     "rank": 14,
+     "name": "Rose Namajunas",
+     "id": "3032973"
+    },
+    {
+     "rank": 15,
+     "name": "Maycee Barber",
+     "id": "4246307"
+    }
+   ]
+  },
+  {
+   "name": "Women&#039;s Strawweight",
+   "p4p": false,
+   "champion": {
+    "name": "Mackenzie Dern",
+    "id": "4021217"
+   },
+   "ranks": [
+    {
+     "rank": 1,
+     "name": "Zhang Weili",
+     "id": "4350762"
+    },
+    {
+     "rank": 2,
+     "name": "Tatiana Suarez",
+     "id": "4020435"
+    },
+    {
+     "rank": 3,
+     "name": "Virna Jandiroba",
+     "id": "4289516"
+    },
+    {
+     "rank": 4,
+     "name": "Yan Xiaonan",
+     "id": "4275487"
+    },
+    {
+     "rank": 5,
+     "name": "Gillian Robertson",
+     "id": "4089026"
+    },
+    {
+     "rank": 6,
+     "name": "Loopy Godinez",
+     "id": "4700617"
+    },
+    {
+     "rank": 7,
+     "name": "Amanda Lemos",
+     "id": "4233196"
+    },
+    {
+     "rank": 8,
+     "name": "Tabatha Ricci",
+     "id": "4868095"
+    },
+    {
+     "rank": 9,
+     "name": "Jéssica Andrade",
+     "id": "3024395"
+    },
+    {
+     "rank": 10,
+     "name": "Amanda Ribas",
+     "id": "4221863"
+    },
+    {
+     "rank": 11,
+     "name": "Fatima Kline",
+     "id": "5028019"
+    },
+    {
+     "rank": 12,
+     "name": "Angela Hill",
+     "id": "3115931"
+    },
+    {
+     "rank": 13,
+     "name": "Denise Gomes",
+     "id": "4963343"
+    },
+    {
+     "rank": 14,
+     "name": "Alexia Thainara",
+     "id": "5075992"
+    },
+    {
+     "rank": 15,
+     "name": "Mizuki",
+     "id": "3027998"
+    }
+   ]
+  },
+  {
+   "name": "Women&#039;s Flyweight",
+   "p4p": false,
+   "champion": {
+    "name": "Valentina Shevchenko",
+    "id": "2554705"
+   },
+   "ranks": [
+    {
+     "rank": 1,
+     "name": "Natalia Silva",
+     "id": "4054605"
+    },
+    {
+     "rank": 2,
+     "name": "Manon Fiorot",
+     "id": "4608674"
+    },
+    {
+     "rank": 3,
+     "name": "Alexa Grasso",
+     "id": "3136287"
+    },
+    {
+     "rank": 4,
+     "name": "Erin Blanchfield",
+     "id": "4350796"
+    },
+    {
+     "rank": 5,
+     "name": "Rose Namajunas",
+     "id": "3032973"
+    },
+    {
+     "rank": 6,
+     "name": "Maycee Barber",
+     "id": "4246307"
+    },
+    {
+     "rank": 7,
+     "name": "Jasmine Jasudavicius",
+     "id": "4835135"
+    },
+    {
+     "rank": 8,
+     "name": "Tracy Cortez",
+     "id": "4243624"
+    },
+    {
+     "rank": 9,
+     "name": "Miranda Maverick",
+     "id": "4065598"
+    },
+    {
+     "rank": 10,
+     "name": "Karine Silva",
+     "id": "3309918"
+    },
+    {
+     "rank": 11,
+     "name": "Casey O&#039;Neill",
+     "id": "4699589"
+    },
+    {
+     "rank": 12,
+     "name": "Wang Cong",
+     "id": "4215200"
+    },
+    {
+     "rank": 13,
+     "name": "Eduarda Moura",
+     "id": "5143888"
+    },
+    {
+     "rank": 14,
+     "name": "JJ Aldrich",
+     "id": "3136289"
+    },
+    {
+     "rank": 15,
+     "name": "Gabriella Fernandes",
+     "id": "4871203"
+    }
+   ]
+  },
+  {
+   "name": "Women&#039;s Bantamweight",
+   "p4p": false,
+   "champion": {
+    "name": "Kayla Harrison",
+    "id": "4332765"
+   },
+   "ranks": [
+    {
+     "rank": 1,
+     "name": "Julianna Peña",
+     "id": "2951361"
+    },
+    {
+     "rank": 2,
+     "name": "Raquel Pennington",
+     "id": "2995167"
+    },
+    {
+     "rank": 3,
+     "name": "Joselyne Edwards",
+     "id": "4397782"
+    },
+    {
+     "rank": 4,
+     "name": "Norma Dumont",
+     "id": "4418784"
+    },
+    {
+     "rank": 5,
+     "name": "Ailin Perez",
+     "id": "5075333"
+    },
+    {
+     "rank": 6,
+     "name": "Yana Santos",
+     "id": "3154898"
+    },
+    {
+     "rank": 7,
+     "name": "Irene Aldana",
+     "id": "3136286"
+    },
+    {
+     "rank": 8,
+     "name": "Macy Chiasson",
+     "id": "4334306"
+    },
+    {
+     "rank": 9,
+     "name": "Luana Santos",
+     "id": "5110469"
+    },
+    {
+     "rank": 10,
+     "name": "Jacqueline Cavalcanti",
+     "id": "4916251"
+    },
+    {
+     "rank": 11,
+     "name": "Karol Rosa",
+     "id": "4292349"
+    },
+    {
+     "rank": 12,
+     "name": "Bia Mesquita",
+     "id": "5310274"
+    },
+    {
+     "rank": 13,
+     "name": "Nora Cornolle",
+     "id": "4916974"
+    },
+    {
+     "rank": 14,
+     "name": "Michelle Montague",
+     "id": "4916259"
+    },
+    {
+     "rank": 15,
+     "name": "Miesha Tate",
+     "id": "2553021"
+    }
+   ]
+  }
+ ]
+}
