@@ -2,16 +2,16 @@
 
 import { useRef, useState } from "react";
 
-// Rating-history line: single series (no legend — the section title names it), 2px line,
-// recessive 1500 baseline, endpoint dot + value label, crosshair tooltip on hover.
+// Rating-history line: single series, recessive 1500 baseline, endpoint label,
+// and a crosshair tooltip on hover or keyboard focus.
 export default function RatingChart({ points }: { points: [number, number][] }) {
   const [hover, setHover] = useState<number | null>(null);
   const ref = useRef<SVGSVGElement>(null);
   if (points.length < 2) return null;
 
   const W = 640;
-  const H = 140;
-  const PAD = { l: 8, r: 56, t: 12, b: 16 };
+  const H = 200;
+  const PAD = { l: 42, r: 28, t: 26, b: 34 };
   const days = points.map((p) => p[0]);
   const ratings = points.map((p) => p[1]);
   const x0 = Math.min(...days);
@@ -25,14 +25,18 @@ export default function RatingChart({ points }: { points: [number, number][] }) 
   const hovered = hover !== null ? points[hover] : null;
   const fmt = (day: number) =>
     new Date(day * 864e5).toLocaleDateString("en-US", { month: "short", year: "numeric", timeZone: "UTC" });
+  const yTicks = [hi, Math.round((hi + lo) / 2), lo];
 
   return (
     <svg
       ref={ref}
       viewBox={`0 0 ${W} ${H}`}
-      className="w-full"
+      className="w-full rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
       role="img"
-      aria-label="Rating history"
+      aria-label={`Elo rating history from ${fmt(x0)} to ${fmt(x1)}`}
+      tabIndex={0}
+      onFocus={() => setHover(points.length - 1)}
+      onBlur={() => setHover(null)}
       onMouseLeave={() => setHover(null)}
       onMouseMove={(e) => {
         const rect = ref.current?.getBoundingClientRect();
@@ -45,11 +49,34 @@ export default function RatingChart({ points }: { points: [number, number][] }) 
         setHover(best);
       }}
     >
+      <title>Elo rating history</title>
+      <defs>
+        <linearGradient id="rating-line" x1="0" x2="1">
+          <stop offset="0" stopColor="var(--blue-corner)" />
+          <stop offset="0.58" stopColor="var(--red-corner)" />
+          <stop offset="1" stopColor="var(--red-corner)" />
+        </linearGradient>
+      </defs>
+      {yTicks.map((tick) => (
+        <g key={tick}>
+          <line
+            x1={PAD.l}
+            x2={W - PAD.r}
+            y1={Y(tick)}
+            y2={Y(tick)}
+            stroke="var(--hairline)"
+            strokeWidth="1"
+          />
+          <text x={PAD.l - 8} y={Y(tick) + 3} fontSize="9" fill="var(--muted)" textAnchor="end">
+            {tick}
+          </text>
+        </g>
+      ))}
       <line x1={PAD.l} x2={W - PAD.r} y1={Y(1500)} y2={Y(1500)} stroke="var(--line)" strokeWidth="1" strokeDasharray="3 4" />
-      <text x={W - PAD.r + 6} y={Y(1500) + 3} fontSize="10" fill="var(--muted)">
-        1500
+      <text x={W - PAD.r - 4} y={Y(1500) - 5} fontSize="9" fill="var(--muted)" textAnchor="end">
+        BASE 1500
       </text>
-      <path d={path} fill="none" stroke="var(--red-corner)" strokeWidth="2" strokeLinejoin="round" />
+      <path d={path} fill="none" stroke="url(#rating-line)" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
       <circle cx={X(last[0])} cy={Y(last[1])} r="3.5" fill="var(--red-corner)" />
       {!hovered && (
         <text x={X(last[0]) + 8} y={Y(last[1]) + 4} fontSize="12" fill="var(--text)" fontWeight="700">
@@ -71,6 +98,18 @@ export default function RatingChart({ points }: { points: [number, number][] }) 
           </text>
         </g>
       )}
+      <text x={PAD.l} y={H - 8} fontSize="9" fill="var(--muted)">
+        {fmt(x0)}
+      </text>
+      <text x={W - PAD.r} y={H - 8} fontSize="9" fill="var(--muted)" textAnchor="end">
+        {fmt(x1)}
+      </text>
+      <text x={PAD.l} y={10} fontSize="8" fill="var(--muted)" letterSpacing="1.4">
+        ELO RATING
+      </text>
+      <text x={(PAD.l + W - PAD.r) / 2} y={H - 8} fontSize="8" fill="var(--muted)" textAnchor="middle" letterSpacing="1.2">
+        FIGHT DATE
+      </text>
     </svg>
   );
 }

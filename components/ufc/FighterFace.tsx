@@ -23,31 +23,42 @@ export default function FighterFace({
     .map((w) => w[0])
     .slice(0, 2)
     .join("");
-  const ring = tone === "red" ? "bg-red/35" : tone === "blue" ? "bg-blue/35" : "bg-line";
+  const ring =
+    tone === "red"
+      ? "bg-gradient-to-br from-red via-red/45 to-line shadow-[0_16px_44px_-22px_rgba(239,68,68,0.8)]"
+      : tone === "blue"
+        ? "bg-gradient-to-br from-blue via-blue/45 to-line shadow-[0_16px_44px_-22px_rgba(59,130,246,0.8)]"
+        : "bg-gradient-to-br from-zinc-500/60 via-line to-zinc-800";
 
   return (
-    <div className={`octagon shrink-0 ${ring} p-[2px]`} style={{ width: size, height: size }}>
-      <div className="octagon flex h-full w-full items-end justify-center overflow-hidden bg-panel2 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-        {src && !broken ? (
-          <img
-            src={src}
-            alt={name ?? ""}
-            width={size}
-            height={size}
-            className="h-full w-full object-cover object-top"
-            onError={() => setBroken(true)}
-            ref={(el) => {
-              if (el?.complete && el.naturalWidth === 0) setBroken(true);
-            }}
-          />
-        ) : (
-          <span
-            className="display font-bold text-muted flex h-full w-full items-center justify-center"
-            style={{ fontSize: size * 0.34 }}
-          >
-            {initials}
-          </span>
-        )}
+    <div className="relative isolate shrink-0" style={{ width: size, height: size }}>
+      <div
+        aria-hidden="true"
+        className={`octagon absolute -inset-[5px] -z-10 opacity-20 ${ring}`}
+      />
+      <div className={`octagon h-full w-full ${ring} p-[2px]`}>
+        <div className="octagon flex h-full w-full items-end justify-center overflow-hidden bg-panel2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-24px_40px_-34px_rgba(0,0,0,0.9)]">
+          {src && !broken ? (
+            <img
+              src={src}
+              alt={name ?? ""}
+              width={size}
+              height={size}
+              className="h-full w-full object-cover object-top"
+              onError={() => setBroken(true)}
+              ref={(el) => {
+                if (el?.complete && el.naturalWidth === 0) setBroken(true);
+              }}
+            />
+          ) : (
+            <span
+              className="display flex h-full w-full items-center justify-center font-bold text-muted"
+              style={{ fontSize: size * 0.34 }}
+            >
+              {initials}
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );
