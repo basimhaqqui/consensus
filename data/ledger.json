@@ -395,6 +395,19 @@
         "detail": "AET",
         "gradedAt": "2026-07-12T04:03:57.287Z"
       }
+    },
+    {
+      "id": "sf-1",
+      "kickoffISO": "2026-07-14T19:00Z",
+      "home": "FRA",
+      "away": "ESP",
+      "venue": "Arlington, Texas",
+      "forecasts": {
+        "model": 0.4552,
+        "blend": 0.5114,
+        "market": 0.5447
+      },
+      "capturedAt": "2026-07-14T16:35:15.575Z"
     }
   ]
 }
