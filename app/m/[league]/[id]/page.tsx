@@ -11,6 +11,7 @@ import { BallIcon } from "@/components/PlayerMarkers";
 import TeamStats from "@/components/TeamStats";
 import RecentMeetings from "@/components/RecentMeetings";
 import CompetitionNav from "@/components/CompetitionNav";
+import Footer from "@/components/Footer";
 
 export const dynamic = "force-dynamic";
 
@@ -57,11 +58,11 @@ export default async function LeagueMatchPage({
   }
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 pb-20">
-      <header className="pt-6 pb-4 flex items-center justify-between">
+    <main className="site-shell site-shell--match">
+      <header className="site-topbar">
         <Link
           href={`/league/${league}`}
-          className="text-[11px] uppercase tracking-wider text-muted hover:text-text"
+          className="back-link"
         >
           ← {comp?.name ?? "Scores"}
         </Link>
@@ -69,7 +70,7 @@ export default async function LeagueMatchPage({
       </header>
 
       {/* scoreline */}
-      <div className="rounded-xl border border-line bg-panel/70 p-5 card-shadow">
+      <div className="terminal-panel blueprint-surface mt-8 p-5">
         <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4">
           <Side name={detail.home.name} logo={detail.home.logo} align="right" />
           <div className="text-center">
@@ -128,7 +129,7 @@ export default async function LeagueMatchPage({
       </div>
 
       {outcome && (
-        <section className="mt-5 rounded-xl border border-line bg-panel/50 p-4 card-shadow">
+        <section className="terminal-panel mt-5 p-4">
           <h2 className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-3">
             Model forecast · form-based
           </h2>
@@ -181,13 +182,13 @@ export default async function LeagueMatchPage({
       )}
 
       <section className="mt-5">
-        <h2 className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-3">
-          Lineups
-        </h2>
+        <div className="section-heading" data-index="03">
+          <h2>Lineups</h2>
+        </div>
         {haveLineups ? (
           <Lineups squads={squads} status={detail.status} />
         ) : (
-          <div className="rounded-xl border border-line bg-panel/50 p-6 text-center text-sm text-muted">
+          <div className="terminal-empty p-6 text-center text-sm">
             Lineups not announced yet — they typically drop about an hour
             before kickoff.
           </div>
@@ -195,7 +196,8 @@ export default async function LeagueMatchPage({
       </section>
 
       <RecentMeetings games={detail.h2h} />
-    </div>
+      <Footer />
+    </main>
   );
 }
 

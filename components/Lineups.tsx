@@ -24,8 +24,8 @@ export default function Lineups({
 
   return (
     <div>
-      <div className="rounded-xl border border-line bg-panel/60 overflow-hidden card-shadow">
-        <div className="relative flex items-center justify-between gap-3 px-4 py-2.5 border-b border-line bg-panel2/60">
+      <div className="terminal-panel">
+        <div className="terminal-panel-header relative flex items-center justify-between gap-3 px-4 py-2.5">
           <TeamTag sq={home} />
           {predicted ? (
             <span className="absolute left-1/2 -translate-x-1/2 rounded-full border border-amber-400/40 bg-amber-400/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-amber-300 whitespace-nowrap">
@@ -130,8 +130,8 @@ function Bench({
   if (bench.length === 0) return null;
 
   return (
-    <div className="rounded-xl border border-line bg-panel/60 overflow-hidden card-shadow">
-      <div className="flex items-center gap-2 px-4 py-2 border-b border-line bg-panel2/60">
+    <div className="terminal-panel">
+      <div className="terminal-panel-header flex items-center gap-2 px-4 py-2">
         <Crest teamKey={sq.key} src={sq.logo} code={sq.abbr} size={18} />
         <span className="text-sm font-semibold truncate">{sq.name}</span>
         <span className="ml-auto text-[10px] uppercase tracking-wider text-muted">
@@ -144,7 +144,7 @@ function Bench({
             key={(p.id ?? p.name) + p.pos}
             type="button"
             onClick={() => onSelect(p)}
-            className="flex w-full items-center gap-2.5 py-1.5 text-left group"
+            className="group flex w-full items-center gap-2.5 rounded px-1 py-1.5 text-left hover:bg-white/[0.025]"
           >
             <span className="w-4 shrink-0 text-right text-[10px] tabnums text-muted">
               {p.jersey}

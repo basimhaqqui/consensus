@@ -31,19 +31,19 @@ export default function MarketBoard({
   }
 
   return (
-    <section className="mt-5 rounded-xl border border-line bg-panel/50 p-4">
-      <div className="mb-3 flex items-baseline justify-between gap-3">
-        <h2 className="text-[10px] uppercase tracking-[0.2em] text-zinc-400">
+    <section className="terminal-panel mt-5 p-4">
+      <div className="section-heading mb-4" data-index="03">
+        <h2>
           Markets — model fair prices
         </h2>
-        <span className="text-[10px] text-zinc-600">
+        <span className="hidden text-[10px] text-zinc-600 sm:inline">
           90&apos; markets · no margin — compare to your book
         </span>
       </div>
-      <div className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
+      <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
         {[...groups.entries()].map(([name, ls]) => (
           <div key={name}>
-            <div className="mb-1 text-[10px] uppercase tracking-wider text-zinc-600">
+            <div className="mb-1.5 text-[9px] uppercase tracking-[0.16em] text-zinc-600">
               {name}
             </div>
             <div className="divide-y divide-line/50">
@@ -52,7 +52,7 @@ export default function MarketBoard({
                 return (
                   <div
                     key={l.key}
-                    className="flex items-baseline justify-between gap-2 py-1 text-xs"
+                    className="flex items-baseline justify-between gap-2 py-1.5 text-xs transition-colors hover:bg-white/[0.018]"
                   >
                     <span className="text-zinc-300">{l.label}</span>
                     <span className="tabnums text-muted">

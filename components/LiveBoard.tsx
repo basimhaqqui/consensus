@@ -87,7 +87,7 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
     <>
       {/* source toggle + live status */}
       <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-        <div className="inline-flex rounded-lg border border-line bg-panel2/60 p-0.5 text-[11px] uppercase tracking-wider">
+        <div className="segmented-control inline-flex p-0.5 text-[9px] uppercase tracking-[0.14em]">
           <Toggle active={source === "blend"} onClick={() => setSource("blend")}>
             Consensus
           </Toggle>
@@ -101,7 +101,7 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
         <div className="flex items-center gap-2 text-[11px] uppercase tracking-wider text-muted">
           <span
             className={`inline-block w-1.5 h-1.5 rounded-full ${
-              data.live ? "bg-accent animate-pulse" : "bg-danger"
+              data.live ? "signal-dot" : "bg-danger"
             }`}
           />
           {data.live ? "Live · ESPN" : "Feed offline"}
@@ -120,7 +120,7 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
       </p>
 
       {/* KPI strip */}
-      <div className="mt-3 grid grid-cols-2 sm:grid-cols-4 gap-px bg-line rounded-lg overflow-hidden border border-line card-shadow">
+      <div className="terminal-kpi-grid mt-3 grid grid-cols-2 gap-px sm:grid-cols-4">
         <Kpi label="Stage" value={stage[1]} sub={stage[2]} />
         <Kpi
           label="Top seed alive"
@@ -196,8 +196,10 @@ function Toggle({
   return (
     <button
       onClick={onClick}
-      className={`px-3 py-1 rounded-md transition-colors ${
-        active ? "bg-accent/15 text-accent" : "text-muted hover:text-text"
+      className={`rounded-[6px] px-3 py-1.5 transition-colors ${
+        active
+          ? "bg-accent/12 text-accent shadow-[inset_0_0_0_1px_rgba(52,211,153,0.16)]"
+          : "text-muted hover:bg-white/[0.035] hover:text-text"
       }`}
     >
       {children}
@@ -213,7 +215,7 @@ function Grid({ children }: { children: React.ReactNode }) {
 
 function Kpi({ label, value, sub }: { label: string; value: string; sub: string }) {
   return (
-    <div className="bg-panel px-4 py-3">
+    <div className="terminal-kpi px-4 py-3">
       <div className="text-[10px] uppercase tracking-wider text-muted">{label}</div>
       <div className="mt-0.5 text-lg font-semibold tabnums">{value}</div>
       <div className="text-[10px] text-muted tabnums">{sub}</div>
@@ -232,18 +234,25 @@ function Section({
   accent?: boolean;
   children: React.ReactNode;
 }) {
+  const index = title.startsWith("●")
+    ? "01"
+    : title.startsWith("TITLE")
+      ? "02"
+      : title === "UPCOMING"
+        ? "03"
+        : "04";
   return (
     <section className="mt-8 fade-up">
-      <div className="mb-3 flex items-center gap-3">
+      <div
+        className={`section-heading ${accent ? "section-heading--live" : ""}`}
+        data-index={index}
+      >
         <h2
-          className={`text-[11px] uppercase tracking-[0.2em] ${
-            accent ? "text-accent" : "text-zinc-400"
-          }`}
+          className={accent ? "text-accent" : undefined}
         >
           {title}
         </h2>
         <span className="text-[11px] text-muted">[{count}]</span>
-        <span className="flex-1 h-px bg-line" />
       </div>
       {children}
     </section>

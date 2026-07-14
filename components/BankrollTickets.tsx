@@ -35,7 +35,7 @@ function Ticket({ b }: { b: TicketBet }) {
   return (
     <button
       onClick={() => setOpen(!open)}
-      className="w-full text-left rounded-xl border border-line bg-panel card-shadow overflow-hidden transition-colors hover:border-zinc-500"
+      className="terminal-panel terminal-panel--interactive w-full text-left"
     >
       <div className="flex items-stretch">
         <div className={`w-1 shrink-0 ${stripe}`} />

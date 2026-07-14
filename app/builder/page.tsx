@@ -47,20 +47,21 @@ export default async function BuilderPage() {
   );
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 sm:px-6 pb-20">
-      <header className="pt-8 pb-5 border-b border-line">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
-            <span className="text-accent">▸</span> Bet Builder
-          </h1>
+    <main className="site-shell site-shell--match">
+      <header className="site-header">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <div className="site-kicker">03 / Model workspace</div>
+            <h1 className="site-title site-title--small">Bet Builder</h1>
+          </div>
           <Link
             href="/wc"
-            className="text-[11px] uppercase tracking-wider text-muted hover:text-text"
+            className="back-link"
           >
             ← Terminal
           </Link>
         </div>
-        <p className="mt-2 text-sm text-muted max-w-2xl">
+        <p className="site-subtitle">
           Build a slip across the remaining World Cup matches and see what it&apos;s
           actually worth. Fair odds come straight from the Consensus model — and
           same-match combos are priced off the joint score distribution, where
@@ -70,7 +71,7 @@ export default async function BuilderPage() {
 
       <div className="mt-6">
         {upcoming.length === 0 ? (
-          <div className="rounded-xl border border-line bg-panel/50 p-8 text-center text-sm text-muted">
+          <div className="terminal-empty p-8 text-center text-sm">
             No upcoming matches to build with right now.
           </div>
         ) : (
@@ -79,6 +80,6 @@ export default async function BuilderPage() {
       </div>
 
       <Footer />
-    </div>
+    </main>
   );
 }

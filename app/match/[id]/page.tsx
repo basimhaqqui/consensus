@@ -15,6 +15,7 @@ import { fetchNews, newsFor } from "@/lib/news";
 import { briefFor } from "@/lib/briefs";
 import { matchProps } from "@/lib/props";
 import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 export const dynamic = "force-dynamic";
 
@@ -93,11 +94,11 @@ export default async function MatchPage({
 
 
   return (
-    <div className="mx-auto w-full max-w-4xl px-4 sm:px-6 pb-20">
-      <header className="pt-6 pb-4 flex items-center justify-between">
+    <main className="site-shell site-shell--match">
+      <header className="site-topbar">
         <Link
           href="/wc"
-          className="text-[11px] uppercase tracking-wider text-muted hover:text-text"
+          className="back-link"
         >
           ← Terminal
         </Link>
@@ -105,7 +106,7 @@ export default async function MatchPage({
       </header>
 
       {/* scoreline header — compact centered cluster, symmetric whitespace */}
-      <div className="rounded-xl border border-line bg-panel/70 px-5 pt-6 pb-4">
+      <div className="terminal-panel blueprint-surface mt-8 px-5 pb-4 pt-7">
         <div className="mx-auto w-full max-w-2xl">
           <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-x-3 sm:gap-x-7">
             <TeamHead
@@ -178,8 +179,8 @@ export default async function MatchPage({
 
       {/* events timeline */}
       {detail && detail.events.length > 0 && (live || decided) && (
-        <section className="mt-5 rounded-xl border border-line bg-panel/50 p-4">
-          <h2 className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-3">
+        <section className="terminal-panel mt-5 p-4">
+          <h2 className="mb-3 text-[10px] uppercase tracking-[0.2em] text-zinc-400">
             Timeline
           </h2>
           <MatchTimeline events={detail.events} />
@@ -187,7 +188,7 @@ export default async function MatchPage({
       )}
 
       {/* win probability — kickoff vs now */}
-      <section className="mt-5 rounded-xl border border-line bg-panel/50 p-4">
+      <section className="terminal-panel mt-5 p-4">
         <h2 className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-3">
           Win probability
         </h2>
@@ -267,13 +268,13 @@ export default async function MatchPage({
 
       {/* lineups */}
       <section className="mt-5">
-        <h2 className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-3">
-          Lineups
-        </h2>
+        <div className="section-heading" data-index="04">
+          <h2>Lineups</h2>
+        </div>
         {haveLineups ? (
           <Lineups squads={squads} status={detail?.status} />
         ) : (
-          <div className="rounded-xl border border-line bg-panel/50 p-6 text-center text-sm text-muted">
+          <div className="terminal-empty p-6 text-center text-sm">
             Lineups not announced yet — they typically post about an hour before
             kickoff. Check back closer to the match.
           </div>
@@ -285,13 +286,10 @@ export default async function MatchPage({
 
       {brief && (
         <section className="mt-10">
-          <div className="mb-3 flex items-center gap-3">
-            <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
-              Briefing
-            </h2>
-            <div className="h-px flex-1 bg-line" />
+          <div className="section-heading" data-index="06">
+            <h2>Briefing</h2>
           </div>
-          <div className="rounded-xl border border-line bg-panel card-shadow p-4 text-sm leading-relaxed text-zinc-200">
+          <div className="terminal-panel p-4 text-sm leading-relaxed text-zinc-200">
             <p>{brief.text}</p>
             {brief.sources.length > 0 && (
               <p className="mt-2 text-[11px] text-muted">
@@ -314,7 +312,8 @@ export default async function MatchPage({
       )}
 
       <NewsPanel items={news} title="In the news" limit={3} />
-    </div>
+      <Footer />
+    </main>
   );
 }
 
@@ -464,4 +463,3 @@ function Stat({ label, value }: { label: string; value: string }) {
     </div>
   );
 }
-

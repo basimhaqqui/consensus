@@ -39,9 +39,9 @@ export default function LeagueProjection({
   const grid = { gridTemplateColumns: cols.join(" ") };
 
   return (
-    <div className="rounded-xl border border-line bg-panel/70 overflow-hidden card-shadow">
+    <div className="terminal-panel">
       <div
-        className="grid gap-2 px-4 py-2 border-b border-line bg-panel2/60 text-[10px] uppercase tracking-wider text-muted"
+        className="terminal-panel-header grid gap-2 px-4 py-2 text-[9px] uppercase tracking-[0.14em] text-muted"
         style={grid}
       >
         <span>Team</span>
@@ -56,7 +56,7 @@ export default function LeagueProjection({
         {rows.map((r, i) => (
           <div
             key={r.abbr}
-            className="grid gap-2 px-4 py-1.5 items-center text-sm hover:bg-panel2/40"
+            className="grid items-center gap-2 px-4 py-2 text-sm transition-colors hover:bg-white/[0.025]"
             style={grid}
           >
             <div className="flex items-center gap-2 min-w-0">

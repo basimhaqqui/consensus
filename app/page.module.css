@@ -1,7 +1,7 @@
 .shell {
-  --landing-hairline: rgba(125, 136, 150, 0.17);
-  --landing-hairline-strong: rgba(125, 136, 150, 0.32);
-  --landing-surface: rgba(13, 18, 25, 0.82);
+  --landing-hairline: var(--hairline);
+  --landing-hairline-strong: var(--hairline-strong);
+  --landing-surface: var(--surface);
   position: relative;
   isolation: isolate;
   width: 100%;

@@ -138,7 +138,7 @@ export function PitchDuo({
 
   return (
     <div
-      className={`relative w-full ${shape} rounded-xl border border-line overflow-hidden card-shadow`}
+      className={`blueprint-surface relative w-full ${shape} overflow-hidden rounded-xl border border-[var(--hairline-strong)] shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_22px_46px_-34px_rgba(0,0,0,0.95)]`}
       style={{
         background: `repeating-linear-gradient(${
           orient === "h" ? "90deg" : "0deg"

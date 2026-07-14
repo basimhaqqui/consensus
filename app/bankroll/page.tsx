@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import bankrollFile from "../../data/bankroll.json";
 import BankrollTickets, { type TicketBet } from "@/components/BankrollTickets";
+import Footer from "@/components/Footer";
 
 export const dynamic = "force-dynamic";
 
@@ -39,20 +40,19 @@ export default async function BankrollPage({
   const progress = Math.min(1, Math.max(0, equity / target));
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 pb-20">
-      <header className="pt-8 pb-5 border-b border-line flex items-end justify-between gap-3">
+    <main className="site-shell site-shell--compact">
+      <header className="site-header flex items-end justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">
-            <span className="text-accent">▸</span> Model Bankroll
-          </h1>
-          <p className="mt-1 text-xs text-muted">
+          <div className="site-kicker">04 / Private ledger</div>
+          <h1 className="site-title site-title--small">Model Bankroll</h1>
+          <p className="site-subtitle max-w-2xl text-xs">
             ${s.start.toLocaleString()} paper stake · aim: at least ${target.toLocaleString()}, no
             deadline · full-Kelly staking, full market menu · settles on 90&apos; data
           </p>
         </div>
         <Link
           href="/wc"
-          className="text-[11px] uppercase tracking-wider text-muted hover:text-text"
+          className="back-link shrink-0"
         >
           ← Terminal
         </Link>
@@ -63,7 +63,7 @@ export default async function BankrollPage({
           <span>Progress to ${target.toLocaleString()}</span>
           <span className="tabnums">{(progress * 100).toFixed(1)}%</span>
         </div>
-        <div className="h-2 rounded-full bg-zinc-800 overflow-hidden border border-line">
+        <div className="h-2 overflow-hidden rounded-full border border-[var(--hairline)] bg-black/40 shadow-[inset_0_1px_5px_rgba(0,0,0,0.6)]">
           <div
             className={`h-full ${equity >= s.start ? "bg-accent" : "bg-danger"}`}
             style={{ width: `${Math.max(1, progress * 100)}%` }}
@@ -71,14 +71,14 @@ export default async function BankrollPage({
         </div>
       </div>
 
-      <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-px bg-line rounded-lg overflow-hidden border border-line card-shadow">
+      <div className="terminal-kpi-grid mt-4 grid grid-cols-2 gap-px sm:grid-cols-4">
         {[
           ["Equity", `$${equity.toFixed(2)}`, pnl >= 0 ? "text-accent" : "text-danger"],
           ["P/L", `${pnl >= 0 ? "+" : "−"}$${Math.abs(pnl).toFixed(2)}`, pnl >= 0 ? "text-accent" : "text-danger"],
           ["At risk → returns", `$${exposure.toFixed(0)} → $${potential.toFixed(0)}`, "text-text"],
           ["Record", settled.length ? `${wins}–${settled.length - wins}` : "—", "text-text"],
         ].map(([label, value, cls]) => (
-          <div key={label as string} className="bg-panel px-4 py-3">
+          <div key={label as string} className="terminal-kpi px-4 py-3">
             <div className="text-[10px] uppercase tracking-wider text-muted">{label}</div>
             <div className={`mt-0.5 text-lg font-bold tabnums ${cls}`}>{value}</div>
           </div>
@@ -86,29 +86,27 @@ export default async function BankrollPage({
       </div>
 
       <section className="mt-8">
-        <div className="mb-3 flex items-center gap-3">
-          <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+        <div className="section-heading" data-index="01">
+          <h2>
             Open tickets {open.length > 0 && <span className="text-accent">[{open.length}]</span>}
           </h2>
-          <span className="text-[10px] text-zinc-600">tap a ticket for the reasoning</span>
-          <span className="h-px flex-1 bg-line" />
+          <span className="hidden text-[10px] text-zinc-600 sm:inline">tap a ticket for the reasoning</span>
         </div>
         <BankrollTickets bets={open} />
       </section>
 
       <section className="mt-8">
-        <div className="mb-3 flex items-center gap-3">
-          <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">Settled</h2>
-          <span className="h-px flex-1 bg-line" />
+        <div className="section-heading" data-index="02">
+          <h2>Settled</h2>
         </div>
         <BankrollTickets bets={settled} />
       </section>
 
       <section className="mt-8">
-        <h2 className="mb-2 text-[11px] uppercase tracking-[0.2em] text-zinc-400">
-          Activity
-        </h2>
-        <div className="rounded-xl border border-line bg-panel/60 p-4 text-[11px] leading-relaxed text-muted space-y-1">
+        <div className="section-heading" data-index="03">
+          <h2>Activity</h2>
+        </div>
+        <div className="terminal-panel space-y-1 p-4 text-[11px] leading-relaxed text-muted">
           {s.log.slice(-12).reverse().map((l, i) => (
             <div key={i}>
               <span className="text-zinc-600">{l.at.slice(5, 16).replace("T", " ")}</span>{" "}
@@ -122,6 +120,7 @@ export default async function BankrollPage({
         Paper money. An experiment in whether the model&apos;s edges survive real
         prices — not betting advice.
       </p>
-    </div>
+      <Footer />
+    </main>
   );
 }

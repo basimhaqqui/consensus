@@ -71,13 +71,13 @@ export default function BracketView({ bracket }: { bracket: Bracket }) {
   }
 
   return (
-    <div className="w-full overflow-x-auto">
+    <div className="w-full overflow-x-auto pb-2">
       <div className="relative mx-auto" style={{ width: totalW, height: totalH }}>
         {/* column labels */}
         {COLS.map((c, i) => (
           <div
             key={c.round}
-            className="absolute top-0 text-[10px] uppercase tracking-[0.2em] text-zinc-400 text-center"
+            className="absolute top-0 text-center text-[9px] uppercase tracking-[0.18em] text-zinc-400"
             style={{ left: i * COL_W, width: BOX_W }}
           >
             {c.label}
@@ -88,7 +88,7 @@ export default function BracketView({ bracket }: { bracket: Bracket }) {
         {lines.map((l, i) => (
           <div
             key={i}
-            className="absolute bg-line"
+            className="absolute bg-[rgba(125,136,150,0.25)]"
             style={{ left: l.left, top: l.top, width: l.w, height: l.h }}
           />
         ))}
@@ -118,8 +118,8 @@ function Cell({ m }: { m: BracketMatch }) {
   const showScore = isLive || isFinal;
   return (
     <div
-      className={`rounded-md border bg-panel/80 overflow-hidden ${
-        isLive ? "border-accent/60" : "border-line"
+      className={`overflow-hidden rounded-md border bg-[rgba(10,14,20,0.94)] shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_8px_24px_-16px_rgba(0,0,0,0.9)] ${
+        isLive ? "border-accent/60" : "border-[var(--hairline)]"
       }`}
     >
       <SlotRow

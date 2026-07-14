@@ -26,9 +26,9 @@ export default function Standings({
       {groups.map((g) => (
         <div
           key={g.name}
-          className="rounded-xl border border-line bg-panel/60 overflow-hidden card-shadow"
+          className="terminal-panel"
         >
-          <div className="px-3 py-2 border-b border-line bg-panel2/60 text-[11px] uppercase tracking-wider text-zinc-400">
+          <div className="terminal-panel-header px-3 py-2 text-[9px] uppercase tracking-[0.16em] text-zinc-400">
             {g.name}
           </div>
           <table className="w-full text-xs">
@@ -55,7 +55,7 @@ export default function Standings({
                 return (
                   <tr
                     key={r.abbr + r.name}
-                    className="border-t border-line/50 tabnums"
+                    className="border-t border-line/50 tabnums transition-colors hover:bg-white/[0.018]"
                   >
                     <td className="py-1.5 pl-3 text-muted relative">
                       {barColor && (

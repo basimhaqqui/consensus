@@ -36,18 +36,18 @@ export default function MatchCard({ m }: { m: MatchView }) {
   return (
     <Link
       href={`/match/${m.id}`}
-      className={`block rounded-lg border bg-panel/80 backdrop-blur-sm overflow-hidden card-shadow lift ${
-        isLive ? "border-accent/60 shadow-[0_0_0_1px_rgba(52,211,153,0.25)]" : "border-line hover:border-zinc-500"
+      className={`terminal-panel terminal-panel--interactive block ${
+        isLive ? "border-accent/60 shadow-[0_0_0_1px_rgba(52,211,153,0.18)]" : ""
       }`}
     >
       {/* header */}
-      <div className="flex items-center justify-between px-4 py-2 border-b border-line bg-panel2/60 text-[11px] uppercase tracking-wider text-muted">
+      <div className="terminal-panel-header flex items-center justify-between px-4 py-2 text-[9px] uppercase tracking-[0.14em] text-muted">
         <span className="tabnums">
           {m.date} · {m.venue}
         </span>
         {isLive ? (
           <span className="flex items-center gap-1.5 text-accent font-semibold">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+            <span className="signal-dot" />
             LIVE {m.live?.clock ?? m.live?.detail}
           </span>
         ) : isFinal ? (
@@ -203,7 +203,7 @@ export default function MatchCard({ m }: { m: MatchView }) {
         })()}
 
       {/* footer metrics */}
-      <div className="mt-2 grid grid-cols-3 divide-x divide-line border-t border-line text-center">
+      <div className="mt-2 grid grid-cols-3 divide-x divide-[var(--hairline)] border-t border-[var(--hairline)] bg-black/10 text-center">
         <Metric
           label="XPECTED"
           value={`${o.lambdaHome.toFixed(1)}–${o.lambdaAway.toFixed(1)}`}

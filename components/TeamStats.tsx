@@ -43,7 +43,7 @@ export default function TeamStats({
   const rows = ROWS.filter((r) => home[r.key] !== undefined || away[r.key] !== undefined);
 
   return (
-    <section className="mt-5 rounded-xl border border-line bg-panel/50 p-4 card-shadow">
+    <section className="terminal-panel mt-5 p-4">
       <div className="flex items-center justify-between mb-3">
         <h2 className="text-[10px] uppercase tracking-[0.2em] text-zinc-400">
           Match stats

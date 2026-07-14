@@ -91,7 +91,7 @@ export default function PlayerCard({
       onClick={onClose}
     >
       <div
-        className="w-full max-w-sm max-h-[88vh] flex flex-col rounded-2xl border border-line bg-panel card-shadow overflow-hidden"
+        className="terminal-panel flex max-h-[88vh] w-full max-w-sm flex-col rounded-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         {/* header — the player's FUT card, blown up */}

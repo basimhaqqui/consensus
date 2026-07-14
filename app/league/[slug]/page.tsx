@@ -21,6 +21,7 @@ import CompetitionNav from "@/components/CompetitionNav";
 import Standings from "@/components/Standings";
 import LeagueProjection from "@/components/LeagueProjection";
 import AutoRefresh from "@/components/AutoRefresh";
+import Footer from "@/components/Footer";
 
 export const dynamic = "force-dynamic";
 
@@ -72,31 +73,37 @@ export default async function LeaguePage({
   }
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 sm:px-6 pb-20">
-      <header className="pt-8 pb-5 border-b border-line">
-        <div className="flex flex-wrap items-center justify-between gap-3">
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight flex items-center gap-2">
-            <span className="text-accent">▸</span> {comp.name}
-            {board?.season && (
-              <span className="text-muted font-normal text-base">
-                {board.season}
-              </span>
-            )}
-          </h1>
+    <main className="site-shell site-shell--compact">
+      <div className="site-topbar">
+        <span className="site-wordmark">
+          <span>▸</span> CONSENSUS
+        </span>
+        <CompetitionNav active={slug} />
+      </div>
+      <header className="site-header">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <div className="site-kicker">01 / Competition desk</div>
+            <h1 className="site-title site-title--small">
+              {comp.name}
+              {board?.season && (
+                <span className="site-title__meta">
+                  {board.season}
+                </span>
+              )}
+            </h1>
+          </div>
           <Link
             href="/"
-            className="text-[11px] uppercase tracking-wider text-muted hover:text-text"
+            className="back-link"
           >
             World Cup →
           </Link>
         </div>
-        <div className="mt-4">
-          <CompetitionNav active={slug} />
-        </div>
       </header>
 
       {matches.length === 0 ? (
-        <div className="mt-10 rounded-xl border border-line bg-panel/50 p-8 text-center text-sm text-muted">
+        <div className="terminal-empty mt-10 p-8 text-center text-sm">
           No fixtures available right now — this competition may be between
           seasons. Live scores appear here when it&apos;s in season.
         </div>
@@ -104,15 +111,14 @@ export default async function LeaguePage({
         <div className="mt-6 space-y-6">
           {[...groups.entries()].map(([day, ms]) => (
             <section key={day}>
-              <div className="mb-2 flex items-center gap-3">
-                <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+              <div className="section-heading" data-index="FX">
+                <h2>
                   {new Date(day + "T12:00:00Z").toLocaleDateString("en-US", {
                     weekday: "short",
                     month: "short",
                     day: "numeric",
                   })}
                 </h2>
-                <span className="flex-1 h-px bg-line" />
               </div>
               <div className="grid gap-2 sm:grid-cols-2">
                 {ms.map((m) => (
@@ -126,12 +132,11 @@ export default async function LeaguePage({
 
       {projection && (
         <section className="mt-10">
-          <div className="mb-3 flex items-center gap-3">
-            <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+          <div className="section-heading" data-index="02">
+            <h2>
               {projection.label}
             </h2>
             <AutoRefresh updatedAt={Date.now()} intervalMs={45_000} />
-            <span className="flex-1 h-px bg-line" />
           </div>
           <LeagueProjection
             rows={projection.rows}
@@ -145,11 +150,10 @@ export default async function LeaguePage({
 
       {confProjections.map((cp) => (
         <section key={cp.name} className="mt-10">
-          <div className="mb-3 flex items-center gap-3">
-            <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+          <div className="section-heading" data-index="02">
+            <h2>
               {cp.name} — projection
             </h2>
-            <span className="flex-1 h-px bg-line" />
           </div>
           <LeagueProjection
             rows={cp.rows}
@@ -163,16 +167,16 @@ export default async function LeaguePage({
 
       {standings && standings.length > 0 && (
         <section className="mt-10">
-          <div className="mb-3 flex items-center gap-3">
-            <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+          <div className="section-heading" data-index="03">
+            <h2>
               {standings.length > 1 ? "Groups" : "Table"}
             </h2>
-            <span className="flex-1 h-px bg-line" />
           </div>
           <Standings groups={standings} highlightTop={standings.length > 1 ? 2 : undefined} />
         </section>
       )}
-    </div>
+      <Footer />
+    </main>
   );
 }
 
@@ -316,8 +320,8 @@ function LeagueCard({
   return (
     <Link
       href={`/m/${slug}/${m.id}`}
-      className={`block rounded-lg border bg-panel/80 card-shadow lift p-3 ${
-        live ? "border-accent/60" : "border-line hover:border-zinc-500"
+      className={`terminal-panel terminal-panel--interactive block p-3 ${
+        live ? "border-accent/60" : ""
       }`}
     >
       <Row

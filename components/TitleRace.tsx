@@ -76,9 +76,9 @@ export default function TitleRace({ rows }: { rows: SimRow[] }) {
   } gap-2 px-4`;
 
   return (
-    <div className="rounded-lg border border-line bg-panel/70 overflow-hidden card-shadow">
+    <div className="terminal-panel">
       {/* header */}
-      <div className={`${grid} py-2 border-b border-line bg-panel2/60 text-[10px] uppercase tracking-wider text-muted`}>
+      <div className={`${grid} terminal-panel-header py-2 text-[9px] uppercase tracking-[0.14em] text-muted`}>
         <span>Team</span>
         <span className="hidden sm:block">Win title</span>
         {hasNext && <span className="hidden sm:block text-right">Next</span>}
@@ -96,7 +96,7 @@ export default function TitleRace({ rows }: { rows: SimRow[] }) {
             <button
               type="button"
               onClick={() => setOpen(open === r.key ? null : r.key)}
-              className={`${grid} w-full py-1.5 items-center text-left text-sm hover:bg-panel2/40`}
+              className={`${grid} w-full items-center py-2 text-left text-sm transition-colors hover:bg-white/[0.025]`}
             >
               {/* team */}
               <div className="flex items-center gap-2 min-w-0">

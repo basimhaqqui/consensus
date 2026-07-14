@@ -22,24 +22,25 @@ export default async function WorldCup() {
   const initial = { ...boards, updatedAt: new Date().toISOString() };
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 pb-20">
-      <div className="pt-5 flex items-center justify-between gap-3">
+    <main className="site-shell">
+      <div className="site-topbar">
         <Link
           href="/"
-          className="text-sm font-bold tracking-tight flex items-center gap-1.5 shrink-0"
+          className="site-wordmark"
         >
           <span className="text-accent">▸</span> CONSENSUS
         </Link>
         <CompetitionNav active="fifa.world" />
       </div>
 
-      <header className="pt-4 pb-2 border-b border-line">
-        <div className="flex flex-wrap items-end justify-between gap-3">
+      <header className="site-header pb-5">
+        <div className="flex flex-wrap items-end justify-between gap-5">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">
+            <div className="site-kicker">01 / Tournament command</div>
+            <h1 className="site-title">
               2026 World Cup
             </h1>
-            <p className="mt-1 text-sm text-muted max-w-xl">
+            <p className="site-subtitle">
               Live scores plus our own model — win probability, to-advance odds,
               expected scoreline — for every knockout match, with a tournament
               simulator and bracket.
@@ -48,7 +49,7 @@ export default async function WorldCup() {
           <div className="flex items-center gap-3">
             <Link
               href="/builder"
-              className="rounded-md border border-accent/40 bg-accent/10 px-2.5 py-1 text-[11px] uppercase tracking-wider text-accent hover:bg-accent/20"
+              className="rounded-[7px] border border-accent/40 bg-accent/10 px-3 py-1.5 text-[9px] uppercase tracking-[0.14em] text-accent shadow-[0_12px_30px_-18px_rgba(52,211,153,0.7)] hover:-translate-y-0.5 hover:border-accent/70 hover:bg-accent/15"
             >
               Bet builder
             </Link>
@@ -64,11 +65,10 @@ export default async function WorldCup() {
 
       {groups && groups.length > 0 && (
         <section className="mt-10">
-          <div className="mb-3 flex items-center gap-3">
-            <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+          <div className="section-heading" data-index="02">
+            <h2>
               Group stage — final standings
             </h2>
-            <span className="flex-1 h-px bg-line" />
           </div>
           <Standings groups={groups} highlightTop={2} />
         </section>
@@ -78,8 +78,8 @@ export default async function WorldCup() {
 
       <LedgerPanel />
 
-      <section className="mt-12 rounded-lg border border-line bg-panel/60 p-5 text-xs text-muted leading-relaxed">
-        <h2 className="text-[11px] uppercase tracking-wider text-zinc-400 mb-2">
+      <section className="terminal-panel mt-12 p-5 text-xs leading-relaxed text-muted">
+        <h2 className="mb-2 text-[10px] uppercase tracking-[0.18em] text-zinc-400">
           Methodology
         </h2>
         <p>
@@ -101,7 +101,7 @@ export default async function WorldCup() {
       </section>
 
       <Footer />
-    </div>
+    </main>
   );
 }
 
@@ -125,14 +125,13 @@ function LedgerPanel() {
     );
   return (
     <section className="mt-10">
-      <div className="mb-3 flex items-center gap-3">
-        <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+      <div className="section-heading" data-index="04">
+        <h2>
           Prediction ledger — graded pre-match forecasts
         </h2>
         <span className="text-[11px] text-muted">[{s.graded}]</span>
-        <span className="flex-1 h-px bg-line" />
       </div>
-      <div className="rounded-lg border border-line bg-panel/60 p-5 text-xs text-muted space-y-1.5">
+      <div className="terminal-panel space-y-1.5 p-5 text-xs text-muted">
         {row("Consensus", s.blend)}
         {row("Our model", s.model)}
         {row("Books", s.market)}

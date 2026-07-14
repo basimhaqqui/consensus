@@ -103,18 +103,17 @@ export default function BetBuilder({
     <div className="space-y-6">
       {suggestions.length > 0 && (
         <section>
-          <div className="mb-3 flex items-center gap-3">
-            <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+          <div className="section-heading" data-index="01">
+            <h2>
               Suggested slips — what the model likes
             </h2>
-            <div className="h-px flex-1 bg-line" />
           </div>
           <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {suggestions.map((sg, i) => (
               <button
                 key={i}
                 onClick={() => loadSuggestion(sg)}
-                className="rounded-xl border border-line bg-panel/70 card-shadow p-3 text-left hover:border-accent/50 transition-colors"
+                className="terminal-panel terminal-panel--interactive p-3 text-left hover:border-accent/50"
               >
                 <div className="flex items-center justify-between gap-2">
                   <span
@@ -161,11 +160,11 @@ export default function BetBuilder({
           return (
             <div
               key={m.id}
-              className="rounded-xl border border-line bg-panel/70 card-shadow overflow-hidden"
+              className="terminal-panel"
             >
               <button
                 onClick={() => setOpen(isOpen ? null : m.id)}
-                className="w-full flex items-center justify-between gap-3 px-4 py-3 text-left hover:bg-panel2/40"
+                className="terminal-panel-header flex w-full items-center justify-between gap-3 px-4 py-3 text-left hover:bg-white/[0.025]"
               >
                 <span className="text-sm font-semibold">
                   {m.homeFlag} {m.homeCode}{" "}
@@ -212,8 +211,8 @@ export default function BetBuilder({
       </div>
 
       {/* slip */}
-      <div className="lg:sticky lg:top-4 rounded-xl border border-line bg-panel card-shadow">
-        <div className="px-4 py-3 border-b border-line text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+      <div className="terminal-panel lg:sticky lg:top-4">
+        <div className="terminal-panel-header px-4 py-3 text-[10px] uppercase tracking-[0.18em] text-zinc-400">
           Slip {picks.length > 0 && <span className="text-accent">[{picks.length}]</span>}
         </div>
         {picks.length === 0 ? (
@@ -270,7 +269,7 @@ export default function BetBuilder({
                   value={bookInput}
                   onChange={(e) => setBookInput(e.target.value)}
                   placeholder="+650 or 7.50"
-                  className="w-full rounded-md border border-line bg-panel2/60 px-2 py-1.5 text-sm tabnums placeholder:text-zinc-600 focus:border-accent/60 focus:outline-none"
+                  className="w-full rounded-md border border-[var(--hairline)] bg-black/30 px-2 py-1.5 text-sm tabnums placeholder:text-zinc-600 focus:border-accent/60 focus:outline-none"
                 />
               </div>
 

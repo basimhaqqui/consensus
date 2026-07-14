@@ -14,20 +14,19 @@ export default function NewsPanel({
   if (!items.length) return null;
   return (
     <section className="mt-10">
-      <div className="mb-3 flex items-center gap-3">
-        <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+      <div className="section-heading" data-index="05">
+        <h2>
           {title}
         </h2>
-        <div className="h-px flex-1 bg-line" />
       </div>
-      <ul className="divide-y divide-line rounded-xl border border-line bg-panel card-shadow">
+      <ul className="terminal-panel divide-y divide-[var(--hairline)]">
         {items.slice(0, limit).map((it) => (
           <li key={it.href}>
             <a
               href={it.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-baseline gap-3 px-4 py-2.5 hover:bg-panel2 transition-colors"
+              className="flex items-baseline gap-3 px-4 py-3 transition-colors hover:bg-white/[0.025]"
             >
               <span className="min-w-0 flex-1 truncate text-sm text-zinc-200">
                 {it.headline}

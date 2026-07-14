@@ -5,7 +5,7 @@ import type { H2HGame } from "@/lib/match";
 export default function RecentMeetings({ games }: { games: H2HGame[] }) {
   if (games.length === 0) return null;
   return (
-    <section className="mt-5 rounded-xl border border-line bg-panel/50 p-4 card-shadow">
+    <section className="terminal-panel mt-5 p-4">
       <h2 className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-2">
         Recent meetings
       </h2>

@@ -1,19 +1,19 @@
 export default function Footer() {
   return (
-    <footer className="mt-12 border-t border-line pt-6 text-[11px] text-muted">
-      <div className="flex flex-wrap items-center justify-between gap-3">
+    <footer className="mt-20 border-t border-[var(--hairline)] pt-6 text-[10px] text-muted">
+      <div className="flex flex-wrap items-center justify-between gap-4">
         <span className="flex items-center gap-2">
-          <span className="text-accent">▸</span>
-          <span className="uppercase tracking-[0.2em] text-zinc-400">
+          <span className="text-accent [text-shadow:0_0_14px_rgba(52,211,153,0.55)]">▸</span>
+          <span className="uppercase tracking-[0.18em] text-zinc-300">
             Consensus
           </span>
-          <span className="text-zinc-600">/ wc26</span>
+          <span className="uppercase tracking-[0.14em] text-zinc-600">/ wc26</span>
         </span>
-        <span className="text-zinc-600">
+        <span className="text-zinc-600 sm:text-right">
           A football intelligence terminal · for entertainment, not betting advice
         </span>
       </div>
-      <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-zinc-600">
+      <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1.5 border-t border-white/[0.035] pt-4 text-zinc-600">
         <span>
           Live scores &amp; lineups <span className="text-zinc-500">ESPN</span>
         </span>

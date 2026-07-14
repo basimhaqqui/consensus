@@ -28,27 +28,25 @@ export default function UfcConsensus() {
   const top = projections[0];
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 pb-20">
-      <div className="pt-5 flex items-center justify-between gap-3">
+    <main className="site-shell">
+      <div className="site-topbar">
         <Link
           href="/"
-          className="text-sm font-bold tracking-tight flex items-center gap-1.5 shrink-0"
+          className="site-wordmark"
         >
           <span className="text-accent">▸</span> CONSENSUS
         </Link>
         <Nav />
       </div>
 
-      <header className="pt-10 pb-8 border-b border-line">
+      <header className="site-header">
         <div className="flex flex-wrap items-end justify-between gap-5">
           <div>
-            <div className="text-[11px] uppercase tracking-[0.25em] text-accent">
-              Combat sports module
-            </div>
-            <h1 className="mt-2 text-3xl sm:text-5xl font-bold tracking-tight">
+            <div className="site-kicker">02 / Combat sports module</div>
+            <h1 className="site-title">
               UFC Consensus
             </h1>
-            <p className="mt-3 text-sm text-muted max-w-2xl leading-relaxed">
+            <p className="site-subtitle">
               A fight-prediction surface that blends a transparent fighter model,
               no-vig market odds, and analyst pick share into one consensus read.
               This first version uses static seed data so the interface and model
@@ -56,7 +54,7 @@ export default function UfcConsensus() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-line bg-panel/70 card-shadow p-4 min-w-64">
+          <div className="terminal-panel min-w-64 p-4">
             <div className="text-[10px] uppercase tracking-wider text-muted">
               Current strongest read
             </div>
@@ -73,7 +71,7 @@ export default function UfcConsensus() {
         </div>
       </header>
 
-      <section className="mt-8 grid gap-3 sm:grid-cols-3">
+      <section className="terminal-kpi-grid mt-8 grid gap-px sm:grid-cols-3">
         <Metric label="Event" value={UFC_EVENT.name} sub={UFC_EVENT.date} />
         <Metric label="Venue" value={UFC_EVENT.venue} sub="placeholder source" />
         <Metric
@@ -83,19 +81,18 @@ export default function UfcConsensus() {
         />
       </section>
 
-      <section className="mt-8 rounded-lg border border-line bg-panel/60 p-4 text-xs text-muted leading-relaxed">
+      <section className="terminal-panel mt-8 p-4 text-xs leading-relaxed text-muted">
         <span className="text-zinc-400">Data note:</span> {UFC_EVENT.note} The
         next production step is replacing these inputs with scheduled bouts,
         closing odds snapshots, and tracked analyst/public picks.
       </section>
 
       <section className="mt-10">
-        <div className="mb-3 flex items-center gap-3">
-          <h2 className="text-[11px] uppercase tracking-[0.2em] text-zinc-400">
+        <div className="section-heading" data-index="03">
+          <h2>
             Fight board
           </h2>
           <span className="text-[11px] text-muted">[{projections.length}]</span>
-          <span className="flex-1 h-px bg-line" />
         </div>
         <div className="grid gap-4 lg:grid-cols-2">
           {projections.map((p) => (
@@ -104,7 +101,7 @@ export default function UfcConsensus() {
         </div>
       </section>
 
-      <section className="mt-12 rounded-lg border border-line bg-panel/60 p-5 text-xs text-muted leading-relaxed">
+      <section className="terminal-panel mt-12 p-5 text-xs leading-relaxed text-muted">
         <h2 className="text-[11px] uppercase tracking-wider text-zinc-400 mb-2">
           Methodology
         </h2>
@@ -122,7 +119,7 @@ export default function UfcConsensus() {
       </section>
 
       <Footer />
-    </div>
+    </main>
   );
 }
 
@@ -131,8 +128,8 @@ function FightCard({ projection: p }: { projection: FightProjection }) {
   const conf = confidenceLabel(p.confidence);
 
   return (
-    <article className="rounded-xl border border-line bg-panel/80 card-shadow overflow-hidden">
-      <div className="flex items-center justify-between border-b border-line bg-panel2/60 px-4 py-2 text-[11px] uppercase tracking-wider text-muted">
+    <article className="terminal-panel terminal-panel--interactive">
+      <div className="terminal-panel-header flex items-center justify-between px-4 py-2 text-[10px] uppercase tracking-[0.14em] text-muted">
         <span>{f.weightClass}</span>
         <span>{f.rounds} rounds</span>
       </div>
@@ -277,7 +274,7 @@ function Metric({
   valueClass?: string;
 }) {
   return (
-    <div className="bg-panel/70 p-4">
+    <div className="terminal-kpi p-4">
       <div className="text-[10px] uppercase tracking-wider text-muted">
         {label}
       </div>
