@@ -37,12 +37,33 @@ export default async function Landing() {
         <p className="mt-4 text-base sm:text-lg text-muted max-w-2xl mx-auto">
           A football intelligence terminal. Live scores, lineups, match stats,
           and player cards across every major competition — plus our own model
-          for the World Cup.
+          for the World Cup and a new UFC consensus module.
         </p>
         <div className="mt-3 text-[11px] uppercase tracking-[0.2em] text-zinc-600">
           Live · ESPN data · our own Elo model
         </div>
       </header>
+
+      <section className="mb-10 rounded-xl border border-accent/30 bg-panel/70 card-shadow p-5">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div className="text-[11px] uppercase tracking-[0.2em] text-accent">
+              New module
+            </div>
+            <h2 className="mt-1 text-xl font-semibold">UFC Consensus</h2>
+            <p className="mt-1 max-w-2xl text-sm text-muted">
+              Starter fight board blending a transparent fighter model, no-vig
+              market odds, and analyst pick share into one consensus read.
+            </p>
+          </div>
+          <Link
+            href="/ufc"
+            className="rounded-lg border border-accent/40 px-4 py-2 text-sm text-accent hover:bg-accent/10"
+          >
+            Open UFC →
+          </Link>
+        </div>
+      </section>
 
       {/* live now */}
       {live.length > 0 && (
