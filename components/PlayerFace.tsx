@@ -123,14 +123,14 @@ function crop(u: string, shape: "circle" | "square", relaxed: boolean) {
     ? {
         objectFit: "cover" as const,
         objectPosition: "center 8%", // head + shoulders, FUT style
-        transform: "scale(1.45)",
+        transform: "scale(1.3)",
         transformOrigin: "center 8%",
       }
     : {
         objectFit: "cover" as const,
-        objectPosition: "center 12%", // anchor on the face (top of the cutout)
-        transform: "scale(1.9)",
-        transformOrigin: "center 12%",
+        objectPosition: "center 15%", // anchor on the face (top of the cutout)
+        transform: "scale(1.5)",
+        transformOrigin: "center 15%",
       };
 }
 
