@@ -9,6 +9,7 @@ import { useCallback, useEffect, useState } from "react";
 // bottom edge survive) and cache the transparent PNG per photo.
 const knockoutCache = new Map<string, string | null>();
 const knockoutInflight = new Map<string, Promise<string | null>>();
+const knockoutFailed = new Map<string, boolean>();
 
 const needsKnockout = (u: string) => u.includes("media.api-sports.io");
 
@@ -160,7 +161,13 @@ export default function PlayerFace({
     if (raw && needsKnockout(raw)) {
       let alive = true;
       whiteKnockout(raw).then((v) => {
-        if (alive && v) setKnocked(v);
+        if (alive) {
+          if (v) {
+            setKnocked(v);
+          } else {
+            knockoutFailed.set(raw, true);
+          }
+        }
       });
       return () => {
         alive = false;
@@ -168,6 +175,13 @@ export default function PlayerFace({
     }
   }, [raw]);
   const cur = raw && needsKnockout(raw) && knocked ? knocked : raw;
+
+  // If knockout failed for this source, advance to next in chain
+  useEffect(() => {
+    if (raw && needsKnockout(raw) && knockoutFailed.get(raw)) {
+      setIdx((i) => i + 1);
+    }
+  }, [raw]);
 
   // Server-rendered imgs can finish 404ing before hydration, so onError never
   // fires — catch already-failed images on mount and advance the chain.
