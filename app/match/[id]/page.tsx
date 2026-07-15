@@ -15,6 +15,8 @@ import { matchProps } from "@/lib/props";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import MatchBriefing from "@/components/MatchBriefing";
+import BestPerformers from "@/components/BestPerformers";
+import { getCompetitionPerformance } from "@/lib/competition";
 
 export const dynamic = "force-dynamic";
 
@@ -54,6 +56,7 @@ export default async function MatchPage({
   const { matches } = await getLiveMatches();
   const m = matches.find((x) => x.id === id);
   if (!m) notFound();
+  const performance = getCompetitionPerformance();
 
   const brief = m.status === "scheduled" ? briefFor(m.homeKey, m.awayKey) : undefined;
   const [detail, allNews, propsByMatch] = await Promise.all([
@@ -161,9 +164,16 @@ export default async function MatchPage({
         />
       )}
 
+      <section id="performers" className="mt-5 scroll-mt-6">
+        <div className="section-heading" data-index="04">
+          <h2>Best performers</h2>
+        </div>
+        <BestPerformers view={performance} />
+      </section>
+
       {/* lineups */}
       <section id="lineups" className="mt-5 scroll-mt-6">
-        <div className="section-heading" data-index="04">
+        <div className="section-heading" data-index="05">
           <h2>Lineups</h2>
         </div>
         {haveLineups ? (
@@ -184,7 +194,7 @@ export default async function MatchPage({
       )}
 
       <div id="news" className="scroll-mt-6">
-        <NewsPanel items={news} title="In the news" limit={3} />
+        <NewsPanel items={news} title="In the news" limit={3} index="06" />
       </div>
       <Footer />
     </main>

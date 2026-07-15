@@ -7,6 +7,10 @@ import {
   squadLookup,
 } from "./apifootball";
 import { nationalBadge } from "./badges";
+import {
+  competitionStatsForPlayer,
+  type CompetitionPlayerStats,
+} from "./competition";
 
 const SUMMARY = (slug: string, id: string) =>
   `https://site.api.espn.com/apis/site/v2/sports/soccer/${slug}/summary?event=${id}`;
@@ -21,6 +25,7 @@ export type Band = "GK" | "DEF" | "MID" | "FWD";
 
 export type Player = {
   id?: string;
+  afId?: number;
   name: string;
   jersey?: string;
   pos: string;
@@ -36,6 +41,7 @@ export type Player = {
   stats?: Record<string, string>; // per-player match stats (name -> value)
   rating?: number; // our model's performance score (see computeRating)
   bio?: PlayerBio; // profile from TheSportsDB
+  competition?: CompetitionPlayerStats; // current competition totals + ranks
 };
 
 // ESPN's standardized athlete headshot. Keyed by the same athlete id the
@@ -516,6 +522,7 @@ async function afConfirmedSquads(
       }
       return {
         id: undefined, // no ESPN athlete id on this path
+        afId: p.id,
         name: p.name,
         photo: afPlayerPhoto(p.id),
         jersey: p.number != null ? String(p.number) : undefined,
@@ -647,6 +654,7 @@ async function enrichSquads(squads: Squad[]): Promise<void> {
       for (const player of [...sq.starters, ...sq.subs]) {
         const hit = squadLookup(idx, player.jersey, player.name);
         if (hit) {
+          player.afId = hit.id;
           player.photo = hit.photo;
           (player as any)._afPos = hit.position;
           (player as any)._afAge = hit.age;
@@ -702,6 +710,11 @@ async function enrichSquads(squads: Squad[]): Promise<void> {
       height: p.height,
       desc: p.desc,
     };
+    e.player.competition = competitionStatsForPlayer(
+      e.player.afId,
+      e.player.name,
+      e.nat
+    );
   });
 }
 

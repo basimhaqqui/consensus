@@ -1,0 +1,582 @@
+.board {
+  border-color: rgba(52, 211, 153, 0.2);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+  padding: 24px 26px 20px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.eyebrow {
+  display: block;
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.header h3 {
+  margin-top: 8px;
+  color: #f1f5f9;
+  font-size: clamp(21px, 3vw, 30px);
+  font-weight: 680;
+  letter-spacing: -0.035em;
+}
+
+.header h3 span {
+  color: #687583;
+  font-weight: 500;
+}
+
+.header p {
+  max-width: 590px;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+.coverage {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: 9px;
+  background: rgba(4, 7, 11, 0.58);
+}
+
+.coverage > div {
+  min-width: 82px;
+  padding: 10px 12px;
+  border-left: 1px solid var(--hairline);
+}
+
+.coverage > div:first-child {
+  border-left: 0;
+}
+
+.coverage strong,
+.coverage span {
+  display: block;
+}
+
+.coverage strong {
+  color: #e5e7eb;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 650;
+}
+
+.coverage strong i {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 5px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 9px rgba(52, 211, 153, 0.75);
+}
+
+.coverage span {
+  max-width: 115px;
+  margin-top: 4px;
+  color: #687583;
+  font-size: 7px;
+  letter-spacing: 0.11em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.tabs {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--hairline);
+  background: rgba(4, 7, 11, 0.4);
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs button {
+  flex: 0 0 auto;
+  padding: 8px 11px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #798593;
+  font-size: 9px;
+  font-weight: 620;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  transition: 180ms ease;
+}
+
+.tabs button:hover {
+  color: #d7dde4;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.tabs .activeTab {
+  border-color: rgba(52, 211, 153, 0.2);
+  color: var(--accent);
+  background: rgba(52, 211, 153, 0.09);
+  box-shadow: inset 0 0 16px rgba(52, 211, 153, 0.035);
+}
+
+.rankingGrid {
+  display: grid;
+  grid-template-columns: minmax(290px, 0.88fr) minmax(380px, 1.12fr);
+  min-height: 420px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.spotlight {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  border-right: 1px solid var(--hairline);
+  background:
+    radial-gradient(circle at 78% 38%, rgba(52, 211, 153, 0.15), transparent 36%),
+    linear-gradient(150deg, rgba(15, 31, 29, 0.58), rgba(6, 10, 15, 0.76));
+}
+
+.spotlightGlow {
+  position: absolute;
+  right: 8%;
+  bottom: 5%;
+  width: 210px;
+  height: 210px;
+  border: 1px solid rgba(52, 211, 153, 0.13);
+  border-radius: 999px;
+  box-shadow: 0 0 90px rgba(52, 211, 153, 0.1);
+}
+
+.spotlightCopy {
+  position: relative;
+  z-index: 3;
+  width: 68%;
+  padding: 25px 0 24px 25px;
+}
+
+.rankLabel {
+  color: var(--accent);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.leaderName {
+  display: block;
+  margin-top: 13px;
+  color: #f8fafc;
+  font-size: clamp(27px, 3.4vw, 43px);
+  font-weight: 720;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.leaderTeam {
+  display: block;
+  margin-top: 10px;
+  color: #8d99a6;
+  font-size: 10px;
+}
+
+.heroMetric {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 27px;
+}
+
+.heroMetric strong {
+  color: var(--accent);
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.heroMetric span {
+  color: #74808e;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.spotlightCopy p {
+  margin-top: 7px;
+  color: #65717f;
+  font-size: 9px;
+}
+
+.spotlightImage {
+  position: absolute;
+  z-index: 2;
+  right: -6%;
+  bottom: -2%;
+  width: 72%;
+  height: 79%;
+  color: #27333d;
+  filter: drop-shadow(0 24px 34px rgba(0, 0, 0, 0.62));
+}
+
+.watermark {
+  position: absolute;
+  z-index: 1;
+  right: -5%;
+  bottom: -8%;
+  width: 58%;
+  opacity: 0.045;
+  filter: grayscale(1);
+}
+
+.leaderList {
+  display: grid;
+  grid-template-rows: repeat(7, minmax(55px, 1fr));
+  padding: 7px 18px;
+}
+
+.leaderRow {
+  display: grid;
+  grid-template-columns: 28px 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  min-height: 55px;
+  border-bottom: 1px solid rgba(125, 136, 150, 0.11);
+}
+
+.leaderRow:last-child {
+  border-bottom: 0;
+}
+
+.rank {
+  color: #53606d;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.playerCopy {
+  min-width: 0;
+}
+
+.playerCopy strong,
+.playerCopy span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.playerCopy strong {
+  color: #dce2e8;
+  font-size: 11px;
+  font-weight: 620;
+}
+
+.playerCopy span {
+  margin-top: 3px;
+  color: #667280;
+  font-size: 8px;
+}
+
+.rowMetric {
+  min-width: 60px;
+  text-align: right;
+}
+
+.rowMetric strong,
+.rowMetric span {
+  display: block;
+}
+
+.rowMetric strong {
+  color: #e8edf2;
+  font-size: 15px;
+  font-weight: 660;
+}
+
+.rowMetric span {
+  margin-top: 2px;
+  color: #586572;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.rolesHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 25px 13px;
+}
+
+.rolesHeader h4 {
+  margin-top: 6px;
+  color: #e2e8f0;
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+.rolesHeader p {
+  color: #5f6b78;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.roleGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  margin: 0 18px 20px;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: 9px;
+  background: var(--hairline);
+}
+
+.roleCard {
+  min-width: 0;
+  background: rgba(8, 12, 18, 0.94);
+}
+
+.roleTitle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.roleTitle span {
+  display: grid;
+  width: 29px;
+  height: 22px;
+  place-items: center;
+  border: 1px solid rgba(52, 211, 153, 0.18);
+  border-radius: 4px;
+  color: var(--accent);
+  background: rgba(52, 211, 153, 0.07);
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.roleTitle strong {
+  overflow: hidden;
+  color: #aeb7c1;
+  font-size: 9px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.rolePlayers {
+  padding: 4px 10px 7px;
+}
+
+.rolePlayer {
+  display: grid;
+  grid-template-columns: 13px 34px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 7px;
+  min-height: 50px;
+  border-bottom: 1px solid rgba(125, 136, 150, 0.09);
+}
+
+.rolePlayer:last-child {
+  border-bottom: 0;
+}
+
+.rolePlayer > span {
+  color: #53606d;
+  font-size: 8px;
+}
+
+.rolePlayer div {
+  min-width: 0;
+}
+
+.rolePlayer strong,
+.rolePlayer small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rolePlayer strong {
+  color: #d4dbe2;
+  font-size: 9px;
+  font-weight: 610;
+}
+
+.rolePlayer small {
+  margin-top: 3px;
+  color: #5d6977;
+  font-size: 7px;
+}
+
+.rolePlayer b {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.methodology {
+  display: flex;
+  gap: 14px;
+  padding: 14px 19px;
+  border-top: 1px solid var(--hairline);
+  background: rgba(4, 7, 11, 0.42);
+}
+
+.methodology span {
+  flex: 0 0 auto;
+  color: #7d8996;
+  font-size: 8px;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.methodology p {
+  color: #5d6875;
+  font-size: 8px;
+  line-height: 1.55;
+}
+
+@media (max-width: 860px) {
+  .header {
+    display: block;
+  }
+
+  .coverage {
+    width: fit-content;
+    margin-top: 17px;
+  }
+
+  .rankingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .spotlight {
+    min-height: 360px;
+    border-right: 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .leaderList {
+    grid-template-rows: none;
+  }
+
+  .roleGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .header {
+    padding: 20px 17px 17px;
+  }
+
+  .header p {
+    font-size: 10px;
+  }
+
+  .coverage {
+    width: 100%;
+  }
+
+  .coverage > div {
+    min-width: 0;
+    padding: 9px;
+  }
+
+  .coverage span {
+    font-size: 6px;
+  }
+
+  .tabs {
+    padding-inline: 10px;
+  }
+
+  .spotlight {
+    min-height: 320px;
+  }
+
+  .spotlightCopy {
+    width: 76%;
+    padding: 21px 0 20px 17px;
+  }
+
+  .spotlightImage {
+    right: -12%;
+    width: 78%;
+    height: 72%;
+  }
+
+  .leaderName {
+    max-width: 230px;
+    font-size: 31px;
+  }
+
+  .heroMetric {
+    margin-top: 20px;
+  }
+
+  .leaderList {
+    padding-inline: 12px;
+  }
+
+  .leaderRow {
+    grid-template-columns: 22px 38px minmax(0, 1fr) auto;
+    gap: 7px;
+  }
+
+  .leaderRow > :nth-child(2) {
+    transform: scale(0.9);
+  }
+
+  .playerCopy span {
+    max-width: 165px;
+  }
+
+  .rolesHeader {
+    align-items: flex-start;
+    padding: 20px 17px 12px;
+  }
+
+  .rolesHeader p {
+    max-width: 90px;
+    text-align: right;
+  }
+
+  .roleGrid {
+    grid-template-columns: 1fr;
+    margin-inline: 11px;
+  }
+
+  .methodology {
+    display: block;
+  }
+
+  .methodology p {
+    margin-top: 6px;
+  }
+}

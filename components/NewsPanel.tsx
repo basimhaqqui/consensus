@@ -6,15 +6,17 @@ export default function NewsPanel({
   items,
   title = "Headlines",
   limit = 6,
+  index = "05",
 }: {
   items: NewsItem[];
   title?: string;
   limit?: number;
+  index?: string;
 }) {
   if (!items.length) return null;
   return (
     <section className="mt-10">
-      <div className="section-heading" data-index="05">
+      <div className="section-heading" data-index={index}>
         <h2>
           {title}
         </h2>

@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import type { Player } from "@/lib/match";
+import type { CompetitionPlayerStats } from "@/lib/competition-types";
 import PlayerFace from "./PlayerFace";
 import Crest from "./Crest";
 import PlayerMarkers from "./PlayerMarkers";
@@ -82,6 +83,9 @@ export default function PlayerCard({
     title: s.title,
     rows: s.rows.filter((r) => player.stats?.[r.key] !== undefined),
   })).filter((s) => s.rows.length > 0);
+  const [activeTab, setActiveTab] = useState<"competition" | "match">(
+    sections.length > 0 ? "match" : "competition"
+  );
 
   const posLabel =
     player.pos && player.pos.toUpperCase() !== "SUB"
@@ -90,6 +94,7 @@ export default function PlayerCard({
 
   const t = cardTheme(teamColor, teamAlt);
   const roleLabel = player.starter ? "Starting XI" : "Substitute";
+  const displayRating = player.rating ?? player.competition?.rating;
 
   return (
     <div
@@ -160,12 +165,12 @@ export default function PlayerCard({
                 >
                   {roleLabel}
                 </span>
-                {player.rating !== undefined && (
+                {displayRating !== undefined && displayRating > 0 && (
                   <span
                     className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold tabnums text-white shadow-md ring-1 ring-black/25"
-                    style={{ backgroundColor: ratingColor(player.rating) }}
+                    style={{ backgroundColor: ratingColor(displayRating) }}
                   >
-                    {player.rating.toFixed(1)} rating
+                    {displayRating.toFixed(1)} {player.rating !== undefined ? "match" : "competition"}
                   </span>
                 )}
               </div>
@@ -192,65 +197,79 @@ export default function PlayerCard({
         >
           <InfoTile label="Position" value={posLabel} />
           <InfoTile label="Club" value={player.bio?.club ?? teamName} />
-          <InfoTile label="Age" value={player.bio?.age !== undefined ? `${player.bio.age}` : "—"} />
-          <InfoTile label="Nationality" value={player.bio?.nationality ?? teamName} />
+          <InfoTile label="Age" value={player.bio?.age !== undefined ? `${player.bio.age}` : player.competition?.age ? `${player.competition.age}` : "—"} />
+          <InfoTile label="Nationality" value={player.bio?.nationality ?? player.competition?.nationality ?? teamName} />
         </div>
 
         <div className="overflow-y-auto px-4 py-4 sm:px-6 sm:py-5">
-          {(player.subbedIn || player.subbedOut) && (
-            <div className="mb-4 flex flex-wrap gap-2 text-[11px]">
-              {player.subbedIn && (
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent/10 px-2.5 py-1 text-accent">
-                  <span className="inline-grid h-4 w-4 place-items-center rounded-full bg-accent/15 text-[10px] font-bold leading-none ring-1 ring-accent/30">
-                    ↑
-                  </span>
-                  came off the bench{player.subMinute ? ` · ${player.subMinute}` : ""}
-                </span>
-              )}
-              {player.subbedOut && (
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-danger/25 bg-danger/10 px-2.5 py-1 text-danger">
-                  <span className="inline-grid h-4 w-4 place-items-center rounded-full bg-[#e0524f] text-[10px] font-bold leading-none text-white ring-1 ring-black/30">
-                    ←
-                  </span>
-                  substituted off{player.subMinute ? ` · ${player.subMinute}` : ""}
-                </span>
-              )}
-            </div>
-          )}
+          <div className="mb-4 grid grid-cols-2 rounded-lg border border-line/70 bg-black/20 p-1" role="tablist" aria-label="Player statistics">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === "competition"}
+              onClick={() => setActiveTab("competition")}
+              className={`rounded-md px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] transition ${activeTab === "competition" ? "bg-accent/12 text-accent shadow-inner" : "text-muted hover:text-zinc-200"}`}
+            >
+              World Cup 2026
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={activeTab === "match"}
+              onClick={() => setActiveTab("match")}
+              className={`rounded-md px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.12em] transition ${activeTab === "match" ? "bg-accent/12 text-accent shadow-inner" : "text-muted hover:text-zinc-200"}`}
+            >
+              This match
+            </button>
+          </div>
 
-          {sections.length > 0 ? (
-            <div className="grid gap-3 sm:grid-cols-2">
-              {sections.map((s) => (
-                <div key={s.title} className="rounded-xl border border-line/70 bg-white/[0.025] p-3.5">
-                  <div className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-300">
-                    {s.title}
-                  </div>
-                  <div className="divide-y divide-line/40">
-                    {s.rows.map((r) => (
-                      <div
-                        key={r.key}
-                        className="flex items-center justify-between py-2"
-                      >
-                        <span className="text-[12px] text-muted">{r.label}</span>
-                        <span className="text-[13px] font-semibold tabnums text-zinc-100">
-                          {player.stats![r.key]}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+          {activeTab === "competition" ? (
+            <CompetitionPanel stats={player.competition} />
           ) : (
-            <div className="rounded-xl border border-line/70 bg-white/[0.025] px-4 py-4">
-              <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-300">
-                <span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-[0_0_8px_rgba(252,211,77,0.65)]" />
-                Pre-match profile
-              </div>
-              <p className="mt-2 text-[12px] leading-relaxed text-muted">
-                Match stats and performance rating will populate once the game is underway.
-              </p>
-            </div>
+            <>
+              {(player.subbedIn || player.subbedOut) && (
+                <div className="mb-4 flex flex-wrap gap-2 text-[11px]">
+                  {player.subbedIn && (
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent/10 px-2.5 py-1 text-accent">
+                      <span className="inline-grid h-4 w-4 place-items-center rounded-full bg-accent/15 text-[10px] font-bold leading-none ring-1 ring-accent/30">↑</span>
+                      came off the bench{player.subMinute ? ` · ${player.subMinute}` : ""}
+                    </span>
+                  )}
+                  {player.subbedOut && (
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-danger/25 bg-danger/10 px-2.5 py-1 text-danger">
+                      <span className="inline-grid h-4 w-4 place-items-center rounded-full bg-[#e0524f] text-[10px] font-bold leading-none text-white ring-1 ring-black/30">←</span>
+                      substituted off{player.subMinute ? ` · ${player.subMinute}` : ""}
+                    </span>
+                  )}
+                </div>
+              )}
+
+              {sections.length > 0 ? (
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {sections.map((s) => (
+                    <div key={s.title} className="rounded-xl border border-line/70 bg-white/[0.025] p-3.5">
+                      <div className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-300">{s.title}</div>
+                      <div className="divide-y divide-line/40">
+                        {s.rows.map((r) => (
+                          <div key={r.key} className="flex items-center justify-between py-2">
+                            <span className="text-[12px] text-muted">{r.label}</span>
+                            <span className="text-[13px] font-semibold tabnums text-zinc-100">{player.stats![r.key]}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="rounded-xl border border-line/70 bg-white/[0.025] px-4 py-4">
+                  <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-300">
+                    <span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-[0_0_8px_rgba(252,211,77,0.65)]" />
+                    Match data pending
+                  </div>
+                  <p className="mt-2 text-[12px] leading-relaxed text-muted">Match stats and performance rating will populate once the game is underway.</p>
+                </div>
+              )}
+            </>
           )}
 
           {player.bio?.desc && (
@@ -260,6 +279,73 @@ export default function PlayerCard({
           )}
         </div>
       </div>
+    </div>
+  );
+}
+
+function CompetitionPanel({ stats }: { stats?: CompetitionPlayerStats }) {
+  if (!stats) {
+    return (
+      <div className="rounded-xl border border-line/70 bg-white/[0.025] px-4 py-4">
+        <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-300">Competition data unavailable</div>
+        <p className="mt-2 text-[12px] leading-relaxed text-muted">This player has not logged a World Cup appearance in the current competition feed.</p>
+      </div>
+    );
+  }
+
+  const role = stats.position === "Attacker" ? "Attack" : stats.position;
+  const roleMetrics: [string, string | number][] =
+    stats.position === "Goalkeeper"
+      ? [["Clean sheets", stats.cleanSheets], ["Saves", stats.saves], ["Conceded", stats.conceded], ["Penalties saved", stats.penaltiesSaved]]
+      : stats.position === "Defender"
+        ? [["Defensive actions", stats.defensiveActions], ["Tackles", stats.tackles], ["Interceptions", stats.interceptions], ["Duels won", stats.duelsWon]]
+        : stats.position === "Midfielder"
+          ? [["Chances created", stats.keyPasses], ["Pass accuracy", `${stats.passAccuracy}%`], ["Duels won", stats.duelsWon], ["Ball wins", stats.tackles + stats.interceptions]]
+          : [["Shots on target", stats.shotsOnTarget], ["Chances created", stats.keyPasses], ["Dribbles won", stats.dribblesWon], ["Shots", stats.shots]];
+
+  return (
+    <div className="space-y-3">
+      <div className="flex items-center justify-between rounded-xl border border-accent/20 bg-accent/[0.055] px-4 py-3">
+        <div>
+          <div className="text-[9px] font-semibold uppercase tracking-[0.16em] text-accent">{role} impact</div>
+          <div className="mt-1 text-[11px] text-muted">Rank #{stats.roleRank} in the tournament</div>
+        </div>
+        <div className="text-right">
+          <strong className="text-2xl font-bold tabnums text-zinc-100">{stats.impact}</strong>
+          <span className="block text-[8px] uppercase tracking-[0.14em] text-muted">Impact score</span>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-4 gap-1.5">
+        <CompetitionMetric label="Apps" value={stats.appearances} />
+        <CompetitionMetric label="Starts" value={stats.starts} />
+        <CompetitionMetric label="Minutes" value={stats.minutes} />
+        <CompetitionMetric label="Rating" value={stats.rating.toFixed(2)} accent />
+      </div>
+
+      <div className="grid grid-cols-3 gap-1.5">
+        <CompetitionMetric label="Goals" value={stats.goals} />
+        <CompetitionMetric label="Assists" value={stats.assists} />
+        <CompetitionMetric label="G+A" value={stats.goalContributions} accent />
+      </div>
+
+      <div className="grid gap-1.5 sm:grid-cols-2">
+        {roleMetrics.map(([label, value]) => (
+          <div key={label} className="flex items-center justify-between rounded-lg border border-line/60 bg-white/[0.02] px-3 py-2.5">
+            <span className="text-[11px] text-muted">{label}</span>
+            <strong className="text-[12px] font-semibold tabnums text-zinc-100">{value}</strong>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function CompetitionMetric({ label, value, accent = false }: { label: string; value: string | number; accent?: boolean }) {
+  return (
+    <div className="rounded-lg border border-line/60 bg-white/[0.025] px-2 py-2.5 text-center">
+      <strong className={`block text-[14px] font-semibold tabnums ${accent ? "text-accent" : "text-zinc-100"}`}>{value}</strong>
+      <span className="mt-1 block text-[8px] uppercase tracking-[0.12em] text-muted">{label}</span>
     </div>
   );
 }

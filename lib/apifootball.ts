@@ -7,6 +7,8 @@ const KEY = process.env.APIFOOTBALL_KEY;
 const BASE = "https://v3.football.api-sports.io";
 
 export type SquadEntry = {
+  id: number;
+  name: string;
   photo: string;
   position?: string; // Goalkeeper / Defender / Midfielder / Attacker
   age?: number;
@@ -88,6 +90,8 @@ function squad(id: number): Promise<SquadIndex | null> {
         for (const p of players) {
           if (!p?.photo) continue;
           const entry: SquadEntry = {
+            id: p.id,
+            name: p.name,
             photo: p.photo,
             position: p.position || undefined,
             age: typeof p.age === "number" ? p.age : undefined,
