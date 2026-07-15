@@ -1,0 +1,526 @@
+.board {
+  margin-top: 28px;
+}
+
+.controlBar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.controlLabel {
+  display: block;
+  margin-bottom: 7px;
+  color: #596572;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.feedStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 7px;
+  color: #83909c;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.feedAge {
+  color: #4f5a67;
+}
+
+.offlineDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--danger);
+}
+
+.sourceDescription {
+  max-width: 700px;
+  margin-top: 9px;
+  color: #687582;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.today {
+  margin-top: 22px;
+  scroll-margin-top: 24px;
+}
+
+.todayHeading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  color: #5d6875;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.todayHeading > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.todayHeading h2 {
+  color: #bdc6ce;
+  font-size: 10px;
+  font-weight: 560;
+  letter-spacing: 0.17em;
+}
+
+.todayHeading::after {
+  order: 1;
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to right, rgba(125, 136, 150, 0.28), rgba(125, 136, 150, 0.04));
+  content: "";
+}
+
+.todayHeading > span {
+  order: 2;
+}
+
+.todayGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(270px, 0.65fr);
+  gap: 10px;
+}
+
+.spotlight,
+.emptySpotlight,
+.signalCard {
+  border: 1px solid rgba(125, 136, 150, 0.2);
+  background: linear-gradient(145deg, rgba(15, 20, 28, 0.94), rgba(9, 13, 19, 0.9));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035), 0 20px 50px -38px #000;
+}
+
+.spotlight {
+  position: relative;
+  display: flex;
+  min-height: 315px;
+  flex-direction: column;
+  padding: 21px 22px 18px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.spotlight::before {
+  position: absolute;
+  top: -120px;
+  right: -90px;
+  width: 360px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.11), transparent 68%);
+  content: "";
+  pointer-events: none;
+}
+
+.spotlight:hover {
+  border-color: rgba(52, 211, 153, 0.42);
+  transform: translateY(-2px);
+}
+
+.spotlightTopline,
+.spotlightFooter,
+.advanceBlock > div:first-child {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.spotlightTopline {
+  color: var(--accent);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.spotlightTopline strong {
+  color: #77838f;
+  font-weight: 520;
+}
+
+.spotlightTopline .liveText {
+  color: var(--accent);
+}
+
+.spotlightMeta {
+  position: relative;
+  margin-top: 28px;
+  color: #65717d;
+  font-size: 10px;
+}
+
+.spotlightTeams {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.spotlightTeam {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+}
+
+.spotlightTeamRight {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.spotlightTeam > div {
+  min-width: 0;
+}
+
+.spotlightTeam span {
+  display: block;
+  color: #677380;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spotlightTeam strong {
+  display: block;
+  margin-top: 3px;
+  overflow: hidden;
+  color: #eef2f5;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(19px, 2.4vw, 28px);
+  font-weight: 560;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.spotlightTeam b {
+  color: #f2f6f8;
+  font-size: 23px;
+  font-weight: 560;
+}
+
+.versus {
+  color: #48535e;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.advanceBlock {
+  position: relative;
+  margin-top: 24px;
+}
+
+.advanceBlock span {
+  color: #66727e;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.advanceBlock strong {
+  color: #aeb8c1;
+  font-size: 10px;
+  font-weight: 530;
+}
+
+.advanceTrack {
+  height: 4px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(56, 189, 248, 0.42);
+}
+
+.advanceTrack span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+.spotlightFooter {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(125, 136, 150, 0.14);
+  color: #66727e;
+  font-size: 10px;
+}
+
+.spotlightFooter strong {
+  flex: 0 0 auto;
+  color: #aeb8c1;
+  font-size: 9px;
+  font-weight: 530;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.spotlight:hover .spotlightFooter strong {
+  color: var(--accent);
+}
+
+.emptySpotlight {
+  min-height: 315px;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.emptySpotlight span {
+  color: #eef2f5;
+  font-size: 24px;
+}
+
+.emptySpotlight p {
+  max-width: 430px;
+  margin-top: 8px;
+  color: #71808d;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.signalGrid {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.signalCard {
+  display: flex;
+  min-height: 98px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px 17px;
+  border-radius: 10px;
+}
+
+.signalCard > span {
+  color: #66727e;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.signalCard > strong {
+  margin-top: 5px;
+  overflow: hidden;
+  color: #e9eef1;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 18px;
+  font-weight: 550;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.signalCard > small {
+  margin-top: 5px;
+  color: #65717d;
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.signalCardWarn {
+  border-color: rgba(245, 158, 11, 0.3);
+  background: linear-gradient(145deg, rgba(31, 25, 16, 0.92), rgba(13, 14, 17, 0.94));
+}
+
+.signalCardWarn > strong {
+  color: var(--warn);
+}
+
+.trustStrip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(125, 136, 150, 0.17);
+  border-radius: 10px;
+  background: rgba(9, 13, 19, 0.72);
+}
+
+.trustStrip > div {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding: 14px 16px;
+  border-right: 1px solid rgba(125, 136, 150, 0.13);
+}
+
+.trustStrip > div:last-child {
+  border-right: 0;
+}
+
+.trustStrip span {
+  color: #65717d;
+  font-size: 8px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.trustStrip strong {
+  margin-top: 4px;
+  overflow: hidden;
+  color: #dfe5e9;
+  font-size: 16px;
+  font-weight: 550;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.trustStrip small {
+  margin-top: 2px;
+  overflow: hidden;
+  color: #596572;
+  font-size: 9px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.revealButton {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border: 1px solid rgba(125, 136, 150, 0.16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.015);
+  color: #74808c;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.revealButton:hover {
+  border-color: rgba(52, 211, 153, 0.34);
+  color: var(--accent);
+}
+
+.spotlight:focus-visible,
+.revealButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .todayGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .signalGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+
+  .signalCard {
+    min-height: 112px;
+  }
+
+  .trustStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .trustStrip > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .trustStrip > div:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(125, 136, 150, 0.13);
+  }
+}
+
+@media (max-width: 520px) {
+  .board {
+    margin-top: 22px;
+  }
+
+  .controlBar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .feedStatus {
+    padding-bottom: 0;
+  }
+
+  .todayHeading > span,
+  .feedAge {
+    display: none;
+  }
+
+  .spotlight {
+    min-height: 295px;
+    padding: 18px;
+  }
+
+  .spotlightMeta {
+    margin-top: 22px;
+  }
+
+  .spotlightTeams {
+    gap: 7px;
+  }
+
+  .spotlightTeam {
+    gap: 7px;
+  }
+
+  .spotlightTeam img {
+    width: 27px;
+    height: 27px;
+  }
+
+  .spotlightTeam strong {
+    font-size: 17px;
+  }
+
+  .spotlightTeam b {
+    font-size: 18px;
+  }
+
+  .spotlightFooter > span {
+    display: none;
+  }
+
+  .signalGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .signalCard {
+    min-height: 92px;
+  }
+
+  .trustStrip > div {
+    padding: 12px;
+  }
+
+  .trustStrip small {
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spotlight:hover {
+    transform: none;
+  }
+}

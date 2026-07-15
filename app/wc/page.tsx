@@ -60,11 +60,35 @@ export default async function WorldCup() {
           </div>
         </div>
 
-        <LiveBoard initial={initial} />
+        <nav
+          aria-label="World Cup sections"
+          className="segmented-control mt-6 flex w-full items-center gap-0.5 overflow-x-auto p-0.5 text-[9px] uppercase tracking-[0.14em]"
+        >
+          <a href="#today" className="shrink-0 rounded-[6px] bg-accent/12 px-3 py-1.5 text-accent">
+            Today
+          </a>
+          <a href="#forecasts" className="shrink-0 rounded-[6px] px-3 py-1.5 text-muted hover:bg-white/[0.035] hover:text-text">
+            Forecasts
+          </a>
+          <a href="#matches" className="shrink-0 rounded-[6px] px-3 py-1.5 text-muted hover:bg-white/[0.035] hover:text-text">
+            Matches
+          </a>
+          <Link href="/bracket" className="shrink-0 rounded-[6px] px-3 py-1.5 text-muted hover:bg-white/[0.035] hover:text-text">
+            Bracket ↗
+          </Link>
+          <a href="#standings" className="shrink-0 rounded-[6px] px-3 py-1.5 text-muted hover:bg-white/[0.035] hover:text-text">
+            Standings
+          </a>
+          <a href="#ledger" className="shrink-0 rounded-[6px] px-3 py-1.5 text-muted hover:bg-white/[0.035] hover:text-text">
+            Ledger
+          </a>
+        </nav>
       </header>
 
+      <LiveBoard initial={initial} />
+
       {groups && groups.length > 0 && (
-        <section className="mt-10">
+        <section id="standings" className="mt-12 scroll-mt-6">
           <div className="section-heading" data-index="02">
             <h2>
               Group stage — final standings
@@ -85,14 +109,14 @@ export default async function WorldCup() {
         <p>
           <span className="text-zinc-400">Live scores &amp; status</span> stream
           from ESPN and auto-refresh every 30s. The{" "}
-          <span className="text-zinc-400">forecast</span> is our own Elo rating
+          <span className="text-zinc-400">forecast</span>{" "}is our own Elo rating
           (computed from 49,000+ real international results) fed through a Poisson
           goals model — win / draw / win, to-advance odds (incl. ET &amp; pens),
           expected goals, and the most likely scoreline. Toggle{" "}
           <span className="text-zinc-400">Market</span> to compare against the
           betting market. Each decided knockout match is graded{" "}
           <span className="text-accent">HIT</span> /{" "}
-          <span className="text-danger">MISS</span> against the model&apos;s pick.
+          <span className="text-danger">MISS</span>{" "}against the model&apos;s pick.
         </p>
         <p className="mt-3 text-[11px] text-zinc-600">
           For entertainment, not betting advice. Knockout football is
@@ -124,7 +148,7 @@ function LedgerPanel() {
       </div>
     );
   return (
-    <section className="mt-10">
+    <section id="ledger" className="mt-12 scroll-mt-6">
       <div className="section-heading" data-index="04">
         <h2>
           Prediction ledger — graded pre-match forecasts
