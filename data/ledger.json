@@ -417,6 +417,19 @@
         "detail": "FT",
         "gradedAt": "2026-07-14T21:11:24.561Z"
       }
+    },
+    {
+      "id": "sf-2",
+      "kickoffISO": "2026-07-15T19:00Z",
+      "home": "ENG",
+      "away": "ARG",
+      "venue": "Atlanta, Georgia",
+      "forecasts": {
+        "model": 0.381,
+        "blend": 0.4409,
+        "market": 0.5008
+      },
+      "capturedAt": "2026-07-15T16:41:57.536Z"
     }
   ]
 }
