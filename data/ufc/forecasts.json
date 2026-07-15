@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-15T19:38:31.067Z",
+ "computedAt": "2026-07-15T21:16:43.402Z",
  "cards": [
   {
    "eventId": "600059599",
@@ -333,35 +333,6 @@
    "date": "2026-07-25T13:00Z",
    "fights": [
     {
-     "boutId": "401891531",
-     "date": "2026-07-25T13:00Z",
-     "weightClass": "Welterweight",
-     "segment": "Prelims",
-     "matchNumber": 8,
-     "a": {
-      "id": "3043484",
-      "name": "Santiago Ponzinibbio",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-      "record": "31-9-0"
-     },
-     "b": {
-      "id": "5088916",
-      "name": "Sam Patterson",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-      "record": "14-3-1"
-     },
-     "ratingA": 1373,
-     "ratingB": 1650,
-     "pA": 0.257,
-     "fightsA": 20,
-     "fightsB": 7,
-     "method": {
-      "ko": 0.46,
-      "sub": 0.18,
-      "dec": 0.36
-     }
-    },
-    {
      "boutId": "401886737",
      "date": "2026-07-25T13:00Z",
      "weightClass": "Lightweight",
@@ -417,6 +388,64 @@
       "ko": 0.48,
       "sub": 0.2,
       "dec": 0.32
+     }
+    },
+    {
+     "boutId": "401874317",
+     "date": "2026-07-25T13:00Z",
+     "weightClass": "Lightweight",
+     "segment": "Prelims",
+     "matchNumber": 9,
+     "a": {
+      "id": "3093513",
+      "name": "Ismael Bonfim",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "20-6-0"
+     },
+     "b": {
+      "id": "5245078",
+      "name": "Axel Sola",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+      "record": "11-1-1"
+     },
+     "ratingA": 1503,
+     "ratingB": 1509,
+     "pA": 0.495,
+     "fightsA": 6,
+     "fightsB": 2,
+     "method": {
+      "ko": 0.41,
+      "sub": 0.16,
+      "dec": 0.43
+     }
+    },
+    {
+     "boutId": "401891531",
+     "date": "2026-07-25T13:00Z",
+     "weightClass": "Welterweight",
+     "segment": "Prelims",
+     "matchNumber": 8,
+     "a": {
+      "id": "3043484",
+      "name": "Santiago Ponzinibbio",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+      "record": "31-9-0"
+     },
+     "b": {
+      "id": "5088916",
+      "name": "Sam Patterson",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "record": "14-3-1"
+     },
+     "ratingA": 1373,
+     "ratingB": 1650,
+     "pA": 0.257,
+     "fightsA": 20,
+     "fightsB": 7,
+     "method": {
+      "ko": 0.46,
+      "sub": 0.18,
+      "dec": 0.36
      }
     },
     {
@@ -507,37 +536,8 @@
      }
     },
     {
-     "boutId": "401874317",
-     "date": "2026-07-25T16:00Z",
-     "weightClass": "Lightweight",
-     "segment": "Prelims",
-     "matchNumber": 9,
-     "a": {
-      "id": "3093513",
-      "name": "Ismael Bonfim",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-      "record": "20-6-0"
-     },
-     "b": {
-      "id": "5245078",
-      "name": "Axel Sola",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-      "record": "11-1-1"
-     },
-     "ratingA": 1503,
-     "ratingB": 1509,
-     "pA": 0.495,
-     "fightsA": 6,
-     "fightsB": 2,
-     "method": {
-      "ko": 0.41,
-      "sub": 0.16,
-      "dec": 0.43
-     }
-    },
-    {
      "boutId": "401874311",
-     "date": "2026-07-25T16:00Z",
+     "date": "2026-07-25T13:00Z",
      "weightClass": "Heavyweight",
      "segment": "Prelims",
      "matchNumber": 5,
@@ -649,35 +649,6 @@
       "ko": 0.29,
       "sub": 0.11,
       "dec": 0.6
-     }
-    },
-    {
-     "boutId": "401873256",
-     "date": "2026-07-25T16:00Z",
-     "weightClass": "Light Heavyweight",
-     "segment": null,
-     "matchNumber": null,
-     "a": {
-      "id": "4273399",
-      "name": "Magomed Ankalaev",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
-      "record": "21-2-1"
-     },
-     "b": {
-      "id": "5152109",
-      "name": "Bogdan Guskov",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
-      "record": "18-3-1"
-     },
-     "ratingA": 1769,
-     "ratingB": 1629,
-     "pA": 0.631,
-     "fightsA": 14,
-     "fightsB": 5,
-     "method": {
-      "ko": 0.52,
-      "sub": 0.2,
-      "dec": 0.29
      }
     }
    ]
@@ -975,35 +946,6 @@
       "ko": 0.45,
       "sub": 0.07,
       "dec": 0.48
-     }
-    },
-    {
-     "boutId": "401879328",
-     "date": "2026-08-01T17:00Z",
-     "weightClass": "Light Heavyweight",
-     "segment": null,
-     "matchNumber": null,
-     "a": {
-      "id": "2506250",
-      "name": "Jan Blachowicz",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pol.png",
-      "record": "29-11-2"
-     },
-     "b": {
-      "id": "5152109",
-      "name": "Bogdan Guskov",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
-      "record": "18-3-1"
-     },
-     "ratingA": 1395,
-     "ratingB": 1628,
-     "pA": 0.29,
-     "fightsA": 20,
-     "fightsB": 5,
-     "method": {
-      "ko": 0.43,
-      "sub": 0.23,
-      "dec": 0.34
      }
     },
     {
