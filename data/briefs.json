@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-15T10:24:51.501Z",
+  "generated": "2026-07-15T14:23:42.707Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -181,8 +181,12 @@
       ]
     },
     "ARG|ENG": {
-      "text": "England and Argentina meet in the World Cup semifinal, with the fixture's history including Maradona's 1986 \"Hand of God\" and the Beckham-Simeone incident. The tie marks the first senior international meeting between England and Lionel Messi, and England's key task is containing him. Ismail Elfath will referee the match.",
+      "text": "England meet Argentina in the World Cup semifinal, with Lionel Messi facing England for the first time in a senior international. Ismail Elfath will referee the fixture. Argentina's vice-president described England as \"invaders\" ahead of the match.",
       "sources": [
+        {
+          "headline": "Should England focus on Messi or Argentina's midfield?",
+          "href": "https://www.espn.com/video/clip/_/id/49366431/should-england-focus-messi-argentina-midfield"
+        },
         {
           "headline": "Argentina vice-president before World Cup semifinal: England are 'invaders'",
           "href": "https://www.espn.com/soccer/story/_/id/49365557/argentina-vice-president-world-cup-semifinal-england-invaders"
@@ -190,10 +194,6 @@
         {
           "headline": "Argentina scouting report: How can England stop Lionel Messi and Co. in the World Cup semifinal?",
           "href": "https://www.espn.com/soccer/story/_/id/49344633/argentina-scouting-report-england-lionel-messi-world-cup-semfinal-2026"
-        },
-        {
-          "headline": "Hand of God, Beckham vs. Simeone: Ranking the most controversial England-Argentina moments",
-          "href": "https://www.espn.com/soccer/story/_/id/49342647/england-argentina-world-cup-semifinal-2026-hand-god-david-beckham-diego-simeone-ranking-controversial"
         }
       ]
     }
