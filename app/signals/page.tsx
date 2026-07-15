@@ -36,6 +36,8 @@ type SignalSide = {
 
 type Signal = {
   id: string;
+  shareId: string;
+  shareHref: string;
   sport: SignalSport;
   href: string;
   desk: string;
@@ -249,6 +251,8 @@ function buildFootballSignals(
 
       return {
         id: `football-${match.id}`,
+        shareId: match.id,
+        shareHref: `/signal/football/${match.id}?utm_source=shared_signal&utm_medium=social_card`,
         sport: "football" as const,
         href: `/match/${match.id}`,
         desk: match.status === "live" ? "Football · live" : "Football · World Cup",
@@ -301,6 +305,8 @@ function buildUfcSignal(
 
   return {
     id: `ufc-${fight.boutId}`,
+    shareId: fight.boutId,
+    shareHref: `/signal/ufc/${fight.boutId}?utm_source=shared_signal&utm_medium=social_card`,
     sport: "ufc",
     href: `/ufc/event/${eventId}#bout-${fight.boutId}`,
     desk: "UFC · fight forecast",
@@ -429,8 +435,16 @@ function SignalCard({
         <MatchShareButton
           title={shareTitle}
           text={shareText}
-          url={signal.href}
+          url={signal.shareHref}
           label="Share signal ↗"
+          copyText
+          analytics={{
+            sport: signal.sport,
+            signalId: signal.shareId,
+            pick: pick.name,
+            probability: Math.round(signal.probability * 100),
+            surface: "daily_signals",
+          }}
         />
       </div>
     </article>
