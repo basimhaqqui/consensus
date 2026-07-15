@@ -533,8 +533,6 @@
   .spotlightImage {
     right: 10px;
     bottom: 22px;
-    width: 168px;
-    height: 168px;
     transform: scale(0.82);
     transform-origin: right bottom;
   }
