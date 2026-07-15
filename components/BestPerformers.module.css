@@ -151,10 +151,10 @@
 
 .spotlightGlow {
   position: absolute;
-  right: 8%;
-  bottom: 5%;
-  width: 210px;
-  height: 210px;
+  right: 24px;
+  bottom: 34px;
+  width: 204px;
+  height: 204px;
   border: 1px solid rgba(52, 211, 153, 0.13);
   border-radius: 999px;
   box-shadow: 0 0 90px rgba(52, 211, 153, 0.1);
@@ -223,8 +223,8 @@
 .spotlightImage {
   position: absolute;
   z-index: 2;
-  right: 32px;
-  bottom: 40px;
+  right: 24px;
+  bottom: 34px;
   display: grid;
   width: 204px;
   height: 204px;
@@ -523,6 +523,15 @@
 
   .spotlight {
     min-height: 320px;
+  }
+
+  .spotlightGlow {
+    right: 16px;
+    bottom: 28px;
+    width: 168px;
+    height: 168px;
+    transform: scale(0.82);
+    transform-origin: right bottom;
   }
 
   .spotlightCopy {
