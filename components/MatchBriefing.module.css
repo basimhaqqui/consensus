@@ -1,0 +1,601 @@
+.briefing {
+  margin-top: 32px;
+}
+
+.hero {
+  position: relative;
+  padding: 22px 24px 20px;
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 9% 44%, rgba(52, 211, 153, 0.09), transparent 28%),
+    radial-gradient(circle at 91% 44%, rgba(56, 189, 248, 0.08), transparent 28%);
+  content: "";
+  pointer-events: none;
+}
+
+.heroTop,
+.heroMeta,
+.panelHeading,
+.pickTopline,
+.probabilityLabels,
+.outcomeLabels,
+.marketLabels,
+.briefingFooter {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.heroKicker,
+.panelEyebrow {
+  color: #65717d;
+  font-size: 9px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.heroKicker strong {
+  color: var(--accent);
+  font-weight: 560;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #87939f;
+  font-size: 9px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.statusLive {
+  color: var(--accent);
+}
+
+.matchup {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(112px, auto) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  margin-top: 34px;
+}
+
+.team {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 14px;
+}
+
+.teamAway {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.teamCopy {
+  min-width: 0;
+}
+
+.teamCode {
+  display: block;
+  color: #64717d;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.teamName {
+  display: block;
+  margin-top: 4px;
+  overflow: hidden;
+  color: #f1f5f7;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(25px, 4vw, 40px);
+  font-weight: 560;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.form {
+  display: flex;
+  gap: 3px;
+  margin-top: 9px;
+}
+
+.teamAway .form {
+  justify-content: flex-end;
+}
+
+.form span {
+  display: grid;
+  width: 15px;
+  height: 15px;
+  place-items: center;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.formWin {
+  background: rgba(52, 211, 153, 0.72);
+}
+
+.formDraw {
+  background: #525b66;
+}
+
+.formLoss {
+  background: rgba(248, 113, 113, 0.72);
+}
+
+.matchState {
+  text-align: center;
+}
+
+.matchState strong {
+  display: block;
+  color: #e8edf1;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(17px, 2.2vw, 25px);
+  font-weight: 540;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.matchState span {
+  display: block;
+  margin-top: 7px;
+  color: #687481;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.heroMeta {
+  margin-top: 34px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(125, 136, 150, 0.16);
+  color: #687582;
+  font-size: 10px;
+}
+
+.sectionNav {
+  display: flex;
+  gap: 2px;
+  margin-top: 12px;
+  padding: 3px;
+  overflow-x: auto;
+}
+
+.sectionNav a {
+  flex: 0 0 auto;
+  padding: 7px 11px;
+  border-radius: 6px;
+  color: #687582;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sectionNav a:first-child {
+  background: rgba(52, 211, 153, 0.1);
+  color: var(--accent);
+}
+
+.sectionNav a:hover {
+  background: rgba(255, 255, 255, 0.035);
+  color: #d5dce2;
+}
+
+.intelligenceGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(310px, 0.88fr);
+  align-items: start;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.forecast,
+.reasoning {
+  padding: 20px;
+  scroll-margin-top: 24px;
+}
+
+.panelHeading {
+  margin-bottom: 20px;
+}
+
+.panelHeading h2 {
+  color: #c6cfd7;
+  font-size: 10px;
+  font-weight: 530;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.confidence {
+  padding: 4px 7px;
+  border: 1px solid rgba(52, 211, 153, 0.22);
+  border-radius: 5px;
+  background: rgba(52, 211, 153, 0.07);
+  color: var(--accent);
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.confidenceMiss {
+  border-color: rgba(248, 113, 113, 0.3);
+  background: rgba(248, 113, 113, 0.08);
+  color: #f87171;
+}
+
+.pickTopline {
+  align-items: flex-end;
+}
+
+.pickName {
+  color: #f2f6f8;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(27px, 4vw, 42px);
+  font-weight: 560;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+
+.pickProbability {
+  color: var(--accent);
+  font-size: clamp(30px, 4.4vw, 46px);
+  font-weight: 570;
+  letter-spacing: -0.05em;
+  line-height: 0.86;
+}
+
+.pickCaption {
+  margin-top: 7px;
+  color: #71808c;
+  font-size: 10px;
+}
+
+.probability {
+  margin-top: 22px;
+}
+
+.probabilityLabels,
+.outcomeLabels,
+.marketLabels {
+  color: #697683;
+  font-size: 10px;
+}
+
+.probabilityLabels strong,
+.marketLabels strong {
+  color: #b6c0c8;
+  font-weight: 520;
+}
+
+.probabilityTrack,
+.outcomeTrack,
+.marketTrack {
+  display: flex;
+  height: 6px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(125, 136, 150, 0.16);
+}
+
+.probabilityTrack span:first-child,
+.marketTrack span:first-child {
+  background: var(--accent);
+}
+
+.probabilityTrack span:last-child,
+.marketTrack span:last-child {
+  flex: 1;
+  background: rgba(56, 189, 248, 0.68);
+}
+
+.outcome {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(125, 136, 150, 0.14);
+}
+
+.outcomeLabels strong {
+  display: block;
+  color: #c0c9d1;
+  font-size: 15px;
+  font-weight: 560;
+}
+
+.outcomeLabels span:nth-child(2) {
+  text-align: center;
+}
+
+.outcomeLabels span:last-child {
+  text-align: right;
+}
+
+.outcomeTrack span:nth-child(1) {
+  background: rgba(52, 211, 153, 0.76);
+}
+
+.outcomeTrack span:nth-child(2) {
+  background: #4e5863;
+}
+
+.outcomeTrack span:nth-child(3) {
+  background: rgba(56, 189, 248, 0.68);
+}
+
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+  margin-top: 18px;
+}
+
+.stat {
+  min-width: 0;
+  padding: 10px;
+  border: 1px solid rgba(125, 136, 150, 0.13);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.018);
+}
+
+.stat span {
+  display: block;
+  color: #5f6b77;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.stat strong {
+  display: block;
+  margin-top: 4px;
+  overflow: hidden;
+  color: #cbd3da;
+  font-size: 13px;
+  font-weight: 540;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.reasonList {
+  display: grid;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reason {
+  display: grid;
+  grid-template-columns: 25px minmax(0, 1fr);
+  gap: 10px;
+}
+
+.reasonIndex {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  border: 1px solid rgba(52, 211, 153, 0.22);
+  border-radius: 6px;
+  color: var(--accent);
+  font-size: 8px;
+}
+
+.reason strong {
+  display: block;
+  color: #c4cdd5;
+  font-size: 12px;
+  font-weight: 540;
+}
+
+.reason p {
+  margin-top: 3px;
+  color: #687582;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.marketCompare {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(125, 136, 150, 0.14);
+}
+
+.marketCompare > span {
+  display: block;
+  margin-bottom: 10px;
+  color: #5f6b77;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.marketRow + .marketRow {
+  margin-top: 10px;
+}
+
+.marketTrack {
+  height: 4px;
+  margin-top: 5px;
+}
+
+.brief {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(125, 136, 150, 0.14);
+}
+
+.brief > span {
+  display: block;
+  color: #5f6b77;
+  font-size: 8px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.brief p {
+  margin-top: 7px;
+  color: #9da8b2;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 12px;
+  line-height: 1.62;
+}
+
+.briefSources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 12px;
+  margin-top: 9px;
+}
+
+.briefSources a {
+  color: #667582;
+  font-size: 9px;
+}
+
+.briefSources a:hover {
+  color: var(--accent);
+}
+
+.briefingFooter {
+  align-items: stretch;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(125, 136, 150, 0.14);
+}
+
+.briefingFooter p {
+  max-width: 230px;
+  color: #5d6975;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.mobileShare {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .intelligenceGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .matchup {
+    gap: 12px;
+  }
+
+  .team {
+    gap: 9px;
+  }
+
+  .teamName {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .briefing {
+    margin-top: 22px;
+  }
+
+  .hero {
+    padding: 17px 16px 15px;
+  }
+
+  .heroTop > button {
+    display: none;
+  }
+
+  .matchup {
+    grid-template-columns: minmax(0, 1fr) 72px minmax(0, 1fr);
+    gap: 7px;
+    margin-top: 26px;
+  }
+
+  .team,
+  .teamAway {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .teamName {
+    font-size: 18px;
+  }
+
+  .form,
+  .teamAway .form {
+    justify-content: center;
+  }
+
+  .matchState strong {
+    font-size: 14px;
+  }
+
+  .matchState span {
+    font-size: 8px;
+  }
+
+  .heroMeta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 25px;
+  }
+
+  .forecast,
+  .reasoning {
+    padding: 17px;
+  }
+
+  .statGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .briefingFooter {
+    flex-direction: column;
+  }
+
+  .mobileShare {
+    position: fixed;
+    z-index: 40;
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+    display: block;
+    padding: 5px;
+    border: 1px solid rgba(125, 136, 150, 0.22);
+    border-radius: 11px;
+    background: rgba(8, 12, 17, 0.92);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(16px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sectionNav a {
+    scroll-behavior: auto;
+  }
+}
