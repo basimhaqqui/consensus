@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-15T14:23:42.707Z",
+  "generated": "2026-07-15T17:50:49.762Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -181,19 +181,19 @@
       ]
     },
     "ARG|ENG": {
-      "text": "England meet Argentina in the World Cup semifinal, with Lionel Messi facing England for the first time in a senior international. Ismail Elfath will referee the fixture. Argentina's vice-president described England as \"invaders\" ahead of the match.",
+      "text": "Morgan Rogers is set to start for England in Wednesday's semifinal, with the side facing an Argentina attack led by Lionel Messi. Ismail Elfath will referee the match.",
       "sources": [
+        {
+          "headline": "Morgan Rogers set to start for England in Argentina semifinal showdown - sources",
+          "href": "https://www.espn.com/soccer/story/_/id/49368040/england-team-news-world-cup-2026-england-argentina-morgan-rogers"
+        },
         {
           "headline": "Should England focus on Messi or Argentina's midfield?",
           "href": "https://www.espn.com/video/clip/_/id/49366431/should-england-focus-messi-argentina-midfield"
         },
         {
-          "headline": "Argentina vice-president before World Cup semifinal: England are 'invaders'",
+          "headline": "Argentina vice president before World Cup semifinal: England are 'invaders'",
           "href": "https://www.espn.com/soccer/story/_/id/49365557/argentina-vice-president-world-cup-semifinal-england-invaders"
-        },
-        {
-          "headline": "Argentina scouting report: How can England stop Lionel Messi and Co. in the World Cup semifinal?",
-          "href": "https://www.espn.com/soccer/story/_/id/49344633/argentina-scouting-report-england-lionel-messi-world-cup-semfinal-2026"
         }
       ]
     }
