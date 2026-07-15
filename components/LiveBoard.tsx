@@ -351,12 +351,14 @@ function SpotlightTeam({
 }) {
   return (
     <div className={`${styles.spotlightTeam} ${right ? styles.spotlightTeamRight : ""}`}>
-      <Crest teamKey={teamKey} code={code} size={34} />
-      <div>
-        <span>{code}{winner ? " · advanced" : ""}</span>
-        <strong>{name}</strong>
+      <div className={styles.spotlightIdentity}>
+        <Crest teamKey={teamKey} code={code} size={34} />
+        <div className={styles.spotlightName}>
+          <span>{code}{winner ? " · advanced" : ""}</span>
+          <strong>{name}</strong>
+        </div>
       </div>
-      <b className="tabnums">{value}</b>
+      <b className={`${styles.spotlightProbability} tabnums`}>{value}</b>
     </div>
   );
 }

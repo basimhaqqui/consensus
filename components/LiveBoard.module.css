@@ -176,7 +176,8 @@
   display: flex;
   min-width: 0;
   align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  gap: 18px;
 }
 
 .spotlightTeamRight {
@@ -184,7 +185,18 @@
   text-align: right;
 }
 
-.spotlightTeam > div {
+.spotlightIdentity {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+}
+
+.spotlightTeamRight .spotlightIdentity {
+  flex-direction: row-reverse;
+}
+
+.spotlightName {
   min-width: 0;
 }
 
@@ -210,10 +222,16 @@
   white-space: nowrap;
 }
 
-.spotlightTeam b {
+.spotlightProbability {
+  flex: 0 0 auto;
   color: #f2f6f8;
   font-size: 23px;
   font-weight: 560;
+  text-align: right;
+}
+
+.spotlightTeamRight .spotlightProbability {
+  text-align: left;
 }
 
 .versus {
@@ -482,19 +500,23 @@
   }
 
   .spotlightTeam {
+    gap: 9px;
+  }
+
+  .spotlightIdentity {
     gap: 7px;
   }
 
-  .spotlightTeam img {
+  .spotlightIdentity img {
     width: 27px;
     height: 27px;
   }
 
   .spotlightTeam strong {
-    font-size: 17px;
+    font-size: 15px;
   }
 
-  .spotlightTeam b {
+  .spotlightProbability {
     font-size: 18px;
   }
 
