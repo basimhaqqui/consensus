@@ -1,6 +1,6 @@
 {
  "start": 1000,
- "cash": 573.27,
+ "cash": 473.27,
  "open": [
   {
    "kind": "single",
@@ -292,6 +292,46 @@
    "event": "UFC Fight Night: Du Plessis vs. Usman",
    "analysis": "model P(under)=44.3% vs implied 41.0% (finish 54%)",
    "placedAt": "2026-07-13T04:01:24.050Z"
+  },
+  {
+   "kind": "single",
+   "title": "Guskov ML @ 4.5",
+   "legs": [
+    {
+     "boutId": "401873256",
+     "type": "ml",
+     "pickId": "5152109",
+     "price": 4.5,
+     "label": "Guskov ML"
+    }
+   ],
+   "stake": 50,
+   "price": 4.5,
+   "p": 0.291,
+   "ev": 0.309,
+   "event": "UFC Fight Night: Ankalaev vs. Guskov",
+   "analysis": "consensus 29.1% (model 36.9) vs implied 22.2%",
+   "placedAt": "2026-07-15T19:38:31.797Z"
+  },
+  {
+   "kind": "single",
+   "title": "Aliev ML @ 1.62",
+   "legs": [
+    {
+     "boutId": "401886737",
+     "type": "ml",
+     "pickId": "5092398",
+     "price": 1.62,
+     "label": "Aliev ML"
+    }
+   ],
+   "stake": 50,
+   "price": 1.62,
+   "p": 0.651,
+   "ev": 0.054,
+   "event": "UFC Fight Night: Ankalaev vs. Guskov",
+   "analysis": "consensus 65.0% (model 70.4) vs implied 61.7%",
+   "placedAt": "2026-07-15T19:38:31.798Z"
   }
  ],
  "settled": [
@@ -847,6 +887,11 @@
    "at": "2026-07-15T17:41:07.082Z",
    "cash": 573.27,
    "exposure": 416.42
+  },
+  {
+   "at": "2026-07-15T19:38:31.798Z",
+   "cash": 473.27,
+   "exposure": 516.42
   }
  ]
 }

@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-15T17:41:06.406Z",
+ "computedAt": "2026-07-15T19:38:31.067Z",
  "cards": [
   {
    "eventId": "600059599",
@@ -337,7 +337,7 @@
      "date": "2026-07-25T13:00Z",
      "weightClass": "Welterweight",
      "segment": "Prelims",
-     "matchNumber": 12,
+     "matchNumber": 8,
      "a": {
       "id": "3043484",
       "name": "Santiago Ponzinibbio",
@@ -510,8 +510,8 @@
      "boutId": "401874317",
      "date": "2026-07-25T16:00Z",
      "weightClass": "Lightweight",
-     "segment": "Main Card",
-     "matchNumber": 6,
+     "segment": "Prelims",
+     "matchNumber": 9,
      "a": {
       "id": "3093513",
       "name": "Ismael Bonfim",
@@ -539,7 +539,7 @@
      "boutId": "401874311",
      "date": "2026-07-25T16:00Z",
      "weightClass": "Heavyweight",
-     "segment": "Main Card",
+     "segment": "Prelims",
      "matchNumber": 5,
      "a": {
       "id": "4001837",
@@ -655,8 +655,8 @@
      "boutId": "401873256",
      "date": "2026-07-25T16:00Z",
      "weightClass": "Light Heavyweight",
-     "segment": "Main Card",
-     "matchNumber": 1,
+     "segment": null,
+     "matchNumber": null,
      "a": {
       "id": "4273399",
       "name": "Magomed Ankalaev",
@@ -721,7 +721,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "Heavyweight",
      "segment": "Prelims",
-     "matchNumber": 11,
+     "matchNumber": 10,
      "a": {
       "id": "5312090",
       "name": "Jovan Leka",
@@ -750,7 +750,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "W Bantamweight",
      "segment": "Prelims",
-     "matchNumber": 10,
+     "matchNumber": 9,
      "a": {
       "id": "4374742",
       "name": "Hailey Cowan",
@@ -779,7 +779,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "Featherweight",
      "segment": "Prelims",
-     "matchNumber": 9,
+     "matchNumber": 8,
      "a": {
       "id": "4686735",
       "name": "Dennis Buzukja",
@@ -808,7 +808,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "Bantamweight",
      "segment": "Prelims",
-     "matchNumber": 8,
+     "matchNumber": 7,
      "a": {
       "id": "5212850",
       "name": "Josias Musasa",
@@ -837,7 +837,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "Welterweight",
      "segment": "Prelims",
-     "matchNumber": 7,
+     "matchNumber": 6,
      "a": {
       "id": "4900808",
       "name": "Oban Elliott",
@@ -866,7 +866,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "Lightweight",
      "segment": "Prelims",
-     "matchNumber": 6,
+     "matchNumber": 5,
      "a": {
       "id": "4193694",
       "name": "Ludovit Klein",
@@ -895,7 +895,7 @@
      "date": "2026-08-01T17:00Z",
      "weightClass": "Middleweight",
      "segment": "Main Card",
-     "matchNumber": 5,
+     "matchNumber": 4,
      "a": {
       "id": "4375574",
       "name": "Gilbert Urbina",
@@ -924,7 +924,7 @@
      "date": "2026-08-01T17:00Z",
      "weightClass": "Middleweight",
      "segment": "Main Card",
-     "matchNumber": 4,
+     "matchNumber": 3,
      "a": {
       "id": "4421517",
       "name": "Duško Todorović",
@@ -953,7 +953,7 @@
      "date": "2026-08-01T17:00Z",
      "weightClass": "Heavyweight",
      "segment": "Main Card",
-     "matchNumber": 3,
+     "matchNumber": 2,
      "a": {
       "id": "3093559",
       "name": "Marcin Tybura",
@@ -981,8 +981,8 @@
      "boutId": "401879328",
      "date": "2026-08-01T17:00Z",
      "weightClass": "Light Heavyweight",
-     "segment": "Main Card",
-     "matchNumber": 2,
+     "segment": null,
+     "matchNumber": null,
      "a": {
       "id": "2506250",
       "name": "Jan Blachowicz",
