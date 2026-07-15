@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-15T11:53:44.882Z",
+ "fetchedAt": "2026-07-15T14:14:05.667Z",
  "byBout": {
   "401872218": {
    "pA": 0.323,
@@ -23,16 +23,16 @@
    ]
   },
   "401874062": {
-   "pA": 0.261,
+   "pA": 0.257,
    "books": 8,
    "commence": "2026-07-19T01:15:00Z",
-   "priceA": 3.67,
-   "priceB": 1.3,
+   "priceA": 3.72,
+   "priceB": 1.29,
    "totals": [
     {
      "point": 2.5,
-     "over": 1.64,
-     "under": 2.26,
+     "over": 1.65,
+     "under": 2.25,
      "books": 4
     }
    ]
@@ -46,8 +46,8 @@
    "totals": [
     {
      "point": 1.5,
-     "over": 1.79,
-     "under": 2.03,
+     "over": 1.75,
+     "under": 2.09,
      "books": 4
     }
    ]
@@ -69,18 +69,18 @@
    "totals": [
     {
      "point": 1.5,
-     "over": 1.62,
-     "under": 2.31,
+     "over": 1.6,
+     "under": 2.36,
      "books": 4
     }
    ]
   },
   "401881163": {
-   "pA": 0.445,
+   "pA": 0.439,
    "books": 8,
    "commence": "2026-07-18T21:00:00Z",
-   "priceA": 2.15,
-   "priceB": 1.72,
+   "priceA": 2.18,
+   "priceB": 1.7,
    "totals": [
     {
      "point": 1.5,
@@ -91,11 +91,11 @@
    ]
   },
   "401881165": {
-   "pA": 0.234,
+   "pA": 0.221,
    "books": 8,
    "commence": "2026-07-18T23:45:00Z",
-   "priceA": 4.1,
-   "priceB": 1.25,
+   "priceA": 4.34,
+   "priceB": 1.23,
    "totals": [
     {
      "point": 2.5,
@@ -106,10 +106,10 @@
    ]
   },
   "401881166": {
-   "pA": 0.403,
+   "pA": 0.405,
    "books": 8,
    "commence": "2026-07-18T21:00:00Z",
-   "priceA": 2.38,
+   "priceA": 2.36,
    "priceB": 1.61,
    "totals": [
     {
@@ -129,11 +129,11 @@
    "totals": []
   },
   "401889641": {
-   "pA": 0.559,
+   "pA": 0.561,
    "books": 8,
    "commence": "2026-07-18T21:35:00Z",
-   "priceA": 1.71,
-   "priceB": 2.17,
+   "priceA": 1.7,
+   "priceB": 2.18,
    "totals": [
     {
      "point": 1.5,
@@ -144,11 +144,11 @@
    ]
   },
   "401889642": {
-   "pA": 0.796,
+   "pA": 0.808,
    "books": 8,
    "commence": "2026-07-18T21:00:00Z",
-   "priceA": 1.2,
-   "priceB": 4.7,
+   "priceA": 1.18,
+   "priceB": 5,
    "totals": [
     {
      "point": 2.5,
