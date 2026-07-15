@@ -29,9 +29,14 @@ const ROLES = [
   { key: "Goalkeeper", label: "Goalkeeping", code: "GK" },
 ] as const;
 
+// ESPN headshot pattern: https://a.espncdn.com/i/headshots/soccer/players/full/<espnId>.png
+// We only have a few known mappings; for others we'll construct from api-football ID if needed
 const SPOTLIGHT_PHOTOS: Record<number, string> = {
   154: "https://a.espncdn.com/i/headshots/soccer/players/full/45843.png",
 };
+
+// Fallback: try to construct ESPN URL from known api-football -> ESPN mappings
+// or use a generic placeholder. For now, extend the fallback chain in PlayerFace usage.
 
 function metric(player: CompetitionPlayerStats, category: LeaderCategory) {
   switch (category) {
@@ -149,7 +154,12 @@ export default function BestPerformers({ view }: { view: CompetitionPerformanceV
             </div>
             <div className={styles.spotlightImage}>
               <PlayerFace
-                srcs={[SPOTLIGHT_PHOTOS[leader.id], leader.photo]}
+                srcs={[
+                  SPOTLIGHT_PHOTOS[leader.id],
+                  // Try constructing ESPN headshot from api-football ID (leader.id)
+                  `https://a.espncdn.com/i/headshots/soccer/players/full/${leader.id}.png`,
+                  leader.photo,
+                ].filter(Boolean) as string[]}
                 jersey={leader.number ? `${leader.number}` : undefined}
                 size={188}
                 relaxed
