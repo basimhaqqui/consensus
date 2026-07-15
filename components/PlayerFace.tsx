@@ -102,7 +102,15 @@ function whiteKnockout(src: string): Promise<string | null> {
 const isHeadshot = (u: string) =>
   u.includes("/i/headshots/") || u.includes("media.api-sports.io");
 
-function crop(u: string, shape: "circle" | "square") {
+function crop(u: string, shape: "circle" | "square", relaxed: boolean) {
+  if (relaxed) {
+    return {
+      objectFit: "cover" as const,
+      objectPosition: "center top",
+      transform: "none",
+    };
+  }
+
   if (isHeadshot(u)) {
     return {
       objectFit: "cover" as const,
@@ -132,12 +140,14 @@ export default function PlayerFace({
   jersey,
   size = 40,
   shape = "circle",
+  relaxed = false,
 }: {
   src?: string | null;
   srcs?: (string | null | undefined)[]; // fallback chain, tried in order
   jersey?: string;
   size?: number;
   shape?: "circle" | "square";
+  relaxed?: boolean;
 }) {
   const chain = (srcs ?? [src]).filter(Boolean) as string[];
   const [idx, setIdx] = useState(0);
@@ -180,7 +190,7 @@ export default function PlayerFace({
     );
   }
 
-  const style = { width: "100%", height: "100%", ...crop(raw, shape) };
+  const style = { width: "100%", height: "100%", ...crop(raw, shape, relaxed) };
   const img = (
     // eslint-disable-next-line @next/next/no-img-element
     <img

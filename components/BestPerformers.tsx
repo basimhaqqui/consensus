@@ -29,6 +29,10 @@ const ROLES = [
   { key: "Goalkeeper", label: "Goalkeeping", code: "GK" },
 ] as const;
 
+const SPOTLIGHT_PHOTOS: Record<number, string> = {
+  154: "https://a.espncdn.com/i/headshots/soccer/players/full/45843.png",
+};
+
 function metric(player: CompetitionPlayerStats, category: LeaderCategory) {
   switch (category) {
     case "impact":
@@ -144,7 +148,12 @@ export default function BestPerformers({ view }: { view: CompetitionPerformanceV
               <p>{supporting(leader, category)}</p>
             </div>
             <div className={styles.spotlightImage}>
-              <PlayerFace src={leader.photo} jersey={leader.number ? `${leader.number}` : undefined} size={188} />
+              <PlayerFace
+                srcs={[SPOTLIGHT_PHOTOS[leader.id], leader.photo]}
+                jersey={leader.number ? `${leader.number}` : undefined}
+                size={188}
+                relaxed
+              />
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className={styles.watermark} src={leader.teamLogo} alt="" />
