@@ -7,10 +7,10 @@ export default function Footer() {
           <span className="uppercase tracking-[0.18em] text-zinc-300">
             Consensus
           </span>
-          <span className="uppercase tracking-[0.14em] text-zinc-600">/ wc26</span>
+          <span className="uppercase tracking-[0.14em] text-zinc-600">/ intelligence</span>
         </span>
         <span className="text-zinc-600 sm:text-right">
-          A football intelligence terminal · for entertainment, not betting advice
+          A sports intelligence terminal · for entertainment, not betting advice
         </span>
       </div>
       <div className="mt-4 flex flex-wrap gap-x-6 gap-y-1.5 border-t border-white/[0.035] pt-4 text-zinc-600">

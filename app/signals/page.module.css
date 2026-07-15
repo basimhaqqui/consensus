@@ -1,0 +1,812 @@
+.shell {
+  max-width: 1180px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(250px, 0.32fr);
+  gap: clamp(48px, 9vw, 112px);
+  align-items: end;
+  padding: clamp(58px, 8vw, 92px) 0 42px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.title {
+  color: #f3f7f9;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(48px, 7vw, 82px);
+  font-weight: 530;
+  letter-spacing: -0.062em;
+  line-height: 0.91;
+}
+
+.title span {
+  display: block;
+  margin-top: 0.12em;
+  background: linear-gradient(105deg, #dce5e9, #84929e 72%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  max-width: 670px;
+  margin-top: 20px;
+  color: #84909c;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.heroStatus {
+  padding: 18px 0 5px 20px;
+  border-left: 1px solid var(--hairline);
+}
+
+.heroStatus > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.heroStatus strong,
+.heroStatus > span,
+.heroStatus small {
+  display: block;
+}
+
+.heroStatus strong {
+  color: #bdc7cf;
+  font-size: 10px;
+  font-weight: 530;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.heroStatus > span {
+  margin-top: 15px;
+  color: #788491;
+  font-size: 10px;
+}
+
+.heroStatus small {
+  margin-top: 6px;
+  color: #4d5865;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.summaryRail {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-bottom: 1px solid var(--hairline);
+}
+
+.summaryRail > div {
+  min-width: 0;
+  padding: 20px 18px;
+  border-right: 1px solid rgba(125, 136, 150, 0.13);
+}
+
+.summaryRail > div:first-child {
+  padding-left: 0;
+}
+
+.summaryRail > div:last-child {
+  border-right: 0;
+}
+
+.summaryRail span,
+.summaryRail strong,
+.summaryRail small {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.summaryRail span {
+  color: #57626e;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.summaryRail strong {
+  margin-top: 8px;
+  color: #d8e0e6;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 22px;
+  font-weight: 560;
+  letter-spacing: -0.035em;
+}
+
+.summaryRail small {
+  margin-top: 5px;
+  color: #525d69;
+  font-size: 9px;
+}
+
+.section {
+  margin-top: 64px;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: #535f6b;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.sectionHeading h2 {
+  color: #b8c1c9;
+  font-size: 10px;
+  font-weight: 540;
+  letter-spacing: 0.17em;
+}
+
+.sectionHeading i {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to right, rgba(125, 136, 150, 0.27), rgba(125, 136, 150, 0.035));
+}
+
+.sectionHeading small {
+  color: #4e5965;
+  font-size: 8px;
+  font-style: normal;
+}
+
+.leadGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.72fr) minmax(270px, 0.72fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.signalCard {
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(125, 136, 150, 0.21);
+  border-radius: 11px;
+  background:
+    radial-gradient(circle at 88% 9%, rgba(52, 211, 153, 0.075), transparent 30%),
+    linear-gradient(145deg, rgba(15, 21, 29, 0.95), rgba(8, 12, 18, 0.93));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045), 0 26px 58px -42px #000;
+}
+
+.signalCard::before {
+  position: absolute;
+  top: -1px;
+  right: 18px;
+  left: 18px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(52, 211, 153, 0.58), transparent);
+  content: "";
+}
+
+.signalCardFeatured {
+  min-height: 590px;
+  padding: 24px;
+  border-color: rgba(52, 211, 153, 0.28);
+}
+
+.signalCardUfc {
+  background:
+    radial-gradient(circle at 9% 13%, rgba(239, 68, 68, 0.075), transparent 27%),
+    radial-gradient(circle at 91% 12%, rgba(59, 130, 246, 0.075), transparent 29%),
+    linear-gradient(145deg, rgba(15, 21, 29, 0.95), rgba(8, 12, 18, 0.93));
+}
+
+.signalCardUfc::before {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.44), transparent 47%, rgba(59, 130, 246, 0.44));
+}
+
+.cardTopline,
+.cardMeta,
+.callout,
+.probabilityLabels,
+.cardFooter,
+.marketGapTopline,
+.compareRow > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cardTopline {
+  color: #687481;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.cardTopline span:first-child {
+  color: var(--accent);
+}
+
+.signalCardUfc .cardTopline span:first-child {
+  color: #f87171;
+}
+
+.cardMeta {
+  margin-top: 26px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid rgba(125, 136, 150, 0.13);
+  color: #626e7a;
+  font-size: 9px;
+}
+
+.cardMeta strong {
+  overflow: hidden;
+  color: #8d99a5;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cardMeta span {
+  flex: 0 0 auto;
+}
+
+.matchup {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  margin-top: 24px;
+}
+
+.identity {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 11px;
+}
+
+.identityRight {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.identity > div:last-child {
+  min-width: 0;
+}
+
+.identity span,
+.identity strong {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.identity span {
+  color: #596572;
+  font-size: 8px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.identity strong {
+  margin-top: 3px;
+  color: #dbe2e7;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 16px;
+  font-weight: 540;
+  letter-spacing: -0.025em;
+}
+
+.signalCardFeatured .identity strong {
+  font-size: clamp(18px, 2.2vw, 25px);
+}
+
+.versus {
+  color: #414b56;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.callout {
+  align-items: flex-end;
+  margin-top: 36px;
+}
+
+.callout > div:first-child > span,
+.callProbability span,
+.reasoning > span {
+  display: block;
+  color: #5f6a76;
+  font-size: 8px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.callout > div:first-child > strong {
+  display: block;
+  margin-top: 6px;
+  color: #f1f5f7;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(25px, 3.4vw, 40px);
+  font-weight: 560;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.callProbability {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.callProbability strong {
+  display: block;
+  color: var(--accent);
+  font-size: clamp(28px, 3.8vw, 44px);
+  font-weight: 580;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+
+.signalCardUfc .callProbability strong {
+  color: #f87171;
+}
+
+.callProbability span {
+  margin-top: 7px;
+}
+
+.probabilityTrack {
+  display: flex;
+  height: 4px;
+  margin-top: 21px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(56, 189, 248, 0.38);
+}
+
+.signalCardUfc .probabilityTrack {
+  background: rgba(59, 130, 246, 0.35);
+}
+
+.probabilityTrack span {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+}
+
+.signalCardUfc .probabilityTrack span {
+  background: #ef4444;
+}
+
+.probabilityLabels {
+  margin-top: 7px;
+  color: #52606c;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.reasoning {
+  margin-top: 30px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(125, 136, 150, 0.13);
+}
+
+.reasoning ol {
+  display: grid;
+  gap: 12px;
+  margin-top: 13px;
+}
+
+.reasoning li {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr);
+  gap: 8px;
+  color: #7f8b97;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.reasoning li > span {
+  padding-top: 1px;
+  color: #46525e;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 8px;
+}
+
+.cardFooter {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(125, 136, 150, 0.13);
+}
+
+.cardFooter > a {
+  color: #b8c3cb;
+  font-size: 9px;
+  font-weight: 530;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.cardFooter > a:hover {
+  color: var(--accent);
+}
+
+.signalCardUfc .cardFooter > a:hover {
+  color: #f87171;
+}
+
+.insightStack {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 12px;
+}
+
+.marketGap {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  padding: 21px;
+  border-color: rgba(245, 158, 11, 0.3);
+  background:
+    radial-gradient(circle at 100% 0, rgba(245, 158, 11, 0.1), transparent 40%),
+    linear-gradient(145deg, rgba(20, 18, 13, 0.94), rgba(10, 12, 16, 0.92));
+}
+
+.marketGapTopline,
+.marketGap > span {
+  color: #8e6d32;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.marketGapTopline b {
+  padding: 3px 5px;
+  border: 1px solid rgba(245, 158, 11, 0.23);
+  border-radius: 4px;
+  color: #b88834;
+  font-size: 7px;
+  font-weight: 520;
+}
+
+.marketGap > strong {
+  display: block;
+  margin-top: 27px;
+  color: #f0f3f5;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(23px, 3vw, 34px);
+  font-weight: 560;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.marketGap > p {
+  margin-top: 11px;
+  color: #938574;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.compareRows {
+  display: grid;
+  gap: 13px;
+  margin-top: 30px;
+}
+
+.compareRow > div:first-child {
+  color: #777064;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.compareRow > div:first-child strong {
+  color: #c7bca9;
+  font-size: 10px;
+}
+
+.compareRow > div:last-child {
+  height: 3px;
+  margin-top: 6px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(245, 158, 11, 0.09);
+}
+
+.compareRow > div:last-child span {
+  display: block;
+  height: 100%;
+  background: rgba(245, 158, 11, 0.72);
+}
+
+.marketGap > a {
+  margin-top: auto;
+  padding-top: 24px;
+  color: #c79b51;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contextGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: 9px;
+  background: var(--hairline);
+}
+
+.contextCard {
+  min-width: 0;
+  padding: 17px;
+  background: linear-gradient(145deg, rgba(14, 19, 26, 0.96), rgba(9, 13, 18, 0.95));
+}
+
+.contextCard span,
+.contextCard strong,
+.contextCard small {
+  display: block;
+}
+
+.contextCard span {
+  color: #56616d;
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.contextCard strong {
+  margin-top: 8px;
+  overflow: hidden;
+  color: #c8d1d8;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 16px;
+  font-weight: 540;
+  letter-spacing: -0.025em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contextCard .liveValue {
+  color: var(--accent);
+}
+
+.contextCard small {
+  margin-top: 5px;
+  overflow: hidden;
+  color: #505b67;
+  font-size: 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.secondaryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.secondaryGrid .signalCard {
+  display: flex;
+  min-height: 570px;
+  flex-direction: column;
+}
+
+.secondaryGrid .cardFooter {
+  margin-top: auto;
+}
+
+.explainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  background: var(--hairline);
+}
+
+.explainer > div {
+  min-height: 156px;
+  padding: 22px;
+  background: linear-gradient(145deg, rgba(14, 19, 26, 0.96), rgba(9, 13, 18, 0.95));
+}
+
+.explainer > div + div {
+  border-left: 1px solid var(--hairline);
+}
+
+.explainer span,
+.explainer strong {
+  display: block;
+}
+
+.explainer span {
+  color: var(--accent);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+}
+
+.explainer strong {
+  margin-top: 27px;
+  color: #cbd4da;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 14px;
+  font-weight: 550;
+}
+
+.explainer p {
+  margin-top: 8px;
+  color: #66727e;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.empty {
+  padding: 40px;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .heroStatus {
+    max-width: 420px;
+  }
+
+  .summaryRail {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .summaryRail > div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .summaryRail > div:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(125, 136, 150, 0.13);
+  }
+
+  .summaryRail > div:nth-child(3) {
+    padding-left: 0;
+  }
+
+  .leadGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .insightStack {
+    grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .secondaryGrid,
+  .explainer,
+  .insightStack {
+    grid-template-columns: 1fr;
+  }
+
+  .explainer > div + div {
+    border-top: 1px solid var(--hairline);
+    border-left: 0;
+  }
+
+  .secondaryGrid .signalCard,
+  .signalCardFeatured {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding-top: 48px;
+  }
+
+  .title {
+    font-size: clamp(43px, 14vw, 61px);
+  }
+
+  .heroStatus {
+    padding-left: 15px;
+  }
+
+  .summaryRail > div {
+    padding: 16px 11px;
+  }
+
+  .summaryRail strong {
+    font-size: 18px;
+  }
+
+  .section {
+    margin-top: 50px;
+  }
+
+  .sectionHeading {
+    gap: 8px;
+  }
+
+  .sectionHeading small {
+    display: none;
+  }
+
+  .signalCard,
+  .signalCardFeatured {
+    padding: 17px;
+  }
+
+  .cardMeta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .cardMeta span {
+    flex: auto;
+  }
+
+  .matchup {
+    gap: 7px;
+  }
+
+  .identity {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .identityRight {
+    align-items: flex-end;
+    text-align: right;
+  }
+
+  .identity strong,
+  .signalCardFeatured .identity strong {
+    max-width: 118px;
+    font-size: 15px;
+  }
+
+  .callout {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+    margin-top: 30px;
+  }
+
+  .callProbability {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    text-align: left;
+  }
+
+  .callProbability span {
+    margin-top: 0;
+  }
+
+  .cardFooter {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cardFooter > a {
+    text-align: center;
+  }
+}

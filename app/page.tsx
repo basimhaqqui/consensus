@@ -74,14 +74,20 @@ export default async function Landing() {
             football and UFC—built to tell you what matters now.
           </p>
           <div className={styles.heroActions}>
-            <Link href="/wc" className={styles.primaryAction}>
-              Explore football
+            <Link href="/signals" className={styles.primaryAction}>
+              See today&apos;s signals
               <span aria-hidden="true">↗</span>
             </Link>
-            <Link href="/ufc" className={styles.secondaryAction}>
-              Explore UFC
-              <span aria-hidden="true">↗</span>
-            </Link>
+            <div className={styles.deskActions}>
+              <Link href="/wc" className={styles.secondaryAction}>
+                Football desk
+                <span aria-hidden="true">↗</span>
+              </Link>
+              <Link href="/ufc" className={`${styles.secondaryAction} ${styles.combatAction}`}>
+                UFC desk
+                <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
             <span className={styles.actionMeta}>
               Live data · 49k model results · public ledgers
             </span>

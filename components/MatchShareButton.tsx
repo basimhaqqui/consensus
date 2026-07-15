@@ -6,27 +6,33 @@ export default function MatchShareButton({
   title,
   text,
   compact = false,
+  url,
+  label = "Share match ↗",
 }: {
   title: string;
   text: string;
   compact?: boolean;
+  url?: string;
+  label?: string;
 }) {
   const [copied, setCopied] = useState(false);
 
   async function share() {
-    const url = window.location.href;
+    const shareUrl = url
+      ? new URL(url, window.location.origin).toString()
+      : window.location.href;
     try {
       if (navigator.share) {
-        await navigator.share({ title, text, url });
+        await navigator.share({ title, text, url: shareUrl });
         return;
       }
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1800);
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
       try {
-        await navigator.clipboard.writeText(url);
+        await navigator.clipboard.writeText(shareUrl);
         setCopied(true);
         window.setTimeout(() => setCopied(false), 1800);
       } catch {
@@ -44,7 +50,7 @@ export default function MatchShareButton({
         compact ? "h-10 w-full px-4 text-[10px]" : "px-3 py-2 text-[9px]"
       }`}
     >
-      {copied ? "Link copied ✓" : "Share match ↗"}
+      {copied ? "Link copied ✓" : label}
     </button>
   );
 }

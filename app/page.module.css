@@ -177,20 +177,38 @@
   justify-content: space-between;
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid rgba(248, 113, 113, 0.3);
+  border: 1px solid rgba(125, 136, 150, 0.22);
   border-radius: 7px;
-  background: rgba(248, 113, 113, 0.045);
-  color: #e8c8ca;
+  background: rgba(255, 255, 255, 0.025);
+  color: #c5cdd4;
   font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .secondaryAction:hover {
-  border-color: rgba(248, 113, 113, 0.62);
-  background: rgba(248, 113, 113, 0.1);
-  color: #ffe5e7;
+  border-color: rgba(52, 211, 153, 0.46);
+  background: rgba(52, 211, 153, 0.07);
+  color: #dffcf1;
   transform: translateY(-2px);
+}
+
+.deskActions {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.combatAction {
+  border-color: rgba(248, 113, 113, 0.24);
+  color: #d8babc;
+}
+
+.combatAction:hover {
+  border-color: rgba(248, 113, 113, 0.58);
+  background: rgba(248, 113, 113, 0.08);
+  color: #ffe5e7;
 }
 
 .primaryAction {
@@ -874,6 +892,11 @@
     width: 230px;
   }
 
+  .deskActions {
+    width: 230px;
+    grid-template-columns: 1fr;
+  }
+
   .competitionGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -920,6 +943,10 @@
   }
 
   .secondaryAction {
+    width: 100%;
+  }
+
+  .deskActions {
     width: 100%;
   }
 
