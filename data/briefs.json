@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-15T03:46:34.341Z",
+  "generated": "2026-07-15T06:38:26.107Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -181,19 +181,19 @@
       ]
     },
     "ARG|ENG": {
-      "text": "England face reigning champions Argentina in the World Cup semifinal on Wednesday. Thomas Tuchel said he is considering man-marking Lionel Messi and has dismissed suggestions of a rift with Jude Bellingham. Marc Guehi argued the pressure sits with Argentina, while manager Lionel Scaloni pushed back on criticism of his side's performances at the tournament.",
+      "text": "Thomas Tuchel is weighing a man-marking plan for Lionel Messi and has considered several options to contain the Argentina captain in Wednesday's semifinal. Tuchel also moved to downplay reported tension with Jude Bellingham, insisting there are \"no cracks\" in their relationship. Argentina's Lionel Scaloni has pushed back on criticism of his side's performances at the tournament, while England's Marc Guéhi argued the pressure sits with the reigning champions.",
       "sources": [
+        {
+          "headline": "How Harry Kane became one of England's great captains",
+          "href": "https://www.espn.com/soccer/story/_/id/49360500/how-harry-kane-changed-role-england-captain-world-cup-semifinal-argentina"
+        },
+        {
+          "headline": "England vs. Argentina: Dan Burn relishing chance to play in match that inspired love for football",
+          "href": "https://www.espn.com/soccer/story/_/id/49361909/england-vs-argentina-world-cup-2026-dan-burn-relishing-chance-play-match-inspired-love-football"
+        },
         {
           "headline": "Argentina not playing as bad as people say, according to Scaloni",
           "href": "https://www.espn.com/soccer/story/_/id/49363588/argentina-playing-bad-people-say"
-        },
-        {
-          "headline": "Tuchel discusses England's plan to stop Messi",
-          "href": "https://www.espn.com/video/clip/_/id/49363551/tuchel-discusses-england-plan-stop-messi"
-        },
-        {
-          "headline": "Thomas Tuchel: 'No cracks' in Jude Bellingham relationship",
-          "href": "https://www.espn.com/soccer/story/_/id/49363424/thomas-tuchel-jude-bellingham-england-fifa-world-cup-2026"
         }
       ]
     }
