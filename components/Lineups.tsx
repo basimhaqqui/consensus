@@ -24,23 +24,28 @@ export default function Lineups({
 
   return (
     <div>
-      <div className="terminal-panel">
-        <div className="terminal-panel-header relative flex items-center justify-between gap-3 px-4 py-2.5">
+      <div className="terminal-panel overflow-hidden">
+        <div className="terminal-panel-header relative grid grid-cols-[1fr_auto_1fr] items-center gap-2 px-3 py-3 sm:gap-4 sm:px-5 sm:py-4">
           <TeamTag sq={home} />
           {predicted ? (
-            <span className="absolute left-1/2 -translate-x-1/2 rounded-full border border-amber-400/40 bg-amber-400/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-amber-300 whitespace-nowrap">
-              Predicted XI
+            <span className="rounded-full border border-amber-400/35 bg-amber-400/10 px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.16em] text-amber-300 whitespace-nowrap sm:text-[9px]">
+              Projected XI
             </span>
           ) : (
             status === "pre" && (
-              <span className="absolute left-1/2 -translate-x-1/2 rounded-full border border-accent/40 bg-accent/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-accent whitespace-nowrap">
+              <span className="rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.16em] text-accent whitespace-nowrap sm:text-[9px]">
                 Confirmed
               </span>
             )
           )}
           <TeamTag sq={away} align="right" />
         </div>
-        <div className="p-2 sm:p-3">
+        <div className="flex items-center justify-between border-b border-line/50 bg-black/15 px-4 py-2 text-[9px] uppercase tracking-[0.14em] text-muted sm:px-5">
+          <span>{predicted ? "Latest available shape" : "Official team sheet"}</span>
+          <span className="hidden sm:inline">Select a player for profile + match stats</span>
+          <span className="sm:hidden">Tap a player</span>
+        </div>
+        <div className="p-2.5 sm:p-3.5">
           {/* vertical pitch on phones (FotMob style), horizontal on wider screens */}
           <div className="sm:hidden">
             <PitchDuo home={home} away={away} onSelect={select} orient="v" />
@@ -50,9 +55,9 @@ export default function Lineups({
           </div>
         </div>
         {predicted && (
-          <div className="px-4 pb-3 text-center text-[10px] text-muted">
-            Our projection from each side&apos;s last match — official lineups
-            drop about an hour before kickoff.
+          <div className="border-t border-line/50 bg-black/10 px-4 py-2.5 text-center text-[10px] leading-relaxed text-muted">
+            Projected from recent selections and each side&apos;s latest available shape.
+            Official lineups usually arrive about an hour before kickoff.
           </div>
         )}
       </div>
@@ -82,21 +87,25 @@ export default function Lineups({
 function TeamTag({ sq, align }: { sq: Squad; align?: "right" }) {
   return (
     <div
-      className={`flex items-center gap-2 min-w-0 ${
+      className={`flex min-w-0 items-center gap-2.5 ${
         align === "right" ? "flex-row-reverse text-right" : ""
       }`}
     >
-      <Crest teamKey={sq.key} src={sq.logo} code={sq.abbr} size={20} />
-      {/* full name needs room — codes on phones */}
-      <span className="hidden sm:inline text-sm font-semibold truncate">
-        {sq.name}
+      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg border border-line/70 bg-white/[0.035] shadow-inner sm:h-9 sm:w-9">
+        <Crest teamKey={sq.key} src={sq.logo} code={sq.abbr} size={23} />
       </span>
-      <span className="sm:hidden text-sm font-semibold">{sq.abbr}</span>
-      {sq.formation && (
-        <span className="text-[11px] tabnums text-accent shrink-0">
-          {sq.formation}
+      <span className="min-w-0">
+        <span className="block truncate text-[12px] font-semibold text-zinc-100 sm:text-sm">
+          <span className="hidden sm:inline">{sq.name}</span>
+          <span className="sm:hidden">{sq.abbr}</span>
         </span>
-      )}
+        <span className={`mt-0.5 flex items-center gap-1.5 ${align === "right" ? "justify-end" : ""}`}>
+          <span className="hidden text-[8px] uppercase tracking-[0.15em] text-muted sm:inline">Formation</span>
+          <span className="whitespace-nowrap text-[10px] font-semibold tabnums text-accent sm:text-[11px]">
+            {sq.formation ?? "—"}
+          </span>
+        </span>
+      </span>
     </div>
   );
 }
@@ -130,29 +139,34 @@ function Bench({
   if (bench.length === 0) return null;
 
   return (
-    <div className="terminal-panel">
-      <div className="terminal-panel-header flex items-center gap-2 px-4 py-2">
-        <Crest teamKey={sq.key} src={sq.logo} code={sq.abbr} size={18} />
-        <span className="text-sm font-semibold truncate">{sq.name}</span>
-        <span className="ml-auto text-[10px] uppercase tracking-wider text-muted">
-          Bench
+    <div className="terminal-panel overflow-hidden">
+      <div className="terminal-panel-header flex items-center gap-2.5 px-4 py-3">
+        <span className="grid h-7 w-7 shrink-0 place-items-center rounded-md border border-line/70 bg-white/[0.035]">
+          <Crest teamKey={sq.key} src={sq.logo} code={sq.abbr} size={18} />
+        </span>
+        <span className="min-w-0">
+          <span className="block truncate text-[12px] font-semibold text-zinc-100">{sq.name}</span>
+          <span className="block text-[8px] uppercase tracking-[0.15em] text-muted">Available substitutes</span>
+        </span>
+        <span className="ml-auto rounded-full border border-line bg-black/20 px-2 py-0.5 text-[9px] font-semibold tabnums text-muted">
+          {bench.length}
         </span>
       </div>
-      <div className="px-4 py-2 divide-y divide-line/40">
+      <div className="grid gap-1.5 p-2.5 lg:grid-cols-2">
         {bench.map((p) => (
           <button
             key={(p.id ?? p.name) + p.pos}
             type="button"
             onClick={() => onSelect(p)}
-            className="group flex w-full items-center gap-2.5 rounded px-1 py-1.5 text-left hover:bg-white/[0.025]"
+            className="group flex w-full items-center gap-2.5 rounded-lg border border-transparent bg-white/[0.018] px-2 py-2 text-left transition hover:border-line/70 hover:bg-white/[0.04] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent/70"
           >
-            <span className="w-4 shrink-0 text-right text-[10px] tabnums text-muted">
+            <span className="w-4 shrink-0 text-right text-[10px] font-semibold tabnums text-muted">
               {p.jersey}
             </span>
-            <PlayerFace srcs={[p.headshot, p.img, p.photo]} jersey={p.jersey} size={28} />
+            <PlayerFace srcs={[p.headshot, p.img, p.photo]} jersey={p.jersey} size={32} />
             <span className="min-w-0 flex-1">
               <span className="flex items-center gap-1.5">
-                <span className="truncate text-[12px] text-zinc-200 group-hover:text-accent">
+                <span className="truncate text-[11px] font-medium text-zinc-200 transition group-hover:text-accent sm:text-[12px]">
                   {p.name}
                 </span>
                 {p.subbedIn && (
@@ -172,7 +186,7 @@ function Bench({
                 )}
                 <PlayerMarkers p={p} />
               </span>
-              <span className="block text-[10px] text-muted">{posWord(p)}</span>
+              <span className="mt-0.5 block text-[9px] uppercase tracking-[0.1em] text-muted">{posWord(p)}</span>
             </span>
             {p.rating !== undefined && (
               <span
@@ -182,6 +196,7 @@ function Bench({
                 {p.rating.toFixed(1)}
               </span>
             )}
+            <span className="ml-0.5 text-[12px] text-muted/50 transition group-hover:translate-x-0.5 group-hover:text-accent">›</span>
           </button>
         ))}
       </div>

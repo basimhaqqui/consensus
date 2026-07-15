@@ -37,6 +37,11 @@ function rank(p: Player): number {
 const bandRank = (p: Player) =>
   ({ GK: 0, DEF: 1, MID: 2, FWD: 3 }[p.band] ?? 2);
 
+function teamGlow(color?: string) {
+  const hex = (color ?? "").replace("#", "");
+  return /^[0-9a-f]{6}$/i.test(hex) ? `#${hex}2b` : "rgba(45,212,191,0.08)";
+}
+
 // Build pitch rows from the REAL formation string (e.g. "3-4-2-1"); players are
 // slotted into those lines by position. Falls back to band grouping if the
 // formation is missing or the counts don't line up.
@@ -133,12 +138,12 @@ export function PitchDuo({
 
   const shape =
     orient === "h"
-      ? "aspect-[7/5] min-h-[460px]"
-      : "aspect-[2/3] min-h-[560px] max-w-[440px] mx-auto";
+      ? "aspect-[7/5] min-h-[500px]"
+      : "aspect-[2/3] min-h-[590px] max-w-[440px] mx-auto";
 
   return (
     <div
-      className={`blueprint-surface relative w-full ${shape} overflow-hidden rounded-xl border border-[var(--hairline-strong)] shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_22px_46px_-34px_rgba(0,0,0,0.95)]`}
+      className={`blueprint-surface relative w-full ${shape} overflow-hidden rounded-2xl border border-[var(--hairline-strong)] shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_24px_54px_-32px_rgba(0,0,0,0.95)]`}
       style={{
         background: `repeating-linear-gradient(${
           orient === "h" ? "90deg" : "0deg"
@@ -150,6 +155,27 @@ export function PitchDuo({
         className="absolute inset-0 pointer-events-none"
         style={{ boxShadow: "inset 0 0 90px rgba(0,0,0,0.5)" }}
       />
+      <div
+        className={`pointer-events-none absolute ${orient === "h" ? "inset-y-0 left-0 w-1/2" : "inset-x-0 top-0 h-1/2"}`}
+        style={{
+          background: `radial-gradient(circle at ${orient === "h" ? "12% 50%" : "50% 10%"}, ${teamGlow(home.color)}, transparent 66%)`,
+        }}
+      />
+      <div
+        className={`pointer-events-none absolute ${orient === "h" ? "inset-y-0 right-0 w-1/2" : "inset-x-0 bottom-0 h-1/2"}`}
+        style={{
+          background: `radial-gradient(circle at ${orient === "h" ? "88% 50%" : "50% 90%"}, ${teamGlow(away.color)}, transparent 66%)`,
+        }}
+      />
+
+      <div className={`pointer-events-none absolute z-[1] flex items-center gap-1.5 text-[8px] font-bold uppercase tracking-[0.18em] text-white/25 ${orient === "h" ? "left-3 top-3" : "left-3 top-3"}`}>
+        <span className="h-1 w-1 rounded-full bg-white/30" />
+        {home.abbr}
+      </div>
+      <div className={`pointer-events-none absolute z-[1] flex items-center gap-1.5 text-[8px] font-bold uppercase tracking-[0.18em] text-white/25 ${orient === "h" ? "bottom-3 right-3" : "bottom-3 right-3"}`}>
+        {away.abbr}
+        <span className="h-1 w-1 rounded-full bg-white/30" />
+      </div>
 
       {/* field markings */}
       {orient === "h" ? (
@@ -232,11 +258,11 @@ function DuoDot({
       type="button"
       onClick={onSelect}
       style={{ left: `${x}%`, top: `${y}%` }}
-      className="absolute w-[48px] sm:w-[64px] -translate-x-1/2 -translate-y-1/2 group"
+      className="group absolute w-[54px] -translate-x-1/2 -translate-y-1/2 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/80 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b2417] sm:w-[72px]"
     >
-      <div className="relative transition-transform duration-150 group-hover:scale-110 group-hover:z-10">
+      <div className="relative transition duration-150 group-hover:z-10 group-hover:-translate-y-1 group-hover:scale-[1.06]">
         <div
-          className="relative overflow-hidden rounded-md sm:rounded-lg shadow-lg shadow-black/50"
+          className="relative overflow-hidden rounded-[9px] border border-white/15 shadow-[0_9px_18px_-6px_rgba(0,0,0,0.85)] sm:rounded-xl"
           style={{ background: t.grad }}
         >
           {/* crest watermark — the team's identity behind the player */}
@@ -245,16 +271,16 @@ function DuoDot({
             <img
               src={crest}
               alt=""
-              className="pointer-events-none absolute left-1/2 top-[46%] w-[105%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.16] saturate-[1.4]"
+              className="pointer-events-none absolute left-1/2 top-[44%] w-[98%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.15] saturate-[1.4]"
             />
           )}
 
           {/* rim + top shine */}
           <div
-            className="pointer-events-none absolute inset-0 rounded-md sm:rounded-lg"
+            className="pointer-events-none absolute inset-0 rounded-[9px] sm:rounded-xl"
             style={{
               boxShadow:
-                "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 0 0 1px rgba(0,0,0,0.35)",
+                "inset 0 1px 0 rgba(255,255,255,0.38), inset 0 -18px 24px -20px rgba(0,0,0,0.75)",
             }}
           />
 
@@ -264,11 +290,11 @@ function DuoDot({
             className={`absolute z-10 flex flex-col items-start ${
               p.subbedOut
                 ? "left-[13px] top-[6px] sm:left-4 sm:top-2"
-                : "left-[3px] top-[3px] sm:left-1.5 sm:top-1.5"
+                : "left-1 top-1 sm:left-1.5 sm:top-1.5"
             }`}
           >
             <span
-              className="text-[9px] sm:text-[11px] font-extrabold tabnums leading-none"
+              className="text-[10px] font-extrabold tabnums leading-none sm:text-[12px]"
               style={{
                 color: t.ink,
                 // strong enough to read over the white api-football photos
@@ -278,7 +304,7 @@ function DuoDot({
               {p.jersey}
             </span>
             <span
-              className="mt-[2px] text-[6px] sm:text-[8px] font-bold uppercase tracking-wide leading-none"
+              className="mt-[2px] text-[6px] font-bold uppercase leading-none tracking-wide sm:text-[8px]"
               style={{ color: t.sub, textShadow: "0 1px 3px rgba(0,0,0,0.7)" }}
             >
               {p.pos}
@@ -287,7 +313,7 @@ function DuoDot({
 
           {/* face cutout */}
           <div
-            className="relative mx-auto mt-1 h-9 w-9 translate-x-[4px] sm:mt-1.5 sm:h-12 sm:w-12 sm:translate-x-[5px]"
+            className="relative mx-auto mt-1 h-10 w-10 translate-x-[4px] sm:mt-1.5 sm:h-14 sm:w-14 sm:translate-x-[5px]"
             style={{ color: t.ink }}
           >
             <PlayerFace srcs={[p.headshot, p.img, p.photo]} jersey={p.jersey} shape="square" />
@@ -295,19 +321,20 @@ function DuoDot({
 
           {/* name band — solid bar in the team's second colour */}
           <div
-            className="relative z-10 mt-[1px] px-[3px] py-[2px] sm:px-1"
+            className="relative z-10 mt-[1px] border-t border-white/10 px-[3px] py-[3px] sm:px-1.5 sm:py-1"
             style={{ background: t.bandBg, color: t.bandInk }}
           >
-            <span className="block truncate text-center text-[7px] sm:text-[9px] font-bold uppercase tracking-wide leading-tight">
+            <span className="block truncate text-center text-[7px] font-bold uppercase leading-tight tracking-[0.06em] sm:text-[9px]">
               {shortName(p.name)}
             </span>
           </div>
+          <div className="h-[2px] bg-white/20" />
         </div>
 
         {/* rating pill — top-right corner, FotMob colours; blue + star = MOTM */}
         {p.rating !== undefined && (
           <span
-            className="absolute -right-2 -top-2 z-20 inline-flex items-center gap-[2px] rounded-full px-[4px] sm:px-[5px] py-[1px] text-[9px] sm:text-[11px] font-bold tabnums leading-[1.35] text-white shadow-md ring-1 ring-black/30"
+            className="absolute -right-2 -top-2 z-20 inline-flex items-center gap-[2px] rounded-md px-[5px] py-[2px] text-[9px] font-bold leading-[1.35] tabnums text-white shadow-md ring-1 ring-black/30 sm:text-[11px]"
             style={{ backgroundColor: motm ? "#2f7cf6" : ratingColor(p.rating) }}
           >
             {p.rating.toFixed(1)}

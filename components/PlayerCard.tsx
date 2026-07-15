@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, type ReactNode } from "react";
+import { useEffect } from "react";
 import type { Player } from "@/lib/match";
 import PlayerFace from "./PlayerFace";
 import Crest from "./Crest";
@@ -69,8 +69,13 @@ export default function PlayerCard({
 }) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKey);
+    };
   }, [onClose]);
 
   const sections = STAT_SECTIONS.map((s) => ({
@@ -84,126 +89,118 @@ export default function PlayerCard({
       : player.bio?.position ?? "—";
 
   const t = cardTheme(teamColor, teamAlt);
+  const roleLabel = player.starter ? "Starting XI" : "Substitute";
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm fade-up"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-3 backdrop-blur-md sm:p-6 fade-up"
       onClick={onClose}
+      role="presentation"
     >
       <div
-        className="terminal-panel flex max-h-[88vh] w-full max-w-sm flex-col rounded-2xl"
+        className="terminal-panel relative flex max-h-[92vh] w-full max-w-[540px] flex-col overflow-hidden rounded-[22px] border-white/10 shadow-[0_34px_100px_-24px_rgba(0,0,0,0.95)]"
         onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="player-card-title"
       >
-        {/* header — the player's FUT card, blown up */}
         <div
-          className="relative flex flex-col items-center overflow-hidden px-5 pt-6 pb-4 text-center shrink-0"
+          className="relative shrink-0 overflow-hidden px-5 pb-5 pt-5 sm:px-7 sm:pb-7 sm:pt-6"
           style={{ background: t.grad }}
         >
-          {/* crest watermark — the team's identity behind the player */}
           {teamLogo && (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={teamLogo}
               alt=""
-              className="pointer-events-none absolute left-1/2 top-[42%] w-[62%] max-w-none -translate-x-1/2 -translate-y-1/2 opacity-[0.16] saturate-[1.4]"
+              className="pointer-events-none absolute -right-10 top-1/2 w-[58%] max-w-none -translate-y-1/2 opacity-[0.14] saturate-[1.35]"
             />
           )}
-          {/* rim + top shine */}
           <div
             className="pointer-events-none absolute inset-0"
             style={{
               boxShadow:
-                "inset 0 1px 0 rgba(255,255,255,0.35), inset 0 0 0 1px rgba(0,0,0,0.35)",
+                "inset 0 1px 0 rgba(255,255,255,0.3), inset 0 -80px 100px -80px rgba(0,0,0,0.7)",
             }}
           />
 
           <button
             onClick={onClose}
-            className="absolute top-2.5 right-2.5 z-20 grid h-6 w-6 place-items-center rounded-full bg-black/40 text-[11px] text-white hover:bg-black/60"
+            autoFocus
+            className="absolute right-3 top-3 z-20 grid h-8 w-8 place-items-center rounded-full border border-white/15 bg-black/30 text-[12px] text-white/80 transition hover:bg-black/55 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
             aria-label="Close"
           >
             ✕
           </button>
 
-          {/* jersey number + position, card-style top-left */}
-          <div className="absolute left-4 top-3.5 z-10 flex flex-col items-start">
-            <span
-              className="text-xl font-extrabold tabnums leading-none"
-              style={{ color: t.ink, textShadow: "0 1px 2px rgba(0,0,0,0.25)" }}
-            >
-              {player.jersey}
-            </span>
-            <span
-              className="mt-0.5 text-[10px] font-bold uppercase tracking-wide leading-none"
-              style={{ color: t.sub }}
-            >
-              {posLabel}
-            </span>
-          </div>
-
-          <div className="relative z-10">
-            <div className="relative h-[92px] w-[92px]" style={{ color: t.ink }}>
-              <PlayerFace
-                srcs={[player.headshot, player.img, player.photo]}
-                jersey={player.jersey}
-                shape="square"
-              />
-            </div>
-
-            {/* rating pill — top-right of the face, FotMob colours */}
-            {player.rating !== undefined && (
+          <div className="relative z-10 flex items-end gap-4 sm:gap-6">
+            <div className="relative shrink-0">
+              <div className="relative h-[122px] w-[108px] overflow-hidden rounded-[18px] border border-white/25 bg-black/15 shadow-[0_18px_36px_-18px_rgba(0,0,0,0.8)] sm:h-[150px] sm:w-[132px]">
+                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/25 to-transparent" />
+                <div className="absolute inset-0" style={{ color: t.ink }}>
+                  <PlayerFace
+                    srcs={[player.headshot, player.img, player.photo]}
+                    jersey={player.jersey}
+                    shape="square"
+                  />
+                </div>
+              </div>
               <span
-                className="absolute -right-6 top-0 rounded-full px-2 py-0.5 text-[13px] font-bold tabnums text-white shadow-md ring-1 ring-black/30"
-                style={{ backgroundColor: ratingColor(player.rating) }}
+                className="absolute -bottom-2 -left-2 rounded-lg border border-white/20 bg-black/70 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-white shadow-lg backdrop-blur"
               >
-                {player.rating.toFixed(1)}
+                #{player.jersey ?? "—"} · {posLabel}
               </span>
-            )}
-          </div>
-
-          <div
-            className="relative z-10 mt-1.5 flex items-center gap-2 text-lg font-bold leading-tight"
-            style={{ color: t.ink, textShadow: "0 1px 2px rgba(0,0,0,0.3)" }}
-          >
-            {player.name}
-          </div>
-          <div className="relative z-10 mt-1.5 flex items-center gap-2">
-            <PlayerMarkers p={player} size="md" />
-          </div>
-          {player.rating !== undefined && (
-            <div className="relative z-10 mt-1 text-[10px]" style={{ color: t.sub }}>
-              our match rating
             </div>
-          )}
+
+            <div className="min-w-0 flex-1 pb-1 text-left">
+              <div className="mb-2 flex flex-wrap items-center gap-2">
+                <span
+                  className="rounded-full border border-current/25 bg-black/15 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.16em]"
+                  style={{ color: t.ink }}
+                >
+                  {roleLabel}
+                </span>
+                {player.rating !== undefined && (
+                  <span
+                    className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-bold tabnums text-white shadow-md ring-1 ring-black/25"
+                    style={{ backgroundColor: ratingColor(player.rating) }}
+                  >
+                    {player.rating.toFixed(1)} rating
+                  </span>
+                )}
+              </div>
+              <h3
+                id="player-card-title"
+                className="text-balance text-[24px] font-bold leading-[0.98] tracking-[-0.035em] sm:text-[32px]"
+                style={{ color: t.ink, textShadow: "0 2px 8px rgba(0,0,0,0.24)" }}
+              >
+                {player.name}
+              </h3>
+              <div className="mt-3 flex items-center gap-2 text-[12px] font-semibold" style={{ color: t.sub }}>
+                <Crest teamKey={teamKey} src={teamLogo} code={teamName} size={20} />
+                <span className="truncate">{teamName}</span>
+              </div>
+              <div className="mt-2 min-h-5">
+                <PlayerMarkers p={player} size="md" />
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Position / Team / Age tiles — name-band colours */}
         <div
-          className="grid w-full grid-cols-3 divide-x divide-black/15 border-b border-line px-2 py-2 text-center shrink-0"
-          style={{ background: t.bandBg, color: t.bandInk }}
+          className="grid shrink-0 grid-cols-2 border-b border-line bg-black/20 sm:grid-cols-4"
         >
-          <Tile label="Position" value={posLabel} ink={t.bandInk} />
-          <Tile
-            label="Team"
-            value={player.bio?.club ?? teamName}
-            ink={t.bandInk}
-            icon={
-              <Crest teamKey={teamKey} src={teamLogo} code={teamName} size={14} />
-            }
-          />
-          <Tile
-            label="Age"
-            value={player.bio?.age !== undefined ? `${player.bio.age}` : "—"}
-            ink={t.bandInk}
-          />
+          <InfoTile label="Position" value={posLabel} />
+          <InfoTile label="Club" value={player.bio?.club ?? teamName} />
+          <InfoTile label="Age" value={player.bio?.age !== undefined ? `${player.bio.age}` : "—"} />
+          <InfoTile label="Nationality" value={player.bio?.nationality ?? teamName} />
         </div>
 
-        {/* stats — scrollable */}
-        <div className="overflow-y-auto px-5 py-4">
+        <div className="overflow-y-auto px-4 py-4 sm:px-6 sm:py-5">
           {(player.subbedIn || player.subbedOut) && (
-            <div className="mb-3 flex flex-col gap-1.5 text-[11px]">
+            <div className="mb-4 flex flex-wrap gap-2 text-[11px]">
               {player.subbedIn && (
-                <span className="inline-flex items-center gap-1.5 text-accent">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/25 bg-accent/10 px-2.5 py-1 text-accent">
                   <span className="inline-grid h-4 w-4 place-items-center rounded-full bg-accent/15 text-[10px] font-bold leading-none ring-1 ring-accent/30">
                     ↑
                   </span>
@@ -211,7 +208,7 @@ export default function PlayerCard({
                 </span>
               )}
               {player.subbedOut && (
-                <span className="inline-flex items-center gap-1.5 text-danger">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-danger/25 bg-danger/10 px-2.5 py-1 text-danger">
                   <span className="inline-grid h-4 w-4 place-items-center rounded-full bg-[#e0524f] text-[10px] font-bold leading-none text-white ring-1 ring-black/30">
                     ←
                   </span>
@@ -222,20 +219,20 @@ export default function PlayerCard({
           )}
 
           {sections.length > 0 ? (
-            <div className="space-y-4">
+            <div className="grid gap-3 sm:grid-cols-2">
               {sections.map((s) => (
-                <div key={s.title}>
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-zinc-300 mb-1.5">
+                <div key={s.title} className="rounded-xl border border-line/70 bg-white/[0.025] p-3.5">
+                  <div className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-300">
                     {s.title}
                   </div>
                   <div className="divide-y divide-line/40">
                     {s.rows.map((r) => (
                       <div
                         key={r.key}
-                        className="flex items-center justify-between py-1.5"
+                        className="flex items-center justify-between py-2"
                       >
                         <span className="text-[12px] text-muted">{r.label}</span>
-                        <span className="text-[13px] font-semibold tabnums">
+                        <span className="text-[13px] font-semibold tabnums text-zinc-100">
                           {player.stats![r.key]}
                         </span>
                       </div>
@@ -245,13 +242,19 @@ export default function PlayerCard({
               ))}
             </div>
           ) : (
-            <div className="text-sm text-muted">
-              No match stats yet — they populate once the game is underway.
+            <div className="rounded-xl border border-line/70 bg-white/[0.025] px-4 py-4">
+              <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-zinc-300">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-300 shadow-[0_0_8px_rgba(252,211,77,0.65)]" />
+                Pre-match profile
+              </div>
+              <p className="mt-2 text-[12px] leading-relaxed text-muted">
+                Match stats and performance rating will populate once the game is underway.
+              </p>
             </div>
           )}
 
           {player.bio?.desc && (
-            <p className="mt-4 pt-4 border-t border-line/40 text-[11px] text-muted leading-relaxed line-clamp-5">
+            <p className="mt-4 border-t border-line/40 pt-4 text-[11px] leading-relaxed text-muted line-clamp-5">
               {player.bio.desc}
             </p>
           )}
@@ -261,24 +264,17 @@ export default function PlayerCard({
   );
 }
 
-function Tile({
+function InfoTile({
   label,
   value,
-  icon,
-  ink,
 }: {
   label: string;
   value: string;
-  icon?: ReactNode;
-  ink?: string;
 }) {
   return (
-    <div className="px-1" style={ink ? { color: ink } : undefined}>
-      <div className="flex items-center justify-center gap-1 text-sm font-semibold truncate">
-        {icon}
-        <span className="truncate">{value}</span>
-      </div>
-      <div className="mt-0.5 text-[10px] uppercase tracking-wider opacity-70">
+    <div className="min-w-0 border-b border-line/50 px-4 py-3 text-left even:border-l sm:border-b-0 sm:border-l sm:first:border-l-0">
+      <div className="truncate text-[12px] font-semibold text-zinc-100">{value}</div>
+      <div className="mt-1 text-[9px] uppercase tracking-[0.16em] text-muted">
         {label}
       </div>
     </div>
