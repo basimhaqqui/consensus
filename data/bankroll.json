@@ -319,7 +319,10 @@
       "odds": 21.039,
       "modelP": 0.135,
       "ev": 1.846,
-      "status": "open"
+      "status": "lost",
+      "settledAt": "2026-07-15T21:12:20.961Z",
+      "result": "1-2 (90')",
+      "pnl": -55.8
     }
   ],
   "log": [
@@ -418,6 +421,10 @@
     {
       "at": "2026-07-14T21:11:34.708Z",
       "msg": "LOST FRA win + Kylian Mbappé 2+ goals @ 15.642 (FRA v ESP): -$55 (bank $248.1)"
+    },
+    {
+      "at": "2026-07-15T21:12:20.961Z",
+      "msg": "LOST ARG win + L. Messi 2+ goals @ 21.039 (ENG v ARG): -$55.8 (bank $248.1)"
     }
   ]
 }

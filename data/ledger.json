@@ -429,7 +429,16 @@
         "blend": 0.4409,
         "market": 0.5008
       },
-      "capturedAt": "2026-07-15T16:41:57.536Z"
+      "capturedAt": "2026-07-15T16:41:57.536Z",
+      "result": {
+        "winnerKey": "ARG",
+        "score": {
+          "home": 1,
+          "away": 2
+        },
+        "detail": "FT",
+        "gradedAt": "2026-07-15T21:12:10.589Z"
+      }
     }
   ]
 }
