@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-14T23:13:00.892Z",
+ "fetchedAt": "2026-07-15T03:39:28.151Z",
  "cards": [
   {
    "eventId": "600059599",
@@ -464,6 +464,25 @@
    "venue": "Belgrade Arena",
    "fights": [
     {
+     "boutId": "401891535",
+     "date": "2026-08-01T14:00Z",
+     "weightClass": "Lightweight",
+     "segment": "Prelims",
+     "matchNumber": 12,
+     "a": {
+      "id": "3084914",
+      "name": "Kyle Prepolec",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+      "record": "18-10-0"
+     },
+     "b": {
+      "id": "4689965",
+      "name": "Mateusz Rębecki",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pol.png",
+      "record": "20-5-0"
+     }
+    },
+    {
      "boutId": "401870844",
      "date": "2026-08-01T14:00Z",
      "weightClass": "Heavyweight",
@@ -647,10 +666,10 @@
       "record": "29-11-2"
      },
      "b": {
-      "id": "4402367",
-      "name": "Opponent TBA",
-      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
-      "record": null
+      "id": "5152109",
+      "name": "Bogdan Guskov",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+      "record": "18-3-1"
      }
     },
     {
@@ -717,6 +736,34 @@
       "name": "Quillan Salkilld",
       "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
       "record": "12-1-0"
+     }
+    }
+   ]
+  },
+  {
+   "eventId": "600060732",
+   "name": "Dana White's Contender Series: Season 10, Week 1",
+   "shortName": "Dana White's Contender Series",
+   "date": "2026-08-12T00:00Z",
+   "venue": "Meta APEX",
+   "fights": [
+    {
+     "boutId": "401891536",
+     "date": "2026-08-12T00:00Z",
+     "weightClass": null,
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "2431356",
+      "name": "TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     },
+     "b": {
+      "id": "4402367",
+      "name": "Opponent TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
      }
     }
    ]
@@ -921,6 +968,34 @@
    ]
   },
   {
+   "eventId": "600060733",
+   "name": "Dana White's Contender Series: Season 10, Week 2",
+   "shortName": "Dana White's Contender Series",
+   "date": "2026-08-19T00:00Z",
+   "venue": "Meta APEX",
+   "fights": [
+    {
+     "boutId": "401891537",
+     "date": "2026-08-19T00:00Z",
+     "weightClass": null,
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "2431356",
+      "name": "TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     },
+     "b": {
+      "id": "4402367",
+      "name": "Opponent TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     }
+    }
+   ]
+  },
+  {
    "eventId": "600060493",
    "name": "UFC Fight Night: Hernandez vs. Rodrigues",
    "shortName": "UFC Fight Night",
@@ -1082,6 +1157,34 @@
    ]
   },
   {
+   "eventId": "600060734",
+   "name": "Dana White's Contender Series: Season 10, Week 3",
+   "shortName": "Dana White's Contender Series",
+   "date": "2026-08-26T00:00Z",
+   "venue": "Meta APEX",
+   "fights": [
+    {
+     "boutId": "401891538",
+     "date": "2026-08-26T00:00Z",
+     "weightClass": null,
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "2431356",
+      "name": "TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     },
+     "b": {
+      "id": "4402367",
+      "name": "Opponent TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     }
+    }
+   ]
+  },
+  {
    "eventId": "600060620",
    "name": "UFC Fight Night: Nurmagomedov vs. Song",
    "shortName": "UFC Fight Night",
@@ -1090,10 +1193,10 @@
    "fights": [
     {
      "boutId": "401887538",
-     "date": "2026-08-29T08:00Z",
+     "date": "2026-08-29T10:00Z",
      "weightClass": "Light Heavyweight",
-     "segment": "Prelims",
-     "matchNumber": 6,
+     "segment": "Main Card",
+     "matchNumber": 5,
      "a": {
       "id": "5122234",
       "name": "Junior Tafa",
@@ -1205,6 +1308,34 @@
    ]
   },
   {
+   "eventId": "600060735",
+   "name": "Dana White's Contender Series: Season 10, Week 4",
+   "shortName": "Dana White's Contender Series",
+   "date": "2026-09-02T00:00Z",
+   "venue": "Meta APEX",
+   "fights": [
+    {
+     "boutId": "401891539",
+     "date": "2026-09-02T00:00Z",
+     "weightClass": null,
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "2431356",
+      "name": "TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     },
+     "b": {
+      "id": "4402367",
+      "name": "Opponent TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     }
+    }
+   ]
+  },
+  {
    "eventId": "600059993",
    "name": "UFC Fight Night: Paris",
    "shortName": "UFC Fight Night",
@@ -1233,6 +1364,34 @@
     {
      "boutId": "401875226",
      "date": "2026-09-05T19:00Z",
+     "weightClass": null,
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "2431356",
+      "name": "TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     },
+     "b": {
+      "id": "4402367",
+      "name": "Opponent TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     }
+    }
+   ]
+  },
+  {
+   "eventId": "600060736",
+   "name": "Dana White's Contender Series: Season 10, Week 5",
+   "shortName": "Dana White's Contender Series",
+   "date": "2026-09-09T00:00Z",
+   "venue": "Meta APEX",
+   "fights": [
+    {
+     "boutId": "401891540",
+     "date": "2026-09-09T00:00Z",
      "weightClass": null,
      "segment": "Main Card",
      "matchNumber": 1,
