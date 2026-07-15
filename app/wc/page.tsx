@@ -10,10 +10,13 @@ import Nav from "@/components/Nav";
 import CompetitionNav from "@/components/CompetitionNav";
 import Standings from "@/components/Standings";
 import Footer from "@/components/Footer";
+import BestPerformers from "@/components/BestPerformers";
+import { getCompetitionPerformance } from "@/lib/competition";
 
 export const dynamic = "force-dynamic";
 
 export default async function WorldCup() {
+  const performance = getCompetitionPerformance();
   const [boards, groups, news] = await Promise.all([
     getBoards(),
     getStandings("fifa.world"),
@@ -73,6 +76,9 @@ export default async function WorldCup() {
           <a href="#matches" className="shrink-0 rounded-[6px] px-3 py-1.5 text-muted hover:bg-white/[0.035] hover:text-text">
             Matches
           </a>
+          <a href="#performers" className="shrink-0 rounded-[6px] px-3 py-1.5 text-muted hover:bg-white/[0.035] hover:text-text">
+            Performers
+          </a>
           <Link href="/bracket" className="shrink-0 rounded-[6px] px-3 py-1.5 text-muted hover:bg-white/[0.035] hover:text-text">
             Bracket ↗
           </Link>
@@ -87,9 +93,16 @@ export default async function WorldCup() {
 
       <LiveBoard initial={initial} />
 
+      <section id="performers" className="mt-12 scroll-mt-6">
+        <div className="section-heading" data-index="05">
+          <h2>Best performers</h2>
+        </div>
+        <BestPerformers view={performance} />
+      </section>
+
       {groups && groups.length > 0 && (
         <section id="standings" className="mt-12 scroll-mt-6">
-          <div className="section-heading" data-index="02">
+          <div className="section-heading" data-index="06">
             <h2>
               Group stage — final standings
             </h2>
@@ -98,7 +111,7 @@ export default async function WorldCup() {
         </section>
       )}
 
-      <NewsPanel items={news} />
+      <NewsPanel items={news} index="07" />
 
       <LedgerPanel />
 
@@ -149,7 +162,7 @@ function LedgerPanel() {
     );
   return (
     <section id="ledger" className="mt-12 scroll-mt-6">
-      <div className="section-heading" data-index="04">
+      <div className="section-heading" data-index="08">
         <h2>
           Prediction ledger — graded pre-match forecasts
         </h2>

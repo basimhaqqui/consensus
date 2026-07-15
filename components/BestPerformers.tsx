@@ -144,7 +144,7 @@ export default function BestPerformers({ view }: { view: CompetitionPerformanceV
               <p>{supporting(leader, category)}</p>
             </div>
             <div className={styles.spotlightImage}>
-              <PlayerFace src={leader.photo} jersey={leader.number ? `${leader.number}` : undefined} shape="square" />
+              <PlayerFace src={leader.photo} jersey={leader.number ? `${leader.number}` : undefined} size={188} />
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img className={styles.watermark} src={leader.teamLogo} alt="" />

@@ -163,7 +163,7 @@
 .spotlightCopy {
   position: relative;
   z-index: 3;
-  width: 68%;
+  width: 58%;
   padding: 25px 0 24px 25px;
 }
 
@@ -223,12 +223,17 @@
 .spotlightImage {
   position: absolute;
   z-index: 2;
-  right: -6%;
-  bottom: -2%;
-  width: 72%;
-  height: 79%;
+  right: 24px;
+  bottom: 34px;
+  display: grid;
+  width: 204px;
+  height: 204px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: rgba(5, 10, 14, 0.48);
+  box-shadow: 0 24px 45px -24px rgba(0, 0, 0, 0.9);
   color: #27333d;
-  filter: drop-shadow(0 24px 34px rgba(0, 0, 0, 0.62));
 }
 
 .watermark {
@@ -526,9 +531,12 @@
   }
 
   .spotlightImage {
-    right: -12%;
-    width: 78%;
-    height: 72%;
+    right: 10px;
+    bottom: 22px;
+    width: 168px;
+    height: 168px;
+    transform: scale(0.82);
+    transform-origin: right bottom;
   }
 
   .leaderName {

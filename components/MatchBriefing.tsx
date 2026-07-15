@@ -87,7 +87,6 @@ export default function MatchBriefing({
         <a href="#forecast">Forecast</a>
         <a href="#why">Why this call</a>
         {match.status === "scheduled" && <a href="#markets">Markets</a>}
-        <a href="#performers">Performers</a>
         <a href="#lineups">Lineups</a>
         <a href="#history">History</a>
         <a href="#news">News</a>
