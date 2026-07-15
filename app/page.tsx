@@ -7,6 +7,7 @@ import {
 } from "@/lib/leagues";
 import Crest from "@/components/Crest";
 import Footer from "@/components/Footer";
+import { consensusPA, getCards } from "@/lib/ufc/data";
 import styles from "./page.module.css";
 
 export const dynamic = "force-dynamic";
@@ -27,6 +28,18 @@ export default async function Landing() {
     counts.set(c.slug, { live: liveMs.length, total: ms.length });
     liveMs.forEach((m) => live.push({ c, m }));
   }
+
+  const nextMatches = boards
+    .flatMap(({ c, b }) =>
+      (b?.matches ?? [])
+        .filter((m) => m.status === "pre")
+        .map((m) => ({ c, m }))
+    )
+    .sort((a, b) => a.m.dateISO.localeCompare(b.m.dateISO));
+  const footballSpotlight = live[0] ?? nextMatches[0];
+  const nextUfc = getCards()[0];
+  const mainEvent = nextUfc?.fights.at(-1);
+  const mainEventConsensus = mainEvent ? consensusPA(mainEvent).p : null;
 
   return (
     <main className={styles.shell}>
@@ -57,18 +70,137 @@ export default async function Landing() {
 
         <div className={styles.heroAside}>
           <p className={styles.heroDescription}>
-            Football and combat intelligence in one terminal — live scores,
-            match and fighter pages, forecasts, rankings, and auditable ledgers.
+            Live scores, model forecasts, market context, and public results for
+            football and UFC—built to tell you what matters now.
           </p>
           <div className={styles.heroActions}>
             <Link href="/wc" className={styles.primaryAction}>
-              Enter terminal
+              Explore football
               <span aria-hidden="true">↗</span>
             </Link>
-            <span className={styles.actionMeta}>Live · ESPN data · 49k results</span>
+            <Link href="/ufc" className={styles.secondaryAction}>
+              Explore UFC
+              <span aria-hidden="true">↗</span>
+            </Link>
+            <span className={styles.actionMeta}>
+              Live data · 49k model results · public ledgers
+            </span>
           </div>
         </div>
       </header>
+
+      <section className={styles.productPreview} aria-labelledby="today-heading">
+        <div className={styles.previewHeading}>
+          <div>
+            <span className={styles.statusDot} aria-hidden="true" />
+            <h2 id="today-heading">Today&apos;s intelligence</h2>
+          </div>
+          <span>Two sports · one clear read</span>
+        </div>
+
+        <div className={styles.previewGrid}>
+          {footballSpotlight ? (
+            <Link
+              href={`/m/${footballSpotlight.c.slug}/${footballSpotlight.m.id}`}
+              className={`${styles.previewCard} ${styles.footballPreview}`}
+            >
+              <div className={styles.previewTopline}>
+                <span>Football desk</span>
+                <span className={footballSpotlight.m.status === "in" ? styles.nowLabel : undefined}>
+                  {footballSpotlight.m.status === "in" ? "Live now" : footballSpotlight.m.detail}
+                </span>
+              </div>
+              <div className={styles.previewCompetition}>{footballSpotlight.c.name}</div>
+              <div className={styles.previewMatchup}>
+                <PreviewTeam
+                  side={footballSpotlight.m.home}
+                  showScore={footballSpotlight.m.status === "in"}
+                />
+                <span className={styles.previewVersus}>
+                  {footballSpotlight.m.status === "in" ? "—" : "vs"}
+                </span>
+                <PreviewTeam
+                  side={footballSpotlight.m.away}
+                  align="right"
+                  showScore={footballSpotlight.m.status === "in"}
+                />
+              </div>
+              <div className={styles.previewFooter}>
+                <span>Score · lineups · match intelligence</span>
+                <strong>Open match center ↗</strong>
+              </div>
+            </Link>
+          ) : (
+            <Link href="/wc" className={`${styles.previewCard} ${styles.footballPreview}`}>
+              <div className={styles.previewTopline}>
+                <span>Football desk</span>
+                <span>2026</span>
+              </div>
+              <div className={styles.emptyPreview}>
+                <span>World Cup forecast center</span>
+                <strong>Elo simulations, bracket paths, and a graded ledger.</strong>
+              </div>
+              <div className={styles.previewFooter}>
+                <span>Forecast · bracket · ledger</span>
+                <strong>Open football ↗</strong>
+              </div>
+            </Link>
+          )}
+
+          {nextUfc && mainEvent ? (
+            <Link
+              href={`/ufc/event/${nextUfc.eventId}`}
+              className={`${styles.previewCard} ${styles.ufcPreview}`}
+            >
+              <div className={styles.previewTopline}>
+                <span>UFC desk</span>
+                <span>{formatShortDate(nextUfc.date)}</span>
+              </div>
+              <div className={styles.previewCompetition}>{nextUfc.name}</div>
+              <div className={styles.fightMatchup}>
+                <div>
+                  <span>Consensus pick</span>
+                  <strong>
+                    {mainEventConsensus !== null && mainEventConsensus >= 0.5
+                      ? mainEvent.a.name
+                      : mainEvent.b.name}
+                  </strong>
+                </div>
+                <div className={styles.fightProbability}>
+                  <strong className="tabnums">
+                    {mainEventConsensus === null
+                      ? "—"
+                      : `${Math.round(Math.max(mainEventConsensus, 1 - mainEventConsensus) * 100)}%`}
+                  </strong>
+                  <span>to win</span>
+                </div>
+              </div>
+              <div className={styles.probabilityTrack} aria-hidden="true">
+                <span style={{ width: `${(mainEventConsensus ?? 0.5) * 100}%` }} />
+              </div>
+              <div className={styles.previewFooter}>
+                <span>{mainEvent.a.name} vs {mainEvent.b.name}</span>
+                <strong>Open fight board ↗</strong>
+              </div>
+            </Link>
+          ) : (
+            <Link href="/ufc" className={`${styles.previewCard} ${styles.ufcPreview}`}>
+              <div className={styles.previewTopline}>
+                <span>UFC desk</span>
+                <span>Model online</span>
+              </div>
+              <div className={styles.emptyPreview}>
+                <span>Combat intelligence</span>
+                <strong>Fight forecasts, fighter ratings, rankings, and public results.</strong>
+              </div>
+              <div className={styles.previewFooter}>
+                <span>Fights · fighters · ledger</span>
+                <strong>Open UFC ↗</strong>
+              </div>
+            </Link>
+          )}
+        </div>
+      </section>
 
       <div className={styles.dataRail}>
         <div>
@@ -84,50 +216,6 @@ export default async function Landing() {
           <strong>Football Elo · UFC consensus</strong>
         </div>
       </div>
-
-      <section className={styles.ufcFeature}>
-        <div className={styles.ufcGlow} aria-hidden="true" />
-        <div className={styles.ufcCopy}>
-          <div className={styles.featureLabel}>
-            <span>Integrated desk</span>
-            <span className={styles.featureRule} />
-            <span>02 / combat</span>
-          </div>
-          <h2>UFC Consensus</h2>
-          <p>
-            The full combat terminal: upcoming fight boards, dedicated fighter
-            pages, official rankings, and a public ledger that grades every
-            frozen forecast against the result and the market.
-          </p>
-          <div className={styles.signalTags}>
-            <span>Fight board</span>
-            <span>Fighter pages</span>
-            <span>Graded ledger</span>
-            <span>Rankings</span>
-          </div>
-        </div>
-
-        <div className={styles.ufcSignal} aria-hidden="true">
-          <div className={styles.signalHeader}>
-            <span>Product surface</span>
-            <span>Integrated</span>
-          </div>
-          <div className={styles.signalStack}>
-            <span>FIGHTS</span>
-            <span>FIGHTERS</span>
-            <span>LEDGER</span>
-          </div>
-          <div className={styles.consensusRead}>
-            <span>CONSENSUS READ</span>
-            <span>READY</span>
-          </div>
-        </div>
-
-        <Link href="/ufc" className={styles.ufcAction}>
-          <span>Open UFC desk</span>
-          <span aria-hidden="true">↗</span>
-        </Link>
-      </section>
 
       {live.length > 0 && (
         <section className={styles.section}>
@@ -202,6 +290,35 @@ export default async function Landing() {
 
       <Footer />
     </main>
+  );
+}
+
+function formatShortDate(dateISO: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(dateISO));
+}
+
+function PreviewTeam({
+  side,
+  align = "left",
+  showScore = false,
+}: {
+  side: LeagueMatch["home"];
+  align?: "left" | "right";
+  showScore?: boolean;
+}) {
+  return (
+    <div className={`${styles.previewTeam} ${align === "right" ? styles.previewTeamRight : ""}`}>
+      <Crest src={side.logo} code={side.name} size={32} className={styles.previewCrest} />
+      <div>
+        <span>{side.abbr || side.name}</span>
+        <strong>{side.name}</strong>
+      </div>
+      {showScore && side.score !== undefined && <b className="tabnums">{side.score}</b>}
+    </div>
   );
 }
 
