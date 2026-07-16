@@ -1,7 +1,7 @@
 {
   "start": 1000,
   "target": 10000,
-  "cash": 248.1,
+  "cash": 224.54,
   "bets": [
     {
       "analysis": "I'm backing Morocco outright at 6.448 because my model prices their win at 24.7% versus the market's 15.1%, a gap that hands me +59% EV. The edge is in the expected goals: books have France scoring 1.8, but I see their attack closer to 1.3 while Morocco's 0.9 keeps this within one goal — the market is overrating French output and pricing MAR as a near-dead outcome when it's live. At an 11% full-Kelly read I've staked $108.94.",
@@ -323,6 +323,28 @@
       "settledAt": "2026-07-15T21:12:20.961Z",
       "result": "1-2 (90')",
       "pnl": -55.8
+    },
+    {
+      "analysis": "I'm backing ARG to win with Messi scoring 2+ at 30.40 because my joint score grid puts this combo at 12.5% versus the market's 3.0%—the books are pricing these as near-independent, but an Argentina win and a Messi brace are strongly correlated outcomes. My xG read favors ARG (1.1-1.2 vs their 0.9), and once you fold in that correlation the true joint probability lands far above the implied 3%, giving +279% EV. Staked $23.56 at 9% full-Kelly.",
+      "llm": true,
+      "matchId": "final",
+      "placedAt": "2026-07-16T08:29:59.090Z",
+      "desc": "ARG win + L. Messi 2+ goals @ 30.403 (ESP v ARG)",
+      "legs": [
+        {
+          "key": "away"
+        },
+        {
+          "key": "sc-away-messi-2"
+        }
+      ],
+      "players": [],
+      "scorer": true,
+      "stake": 23.56,
+      "odds": 30.403,
+      "modelP": 0.125,
+      "ev": 2.792,
+      "status": "open"
     }
   ],
   "log": [
@@ -425,6 +447,10 @@
     {
       "at": "2026-07-15T21:12:20.961Z",
       "msg": "LOST ARG win + L. Messi 2+ goals @ 21.039 (ENG v ARG): -$55.8 (bank $248.1)"
+    },
+    {
+      "at": "2026-07-16T08:29:59.090Z",
+      "msg": "BET $23.56 on ARG win + L. Messi 2+ goals @ 30.403 — model 12%, EV +279%, 9% Kelly (bank $224.54)"
     }
   ]
 }
