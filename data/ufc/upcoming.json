@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-15T23:14:38.877Z",
+ "fetchedAt": "2026-07-16T03:41:52.096Z",
  "cards": [
   {
    "eventId": "600059599",
@@ -8,6 +8,25 @@
    "date": "2026-07-18T21:00Z",
    "venue": "Paycom Center",
    "fights": [
+    {
+     "boutId": "401892260",
+     "date": "2026-07-18T21:00Z",
+     "weightClass": "Featherweight",
+     "segment": "Prelims",
+     "matchNumber": 12,
+     "a": {
+      "id": "5369722",
+      "name": "Damien Anderson",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "5-0-0"
+     },
+     "b": {
+      "id": "5369723",
+      "name": "Ezra Elliott",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "7-0-0"
+     }
+    },
     {
      "boutId": "401889642",
      "date": "2026-07-18T21:00Z",
@@ -433,6 +452,25 @@
       "name": "Steve Erceg",
       "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
       "record": "14-4-0"
+     }
+    },
+    {
+     "boutId": "401892276",
+     "date": "2026-07-25T16:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "4273399",
+      "name": "Magomed Ankalaev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "21-2-1"
+     },
+     "b": {
+      "id": "5152109",
+      "name": "Bogdan Guskov",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+      "record": "18-3-1"
      }
     }
    ]

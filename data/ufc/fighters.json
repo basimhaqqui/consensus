@@ -24822,5 +24822,21 @@
   "reach": 80,
   "stance": "Orthodox",
   "proRecord": "0-0-0"
+ },
+ "5369722": {
+  "name": "Damien Anderson",
+  "dob": "1997-01-04T08:00Z",
+  "height": 68,
+  "reach": 0,
+  "stance": "--",
+  "proRecord": "5-0-0"
+ },
+ "5369723": {
+  "name": "Ezra Elliott",
+  "dob": "2000-05-18T07:00Z",
+  "height": 70,
+  "reach": 71.5,
+  "stance": "--",
+  "proRecord": "7-0-0"
  }
 }

@@ -1,11 +1,40 @@
 {
- "computedAt": "2026-07-15T23:14:40.900Z",
+ "computedAt": "2026-07-16T03:41:54.555Z",
  "cards": [
   {
    "eventId": "600059599",
    "name": "UFC Fight Night: Du Plessis vs. Usman",
    "date": "2026-07-18T21:00Z",
    "fights": [
+    {
+     "boutId": "401892260",
+     "date": "2026-07-18T21:00Z",
+     "weightClass": "Featherweight",
+     "segment": "Prelims",
+     "matchNumber": 12,
+     "a": {
+      "id": "5369722",
+      "name": "Damien Anderson",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "5-0-0"
+     },
+     "b": {
+      "id": "5369723",
+      "name": "Ezra Elliott",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "7-0-0"
+     },
+     "ratingA": 1459,
+     "ratingB": 1539,
+     "pA": 0.424,
+     "fightsA": 0,
+     "fightsB": 0,
+     "method": {
+      "ko": 0.32,
+      "sub": 0.17,
+      "dec": 0.51
+     }
+    },
     {
      "boutId": "401889642",
      "date": "2026-07-18T21:00Z",
@@ -649,6 +678,35 @@
       "ko": 0.29,
       "sub": 0.11,
       "dec": 0.6
+     }
+    },
+    {
+     "boutId": "401892276",
+     "date": "2026-07-25T16:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "4273399",
+      "name": "Magomed Ankalaev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "21-2-1"
+     },
+     "b": {
+      "id": "5152109",
+      "name": "Bogdan Guskov",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+      "record": "18-3-1"
+     },
+     "ratingA": 1769,
+     "ratingB": 1629,
+     "pA": 0.631,
+     "fightsA": 14,
+     "fightsB": 5,
+     "method": {
+      "ko": 0.52,
+      "sub": 0.2,
+      "dec": 0.29
      }
     }
    ]

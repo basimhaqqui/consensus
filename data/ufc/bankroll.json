@@ -1,6 +1,6 @@
 {
  "start": 1000,
- "cash": 473.27,
+ "cash": 423.27,
  "open": [
   {
    "kind": "single",
@@ -332,6 +332,26 @@
    "event": "UFC Fight Night: Ankalaev vs. Guskov",
    "analysis": "consensus 65.0% (model 70.4) vs implied 61.7%",
    "placedAt": "2026-07-15T19:38:31.798Z"
+  },
+  {
+   "kind": "single",
+   "title": "Guskov ML @ 4.6",
+   "legs": [
+    {
+     "boutId": "401892276",
+     "type": "ml",
+     "pickId": "5152109",
+     "price": 4.6,
+     "label": "Guskov ML"
+    }
+   ],
+   "stake": 50,
+   "price": 4.6,
+   "p": 0.29,
+   "ev": 0.332,
+   "event": "UFC Fight Night: Ankalaev vs. Guskov",
+   "analysis": "consensus 28.9% (model 36.9) vs implied 21.7%",
+   "placedAt": "2026-07-16T03:41:55.142Z"
   }
  ],
  "settled": [
@@ -902,6 +922,11 @@
    "at": "2026-07-15T23:14:41.528Z",
    "cash": 473.27,
    "exposure": 516.42
+  },
+  {
+   "at": "2026-07-16T03:41:55.143Z",
+   "cash": 423.27,
+   "exposure": 566.42
   }
  ]
 }
