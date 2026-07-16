@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-16T10:22:32.041Z",
+ "computedAt": "2026-07-16T17:41:29.317Z",
  "cards": [
   {
    "eventId": "600059599",
@@ -366,7 +366,7 @@
      "date": "2026-07-25T13:00Z",
      "weightClass": "Lightweight",
      "segment": "Prelims",
-     "matchNumber": 11,
+     "matchNumber": 12,
      "a": {
       "id": "4339145",
       "name": "Mike Davis",
@@ -395,7 +395,7 @@
      "date": "2026-07-25T13:00Z",
      "weightClass": "Light Heavyweight",
      "segment": "Prelims",
-     "matchNumber": 10,
+     "matchNumber": 11,
      "a": {
       "id": "4379328",
       "name": "Brendson Ribeiro",
@@ -424,7 +424,7 @@
      "date": "2026-07-25T13:00Z",
      "weightClass": "Lightweight",
      "segment": "Prelims",
-     "matchNumber": 9,
+     "matchNumber": 10,
      "a": {
       "id": "3093513",
       "name": "Ismael Bonfim",
@@ -453,7 +453,7 @@
      "date": "2026-07-25T13:00Z",
      "weightClass": "Welterweight",
      "segment": "Prelims",
-     "matchNumber": 8,
+     "matchNumber": 9,
      "a": {
       "id": "3043484",
       "name": "Santiago Ponzinibbio",
@@ -482,7 +482,7 @@
      "date": "2026-07-25T13:00Z",
      "weightClass": "Light Heavyweight",
      "segment": "Prelims",
-     "matchNumber": 7,
+     "matchNumber": 8,
      "a": {
       "id": "2594871",
       "name": "Dustin Jacoby",
@@ -504,6 +504,35 @@
       "ko": 0.39,
       "sub": 0.18,
       "dec": 0.43
+     }
+    },
+    {
+     "boutId": "401874312",
+     "date": "2026-07-25T13:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Prelims",
+     "matchNumber": 7,
+     "a": {
+      "id": "4869702",
+      "name": "Thomas Petersen",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "11-4-0"
+     },
+     "b": {
+      "id": "5147389",
+      "name": "Valter Walker",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "15-1-0"
+     },
+     "ratingA": 1519,
+     "ratingB": 1716,
+     "pA": 0.32,
+     "fightsA": 7,
+     "fightsB": 5,
+     "method": {
+      "ko": 0.3,
+      "sub": 0.33,
+      "dec": 0.38
      }
     },
     {
@@ -536,39 +565,10 @@
      }
     },
     {
-     "boutId": "401874312",
-     "date": "2026-07-25T13:00Z",
-     "weightClass": "Heavyweight",
-     "segment": "Prelims",
-     "matchNumber": 6,
-     "a": {
-      "id": "4869702",
-      "name": "Thomas Petersen",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-      "record": "11-4-0"
-     },
-     "b": {
-      "id": "5147389",
-      "name": "Valter Walker",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-      "record": "15-1-0"
-     },
-     "ratingA": 1519,
-     "ratingB": 1716,
-     "pA": 0.32,
-     "fightsA": 7,
-     "fightsB": 5,
-     "method": {
-      "ko": 0.3,
-      "sub": 0.33,
-      "dec": 0.38
-     }
-    },
-    {
      "boutId": "401874311",
-     "date": "2026-07-25T13:00Z",
+     "date": "2026-07-25T16:00Z",
      "weightClass": "Heavyweight",
-     "segment": "Prelims",
+     "segment": "Main Card",
      "matchNumber": 5,
      "a": {
       "id": "4001837",
