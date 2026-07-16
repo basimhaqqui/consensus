@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { MatchView } from "@/lib/compute";
 import Crest from "./Crest";
+import WatchlistButton from "./WatchlistButton";
 
 function pct(n: number) {
   return `${Math.round(n * 100)}%`;
@@ -32,16 +33,25 @@ export default function MatchCard({ m }: { m: MatchView }) {
   const isFinal = m.status === "final";
   const showScore = isLive || isFinal;
   const pens = m.live?.pens;
+  const watchItem = {
+    key: `match:${m.id}`,
+    kind: "match" as const,
+    title: `${m.home.name} vs ${m.away.name}`,
+    context: `World Cup · ${m.date}`,
+    href: `/match/${m.id}`,
+    startsAt: m.kickoffISO,
+  };
 
   return (
-    <Link
-      href={`/match/${m.id}`}
-      className={`terminal-panel terminal-panel--interactive block ${
-        isLive ? "border-accent/60 shadow-[0_0_0_1px_rgba(52,211,153,0.18)]" : ""
-      }`}
-    >
+    <div className="relative">
+      <Link
+        href={`/match/${m.id}`}
+        className={`terminal-panel terminal-panel--interactive block ${
+          isLive ? "border-accent/60 shadow-[0_0_0_1px_rgba(52,211,153,0.18)]" : ""
+        }`}
+      >
       {/* header */}
-      <div className="terminal-panel-header flex items-center justify-between px-4 py-2 text-[9px] uppercase tracking-[0.14em] text-muted">
+      <div className="terminal-panel-header flex items-center justify-between gap-2 px-4 py-2 pr-12 text-[9px] uppercase tracking-[0.14em] text-muted">
         <span className="tabnums">
           {m.date} · {m.venue}
         </span>
@@ -234,7 +244,13 @@ export default function MatchCard({ m }: { m: MatchView }) {
           />
         )}
       </div>
-    </Link>
+      </Link>
+      <WatchlistButton
+        item={watchItem}
+        iconOnly
+        className="absolute right-3 top-1.5 z-10"
+      />
+    </div>
   );
 }
 

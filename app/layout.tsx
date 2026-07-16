@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import WatchlistProvider from "@/components/WatchlistProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -39,7 +40,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-mono">
         <div className="fixed top-0 inset-x-0 h-px z-50 bg-gradient-to-r from-transparent via-accent to-transparent opacity-70" />
-        {children}
+        <WatchlistProvider>{children}</WatchlistProvider>
         <Analytics />
       </body>
     </html>

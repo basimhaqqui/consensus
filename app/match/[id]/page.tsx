@@ -15,6 +15,7 @@ import { matchProps } from "@/lib/props";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import MatchBriefing from "@/components/MatchBriefing";
+import WatchlistButton from "@/components/WatchlistButton";
 
 export const dynamic = "force-dynamic";
 
@@ -98,7 +99,20 @@ export default async function MatchPage({
         >
           ← Terminal
         </Link>
-        <Nav />
+        <div className="flex min-w-0 items-center gap-2">
+          <Nav />
+          <WatchlistButton
+            compact
+            item={{
+              key: `match:${m.id}`,
+              kind: "match",
+              title: `${m.home.name} vs ${m.away.name}`,
+              context: `World Cup · ${m.date}`,
+              href: `/match/${m.id}`,
+              startsAt: m.kickoffISO,
+            }}
+          />
+        </div>
       </header>
 
       <MatchBriefing match={m} detail={detail} brief={brief} />

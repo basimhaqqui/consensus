@@ -74,6 +74,23 @@
   gap: 9px;
 }
 
+.mastActions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.watchlistLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #667280;
+}
+
+.watchlistLink:hover {
+  color: var(--accent);
+}
+
 .statusDot {
   position: relative;
   display: inline-block;

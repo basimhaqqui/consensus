@@ -7,6 +7,7 @@ import type {
   LeaderCategory,
 } from "@/lib/competition-types";
 import PlayerFace from "./PlayerFace";
+import WatchlistButton from "./WatchlistButton";
 import styles from "./BestPerformers.module.css";
 
 const CATEGORIES: { key: LeaderCategory; label: string; short: string }[] = [
@@ -151,6 +152,18 @@ export default function BestPerformers({ view }: { view: CompetitionPerformanceV
                 <span>{metricLabel(category)}</span>
               </div>
               <p>{supporting(leader, category)}</p>
+              <WatchlistButton
+                compact
+                className="mt-4"
+                item={{
+                  key: `player:${leader.key}`,
+                  kind: "player",
+                  title: leader.name,
+                  context: `${leader.teamName} · ${leader.position}`,
+                  href: "/wc#performers",
+                  image: leader.photo,
+                }}
+              />
             </div>
             <div className={styles.spotlightImage}>
               <PlayerFace
@@ -182,6 +195,17 @@ export default function BestPerformers({ view }: { view: CompetitionPerformanceV
                   <strong className="tabnums">{metric(player, category)}</strong>
                   <span>{metricLabel(category)}</span>
                 </div>
+                <WatchlistButton
+                  iconOnly
+                  item={{
+                    key: `player:${player.key}`,
+                    kind: "player",
+                    title: player.name,
+                    context: `${player.teamName} · ${player.position}`,
+                    href: "/wc#performers",
+                    image: player.photo,
+                  }}
+                />
               </article>
             ))}
           </div>

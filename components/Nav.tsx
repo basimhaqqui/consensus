@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useWatchlist } from "./WatchlistProvider";
 
 const LINKS = [
   { href: "/", label: "Home" },
@@ -9,11 +10,13 @@ const LINKS = [
   { href: "/wc", label: "Terminal" },
   { href: "/bracket", label: "Bracket" },
   { href: "/ufc", label: "UFC" },
+  { href: "/watchlist", label: "Watchlist" },
 ];
 const LINKS_WITHOUT_UFC = LINKS.filter((link) => link.href !== "/ufc");
 
 export default function Nav({ hideUfc = false }: { hideUfc?: boolean }) {
   const path = usePathname();
+  const { items, ready } = useWatchlist();
   const links = hideUfc ? LINKS_WITHOUT_UFC : LINKS;
   return (
     <nav
@@ -34,6 +37,11 @@ export default function Nav({ hideUfc = false }: { hideUfc?: boolean }) {
             }`}
           >
             {l.label}
+            {l.href === "/watchlist" && ready && items.length > 0 && (
+              <span className="ml-1.5 rounded-full border border-accent/25 bg-accent/10 px-1.5 py-0.5 text-[7px] tabnums text-accent">
+                {items.length}
+              </span>
+            )}
           </Link>
         );
       })}

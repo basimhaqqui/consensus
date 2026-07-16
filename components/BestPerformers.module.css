@@ -254,7 +254,7 @@
 
 .leaderRow {
   display: grid;
-  grid-template-columns: 28px 42px minmax(0, 1fr) auto;
+  grid-template-columns: 28px 42px minmax(0, 1fr) auto 28px;
   align-items: center;
   gap: 10px;
   min-height: 55px;

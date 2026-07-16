@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import FighterFace from "@/components/ufc/FighterFace";
 import RatingChart from "@/components/ufc/RatingChart";
 import { splitName } from "@/components/ufc/FaceOff";
+import WatchlistButton from "@/components/WatchlistButton";
 import {
   activeRank,
   ageOf,
@@ -125,6 +126,16 @@ export default async function FighterPage({ params }: { params: Promise<{ id: st
                     Provisional
                   </span>
                 )}
+                <WatchlistButton
+                  compact
+                  item={{
+                    key: `fighter:${id}`,
+                    kind: "fighter",
+                    title: r.name,
+                    context: `${r.division ?? "UFC"} · Elo ${Math.round(r.rating)}`,
+                    href: `/ufc/fighter/${id}`,
+                  }}
+                />
               </div>
               <div className="display text-lg font-semibold leading-none text-muted sm:text-xl">{first}&nbsp;</div>
               <h1 className="display text-[clamp(3rem,10vw,6.75rem)] font-extrabold leading-[0.78] tracking-[-0.035em] text-zinc-100">

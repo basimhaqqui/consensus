@@ -71,9 +71,14 @@ export default async function Landing() {
           <span>CONSENSUS</span>
           <span className={styles.wordmarkSuffix}>/ INTELLIGENCE DESK</span>
         </div>
-        <div className={styles.systemStatus}>
-          <span className={styles.statusDot} aria-hidden="true" />
-          Data feed online
+        <div className={styles.mastActions}>
+          <Link href="/watchlist" className={styles.watchlistLink}>
+            <span aria-hidden="true">☆</span> Your watchlist
+          </Link>
+          <div className={styles.systemStatus}>
+            <span className={styles.statusDot} aria-hidden="true" />
+            Data feed online
+          </div>
         </div>
       </div>
 

@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import type { Player } from "@/lib/match";
 import type { CompetitionPlayerStats } from "@/lib/competition-types";
 import PlayerFace from "./PlayerFace";
 import Crest from "./Crest";
 import PlayerMarkers from "./PlayerMarkers";
 import { cardTheme } from "./theme";
+import WatchlistButton from "./WatchlistButton";
 
 // ESPN's free feed only carries these per-player keys — grouped FotMob-style.
 // (xG, touches, passes, dribbles, tackles, duels and the heatmap come from
@@ -68,6 +70,7 @@ export default function PlayerCard({
   teamAlt?: string;
   onClose: () => void;
 }) {
+  const pathname = usePathname();
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     const previousOverflow = document.body.style.overflow;
@@ -95,6 +98,15 @@ export default function PlayerCard({
   const t = cardTheme(teamColor, teamAlt);
   const roleLabel = player.starter ? "Starting XI" : "Substitute";
   const displayRating = player.rating ?? player.competition?.rating;
+  const playerKey = player.id ?? player.afId ?? player.name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  const watchItem = {
+    key: `player:${teamKey ?? teamName}:${playerKey}`,
+    kind: "player" as const,
+    title: player.name,
+    context: `${teamName} · World Cup 2026`,
+    href: `${pathname}#lineups`,
+    image: player.headshot ?? player.photo ?? player.img ?? undefined,
+  };
 
   return (
     <div
@@ -173,6 +185,7 @@ export default function PlayerCard({
                     {displayRating.toFixed(1)} {player.rating !== undefined ? "match" : "competition"}
                   </span>
                 )}
+                <WatchlistButton item={watchItem} compact />
               </div>
               <h3
                 id="player-card-title"
