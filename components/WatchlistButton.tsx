@@ -34,7 +34,7 @@ export default function WatchlistButton({
         watched
           ? "border-accent/45 bg-accent/12 text-accent shadow-[0_10px_28px_-18px_rgba(52,211,153,0.8)]"
           : "border-line bg-black/25 text-muted hover:border-zinc-500/60 hover:bg-white/[0.045] hover:text-zinc-200"
-      } ${iconOnly ? "h-7 w-7 text-[14px]" : compact ? "px-2.5 py-1.5 text-[8px] tracking-[0.13em]" : "px-3 py-2 text-[9px] tracking-[0.14em]"} ${className}`}
+      } ${iconOnly ? "h-7 w-7 text-[14px]" : compact ? "px-2.5 py-1.5 text-[10px] tracking-[0.13em]" : "px-3 py-2 text-[10px] tracking-[0.14em]"} ${className}`}
     >
       <span aria-hidden="true">{watched ? "★" : "☆"}</span>
       {!iconOnly && <span>{watched ? "Watching" : "Watch"}</span>}

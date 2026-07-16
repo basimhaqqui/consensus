@@ -104,7 +104,7 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
       <div className={styles.controlBar}>
         <div>
           <span className={styles.controlLabel}>Forecast view</span>
-          <div className="segmented-control inline-flex p-0.5 text-[9px] uppercase tracking-[0.14em]">
+          <div className="segmented-control inline-flex p-0.5 text-[10px] uppercase tracking-[0.14em]">
             <Toggle active={source === "blend"} onClick={() => setSource("blend")}>
               Consensus
             </Toggle>
@@ -317,6 +317,7 @@ function SpotlightMatch({ match }: { match: MatchView }) {
 
 function FeedAge({ updatedAt }: { updatedAt: string }) {
   const [label, setLabel] = useState("");
+  const [stale, setStale] = useState(false);
 
   useEffect(() => {
     const update = () => {
@@ -324,14 +325,24 @@ function FeedAge({ updatedAt }: { updatedAt: string }) {
         0,
         Math.round((Date.now() - new Date(updatedAt).getTime()) / 1000)
       );
-      setLabel(`· ${seconds}s ago`);
+      const isStale = seconds > REFRESH_MS / 1000 * 3;
+      setStale(isStale);
+      setLabel(
+        isStale
+          ? `· stale ${Math.max(2, Math.round(seconds / 60))}m`
+          : `· ${seconds}s ago`
+      );
     };
     update();
     const id = setInterval(update, 1000);
     return () => clearInterval(id);
   }, [updatedAt]);
 
-  return <span className={styles.feedAge}>{label}</span>;
+  return (
+    <span className={`${styles.feedAge} ${stale ? "text-warn" : ""}`}>
+      {label}
+    </span>
+  );
 }
 
 function SpotlightTeam({

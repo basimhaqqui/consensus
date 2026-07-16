@@ -7,7 +7,7 @@ import { useWatchlist } from "./WatchlistProvider";
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/signals", label: "Signals" },
-  { href: "/wc", label: "Terminal" },
+  { href: "/wc", label: "World Cup" },
   { href: "/bracket", label: "Bracket" },
   { href: "/ufc", label: "UFC" },
   { href: "/watchlist", label: "Watchlist" },
@@ -21,10 +21,10 @@ export default function Nav({ hideUfc = false }: { hideUfc?: boolean }) {
   return (
     <nav
       aria-label="Primary navigation"
-      className="segmented-control flex min-w-0 items-center gap-0.5 overflow-x-auto p-0.5 text-[9px] uppercase tracking-[0.14em]"
+      className="primary-nav segmented-control flex min-w-0 items-center gap-0.5 overflow-x-auto p-0.5 text-[10px] uppercase tracking-[0.14em]"
     >
       {links.map((l) => {
-        const active = path === l.href;
+        const active = isActivePath(path, l.href);
         return (
           <Link
             key={l.href}
@@ -38,7 +38,7 @@ export default function Nav({ hideUfc = false }: { hideUfc?: boolean }) {
           >
             {l.label}
             {l.href === "/watchlist" && ready && items.length > 0 && (
-              <span className="ml-1.5 rounded-full border border-accent/25 bg-accent/10 px-1.5 py-0.5 text-[7px] tabnums text-accent">
+              <span className="ml-1.5 rounded-full border border-accent/25 bg-accent/10 px-1.5 py-0.5 text-[10px] tabnums text-accent">
                 {items.length}
               </span>
             )}
@@ -47,4 +47,22 @@ export default function Nav({ hideUfc = false }: { hideUfc?: boolean }) {
       })}
     </nav>
   );
+}
+
+function isActivePath(path: string, href: string) {
+  if (href === "/") return path === "/";
+  if (href === "/signals") {
+    return path === "/signals" || path.startsWith("/signal/");
+  }
+  if (href === "/wc") {
+    return (
+      path === "/wc" ||
+      path.startsWith("/match/") ||
+      path.startsWith("/m/") ||
+      path.startsWith("/league/") ||
+      path === "/builder"
+    );
+  }
+  if (href === "/ufc") return path === "/ufc" || path.startsWith("/ufc/");
+  return path === href;
 }

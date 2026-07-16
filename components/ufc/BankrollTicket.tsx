@@ -50,7 +50,7 @@ export default function BankrollTicket({ b }: { b: TicketBet }) {
             : "hover:border-zinc-600"
       }`}
     >
-      <div className="terminal-panel-header flex items-center justify-between gap-3 px-4 py-2 text-[9px] uppercase tracking-[0.17em] text-muted">
+      <div className="terminal-panel-header flex items-center justify-between gap-3 px-4 py-2 text-[10px] uppercase tracking-[0.17em] text-muted">
         <div className="flex shrink-0 items-center gap-2">
           <span
             className={`h-1.5 w-1.5 rounded-full ${
@@ -81,7 +81,7 @@ export default function BankrollTicket({ b }: { b: TicketBet }) {
             {b.legs[0].label}
           </div>
         )}
-        <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] uppercase tracking-[0.12em] text-muted tabnums">
+        <div className="mt-2 flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] uppercase tracking-[0.12em] text-muted tabnums">
           <span>Model {pc(b.p)}</span>
           <span className="text-zinc-700">/</span>
           <span className={b.ev >= 0 ? "text-accent" : "text-danger"}>
@@ -119,7 +119,7 @@ export default function BankrollTicket({ b }: { b: TicketBet }) {
                   : "border-zinc-700 bg-zinc-800/60 text-zinc-400"
             }`}
           >
-            <span className="text-[9px] uppercase tracking-[0.17em]">Settlement</span>
+            <span className="text-[10px] uppercase tracking-[0.17em]">Settlement</span>
             <span className="display text-lg font-extrabold uppercase tabnums">
               {b.outcome === "win"
                 ? `Won +${usd((b.payout ?? 0) - b.stake)}`
@@ -133,7 +133,7 @@ export default function BankrollTicket({ b }: { b: TicketBet }) {
         {open && (
           <div className="mt-4 space-y-4 border-t border-line pt-4" onClick={(e) => e.stopPropagation()}>
             <div>
-              <div className="mb-1.5 text-[9px] uppercase tracking-[0.2em] text-accent">Why this pick</div>
+              <div className="mb-1.5 text-[10px] uppercase tracking-[0.2em] text-accent">Why this pick</div>
               <ul className="space-y-1.5 text-xs leading-relaxed text-zinc-300">
                 {b.analysis.split(" · ").map((line, i) => (
                   <li key={i} className="flex gap-1.5">
@@ -145,7 +145,7 @@ export default function BankrollTicket({ b }: { b: TicketBet }) {
             </div>
 
             <div>
-              <div className="mb-1.5 text-[9px] uppercase tracking-[0.2em] text-blue">The math</div>
+              <div className="mb-1.5 text-[10px] uppercase tracking-[0.2em] text-blue">The math</div>
               <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs tabnums">
                 <span className="text-muted">Our probability</span>
                 <span className="text-right">{pc(b.p)}</span>
@@ -165,7 +165,7 @@ export default function BankrollTicket({ b }: { b: TicketBet }) {
             </div>
 
             <div>
-              <div className="mb-1.5 text-[9px] uppercase tracking-[0.2em] text-warn">The sizing</div>
+              <div className="mb-1.5 text-[10px] uppercase tracking-[0.2em] text-warn">The sizing</div>
               <p className="text-xs leading-relaxed text-zinc-300">{sizingStory(b)}</p>
             </div>
           </div>
@@ -188,11 +188,11 @@ function TicketStat({
 }) {
   return (
     <div className="terminal-kpi min-w-0 px-2 py-2.5 text-center sm:px-3">
-      <div className="text-[8px] uppercase tracking-[0.16em] text-muted">{label}</div>
+      <div className="text-[10px] uppercase tracking-[0.16em] text-muted">{label}</div>
       <div className={`display mt-0.5 truncate text-lg font-bold tabnums sm:text-xl ${valueClass}`}>
         {value}
       </div>
-      {sub ? <div className="mt-0.5 text-[8px] text-zinc-600 tabnums">{sub}</div> : null}
+      {sub ? <div className="mt-0.5 text-[10px] text-zinc-600 tabnums">{sub}</div> : null}
     </div>
   );
 }

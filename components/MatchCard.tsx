@@ -51,7 +51,7 @@ export default function MatchCard({ m }: { m: MatchView }) {
         }`}
       >
       {/* header */}
-      <div className="terminal-panel-header flex items-center justify-between gap-2 px-4 py-2 pr-12 text-[9px] uppercase tracking-[0.14em] text-muted">
+      <div className="terminal-panel-header flex items-center justify-between gap-2 px-4 py-2 pr-12 text-[10px] uppercase tracking-[0.14em] text-muted">
         <span className="tabnums">
           {m.date} · {m.venue}
         </span>
@@ -112,7 +112,7 @@ export default function MatchCard({ m }: { m: MatchView }) {
         const dAway = probs.pAway - pre.pAway;
         return (
           <div className="px-4 pt-2">
-            <div className="mb-1 flex items-center justify-between text-[9px] uppercase tracking-wider">
+            <div className="mb-1 flex items-center justify-between text-[10px] uppercase tracking-wider">
               <span className={onLive ? "text-accent" : "text-muted"}>
                 {onLive ? `In-play odds · ${m.minute}'` : "Pre-match model"}
               </span>
@@ -155,7 +155,7 @@ export default function MatchCard({ m }: { m: MatchView }) {
       {/* to-advance market (knockout: no draw, incl. ET/pens) */}
       {!isFinal && (
         <div className="px-4 pt-2">
-          <div className="mb-0.5 text-[9px] uppercase tracking-wider text-muted">
+          <div className="mb-0.5 text-[10px] uppercase tracking-wider text-muted">
             To advance · inc. ET / pens
           </div>
           <div className="flex h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
@@ -293,7 +293,7 @@ function TeamRow({
             {name}
           </span>
           {decided && isWinner && (
-            <span className="shrink-0 text-[9px] text-accent">▲ adv</span>
+            <span className="shrink-0 text-[10px] text-accent">▲ adv</span>
           )}
           {odds && <span className="shrink-0 text-[10px] text-muted">{odds}</span>}
         </div>
@@ -331,9 +331,9 @@ function Metric({
 }) {
   return (
     <div className="px-2 py-2">
-      <div className="text-[9px] uppercase tracking-wider text-muted">{label}</div>
+      <div className="text-[10px] uppercase tracking-wider text-muted">{label}</div>
       <div className={`text-sm font-semibold tabnums ${valueClass}`}>{value}</div>
-      <div className="text-[9px] text-muted">{sub}</div>
+      <div className="text-[10px] text-muted">{sub}</div>
     </div>
   );
 }

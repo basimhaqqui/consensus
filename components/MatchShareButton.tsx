@@ -68,7 +68,7 @@ export default function MatchShareButton({
       onClick={share}
       aria-live="polite"
       className={`inline-flex items-center justify-center whitespace-nowrap rounded-[7px] border border-accent/30 bg-accent/[0.08] font-medium uppercase tracking-[0.14em] text-accent transition-colors hover:border-accent/55 hover:bg-accent/[0.13] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${
-        compact ? "h-10 w-full px-4 text-[10px]" : "px-3 py-2 text-[9px]"
+        compact ? "h-10 w-full px-4 text-[10px]" : "px-3 py-2 text-[10px]"
       }`}
     >
       {copied ? (copyText ? "Caption copied ✓" : "Link copied ✓") : label}

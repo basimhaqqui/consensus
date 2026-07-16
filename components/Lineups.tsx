@@ -28,19 +28,19 @@ export default function Lineups({
         <div className="terminal-panel-header relative grid grid-cols-[1fr_auto_1fr] items-center gap-2 px-3 py-3 sm:gap-4 sm:px-5 sm:py-4">
           <TeamTag sq={home} />
           {predicted ? (
-            <span className="rounded-full border border-amber-400/35 bg-amber-400/10 px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.16em] text-amber-300 whitespace-nowrap sm:text-[9px]">
+            <span className="rounded-full border border-amber-400/35 bg-amber-400/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-amber-300 whitespace-nowrap sm:text-[10px]">
               Projected XI
             </span>
           ) : (
             status === "pre" && (
-              <span className="rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-[8px] font-bold uppercase tracking-[0.16em] text-accent whitespace-nowrap sm:text-[9px]">
+              <span className="rounded-full border border-accent/40 bg-accent/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-accent whitespace-nowrap sm:text-[10px]">
                 Confirmed
               </span>
             )
           )}
           <TeamTag sq={away} align="right" />
         </div>
-        <div className="flex items-center justify-between border-b border-line/50 bg-black/15 px-4 py-2 text-[9px] uppercase tracking-[0.14em] text-muted sm:px-5">
+        <div className="flex items-center justify-between border-b border-line/50 bg-black/15 px-4 py-2 text-[10px] uppercase tracking-[0.14em] text-muted sm:px-5">
           <span>{predicted ? "Latest available shape" : "Official team sheet"}</span>
           <span className="hidden sm:inline">Select a player for profile + match stats</span>
           <span className="sm:hidden">Tap a player</span>
@@ -100,7 +100,7 @@ function TeamTag({ sq, align }: { sq: Squad; align?: "right" }) {
           <span className="sm:hidden">{sq.abbr}</span>
         </span>
         <span className={`mt-0.5 flex items-center gap-1.5 ${align === "right" ? "justify-end" : ""}`}>
-          <span className="hidden text-[8px] uppercase tracking-[0.15em] text-muted sm:inline">Formation</span>
+          <span className="hidden text-[10px] uppercase tracking-[0.15em] text-muted sm:inline">Formation</span>
           <span className="whitespace-nowrap text-[10px] font-semibold tabnums text-accent sm:text-[11px]">
             {sq.formation ?? "—"}
           </span>
@@ -146,9 +146,9 @@ function Bench({
         </span>
         <span className="min-w-0">
           <span className="block truncate text-[12px] font-semibold text-zinc-100">{sq.name}</span>
-          <span className="block text-[8px] uppercase tracking-[0.15em] text-muted">Available substitutes</span>
+          <span className="block text-[10px] uppercase tracking-[0.15em] text-muted">Available substitutes</span>
         </span>
-        <span className="ml-auto rounded-full border border-line bg-black/20 px-2 py-0.5 text-[9px] font-semibold tabnums text-muted">
+        <span className="ml-auto rounded-full border border-line bg-black/20 px-2 py-0.5 text-[10px] font-semibold tabnums text-muted">
           {bench.length}
         </span>
       </div>
@@ -174,7 +174,7 @@ function Bench({
                     className="inline-flex shrink-0 items-center gap-1"
                     title="Substituted on"
                   >
-                    <span className="inline-grid h-3.5 w-3.5 place-items-center rounded-full bg-accent/15 text-[9px] font-bold leading-none text-accent ring-1 ring-accent/30">
+                    <span className="inline-grid h-3.5 w-3.5 place-items-center rounded-full bg-accent/15 text-[10px] font-bold leading-none text-accent ring-1 ring-accent/30">
                       ↑
                     </span>
                     {p.subMinute && (
@@ -186,7 +186,7 @@ function Bench({
                 )}
                 <PlayerMarkers p={p} />
               </span>
-              <span className="mt-0.5 block text-[9px] uppercase tracking-[0.1em] text-muted">{posWord(p)}</span>
+              <span className="mt-0.5 block text-[10px] uppercase tracking-[0.1em] text-muted">{posWord(p)}</span>
             </span>
             {p.rating !== undefined && (
               <span

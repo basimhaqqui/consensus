@@ -90,7 +90,7 @@ function Ticket({ b }: { b: TicketBet }) {
 
           {open && (
             <div className="mt-2.5 border-t border-line/60 pt-2.5">
-              <div className="mb-1 text-[9px] uppercase tracking-[0.2em] text-zinc-500">
+              <div className="mb-1 text-[10px] uppercase tracking-[0.2em] text-zinc-500">
                 Why the model took it
               </div>
               <p className="text-[11px] leading-relaxed text-zinc-400">

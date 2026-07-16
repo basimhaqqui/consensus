@@ -168,11 +168,11 @@ export function PitchDuo({
         }}
       />
 
-      <div className={`pointer-events-none absolute z-[1] flex items-center gap-1.5 text-[8px] font-bold uppercase tracking-[0.18em] text-white/25 ${orient === "h" ? "left-3 top-3" : "left-3 top-3"}`}>
+      <div className={`pointer-events-none absolute z-[1] flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white/25 ${orient === "h" ? "left-3 top-3" : "left-3 top-3"}`}>
         <span className="h-1 w-1 rounded-full bg-white/30" />
         {home.abbr}
       </div>
-      <div className={`pointer-events-none absolute z-[1] flex items-center gap-1.5 text-[8px] font-bold uppercase tracking-[0.18em] text-white/25 ${orient === "h" ? "bottom-3 right-3" : "bottom-3 right-3"}`}>
+      <div className={`pointer-events-none absolute z-[1] flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-white/25 ${orient === "h" ? "bottom-3 right-3" : "bottom-3 right-3"}`}>
         {away.abbr}
         <span className="h-1 w-1 rounded-full bg-white/30" />
       </div>
@@ -304,7 +304,7 @@ function DuoDot({
               {p.jersey}
             </span>
             <span
-              className="mt-[2px] text-[6px] font-bold uppercase leading-none tracking-wide sm:text-[8px]"
+              className="mt-[2px] text-[6px] font-bold uppercase leading-none tracking-wide sm:text-[10px]"
               style={{ color: t.sub, textShadow: "0 1px 3px rgba(0,0,0,0.7)" }}
             >
               {p.pos}
@@ -324,7 +324,7 @@ function DuoDot({
             className="relative z-10 mt-[1px] border-t border-white/10 px-[3px] py-[3px] sm:px-1.5 sm:py-1"
             style={{ background: t.bandBg, color: t.bandInk }}
           >
-            <span className="block truncate text-center text-[7px] font-bold uppercase leading-tight tracking-[0.06em] sm:text-[9px]">
+            <span className="block truncate text-center text-[10px] font-bold uppercase leading-tight tracking-[0.06em] sm:text-[10px]">
               {shortName(p.name)}
             </span>
           </div>
@@ -334,11 +334,11 @@ function DuoDot({
         {/* rating pill — top-right corner, FotMob colours; blue + star = MOTM */}
         {p.rating !== undefined && (
           <span
-            className="absolute -right-2 -top-2 z-20 inline-flex items-center gap-[2px] rounded-md px-[5px] py-[2px] text-[9px] font-bold leading-[1.35] tabnums text-white shadow-md ring-1 ring-black/30 sm:text-[11px]"
+            className="absolute -right-2 -top-2 z-20 inline-flex items-center gap-[2px] rounded-md px-[5px] py-[2px] text-[10px] font-bold leading-[1.35] tabnums text-white shadow-md ring-1 ring-black/30 sm:text-[11px]"
             style={{ backgroundColor: motm ? "#2f7cf6" : ratingColor(p.rating) }}
           >
             {p.rating.toFixed(1)}
-            {motm && <span className="text-[8px] leading-none">★</span>}
+            {motm && <span className="text-[10px] leading-none">★</span>}
           </span>
         )}
 
@@ -347,14 +347,14 @@ function DuoDot({
           <span className="absolute -left-2 -top-2 z-20 flex flex-col items-center">
             {p.subMinute && (
               <span
-                className="text-[8px] sm:text-[9px] font-semibold tabnums leading-none text-white"
+                className="text-[10px] sm:text-[10px] font-semibold tabnums leading-none text-white"
                 style={{ textShadow: "0 1px 2px rgba(0,0,0,0.9)" }}
               >
                 {p.subMinute}
               </span>
             )}
             <span
-              className="mt-[1px] grid h-3.5 w-3.5 sm:h-4 sm:w-4 place-items-center rounded-full bg-[#e0524f] text-[9px] sm:text-[10px] font-bold leading-none text-white shadow-md ring-1 ring-black/30"
+              className="mt-[1px] grid h-3.5 w-3.5 sm:h-4 sm:w-4 place-items-center rounded-full bg-[#e0524f] text-[10px] sm:text-[10px] font-bold leading-none text-white shadow-md ring-1 ring-black/30"
               title="Substituted off"
             >
               ←

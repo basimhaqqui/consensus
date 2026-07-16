@@ -23,7 +23,7 @@ export default function Crest({
   if (!url || err) {
     return (
       <span
-        className={`inline-flex items-center justify-center rounded-sm bg-zinc-800 text-[8px] font-semibold text-muted ${className}`}
+        className={`inline-flex items-center justify-center rounded-sm bg-zinc-800 text-[10px] font-semibold text-muted ${className}`}
         style={{ width: size, height: size }}
       >
         {label}

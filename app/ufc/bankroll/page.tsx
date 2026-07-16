@@ -75,13 +75,13 @@ export default async function BankrollPage({
       <header className="site-header site-header--compact">
         <div className="section-heading" data-index="01">
           <h2>Positions terminal</h2>
-          <span className="hidden text-[9px] text-zinc-600 sm:inline">private / paper capital</span>
+          <span className="hidden text-[10px] text-zinc-600 sm:inline">private / paper capital</span>
         </div>
 
         <div className="terminal-panel">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-px bg-gradient-to-b from-transparent via-red to-transparent opacity-75" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-px bg-gradient-to-b from-transparent via-accent to-transparent opacity-65" />
-          <div className="terminal-panel-header flex items-center justify-between gap-4 px-4 py-2 text-[9px] uppercase tracking-[0.2em] text-muted sm:px-6">
+          <div className="terminal-panel-header flex items-center justify-between gap-4 px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-muted sm:px-6">
             <span className="flex items-center gap-2 text-zinc-400">
               <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_12px_rgba(52,211,153,0.65)]" />
               Strategy book
@@ -112,7 +112,7 @@ export default async function BankrollPage({
       <section className="mt-10">
         <div className="section-heading" data-index="02">
           <h2>Performance</h2>
-          <span className="text-[9px] uppercase tracking-[0.14em] text-muted">marked to current exposure</span>
+          <span className="text-[10px] uppercase tracking-[0.14em] text-muted">marked to current exposure</span>
         </div>
         <div className="terminal-kpi-grid grid grid-cols-2 gap-px lg:grid-cols-4">
           <Stat
@@ -169,7 +169,7 @@ function BetTable({
     <section className="mt-10">
       <div className="section-heading" data-index={index}>
         <h2>{title}</h2>
-        <span className="text-[9px] text-muted tabnums">[{bets.length}]</span>
+        <span className="text-[10px] text-muted tabnums">[{bets.length}]</span>
       </div>
       {bets.length === 0 ? (
         <div className="terminal-empty p-8 text-center text-sm">
@@ -199,9 +199,9 @@ function Stat({
 }) {
   return (
     <div className="terminal-kpi px-4 py-4 sm:px-5">
-      <div className="text-[9px] uppercase tracking-[0.18em] text-muted">{label}</div>
+      <div className="text-[10px] uppercase tracking-[0.18em] text-muted">{label}</div>
       <div className={`display mt-1 text-3xl font-extrabold tabnums ${valueClass}`}>{value}</div>
-      <div className="mt-1 text-[9px] uppercase tracking-[0.12em] text-zinc-600 tabnums">{sub}</div>
+      <div className="mt-1 text-[10px] uppercase tracking-[0.12em] text-zinc-600 tabnums">{sub}</div>
     </div>
   );
 }

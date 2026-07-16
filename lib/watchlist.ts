@@ -31,7 +31,7 @@ export function parseStoredItems(value: string | null): WatchItem[] {
   try {
     const parsed = JSON.parse(value) as unknown;
     if (!Array.isArray(parsed)) return [];
-    return parsed.filter(isWatchItem);
+    return parsed.filter(isWatchItem).slice(0, 50);
   } catch {
     return [];
   }
@@ -54,11 +54,38 @@ export function parseStoredPreferences(value: string | null): AlertPreferences {
 function isWatchItem(value: unknown): value is WatchItem {
   if (!value || typeof value !== "object") return false;
   const item = value as Partial<WatchItem>;
-  return (
-    typeof item.key === "string" &&
-    (item.kind === "match" || item.kind === "player" || item.kind === "fighter") &&
-    typeof item.title === "string" &&
-    typeof item.context === "string" &&
-    typeof item.href === "string"
-  );
+  if (
+    typeof item.key !== "string" ||
+    item.key.length > 200 ||
+    (item.kind !== "match" &&
+      item.kind !== "player" &&
+      item.kind !== "fighter") ||
+    typeof item.title !== "string" ||
+    item.title.length > 160 ||
+    typeof item.context !== "string" ||
+    item.context.length > 240 ||
+    typeof item.href !== "string" ||
+    !item.href.startsWith("/") ||
+    item.href.startsWith("//") ||
+    item.href.length > 500
+  ) {
+    return false;
+  }
+  if (!item.key.startsWith(`${item.kind}:`)) return false;
+  if (
+    item.startsAt !== undefined &&
+    (typeof item.startsAt !== "string" ||
+      Number.isNaN(Date.parse(item.startsAt)))
+  ) {
+    return false;
+  }
+  if (
+    item.image !== undefined &&
+    (typeof item.image !== "string" ||
+      !/^https:\/\/[^\s]+$/i.test(item.image) ||
+      item.image.length > 800)
+  ) {
+    return false;
+  }
+  return true;
 }

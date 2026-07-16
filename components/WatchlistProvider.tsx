@@ -30,6 +30,7 @@ type WatchlistContextValue = {
   isWatching: (key: string) => boolean;
   toggleItem: (item: WatchItem) => void;
   removeItem: (key: string) => void;
+  importItems: (items: WatchItem[]) => void;
   updatePreference: (key: keyof AlertPreferences, value: boolean) => void;
   enableBrowserAlerts: () => Promise<NotificationPermissionState>;
 };
@@ -106,6 +107,14 @@ export default function WatchlistProvider({ children }: { children: React.ReactN
   const removeItem = useCallback((key: string) => {
     setItems((current) => {
       return current.filter((item) => item.key !== key);
+    });
+  }, []);
+
+  const importItems = useCallback((incoming: WatchItem[]) => {
+    setItems((current) => {
+      const byKey = new Map(current.map((item) => [item.key, item]));
+      for (const item of incoming) byKey.set(item.key, item);
+      return [...byKey.values()];
     });
   }, []);
 
@@ -222,6 +231,7 @@ export default function WatchlistProvider({ children }: { children: React.ReactN
       isWatching: (key) => items.some((item) => item.key === key),
       toggleItem,
       removeItem,
+      importItems,
       updatePreference,
       enableBrowserAlerts,
     }),
@@ -231,6 +241,7 @@ export default function WatchlistProvider({ children }: { children: React.ReactN
       permission,
       preferences,
       ready,
+      importItems,
       removeItem,
       toggleItem,
       updatePreference,

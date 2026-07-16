@@ -72,7 +72,7 @@ function FightPickRow({
 
   return (
     <div className="terminal-panel terminal-panel--interactive">
-      <div className="terminal-panel-header flex items-center justify-between gap-3 px-4 py-2 text-[8px] uppercase tracking-[0.18em] text-muted">
+      <div className="terminal-panel-header flex items-center justify-between gap-3 px-4 py-2 text-[10px] uppercase tracking-[0.18em] text-muted">
         <span>Winner / method / round</span>
         <span className="truncate tabnums">
           {lastName(f.a.name)} <span className="px-1 text-zinc-700">vs</span> {lastName(f.b.name)}
@@ -109,7 +109,7 @@ function FightPickRow({
                   disabled={locked}
                   onClick={() => set({ m })}
                   aria-pressed={pick.m === m}
-                  className={`min-h-8 rounded border px-2 py-1 text-[9px] uppercase tracking-[0.12em] ${
+                  className={`min-h-8 rounded border px-2 py-1 text-[10px] uppercase tracking-[0.12em] ${
                     pick.m === m ? "border-warn/60 bg-warn/15 text-warn" : "border-line text-muted"
                   } ${locked ? "opacity-60" : "hover:border-zinc-500"}`}
                 >
@@ -241,39 +241,39 @@ export default function Predictor({
     <section className="mt-10">
       <div className="section-heading flex-wrap" data-index="05">
         <h2>Predictor</h2>
-        <span className="hidden text-[9px] uppercase tracking-[0.12em] text-muted sm:inline">
+        <span className="hidden text-[10px] uppercase tracking-[0.12em] text-muted sm:inline">
           pick winner · method · round — scored against the model
         </span>
-        <Link href="/ufc/picks" className="z-10 ml-auto text-[9px] uppercase tracking-[0.14em] text-muted hover:text-accent">
+        <Link href="/ufc/picks" className="z-10 ml-auto text-[10px] uppercase tracking-[0.14em] text-muted hover:text-accent">
           My picks →
         </Link>
       </div>
 
       <div className="terminal-panel mb-4">
-        <div className="terminal-panel-header flex flex-wrap items-center justify-between gap-2 px-4 py-2 text-[8px] uppercase tracking-[0.18em] text-muted sm:px-5">
+        <div className="terminal-panel-header flex flex-wrap items-center justify-between gap-2 px-4 py-2 text-[10px] uppercase tracking-[0.18em] text-muted sm:px-5">
           <span>Event scorecard</span>
           <span>win 3 / method +2 / round +1 / locks at fight time</span>
         </div>
         <div className="terminal-kpi-grid grid grid-cols-2 gap-px rounded-none border-x-0 border-b-0 sm:grid-cols-4">
           <div className="terminal-kpi px-4 py-3">
-            <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Card picked</div>
+            <div className="text-[10px] uppercase tracking-[0.16em] text-muted">Card picked</div>
             <div className="display mt-1 text-2xl font-bold text-zinc-100 tabnums">{onCard.length}/{fights.length}</div>
-            <div className="mt-0.5 text-[8px] uppercase tracking-[0.1em] text-zinc-600">selections saved</div>
+            <div className="mt-0.5 text-[10px] uppercase tracking-[0.1em] text-zinc-600">selections saved</div>
           </div>
           <div className="terminal-kpi px-4 py-3">
-            <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Still open</div>
+            <div className="text-[10px] uppercase tracking-[0.16em] text-muted">Still open</div>
             <div className="display mt-1 text-2xl font-bold text-warn tabnums">{openCount}</div>
-            <div className="mt-0.5 text-[8px] uppercase tracking-[0.1em] text-zinc-600">available bouts</div>
+            <div className="mt-0.5 text-[10px] uppercase tracking-[0.1em] text-zinc-600">available bouts</div>
           </div>
           <div className="terminal-kpi px-4 py-3">
-            <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Your score</div>
+            <div className="text-[10px] uppercase tracking-[0.16em] text-muted">Your score</div>
             <div className="display mt-1 text-2xl font-bold text-emerald-400 tabnums">{userPts}</div>
-            <div className="mt-0.5 text-[8px] uppercase tracking-[0.1em] text-zinc-600">{graded.length} graded</div>
+            <div className="mt-0.5 text-[10px] uppercase tracking-[0.1em] text-zinc-600">{graded.length} graded</div>
           </div>
           <div className="terminal-kpi px-4 py-3">
-            <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Model score</div>
+            <div className="text-[10px] uppercase tracking-[0.16em] text-muted">Model score</div>
             <div className="display mt-1 text-2xl font-bold text-accent tabnums">{modelPts}</div>
-            <div className="mt-0.5 text-[8px] uppercase tracking-[0.1em] text-zinc-600">
+            <div className="mt-0.5 text-[10px] uppercase tracking-[0.1em] text-zinc-600">
               {graded.length > 0 ? (userPts > modelPts ? "you lead" : userPts < modelPts ? "model leads" : "tied") : "awaiting results"}
             </div>
           </div>

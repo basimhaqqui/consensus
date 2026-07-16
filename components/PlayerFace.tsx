@@ -137,17 +137,21 @@ function crop(u: string, shape: "circle" | "square", relaxed: boolean) {
 export default function PlayerFace({
   src,
   srcs,
+  name,
   jersey,
   size = 40,
   shape = "circle",
   relaxed = false,
+  priority = false,
 }: {
   src?: string | null;
   srcs?: (string | null | undefined)[]; // fallback chain, tried in order
+  name?: string;
   jersey?: string;
   size?: number;
   shape?: "circle" | "square";
   relaxed?: boolean;
+  priority?: boolean;
 }) {
   const chain = (srcs ?? [src]).filter(Boolean) as string[];
   const [idx, setIdx] = useState(0);
@@ -159,14 +163,20 @@ export default function PlayerFace({
     setKnocked(null);
     if (raw && needsKnockout(raw)) {
       let alive = true;
-      whiteKnockout(raw).then((v) => {
-        if (alive && v) setKnocked(v);
-      });
+      const timer = window.setTimeout(
+        () => {
+          whiteKnockout(raw).then((v) => {
+            if (alive && v) setKnocked(v);
+          });
+        },
+        priority ? 0 : 180
+      );
       return () => {
         alive = false;
+        window.clearTimeout(timer);
       };
     }
-  }, [raw]);
+  }, [priority, raw]);
   const cur = raw && needsKnockout(raw) && knocked ? knocked : raw;
 
   // Server-rendered imgs can finish 404ing before hydration, so onError never
@@ -176,16 +186,21 @@ export default function PlayerFace({
   }, []);
 
   if (!cur) {
+    const fallback = initials(name) || jersey || "?";
     return shape === "square" ? (
-      <span className="flex h-full w-full items-center justify-center font-extrabold tabnums text-current text-lg">
-        {jersey ?? "?"}
+      <span
+        aria-label={name ? `${name} portrait unavailable` : "Player portrait unavailable"}
+        className="flex h-full w-full items-center justify-center bg-gradient-to-br from-white/[0.09] to-black/20 font-bold text-current text-sm"
+      >
+        {fallback}
       </span>
     ) : (
       <span
-        className="inline-flex items-center justify-center rounded-full bg-zinc-700 text-zinc-200 font-semibold tabnums border border-zinc-600"
+        aria-label={name ? `${name} portrait unavailable` : "Player portrait unavailable"}
+        className="inline-flex items-center justify-center rounded-full border border-zinc-600 bg-gradient-to-br from-zinc-700 to-zinc-900 font-semibold text-zinc-200"
         style={{ width: size, height: size, fontSize: size * 0.4 }}
       >
-        {jersey ?? "?"}
+        {fallback}
       </span>
     );
   }
@@ -198,7 +213,8 @@ export default function PlayerFace({
       ref={checkFailed}
       src={cur}
       alt=""
-      loading="eager"
+      loading={priority ? "eager" : "lazy"}
+      fetchPriority={priority ? "high" : "auto"}
       onError={() => setIdx((i) => i + 1)}
       style={style}
     />
@@ -215,4 +231,13 @@ export default function PlayerFace({
       {img}
     </span>
   );
+}
+
+function initials(name?: string) {
+  if (!name) return "";
+  const words = name.trim().split(/\s+/).filter(Boolean);
+  if (words.length === 0) return "";
+  const first = words[0]?.[0] ?? "";
+  const last = words.length > 1 ? words.at(-1)?.[0] ?? "" : "";
+  return `${first}${last}`.toUpperCase();
 }

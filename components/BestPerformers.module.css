@@ -14,7 +14,7 @@
 .eyebrow {
   display: block;
   color: var(--accent);
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -87,7 +87,7 @@
   max-width: 115px;
   margin-top: 4px;
   color: #687583;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 0.11em;
   line-height: 1.4;
   text-transform: uppercase;
@@ -113,7 +113,7 @@
   border: 1px solid transparent;
   border-radius: 6px;
   color: #798593;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 620;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -169,7 +169,7 @@
 
 .rankLabel {
   color: var(--accent);
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -209,7 +209,7 @@
 
 .heroMetric span {
   color: #74808e;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -217,7 +217,7 @@
 .spotlightCopy p {
   margin-top: 7px;
   color: #65717f;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .spotlightImage {
@@ -234,6 +234,11 @@
   background: rgba(5, 10, 14, 0.48);
   box-shadow: 0 24px 45px -24px rgba(0, 0, 0, 0.9);
   color: #27333d;
+}
+
+.spotlightImage > span {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .watermark {
@@ -267,7 +272,7 @@
 
 .rank {
   color: #53606d;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.08em;
 }
 
@@ -292,7 +297,7 @@
 .playerCopy span {
   margin-top: 3px;
   color: #667280;
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .rowMetric {
@@ -314,7 +319,7 @@
 .rowMetric span {
   margin-top: 2px;
   color: #586572;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -337,7 +342,7 @@
 
 .rolesHeader p {
   color: #5f6b78;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -375,7 +380,7 @@
   border-radius: 4px;
   color: var(--accent);
   background: rgba(52, 211, 153, 0.07);
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
 }
@@ -383,7 +388,7 @@
 .roleTitle strong {
   overflow: hidden;
   color: #aeb7c1;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.06em;
   text-overflow: ellipsis;
@@ -410,7 +415,7 @@
 
 .rolePlayer > span {
   color: #53606d;
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .rolePlayer div {
@@ -427,14 +432,14 @@
 
 .rolePlayer strong {
   color: #d4dbe2;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 610;
 }
 
 .rolePlayer small {
   margin-top: 3px;
   color: #5d6977;
-  font-size: 7px;
+  font-size: 10px;
 }
 
 .rolePlayer b {
@@ -454,7 +459,7 @@
 .methodology span {
   flex: 0 0 auto;
   color: #7d8996;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -462,7 +467,7 @@
 
 .methodology p {
   color: #5d6875;
-  font-size: 8px;
+  font-size: 10px;
   line-height: 1.55;
 }
 
@@ -514,7 +519,7 @@
   }
 
   .coverage span {
-    font-size: 6px;
+    font-size: 10px;
   }
 
   .tabs {
@@ -526,29 +531,29 @@
   }
 
   .spotlightGlow {
-    right: 16px;
-    bottom: 28px;
-    width: 168px;
-    height: 168px;
-    transform: scale(0.82);
-    transform-origin: right bottom;
+    right: 14px;
+    bottom: 24px;
+    width: 142px;
+    height: 142px;
+    transform: none;
   }
 
   .spotlightCopy {
-    width: 76%;
-    padding: 21px 0 20px 17px;
+    width: 100%;
+    padding: 21px 142px 20px 17px;
   }
 
   .spotlightImage {
-    right: 16px;
-    bottom: 28px;
-    transform: scale(0.82);
-    transform-origin: right bottom;
+    right: 14px;
+    bottom: 24px;
+    width: 132px;
+    height: 132px;
+    transform: none;
   }
 
   .leaderName {
-    max-width: 230px;
-    font-size: 31px;
+    max-width: 170px;
+    font-size: 29px;
   }
 
   .heroMetric {

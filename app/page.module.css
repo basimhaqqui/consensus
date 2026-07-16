@@ -103,6 +103,15 @@
   animation: signalPulse 2.6s ease-in-out infinite;
 }
 
+.statusDotPartial {
+  width: 6px;
+  height: 6px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: #f59e0b;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.08), 0 0 14px rgba(245, 158, 11, 0.5);
+}
+
 .statusDot::after {
   position: absolute;
   inset: -4px;
@@ -245,7 +254,7 @@
 
 .actionMeta {
   color: #4f5a67;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -261,7 +270,7 @@
   gap: 14px;
   margin-bottom: 14px;
   color: #5f6b78;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
@@ -396,7 +405,7 @@
 .previewTeam span {
   display: block;
   color: #65717e;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -447,7 +456,7 @@
 .fightProbability span {
   display: block;
   color: #677380;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
@@ -514,7 +523,7 @@
 .previewFooter strong {
   flex: 0 0 auto;
   color: #b9c3cb;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 520;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -579,7 +588,7 @@
 .dataRail span,
 .competitionTopline {
   color: #56616e;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -600,7 +609,7 @@
   gap: 14px;
   margin-bottom: 18px;
   color: #56616e;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -670,7 +679,7 @@
   justify-content: space-between;
   margin-bottom: 13px;
   color: #65717e;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
@@ -785,7 +794,7 @@
   border: 1px solid rgba(52, 211, 153, 0.35);
   border-radius: 3px;
   color: var(--accent);
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -795,7 +804,7 @@
   border: 1px solid rgba(239, 68, 68, 0.38);
   border-radius: 3px;
   color: #f87171;
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -821,7 +830,7 @@
   bottom: 17px;
   left: 18px;
   color: #596572;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }

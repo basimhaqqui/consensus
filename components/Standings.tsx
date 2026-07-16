@@ -28,12 +28,12 @@ export default function Standings({
           key={g.name}
           className="terminal-panel"
         >
-          <div className="terminal-panel-header px-3 py-2 text-[9px] uppercase tracking-[0.16em] text-zinc-400">
+          <div className="terminal-panel-header px-3 py-2 text-[10px] uppercase tracking-[0.16em] text-zinc-400">
             {g.name}
           </div>
           <table className="w-full text-xs">
             <thead>
-              <tr className="text-[9px] uppercase tracking-wider text-muted">
+              <tr className="text-[10px] uppercase tracking-wider text-muted">
                 <th className="text-left font-normal py-1.5 pl-3 w-5">#</th>
                 <th className="text-left font-normal">Team</th>
                 <th className="text-right font-normal w-6">P</th>
@@ -107,7 +107,7 @@ function Legend({ group }: { group: StandingsGroup }) {
 
   return (
     <div className="border-t border-line/50">
-      <div className="px-3 py-2 flex flex-wrap gap-x-3 gap-y-1 text-[9px] text-muted">
+      <div className="px-3 py-2 flex flex-wrap gap-x-3 gap-y-1 text-[10px] text-muted">
         {items.map(([text, color]) => (
           <span key={text} className="flex items-center gap-1.5">
             <span
@@ -128,7 +128,7 @@ function Legend({ group }: { group: StandingsGroup }) {
         )}
       </div>
       {cupConference && (
-        <div className="px-3 pb-2 text-[9px] text-zinc-600">
+        <div className="px-3 pb-2 text-[10px] text-zinc-600">
           This league&apos;s Conference League place is awarded to a domestic cup
           winner, so it isn&apos;t tied to a fixed table position.
         </div>

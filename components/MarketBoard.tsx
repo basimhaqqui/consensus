@@ -43,7 +43,7 @@ export default function MarketBoard({
       <div className="grid gap-x-8 gap-y-5 sm:grid-cols-2">
         {[...groups.entries()].map(([name, ls]) => (
           <div key={name}>
-            <div className="mb-1.5 text-[9px] uppercase tracking-[0.16em] text-zinc-600">
+            <div className="mb-1.5 text-[10px] uppercase tracking-[0.16em] text-zinc-600">
               {name}
             </div>
             <div className="divide-y divide-line/50">

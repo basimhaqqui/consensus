@@ -77,7 +77,7 @@ export default function BracketView({ bracket }: { bracket: Bracket }) {
         {COLS.map((c, i) => (
           <div
             key={c.round}
-            className="absolute top-0 text-center text-[9px] uppercase tracking-[0.18em] text-zinc-400"
+            className="absolute top-0 text-center text-[10px] uppercase tracking-[0.18em] text-zinc-400"
             style={{ left: i * COL_W, width: BOX_W }}
           >
             {c.label}

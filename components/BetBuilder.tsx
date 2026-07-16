@@ -117,7 +117,7 @@ export default function BetBuilder({
               >
                 <div className="flex items-center justify-between gap-2">
                   <span
-                    className={`rounded px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider ${
+                    className={`rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${
                       sg.tag === "VALUE"
                         ? "bg-warn/15 text-warn"
                         : sg.tag === "ACCA"

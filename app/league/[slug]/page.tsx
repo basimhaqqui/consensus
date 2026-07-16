@@ -341,7 +341,7 @@ function LeagueCard({
 
       {probs && (
         <div className="mt-2">
-          <div className="mb-0.5 text-[8px] uppercase tracking-wider text-muted">
+          <div className="mb-0.5 text-[10px] uppercase tracking-wider text-muted">
             {live ? `In-play · ${m.minute}'` : "Model"}
           </div>
           <div className="flex h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
@@ -349,7 +349,7 @@ function LeagueCard({
             <div className="bg-zinc-600" style={{ width: pct(probs.pDraw) }} />
             <div className="bg-sky-400/70" style={{ width: pct(probs.pAway) }} />
           </div>
-          <div className="mt-0.5 flex justify-between text-[9px] text-muted tabnums">
+          <div className="mt-0.5 flex justify-between text-[10px] text-muted tabnums">
             <span>{pct(probs.pHome)}</span>
             <span>D {pct(probs.pDraw)}</span>
             <span>{pct(probs.pAway)}</span>

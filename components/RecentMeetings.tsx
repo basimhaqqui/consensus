@@ -55,7 +55,7 @@ function Meeting({ g }: { g: H2HGame }) {
 function WinChip({ left }: { left?: boolean }) {
   return (
     <span
-      className={`inline-block rounded-[4px] bg-[#1fa34a] px-1 text-[9px] font-bold leading-[1.5] text-white align-middle ${
+      className={`inline-block rounded-[4px] bg-[#1fa34a] px-1 text-[10px] font-bold leading-[1.5] text-white align-middle ${
         left ? "mr-1.5" : "ml-1.5"
       }`}
     >

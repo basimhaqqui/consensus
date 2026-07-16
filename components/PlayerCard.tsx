@@ -172,7 +172,7 @@ export default function PlayerCard({
             <div className="min-w-0 flex-1 pb-1 text-left">
               <div className="mb-2 flex flex-wrap items-center gap-2">
                 <span
-                  className="rounded-full border border-current/25 bg-black/15 px-2.5 py-1 text-[9px] font-bold uppercase tracking-[0.16em]"
+                  className="rounded-full border border-current/25 bg-black/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em]"
                   style={{ color: t.ink }}
                 >
                   {roleLabel}
@@ -320,12 +320,12 @@ function CompetitionPanel({ stats }: { stats?: CompetitionPlayerStats }) {
     <div className="space-y-3">
       <div className="flex items-center justify-between rounded-xl border border-accent/20 bg-accent/[0.055] px-4 py-3">
         <div>
-          <div className="text-[9px] font-semibold uppercase tracking-[0.16em] text-accent">{role} impact</div>
+          <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-accent">{role} impact</div>
           <div className="mt-1 text-[11px] text-muted">Rank #{stats.roleRank} in the tournament</div>
         </div>
         <div className="text-right">
           <strong className="text-2xl font-bold tabnums text-zinc-100">{stats.impact}</strong>
-          <span className="block text-[8px] uppercase tracking-[0.14em] text-muted">Impact score</span>
+          <span className="block text-[10px] uppercase tracking-[0.14em] text-muted">Impact score</span>
         </div>
       </div>
 
@@ -358,7 +358,7 @@ function CompetitionMetric({ label, value, accent = false }: { label: string; va
   return (
     <div className="rounded-lg border border-line/60 bg-white/[0.025] px-2 py-2.5 text-center">
       <strong className={`block text-[14px] font-semibold tabnums ${accent ? "text-accent" : "text-zinc-100"}`}>{value}</strong>
-      <span className="mt-1 block text-[8px] uppercase tracking-[0.12em] text-muted">{label}</span>
+      <span className="mt-1 block text-[10px] uppercase tracking-[0.12em] text-muted">{label}</span>
     </div>
   );
 }
@@ -373,7 +373,7 @@ function InfoTile({
   return (
     <div className="min-w-0 border-b border-line/50 px-4 py-3 text-left even:border-l sm:border-b-0 sm:border-l sm:first:border-l-0">
       <div className="truncate text-[12px] font-semibold text-zinc-100">{value}</div>
-      <div className="mt-1 text-[9px] uppercase tracking-[0.16em] text-muted">
+      <div className="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted">
         {label}
       </div>
     </div>

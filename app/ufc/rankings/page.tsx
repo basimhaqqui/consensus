@@ -13,13 +13,13 @@ export default function RankingsPage() {
       <header className="site-header site-header--compact">
         <div className="section-heading" data-index="01">
           <h2>Rankings intelligence</h2>
-          <span className="hidden text-[9px] text-zinc-600 sm:inline">official order / independent model</span>
+          <span className="hidden text-[10px] text-zinc-600 sm:inline">official order / independent model</span>
         </div>
 
         <div className="terminal-panel">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-px bg-gradient-to-b from-transparent via-red to-transparent opacity-75" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-px bg-gradient-to-b from-transparent via-blue to-transparent opacity-65" />
-          <div className="terminal-panel-header flex items-center justify-between gap-4 px-4 py-2 text-[9px] uppercase tracking-[0.2em] text-muted sm:px-6">
+          <div className="terminal-panel-header flex items-center justify-between gap-4 px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-muted sm:px-6">
             <span className="flex items-center gap-2 text-zinc-400">
               <span className="h-1.5 w-1.5 rounded-full bg-red shadow-[0_0_12px_rgba(239,68,68,0.65)]" />
               Division intelligence board
@@ -56,7 +56,7 @@ export default function RankingsPage() {
           <section key={d.name}>
             <div className="section-heading" data-index={String(index + 2).padStart(2, "0")}>
               <h2>{d.name.replace(" Rankings", "")}</h2>
-              <span className="text-[9px] text-muted tabnums">{d.ranks.length} ranked</span>
+              <span className="text-[10px] text-muted tabnums">{d.ranks.length} ranked</span>
             </div>
             <RankList ranks={d.ranks} />
           </section>
@@ -71,7 +71,7 @@ export default function RankingsPage() {
               data-index={String(index + p4p.length + 2).padStart(2, "0")}
             >
               <h2>{d.name}</h2>
-              <span className="text-[9px] text-muted tabnums">{d.ranks.length} contenders</span>
+              <span className="text-[10px] text-muted tabnums">{d.ranks.length} contenders</span>
             </div>
             <RankList ranks={d.ranks} champion={d.champion} />
           </section>
@@ -94,11 +94,11 @@ function HeaderStat({
 }) {
   return (
     <div className="terminal-kpi min-w-0 px-3 py-3.5 sm:px-5">
-      <div className="text-[8px] uppercase tracking-[0.16em] text-muted sm:text-[9px] sm:tracking-[0.18em]">{label}</div>
+      <div className="text-[10px] uppercase tracking-[0.16em] text-muted sm:text-[10px] sm:tracking-[0.18em]">{label}</div>
       <div className={`display mt-1 truncate font-bold text-zinc-100 tabnums ${compact ? "text-sm sm:text-xl" : "text-2xl sm:text-3xl"}`}>
         {value}
       </div>
-      <div className="mt-1 hidden text-[9px] uppercase tracking-[0.12em] text-zinc-600 sm:block">{meta}</div>
+      <div className="mt-1 hidden text-[10px] uppercase tracking-[0.12em] text-zinc-600 sm:block">{meta}</div>
     </div>
   );
 }

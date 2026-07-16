@@ -65,7 +65,7 @@ export default function PicksBoard() {
       <section>
         <div className="section-heading" data-index="02">
           <h2>Head-to-head scorecard</h2>
-          <span className="text-[9px] uppercase tracking-[0.14em] text-muted">you / model</span>
+          <span className="text-[10px] uppercase tracking-[0.14em] text-muted">you / model</span>
         </div>
         <div className="terminal-kpi-grid grid grid-cols-2 gap-px lg:grid-cols-4">
           <Stat
@@ -97,7 +97,7 @@ export default function PicksBoard() {
         <section className="mt-10">
           <div className="section-heading" data-index="03">
             <h2>Pick board</h2>
-            <span className="text-[9px] text-muted tabnums">[0]</span>
+            <span className="text-[10px] text-muted tabnums">[0]</span>
           </div>
           <p className="terminal-empty p-8 text-center text-sm">
             No picks yet — open an upcoming event and call every fight: winner, method, round.
@@ -111,10 +111,10 @@ export default function PicksBoard() {
               data-index={String(eventIndex + 3).padStart(2, "0")}
             >
               <h2>{event}</h2>
-              <span className="text-[9px] text-muted tabnums">[{list.length}]</span>
+              <span className="text-[10px] text-muted tabnums">[{list.length}]</span>
             </div>
             <div className="terminal-panel">
-              <div className="terminal-panel-header hidden grid-cols-[72px_minmax(0,1.2fr)_minmax(145px,0.85fr)_minmax(145px,0.85fr)_112px] gap-5 px-5 py-2.5 text-[9px] uppercase tracking-[0.16em] text-muted md:grid">
+              <div className="terminal-panel-header hidden grid-cols-[72px_minmax(0,1.2fr)_minmax(145px,0.85fr)_minmax(145px,0.85fr)_112px] gap-5 px-5 py-2.5 text-[10px] uppercase tracking-[0.16em] text-muted md:grid">
                 <span>Grade</span>
                 <span>Bout / model call</span>
                 <span>Your call</span>
@@ -159,7 +159,7 @@ export default function PicksBoard() {
                         >
                           {gradeLabel}
                         </span>
-                        <span className="text-[9px] uppercase tracking-[0.12em] text-zinc-600 md:mt-1.5 md:block">
+                        <span className="text-[10px] uppercase tracking-[0.12em] text-zinc-600 md:mt-1.5 md:block">
                           {g ? "graded" : "pending"}
                         </span>
                       </div>
@@ -170,7 +170,7 @@ export default function PicksBoard() {
                           <span className="px-1.5 text-zinc-700">vs</span>
                           {lastName(p.b.name)}
                         </div>
-                        <div className="mt-1 truncate text-[9px] uppercase tracking-[0.12em] text-zinc-600">
+                        <div className="mt-1 truncate text-[10px] uppercase tracking-[0.12em] text-zinc-600">
                           Model / <span className="normal-case tracking-normal">{fmt(p.model.w, p.model.m, p.model.r)}</span>
                         </div>
                       </div>
@@ -222,9 +222,9 @@ function Stat({
 }) {
   return (
     <div className="terminal-kpi px-4 py-4 sm:px-5">
-      <div className="text-[9px] uppercase tracking-[0.18em] text-muted">{label}</div>
+      <div className="text-[10px] uppercase tracking-[0.18em] text-muted">{label}</div>
       <div className={`display mt-1 text-3xl font-extrabold tabnums ${valueClass}`}>{value}</div>
-      <div className="mt-1 text-[9px] uppercase tracking-[0.12em] text-zinc-600 tabnums">{sub}</div>
+      <div className="mt-1 text-[10px] uppercase tracking-[0.12em] text-zinc-600 tabnums">{sub}</div>
     </div>
   );
 }
@@ -240,7 +240,7 @@ function PickCell({
 }) {
   return (
     <div className="min-w-0">
-      <div className="text-[9px] uppercase tracking-[0.15em] text-muted md:hidden">{label}</div>
+      <div className="text-[10px] uppercase tracking-[0.15em] text-muted md:hidden">{label}</div>
       <div className={`mt-1 truncate text-xs font-medium tabnums md:mt-0 ${valueClass}`}>{value}</div>
     </div>
   );
@@ -259,7 +259,7 @@ function Score({
 }) {
   return (
     <div>
-      <div className="text-[8px] uppercase tracking-[0.14em] text-zinc-600">{label}</div>
+      <div className="text-[10px] uppercase tracking-[0.14em] text-zinc-600">{label}</div>
       <div className={`display mt-0.5 text-lg font-bold tabnums ${muted ? "text-muted" : "text-zinc-200"} ${valueClass}`}>
         {value}
       </div>

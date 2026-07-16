@@ -30,19 +30,17 @@ const ROLES = [
   { key: "Goalkeeper", label: "Goalkeeping", code: "GK" },
 ] as const;
 
-// ESPN headshot pattern: https://a.espncdn.com/i/headshots/soccer/players/full/<espnId>.png
-// We only have a few known mappings; for others we'll construct from api-football ID if needed
+// Only use verified cross-provider mappings. API-Football and ESPN IDs are
+// unrelated, so constructing a URL from the wrong provider can show another
+// player's face.
 const SPOTLIGHT_PHOTOS: Record<number, string> = {
   154: "https://a.espncdn.com/i/headshots/soccer/players/full/45843.png",
 };
 
-// Fallback: try to construct ESPN URL from known api-football -> ESPN mappings
-// or use a generic placeholder. For now, extend the fallback chain in PlayerFace usage.
-
 function metric(player: CompetitionPlayerStats, category: LeaderCategory) {
   switch (category) {
     case "impact":
-      return `${player.impact}`;
+      return player.impact.toFixed(1);
     case "goals":
       return `${player.goals}`;
     case "assists":
@@ -115,22 +113,21 @@ export default function BestPerformers({ view }: { view: CompetitionPerformanceV
         <div>
           <span className={styles.eyebrow}>Tournament performance center</span>
           <h3>{view.competition.name} <span>{view.competition.season}</span></h3>
-          <p>Every player, ranked by what they have delivered in this competition.</p>
+          <p>Competition leaders ranked by verified tournament production, with a 180-minute minimum for impact lists.</p>
         </div>
         <div className={styles.coverage}>
           <Coverage value={view.competition.playersTracked} label="Players" />
           <Coverage value={view.competition.matchesPlayed} label="Matches" />
-          <Coverage value={`Live`} label={`Updated ${updated}`} live />
+          <Coverage value="Daily" label={`${view.competition.source} · ${updated}`} verified />
         </div>
       </div>
 
-      <div className={styles.tabs} role="tablist" aria-label="Performance ranking">
+      <div className={styles.tabs} role="group" aria-label="Performance ranking">
         {CATEGORIES.map((item) => (
           <button
             key={item.key}
             type="button"
-            role="tab"
-            aria-selected={category === item.key}
+            aria-pressed={category === item.key}
             onClick={() => setCategory(item.key)}
             className={category === item.key ? styles.activeTab : undefined}
           >
@@ -169,13 +166,13 @@ export default function BestPerformers({ view }: { view: CompetitionPerformanceV
               <PlayerFace
                 srcs={[
                   SPOTLIGHT_PHOTOS[leader.id],
-                  // Try constructing ESPN headshot from api-football ID (leader.id)
-                  `https://a.espncdn.com/i/headshots/soccer/players/full/${leader.id}.png`,
                   leader.photo,
                 ].filter(Boolean) as string[]}
+                name={leader.name}
                 jersey={leader.number ? `${leader.number}` : undefined}
                 size={188}
                 relaxed
+                priority
               />
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -186,7 +183,12 @@ export default function BestPerformers({ view }: { view: CompetitionPerformanceV
             {leaders.slice(1).map((player, index) => (
               <article key={player.key} className={styles.leaderRow}>
                 <span className={`${styles.rank} tabnums`}>{String(index + 2).padStart(2, "0")}</span>
-                <PlayerFace src={player.photo} jersey={player.number ? `${player.number}` : undefined} size={42} />
+                <PlayerFace
+                  src={player.photo}
+                  name={player.name}
+                  jersey={player.number ? `${player.number}` : undefined}
+                  size={42}
+                />
                 <div className={styles.playerCopy}>
                   <strong>{player.name}</strong>
                   <span>{player.teamName} · {supporting(player, category)}</span>
@@ -231,12 +233,17 @@ export default function BestPerformers({ view }: { view: CompetitionPerformanceV
               {view.roles[role.key].slice(0, 3).map((player, index) => (
                 <div key={player.key} className={styles.rolePlayer}>
                   <span className="tabnums">{index + 1}</span>
-                  <PlayerFace src={player.photo} jersey={player.number ? `${player.number}` : undefined} size={34} />
+                  <PlayerFace
+                    src={player.photo}
+                    name={player.name}
+                    jersey={player.number ? `${player.number}` : undefined}
+                    size={34}
+                  />
                   <div>
                     <strong>{player.name}</strong>
                     <small>{player.teamName} · {player.rating.toFixed(2)}</small>
                   </div>
-                  <b className="tabnums">{player.impact}</b>
+                  <b className="tabnums">{player.impact.toFixed(1)}</b>
                 </div>
               ))}
             </div>
@@ -246,16 +253,24 @@ export default function BestPerformers({ view }: { view: CompetitionPerformanceV
 
       <footer className={styles.methodology}>
         <span>Methodology</span>
-        <p>Impact is a 0–99 role-adjusted score combining production, chance creation, ball progression, defending, duels, and goalkeeping. Competition totals refresh daily from API-Football.</p>
+        <p>Impact is a 0–100 role-adjusted index combining production, chance creation, ball progression, defending, duels, and goalkeeping. Scores use one decimal to preserve ranking separation. Competition totals refresh daily from API-Football.</p>
       </footer>
     </div>
   );
 }
 
-function Coverage({ value, label, live = false }: { value: string | number; label: string; live?: boolean }) {
+function Coverage({
+  value,
+  label,
+  verified = false,
+}: {
+  value: string | number;
+  label: string;
+  verified?: boolean;
+}) {
   return (
     <div>
-      <strong className="tabnums">{live && <i />} {value}</strong>
+      <strong className="tabnums">{verified && <i />} {value}</strong>
       <span>{label}</span>
     </div>
   );

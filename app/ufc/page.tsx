@@ -22,7 +22,7 @@ export default function Home() {
           line, and the 50/50 consensus of the two for every upcoming UFC bout —
           every forecast frozen pre-fight and graded in public.
         </p>
-        <div className="mt-4 text-[9px] uppercase tracking-[0.18em] text-zinc-600 tabnums">
+        <div className="mt-4 text-[10px] uppercase tracking-[0.18em] text-zinc-600 tabnums">
           Fighter Elo · 9,000+ fights replayed · updated {computedAt.slice(0, 10)}
         </div>
       </header>
@@ -49,7 +49,7 @@ export default function Home() {
             </div>
             <Link
               href={`/ufc/event/${next.eventId}`}
-              className="rounded-[7px] border border-accent/40 bg-accent/10 px-3 py-1.5 text-[9px] uppercase tracking-[0.14em] text-accent hover:-translate-y-0.5 hover:border-accent/70 hover:bg-accent/15"
+              className="rounded-[7px] border border-accent/40 bg-accent/10 px-3 py-1.5 text-[10px] uppercase tracking-[0.14em] text-accent hover:-translate-y-0.5 hover:border-accent/70 hover:bg-accent/15"
             >
               Full card →
             </Link>

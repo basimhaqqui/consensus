@@ -47,7 +47,7 @@ const KIND_TONE = { edge: "text-warn border-warn/40", prop: "text-blue border-bl
 function SuggestionCard({ s, onLoad }: { s: Suggestion; onLoad: () => void }) {
   return (
     <div className="terminal-panel terminal-panel--interactive flex flex-col">
-      <div className="terminal-panel-header flex items-center justify-between px-4 py-2 text-[8px] uppercase tracking-[0.18em] text-muted">
+      <div className="terminal-panel-header flex items-center justify-between px-4 py-2 text-[10px] uppercase tracking-[0.18em] text-muted">
         <span>Model opportunity</span>
         <span className="tabnums">fair value</span>
       </div>
@@ -55,7 +55,7 @@ function SuggestionCard({ s, onLoad }: { s: Suggestion; onLoad: () => void }) {
         <div className="flex items-start justify-between gap-3">
           <div>
             <span
-              className={`rounded border px-1.5 py-0.5 text-[9px] uppercase tracking-wider ${KIND_TONE[s.kind]}`}
+              className={`rounded border px-1.5 py-0.5 text-[10px] uppercase tracking-wider ${KIND_TONE[s.kind]}`}
             >
               {KIND_LABEL[s.kind]}
             </span>
@@ -72,7 +72,7 @@ function SuggestionCard({ s, onLoad }: { s: Suggestion; onLoad: () => void }) {
         <button
           type="button"
           onClick={onLoad}
-          className="mt-4 w-full rounded-md border border-line bg-bg/40 px-3 py-2 text-[9px] uppercase tracking-[0.16em] text-zinc-300 hover:border-accent/50 hover:bg-accent/[0.06] hover:text-accent"
+          className="mt-4 w-full rounded-md border border-line bg-bg/40 px-3 py-2 text-[10px] uppercase tracking-[0.16em] text-zinc-300 hover:border-accent/50 hover:bg-accent/[0.06] hover:text-accent"
         >
           Load into slip →
         </button>
@@ -122,10 +122,10 @@ export default function BetLab({ eventId, fights: allFights }: { eventId: string
     <section className="mt-10">
       <div className="section-heading flex-wrap" data-index="05">
         <h2>Bet Lab</h2>
-        <span className="hidden text-[9px] uppercase tracking-[0.12em] text-muted sm:inline">
+        <span className="hidden text-[10px] uppercase tracking-[0.12em] text-muted sm:inline">
           model-priced lines to compare against your book
         </span>
-        <div className="segmented-control z-10 ml-auto flex items-center gap-0.5 p-1 text-[9px] uppercase tracking-[0.14em]">
+        <div className="segmented-control z-10 ml-auto flex items-center gap-0.5 p-1 text-[10px] uppercase tracking-[0.14em]">
           <button
             type="button"
             onClick={() => setTab("suggestions")}
@@ -183,7 +183,7 @@ export default function BetLab({ eventId, fights: allFights }: { eventId: string
                   <span className="display font-extrabold">
                     {lastName(f.aName)} <span className="text-zinc-600">vs</span> {lastName(f.bName)}
                   </span>
-                  <span className="flex shrink-0 items-center gap-2 text-[9px] uppercase tracking-[0.14em] text-muted">
+                  <span className="flex shrink-0 items-center gap-2 text-[10px] uppercase tracking-[0.14em] text-muted">
                     {slip.some((l) => l.boutId === f.boutId) ? "1 leg in slip" : `${menus.get(f.boutId)?.length ?? 0} bets`}
                     <span
                       className={`text-accent transition-transform ${openBout === f.boutId ? "rotate-180" : ""}`}
@@ -210,7 +210,7 @@ export default function BetLab({ eventId, fights: allFights }: { eventId: string
           </div>
 
           <div className="terminal-panel h-fit border-accent/30 lg:sticky lg:top-20">
-            <div className="terminal-panel-header flex items-center justify-between px-4 py-2 text-[9px] uppercase tracking-[0.2em] text-accent">
+            <div className="terminal-panel-header flex items-center justify-between px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-accent">
               <h3>Model slip</h3>
               <span className="text-muted tabnums">{slip.length} legs</span>
             </div>
@@ -260,7 +260,7 @@ export default function BetLab({ eventId, fights: allFights }: { eventId: string
                   <button
                     type="button"
                     onClick={() => setSlip([])}
-                    className="mt-3 w-full rounded-md border border-line px-2 py-1.5 text-[9px] uppercase tracking-[0.14em] text-muted hover:border-zinc-600 hover:text-zinc-300"
+                    className="mt-3 w-full rounded-md border border-line px-2 py-1.5 text-[10px] uppercase tracking-[0.14em] text-muted hover:border-zinc-600 hover:text-zinc-300"
                   >
                     Clear slip
                   </button>

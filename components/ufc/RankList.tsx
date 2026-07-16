@@ -29,25 +29,25 @@ export default function RankList({
           </span>
           <FighterFace id={champion.id} name={champion.name} size={42} />
           <div className="min-w-0">
-            <div className="text-[8px] uppercase tracking-[0.2em] text-warn">Division champion</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-warn">Division champion</div>
             <div className="display truncate text-lg font-extrabold leading-tight text-zinc-100 group-hover:text-white">
               {champion.name}
             </div>
             {championRating && (
-              <div className="mt-0.5 text-[9px] uppercase tracking-[0.12em] text-zinc-600 tabnums">
+              <div className="mt-0.5 text-[10px] uppercase tracking-[0.12em] text-zinc-600 tabnums">
                 UFC record {championRating.wins}-{championRating.fights - championRating.wins}
               </div>
             )}
           </div>
           <div className="ml-auto text-right">
-            <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Model Elo</div>
+            <div className="text-[10px] uppercase tracking-[0.16em] text-muted">Model Elo</div>
             <div className="display mt-0.5 text-xl font-bold text-accent tabnums">
               {champion.id ? Math.round(championRating?.rating ?? 0) || "—" : "—"}
             </div>
           </div>
         </Link>
       )}
-      <div className="terminal-panel-header grid grid-cols-[42px_minmax(0,1fr)_auto] items-center gap-3 px-4 py-2 text-[8px] uppercase tracking-[0.16em] text-muted sm:grid-cols-[42px_minmax(0,1fr)_auto_auto] sm:px-5">
+      <div className="terminal-panel-header grid grid-cols-[42px_minmax(0,1fr)_auto] items-center gap-3 px-4 py-2 text-[10px] uppercase tracking-[0.16em] text-muted sm:grid-cols-[42px_minmax(0,1fr)_auto_auto] sm:px-5">
         <span className="text-center">Rank</span>
         <span>Fighter dossier</span>
         <span className="hidden text-right sm:block">UFC record</span>
@@ -77,7 +77,7 @@ export default function RankList({
                     {r.name}
                   </div>
                   {rating && (
-                    <div className="mt-0.5 text-[8px] uppercase tracking-[0.1em] text-zinc-600 tabnums sm:hidden">
+                    <div className="mt-0.5 text-[10px] uppercase tracking-[0.1em] text-zinc-600 tabnums sm:hidden">
                       {rating.wins}-{rating.fights - rating.wins} UFC
                     </div>
                   )}
@@ -87,13 +87,13 @@ export default function RankList({
                 <div className="text-[11px] text-zinc-400 tabnums">
                   {rating ? `${rating.wins}-${rating.fights - rating.wins}` : "—"}
                 </div>
-                <div className="text-[8px] uppercase tracking-[0.1em] text-zinc-700">tracked</div>
+                <div className="text-[10px] uppercase tracking-[0.1em] text-zinc-700">tracked</div>
               </div>
               <div className="min-w-12 text-right">
                 <div className="display text-base font-bold text-accent tabnums">
                   {elo ? Math.round(elo) : "—"}
                 </div>
-                <div className="text-[8px] uppercase tracking-[0.1em] text-zinc-700">post-fight</div>
+                <div className="text-[10px] uppercase tracking-[0.1em] text-zinc-700">post-fight</div>
               </div>
             </div>
           );

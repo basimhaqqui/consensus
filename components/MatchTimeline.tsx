@@ -25,7 +25,7 @@ function Icon({ e }: { e: MatchEvent }) {
     return <span className="h-[13px] w-[9px] shrink-0 rounded-[2px] bg-[#ef4444]" />;
   // substitution
   return (
-    <span className="flex shrink-0 flex-col leading-none text-[9px] font-bold">
+    <span className="flex shrink-0 flex-col leading-none text-[10px] font-bold">
       <span className="text-accent">↑</span>
       <span className="text-danger">↓</span>
     </span>
@@ -81,7 +81,7 @@ export default function MatchTimeline({ events }: { events: MatchEvent[] }) {
         r === "HT" ? (
           <div key={`ht${i}`} className="flex items-center gap-3 py-1">
             <span className="h-px flex-1 bg-line" />
-            <span className="text-[9px] uppercase tracking-[0.2em] text-muted">
+            <span className="text-[10px] uppercase tracking-[0.2em] text-muted">
               Half time
             </span>
             <span className="h-px flex-1 bg-line" />

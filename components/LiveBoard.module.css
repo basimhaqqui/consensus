@@ -13,7 +13,7 @@
   display: block;
   margin-bottom: 7px;
   color: #596572;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -59,7 +59,7 @@
   gap: 14px;
   margin-bottom: 14px;
   color: #5d6875;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -142,7 +142,7 @@
 
 .spotlightTopline {
   color: var(--accent);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -203,7 +203,7 @@
 .spotlightTeam span {
   display: block;
   color: #677380;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -236,7 +236,7 @@
 
 .versus {
   color: #48535e;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -248,7 +248,7 @@
 
 .advanceBlock span {
   color: #66727e;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -284,7 +284,7 @@
 .spotlightFooter strong {
   flex: 0 0 auto;
   color: #aeb8c1;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 530;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -330,7 +330,7 @@
 
 .signalCard > span {
   color: #66727e;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -388,7 +388,7 @@
 
 .trustStrip span {
   color: #65717d;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
@@ -407,7 +407,7 @@
   margin-top: 2px;
   overflow: hidden;
   color: #596572;
-  font-size: 9px;
+  font-size: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -423,7 +423,7 @@
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.015);
   color: #74808c;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }

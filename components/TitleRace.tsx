@@ -78,7 +78,7 @@ export default function TitleRace({ rows }: { rows: SimRow[] }) {
   return (
     <div className="terminal-panel">
       {/* header */}
-      <div className={`${grid} terminal-panel-header py-2 text-[9px] uppercase tracking-[0.14em] text-muted`}>
+      <div className={`${grid} terminal-panel-header py-2 text-[10px] uppercase tracking-[0.14em] text-muted`}>
         <span>Team</span>
         <span className="hidden sm:block">Win title</span>
         {hasNext && <span className="hidden sm:block text-right">Next</span>}

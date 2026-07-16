@@ -1,9 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import WatchlistButton from "./WatchlistButton";
 import { useWatchlist } from "./WatchlistProvider";
-import type { AlertPreferences, WatchItem, WatchKind } from "@/lib/watchlist";
+import {
+  parseStoredItems,
+  type AlertPreferences,
+  type WatchItem,
+  type WatchKind,
+} from "@/lib/watchlist";
 
 const GROUPS: Array<{ kind: WatchKind; label: string; empty: string }> = [
   { kind: "match", label: "Matches", empty: "Watch a World Cup match to pin kickoff and live updates here." },
@@ -22,16 +28,66 @@ const ALERTS: Array<{
 ];
 
 export default function WatchlistDashboard() {
+  const [shareStatus, setShareStatus] = useState("");
+  const [sharedItems, setSharedItems] = useState<WatchItem[]>([]);
   const {
     items,
     preferences,
     permission,
     ready,
+    importItems,
     updatePreference,
     enableBrowserAlerts,
   } = useWatchlist();
   const matches = items.filter((item) => item.kind === "match").length;
   const people = items.length - matches;
+
+  useEffect(() => {
+    const encoded = new URLSearchParams(window.location.search).get("list");
+    if (!encoded) return;
+    try {
+      const decoded = decodeURIComponent(window.atob(encoded));
+      setSharedItems(parseStoredItems(decoded));
+    } catch {
+      setSharedItems([]);
+    }
+  }, []);
+
+  const shareWatchlist = async () => {
+    if (items.length === 0) return;
+    const encoded = window.btoa(encodeURIComponent(JSON.stringify(items)));
+    const url = `${window.location.origin}/watchlist?list=${encodeURIComponent(encoded)}`;
+    const body = `Open my ${items.length}-item CONSENSUS watchlist.`;
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: "My CONSENSUS watchlist",
+          text: body,
+          url,
+        });
+        setShareStatus("Watchlist shared");
+      } else {
+        await navigator.clipboard.writeText(url);
+        setShareStatus("Share link copied");
+      }
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") return;
+      setShareStatus("Sharing unavailable");
+    }
+    window.setTimeout(() => setShareStatus(""), 2200);
+  };
+
+  const acceptSharedItems = () => {
+    importItems(sharedItems);
+    setSharedItems([]);
+    window.history.replaceState({}, "", "/watchlist");
+    setShareStatus("Shared watchlist imported");
+  };
+
+  const dismissSharedItems = () => {
+    setSharedItems([]);
+    window.history.replaceState({}, "", "/watchlist");
+  };
 
   return (
     <>
@@ -44,6 +100,30 @@ export default function WatchlistDashboard() {
               Keep the matches and people you care about in one focused board.
               Everything stays on this browser—no account required.
             </p>
+            <div className="mt-5 flex flex-wrap items-center gap-2">
+              <button
+                type="button"
+                onClick={() => void shareWatchlist()}
+                disabled={!ready || items.length === 0}
+                className="action-secondary disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Share watchlist
+              </button>
+              <span className="rounded-full border border-line bg-black/20 px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-zinc-600">
+                On-device
+              </span>
+              <span className="rounded-full border border-line bg-black/20 px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-zinc-600">
+                No sign-in
+              </span>
+              <span className="sr-only" role="status" aria-live="polite">
+                {shareStatus}
+              </span>
+              {shareStatus && (
+                <span className="text-[10px] uppercase tracking-[0.12em] text-accent">
+                  {shareStatus}
+                </span>
+              )}
+            </div>
           </div>
           <div className="terminal-kpi-grid grid grid-cols-3 gap-px overflow-hidden rounded-[9px]">
             <WatchStat label="Saved" value={ready ? items.length : "—"} />
@@ -53,10 +133,36 @@ export default function WatchlistDashboard() {
         </div>
       </section>
 
+      {sharedItems.length > 0 && (
+        <section className="mt-6 terminal-panel border-accent/30 p-4" aria-label="Shared watchlist">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <div className="site-kicker mb-1">Incoming watchlist</div>
+              <p className="text-sm text-zinc-200">
+                Add {sharedItems.length} shared {sharedItems.length === 1 ? "item" : "items"} to this device?
+              </p>
+              <p className="mt-1 text-[10px] text-muted">
+                Existing saved items will be kept. Duplicate entries are merged.
+              </p>
+            </div>
+            <div className="flex gap-2">
+              <button type="button" onClick={acceptSharedItems} className="action-primary">
+                Import
+              </button>
+              <button type="button" onClick={dismissSharedItems} className="action-secondary">
+                Dismiss
+              </button>
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="mt-10 grid gap-5 lg:grid-cols-[minmax(0,1fr)_330px] lg:items-start">
         <div className="space-y-8">
           {GROUPS.map((group, index) => {
-            const groupItems = items.filter((item) => item.kind === group.kind);
+            const groupItems = items
+              .filter((item) => item.kind === group.kind)
+              .sort(sortWatchItems);
             return (
               <section key={group.kind}>
                 <div className="section-heading" data-index={String(index + 1).padStart(2, "0")}>
@@ -74,7 +180,7 @@ export default function WatchlistDashboard() {
                     <p className="max-w-xl text-xs leading-relaxed text-muted">{group.empty}</p>
                     <Link
                       href={group.kind === "fighter" ? "/ufc" : "/wc"}
-                      className="mt-3 inline-flex text-[9px] uppercase tracking-[0.15em] text-accent hover:text-emerald-300"
+                      className="mt-3 inline-flex text-[10px] uppercase tracking-[0.15em] text-accent hover:text-emerald-300"
                     >
                       Explore {group.kind === "fighter" ? "UFC" : "World Cup"} →
                     </Link>
@@ -86,7 +192,7 @@ export default function WatchlistDashboard() {
         </div>
 
         <aside className="terminal-panel lg:sticky lg:top-5">
-          <div className="terminal-panel-header flex items-center justify-between px-4 py-3 text-[9px] uppercase tracking-[0.17em] text-muted">
+          <div className="terminal-panel-header flex items-center justify-between px-4 py-3 text-[10px] uppercase tracking-[0.17em] text-muted">
             <span>Browser alerts</span>
             <span className={permission === "granted" ? "text-accent" : "text-zinc-600"}>
               {permissionLabel(permission)}
@@ -97,21 +203,32 @@ export default function WatchlistDashboard() {
               Get lightweight reminders for watched World Cup matches while
               Consensus is open. Your choices remain on this device.
             </p>
-            {permission !== "granted" && permission !== "unsupported" && (
+            {permission === "default" && (
               <button
                 type="button"
                 onClick={() => void enableBrowserAlerts()}
-                className="mt-4 w-full rounded-[7px] border border-accent/40 bg-accent/10 px-3 py-2.5 text-[9px] font-semibold uppercase tracking-[0.15em] text-accent hover:border-accent/70 hover:bg-accent/15"
+                className="mt-4 w-full rounded-[7px] border border-accent/40 bg-accent/10 px-3 py-2.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-accent hover:border-accent/70 hover:bg-accent/15"
               >
                 Enable browser alerts
               </button>
+            )}
+            {permission === "denied" && (
+              <div className="mt-4 rounded-[7px] border border-warn/25 bg-warn/[0.06] px-3 py-2.5 text-[10px] leading-relaxed text-warn">
+                Alerts are blocked in browser settings. Allow notifications for
+                this site, then reload the watchlist.
+              </div>
+            )}
+            {permission === "unsupported" && (
+              <div className="mt-4 rounded-[7px] border border-line bg-black/20 px-3 py-2.5 text-[10px] leading-relaxed text-muted">
+                This browser does not support page notifications.
+              </div>
             )}
             <div className="mt-4 divide-y divide-line/60 border-y border-line/60">
               {ALERTS.map((alert) => (
                 <div key={alert.key} className="flex items-center gap-3 py-3">
                   <span className="min-w-0 flex-1">
                     <strong className="block text-[11px] font-medium text-zinc-200">{alert.label}</strong>
-                    <span className="mt-1 block text-[9px] leading-relaxed text-zinc-600">{alert.detail}</span>
+                    <span className="mt-1 block text-[10px] leading-relaxed text-zinc-600">{alert.detail}</span>
                   </span>
                   <button
                     type="button"
@@ -136,7 +253,7 @@ export default function WatchlistDashboard() {
                 </div>
               ))}
             </div>
-            <div className="mt-4 flex items-start gap-2 text-[9px] leading-relaxed text-zinc-600">
+            <div className="mt-4 flex items-start gap-2 text-[10px] leading-relaxed text-zinc-600">
               <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent/70" />
               Alerts poll the same live score feed as the World Cup terminal.
             </div>
@@ -149,11 +266,14 @@ export default function WatchlistDashboard() {
 
 function WatchCard({ item }: { item: WatchItem }) {
   return (
-    <article className="terminal-panel group flex min-h-32 flex-col p-4">
+    <article className="terminal-panel terminal-panel--interactive group flex min-h-36 flex-col p-4">
       <div className="flex items-start justify-between gap-3">
-        <span className="rounded border border-line bg-black/20 px-2 py-1 text-[8px] uppercase tracking-[0.16em] text-muted">
-          {item.kind}
-        </span>
+        <div className="flex items-center gap-3">
+          <WatchAvatar item={item} />
+          <span className="rounded border border-line bg-black/20 px-2 py-1 text-[10px] uppercase tracking-[0.16em] text-muted">
+            {item.kind}
+          </span>
+        </div>
         <WatchlistButton item={item} iconOnly />
       </div>
       <Link href={item.href} className="mt-4 block min-w-0">
@@ -164,7 +284,7 @@ function WatchCard({ item }: { item: WatchItem }) {
         {item.startsAt && (
           <time
             dateTime={item.startsAt}
-            className="mt-3 block text-[9px] uppercase tracking-[0.12em] text-zinc-600 tabnums"
+            className="mt-3 block text-[10px] uppercase tracking-[0.12em] text-zinc-600 tabnums"
           >
             {formatStart(item.startsAt)}
           </time>
@@ -174,10 +294,38 @@ function WatchCard({ item }: { item: WatchItem }) {
   );
 }
 
+function WatchAvatar({ item }: { item: WatchItem }) {
+  const [broken, setBroken] = useState(false);
+  const initials = item.title
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((word) => word[0])
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+
+  return (
+    <span className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border border-line bg-gradient-to-br from-zinc-700 to-zinc-900 text-[11px] font-semibold text-zinc-300">
+      {item.image && !broken ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={item.image}
+          alt=""
+          loading="lazy"
+          className="h-full w-full object-cover object-top"
+          onError={() => setBroken(true)}
+        />
+      ) : (
+        initials || "•"
+      )}
+    </span>
+  );
+}
+
 function WatchStat({ label, value }: { label: string; value: string | number }) {
   return (
     <div className="terminal-kpi px-3 py-3">
-      <div className="text-[8px] uppercase tracking-[0.15em] text-muted">{label}</div>
+      <div className="text-[10px] uppercase tracking-[0.15em] text-muted">{label}</div>
       <div className="display mt-1 text-2xl font-bold text-zinc-100 tabnums">{value}</div>
     </div>
   );
@@ -200,4 +348,11 @@ function formatStart(value: string) {
     hour: "numeric",
     minute: "2-digit",
   }).format(date);
+}
+
+function sortWatchItems(a: WatchItem, b: WatchItem) {
+  if (a.kind !== "match" || b.kind !== "match") return 0;
+  const aStart = a.startsAt ? Date.parse(a.startsAt) : Number.POSITIVE_INFINITY;
+  const bStart = b.startsAt ? Date.parse(b.startsAt) : Number.POSITIVE_INFINITY;
+  return aStart - bStart;
 }

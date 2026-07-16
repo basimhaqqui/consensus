@@ -71,10 +71,20 @@ function recalibratePlayers(source: CompetitionPlayerStats[]) {
     const spread = Math.max(maxRaw - minRaw, 1);
 
     rolePlayers.forEach((player, index) => {
-      const roleScore = 65 + (((rawByKey.get(player.key) ?? minRaw) - minRaw) / spread) * 34;
-      const ratingScore = Math.max(65, Math.min(99, 65 + (player.rating - 6) * 10.46));
+      const rawPercentile =
+        ((rawByKey.get(player.key) ?? minRaw) - minRaw) / spread;
+      const rankPercentile =
+        rolePlayers.length === 1 ? 1 : 1 - index / (rolePlayers.length - 1);
+      const roleScore =
+        60 + (rawPercentile * 0.55 + rankPercentile * 0.45) * 38;
+      const ratingScore = Math.max(
+        60,
+        Math.min(98, 60 + (player.rating - 6) * 11.8)
+      );
       player.roleRank = index + 1;
-      player.impact = Math.round(roleScore * 0.65 + ratingScore * 0.35);
+      player.impact = Number(
+        (roleScore * 0.7 + ratingScore * 0.3).toFixed(1)
+      );
     });
   }
 

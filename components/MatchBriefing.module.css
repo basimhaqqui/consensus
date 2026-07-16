@@ -35,7 +35,7 @@
 .heroKicker,
 .panelEyebrow {
   color: #65717d;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.17em;
   text-transform: uppercase;
 }
@@ -50,7 +50,7 @@
   align-items: center;
   gap: 7px;
   color: #87939f;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
@@ -87,7 +87,7 @@
 .teamCode {
   display: block;
   color: #64717d;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -123,7 +123,7 @@
   place-items: center;
   border-radius: 3px;
   color: #fff;
-  font-size: 8px;
+  font-size: 10px;
   font-weight: 700;
 }
 
@@ -157,7 +157,7 @@
   display: block;
   margin-top: 7px;
   color: #687481;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -183,7 +183,7 @@
   padding: 7px 11px;
   border-radius: 6px;
   color: #687582;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -230,7 +230,7 @@
   border-radius: 5px;
   background: rgba(52, 211, 153, 0.07);
   color: var(--accent);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -358,7 +358,7 @@
 .stat span {
   display: block;
   color: #5f6b77;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -396,7 +396,7 @@
   border: 1px solid rgba(52, 211, 153, 0.22);
   border-radius: 6px;
   color: var(--accent);
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .reason strong {
@@ -423,7 +423,7 @@
   display: block;
   margin-bottom: 10px;
   color: #5f6b77;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -446,7 +446,7 @@
 .brief > span {
   display: block;
   color: #5f6b77;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -468,7 +468,7 @@
 
 .briefSources a {
   color: #667582;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .briefSources a:hover {
@@ -485,7 +485,7 @@
 .briefingFooter p {
   max-width: 230px;
   color: #5d6975;
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.5;
 }
 
@@ -551,7 +551,7 @@
   }
 
   .matchState span {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .heroMeta {

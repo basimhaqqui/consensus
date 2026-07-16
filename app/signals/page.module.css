@@ -73,7 +73,7 @@
 .heroStatus small {
   margin-top: 6px;
   color: #4d5865;
-  font-size: 9px;
+  font-size: 10px;
   line-height: 1.5;
 }
 
@@ -108,7 +108,7 @@
 
 .summaryRail span {
   color: #57626e;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -125,7 +125,7 @@
 .summaryRail small {
   margin-top: 5px;
   color: #525d69;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .section {
@@ -138,7 +138,7 @@
   gap: 12px;
   margin-bottom: 15px;
   color: #535f6b;
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -158,7 +158,7 @@
 
 .sectionHeading small {
   color: #4e5965;
-  font-size: 8px;
+  font-size: 10px;
   font-style: normal;
 }
 
@@ -223,7 +223,7 @@
 
 .cardTopline {
   color: #687481;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -241,7 +241,7 @@
   padding-bottom: 13px;
   border-bottom: 1px solid rgba(125, 136, 150, 0.13);
   color: #626e7a;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .cardMeta strong {
@@ -290,7 +290,7 @@
 
 .identity span {
   color: #596572;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
@@ -310,7 +310,7 @@
 
 .versus {
   color: #414b56;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -325,7 +325,7 @@
 .reasoning > span {
   display: block;
   color: #5f6a76;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -389,7 +389,7 @@
 .probabilityLabels {
   margin-top: 7px;
   color: #52606c;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -420,7 +420,7 @@
   padding-top: 1px;
   color: #46525e;
   font-family: var(--font-geist-mono), monospace;
-  font-size: 8px;
+  font-size: 10px;
 }
 
 .cardFooter {
@@ -431,7 +431,7 @@
 
 .cardFooter > a {
   color: #b8c3cb;
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 530;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -465,7 +465,7 @@
 .marketGapTopline,
 .marketGap > span {
   color: #8e6d32;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -475,7 +475,7 @@
   border: 1px solid rgba(245, 158, 11, 0.23);
   border-radius: 4px;
   color: #b88834;
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 520;
 }
 
@@ -506,7 +506,7 @@
 
 .compareRow > div:first-child {
   color: #777064;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -534,7 +534,7 @@
   margin-top: auto;
   padding-top: 24px;
   color: #c79b51;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -563,7 +563,7 @@
 
 .contextCard span {
   color: #56616d;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -588,7 +588,7 @@
   margin-top: 5px;
   overflow: hidden;
   color: #505b67;
-  font-size: 8px;
+  font-size: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -635,7 +635,7 @@
 
 .explainer span {
   color: var(--accent);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.15em;
 }
 

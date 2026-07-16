@@ -24,12 +24,12 @@ export default function LedgerPage() {
       <header className="site-header site-header--compact">
         <div className="section-heading" data-index="01">
           <h2>Public track record</h2>
-          <span className="hidden text-[9px] text-zinc-600 sm:inline">append-only / independently auditable</span>
+          <span className="hidden text-[10px] text-zinc-600 sm:inline">append-only / independently auditable</span>
         </div>
 
         <div className="terminal-panel">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-px bg-gradient-to-b from-transparent via-accent to-transparent opacity-75" />
-          <div className="terminal-panel-header flex items-center justify-between gap-4 px-4 py-2 text-[9px] uppercase tracking-[0.2em] text-muted sm:px-6">
+          <div className="terminal-panel-header flex items-center justify-between gap-4 px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-muted sm:px-6">
             <span className="flex items-center gap-2 text-zinc-400">
               <span className="h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_12px_rgba(52,211,153,0.65)]" />
               Forecast archive
@@ -49,7 +49,7 @@ export default function LedgerPage() {
                 capture, then graded after the result lands. Wins stay. Misses stay. The record is
                 never rewritten.
               </p>
-              <div className="mt-5 flex flex-wrap gap-2 text-[9px] uppercase tracking-[0.16em]">
+              <div className="mt-5 flex flex-wrap gap-2 text-[10px] uppercase tracking-[0.16em]">
                 <span className="rounded border border-accent/25 bg-accent/[0.07] px-2.5 py-1.5 text-accent">
                   Frozen pre-fight
                 </span>
@@ -68,7 +68,7 @@ export default function LedgerPage() {
       <section className="mt-10">
         <div className="section-heading" data-index="02">
           <h2>Performance statement</h2>
-          <span className="text-[9px] uppercase tracking-[0.14em] text-muted">lower log loss is better</span>
+          <span className="text-[10px] uppercase tracking-[0.14em] text-muted">lower log loss is better</span>
         </div>
         <div className="terminal-kpi-grid grid grid-cols-2 gap-px lg:grid-cols-4">
           <Stat
@@ -126,7 +126,7 @@ export default function LedgerPage() {
           </div>
         ) : (
           <div className="terminal-panel">
-            <div className="terminal-panel-header hidden grid-cols-[76px_minmax(0,1.35fr)_minmax(160px,0.8fr)_minmax(150px,0.7fr)] gap-5 px-5 py-2.5 text-[9px] uppercase tracking-[0.16em] text-muted md:grid">
+            <div className="terminal-panel-header hidden grid-cols-[76px_minmax(0,1.35fr)_minmax(160px,0.8fr)_minmax(150px,0.7fr)] gap-5 px-5 py-2.5 text-[10px] uppercase tracking-[0.16em] text-muted md:grid">
               <span>Grade</span>
               <span>Bout / capture</span>
               <span>Forecast</span>
@@ -163,7 +163,7 @@ export default function LedgerPage() {
                       <span className={`display inline-flex min-w-14 items-center justify-center rounded border px-2 py-1.5 text-[10px] font-extrabold tracking-[0.12em] ${gradeTone}`}>
                         {grade}
                       </span>
-                      <div className="text-[9px] uppercase tracking-[0.12em] text-zinc-600 md:mt-1.5">
+                      <div className="text-[10px] uppercase tracking-[0.12em] text-zinc-600 md:mt-1.5">
                         {method}
                       </div>
                     </div>
@@ -174,7 +174,7 @@ export default function LedgerPage() {
                         <span className="px-1.5 text-zinc-700">vs</span>
                         {splitName(e.b.name).last}
                       </div>
-                      <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] uppercase tracking-[0.12em] text-muted">
+                      <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] uppercase tracking-[0.12em] text-muted">
                         <time dateTime={e.date} className="tabnums">{e.date.slice(0, 10)}</time>
                         <span className="text-zinc-700">/</span>
                         <span>{e.weightClass ?? "Weight class unlisted"}</span>
@@ -184,14 +184,14 @@ export default function LedgerPage() {
                     </div>
 
                     <div>
-                      <div className="text-[9px] uppercase tracking-[0.15em] text-muted">Model pick</div>
+                      <div className="text-[10px] uppercase tracking-[0.15em] text-muted">Model pick</div>
                       <div className="mt-1 flex items-baseline gap-2">
                         <span className="display truncate text-base font-bold text-zinc-200">
                           {splitName(pick.name).last}
                         </span>
                         <span className="text-sm font-semibold text-accent tabnums">{pct(pickP)}</span>
                       </div>
-                      <div className="mt-1 text-[9px] uppercase tracking-[0.12em] text-zinc-600 tabnums">
+                      <div className="mt-1 text-[10px] uppercase tracking-[0.12em] text-zinc-600 tabnums">
                         Books {e.books_pA !== null ? pct(e.model_pA >= 0.5 ? e.books_pA : 1 - e.books_pA) : "—"}
                       </div>
                     </div>
@@ -214,7 +214,7 @@ export default function LedgerPage() {
           <h2>Methodology</h2>
         </div>
         <div className="terminal-panel">
-          <div className="terminal-panel-header flex items-center justify-between gap-3 px-4 py-2 text-[9px] uppercase tracking-[0.18em] text-muted sm:px-5">
+          <div className="terminal-panel-header flex items-center justify-between gap-3 px-4 py-2 text-[10px] uppercase tracking-[0.18em] text-muted sm:px-5">
             <span>Scoring protocol</span>
             <span className="tabnums">validation window / 2020+</span>
           </div>
@@ -245,9 +245,9 @@ function Stat({
 }) {
   return (
     <div className="terminal-kpi px-4 py-4 sm:px-5">
-      <div className="text-[9px] uppercase tracking-[0.18em] text-muted">{label}</div>
+      <div className="text-[10px] uppercase tracking-[0.18em] text-muted">{label}</div>
       <div className={`display mt-1 text-3xl font-extrabold tabnums ${valueClass}`}>{value}</div>
-      <div className="mt-1 text-[9px] uppercase tracking-[0.12em] text-zinc-600 tabnums">{sub}</div>
+      <div className="mt-1 text-[10px] uppercase tracking-[0.12em] text-zinc-600 tabnums">{sub}</div>
     </div>
   );
 }
@@ -264,8 +264,8 @@ function Benchmark({
   return (
     <div className="flex items-center justify-between gap-4 bg-[rgba(10,14,20,0.96)] px-4 py-3 sm:px-5">
       <div>
-        <div className="text-[9px] uppercase tracking-[0.18em] text-muted">{label} log loss</div>
-        <div className="mt-0.5 text-[9px] uppercase tracking-[0.12em] text-zinc-600">same graded sample</div>
+        <div className="text-[10px] uppercase tracking-[0.18em] text-muted">{label} log loss</div>
+        <div className="mt-0.5 text-[10px] uppercase tracking-[0.12em] text-zinc-600">same graded sample</div>
       </div>
       <div className={`display text-xl font-bold tabnums ${valueClass}`}>{value}</div>
     </div>
@@ -285,7 +285,7 @@ function Score({
 }) {
   return (
     <div>
-      <div className="text-[8px] uppercase tracking-[0.12em] text-zinc-600">LL {label}</div>
+      <div className="text-[10px] uppercase tracking-[0.12em] text-zinc-600">LL {label}</div>
       <div className={`mt-1 text-[11px] tabnums ${muted ? "text-muted" : "text-zinc-300"} ${valueClass}`}>
         {value}
       </div>

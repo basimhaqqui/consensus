@@ -3,7 +3,7 @@
 // Three-way per-card view switch. The card root carries data-view="cons|model|books";
 // probability spans/bars show or hide via group-data variants, so the card itself stays
 // server-rendered and this is the only client code.
-const BTN = "px-1.5 py-px rounded text-[9px] uppercase tracking-wider";
+const BTN = "px-1.5 py-px rounded text-[10px] uppercase tracking-wider";
 
 export default function ViewToggle() {
   const set = (e: React.MouseEvent<HTMLButtonElement>, v: string) =>

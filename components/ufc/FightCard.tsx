@@ -41,7 +41,7 @@ function Side({
       <div className="relative">
         <FighterFace id={fighter.id} name={fighter.name} size={58} tone={tone} />
         <span
-          className={`absolute -bottom-1 ${right ? "-right-1" : "-left-1"} rounded border bg-bg px-1 py-0.5 text-[7px] font-semibold uppercase tracking-[0.16em] ${
+          className={`absolute -bottom-1 ${right ? "-right-1" : "-left-1"} rounded border bg-bg px-1 py-0.5 text-[10px] font-semibold uppercase tracking-[0.16em] ${
             tone === "red" ? "border-red/40 text-red" : "border-blue/40 text-blue"
           }`}
         >
@@ -56,7 +56,7 @@ function Side({
         >
           {last}
         </Link>
-        <div className={`mt-1 flex items-center gap-1 text-[9px] uppercase tracking-[0.08em] text-muted tabnums ${right ? "justify-end" : ""}`}>
+        <div className={`mt-1 flex items-center gap-1 text-[10px] uppercase tracking-[0.08em] text-muted tabnums ${right ? "justify-end" : ""}`}>
           {fighter.flag && !right && <img src={fighter.flag} alt="" width={13} height={9} className="rounded-[1px]" />}
           <span className="truncate">{tape}</span>
           {fighter.flag && right && <img src={fighter.flag} alt="" width={13} height={9} className="rounded-[1px]" />}
@@ -66,7 +66,7 @@ function Side({
         <div className={`display text-xl font-extrabold tabnums sm:text-2xl ${tone === "red" ? "text-red" : "text-blue"}`}>
           {probs.b !== null ? <TriProb c={probs.c} m={probs.m} b={probs.b} /> : pct(probs.m)}
         </div>
-        <div className="mt-0.5 text-[7px] uppercase tracking-[0.15em] text-zinc-600">win prob</div>
+        <div className="mt-0.5 text-[10px] uppercase tracking-[0.15em] text-zinc-600">win prob</div>
       </div>
     </div>
   );
@@ -82,7 +82,7 @@ export default function FightCard({ fight, eventId }: { fight: FightForecast; ev
   const probsB = { c: 1 - pA, m: 1 - fight.pA, b: book ? 1 - book.pA : null };
   return (
     <article id={`bout-${fight.boutId}`} className="terminal-panel terminal-panel--fight terminal-panel--interactive group scroll-mt-20" data-view="cons">
-      <div className="terminal-panel-header flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 text-[9px] uppercase tracking-[0.18em] text-muted">
+      <div className="terminal-panel-header flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 text-[10px] uppercase tracking-[0.18em] text-muted">
         <span className="flex items-center gap-2">
           <span className="text-zinc-400">Bout {fight.matchNumber ?? "—"}</span>
           <span className="text-zinc-700">/</span>
@@ -114,7 +114,7 @@ export default function FightCard({ fight, eventId }: { fight: FightForecast; ev
         )}
         <Side fighter={fight.a} probs={probsA} fights={fight.fightsA} tone="red" align="left" />
         <div>
-          <div className="mb-1.5 flex items-center justify-between text-[7px] uppercase tracking-[0.18em] text-zinc-600">
+          <div className="mb-1.5 flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-zinc-600">
             <span>Red corner</span>
             <span>Probability signal</span>
             <span>Blue corner</span>
@@ -132,7 +132,7 @@ export default function FightCard({ fight, eventId }: { fight: FightForecast; ev
         {fight.method && <MethodChips method={fight.method} />}
       </div>
       {book && (
-        <div className="terminal-panel-header flex flex-wrap items-center justify-between gap-x-3 gap-y-1 px-4 py-2 text-[9px] uppercase tracking-[0.1em] tabnums">
+        <div className="terminal-panel-header flex flex-wrap items-center justify-between gap-x-3 gap-y-1 px-4 py-2 text-[10px] uppercase tracking-[0.1em] tabnums">
           <span className="text-muted">
             model <span className="text-zinc-300">{pct(fight.pA)}</span> · books <span className="text-zinc-300">{pct(book.pA)}</span>
             <span className="text-zinc-600"> · {book.books} books</span>

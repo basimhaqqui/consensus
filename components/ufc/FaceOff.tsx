@@ -39,7 +39,7 @@ function Corner({
   const alignCls = align === "left" ? "items-start text-left" : "items-end text-right";
   return (
     <div className={`flex min-w-0 flex-col gap-2 ${alignCls}`}>
-      <div className={`mb-1 flex items-center gap-2 text-[8px] font-semibold uppercase tracking-[0.2em] ${tone === "red" ? "text-red" : "text-blue"}`}>
+      <div className={`mb-1 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.2em] ${tone === "red" ? "text-red" : "text-blue"}`}>
         {align === "right" && <span className="h-px w-5 bg-blue/50" />}
         {tone} corner
         {align === "left" && <span className="h-px w-5 bg-red/50" />}
@@ -77,7 +77,7 @@ export default function FaceOff({ fight, label, eventId }: { fight: FightForecas
   const probsB = { c: 1 - pA, m: 1 - fight.pA, b: book ? 1 - book.pA : null };
   return (
     <div id={`bout-${fight.boutId}`} className="terminal-panel terminal-panel--fight group scroll-mt-20" data-view="cons">
-      <div className="terminal-panel-header flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 text-[9px] uppercase tracking-[0.2em] text-muted sm:px-6">
+      <div className="terminal-panel-header flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 text-[10px] uppercase tracking-[0.2em] text-muted sm:px-6">
         <span className="flex items-center gap-2 whitespace-nowrap text-accent">
           <span className="signal-dot ufc-signal-dot" />
           {label ?? "Main event signal"}
@@ -111,13 +111,13 @@ export default function FaceOff({ fight, label, eventId }: { fight: FightForecas
             <div className="display flex h-12 w-12 items-center justify-center rounded-full border border-line bg-bg text-xl font-extrabold text-zinc-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] sm:h-16 sm:w-16 sm:text-3xl">
               VS
             </div>
-            <div className="mt-2 text-[7px] uppercase tracking-[0.2em] text-zinc-700">matchup</div>
+            <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-zinc-700">matchup</div>
           </div>
           <Corner fighter={fight.b} probs={probsB} tone="blue" align="right" />
         </div>
 
         <div className="relative mt-7 flex flex-col">
-          <div className="mb-1.5 flex items-center justify-between text-[8px] uppercase tracking-[0.18em] text-zinc-600">
+          <div className="mb-1.5 flex items-center justify-between text-[10px] uppercase tracking-[0.18em] text-zinc-600">
             <span>{splitName(fight.a.name).last}</span>
             <span>Win probability</span>
             <span>{splitName(fight.b.name).last}</span>
@@ -154,19 +154,19 @@ export default function FaceOff({ fight, label, eventId }: { fight: FightForecas
       </div>
       <div className="terminal-kpi-grid grid grid-cols-3 gap-px rounded-none border-x-0 border-b-0">
         <div className="terminal-kpi px-3 py-3 sm:px-5">
-          <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Consensus</div>
+          <div className="text-[10px] uppercase tracking-[0.16em] text-muted">Consensus</div>
           <div className="display mt-1 text-lg font-bold text-zinc-100 tabnums sm:text-2xl">{pct(pA)}</div>
-          <div className="mt-0.5 truncate text-[8px] uppercase tracking-[0.1em] text-zinc-600">{splitName(fight.a.name).last}</div>
+          <div className="mt-0.5 truncate text-[10px] uppercase tracking-[0.1em] text-zinc-600">{splitName(fight.a.name).last}</div>
         </div>
         <div className="terminal-kpi px-3 py-3 sm:px-5">
-          <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Model</div>
+          <div className="text-[10px] uppercase tracking-[0.16em] text-muted">Model</div>
           <div className="display mt-1 text-lg font-bold text-red tabnums sm:text-2xl">{pct(fight.pA)}</div>
-          <div className="mt-0.5 text-[8px] uppercase tracking-[0.1em] text-zinc-600">red corner</div>
+          <div className="mt-0.5 text-[10px] uppercase tracking-[0.1em] text-zinc-600">red corner</div>
         </div>
         <div className="terminal-kpi px-3 py-3 sm:px-5">
-          <div className="text-[8px] uppercase tracking-[0.16em] text-muted">Books</div>
+          <div className="text-[10px] uppercase tracking-[0.16em] text-muted">Books</div>
           <div className="display mt-1 text-lg font-bold text-blue tabnums sm:text-2xl">{book ? pct(book.pA) : "—"}</div>
-          <div className="mt-0.5 text-[8px] uppercase tracking-[0.1em] text-zinc-600">market line</div>
+          <div className="mt-0.5 text-[10px] uppercase tracking-[0.1em] text-zinc-600">market line</div>
         </div>
       </div>
       {eventId && (

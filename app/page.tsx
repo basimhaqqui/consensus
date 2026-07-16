@@ -60,6 +60,8 @@ export default async function Landing() {
   const nextUfc = getCards()[0];
   const mainEvent = nextUfc?.fights.at(-1);
   const mainEventConsensus = mainEvent ? consensusPA(mainEvent).p : null;
+  const footballFeedOnline = boards.some(({ b }) => (b?.matches.length ?? 0) > 0);
+  const allFeedsOnline = footballFeedOnline && Boolean(nextUfc);
 
   return (
     <main className={styles.shell}>
@@ -76,8 +78,11 @@ export default async function Landing() {
             <span aria-hidden="true">☆</span> Your watchlist
           </Link>
           <div className={styles.systemStatus}>
-            <span className={styles.statusDot} aria-hidden="true" />
-            Data feed online
+            <span
+              className={allFeedsOnline ? styles.statusDot : styles.statusDotPartial}
+              aria-hidden="true"
+            />
+            {allFeedsOnline ? "All feeds online" : "Partial feed coverage"}
           </div>
         </div>
       </div>
@@ -114,7 +119,7 @@ export default async function Landing() {
               </Link>
             </div>
             <span className={styles.actionMeta}>
-              Live data · 49k model results · public ledgers
+              Live data · 49k historical results · public ledgers
             </span>
           </div>
         </div>

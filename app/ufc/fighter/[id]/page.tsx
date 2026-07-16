@@ -91,13 +91,13 @@ export default async function FighterPage({ params }: { params: Promise<{ id: st
 
         <div className="section-heading" data-index="01">
           <h2>Fighter profile</h2>
-          <span className="hidden text-[9px] text-zinc-600 sm:inline">dossier / {id}</span>
+          <span className="hidden text-[10px] text-zinc-600 sm:inline">dossier / {id}</span>
         </div>
 
         <div className="terminal-panel">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-px bg-gradient-to-b from-transparent via-red to-transparent opacity-80" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-px bg-gradient-to-b from-transparent via-blue to-transparent opacity-70" />
-          <div className="terminal-panel-header flex items-center justify-between gap-4 px-4 py-2 text-[9px] uppercase tracking-[0.2em] text-muted sm:px-6">
+          <div className="terminal-panel-header flex items-center justify-between gap-4 px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-muted sm:px-6">
             <span className="flex items-center gap-2 text-zinc-400">
               <span className="h-1.5 w-1.5 rounded-full bg-red shadow-[0_0_12px_rgba(239,68,68,0.7)]" />
               Combat dossier
@@ -113,16 +113,16 @@ export default async function FighterPage({ params }: { params: Promise<{ id: st
 
             <div className="min-w-0 text-center sm:text-left">
               <div className="mb-3 flex flex-wrap items-center justify-center gap-2 sm:justify-start">
-                <span className="rounded border border-red/30 bg-red/10 px-2 py-1 text-[9px] uppercase tracking-[0.18em] text-red">
+                <span className="rounded border border-red/30 bg-red/10 px-2 py-1 text-[10px] uppercase tracking-[0.18em] text-red">
                   {r.division ?? "Open weight"}
                 </span>
                 {rank !== null && (
-                  <span className="rounded border border-blue/30 bg-blue/10 px-2 py-1 text-[9px] uppercase tracking-[0.18em] text-blue tabnums">
+                  <span className="rounded border border-blue/30 bg-blue/10 px-2 py-1 text-[10px] uppercase tracking-[0.18em] text-blue tabnums">
                     #{rank} active P4P
                   </span>
                 )}
                 {r.fights < 5 && (
-                  <span className="rounded border border-warn/30 bg-warn/10 px-2 py-1 text-[9px] uppercase tracking-[0.18em] text-warn">
+                  <span className="rounded border border-warn/30 bg-warn/10 px-2 py-1 text-[10px] uppercase tracking-[0.18em] text-warn">
                     Provisional
                   </span>
                 )}
@@ -155,20 +155,20 @@ export default async function FighterPage({ params }: { params: Promise<{ id: st
             </div>
 
             <div className="hidden min-w-32 border-l border-line/70 pl-7 text-right lg:block">
-              <div className="text-[9px] uppercase tracking-[0.22em] text-muted">Consensus Elo</div>
+              <div className="text-[10px] uppercase tracking-[0.22em] text-muted">Consensus Elo</div>
               <div className="display mt-1 text-6xl font-extrabold leading-none text-red tabnums">
                 {Math.round(r.rating)}
               </div>
-              <div className="mt-2 text-[9px] uppercase tracking-[0.16em] text-zinc-600">Post-fight rating</div>
+              <div className="mt-2 text-[10px] uppercase tracking-[0.16em] text-zinc-600">Post-fight rating</div>
             </div>
           </div>
 
           <div className="terminal-kpi-grid grid grid-cols-2 gap-px rounded-none border-x-0 border-b-0 sm:grid-cols-4">
             {kpis.map((kpi) => (
               <div key={kpi.label} className="terminal-kpi px-4 py-3.5 sm:px-5">
-                <div className="text-[9px] uppercase tracking-[0.18em] text-muted">{kpi.label}</div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-muted">{kpi.label}</div>
                 <div className="display mt-1 text-2xl font-bold text-zinc-100 tabnums sm:text-3xl">{kpi.value}</div>
-                <div className="mt-1 text-[9px] uppercase tracking-[0.12em] text-zinc-600">{kpi.meta}</div>
+                <div className="mt-1 text-[10px] uppercase tracking-[0.12em] text-zinc-600">{kpi.meta}</div>
               </div>
             ))}
           </div>
@@ -182,7 +182,7 @@ export default async function FighterPage({ params }: { params: Promise<{ id: st
             <span className="text-[10px] text-muted">post-fight Elo / UFC bouts only</span>
           </div>
           <div className="terminal-panel">
-            <div className="terminal-panel-header flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 text-[9px] uppercase tracking-[0.18em] text-muted sm:px-5">
+            <div className="terminal-panel-header flex flex-wrap items-center justify-between gap-2 px-4 py-2.5 text-[10px] uppercase tracking-[0.18em] text-muted sm:px-5">
               <span>Performance signal</span>
               <span className="tabnums">
                 {history.length} samples <span className="px-1.5 text-zinc-700">/</span> latest {history.at(-1)?.[1]}
@@ -201,7 +201,7 @@ export default async function FighterPage({ params }: { params: Promise<{ id: st
           <span className="text-[10px] text-muted tabnums">{log.length} recorded bouts</span>
         </div>
         <div className="terminal-panel">
-          <div className="terminal-panel-header hidden grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_auto] gap-5 px-5 py-2 text-[9px] uppercase tracking-[0.16em] text-muted sm:grid">
+          <div className="terminal-panel-header hidden grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_auto] gap-5 px-5 py-2 text-[10px] uppercase tracking-[0.16em] text-muted sm:grid">
             <span>Opponent / result</span>
             <span>Event</span>
             <span className="text-right">Method</span>
@@ -233,7 +233,7 @@ export default async function FighterPage({ params }: { params: Promise<{ id: st
                       >
                         {fight.opponent.name}
                       </Link>
-                      <div className="mt-0.5 flex flex-wrap items-center gap-x-2 text-[9px] uppercase tracking-[0.12em] text-muted tabnums">
+                      <div className="mt-0.5 flex flex-wrap items-center gap-x-2 text-[10px] uppercase tracking-[0.12em] text-muted tabnums">
                         <time dateTime={fight.date}>{fight.date.slice(0, 10)}</time>
                         {fight.weightClass && (
                           <>
@@ -248,11 +248,11 @@ export default async function FighterPage({ params }: { params: Promise<{ id: st
                     <div className="truncate text-[11px] text-zinc-400">{fight.eventName}</div>
                   </div>
                   <div className="flex items-center justify-between gap-3 pl-11 sm:block sm:pl-0 sm:text-right">
-                    <span className="text-[9px] uppercase tracking-[0.12em] text-zinc-600 sm:hidden">Method</span>
+                    <span className="text-[10px] uppercase tracking-[0.12em] text-zinc-600 sm:hidden">Method</span>
                     <div>
                       <div className="text-[10px] font-medium uppercase tracking-[0.13em] text-zinc-300">{method}</div>
                       {!fight.decision && fight.clock && (
-                        <div className="mt-0.5 text-[9px] text-muted tabnums">{fight.clock}</div>
+                        <div className="mt-0.5 text-[10px] text-muted tabnums">{fight.clock}</div>
                       )}
                     </div>
                   </div>
@@ -281,7 +281,7 @@ export default async function FighterPage({ params }: { params: Promise<{ id: st
                   index % 3 !== 2 ? "lg:border-r" : "lg:border-r-0"
                 }`}
               >
-                <span className="text-[9px] uppercase tracking-[0.17em] text-muted">{label}</span>
+                <span className="text-[10px] uppercase tracking-[0.17em] text-muted">{label}</span>
                 <span className="text-right text-xs font-medium text-zinc-300 tabnums">{value ?? "—"}</span>
               </div>
             ))}

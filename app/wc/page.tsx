@@ -74,7 +74,7 @@ export default async function WorldCup() {
           <div className="flex items-center gap-3">
             <Link
               href="/builder"
-              className="rounded-[7px] border border-accent/40 bg-accent/10 px-3 py-1.5 text-[9px] uppercase tracking-[0.14em] text-accent shadow-[0_12px_30px_-18px_rgba(52,211,153,0.7)] hover:-translate-y-0.5 hover:border-accent/70 hover:bg-accent/15"
+              className="rounded-[7px] border border-accent/40 bg-accent/10 px-3 py-1.5 text-[10px] uppercase tracking-[0.14em] text-accent shadow-[0_12px_30px_-18px_rgba(52,211,153,0.7)] hover:-translate-y-0.5 hover:border-accent/70 hover:bg-accent/15"
             >
               Bet builder
             </Link>
@@ -87,7 +87,7 @@ export default async function WorldCup() {
 
         <nav
           aria-label="World Cup sections"
-          className="segmented-control mt-6 flex w-full items-center gap-0.5 overflow-x-auto p-0.5 text-[9px] uppercase tracking-[0.14em]"
+          className="segmented-control mt-6 flex w-full items-center gap-0.5 overflow-x-auto p-0.5 text-[10px] uppercase tracking-[0.14em]"
         >
           <a href="#today" className="shrink-0 rounded-[6px] bg-accent/12 px-3 py-1.5 text-accent">
             Today

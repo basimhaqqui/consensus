@@ -149,7 +149,7 @@ export default async function LeagueMatchPage({
           </div>
           <div className="mt-3 grid grid-cols-2 gap-2 text-center text-xs">
             <div className="rounded-lg bg-panel2/60 py-2">
-              <div className="text-[9px] uppercase tracking-wider text-muted">
+              <div className="text-[10px] uppercase tracking-wider text-muted">
                 Expected goals
               </div>
               <div className="text-sm font-semibold tabnums">
@@ -157,7 +157,7 @@ export default async function LeagueMatchPage({
               </div>
             </div>
             <div className="rounded-lg bg-panel2/60 py-2">
-              <div className="text-[9px] uppercase tracking-wider text-muted">
+              <div className="text-[10px] uppercase tracking-wider text-muted">
                 Likely score
               </div>
               <div className="text-sm font-semibold tabnums">

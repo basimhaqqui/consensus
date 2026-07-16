@@ -16,7 +16,7 @@ export default function CompetitionNav({ active }: { active?: string }) {
   return (
     <nav
       aria-label="Competition navigation"
-      className="segmented-control flex min-w-0 items-center gap-0.5 overflow-x-auto p-0.5 text-[9px] uppercase tracking-[0.14em]"
+      className="primary-nav segmented-control flex min-w-0 items-center gap-0.5 overflow-x-auto p-0.5 text-[10px] uppercase tracking-[0.14em]"
     >
       {ITEMS.map((item) => {
         const isActive = item.key === active;

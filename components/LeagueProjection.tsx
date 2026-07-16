@@ -41,7 +41,7 @@ export default function LeagueProjection({
   return (
     <div className="terminal-panel">
       <div
-        className="terminal-panel-header grid gap-2 px-4 py-2 text-[9px] uppercase tracking-[0.14em] text-muted"
+        className="terminal-panel-header grid gap-2 px-4 py-2 text-[10px] uppercase tracking-[0.14em] text-muted"
         style={grid}
       >
         <span>Team</span>
