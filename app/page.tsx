@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   COMPETITIONS,
@@ -11,6 +12,25 @@ import { consensusPA, getCards } from "@/lib/ufc/data";
 import styles from "./page.module.css";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "CONSENSUS // Sports Intelligence, Distilled",
+  description:
+    "Live scores, transparent forecasts, market context, and public results across football and UFC.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "CONSENSUS // Sports Intelligence, Distilled",
+    description:
+      "Live scores, transparent forecasts, market context, and public results across football and UFC.",
+    url: "/",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CONSENSUS // Sports Intelligence, Distilled",
+    description:
+      "Live scores, transparent forecasts, market context, and public results across football and UFC.",
+  },
+};
 
 export default async function Landing() {
   // pull every competition's scoreboard in parallel; surface live + next games

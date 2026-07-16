@@ -166,16 +166,21 @@ function normalizePlayers(raw, cleanSheets) {
     const eligible = players
       .filter((player) => player.position === role && player.minutes >= 180)
       .sort((a, b) => b._rawImpact - a._rawImpact || b.rating - a.rating || b.minutes - a.minutes);
+    if (eligible.length === 0) continue;
+    const minRaw = Math.min(...eligible.map((player) => player._rawImpact));
+    const maxRaw = Math.max(...eligible.map((player) => player._rawImpact));
+    const spread = Math.max(maxRaw - minRaw, 1);
     eligible.forEach((player, index) => {
       player.roleRank = index + 1;
-      const percentile = eligible.length > 1 ? index / (eligible.length - 1) : 0;
-      player.impact = Math.round(99 - percentile * 34);
+      const roleScore = 65 + ((player._rawImpact - minRaw) / spread) * 34;
+      const ratingScore = Math.max(65, Math.min(99, 65 + (player.rating - 6) * 10.46));
+      player.impact = Math.round(roleScore * 0.65 + ratingScore * 0.35);
     });
   }
 
   const overall = players
     .filter((player) => player.minutes >= 180)
-    .sort((a, b) => b.impact - a.impact || b.rating - a.rating || b.minutes - a.minutes);
+    .sort((a, b) => b.impact - a.impact || b._rawImpact - a._rawImpact || b.rating - a.rating || b.minutes - a.minutes);
   overall.forEach((player, index) => {
     player.overallRank = index + 1;
   });

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getBoards } from "@/lib/live";
 import { getStandings } from "@/lib/standings";
@@ -14,6 +15,27 @@ import BestPerformers from "@/components/BestPerformers";
 import { getCompetitionPerformance } from "@/lib/competition";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "World Cup 2026 Intelligence — CONSENSUS",
+  description:
+    "Live World Cup scores, calibrated forecasts, title simulations, best performers, standings, and a public prediction ledger.",
+  alternates: { canonical: "/wc" },
+  openGraph: {
+    title: "World Cup 2026 Intelligence — CONSENSUS",
+    description:
+      "Live scores, calibrated forecasts, title simulations, best performers, and a public prediction ledger.",
+    type: "website",
+    url: "/wc",
+    siteName: "CONSENSUS",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "World Cup 2026 Intelligence — CONSENSUS",
+    description:
+      "Live scores, calibrated forecasts, title simulations, best performers, and a public prediction ledger.",
+  },
+};
 
 export default async function WorldCup() {
   const performance = getCompetitionPerformance();

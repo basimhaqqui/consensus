@@ -23,6 +23,21 @@ export const metadata: Metadata = {
   title: "Daily Signals — CONSENSUS",
   description:
     "The three clearest football and UFC calls right now, ranked with consensus probability, market context, and transparent reasoning.",
+  alternates: { canonical: "/signals" },
+  openGraph: {
+    title: "Three signals. Zero noise. — CONSENSUS",
+    description:
+      "The clearest football and UFC calls right now, ranked by confidence, matchup importance, and live market context.",
+    type: "website",
+    url: "/signals",
+    siteName: "CONSENSUS",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Three signals. Zero noise. — CONSENSUS",
+    description:
+      "The clearest football and UFC calls right now, ranked by confidence, matchup importance, and live market context.",
+  },
 };
 
 type SignalSport = "football" | "ufc";
@@ -50,6 +65,7 @@ type Signal = {
   probability: number;
   modelProbability: number;
   marketProbability?: number;
+  priority: number;
   reasons: [string, string];
 };
 
@@ -109,8 +125,8 @@ export default async function SignalsPage() {
             <span>Zero noise.</span>
           </h1>
           <p className={styles.subtitle}>
-            The clearest calls across football and UFC, ranked by the current
-            consensus of our independent models and live market pricing.
+            The clearest calls across football and UFC, ranked by confidence,
+            matchup importance, and live market pricing.
           </p>
         </div>
         <div className={styles.heroStatus}>
@@ -119,7 +135,7 @@ export default async function SignalsPage() {
             <strong>Signal desk online</strong>
           </div>
           <span>{dateLabel}</span>
-          <small>Re-ranked whenever forecasts or market prices move.</small>
+          <small>Re-ranked whenever forecasts, markets, or the live slate move.</small>
         </div>
       </section>
 
@@ -149,7 +165,7 @@ export default async function SignalsPage() {
       {signals.length > 0 ? (
         <>
           <section className={styles.section}>
-            <SectionHeading index="01" title="Top signal" detail="highest conviction" />
+            <SectionHeading index="01" title="Top signal" detail="relevance × confidence" />
             <div className={styles.leadGrid}>
               <SignalCard signal={signals[0]} rank={1} featured />
               <aside className={styles.insightStack} aria-label="Signal desk context">
@@ -273,6 +289,9 @@ function buildFootballSignals(
         probability: pickLeft ? advance.home : advance.away,
         modelProbability,
         marketProbability,
+        priority:
+          (pickLeft ? advance.home : advance.away) * 0.68 +
+          footballImportance(match.id, match.status === "live") * 0.32,
         reasons: [
           `${pick.name} owns a ${points(margin)} advantage over ${opponent.name} in the to-advance forecast.`,
           goalEdge >= 0.15
@@ -327,6 +346,7 @@ function buildUfcSignal(
     probability,
     modelProbability,
     marketProbability,
+    priority: probability * 0.68 + ufcImportance(fight) * 0.32,
     reasons: [
       `${pick.name ?? "The pick"} carries the stronger blended win probability against ${opponent.name ?? "the opponent"}.`,
       marketProbability === undefined
@@ -337,15 +357,36 @@ function buildUfcSignal(
 }
 
 function selectDiverseSignals(football: Signal[], ufc: Signal[]): Signal[] {
-  const all = [...football, ...ufc].sort((a, b) => b.probability - a.probability);
+  const rank = (a: Signal, b: Signal) =>
+    b.priority - a.priority || b.probability - a.probability;
+  const footballRanked = [...football].sort(rank);
+  const ufcRanked = [...ufc].sort(rank);
+  const all = [...footballRanked, ...ufcRanked].sort(rank);
   if (football.length === 0 || ufc.length === 0) return all.slice(0, 3);
 
   const first = all[0];
-  const opposite = (first.sport === "football" ? ufc : football)[0];
+  const opposite = (first.sport === "football" ? ufcRanked : footballRanked)[0];
   const selected = [first, opposite];
   const third = all.find((signal) => !selected.some((pick) => pick.id === signal.id));
   if (third) selected.push(third);
-  return selected.sort((a, b) => b.probability - a.probability);
+  return selected.sort(rank);
+}
+
+function footballImportance(id: string, live: boolean) {
+  const stage = id === "final"
+    ? 1.12
+    : id.startsWith("sf-")
+      ? 1.04
+      : id.startsWith("qf-")
+        ? 0.9
+        : 0.72;
+  return stage + (live ? 0.08 : 0);
+}
+
+function ufcImportance(fight: FightForecast) {
+  if (fight.matchNumber === 1) return 1;
+  if (fight.segment === "Main Card") return 0.72;
+  return 0.34;
 }
 
 function SignalCard({
@@ -385,12 +426,18 @@ function SignalCard({
 
       <div className={styles.callout}>
         <div>
-          <span>Consensus call</span>
+          <span>{signal.probability < 0.56 ? "Consensus lean" : "Consensus call"}</span>
           <strong>{pick.name}</strong>
         </div>
         <div className={styles.callProbability}>
           <strong className="tabnums">{pct(signal.probability)}</strong>
-          <span>{signal.sport === "football" ? "to advance" : "to win"}</span>
+          <span>
+            {signal.probability < 0.56
+              ? "close call"
+              : signal.sport === "football"
+                ? "to advance"
+                : "to win"}
+          </span>
         </div>
       </div>
 

@@ -100,7 +100,7 @@ export default function Home() {
                           timeZone: "UTC",
                         })}
                         {" · "}
-                        {c.fights.length} fights
+                        {c.fights.length} confirmed {c.fights.length === 1 ? "fight" : "fights"}
                       </div>
                     </Link>
                   ))}

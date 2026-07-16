@@ -15,9 +15,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://consensus-football.vercel.app"),
-  title: "CONSENSUS // World Cup 2026 Match Terminal",
+  title: "CONSENSUS // Sports Intelligence, Distilled",
   description:
-    "A live consensus forecast for every 2026 World Cup knockout match — model win probabilities, expected scorelines, and confidence, in one terminal.",
+    "Live scores, transparent forecasts, market context, and public results across football and UFC.",
+  openGraph: {
+    type: "website",
+    siteName: "CONSENSUS",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({

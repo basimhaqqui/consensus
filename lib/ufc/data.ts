@@ -182,12 +182,27 @@ export function activeRank(id: string): number | null {
   return rankIndex.get(id) ?? null;
 }
 
+const placeholderName = /^(tba|tbd|opponent tba|unknown)$/i;
+
+function confirmedFight(fight: FightForecast) {
+  const a = fight.a.name?.trim() ?? "";
+  const b = fight.b.name?.trim() ?? "";
+  return Boolean(a && b && !placeholderName.test(a) && !placeholderName.test(b));
+}
+
+function visibleCards() {
+  return forecastsFile.cards
+    .map((card) => ({ ...card, fights: card.fights.filter(confirmedFight) }))
+    .filter((card) => card.fights.length > 0)
+    .sort((x, y) => x.date.localeCompare(y.date));
+}
+
 export function getCards(): CardForecast[] {
-  return [...forecastsFile.cards].sort((x, y) => x.date.localeCompare(y.date));
+  return visibleCards();
 }
 
 export function getCard(eventId: string): CardForecast | undefined {
-  return forecastsFile.cards.find((c) => c.eventId === eventId);
+  return visibleCards().find((card) => card.eventId === eventId);
 }
 
 export function getRating(id: string | null): RatingRow | undefined {
