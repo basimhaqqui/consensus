@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-17T17:33:04.814Z",
+ "computedAt": "2026-07-17T19:35:13.149Z",
  "cards": [
   {
    "eventId": "600059599",
@@ -743,6 +743,35 @@
       "ko": 0.27,
       "sub": 0.26,
       "dec": 0.47
+     }
+    },
+    {
+     "boutId": "401892191",
+     "date": "2026-08-01T17:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 12,
+     "a": {
+      "id": "2506250",
+      "name": "Jan Blachowicz",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pol.png",
+      "record": "29-11-2"
+     },
+     "b": {
+      "id": "5216713",
+      "name": "Navajo Stirling",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+      "record": "10-0-0"
+     },
+     "ratingA": 1395,
+     "ratingB": 1757,
+     "pA": 0.2,
+     "fightsA": 20,
+     "fightsB": 6,
+     "method": {
+      "ko": 0.41,
+      "sub": 0.11,
+      "dec": 0.48
      }
     },
     {
