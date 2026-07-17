@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-17T15:44:41.990Z",
+ "computedAt": "2026-07-17T17:33:04.814Z",
  "config": {
   "k": 80,
   "provFights": 5,
@@ -1077,7 +1077,7 @@
   "2335687": {
    "name": "Rafael Dos Anjos",
    "rating": 1734.5,
-   "p4p": 1683.7,
+   "p4p": 1683.6,
    "division": "Welterweight",
    "fights": 36,
    "wins": 21,
@@ -5982,7 +5982,7 @@
   "2504168": {
    "name": "Darren Elkins",
    "rating": 1671.8,
-   "p4p": 1658.4,
+   "p4p": 1658.3,
    "division": "Featherweight",
    "fights": 30,
    "wins": 19,
@@ -7593,7 +7593,7 @@
   "2552906": {
    "name": "Alex Caceres",
    "rating": 1681.5,
-   "p4p": 1617.2,
+   "p4p": 1617.1,
    "division": "Featherweight",
    "fights": 29,
    "wins": 16,
@@ -7710,7 +7710,7 @@
   "2553993": {
    "name": "Chris Weidman",
    "rating": 1606.9,
-   "p4p": 1587.5,
+   "p4p": 1587.4,
    "division": "Catch Weight",
    "fights": 20,
    "wins": 12,
@@ -8340,7 +8340,7 @@
   "2558075": {
    "name": "Marcos Rogerio de Lima",
    "rating": 1702.1,
-   "p4p": 1616.6,
+   "p4p": 1616.5,
    "division": "Heavyweight",
    "fights": 18,
    "wins": 11,
@@ -13209,7 +13209,7 @@
   "3088812": {
    "name": "Kamaru Usman",
    "rating": 1914.4,
-   "p4p": 1903.4,
+   "p4p": 1903.3,
    "division": "Welterweight",
    "fights": 19,
    "wins": 16,
@@ -14433,7 +14433,7 @@
   "3127966": {
    "name": "Dean Barry",
    "rating": 1439.1,
-   "p4p": 1498.1,
+   "p4p": 1498.2,
    "division": "Welterweight",
    "fights": 1,
    "wins": 0,
@@ -14883,7 +14883,7 @@
   "3155420": {
    "name": "Yair Rodriguez",
    "rating": 1764.2,
-   "p4p": 1743.6,
+   "p4p": 1743.5,
    "division": "Featherweight",
    "fights": 15,
    "wins": 11,
@@ -15108,7 +15108,7 @@
   "3164030": {
    "name": "Calvin Kattar",
    "rating": 1658.1,
-   "p4p": 1657.6,
+   "p4p": 1657.5,
    "division": "Featherweight",
    "fights": 15,
    "wins": 7,
@@ -15909,7 +15909,7 @@
   "3928690": {
    "name": "Jonathan Martinez",
    "rating": 1754.3,
-   "p4p": 1703.7,
+   "p4p": 1703.6,
    "division": "Bantamweight",
    "fights": 15,
    "wins": 10,
@@ -16377,7 +16377,7 @@
   "3960665": {
    "name": "Sergey Morozov",
    "rating": 1644.6,
-   "p4p": 1532.7,
+   "p4p": 1532.6,
    "division": "Bantamweight",
    "fights": 5,
    "wins": 3,
@@ -17583,7 +17583,7 @@
   "4065598": {
    "name": "Miranda Maverick",
    "rating": 1703.6,
-   "p4p": 1698.2,
+   "p4p": 1698.1,
    "division": "W Flyweight",
    "fights": 12,
    "wins": 8,
@@ -17610,7 +17610,7 @@
   "4065639": {
    "name": "Wu Yanan",
    "rating": 1377.2,
-   "p4p": 1484.2,
+   "p4p": 1484.3,
    "division": "W Bantamweight",
    "fights": 6,
    "wins": 1,
@@ -21219,7 +21219,7 @@
   "4423876": {
    "name": "Joe Solecki",
    "rating": 1614.1,
-   "p4p": 1596.7,
+   "p4p": 1596.6,
    "division": "Lightweight",
    "fights": 10,
    "wins": 6,
@@ -21750,7 +21750,7 @@
   "4571945": {
    "name": "Saidyokub Kakhramonov",
    "rating": 1649,
-   "p4p": 1533.7,
+   "p4p": 1533.6,
    "division": "Bantamweight",
    "fights": 3,
    "wins": 2,
@@ -23640,7 +23640,7 @@
   "4879763": {
    "name": "Kaleio Romero",
    "rating": 1463.3,
-   "p4p": 1496,
+   "p4p": 1496.1,
    "division": "Featherweight",
    "fights": 1,
    "wins": 0,
@@ -23775,7 +23775,7 @@
   "4893607": {
    "name": "Don Shainis",
    "rating": 1481.1,
-   "p4p": 1494.8,
+   "p4p": 1494.9,
    "division": "Featherweight",
    "fights": 2,
    "wins": 0,
@@ -24018,7 +24018,7 @@
   "4905261": {
    "name": "Muhammad Mokaev",
    "rating": 1877.6,
-   "p4p": 1767.7,
+   "p4p": 1767.6,
    "division": "Flyweight",
    "fights": 7,
    "wins": 7,
@@ -25449,7 +25449,7 @@
   "5123586": {
    "name": "Nick Aguirre",
    "rating": 1419.4,
-   "p4p": 1459.5,
+   "p4p": 1459.6,
    "division": "Bantamweight",
    "fights": 2,
    "wins": 0,
@@ -25494,7 +25494,7 @@
   "5126213": {
    "name": "Jhonata Silva",
    "rating": 1468.3,
-   "p4p": 1485.6,
+   "p4p": 1485.7,
    "division": "Flyweight",
    "fights": 1,
    "wins": 0,
