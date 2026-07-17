@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-16T23:12:56.184Z",
+ "fetchedAt": "2026-07-17T03:41:18.047Z",
  "cards": [
   {
    "eventId": "600059599",
@@ -9,30 +9,11 @@
    "venue": "Paycom Center",
    "fights": [
     {
-     "boutId": "401892260",
-     "date": "2026-07-18T21:00Z",
-     "weightClass": "Featherweight",
-     "segment": "Prelims",
-     "matchNumber": 12,
-     "a": {
-      "id": "5369722",
-      "name": "Damien Anderson",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-      "record": "5-0-0"
-     },
-     "b": {
-      "id": "5369723",
-      "name": "Ezra Elliott",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-      "record": "7-0-0"
-     }
-    },
-    {
      "boutId": "401889642",
      "date": "2026-07-18T21:00Z",
      "weightClass": "W Flyweight",
      "segment": "Prelims",
-     "matchNumber": 11,
+     "matchNumber": 12,
      "a": {
       "id": "4801725",
       "name": "Dione Barbosa",
@@ -51,7 +32,7 @@
      "date": "2026-07-18T21:00Z",
      "weightClass": "Heavyweight",
      "segment": "Prelims",
-     "matchNumber": 10,
+     "matchNumber": 11,
      "a": {
       "id": "5229339",
       "name": "Alvin Hines",
@@ -70,7 +51,7 @@
      "date": "2026-07-18T21:00Z",
      "weightClass": "Flyweight",
      "segment": "Prelims",
-     "matchNumber": 9,
+     "matchNumber": 10,
      "a": {
       "id": "5099732",
       "name": "Alden Coria",
@@ -82,6 +63,25 @@
       "name": "Stewart Nicoll",
       "flag": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
       "record": "8-3-0"
+     }
+    },
+    {
+     "boutId": "401892260",
+     "date": "2026-07-18T21:00Z",
+     "weightClass": "Featherweight",
+     "segment": "Prelims",
+     "matchNumber": 9,
+     "a": {
+      "id": "5369722",
+      "name": "Damien Anderson",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "5-0-0"
+     },
+     "b": {
+      "id": "5369723",
+      "name": "Ezra Elliott",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "7-0-0"
      }
     },
     {

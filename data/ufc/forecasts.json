@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-16T23:12:57.516Z",
+ "computedAt": "2026-07-17T03:41:19.204Z",
  "cards": [
   {
    "eventId": "600059599",
@@ -7,40 +7,11 @@
    "date": "2026-07-18T21:00Z",
    "fights": [
     {
-     "boutId": "401892260",
-     "date": "2026-07-18T21:00Z",
-     "weightClass": "Featherweight",
-     "segment": "Prelims",
-     "matchNumber": 12,
-     "a": {
-      "id": "5369722",
-      "name": "Damien Anderson",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-      "record": "5-0-0"
-     },
-     "b": {
-      "id": "5369723",
-      "name": "Ezra Elliott",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-      "record": "7-0-0"
-     },
-     "ratingA": 1459,
-     "ratingB": 1539,
-     "pA": 0.424,
-     "fightsA": 0,
-     "fightsB": 0,
-     "method": {
-      "ko": 0.32,
-      "sub": 0.17,
-      "dec": 0.51
-     }
-    },
-    {
      "boutId": "401889642",
      "date": "2026-07-18T21:00Z",
      "weightClass": "W Flyweight",
      "segment": "Prelims",
-     "matchNumber": 11,
+     "matchNumber": 12,
      "a": {
       "id": "4801725",
       "name": "Dione Barbosa",
@@ -69,7 +40,7 @@
      "date": "2026-07-18T21:00Z",
      "weightClass": "Heavyweight",
      "segment": "Prelims",
-     "matchNumber": 10,
+     "matchNumber": 11,
      "a": {
       "id": "5229339",
       "name": "Alvin Hines",
@@ -98,7 +69,7 @@
      "date": "2026-07-18T21:00Z",
      "weightClass": "Flyweight",
      "segment": "Prelims",
-     "matchNumber": 9,
+     "matchNumber": 10,
      "a": {
       "id": "5099732",
       "name": "Alden Coria",
@@ -120,6 +91,35 @@
       "ko": 0.31,
       "sub": 0.2,
       "dec": 0.48
+     }
+    },
+    {
+     "boutId": "401892260",
+     "date": "2026-07-18T21:00Z",
+     "weightClass": "Featherweight",
+     "segment": "Prelims",
+     "matchNumber": 9,
+     "a": {
+      "id": "5369722",
+      "name": "Damien Anderson",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "5-0-0"
+     },
+     "b": {
+      "id": "5369723",
+      "name": "Ezra Elliott",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "7-0-0"
+     },
+     "ratingA": 1459,
+     "ratingB": 1539,
+     "pA": 0.424,
+     "fightsA": 0,
+     "fightsB": 0,
+     "method": {
+      "ko": 0.32,
+      "sub": 0.17,
+      "dec": 0.51
      }
     },
     {
