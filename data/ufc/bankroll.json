@@ -1,6 +1,6 @@
 {
  "start": 1000,
- "cash": 423.27,
+ "cash": 373.27,
  "open": [
   {
    "kind": "single",
@@ -352,6 +352,26 @@
    "event": "UFC Fight Night: Ankalaev vs. Guskov",
    "analysis": "consensus 28.9% (model 36.9) vs implied 21.7%",
    "placedAt": "2026-07-16T03:41:55.142Z"
+  },
+  {
+   "kind": "single",
+   "title": "Cannonier ML @ 3.91",
+   "legs": [
+    {
+     "boutId": "401874062",
+     "type": "ml",
+     "pickId": "3154860",
+     "price": 3.91,
+     "label": "Cannonier ML"
+    }
+   ],
+   "stake": 50,
+   "price": 3.91,
+   "p": 0.264,
+   "ev": 0.032,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 26.4% (model 28.3) vs implied 25.6%",
+   "placedAt": "2026-07-17T14:05:45.273Z"
   }
  ],
  "settled": [
@@ -977,6 +997,11 @@
    "at": "2026-07-17T11:43:25.948Z",
    "cash": 423.27,
    "exposure": 566.42
+  },
+  {
+   "at": "2026-07-17T14:05:45.274Z",
+   "cash": 373.27,
+   "exposure": 616.42
   }
  ]
 }
