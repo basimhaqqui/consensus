@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-17T10:13:02.120Z",
+ "computedAt": "2026-07-17T11:43:25.281Z",
  "config": {
   "k": 80,
   "provFights": 5,
@@ -888,7 +888,7 @@
   "2335666": {
    "name": "Matt Brown",
    "rating": 1625.7,
-   "p4p": 1543.6,
+   "p4p": 1543.5,
    "division": "Welterweight",
    "fights": 30,
    "wins": 17,
@@ -6927,7 +6927,7 @@
   "2512976": {
    "name": "Anthony Smith",
    "rating": 1645,
-   "p4p": 1635.4,
+   "p4p": 1635.3,
    "division": "Light Heavyweight",
    "fights": 25,
    "wins": 13,
@@ -8691,7 +8691,7 @@
   "2558526": {
    "name": "Gabriel Miranda",
    "rating": 1424.8,
-   "p4p": 1431.5,
+   "p4p": 1431.6,
    "division": "Featherweight",
    "fights": 4,
    "wins": 1,
@@ -8835,7 +8835,7 @@
   "2560056": {
    "name": "Derek Brunson",
    "rating": 1815.3,
-   "p4p": 1591.3,
+   "p4p": 1591.2,
    "division": "Middleweight",
    "fights": 21,
    "wins": 14,
@@ -9339,7 +9339,7 @@
   "2611719": {
    "name": "TJ Dillashaw",
    "rating": 1748.2,
-   "p4p": 1544.7,
+   "p4p": 1544.6,
    "division": "Bantamweight",
    "fights": 18,
    "wins": 13,
@@ -11697,7 +11697,7 @@
   "3022348": {
    "name": "Jennifer Maia",
    "rating": 1655.2,
-   "p4p": 1573.5,
+   "p4p": 1573.4,
    "division": "W Flyweight",
    "fights": 12,
    "wins": 6,
@@ -12066,7 +12066,7 @@
   "3028404": {
    "name": "Holly Holm",
    "rating": 1596.4,
-   "p4p": 1560.1,
+   "p4p": 1560,
    "division": "W Bantamweight",
    "fights": 15,
    "wins": 8,
@@ -14541,7 +14541,7 @@
   "3136286": {
    "name": "Irene Aldana",
    "rating": 1701.2,
-   "p4p": 1650.8,
+   "p4p": 1650.7,
    "division": "W Bantamweight",
    "fights": 14,
    "wins": 8,
@@ -17367,7 +17367,7 @@
   "4046629": {
    "name": "Montana De La Rosa",
    "rating": 1568.6,
-   "p4p": 1545.9,
+   "p4p": 1545.8,
    "division": "W Flyweight",
    "fights": 11,
    "wins": 6,
@@ -18807,7 +18807,7 @@
   "4249185": {
    "name": "JP Buys",
    "rating": 1354.9,
-   "p4p": 1438.8,
+   "p4p": 1438.9,
    "division": "Bantamweight",
    "fights": 6,
    "wins": 1,
@@ -18852,7 +18852,7 @@
   "4251497": {
    "name": "Harry Hunsucker",
    "rating": 1306.5,
-   "p4p": 1475.1,
+   "p4p": 1475.2,
    "division": "Light Heavyweight",
    "fights": 4,
    "wins": 0,
@@ -19167,7 +19167,7 @@
   "4289873": {
    "name": "Sergey Khandozhko",
    "rating": 1645.7,
-   "p4p": 1504.5,
+   "p4p": 1504.4,
    "division": "Welterweight",
    "fights": 3,
    "wins": 2,
@@ -19374,7 +19374,7 @@
   "4295932": {
    "name": "Liang Na",
    "rating": 1305.7,
-   "p4p": 1376.7,
+   "p4p": 1376.8,
    "division": "W Flyweight",
    "fights": 4,
    "wins": 0,
@@ -20391,7 +20391,7 @@
   "4379362": {
    "name": "Viviane Araújo",
    "rating": 1660.8,
-   "p4p": 1658.4,
+   "p4p": 1658.3,
    "division": "W Flyweight",
    "fights": 13,
    "wins": 7,
@@ -20697,7 +20697,7 @@
   "4409220": {
    "name": "Mark O. Madsen",
    "rating": 1655.6,
-   "p4p": 1577.3,
+   "p4p": 1577.2,
    "division": "Lightweight",
    "fights": 6,
    "wins": 4,
@@ -22029,7 +22029,7 @@
   "4683892": {
    "name": "Mounir Lazzez",
    "rating": 1539.4,
-   "p4p": 1510.1,
+   "p4p": 1510,
    "division": "Welterweight",
    "fights": 4,
    "wins": 2,
@@ -22884,7 +22884,7 @@
   "4713086": {
    "name": "Denys Bondar",
    "rating": 1367.9,
-   "p4p": 1423,
+   "p4p": 1423.1,
    "division": "Flyweight",
    "fights": 3,
    "wins": 0,
@@ -23100,7 +23100,7 @@
   "4815974": {
    "name": "Brady Hiestand",
    "rating": 1717.2,
-   "p4p": 1646.6,
+   "p4p": 1646.5,
    "division": "Bantamweight",
    "fights": 5,
    "wins": 4,
@@ -23379,7 +23379,7 @@
   "4869424": {
    "name": "AJ Fletcher",
    "rating": 1520.5,
-   "p4p": 1509.4,
+   "p4p": 1509.3,
    "division": "Welterweight",
    "fights": 5,
    "wins": 2,
@@ -23964,7 +23964,7 @@
   "4900807": {
    "name": "Michal Figlak",
    "rating": 1436.4,
-   "p4p": 1459.6,
+   "p4p": 1459.7,
    "division": "Lightweight",
    "fights": 2,
    "wins": 0,
