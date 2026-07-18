@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-18T17:17:12.114Z",
+ "fetchedAt": "2026-07-18T19:35:11.229Z",
  "byBout": {
   "401872218": {
    "pA": 0.353,
@@ -10,8 +10,8 @@
    "totals": [
     {
      "point": 3.5,
-     "over": 1.49,
-     "under": 2.69,
+     "over": 1.48,
+     "under": 2.71,
      "books": 3
     },
     {
@@ -23,11 +23,11 @@
    ]
   },
   "401874062": {
-   "pA": 0.235,
+   "pA": 0.246,
    "books": 8,
    "commence": "2026-07-19T01:45:00Z",
-   "priceA": 4.07,
-   "priceB": 1.25,
+   "priceA": 3.91,
+   "priceB": 1.27,
    "totals": [
     {
      "point": 2.5,
@@ -38,16 +38,16 @@
    ]
   },
   "401874064": {
-   "pA": 0.757,
+   "pA": 0.756,
    "books": 8,
    "commence": "2026-07-19T01:15:00Z",
    "priceA": 1.27,
-   "priceB": 3.96,
+   "priceB": 3.93,
    "totals": [
     {
      "point": 1.5,
-     "over": 1.85,
-     "under": 1.93,
+     "over": 1.86,
+     "under": 1.92,
      "books": 4
     }
    ]
@@ -118,7 +118,7 @@
     {
      "point": 1.5,
      "over": 1.56,
-     "under": 2.48,
+     "under": 2.47,
      "books": 3
     },
     {
@@ -130,16 +130,16 @@
    ]
   },
   "401881163": {
-   "pA": 0.393,
+   "pA": 0.351,
    "books": 8,
    "commence": "2026-07-19T00:15:00Z",
-   "priceA": 2.43,
-   "priceB": 1.58,
+   "priceA": 2.73,
+   "priceB": 1.48,
    "totals": [
     {
      "point": 1.5,
-     "over": 1.72,
-     "under": 2.13,
+     "over": 1.73,
+     "under": 2.12,
      "books": 4
     }
    ]
@@ -160,11 +160,11 @@
    ]
   },
   "401881166": {
-   "pA": 0.434,
+   "pA": 0.413,
    "books": 8,
    "commence": "2026-07-18T22:50:00Z",
-   "priceA": 2.21,
-   "priceB": 1.69,
+   "priceA": 2.32,
+   "priceB": 1.64,
    "totals": [
     {
      "point": 1.5,
@@ -243,23 +243,17 @@
    "totals": []
   },
   "401892260": {
-   "pA": 0.527,
+   "pA": 0.53,
    "books": 7,
    "commence": "2026-07-18T22:25:00Z",
-   "priceA": 1.81,
-   "priceB": 2.02,
+   "priceA": 1.8,
+   "priceB": 2.04,
    "totals": [
     {
      "point": 1.5,
-     "over": 1.64,
-     "under": 2.27,
-     "books": 2
-    },
-    {
-     "point": 2.5,
-     "over": 2.3,
-     "under": 1.59,
-     "books": 1
+     "over": 1.68,
+     "under": 2.17,
+     "books": 3
     }
    ]
   },

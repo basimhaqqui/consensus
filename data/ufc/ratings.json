@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-18T17:17:12.339Z",
+ "computedAt": "2026-07-18T19:35:11.486Z",
  "config": {
   "k": 80,
   "provFights": 5,
@@ -1077,7 +1077,7 @@
   "2335687": {
    "name": "Rafael Dos Anjos",
    "rating": 1734.5,
-   "p4p": 1683.5,
+   "p4p": 1683.4,
    "division": "Welterweight",
    "fights": 36,
    "wins": 21,
@@ -3534,7 +3534,7 @@
   "2431258": {
    "name": "Robbie Lawler",
    "rating": 1714.8,
-   "p4p": 1584.2,
+   "p4p": 1584.1,
    "division": "Welterweight",
    "fights": 25,
    "wins": 15,
@@ -6495,7 +6495,7 @@
   "2504929": {
    "name": "Glover Teixeira",
    "rating": 1879.9,
-   "p4p": 1596.5,
+   "p4p": 1596.4,
    "division": "Light Heavyweight",
    "fights": 23,
    "wins": 16,
@@ -7215,7 +7215,7 @@
   "2519811": {
    "name": "Luke Rockhold",
    "rating": 1568.7,
-   "p4p": 1508.8,
+   "p4p": 1508.7,
    "division": "Middleweight",
    "fights": 11,
    "wins": 6,
@@ -10509,7 +10509,7 @@
   "2957596": {
    "name": "Ilir Latifi",
    "rating": 1649.3,
-   "p4p": 1552.5,
+   "p4p": 1552.4,
    "division": "Heavyweight",
    "fights": 16,
    "wins": 9,
@@ -12066,7 +12066,7 @@
   "3028404": {
    "name": "Holly Holm",
    "rating": 1596.4,
-   "p4p": 1560,
+   "p4p": 1559.9,
    "division": "W Bantamweight",
    "fights": 15,
    "wins": 8,
@@ -13542,7 +13542,7 @@
   "3095328": {
    "name": "Li Jingliang",
    "rating": 1648.3,
-   "p4p": 1607.6,
+   "p4p": 1607.5,
    "division": "Welterweight",
    "fights": 18,
    "wins": 11,
@@ -14082,7 +14082,7 @@
   "3112007": {
    "name": "Timur Valiev",
    "rating": 1553.1,
-   "p4p": 1521.9,
+   "p4p": 1521.8,
    "division": "Bantamweight",
    "fights": 4,
    "wins": 2,
@@ -14307,7 +14307,7 @@
   "3120449": {
    "name": "Rafael Alves",
    "rating": 1540.9,
-   "p4p": 1511.6,
+   "p4p": 1511.5,
    "division": "Lightweight",
    "fights": 5,
    "wins": 2,
@@ -14802,7 +14802,7 @@
   "3154389": {
    "name": "Alatengheili",
    "rating": 1642.3,
-   "p4p": 1632.7,
+   "p4p": 1632.6,
    "division": "Bantamweight",
    "fights": 8,
    "wins": 5,
@@ -15198,7 +15198,7 @@
   "3170347": {
    "name": "Taila Santos",
    "rating": 1704.5,
-   "p4p": 1588.3,
+   "p4p": 1588.2,
    "division": "W Flyweight",
    "fights": 8,
    "wins": 5,
@@ -16161,7 +16161,7 @@
   "3952937": {
    "name": "Chase Sherman",
    "rating": 1415.6,
-   "p4p": 1470.8,
+   "p4p": 1470.9,
    "division": "Heavyweight",
    "fights": 15,
    "wins": 4,
@@ -16566,7 +16566,7 @@
   "3991050": {
    "name": "Cameron Else",
    "rating": 1403.2,
-   "p4p": 1497.1,
+   "p4p": 1497.2,
    "division": "Bantamweight",
    "fights": 2,
    "wins": 0,
@@ -16863,7 +16863,7 @@
   "4020699": {
    "name": "Shavkat Rakhmonov",
    "rating": 2042.1,
-   "p4p": 1943.1,
+   "p4p": 1943,
    "division": "Welterweight",
    "fights": 7,
    "wins": 7,
@@ -17448,7 +17448,7 @@
   "4062287": {
    "name": "Jay Perrin",
    "rating": 1363.5,
-   "p4p": 1470,
+   "p4p": 1470.1,
    "division": "Bantamweight",
    "fights": 4,
    "wins": 0,
@@ -18339,7 +18339,7 @@
   "4227709": {
    "name": "Jared Vanderaa",
    "rating": 1395.3,
-   "p4p": 1480.6,
+   "p4p": 1480.7,
    "division": "Heavyweight",
    "fights": 8,
    "wins": 2,
@@ -18690,7 +18690,7 @@
   "4244337": {
    "name": "Kaytlin Neil",
    "rating": 1431,
-   "p4p": 1493,
+   "p4p": 1493.1,
    "division": null,
    "fights": 1,
    "wins": 0,
@@ -18708,7 +18708,7 @@
   "4245092": {
    "name": "Jonathan Pearce",
    "rating": 1643.5,
-   "p4p": 1610.7,
+   "p4p": 1610.6,
    "division": "Featherweight",
    "fights": 10,
    "wins": 6,
@@ -18852,7 +18852,7 @@
   "4251497": {
    "name": "Harry Hunsucker",
    "rating": 1306.5,
-   "p4p": 1475.3,
+   "p4p": 1475.4,
    "division": "Light Heavyweight",
    "fights": 4,
    "wins": 0,
@@ -18879,7 +18879,7 @@
   "4252258": {
    "name": "Victor Martinez",
    "rating": 1444.9,
-   "p4p": 1464.1,
+   "p4p": 1464.2,
    "division": "Lightweight",
    "fights": 3,
    "wins": 1,
@@ -18987,7 +18987,7 @@
   "4275487": {
    "name": "Yan Xiaonan",
    "rating": 1769.2,
-   "p4p": 1747.9,
+   "p4p": 1747.8,
    "division": "W Strawweight",
    "fights": 13,
    "wins": 9,
@@ -19005,7 +19005,7 @@
   "4276994": {
    "name": "Josh Parisian",
    "rating": 1445.4,
-   "p4p": 1467.6,
+   "p4p": 1467.7,
    "division": "Heavyweight",
    "fights": 9,
    "wins": 4,
@@ -19230,7 +19230,7 @@
   "4293183": {
    "name": "Victor Hugo",
    "rating": 1657.4,
-   "p4p": 1623.2,
+   "p4p": 1623.1,
    "division": "Featherweight",
    "fights": 3,
    "wins": 2,
@@ -20436,7 +20436,7 @@
   "4389252": {
    "name": "Da Woon Jung",
    "rating": 1598.4,
-   "p4p": 1574.8,
+   "p4p": 1574.7,
    "division": "Light Heavyweight",
    "fights": 8,
    "wins": 4,
@@ -20778,7 +20778,7 @@
   "4411394": {
    "name": "Alen Amedovski",
    "rating": 1352.6,
-   "p4p": 1477.8,
+   "p4p": 1477.9,
    "division": "Middleweight",
    "fights": 4,
    "wins": 0,
@@ -20868,7 +20868,7 @@
   "4416295": {
    "name": "Cameron VanCamp",
    "rating": 1431.7,
-   "p4p": 1489.7,
+   "p4p": 1489.8,
    "division": "Lightweight",
    "fights": 2,
    "wins": 0,
@@ -21039,7 +21039,7 @@
   "4421473": {
    "name": "Alexandr Romanov",
    "rating": 1763.6,
-   "p4p": 1707.9,
+   "p4p": 1707.8,
    "division": "Heavyweight",
    "fights": 10,
    "wins": 7,
@@ -21219,7 +21219,7 @@
   "4423876": {
    "name": "Joe Solecki",
    "rating": 1614.1,
-   "p4p": 1596.6,
+   "p4p": 1596.5,
    "division": "Lightweight",
    "fights": 10,
    "wins": 6,
@@ -21579,7 +21579,7 @@
   "4565671": {
    "name": "Cory McKenna",
    "rating": 1539,
-   "p4p": 1530.1,
+   "p4p": 1530,
    "division": "W Strawweight",
    "fights": 7,
    "wins": 4,
@@ -23118,7 +23118,7 @@
   "4815998": {
    "name": "Bryan Battle",
    "rating": 1822.4,
-   "p4p": 1763.5,
+   "p4p": 1763.4,
    "division": "Welterweight",
    "fights": 9,
    "wins": 8,
@@ -23955,7 +23955,7 @@
   "4899729": {
    "name": "Blood Diamond",
    "rating": 1378.3,
-   "p4p": 1446,
+   "p4p": 1446.1,
    "division": "Welterweight",
    "fights": 3,
    "wins": 0,
@@ -24639,7 +24639,7 @@
   "5060505": {
    "name": "Mick Parkin",
    "rating": 1762.4,
-   "p4p": 1737.1,
+   "p4p": 1737,
    "division": "Heavyweight",
    "fights": 6,
    "wins": 5,
@@ -24855,7 +24855,7 @@
   "5075937": {
    "name": "Roybert Echeverria",
    "rating": 1472.2,
-   "p4p": 1495.7,
+   "p4p": 1495.8,
    "division": "Flyweight",
    "fights": 1,
    "wins": 0,
@@ -24927,7 +24927,7 @@
   "5077399": {
    "name": "Cameron Saaiman",
    "rating": 1568.2,
-   "p4p": 1563.6,
+   "p4p": 1563.5,
    "division": "Bantamweight",
    "fights": 7,
    "wins": 4,
@@ -25251,7 +25251,7 @@
   "5101694": {
    "name": "Felipe Lima",
    "rating": 1669.6,
-   "p4p": 1666.9,
+   "p4p": 1666.8,
    "division": "Bantamweight",
    "fights": 3,
    "wins": 2,
@@ -25485,7 +25485,7 @@
   "5125484": {
    "name": "Carlos Calderon",
    "rating": 1455.5,
-   "p4p": 1466,
+   "p4p": 1466.1,
    "division": "Featherweight",
    "fights": 1,
    "wins": 0,
@@ -25755,7 +25755,7 @@
   "5144319": {
    "name": "Rainn Guerrero",
    "rating": 1452.4,
-   "p4p": 1479,
+   "p4p": 1479.1,
    "division": "W Flyweight",
    "fights": 1,
    "wins": 0,
@@ -25953,7 +25953,7 @@
   "5148677": {
    "name": "Terrence Mitchell",
    "rating": 1458.1,
-   "p4p": 1481.1,
+   "p4p": 1481.2,
    "division": "Bantamweight",
    "fights": 2,
    "wins": 0,
@@ -25971,7 +25971,7 @@
   "5149190": {
    "name": "Mario Piazzon",
    "rating": 1636.3,
-   "p4p": 1562.4,
+   "p4p": 1562.3,
    "division": "Heavyweight",
    "fights": 1,
    "wins": 1,
@@ -26943,7 +26943,7 @@
   "5252475": {
    "name": "Roberto Romero",
    "rating": 1415.7,
-   "p4p": 1421.4,
+   "p4p": 1421.5,
    "division": "Featherweight",
    "fights": 2,
    "wins": 0,
