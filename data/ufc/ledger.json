@@ -573,6 +573,116 @@
    "books_pA": null,
    "books": 0,
    "capturedAt": "2026-07-18T09:48:15.728Z"
+  },
+  {
+   "boutId": "401881163",
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "date": "2026-07-19T00:00Z",
+   "weightClass": "Featherweight",
+   "a": {
+    "id": "4571450",
+    "name": "Alberto Montes",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ven.png",
+    "record": "12-1-0"
+   },
+   "b": {
+    "id": "5212849",
+    "name": "Tommy McMillen",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "10-0-0"
+   },
+   "model_pA": 0.432,
+   "books_pA": 0.394,
+   "books": 8,
+   "capturedAt": "2026-07-18T13:52:49.830Z"
+  },
+  {
+   "boutId": "401881165",
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "date": "2026-07-19T00:00Z",
+   "weightClass": "W Strawweight",
+   "a": {
+    "id": "4868095",
+    "name": "Tabatha Ricci",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+    "record": "12-4-0"
+   },
+   "b": {
+    "id": "5028019",
+    "name": "Fatima Kline",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "9-1-0"
+   },
+   "model_pA": 0.403,
+   "books_pA": 0.206,
+   "books": 8,
+   "capturedAt": "2026-07-18T13:52:49.831Z"
+  },
+  {
+   "boutId": "401874064",
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "date": "2026-07-19T00:00Z",
+   "weightClass": "Lightweight",
+   "a": {
+    "id": "4354421",
+    "name": "Chase Hooper",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "16-5-1"
+   },
+   "b": {
+    "id": "4816283",
+    "name": "Mitch Ramirez",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "8-3-0"
+   },
+   "model_pA": 0.795,
+   "books_pA": 0.756,
+   "books": 8,
+   "capturedAt": "2026-07-18T13:52:49.831Z"
+  },
+  {
+   "boutId": "401874062",
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "date": "2026-07-19T00:00Z",
+   "weightClass": "Middleweight",
+   "a": {
+    "id": "3154860",
+    "name": "Jared Cannonier",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+    "record": "18-9-0"
+   },
+   "b": {
+    "id": "4848674",
+    "name": "Christian Leroy Duncan",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+    "record": "14-2-0"
+   },
+   "model_pA": 0.283,
+   "books_pA": 0.236,
+   "books": 8,
+   "capturedAt": "2026-07-18T13:52:49.831Z"
+  },
+  {
+   "boutId": "401872218",
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "date": "2026-07-19T00:00Z",
+   "weightClass": "Middleweight",
+   "a": {
+    "id": "3088812",
+    "name": "Kamaru Usman",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ngr.png",
+    "record": "21-4-0"
+   },
+   "b": {
+    "id": "3166126",
+    "name": "Dricus Du Plessis",
+    "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+    "record": "23-3-0"
+   },
+   "model_pA": 0.264,
+   "books_pA": 0.336,
+   "books": 8,
+   "capturedAt": "2026-07-18T13:52:49.831Z"
   }
  ]
 }
