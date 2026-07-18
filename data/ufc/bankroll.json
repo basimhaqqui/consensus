@@ -1,6 +1,6 @@
 {
  "start": 1000,
- "cash": 373.27,
+ "cash": 323.27,
  "open": [
   {
    "kind": "single",
@@ -372,6 +372,26 @@
    "event": "UFC Fight Night: Du Plessis vs. Usman",
    "analysis": "consensus 26.4% (model 28.3) vs implied 25.6%",
    "placedAt": "2026-07-17T14:05:45.273Z"
+  },
+  {
+   "kind": "single",
+   "title": "Du Plessis ML @ 1.49",
+   "legs": [
+    {
+     "boutId": "401872218",
+     "type": "ml",
+     "pickId": "3166126",
+     "price": 1.49,
+     "label": "Du Plessis ML"
+    }
+   ],
+   "stake": 50,
+   "price": 1.49,
+   "p": 0.692,
+   "ev": 0.03,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 69.2% (model 73.6) vs implied 67.1%",
+   "placedAt": "2026-07-18T17:17:13.056Z"
   }
  ],
  "settled": [
@@ -1057,6 +1077,11 @@
    "at": "2026-07-18T15:17:16.138Z",
    "cash": 373.27,
    "exposure": 616.42
+  },
+  {
+   "at": "2026-07-18T17:17:13.056Z",
+   "cash": 323.27,
+   "exposure": 666.42
   }
  ]
 }
