@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-18T19:35:11.486Z",
+ "computedAt": "2026-07-18T21:08:06.872Z",
  "cards": [
   {
    "eventId": "600059599",
@@ -779,7 +779,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "Heavyweight",
      "segment": "Prelims",
-     "matchNumber": 10,
+     "matchNumber": 11,
      "a": {
       "id": "5312090",
       "name": "Jovan Leka",
@@ -808,7 +808,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "W Bantamweight",
      "segment": "Prelims",
-     "matchNumber": 9,
+     "matchNumber": 10,
      "a": {
       "id": "4374742",
       "name": "Hailey Cowan",
@@ -837,7 +837,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "Featherweight",
      "segment": "Prelims",
-     "matchNumber": 8,
+     "matchNumber": 9,
      "a": {
       "id": "4686735",
       "name": "Dennis Buzukja",
@@ -866,7 +866,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "Bantamweight",
      "segment": "Prelims",
-     "matchNumber": 7,
+     "matchNumber": 8,
      "a": {
       "id": "5212850",
       "name": "Josias Musasa",
@@ -895,7 +895,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "Welterweight",
      "segment": "Prelims",
-     "matchNumber": 6,
+     "matchNumber": 7,
      "a": {
       "id": "4900808",
       "name": "Oban Elliott",
@@ -924,7 +924,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "Lightweight",
      "segment": "Prelims",
-     "matchNumber": 5,
+     "matchNumber": 6,
      "a": {
       "id": "4193694",
       "name": "Ludovit Klein",
@@ -952,8 +952,8 @@
      "boutId": "401874462",
      "date": "2026-08-01T17:00Z",
      "weightClass": "Middleweight",
-     "segment": "Main Card",
-     "matchNumber": 4,
+     "segment": "Prelims",
+     "matchNumber": 5,
      "a": {
       "id": "4375574",
       "name": "Gilbert Urbina",
@@ -982,7 +982,7 @@
      "date": "2026-08-01T17:00Z",
      "weightClass": "Middleweight",
      "segment": "Main Card",
-     "matchNumber": 3,
+     "matchNumber": 4,
      "a": {
       "id": "4421517",
       "name": "Duško Todorović",
@@ -1011,7 +1011,7 @@
      "date": "2026-08-01T17:00Z",
      "weightClass": "Heavyweight",
      "segment": "Main Card",
-     "matchNumber": 2,
+     "matchNumber": 3,
      "a": {
       "id": "3093559",
       "name": "Marcin Tybura",
