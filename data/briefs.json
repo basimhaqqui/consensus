@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-18T17:36:26.789Z",
+  "generated": "2026-07-18T21:29:30.141Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -198,19 +198,19 @@
       ]
     },
     "ARG|ESP": {
-      "text": "Spain reach the World Cup final, with Rodri central to their plan to contain Lionel Messi and Argentina, who advanced by beating England in the semifinals. Ahead of the match, defender Aymeric Laporte accused Argentina of using aggressive tactics. Slovenian referee Slavko Vincic will officiate.",
+      "text": "Argentina goalkeeper Emiliano Martínez has played through the pain of a broken finger in his right hand throughout the tournament, having declined a recommended operation to compete. Spain's Rodri has been central to their run to the final and is expected to be key in containing Lionel Messi. Ahead of the match, Spain defender Aymeric Laporte accused Argentina of using aggressive tactics; Slovenian referee Slavko Vincic will officiate.",
       "sources": [
+        {
+          "headline": "Spain-Argentina World Cup final last-minute tickets start at $10,000",
+          "href": "https://www.espn.com/soccer/story/_/id/49392880/spain-argentina-world-cup-final-last-minute-tickets-start-10k"
+        },
+        {
+          "headline": "Argentina's Emiliano Martínez admits playing with pain of broken finger",
+          "href": "https://www.espn.com/soccer/story/_/id/49392007/argentina-emiliano-martinez-admits-playing-pain-broken-finger"
+        },
         {
           "headline": "Spain's Aymeric Laporte suggests Argentina often 'leave one in' on opponents",
           "href": "https://www.espn.com/soccer/story/_/id/49391152/spain-argentina-world-cup-final-2026-aymeric-laporte"
-        },
-        {
-          "headline": "Back to his best, Rodri has powered Spain to World Cup final",
-          "href": "https://www.espn.com/soccer/story/_/id/49385857/back-best-rodri-powered-spain-2026-world-cup-final"
-        },
-        {
-          "headline": "John Stones: England experiencing \"suffering, pain\" after World Cup despair",
-          "href": "https://www.espn.com/soccer/story/_/id/49389517/john-stones-england-experiencing-suffering-pain-world-cup-despair"
         }
       ]
     }
