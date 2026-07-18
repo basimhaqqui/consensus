@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-18T10:02:40.906Z",
+  "generated": "2026-07-18T14:02:04.897Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -198,8 +198,12 @@
       ]
     },
     "ARG|ESP": {
-      "text": "Slovenian referee Slavko Vincic will officiate the World Cup final between Spain and Argentina. Defending champions Argentina reached the final after beating England in the semifinal, with Messi, Scaloni and Emiliano Martinez playing down pressure ahead of Sunday. For Spain this is only their second World Cup final, and captain Rodri says the side must raise their level.",
+      "text": "Spain reach the final with Rodri back to form and central to their plan for containing Lionel Messi. Defending champions Argentina, who eliminated England in the semifinals, arrive with Messi, coach Lionel Scaloni and goalkeeper Emiliano Martínez publicly playing down the pressure. Slovenian official Slavko Vincic will referee the match.",
       "sources": [
+        {
+          "headline": "Back to his best, Rodri has powered Spain to World Cup final",
+          "href": "https://www.espn.com/soccer/story/_/id/49385857/back-best-rodri-powered-spain-2026-world-cup-final"
+        },
         {
           "headline": "John Stones: England experiencing \"suffering, pain\" after World Cup despair",
           "href": "https://www.espn.com/soccer/story/_/id/49389517/john-stones-england-experiencing-suffering-pain-world-cup-despair"
@@ -207,10 +211,6 @@
         {
           "headline": "Trump questions Kane's 'defensive' role in England's WC exit to Argentina",
           "href": "https://www.espn.com/video/clip/_/id/49389431/trump-questions-kane-defensive-role-england-wc-exit-argentina"
-        },
-        {
-          "headline": "Tuchel reveals he has 'no regrets' over his decisions vs. Argentina",
-          "href": "https://www.espn.com/video/clip/_/id/49389338/tuchel-reveals-no-regrets-decisions-vs-argentina"
         }
       ]
     }
