@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-18T03:42:55.746Z",
+  "generated": "2026-07-18T06:30:42.789Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -198,8 +198,12 @@
       ]
     },
     "ARG|ESP": {
-      "text": "Spain reach the World Cup final for only the second time in their history, with captain Rodri stating the team must raise their level against Argentina. Argentina advance after defeating England in the semifinal, with Lionel Messi set to feature in the final. Slovenian referee Slavko Vincic will officiate the match.",
+      "text": "Argentina reach the World Cup final defending their title, having beaten England in the semifinal, with Lionel Messi, Emiliano Martinez and coach Lionel Scaloni among the squad. Spain, appearing in only their second final, face the match through captain Rodri, who says the team must raise its level. Slovenian referee Slavko Vincic will officiate.",
       "sources": [
+        {
+          "headline": "Messi, Scaloni shrug off World Cup final pressure at star-studded event",
+          "href": "https://www.espn.com/soccer/story/_/id/49388164/argentina-messi-scaloni-shrug-world-cup-final-pressure-star-studded-event"
+        },
         {
           "headline": "President Donald Trump adds to Thomas Tuchel criticism by questioning Harry Kane role",
           "href": "https://www.espn.com/soccer/story/_/id/49387156/us-president-donald-trump-questions-harry-kane-england-mistake-argentina-2026-world-cup-tactics"
@@ -207,10 +211,6 @@
         {
           "headline": "Messi on viral Yamal baby photo: 'Incredible' we're playing in World Cup final",
           "href": "https://www.espn.com/soccer/story/_/id/49387821/lionel-messi-viral-lamine-yamal-baby-photo-incredible-playing-world-cup-final"
-        },
-        {
-          "headline": "Spain captain Rodri says team must raise level vs. Argentina",
-          "href": "https://www.espn.com/soccer/story/_/id/49387336/spain-captain-rodri-raise-level-argentina"
         }
       ]
     }
