@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-19T13:56:20.111Z",
+ "fetchedAt": "2026-07-19T15:17:21.766Z",
  "byBout": {
   "401874311": {
    "pA": 0.697,
@@ -12,22 +12,22 @@
      "point": 2.5,
      "over": 1.72,
      "under": 2.13,
-     "books": 2
+     "books": 3
     }
    ]
   },
   "401874312": {
-   "pA": 0.363,
+   "pA": 0.366,
    "books": 8,
    "commence": "2026-07-25T09:00:00Z",
-   "priceA": 2.65,
+   "priceA": 2.62,
    "priceB": 1.51,
    "totals": [
     {
      "point": 1.5,
-     "over": 1.52,
+     "over": 1.53,
      "under": 2.55,
-     "books": 2
+     "books": 3
     }
    ]
   },
@@ -40,9 +40,9 @@
    "totals": [
     {
      "point": 1.5,
-     "over": 2.9,
-     "under": 1.42,
-     "books": 2
+     "over": 2.76,
+     "under": 1.46,
+     "books": 3
     }
    ]
   },
@@ -56,8 +56,8 @@
     {
      "point": 2.5,
      "over": 1.57,
-     "under": 2.45,
-     "books": 2
+     "under": 2.44,
+     "books": 3
     }
    ]
   },
@@ -70,24 +70,24 @@
    "totals": [
     {
      "point": 1.5,
-     "over": 2.7,
+     "over": 2.68,
      "under": 1.48,
-     "books": 2
+     "books": 3
     }
    ]
   },
   "401874317": {
-   "pA": 0.376,
+   "pA": 0.367,
    "books": 8,
    "commence": "2026-07-25T09:00:00Z",
-   "priceA": 2.55,
-   "priceB": 1.54,
+   "priceA": 2.61,
+   "priceB": 1.51,
    "totals": [
     {
      "point": 2.5,
-     "over": 1.89,
-     "under": 1.89,
-     "books": 2
+     "over": 2.22,
+     "under": 1.68,
+     "books": 3
     }
    ]
   },
@@ -100,32 +100,32 @@
    "totals": []
   },
   "401886732": {
-   "pA": 0.761,
+   "pA": 0.753,
    "books": 7,
    "commence": "2026-07-25T09:00:00Z",
-   "priceA": 1.26,
-   "priceB": 4,
+   "priceA": 1.27,
+   "priceB": 3.89,
    "totals": [
     {
      "point": 1.5,
-     "over": 1.48,
-     "under": 2.7,
-     "books": 2
+     "over": 1.41,
+     "under": 2.96,
+     "books": 3
     }
    ]
   },
   "401886737": {
-   "pA": 0.416,
+   "pA": 0.412,
    "books": 8,
    "commence": "2026-07-25T09:00:00Z",
-   "priceA": 2.31,
-   "priceB": 1.64,
+   "priceA": 2.33,
+   "priceB": 1.63,
    "totals": [
     {
      "point": 2.5,
-     "over": 1.51,
-     "under": 2.6,
-     "books": 2
+     "over": 1.5,
+     "under": 2.64,
+     "books": 3
     }
    ]
   },
@@ -146,9 +146,9 @@
    "totals": [
     {
      "point": 1.5,
-     "over": 2.05,
-     "under": 1.77,
-     "books": 2
+     "over": 2.36,
+     "under": 1.6,
+     "books": 3
     }
    ]
   },
@@ -161,9 +161,9 @@
    "totals": [
     {
      "point": 2.5,
-     "over": 1.98,
-     "under": 1.85,
-     "books": 1
+     "over": 2.46,
+     "under": 1.59,
+     "books": 2
     }
    ]
   }
