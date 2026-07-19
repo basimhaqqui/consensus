@@ -344,7 +344,10 @@
       "odds": 30.403,
       "modelP": 0.125,
       "ev": 2.792,
-      "status": "open"
+      "status": "lost",
+      "settledAt": "2026-07-19T22:31:38.496Z",
+      "result": "0-0 (90')",
+      "pnl": -23.56
     }
   ],
   "log": [
@@ -451,6 +454,10 @@
     {
       "at": "2026-07-16T08:29:59.090Z",
       "msg": "BET $23.56 on ARG win + L. Messi 2+ goals @ 30.403 — model 12%, EV +279%, 9% Kelly (bank $224.54)"
+    },
+    {
+      "at": "2026-07-19T22:31:38.496Z",
+      "msg": "LOST ARG win + L. Messi 2+ goals @ 30.403 (ESP v ARG): -$23.56 (bank $224.54)"
     }
   ]
 }
