@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-19T21:09:27.534Z",
+ "computedAt": "2026-07-19T23:14:29.670Z",
  "config": {
   "k": 80,
   "provFights": 5,
@@ -33,7 +33,7 @@
   "2312150": {
    "name": "Mohammed Usman",
    "rating": 1643.2,
-   "p4p": 1640,
+   "p4p": 1639.9,
    "division": "Heavyweight",
    "fights": 7,
    "wins": 5,
@@ -3534,7 +3534,7 @@
   "2431258": {
    "name": "Robbie Lawler",
    "rating": 1714.8,
-   "p4p": 1584,
+   "p4p": 1583.9,
    "division": "Welterweight",
    "fights": 25,
    "wins": 15,
@@ -4065,7 +4065,7 @@
   "2479918": {
    "name": "Donald Cerrone",
    "rating": 1617.9,
-   "p4p": 1510.2,
+   "p4p": 1510.1,
    "division": "Welterweight",
    "fights": 37,
    "wins": 23,
@@ -8799,7 +8799,7 @@
   "2559934": {
    "name": "Carla Esparza",
    "rating": 1658.7,
-   "p4p": 1621.4,
+   "p4p": 1621.3,
    "division": "W Strawweight",
    "fights": 16,
    "wins": 10,
@@ -9339,7 +9339,7 @@
   "2611719": {
    "name": "TJ Dillashaw",
    "rating": 1748.2,
-   "p4p": 1544.2,
+   "p4p": 1544.1,
    "division": "Bantamweight",
    "fights": 18,
    "wins": 13,
@@ -9672,7 +9672,7 @@
   "2618069": {
    "name": "Ike Villanueva",
    "rating": 1333.5,
-   "p4p": 1495.2,
+   "p4p": 1495.3,
    "division": "Light Heavyweight",
    "fights": 6,
    "wins": 1,
@@ -11445,7 +11445,7 @@
   "3010042": {
    "name": "Ramazan Emeev",
    "rating": 1638.5,
-   "p4p": 1509.6,
+   "p4p": 1509.5,
    "division": "Welterweight",
    "fights": 8,
    "wins": 5,
@@ -12471,7 +12471,7 @@
   "3043484": {
    "name": "Santiago Ponzinibbio",
    "rating": 1660.7,
-   "p4p": 1650.6,
+   "p4p": 1650.5,
    "division": "Welterweight",
    "fights": 20,
    "wins": 12,
@@ -13065,7 +13065,7 @@
   "3084459": {
    "name": "Kevin Lee",
    "rating": 1630,
-   "p4p": 1550.1,
+   "p4p": 1550,
    "division": "Welterweight",
    "fights": 19,
    "wins": 11,
@@ -13200,7 +13200,7 @@
   "3088810": {
    "name": "Colby Covington",
    "rating": 1771.2,
-   "p4p": 1723,
+   "p4p": 1722.9,
    "division": "Welterweight",
    "fights": 17,
    "wins": 12,
@@ -13722,7 +13722,7 @@
   "3099958": {
    "name": "Charlie Ontiveros",
    "rating": 1379.2,
-   "p4p": 1485.4,
+   "p4p": 1485.5,
    "division": "Lightweight",
    "fights": 3,
    "wins": 0,
@@ -14541,7 +14541,7 @@
   "3136286": {
    "name": "Irene Aldana",
    "rating": 1701.2,
-   "p4p": 1650.4,
+   "p4p": 1650.3,
    "division": "W Bantamweight",
    "fights": 14,
    "wins": 8,
@@ -14559,7 +14559,7 @@
   "3136288": {
    "name": "Jinh Yu Frey",
    "rating": 1377.4,
-   "p4p": 1441.5,
+   "p4p": 1441.6,
    "division": "W Strawweight",
    "fights": 8,
    "wins": 2,
@@ -15198,7 +15198,7 @@
   "3170347": {
    "name": "Taila Santos",
    "rating": 1704.5,
-   "p4p": 1588.1,
+   "p4p": 1588,
    "division": "W Flyweight",
    "fights": 8,
    "wins": 5,
@@ -15585,7 +15585,7 @@
   "3897242": {
    "name": "Nikolas Motta",
    "rating": 1626.3,
-   "p4p": 1623.5,
+   "p4p": 1623.4,
    "division": "Lightweight",
    "fights": 7,
    "wins": 4,
@@ -15972,7 +15972,7 @@
   "3939270": {
    "name": "Kamuela Kirk",
    "rating": 1451.8,
-   "p4p": 1481.1,
+   "p4p": 1481.2,
    "division": "Lightweight",
    "fights": 4,
    "wins": 1,
@@ -16863,7 +16863,7 @@
   "4020699": {
    "name": "Shavkat Rakhmonov",
    "rating": 2042.1,
-   "p4p": 1942.6,
+   "p4p": 1942.5,
    "division": "Welterweight",
    "fights": 7,
    "wins": 7,
@@ -17331,7 +17331,7 @@
   "4045420": {
    "name": "Aliaskhab Khizriev",
    "rating": 1674.6,
-   "p4p": 1501,
+   "p4p": 1500.9,
    "division": "Middleweight",
    "fights": 2,
    "wins": 2,
@@ -18339,7 +18339,7 @@
   "4227709": {
    "name": "Jared Vanderaa",
    "rating": 1395.3,
-   "p4p": 1480.7,
+   "p4p": 1480.8,
    "division": "Heavyweight",
    "fights": 8,
    "wins": 2,
@@ -18906,7 +18906,7 @@
   "4255766": {
    "name": "William Knight",
    "rating": 1552,
-   "p4p": 1514.4,
+   "p4p": 1514.3,
    "division": "Light Heavyweight",
    "fights": 9,
    "wins": 5,
@@ -19374,7 +19374,7 @@
   "4295932": {
    "name": "Liang Na",
    "rating": 1305.7,
-   "p4p": 1377.1,
+   "p4p": 1377.2,
    "division": "W Flyweight",
    "fights": 4,
    "wins": 0,
@@ -19536,7 +19536,7 @@
   "4332765": {
    "name": "Kayla Harrison",
    "rating": 1802.3,
-   "p4p": 1792,
+   "p4p": 1791.9,
    "division": "W Bantamweight",
    "fights": 3,
    "wins": 3,
@@ -20517,7 +20517,7 @@
   "4396359": {
    "name": "CJ Vergara",
    "rating": 1466.3,
-   "p4p": 1469.3,
+   "p4p": 1469.4,
    "division": "Flyweight",
    "fights": 9,
    "wins": 4,
@@ -20895,7 +20895,7 @@
   "4417235": {
    "name": "Nicolae Negumereanu",
    "rating": 1682,
-   "p4p": 1535.6,
+   "p4p": 1535.5,
    "division": "Light Heavyweight",
    "fights": 6,
    "wins": 4,
@@ -21291,7 +21291,7 @@
   "4425355": {
    "name": "Jamahal Hill",
    "rating": 1728.5,
-   "p4p": 1723.3,
+   "p4p": 1723.2,
    "division": "Light Heavyweight",
    "fights": 11,
    "wins": 7,
@@ -21651,7 +21651,7 @@
   "4566991": {
    "name": "Sean Woodson",
    "rating": 1721.3,
-   "p4p": 1703.6,
+   "p4p": 1703.5,
    "division": "Featherweight",
    "fights": 10,
    "wins": 8,
@@ -22020,7 +22020,7 @@
   "4683807": {
    "name": "Zarrukh Adashev",
    "rating": 1416.6,
-   "p4p": 1494.7,
+   "p4p": 1494.8,
    "division": "Flyweight",
    "fights": 4,
    "wins": 1,
@@ -22416,7 +22416,7 @@
   "4687105": {
    "name": "Bruno Souza",
    "rating": 1472.7,
-   "p4p": 1499.8,
+   "p4p": 1499.9,
    "division": "Featherweight",
    "fights": 2,
    "wins": 0,
@@ -22965,7 +22965,7 @@
   "4775129": {
    "name": "Cortavious Romious",
    "rating": 1416.3,
-   "p4p": 1423.4,
+   "p4p": 1423.5,
    "division": "Bantamweight",
    "fights": 4,
    "wins": 1,
@@ -23073,7 +23073,7 @@
   "4812389": {
    "name": "Shannon Ross",
    "rating": 1335.2,
-   "p4p": 1414.7,
+   "p4p": 1414.8,
    "division": "Flyweight",
    "fights": 4,
    "wins": 0,
@@ -23118,7 +23118,7 @@
   "4815998": {
    "name": "Bryan Battle",
    "rating": 1822.4,
-   "p4p": 1763.2,
+   "p4p": 1763.1,
    "division": "Welterweight",
    "fights": 9,
    "wins": 8,
@@ -23469,7 +23469,7 @@
   "4873642": {
    "name": "Ihor Potieria",
    "rating": 1483.8,
-   "p4p": 1486.3,
+   "p4p": 1486.4,
    "division": "Middleweight",
    "fights": 9,
    "wins": 3,
@@ -23910,7 +23910,7 @@
   "4896541": {
    "name": "Zac Pauga",
    "rating": 1398.9,
-   "p4p": 1442.4,
+   "p4p": 1442.5,
    "division": "Light Heavyweight",
    "fights": 4,
    "wins": 1,
@@ -24018,7 +24018,7 @@
   "4905261": {
    "name": "Muhammad Mokaev",
    "rating": 1877.6,
-   "p4p": 1767,
+   "p4p": 1766.9,
    "division": "Flyweight",
    "fights": 7,
    "wins": 7,
@@ -24108,7 +24108,7 @@
   "4915907": {
    "name": "Karl Williams",
    "rating": 1633.8,
-   "p4p": 1596.2,
+   "p4p": 1596.1,
    "division": "Heavyweight",
    "fights": 5,
    "wins": 4,
@@ -24171,7 +24171,7 @@
   "4917145": {
    "name": "Yanal Ashmouz",
    "rating": 1566.9,
-   "p4p": 1564.7,
+   "p4p": 1564.6,
    "division": "Lightweight",
    "fights": 4,
    "wins": 2,
@@ -24297,7 +24297,7 @@
   "4969973": {
    "name": "Denis Tiuliulin",
    "rating": 1375.2,
-   "p4p": 1411,
+   "p4p": 1411.1,
    "division": "Middleweight",
    "fights": 6,
    "wins": 1,
@@ -24396,7 +24396,7 @@
   "5013686": {
    "name": "Matthieu Duclos",
    "rating": 1467.2,
-   "p4p": 1475.9,
+   "p4p": 1476,
    "division": "Middleweight",
    "fights": 1,
    "wins": 0,
@@ -26367,7 +26367,7 @@
   "5207665": {
    "name": "Shi Ming",
    "rating": 1631.1,
-   "p4p": 1605.5,
+   "p4p": 1605.4,
    "division": "W Strawweight",
    "fights": 1,
    "wins": 1,
