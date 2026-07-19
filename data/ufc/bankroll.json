@@ -1,6 +1,6 @@
 {
  "start": 1000,
- "cash": 397.77,
+ "cash": 347.77,
  "open": [
   {
    "kind": "single",
@@ -181,6 +181,27 @@
    "event": "UFC Fight Night: Ankalaev vs. Guskov",
    "analysis": "consensus 28.9% (model 36.9) vs implied 21.7%",
    "placedAt": "2026-07-16T03:41:55.142Z"
+  },
+  {
+   "kind": "single",
+   "title": "Ponzinibbio-Patterson Over 1.5 @ 2.05",
+   "legs": [
+    {
+     "boutId": "401891531",
+     "type": "total",
+     "point": 1.5,
+     "side": "over",
+     "price": 2.05,
+     "label": "Over 1.5 rds"
+    }
+   ],
+   "stake": 50,
+   "price": 2.05,
+   "p": 0.518,
+   "ev": 0.062,
+   "event": "UFC Fight Night: Ankalaev vs. Guskov",
+   "analysis": "model P(over)=51.8% vs implied 48.8% (dec 36%)",
+   "placedAt": "2026-07-19T13:56:21.060Z"
   }
  ],
  "settled": [
@@ -1147,6 +1168,11 @@
    "at": "2026-07-19T11:32:59.941Z",
    "cash": 397.77,
    "exposure": 316.42
+  },
+  {
+   "at": "2026-07-19T13:56:21.060Z",
+   "cash": 347.77,
+   "exposure": 366.42
   }
  ]
 }
