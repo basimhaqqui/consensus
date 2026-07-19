@@ -1,6 +1,6 @@
 {
  "start": 1000,
- "cash": 323.27,
+ "cash": 397.77,
  "open": [
   {
    "kind": "single",
@@ -21,26 +21,6 @@
    "event": "UFC Fight Night: Nurmagomedov vs. Song",
    "analysis": "consensus 35.5% (model 48.3) vs implied 23.6%",
    "placedAt": "2026-07-12T01:17:39.524Z"
-  },
-  {
-   "kind": "single",
-   "title": "Ricci ML @ 3.87",
-   "legs": [
-    {
-     "boutId": "401881165",
-     "type": "ml",
-     "pickId": "4868095",
-     "price": 3.87,
-     "label": "Ricci ML"
-    }
-   ],
-   "stake": 21.74,
-   "price": 3.87,
-   "p": 0.326,
-   "ev": 0.26,
-   "event": "UFC Fight Night: Du Plessis vs. Usman",
-   "analysis": "consensus 32.6% (model 40.3) vs implied 25.8%",
-   "placedAt": "2026-07-12T01:17:39.525Z"
   },
   {
    "kind": "single",
@@ -84,26 +64,6 @@
   },
   {
    "kind": "single",
-   "title": "Ricci ML @ 3.87 (top-up)",
-   "legs": [
-    {
-     "boutId": "401881165",
-     "type": "ml",
-     "pickId": "4868095",
-     "price": 3.87,
-     "label": "Ricci ML"
-    }
-   ],
-   "stake": 15.47,
-   "price": 3.87,
-   "p": 0.326,
-   "ev": 0.26,
-   "event": "UFC Fight Night: Du Plessis vs. Usman",
-   "analysis": "consensus 32.6% (model 40.3) vs implied 25.8%",
-   "placedAt": "2026-07-12T01:31:48.932Z"
-  },
-  {
-   "kind": "single",
    "title": "Robertson ML @ 2.77 (top-up)",
    "legs": [
     {
@@ -144,26 +104,6 @@
   },
   {
    "kind": "single",
-   "title": "Ricci ML @ 3.87 (top-up)",
-   "legs": [
-    {
-     "boutId": "401881165",
-     "type": "ml",
-     "pickId": "4868095",
-     "price": 3.87,
-     "label": "Ricci ML"
-    }
-   ],
-   "stake": 11.76,
-   "price": 3.87,
-   "p": 0.326,
-   "ev": 0.26,
-   "event": "UFC Fight Night: Du Plessis vs. Usman",
-   "analysis": "consensus 32.6% (model 40.3) vs implied 25.8%",
-   "placedAt": "2026-07-12T01:39:33.960Z"
-  },
-  {
-   "kind": "single",
    "title": "Robertson ML @ 2.77 (top-up)",
    "legs": [
     {
@@ -181,117 +121,6 @@
    "event": "UFC 330: Makhachev vs. Machado Garry",
    "analysis": "consensus 45.0% (model 55.6) vs implied 36.1%",
    "placedAt": "2026-07-12T01:39:33.960Z"
-  },
-  {
-   "kind": "single",
-   "title": "Ricci ML @ 3.87 (top-up)",
-   "legs": [
-    {
-     "boutId": "401881165",
-     "type": "ml",
-     "pickId": "4868095",
-     "price": 3.87,
-     "label": "Ricci ML"
-    }
-   ],
-   "stake": 1.03,
-   "price": 3.87,
-   "p": 0.326,
-   "ev": 0.26,
-   "event": "UFC Fight Night: Du Plessis vs. Usman",
-   "analysis": "consensus 32.6% (model 40.3) vs implied 25.8% · owner floor: $50 minimum",
-   "placedAt": "2026-07-12T01:54:13.858Z"
-  },
-  {
-   "kind": "single",
-   "title": "Ricci-Kline Under 2.5 @ 3.75",
-   "legs": [
-    {
-     "boutId": "401881165",
-     "type": "total",
-     "point": 2.5,
-     "side": "under",
-     "price": 3.75,
-     "label": "Under 2.5 rds"
-    }
-   ],
-   "stake": 50,
-   "price": 3.75,
-   "p": 0.297,
-   "ev": 0.112,
-   "event": "UFC Fight Night: Du Plessis vs. Usman",
-   "analysis": "model P(under)=29.7% vs implied 26.7% (finish 37%)",
-   "placedAt": "2026-07-12T15:17:04.924Z"
-  },
-  {
-   "kind": "single",
-   "title": "Usman-Du Plessis Under 3.5 @ 2.59",
-   "legs": [
-    {
-     "boutId": "401872218",
-     "type": "total",
-     "point": 3.5,
-     "side": "under",
-     "price": 2.59,
-     "label": "Under 3.5 rds"
-    }
-   ],
-   "stake": 50,
-   "price": 2.59,
-   "p": 0.403,
-   "ev": 0.045,
-   "event": "UFC Fight Night: Du Plessis vs. Usman",
-   "analysis": "model P(under)=40.3% vs implied 38.6% (finish 48%)",
-   "placedAt": "2026-07-12T17:19:11.916Z"
-  },
-  {
-   "kind": "parlay",
-   "title": "2-leg parlay @ 9.87: Ricci ML + Under 3.5 rds",
-   "legs": [
-    {
-     "boutId": "401881165",
-     "type": "ml",
-     "pickId": "4868095",
-     "price": 3.81,
-     "label": "Ricci ML"
-    },
-    {
-     "boutId": "401872218",
-     "type": "total",
-     "point": 3.5,
-     "side": "under",
-     "price": 2.59,
-     "label": "Under 3.5 rds"
-    }
-   ],
-   "stake": 50,
-   "price": 9.87,
-   "p": 0.132,
-   "ev": 0.304,
-   "event": "UFC Fight Night: Du Plessis vs. Usman",
-   "analysis": "consensus 32.8% (model 40.3) vs implied 26.2% · model P(under)=40.3% vs implied 38.6% (finish 48%)",
-   "placedAt": "2026-07-12T17:19:11.917Z"
-  },
-  {
-   "kind": "single",
-   "title": "Cannonier-Leroy Duncan Under 2.5 @ 2.44",
-   "legs": [
-    {
-     "boutId": "401874062",
-     "type": "total",
-     "point": 2.5,
-     "side": "under",
-     "price": 2.44,
-     "label": "Under 2.5 rds"
-    }
-   ],
-   "stake": 50,
-   "price": 2.44,
-   "p": 0.443,
-   "ev": 0.081,
-   "event": "UFC Fight Night: Du Plessis vs. Usman",
-   "analysis": "model P(under)=44.3% vs implied 41.0% (finish 54%)",
-   "placedAt": "2026-07-13T04:01:24.050Z"
   },
   {
    "kind": "single",
@@ -352,46 +181,6 @@
    "event": "UFC Fight Night: Ankalaev vs. Guskov",
    "analysis": "consensus 28.9% (model 36.9) vs implied 21.7%",
    "placedAt": "2026-07-16T03:41:55.142Z"
-  },
-  {
-   "kind": "single",
-   "title": "Cannonier ML @ 3.91",
-   "legs": [
-    {
-     "boutId": "401874062",
-     "type": "ml",
-     "pickId": "3154860",
-     "price": 3.91,
-     "label": "Cannonier ML"
-    }
-   ],
-   "stake": 50,
-   "price": 3.91,
-   "p": 0.264,
-   "ev": 0.032,
-   "event": "UFC Fight Night: Du Plessis vs. Usman",
-   "analysis": "consensus 26.4% (model 28.3) vs implied 25.6%",
-   "placedAt": "2026-07-17T14:05:45.273Z"
-  },
-  {
-   "kind": "single",
-   "title": "Du Plessis ML @ 1.49",
-   "legs": [
-    {
-     "boutId": "401872218",
-     "type": "ml",
-     "pickId": "3166126",
-     "price": 1.49,
-     "label": "Du Plessis ML"
-    }
-   ],
-   "stake": 50,
-   "price": 1.49,
-   "p": 0.692,
-   "ev": 0.03,
-   "event": "UFC Fight Night: Du Plessis vs. Usman",
-   "analysis": "consensus 69.2% (model 73.6) vs implied 67.1%",
-   "placedAt": "2026-07-18T17:17:13.056Z"
   }
  ],
  "settled": [
@@ -750,6 +539,247 @@
    "settledAt": "2026-07-12T03:59:24.499Z",
    "outcome": "win",
    "payout": 110.5
+  },
+  {
+   "kind": "single",
+   "title": "Ricci ML @ 3.87",
+   "legs": [
+    {
+     "boutId": "401881165",
+     "type": "ml",
+     "pickId": "4868095",
+     "price": 3.87,
+     "label": "Ricci ML"
+    }
+   ],
+   "stake": 21.74,
+   "price": 3.87,
+   "p": 0.326,
+   "ev": 0.26,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 32.6% (model 40.3) vs implied 25.8%",
+   "placedAt": "2026-07-12T01:17:39.525Z",
+   "settledAt": "2026-07-19T03:58:41.090Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Ricci ML @ 3.87 (top-up)",
+   "legs": [
+    {
+     "boutId": "401881165",
+     "type": "ml",
+     "pickId": "4868095",
+     "price": 3.87,
+     "label": "Ricci ML"
+    }
+   ],
+   "stake": 15.47,
+   "price": 3.87,
+   "p": 0.326,
+   "ev": 0.26,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 32.6% (model 40.3) vs implied 25.8%",
+   "placedAt": "2026-07-12T01:31:48.932Z",
+   "settledAt": "2026-07-19T03:58:41.090Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Ricci ML @ 3.87 (top-up)",
+   "legs": [
+    {
+     "boutId": "401881165",
+     "type": "ml",
+     "pickId": "4868095",
+     "price": 3.87,
+     "label": "Ricci ML"
+    }
+   ],
+   "stake": 11.76,
+   "price": 3.87,
+   "p": 0.326,
+   "ev": 0.26,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 32.6% (model 40.3) vs implied 25.8%",
+   "placedAt": "2026-07-12T01:39:33.960Z",
+   "settledAt": "2026-07-19T03:58:41.090Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Ricci ML @ 3.87 (top-up)",
+   "legs": [
+    {
+     "boutId": "401881165",
+     "type": "ml",
+     "pickId": "4868095",
+     "price": 3.87,
+     "label": "Ricci ML"
+    }
+   ],
+   "stake": 1.03,
+   "price": 3.87,
+   "p": 0.326,
+   "ev": 0.26,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 32.6% (model 40.3) vs implied 25.8% · owner floor: $50 minimum",
+   "placedAt": "2026-07-12T01:54:13.858Z",
+   "settledAt": "2026-07-19T03:58:41.090Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Ricci-Kline Under 2.5 @ 3.75",
+   "legs": [
+    {
+     "boutId": "401881165",
+     "type": "total",
+     "point": 2.5,
+     "side": "under",
+     "price": 3.75,
+     "label": "Under 2.5 rds"
+    }
+   ],
+   "stake": 50,
+   "price": 3.75,
+   "p": 0.297,
+   "ev": 0.112,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "model P(under)=29.7% vs implied 26.7% (finish 37%)",
+   "placedAt": "2026-07-12T15:17:04.924Z",
+   "settledAt": "2026-07-19T03:58:41.090Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Usman-Du Plessis Under 3.5 @ 2.59",
+   "legs": [
+    {
+     "boutId": "401872218",
+     "type": "total",
+     "point": 3.5,
+     "side": "under",
+     "price": 2.59,
+     "label": "Under 3.5 rds"
+    }
+   ],
+   "stake": 50,
+   "price": 2.59,
+   "p": 0.403,
+   "ev": 0.045,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "model P(under)=40.3% vs implied 38.6% (finish 48%)",
+   "placedAt": "2026-07-12T17:19:11.916Z",
+   "settledAt": "2026-07-19T03:58:41.090Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "parlay",
+   "title": "2-leg parlay @ 9.87: Ricci ML + Under 3.5 rds",
+   "legs": [
+    {
+     "boutId": "401881165",
+     "type": "ml",
+     "pickId": "4868095",
+     "price": 3.81,
+     "label": "Ricci ML"
+    },
+    {
+     "boutId": "401872218",
+     "type": "total",
+     "point": 3.5,
+     "side": "under",
+     "price": 2.59,
+     "label": "Under 3.5 rds"
+    }
+   ],
+   "stake": 50,
+   "price": 9.87,
+   "p": 0.132,
+   "ev": 0.304,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 32.8% (model 40.3) vs implied 26.2% · model P(under)=40.3% vs implied 38.6% (finish 48%)",
+   "placedAt": "2026-07-12T17:19:11.917Z",
+   "settledAt": "2026-07-19T03:58:41.090Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Cannonier-Leroy Duncan Under 2.5 @ 2.44",
+   "legs": [
+    {
+     "boutId": "401874062",
+     "type": "total",
+     "point": 2.5,
+     "side": "under",
+     "price": 2.44,
+     "label": "Under 2.5 rds"
+    }
+   ],
+   "stake": 50,
+   "price": 2.44,
+   "p": 0.443,
+   "ev": 0.081,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "model P(under)=44.3% vs implied 41.0% (finish 54%)",
+   "placedAt": "2026-07-13T04:01:24.050Z",
+   "settledAt": "2026-07-19T03:58:41.091Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Cannonier ML @ 3.91",
+   "legs": [
+    {
+     "boutId": "401874062",
+     "type": "ml",
+     "pickId": "3154860",
+     "price": 3.91,
+     "label": "Cannonier ML"
+    }
+   ],
+   "stake": 50,
+   "price": 3.91,
+   "p": 0.264,
+   "ev": 0.032,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 26.4% (model 28.3) vs implied 25.6%",
+   "placedAt": "2026-07-17T14:05:45.273Z",
+   "settledAt": "2026-07-19T03:58:41.091Z",
+   "outcome": "loss",
+   "payout": 0
+  },
+  {
+   "kind": "single",
+   "title": "Du Plessis ML @ 1.49",
+   "legs": [
+    {
+     "boutId": "401872218",
+     "type": "ml",
+     "pickId": "3166126",
+     "price": 1.49,
+     "label": "Du Plessis ML"
+    }
+   ],
+   "stake": 50,
+   "price": 1.49,
+   "p": 0.692,
+   "ev": 0.03,
+   "event": "UFC Fight Night: Du Plessis vs. Usman",
+   "analysis": "consensus 69.2% (model 73.6) vs implied 67.1%",
+   "placedAt": "2026-07-18T17:17:13.056Z",
+   "settledAt": "2026-07-19T03:58:41.091Z",
+   "outcome": "win",
+   "payout": 74.5
   }
  ],
  "curve": [
@@ -1097,6 +1127,11 @@
    "at": "2026-07-18T23:13:18.362Z",
    "cash": 323.27,
    "exposure": 666.42
+  },
+  {
+   "at": "2026-07-19T03:58:41.092Z",
+   "cash": 397.77,
+   "exposure": 316.42
   }
  ]
 }

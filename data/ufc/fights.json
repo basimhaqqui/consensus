@@ -175425,5 +175425,233 @@
   "round": 1,
   "clock": "1:09",
   "decision": false
+ },
+ {
+  "eventId": "600059599",
+  "eventName": "UFC Fight Night: Du Plessis vs. Usman",
+  "date": "2026-07-18T21:00Z",
+  "boutId": "401889642",
+  "weightClass": "W Flyweight",
+  "a": {
+   "id": "4801725",
+   "name": "Dione Barbosa"
+  },
+  "b": {
+   "id": "5334916",
+   "name": "Anna Melisano"
+  },
+  "winnerId": "4801725",
+  "round": 1,
+  "clock": "4:04",
+  "decision": false
+ },
+ {
+  "eventId": "600059599",
+  "eventName": "UFC Fight Night: Du Plessis vs. Usman",
+  "date": "2026-07-18T21:00Z",
+  "boutId": "401889641",
+  "weightClass": "Heavyweight",
+  "a": {
+   "id": "5229339",
+   "name": "Alvin Hines"
+  },
+  "b": {
+   "id": "5369555",
+   "name": "RJ Harris"
+  },
+  "winnerId": "5369555",
+  "round": 1,
+  "clock": "1:40",
+  "decision": false
+ },
+ {
+  "eventId": "600059599",
+  "eventName": "UFC Fight Night: Du Plessis vs. Usman",
+  "date": "2026-07-18T21:00Z",
+  "boutId": "401879057",
+  "weightClass": "Flyweight",
+  "a": {
+   "id": "5099732",
+   "name": "Alden Coria"
+  },
+  "b": {
+   "id": "5218177",
+   "name": "Stewart Nicoll"
+  },
+  "winnerId": "5099732",
+  "round": 3,
+  "clock": "5:00",
+  "decision": true
+ },
+ {
+  "eventId": "600059599",
+  "eventName": "UFC Fight Night: Du Plessis vs. Usman",
+  "date": "2026-07-18T21:00Z",
+  "boutId": "401892260",
+  "weightClass": "Featherweight",
+  "a": {
+   "id": "5369722",
+   "name": "Damien Anderson"
+  },
+  "b": {
+   "id": "5369723",
+   "name": "Ezra Elliott"
+  },
+  "winnerId": "5369723",
+  "round": 3,
+  "clock": "5:00",
+  "decision": true
+ },
+ {
+  "eventId": "600059599",
+  "eventName": "UFC Fight Night: Du Plessis vs. Usman",
+  "date": "2026-07-18T21:00Z",
+  "boutId": "401881166",
+  "weightClass": "Light Heavyweight",
+  "a": {
+   "id": "5292014",
+   "name": "Felipe Franco"
+  },
+  "b": {
+   "id": "5312089",
+   "name": "Levi Rodrigues Jr."
+  },
+  "winnerId": "5292014",
+  "round": 2,
+  "clock": "1:40",
+  "decision": false
+ },
+ {
+  "eventId": "600059599",
+  "eventName": "UFC Fight Night: Du Plessis vs. Usman",
+  "date": "2026-07-18T21:00Z",
+  "boutId": "401886726",
+  "weightClass": "Welterweight",
+  "a": {
+   "id": "4629138",
+   "name": "Jean-Paul Lebosnoyani"
+  },
+  "b": {
+   "id": "4701954",
+   "name": "Seokhyeon Ko"
+  },
+  "winnerId": "4629138",
+  "round": 3,
+  "clock": "5:00",
+  "decision": true
+ },
+ {
+  "eventId": "600059599",
+  "eventName": "UFC Fight Night: Du Plessis vs. Usman",
+  "date": "2026-07-18T21:00Z",
+  "boutId": "401881164",
+  "weightClass": "Featherweight",
+  "a": {
+   "id": "5120304",
+   "name": "Austin Bashi"
+  },
+  "b": {
+   "id": "5223435",
+   "name": "Jose Miguel Delgado"
+  },
+  "winnerId": "5223435",
+  "round": 3,
+  "clock": "5:00",
+  "decision": true
+ },
+ {
+  "eventId": "600059599",
+  "eventName": "UFC Fight Night: Du Plessis vs. Usman",
+  "date": "2026-07-19T00:00Z",
+  "boutId": "401881163",
+  "weightClass": "Featherweight",
+  "a": {
+   "id": "4571450",
+   "name": "Alberto Montes"
+  },
+  "b": {
+   "id": "5212849",
+   "name": "Tommy McMillen"
+  },
+  "winnerId": "5212849",
+  "round": 3,
+  "clock": "3:29",
+  "decision": false
+ },
+ {
+  "eventId": "600059599",
+  "eventName": "UFC Fight Night: Du Plessis vs. Usman",
+  "date": "2026-07-19T00:00Z",
+  "boutId": "401881165",
+  "weightClass": "W Strawweight",
+  "a": {
+   "id": "4868095",
+   "name": "Tabatha Ricci"
+  },
+  "b": {
+   "id": "5028019",
+   "name": "Fatima Kline"
+  },
+  "winnerId": "5028019",
+  "round": 3,
+  "clock": "5:00",
+  "decision": true
+ },
+ {
+  "eventId": "600059599",
+  "eventName": "UFC Fight Night: Du Plessis vs. Usman",
+  "date": "2026-07-19T00:00Z",
+  "boutId": "401874064",
+  "weightClass": "Lightweight",
+  "a": {
+   "id": "4354421",
+   "name": "Chase Hooper"
+  },
+  "b": {
+   "id": "4816283",
+   "name": "Mitch Ramirez"
+  },
+  "winnerId": "4354421",
+  "round": 1,
+  "clock": "2:15",
+  "decision": false
+ },
+ {
+  "eventId": "600059599",
+  "eventName": "UFC Fight Night: Du Plessis vs. Usman",
+  "date": "2026-07-19T00:00Z",
+  "boutId": "401874062",
+  "weightClass": "Middleweight",
+  "a": {
+   "id": "3154860",
+   "name": "Jared Cannonier"
+  },
+  "b": {
+   "id": "4848674",
+   "name": "Christian Leroy Duncan"
+  },
+  "winnerId": "4848674",
+  "round": 3,
+  "clock": "5:00",
+  "decision": true
+ },
+ {
+  "eventId": "600059599",
+  "eventName": "UFC Fight Night: Du Plessis vs. Usman",
+  "date": "2026-07-19T00:00Z",
+  "boutId": "401872218",
+  "weightClass": "Middleweight",
+  "a": {
+   "id": "3088812",
+   "name": "Kamaru Usman"
+  },
+  "b": {
+   "id": "3166126",
+   "name": "Dricus Du Plessis"
+  },
+  "winnerId": "3166126",
+  "round": 5,
+  "clock": "5:00",
+  "decision": true
  }
 ]

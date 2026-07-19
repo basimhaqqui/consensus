@@ -440,7 +440,15 @@
    "model_pA": 0.505,
    "books_pA": 0.828,
    "books": 8,
-   "capturedAt": "2026-07-18T09:48:15.727Z"
+   "capturedAt": "2026-07-18T09:48:15.727Z",
+   "result": {
+    "aWon": true,
+    "round": 1,
+    "decision": false,
+    "gradedAt": "2026-07-19T03:58:40.941Z",
+    "llModel": 0.6832,
+    "llBooks": 0.1887
+   }
   },
   {
    "boutId": "401889641",
@@ -462,7 +470,15 @@
    "model_pA": 0.372,
    "books_pA": 0.525,
    "books": 8,
-   "capturedAt": "2026-07-18T09:48:15.728Z"
+   "capturedAt": "2026-07-18T09:48:15.728Z",
+   "result": {
+    "aWon": false,
+    "round": 1,
+    "decision": false,
+    "gradedAt": "2026-07-19T03:58:40.941Z",
+    "llModel": 0.4652,
+    "llBooks": 0.7444
+   }
   },
   {
    "boutId": "401879057",
@@ -484,7 +500,15 @@
    "model_pA": 0.788,
    "books_pA": 0.881,
    "books": 8,
-   "capturedAt": "2026-07-18T09:48:15.728Z"
+   "capturedAt": "2026-07-18T09:48:15.728Z",
+   "result": {
+    "aWon": true,
+    "round": 3,
+    "decision": true,
+    "gradedAt": "2026-07-19T03:58:40.941Z",
+    "llModel": 0.2383,
+    "llBooks": 0.1267
+   }
   },
   {
    "boutId": "401892260",
@@ -506,7 +530,15 @@
    "model_pA": 0.424,
    "books_pA": 0.526,
    "books": 7,
-   "capturedAt": "2026-07-18T09:48:15.728Z"
+   "capturedAt": "2026-07-18T09:48:15.728Z",
+   "result": {
+    "aWon": false,
+    "round": 3,
+    "decision": true,
+    "gradedAt": "2026-07-19T03:58:40.941Z",
+    "llModel": 0.5516,
+    "llBooks": 0.7465
+   }
   },
   {
    "boutId": "401881166",
@@ -528,7 +560,15 @@
    "model_pA": 0.501,
    "books_pA": 0.433,
    "books": 8,
-   "capturedAt": "2026-07-18T09:48:15.728Z"
+   "capturedAt": "2026-07-18T09:48:15.728Z",
+   "result": {
+    "aWon": true,
+    "round": 2,
+    "decision": false,
+    "gradedAt": "2026-07-19T03:58:40.941Z",
+    "llModel": 0.6911,
+    "llBooks": 0.837
+   }
   },
   {
    "boutId": "401886726",
@@ -550,7 +590,15 @@
    "model_pA": 0.531,
    "books_pA": null,
    "books": 0,
-   "capturedAt": "2026-07-18T09:48:15.728Z"
+   "capturedAt": "2026-07-18T09:48:15.728Z",
+   "result": {
+    "aWon": true,
+    "round": 3,
+    "decision": true,
+    "gradedAt": "2026-07-19T03:58:40.941Z",
+    "llModel": 0.633,
+    "llBooks": null
+   }
   },
   {
    "boutId": "401881164",
@@ -572,7 +620,15 @@
    "model_pA": 0.45,
    "books_pA": null,
    "books": 0,
-   "capturedAt": "2026-07-18T09:48:15.728Z"
+   "capturedAt": "2026-07-18T09:48:15.728Z",
+   "result": {
+    "aWon": false,
+    "round": 3,
+    "decision": true,
+    "gradedAt": "2026-07-19T03:58:40.941Z",
+    "llModel": 0.5978,
+    "llBooks": null
+   }
   },
   {
    "boutId": "401881163",
@@ -594,7 +650,15 @@
    "model_pA": 0.432,
    "books_pA": 0.394,
    "books": 8,
-   "capturedAt": "2026-07-18T13:52:49.830Z"
+   "capturedAt": "2026-07-18T13:52:49.830Z",
+   "result": {
+    "aWon": false,
+    "round": 3,
+    "decision": false,
+    "gradedAt": "2026-07-19T03:58:40.941Z",
+    "llModel": 0.5656,
+    "llBooks": 0.5009
+   }
   },
   {
    "boutId": "401881165",
@@ -616,7 +680,15 @@
    "model_pA": 0.403,
    "books_pA": 0.206,
    "books": 8,
-   "capturedAt": "2026-07-18T13:52:49.831Z"
+   "capturedAt": "2026-07-18T13:52:49.831Z",
+   "result": {
+    "aWon": false,
+    "round": 3,
+    "decision": true,
+    "gradedAt": "2026-07-19T03:58:40.941Z",
+    "llModel": 0.5158,
+    "llBooks": 0.2307
+   }
   },
   {
    "boutId": "401874064",
@@ -638,7 +710,15 @@
    "model_pA": 0.795,
    "books_pA": 0.756,
    "books": 8,
-   "capturedAt": "2026-07-18T13:52:49.831Z"
+   "capturedAt": "2026-07-18T13:52:49.831Z",
+   "result": {
+    "aWon": true,
+    "round": 1,
+    "decision": false,
+    "gradedAt": "2026-07-19T03:58:40.941Z",
+    "llModel": 0.2294,
+    "llBooks": 0.2797
+   }
   },
   {
    "boutId": "401874062",
@@ -660,7 +740,15 @@
    "model_pA": 0.283,
    "books_pA": 0.236,
    "books": 8,
-   "capturedAt": "2026-07-18T13:52:49.831Z"
+   "capturedAt": "2026-07-18T13:52:49.831Z",
+   "result": {
+    "aWon": false,
+    "round": 3,
+    "decision": true,
+    "gradedAt": "2026-07-19T03:58:40.941Z",
+    "llModel": 0.3327,
+    "llBooks": 0.2692
+   }
   },
   {
    "boutId": "401872218",
@@ -682,7 +770,15 @@
    "model_pA": 0.264,
    "books_pA": 0.336,
    "books": 8,
-   "capturedAt": "2026-07-18T13:52:49.831Z"
+   "capturedAt": "2026-07-18T13:52:49.831Z",
+   "result": {
+    "aWon": false,
+    "round": 5,
+    "decision": true,
+    "gradedAt": "2026-07-19T03:58:40.941Z",
+    "llModel": 0.3065,
+    "llBooks": 0.4095
+   }
   }
  ]
 }
