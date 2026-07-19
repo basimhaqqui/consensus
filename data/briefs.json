@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-19T04:05:29.232Z",
+  "generated": "2026-07-19T07:09:37.428Z",
   "briefs": {
     "BRA|NOR": {
       "text": "Brazil face Norway in the World Cup round of 16, with the Norwegians appearing at the tournament for the first time in 28 years and seeking a maiden quarter-final berth. The tie features a subplot from the Premier League, as Manchester City's Erling Haaland and Arsenal defender Gabriel extend their club rivalry to the international stage.",
@@ -198,19 +198,19 @@
       ]
     },
     "ARG|ESP": {
-      "text": "Argentina reached the final by scoring two late goals to overturn a deficit against England in the semi-final, while Spain arrive under managers De la Fuente and Scaloni, who are long-time acquaintances. Spain's final training session was cancelled due to thunderstorms in New Jersey. The tie also pits Lionel Messi against Lamine Yamal, with Messi having been photographed alongside Yamal as a baby years earlier.",
+      "text": "Spain meet Argentina in the 2026 World Cup final, with Slovenian referee Slavko Vincic appointed to officiate. Argentina reached the final by scoring two late goals to overturn a deficit against England in the semi-final. Spain's final training session was cancelled due to thunderstorms in New Jersey.",
       "sources": [
+        {
+          "headline": "World Cup final: Argentina vs. Spain - What you need to know, predictions, odds",
+          "href": "https://www.espn.com/soccer/story/_/id/49370934/fifa-world-cup-final-argentina-vs-spain-need-know-predictions-odds"
+        },
+        {
+          "headline": "Who is Slavko Vincic? Spain vs. Argentina referee for World Cup final drew Real Madrid backlash, Jose Mourinho praise",
+          "href": "https://www.espn.com/soccer/story/_/id/49382615/who-slavko-vincic-spain-vs-argentina-referee-world-cup-final-real-madrid-jose-mourinho-jude-bellingham"
+        },
         {
           "headline": "Tuchel responds to criticism and explains Saka omission vs. Argentina",
           "href": "https://www.espn.com/video/clip/_/id/49396469/tuchel-responds-criticism-explains-saka-omission-vs-argentina"
-        },
-        {
-          "headline": "McManaman: Spain have to be perfect to beat Argentina",
-          "href": "https://www.espn.com/video/clip/_/id/49395399/spain-perfect-beat-argentina"
-        },
-        {
-          "headline": "Who scored the most goals in men's World Cup history?",
-          "href": "https://www.espn.com/soccer/story/_/id/49019838/who-scored-most-goals-men-world-cup-history"
         }
       ]
     }
