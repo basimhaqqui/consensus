@@ -439,6 +439,19 @@
         "detail": "FT",
         "gradedAt": "2026-07-15T21:12:10.589Z"
       }
+    },
+    {
+      "id": "final",
+      "kickoffISO": "2026-07-19T19:00Z",
+      "home": "ESP",
+      "away": "ARG",
+      "venue": "East Rutherford, New Jersey",
+      "forecasts": {
+        "model": 0.4842,
+        "blend": 0.4506,
+        "market": 0.5745
+      },
+      "capturedAt": "2026-07-19T16:30:57.295Z"
     }
   ]
 }
