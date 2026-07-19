@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-19T10:01:33.441Z",
+ "computedAt": "2026-07-19T11:32:59.142Z",
  "config": {
   "k": 80,
   "provFights": 5,
@@ -888,7 +888,7 @@
   "2335666": {
    "name": "Matt Brown",
    "rating": 1625.7,
-   "p4p": 1543.4,
+   "p4p": 1543.3,
    "division": "Welterweight",
    "fights": 30,
    "wins": 17,
@@ -3183,7 +3183,7 @@
   "2354364": {
    "name": "Raphael Assuncao",
    "rating": 1626.3,
-   "p4p": 1537.1,
+   "p4p": 1537,
    "division": "Bantamweight",
    "fights": 19,
    "wins": 12,
@@ -6495,7 +6495,7 @@
   "2504929": {
    "name": "Glover Teixeira",
    "rating": 1879.9,
-   "p4p": 1596.3,
+   "p4p": 1596.2,
    "division": "Light Heavyweight",
    "fights": 23,
    "wins": 16,
@@ -7062,7 +7062,7 @@
   "2516131": {
    "name": "Amanda Nunes",
    "rating": 1937.3,
-   "p4p": 1661.1,
+   "p4p": 1661,
    "division": "W Bantamweight",
    "fights": 18,
    "wins": 16,
@@ -7071,7 +7071,7 @@
   "2516135": {
    "name": "Francisco Trinaldo",
    "rating": 1793.7,
-   "p4p": 1547.4,
+   "p4p": 1547.3,
    "division": "Welterweight",
    "fights": 26,
    "wins": 18,
@@ -8673,7 +8673,7 @@
   "2558492": {
    "name": "Maxim Grishin",
    "rating": 1562,
-   "p4p": 1522.5,
+   "p4p": 1522.4,
    "division": "Light Heavyweight",
    "fights": 5,
    "wins": 2,
@@ -9339,7 +9339,7 @@
   "2611719": {
    "name": "TJ Dillashaw",
    "rating": 1748.2,
-   "p4p": 1544.3,
+   "p4p": 1544.2,
    "division": "Bantamweight",
    "fights": 18,
    "wins": 13,
@@ -10806,7 +10806,7 @@
   "2968990": {
    "name": "Gunnar Nelson",
    "rating": 1615.8,
-   "p4p": 1604.6,
+   "p4p": 1604.5,
    "division": "Welterweight",
    "fights": 16,
    "wins": 10,
@@ -12525,7 +12525,7 @@
   "3045798": {
    "name": "Thiago Santos",
    "rating": 1693,
-   "p4p": 1522.3,
+   "p4p": 1522.2,
    "division": "Light Heavyweight",
    "fights": 24,
    "wins": 14,
@@ -13200,7 +13200,7 @@
   "3088810": {
    "name": "Colby Covington",
    "rating": 1771.2,
-   "p4p": 1723.1,
+   "p4p": 1723,
    "division": "Welterweight",
    "fights": 17,
    "wins": 12,
@@ -15180,7 +15180,7 @@
   "3167160": {
    "name": "Aspen Ladd",
    "rating": 1588.7,
-   "p4p": 1501.6,
+   "p4p": 1501.5,
    "division": "W Bantamweight",
    "fights": 7,
    "wins": 4,
@@ -16530,7 +16530,7 @@
   "3983481": {
    "name": "Shane Young",
    "rating": 1416.1,
-   "p4p": 1462.8,
+   "p4p": 1462.9,
    "division": "Featherweight",
    "fights": 7,
    "wins": 2,
@@ -16863,7 +16863,7 @@
   "4020699": {
    "name": "Shavkat Rakhmonov",
    "rating": 2042.1,
-   "p4p": 1942.8,
+   "p4p": 1942.7,
    "division": "Welterweight",
    "fights": 7,
    "wins": 7,
@@ -18060,7 +18060,7 @@
   "4195518": {
    "name": "Istela Nunes",
    "rating": 1347.7,
-   "p4p": 1360.7,
+   "p4p": 1360.8,
    "division": "W Strawweight",
    "fights": 5,
    "wins": 0,
@@ -18366,7 +18366,7 @@
   "4231391": {
    "name": "Ronnie Lawrence",
    "rating": 1609,
-   "p4p": 1510.1,
+   "p4p": 1510,
    "division": "Bantamweight",
    "fights": 4,
    "wins": 3,
@@ -20211,7 +20211,7 @@
   "4372195": {
    "name": "Raulian Paiva",
    "rating": 1609.7,
-   "p4p": 1508.9,
+   "p4p": 1508.8,
    "division": "Bantamweight",
    "fights": 8,
    "wins": 4,
@@ -21489,7 +21489,7 @@
   "4426319": {
    "name": "Kevin Natividad",
    "rating": 1393.4,
-   "p4p": 1478.5,
+   "p4p": 1478.6,
    "division": "Bantamweight",
    "fights": 3,
    "wins": 0,
@@ -23631,7 +23631,7 @@
   "4878592": {
    "name": "Charalampos Grigoriou",
    "rating": 1423.3,
-   "p4p": 1444.8,
+   "p4p": 1444.9,
    "division": "Bantamweight",
    "fights": 3,
    "wins": 1,
@@ -23739,7 +23739,7 @@
   "4892412": {
    "name": "Shimon Smotritsky",
    "rating": 1418.3,
-   "p4p": 1490.8,
+   "p4p": 1490.9,
    "division": "Welterweight",
    "fights": 2,
    "wins": 0,
@@ -23883,7 +23883,7 @@
   "4895772": {
    "name": "Daniel Lacerda",
    "rating": 1283.9,
-   "p4p": 1374.4,
+   "p4p": 1374.5,
    "division": "Flyweight",
    "fights": 5,
    "wins": 0,
@@ -24225,7 +24225,7 @@
   "4935217": {
    "name": "Dylan Mantello",
    "rating": 1397.7,
-   "p4p": 1423.2,
+   "p4p": 1423.3,
    "division": "Lightweight",
    "fights": 2,
    "wins": 0,
@@ -24450,7 +24450,7 @@
   "5037883": {
    "name": "Evan Elder",
    "rating": 1618,
-   "p4p": 1610,
+   "p4p": 1609.9,
    "division": "Lightweight",
    "fights": 5,
    "wins": 3,
@@ -24891,7 +24891,7 @@
   "5076594": {
    "name": "Richard Jacobi",
    "rating": 1448.4,
-   "p4p": 1492.1,
+   "p4p": 1492.2,
    "division": "Heavyweight",
    "fights": 1,
    "wins": 0,
@@ -26358,7 +26358,7 @@
   "5207629": {
    "name": "DongHun Choi",
    "rating": 1625.6,
-   "p4p": 1601.1,
+   "p4p": 1601,
    "division": "Flyweight",
    "fights": 1,
    "wins": 1,
@@ -26844,7 +26844,7 @@
   "5224461": {
    "name": "Taiga Iwasaki",
    "rating": 1457.3,
-   "p4p": 1468.2,
+   "p4p": 1468.3,
    "division": "Middleweight",
    "fights": 1,
    "wins": 0,
