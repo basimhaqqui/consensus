@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-19T23:14:29.670Z",
+ "computedAt": "2026-07-20T04:07:45.769Z",
  "cards": [
   {
    "eventId": "600059667",
@@ -68,8 +68,8 @@
      "boutId": "401874317",
      "date": "2026-07-25T13:00Z",
      "weightClass": "Lightweight",
-     "segment": "Main Card",
-     "matchNumber": 6,
+     "segment": "Prelims",
+     "matchNumber": 10,
      "a": {
       "id": "3093513",
       "name": "Ismael Bonfim",
@@ -182,10 +182,10 @@
     },
     {
      "boutId": "401890156",
-     "date": "2026-07-25T13:00Z",
+     "date": "2026-07-25T16:00Z",
      "weightClass": "Welterweight",
-     "segment": "Prelims",
-     "matchNumber": 7,
+     "segment": "Main Card",
+     "matchNumber": 6,
      "a": {
       "id": "3960340",
       "name": "Abubakar Vagaev",
@@ -391,35 +391,6 @@
      }
     },
     {
-     "boutId": "401892191",
-     "date": "2026-08-01T17:00Z",
-     "weightClass": "Light Heavyweight",
-     "segment": "Main Card",
-     "matchNumber": 2,
-     "a": {
-      "id": "2506250",
-      "name": "Jan Blachowicz",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pol.png",
-      "record": "29-11-2"
-     },
-     "b": {
-      "id": "5216713",
-      "name": "Navajo Stirling",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
-      "record": "10-0-0"
-     },
-     "ratingA": 1395,
-     "ratingB": 1757,
-     "pA": 0.2,
-     "fightsA": 20,
-     "fightsB": 6,
-     "method": {
-      "ko": 0.41,
-      "sub": 0.11,
-      "dec": 0.48
-     }
-    },
-    {
      "boutId": "401870844",
      "date": "2026-08-01T14:00Z",
      "weightClass": "Heavyweight",
@@ -595,7 +566,7 @@
     },
     {
      "boutId": "401874462",
-     "date": "2026-08-01T14:00Z",
+     "date": "2026-08-01T17:00Z",
      "weightClass": "Middleweight",
      "segment": "Main Card",
      "matchNumber": 5,
@@ -681,6 +652,35 @@
      }
     },
     {
+     "boutId": "401892191",
+     "date": "2026-08-01T17:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 2,
+     "a": {
+      "id": "2506250",
+      "name": "Jan Blachowicz",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pol.png",
+      "record": "29-11-2"
+     },
+     "b": {
+      "id": "5216713",
+      "name": "Navajo Stirling",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+      "record": "10-0-0"
+     },
+     "ratingA": 1395,
+     "ratingB": 1757,
+     "pA": 0.2,
+     "fightsA": 20,
+     "fightsB": 6,
+     "method": {
+      "ko": 0.41,
+      "sub": 0.11,
+      "dec": 0.48
+     }
+    },
+    {
      "boutId": "401870843",
      "date": "2026-08-01T17:00Z",
      "weightClass": "Welterweight",
@@ -717,32 +717,148 @@
    "date": "2026-08-08T18:00Z",
    "fights": [
     {
+     "boutId": "401897979",
+     "date": "2026-08-08T21:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 6,
+     "a": {
+      "id": "5239615",
+      "name": "Steven Asplund",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "7-2-0"
+     },
+     "b": {
+      "id": "5282610",
+      "name": "Guilherme Pat",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "6-1-0"
+     },
+     "ratingA": 1555,
+     "ratingB": 1404,
+     "pA": 0.641,
+     "fightsA": 3,
+     "fightsB": 2,
+     "method": {
+      "ko": 0.46,
+      "sub": 0.09,
+      "dec": 0.45
+     }
+    },
+    {
+     "boutId": "401897977",
+     "date": "2026-08-08T21:00Z",
+     "weightClass": "Lightweight",
+     "segment": "Main Card",
+     "matchNumber": 4,
+     "a": {
+      "id": "3026133",
+      "name": "Diego Ferreira",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "19-7-0"
+     },
+     "b": {
+      "id": "3900088",
+      "name": "Billy Quarantillo",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "18-7-0"
+     },
+     "ratingA": 1381,
+     "ratingB": 1343,
+     "pA": 0.536,
+     "fightsA": 17,
+     "fightsB": 12,
+     "method": {
+      "ko": 0.47,
+      "sub": 0.15,
+      "dec": 0.37
+     }
+    },
+    {
+     "boutId": "401897978",
+     "date": "2026-08-08T21:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 4,
+     "a": {
+      "id": "5080572",
+      "name": "Louie Sutherland",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "record": "11-5-0"
+     },
+     "b": {
+      "id": "5351808",
+      "name": "José Montanha",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "6-1-0"
+     },
+     "ratingA": 1400,
+     "ratingB": 1451,
+     "pA": 0.451,
+     "fightsA": 3,
+     "fightsB": 0,
+     "method": {
+      "ko": 0.47,
+      "sub": 0.19,
+      "dec": 0.34
+     }
+    },
+    {
+     "boutId": "401897976",
+     "date": "2026-08-08T21:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 3,
+     "a": {
+      "id": "4691323",
+      "name": "Bruno Lopes",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "14-3-0"
+     },
+     "b": {
+      "id": "5213352",
+      "name": "Diyar Nurgozhay",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/kaz.png",
+      "record": "11-2-0"
+     },
+     "ratingA": 1402,
+     "ratingB": 1479,
+     "pA": 0.427,
+     "fightsA": 5,
+     "fightsB": 4,
+     "method": {
+      "ko": 0.5,
+      "sub": 0.21,
+      "dec": 0.29
+     }
+    },
+    {
      "boutId": "401887661",
      "date": "2026-08-08T18:00Z",
-     "weightClass": null,
+     "weightClass": "W Strawweight",
      "segment": "Prelims",
      "matchNumber": 2,
      "a": {
-      "id": "2431356",
-      "name": "TBA",
-      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
-      "record": null
+      "id": "4233196",
+      "name": "Amanda Lemos",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "15-6-1"
      },
      "b": {
-      "id": "4402367",
-      "name": "Opponent TBA",
-      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
-      "record": null
+      "id": "5075992",
+      "name": "Alexia Thainara",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "14-1-0"
      },
-     "ratingA": 1500,
-     "ratingB": 1500,
-     "pA": 0.5,
-     "fightsA": 0,
-     "fightsB": 0,
+     "ratingA": 1443,
+     "ratingB": 1659,
+     "pA": 0.304,
+     "fightsA": 15,
+     "fightsB": 4,
      "method": {
-      "ko": 0.34,
-      "sub": 0.18,
-      "dec": 0.48
+      "ko": 0.17,
+      "sub": 0.24,
+      "dec": 0.6
      }
     },
     {
@@ -1423,8 +1539,37 @@
   {
    "eventId": "600060620",
    "name": "UFC Fight Night: Nurmagomedov vs. Song",
-   "date": "2026-08-29T10:00Z",
+   "date": "2026-08-29T07:00Z",
    "fights": [
+    {
+     "boutId": "401898005",
+     "date": "2026-08-29T07:00Z",
+     "weightClass": null,
+     "segment": "Prelims",
+     "matchNumber": 7,
+     "a": {
+      "id": "2431356",
+      "name": "TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     },
+     "b": {
+      "id": "4402367",
+      "name": "Opponent TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     },
+     "ratingA": 1500,
+     "ratingB": 1500,
+     "pA": 0.5,
+     "fightsA": 0,
+     "fightsB": 0,
+     "method": {
+      "ko": 0.34,
+      "sub": 0.18,
+      "dec": 0.48
+     }
+    },
     {
      "boutId": "401887538",
      "date": "2026-08-29T10:00Z",
@@ -1643,32 +1788,90 @@
    "date": "2026-09-05T16:00Z",
    "fights": [
     {
+     "boutId": "401898007",
+     "date": "2026-09-05T19:00Z",
+     "weightClass": "Featherweight",
+     "segment": "Main Card",
+     "matchNumber": 4,
+     "a": {
+      "id": "5048900",
+      "name": "Trevor Peek",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "9-3-0"
+     },
+     "b": {
+      "id": "5310075",
+      "name": "Kurtis Campbell",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "record": "8-1-0"
+     },
+     "ratingA": 1397,
+     "ratingB": 1549,
+     "pA": 0.359,
+     "fightsA": 6,
+     "fightsB": 2,
+     "method": {
+      "ko": 0.44,
+      "sub": 0.09,
+      "dec": 0.47
+     }
+    },
+    {
+     "boutId": "401898006",
+     "date": "2026-09-05T19:00Z",
+     "weightClass": "Middleweight",
+     "segment": "Main Card",
+     "matchNumber": 3,
+     "a": {
+      "id": "3022067",
+      "name": "Michael Page",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": "25-3-0"
+     },
+     "b": {
+      "id": "4422103",
+      "name": "Nursulton Ruziboev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+      "record": "37-9-2"
+     },
+     "ratingA": 1603,
+     "ratingB": 1655,
+     "pA": 0.45,
+     "fightsA": 5,
+     "fightsB": 6,
+     "method": {
+      "ko": 0.31,
+      "sub": 0.14,
+      "dec": 0.55
+     }
+    },
+    {
      "boutId": "401875227",
      "date": "2026-09-05T16:00Z",
-     "weightClass": null,
+     "weightClass": "Heavyweight",
      "segment": "Prelims",
      "matchNumber": 2,
      "a": {
-      "id": "2431356",
-      "name": "TBA",
-      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
-      "record": null
+      "id": "3887606",
+      "name": "Ryan Spann",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "24-11-0"
      },
      "b": {
-      "id": "4402367",
-      "name": "Opponent TBA",
-      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
-      "record": null
+      "id": "5218817",
+      "name": "Mario Pinto",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+      "record": "12-0-0"
      },
-     "ratingA": 1500,
-     "ratingB": 1500,
-     "pA": 0.5,
-     "fightsA": 0,
-     "fightsB": 0,
+     "ratingA": 1512,
+     "ratingB": 1726,
+     "pA": 0.306,
+     "fightsA": 18,
+     "fightsB": 4,
      "method": {
-      "ko": 0.34,
-      "sub": 0.18,
-      "dec": 0.48
+      "ko": 0.54,
+      "sub": 0.21,
+      "dec": 0.25
      }
     },
     {

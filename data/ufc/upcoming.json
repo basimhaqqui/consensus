@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-19T23:14:28.373Z",
+ "fetchedAt": "2026-07-20T04:07:43.198Z",
  "cards": [
   {
    "eventId": "600059667",
@@ -50,8 +50,8 @@
      "boutId": "401874317",
      "date": "2026-07-25T13:00Z",
      "weightClass": "Lightweight",
-     "segment": "Main Card",
-     "matchNumber": 6,
+     "segment": "Prelims",
+     "matchNumber": 10,
      "a": {
       "id": "3093513",
       "name": "Ismael Bonfim",
@@ -124,10 +124,10 @@
     },
     {
      "boutId": "401890156",
-     "date": "2026-07-25T13:00Z",
+     "date": "2026-07-25T16:00Z",
      "weightClass": "Welterweight",
-     "segment": "Prelims",
-     "matchNumber": 7,
+     "segment": "Main Card",
+     "matchNumber": 6,
      "a": {
       "id": "3960340",
       "name": "Abubakar Vagaev",
@@ -265,25 +265,6 @@
      }
     },
     {
-     "boutId": "401892191",
-     "date": "2026-08-01T17:00Z",
-     "weightClass": "Light Heavyweight",
-     "segment": "Main Card",
-     "matchNumber": 2,
-     "a": {
-      "id": "2506250",
-      "name": "Jan Blachowicz",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pol.png",
-      "record": "29-11-2"
-     },
-     "b": {
-      "id": "5216713",
-      "name": "Navajo Stirling",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
-      "record": "10-0-0"
-     }
-    },
-    {
      "boutId": "401870844",
      "date": "2026-08-01T14:00Z",
      "weightClass": "Heavyweight",
@@ -399,7 +380,7 @@
     },
     {
      "boutId": "401874462",
-     "date": "2026-08-01T14:00Z",
+     "date": "2026-08-01T17:00Z",
      "weightClass": "Middleweight",
      "segment": "Main Card",
      "matchNumber": 5,
@@ -455,6 +436,25 @@
      }
     },
     {
+     "boutId": "401892191",
+     "date": "2026-08-01T17:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 2,
+     "a": {
+      "id": "2506250",
+      "name": "Jan Blachowicz",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/pol.png",
+      "record": "29-11-2"
+     },
+     "b": {
+      "id": "5216713",
+      "name": "Navajo Stirling",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+      "record": "10-0-0"
+     }
+    },
+    {
      "boutId": "401870843",
      "date": "2026-08-01T17:00Z",
      "weightClass": "Welterweight",
@@ -483,22 +483,98 @@
    "venue": "Meta APEX",
    "fights": [
     {
+     "boutId": "401897979",
+     "date": "2026-08-08T21:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 6,
+     "a": {
+      "id": "5239615",
+      "name": "Steven Asplund",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "7-2-0"
+     },
+     "b": {
+      "id": "5282610",
+      "name": "Guilherme Pat",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "6-1-0"
+     }
+    },
+    {
+     "boutId": "401897977",
+     "date": "2026-08-08T21:00Z",
+     "weightClass": "Lightweight",
+     "segment": "Main Card",
+     "matchNumber": 4,
+     "a": {
+      "id": "3026133",
+      "name": "Diego Ferreira",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "19-7-0"
+     },
+     "b": {
+      "id": "3900088",
+      "name": "Billy Quarantillo",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "18-7-0"
+     }
+    },
+    {
+     "boutId": "401897978",
+     "date": "2026-08-08T21:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 4,
+     "a": {
+      "id": "5080572",
+      "name": "Louie Sutherland",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "record": "11-5-0"
+     },
+     "b": {
+      "id": "5351808",
+      "name": "José Montanha",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "6-1-0"
+     }
+    },
+    {
+     "boutId": "401897976",
+     "date": "2026-08-08T21:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 3,
+     "a": {
+      "id": "4691323",
+      "name": "Bruno Lopes",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "14-3-0"
+     },
+     "b": {
+      "id": "5213352",
+      "name": "Diyar Nurgozhay",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/kaz.png",
+      "record": "11-2-0"
+     }
+    },
+    {
      "boutId": "401887661",
      "date": "2026-08-08T18:00Z",
-     "weightClass": null,
+     "weightClass": "W Strawweight",
      "segment": "Prelims",
      "matchNumber": 2,
      "a": {
-      "id": "2431356",
-      "name": "TBA",
-      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
-      "record": null
+      "id": "4233196",
+      "name": "Amanda Lemos",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "15-6-1"
      },
      "b": {
-      "id": "4402367",
-      "name": "Opponent TBA",
-      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
-      "record": null
+      "id": "5075992",
+      "name": "Alexia Thainara",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "14-1-0"
      }
     },
     {
@@ -970,9 +1046,28 @@
    "eventId": "600060620",
    "name": "UFC Fight Night: Nurmagomedov vs. Song",
    "shortName": "UFC Fight Night",
-   "date": "2026-08-29T10:00Z",
+   "date": "2026-08-29T07:00Z",
    "venue": "Shanghai Oriental Sports Center",
    "fights": [
+    {
+     "boutId": "401898005",
+     "date": "2026-08-29T07:00Z",
+     "weightClass": null,
+     "segment": "Prelims",
+     "matchNumber": 7,
+     "a": {
+      "id": "2431356",
+      "name": "TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     },
+     "b": {
+      "id": "4402367",
+      "name": "Opponent TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     }
+    },
     {
      "boutId": "401887538",
      "date": "2026-08-29T10:00Z",
@@ -1125,22 +1220,60 @@
    "venue": "Accor Arena",
    "fights": [
     {
+     "boutId": "401898007",
+     "date": "2026-09-05T19:00Z",
+     "weightClass": "Featherweight",
+     "segment": "Main Card",
+     "matchNumber": 4,
+     "a": {
+      "id": "5048900",
+      "name": "Trevor Peek",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "9-3-0"
+     },
+     "b": {
+      "id": "5310075",
+      "name": "Kurtis Campbell",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "record": "8-1-0"
+     }
+    },
+    {
+     "boutId": "401898006",
+     "date": "2026-09-05T19:00Z",
+     "weightClass": "Middleweight",
+     "segment": "Main Card",
+     "matchNumber": 3,
+     "a": {
+      "id": "3022067",
+      "name": "Michael Page",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": "25-3-0"
+     },
+     "b": {
+      "id": "4422103",
+      "name": "Nursulton Ruziboev",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+      "record": "37-9-2"
+     }
+    },
+    {
      "boutId": "401875227",
      "date": "2026-09-05T16:00Z",
-     "weightClass": null,
+     "weightClass": "Heavyweight",
      "segment": "Prelims",
      "matchNumber": 2,
      "a": {
-      "id": "2431356",
-      "name": "TBA",
-      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
-      "record": null
+      "id": "3887606",
+      "name": "Ryan Spann",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "24-11-0"
      },
      "b": {
-      "id": "4402367",
-      "name": "Opponent TBA",
-      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
-      "record": null
+      "id": "5218817",
+      "name": "Mario Pinto",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+      "record": "12-0-0"
      }
     },
     {
