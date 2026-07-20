@@ -1,78 +1,78 @@
 {
- "fetchedAt": "2026-07-20T04:07:45.542Z",
+ "fetchedAt": "2026-07-20T07:33:04.860Z",
  "byBout": {
   "401874311": {
-   "pA": 0.698,
+   "pA": 0.702,
    "books": 8,
    "commence": "2026-07-25T09:00:00Z",
-   "priceA": 1.37,
-   "priceB": 3.17,
+   "priceA": 1.36,
+   "priceB": 3.21,
    "totals": [
     {
      "point": 2.5,
-     "over": 1.72,
-     "under": 2.13,
-     "books": 3
+     "over": 1.82,
+     "under": 1.98,
+     "books": 4
     }
    ]
   },
   "401874312": {
-   "pA": 0.366,
+   "pA": 0.364,
    "books": 8,
    "commence": "2026-07-25T09:00:00Z",
-   "priceA": 2.61,
-   "priceB": 1.51,
+   "priceA": 2.63,
+   "priceB": 1.5,
    "totals": [
     {
      "point": 1.5,
-     "over": 1.48,
-     "under": 2.68,
-     "books": 3
+     "over": 1.55,
+     "under": 2.47,
+     "books": 4
     }
    ]
   },
   "401874314": {
-   "pA": 0.164,
+   "pA": 0.157,
    "books": 8,
    "commence": "2026-07-25T13:45:00Z",
-   "priceA": 5.85,
-   "priceB": 1.14,
+   "priceA": 6.1,
+   "priceB": 1.13,
    "totals": [
     {
      "point": 1.5,
-     "over": 2.76,
-     "under": 1.46,
-     "books": 3
+     "over": 2.51,
+     "under": 1.54,
+     "books": 4
     }
    ]
   },
   "401874315": {
    "pA": 0.484,
-   "books": 7,
+   "books": 6,
    "commence": "2026-07-25T09:00:00Z",
    "priceA": 1.97,
    "priceB": 1.85,
    "totals": [
     {
      "point": 2.5,
-     "over": 1.57,
-     "under": 2.44,
-     "books": 3
+     "over": 1.62,
+     "under": 2.31,
+     "books": 4
     }
    ]
   },
   "401874316": {
-   "pA": 0.242,
+   "pA": 0.235,
    "books": 8,
    "commence": "2026-07-25T09:00:00Z",
-   "priceA": 5.5,
-   "priceB": 1.74,
+   "priceA": 5.88,
+   "priceB": 1.8,
    "totals": [
     {
      "point": 1.5,
-     "over": 2.68,
-     "under": 1.48,
-     "books": 3
+     "over": 2.51,
+     "under": 1.54,
+     "books": 4
     }
    ]
   },
@@ -85,9 +85,9 @@
    "totals": [
     {
      "point": 2.5,
-     "over": 2.22,
-     "under": 1.68,
-     "books": 3
+     "over": 2.08,
+     "under": 1.76,
+     "books": 4
     }
    ]
   },
@@ -108,9 +108,9 @@
    "totals": [
     {
      "point": 1.5,
-     "over": 1.41,
-     "under": 2.96,
-     "books": 3
+     "over": 1.44,
+     "under": 2.8,
+     "books": 4
     }
    ]
   },
@@ -123,9 +123,9 @@
    "totals": [
     {
      "point": 2.5,
-     "over": 1.5,
-     "under": 2.64,
-     "books": 3
+     "over": 1.82,
+     "under": 2.13,
+     "books": 4
     }
    ]
   },
@@ -146,9 +146,9 @@
    "totals": [
     {
      "point": 1.5,
-     "over": 2.36,
-     "under": 1.6,
-     "books": 3
+     "over": 2.22,
+     "under": 1.67,
+     "books": 4
     }
    ]
   },
@@ -161,9 +161,9 @@
    "totals": [
     {
      "point": 2.5,
-     "over": 2.5,
-     "under": 1.57,
-     "books": 2
+     "over": 2.32,
+     "under": 1.63,
+     "books": 3
     }
    ]
   }
