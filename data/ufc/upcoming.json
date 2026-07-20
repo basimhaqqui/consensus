@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-20T21:34:49.651Z",
+ "fetchedAt": "2026-07-20T23:17:22.242Z",
  "cards": [
   {
    "eventId": "600059667",
@@ -50,8 +50,8 @@
      "boutId": "401874317",
      "date": "2026-07-25T13:00Z",
      "weightClass": "Lightweight",
-     "segment": "Prelims",
-     "matchNumber": 10,
+     "segment": "Main Card",
+     "matchNumber": 7,
      "a": {
       "id": "3093513",
       "name": "Ismael Bonfim",
@@ -70,7 +70,7 @@
      "date": "2026-07-25T13:00Z",
      "weightClass": "Welterweight",
      "segment": "Prelims",
-     "matchNumber": 9,
+     "matchNumber": 10,
      "a": {
       "id": "3043484",
       "name": "Santiago Ponzinibbio",
@@ -85,30 +85,11 @@
      }
     },
     {
-     "boutId": "401873257",
-     "date": "2026-07-25T13:00Z",
-     "weightClass": "Light Heavyweight",
-     "segment": null,
-     "matchNumber": null,
-     "a": {
-      "id": "2594871",
-      "name": "Dustin Jacoby",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-      "record": "22-9-1"
-     },
-     "b": {
-      "id": "5206516",
-      "name": "Uran Satybaldiev",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/kgz.png",
-      "record": "9-1-0"
-     }
-    },
-    {
      "boutId": "401874312",
      "date": "2026-07-25T13:00Z",
      "weightClass": "Heavyweight",
      "segment": "Prelims",
-     "matchNumber": 7,
+     "matchNumber": 8,
      "a": {
       "id": "4869702",
       "name": "Thomas Petersen",
