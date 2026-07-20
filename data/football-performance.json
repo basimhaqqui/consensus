@@ -3,9 +3,9 @@
     "slug": "fifa.world",
     "name": "FIFA World Cup",
     "season": 2026,
-    "updatedAt": "2026-07-18T09:46:20.573Z",
-    "matchesPlayed": 94,
-    "playersTracked": 1025,
+    "updatedAt": "2026-07-20T11:14:42.565Z",
+    "matchesPlayed": 95,
+    "playersTracked": 1029,
     "source": "API-Football"
   },
   "players": [
@@ -100,8 +100,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 120,
-      "overallRank": 329
+      "roleRank": 122,
+      "overallRank": 338
     },
     {
       "key": "2873:16",
@@ -147,8 +147,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 97,
-      "overallRank": 183
+      "roleRank": 101,
+      "overallRank": 193
     },
     {
       "key": "2879:16",
@@ -195,7 +195,7 @@
       "penaltiesSaved": 0,
       "impact": 83,
       "roleRank": 18,
-      "overallRank": 76
+      "overallRank": 78
     },
     {
       "key": "2881:16",
@@ -241,8 +241,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 154,
-      "overallRank": 383
+      "roleRank": 155,
+      "overallRank": 388
     },
     {
       "key": "2887:16",
@@ -287,9 +287,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 79,
-      "roleRank": 20,
-      "overallRank": 157
+      "impact": 80,
+      "roleRank": 21,
+      "overallRank": 134
     },
     {
       "key": "2889:16",
@@ -382,8 +382,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 88,
-      "roleRank": 7,
-      "overallRank": 21
+      "roleRank": 9,
+      "overallRank": 23
     },
     {
       "key": "35544:16",
@@ -429,8 +429,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 79,
-      "overallRank": 149
+      "roleRank": 81,
+      "overallRank": 162
     },
     {
       "key": "35690:16",
@@ -570,8 +570,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 75,
-      "overallRank": 146
+      "roleRank": 77,
+      "overallRank": 159
     },
     {
       "key": "212233:16",
@@ -617,8 +617,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 108,
-      "overallRank": 321
+      "roleRank": 110,
+      "overallRank": 327
     },
     {
       "key": "266345:16",
@@ -665,7 +665,7 @@
       "penaltiesSaved": 0,
       "impact": 77,
       "roleRank": 65,
-      "overallRank": 222
+      "overallRank": 234
     },
     {
       "key": "270774:16",
@@ -711,8 +711,8 @@
       "cleanSheets": 4,
       "penaltiesSaved": 0,
       "impact": 89,
-      "roleRank": 4,
-      "overallRank": 16
+      "roleRank": 3,
+      "overallRank": 19
     },
     {
       "key": "291713:16",
@@ -805,8 +805,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 125,
-      "overallRank": 389
+      "roleRank": 127,
+      "overallRank": 394
     },
     {
       "key": "2098:16",
@@ -899,8 +899,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 83,
-      "overallRank": 197
+      "roleRank": 86,
+      "overallRank": 206
     },
     {
       "key": "3275:1531",
@@ -947,7 +947,7 @@
       "penaltiesSaved": 0,
       "impact": 83,
       "roleRank": 21,
-      "overallRank": 91
+      "overallRank": 94
     },
     {
       "key": "3287:1531",
@@ -993,8 +993,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 45,
-      "overallRank": 168
+      "roleRank": 46,
+      "overallRank": 176
     },
     {
       "key": "35576:16",
@@ -1087,8 +1087,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 39,
-      "overallRank": 164
+      "roleRank": 42,
+      "overallRank": 173
     },
     {
       "key": "36088:16",
@@ -1228,8 +1228,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 83,
-      "roleRank": 38,
-      "overallRank": 84
+      "roleRank": 37,
+      "overallRank": 87
     },
     {
       "key": "46458:1531",
@@ -1322,8 +1322,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 83,
-      "roleRank": 28,
-      "overallRank": 81
+      "roleRank": 27,
+      "overallRank": 84
     },
     {
       "key": "94562:16",
@@ -1510,8 +1510,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 156,
-      "overallRank": 438
+      "roleRank": 158,
+      "overallRank": 445
     },
     {
       "key": "268710:1531",
@@ -1698,8 +1698,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 110,
-      "overallRank": 240
+      "roleRank": 113,
+      "overallRank": 251
     },
     {
       "key": "510799:1531",
@@ -1745,8 +1745,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 70,
-      "overallRank": 142
+      "roleRank": 71,
+      "overallRank": 155
     },
     {
       "key": "3289:1531",
@@ -1839,8 +1839,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 76,
-      "roleRank": 119,
-      "overallRank": 270
+      "roleRank": 123,
+      "overallRank": 280
     },
     {
       "key": "19549:2384",
@@ -1886,8 +1886,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 85,
-      "roleRank": 15,
-      "overallRank": 51
+      "roleRank": 16,
+      "overallRank": 54
     },
     {
       "key": "50728:2384",
@@ -1933,8 +1933,8 @@
       "cleanSheets": 2,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 25,
-      "overallRank": 209
+      "roleRank": 26,
+      "overallRank": 219
     },
     {
       "key": "126949:2384",
@@ -1981,7 +1981,7 @@
       "penaltiesSaved": 0,
       "impact": 83,
       "roleRank": 41,
-      "overallRank": 86
+      "overallRank": 89
     },
     {
       "key": "179893:1531",
@@ -2028,7 +2028,7 @@
       "penaltiesSaved": 0,
       "impact": 70,
       "roleRank": 73,
-      "overallRank": 456
+      "overallRank": 462
     },
     {
       "key": "194430:1531",
@@ -2074,8 +2074,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 184,
-      "overallRank": 473
+      "roleRank": 186,
+      "overallRank": 479
     },
     {
       "key": "201354:1531",
@@ -2122,7 +2122,7 @@
       "penaltiesSaved": 0,
       "impact": 70,
       "roleRank": 75,
-      "overallRank": 457
+      "overallRank": 463
     },
     {
       "key": "295977:1531",
@@ -2214,9 +2214,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 75,
+      "impact": 76,
       "roleRank": 43,
-      "overallRank": 279
+      "overallRank": 266
     },
     {
       "key": "355994:2384",
@@ -2263,7 +2263,7 @@
       "penaltiesSaved": 0,
       "impact": 92,
       "roleRank": 1,
-      "overallRank": 5
+      "overallRank": 7
     },
     {
       "key": "359561:1531",
@@ -2403,8 +2403,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 43,
-      "overallRank": 167
+      "roleRank": 44,
+      "overallRank": 175
     },
     {
       "key": "415:2384",
@@ -2451,7 +2451,7 @@
       "penaltiesSaved": 0,
       "impact": 75,
       "roleRank": 94,
-      "overallRank": 288
+      "overallRank": 296
     },
     {
       "key": "1138:2384",
@@ -2544,8 +2544,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 110,
-      "overallRank": 322
+      "roleRank": 112,
+      "overallRank": 330
     },
     {
       "key": "35885:2384",
@@ -2638,8 +2638,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 136,
-      "overallRank": 390
+      "roleRank": 138,
+      "overallRank": 395
     },
     {
       "key": "50735:2384",
@@ -2968,7 +2968,7 @@
       "penaltiesSaved": 0,
       "impact": 68,
       "roleRank": 81,
-      "overallRank": 490
+      "overallRank": 497
     },
     {
       "key": "138835:2384",
@@ -3013,9 +3013,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 77,
-      "roleRank": 27,
-      "overallRank": 218
+      "impact": 78,
+      "roleRank": 28,
+      "overallRank": 197
     },
     {
       "key": "161921:2384",
@@ -3109,7 +3109,7 @@
       "penaltiesSaved": 0,
       "impact": 82,
       "roleRank": 20,
-      "overallRank": 94
+      "overallRank": 101
     },
     {
       "key": "201713:2384",
@@ -3156,7 +3156,7 @@
       "penaltiesSaved": 0,
       "impact": 85,
       "roleRank": 11,
-      "overallRank": 49
+      "overallRank": 52
     },
     {
       "key": "362400:2384",
@@ -3296,8 +3296,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 157,
-      "overallRank": 403
+      "roleRank": 159,
+      "overallRank": 411
     },
     {
       "key": "2500:2380",
@@ -3390,8 +3390,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 160,
-      "overallRank": 386
+      "roleRank": 162,
+      "overallRank": 392
     },
     {
       "key": "2507:2380",
@@ -3437,8 +3437,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 161,
-      "overallRank": 440
+      "roleRank": 163,
+      "overallRank": 447
     },
     {
       "key": "2514:2380",
@@ -3578,8 +3578,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 167,
-      "overallRank": 411
+      "roleRank": 170,
+      "overallRank": 419
     },
     {
       "key": "6236:2380",
@@ -3625,8 +3625,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 105,
-      "overallRank": 318
+      "roleRank": 108,
+      "overallRank": 324
     },
     {
       "key": "35808:2380",
@@ -3672,8 +3672,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 166,
-      "overallRank": 410
+      "roleRank": 169,
+      "overallRank": 418
     },
     {
       "key": "70747:2380",
@@ -3718,9 +3718,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 76,
-      "roleRank": 31,
-      "overallRank": 251
+      "impact": 77,
+      "roleRank": 32,
+      "overallRank": 225
     },
     {
       "key": "70852:2380",
@@ -3766,8 +3766,8 @@
       "cleanSheets": 2,
       "penaltiesSaved": 0,
       "impact": 90,
-      "roleRank": 6,
-      "overallRank": 12
+      "roleRank": 5,
+      "overallRank": 14
     },
     {
       "key": "95460:2380",
@@ -3907,8 +3907,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 179,
-      "overallRank": 468
+      "roleRank": 181,
+      "overallRank": 474
     },
     {
       "key": "195992:2380",
@@ -3955,7 +3955,7 @@
       "penaltiesSaved": 0,
       "impact": 84,
       "roleRank": 21,
-      "overallRank": 65
+      "overallRank": 66
     },
     {
       "key": "196298:2380",
@@ -4048,8 +4048,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 157,
-      "overallRank": 439
+      "roleRank": 159,
+      "overallRank": 446
     },
     {
       "key": "257:6",
@@ -4095,8 +4095,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 83,
-      "roleRank": 47,
-      "overallRank": 89
+      "roleRank": 48,
+      "overallRank": 92
     },
     {
       "key": "280:6",
@@ -4142,8 +4142,8 @@
       "cleanSheets": 2,
       "penaltiesSaved": 0,
       "impact": 85,
-      "roleRank": 15,
-      "overallRank": 61
+      "roleRank": 14,
+      "overallRank": 62
     },
     {
       "key": "299:6",
@@ -4236,8 +4236,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 76,
-      "roleRank": 118,
-      "overallRank": 269
+      "roleRank": 122,
+      "overallRank": 279
     },
     {
       "key": "747:6",
@@ -4283,8 +4283,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 81,
-      "roleRank": 37,
-      "overallRank": 111
+      "roleRank": 40,
+      "overallRank": 121
     },
     {
       "key": "762:6",
@@ -4331,7 +4331,7 @@
       "penaltiesSaved": 0,
       "impact": 90,
       "roleRank": 3,
-      "overallRank": 10
+      "overallRank": 11
     },
     {
       "key": "1496:6",
@@ -4425,7 +4425,7 @@
       "penaltiesSaved": 0,
       "impact": 84,
       "roleRank": 15,
-      "overallRank": 62
+      "overallRank": 63
     },
     {
       "key": "6483:2380",
@@ -4519,7 +4519,7 @@
       "penaltiesSaved": 0,
       "impact": 83,
       "roleRank": 16,
-      "overallRank": 74
+      "overallRank": 76
     },
     {
       "key": "22224:6",
@@ -4565,8 +4565,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 86,
-      "roleRank": 26,
-      "overallRank": 43
+      "roleRank": 25,
+      "overallRank": 44
     },
     {
       "key": "24866:6",
@@ -4612,8 +4612,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 84,
-      "roleRank": 27,
-      "overallRank": 67
+      "roleRank": 26,
+      "overallRank": 68
     },
     {
       "key": "30424:6",
@@ -4941,8 +4941,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 42,
-      "overallRank": 166
+      "roleRank": 43,
+      "overallRank": 174
     },
     {
       "key": "425020:2380",
@@ -5036,7 +5036,7 @@
       "penaltiesSaved": 0,
       "impact": 85,
       "roleRank": 23,
-      "overallRank": 54
+      "overallRank": 57
     },
     {
       "key": "545:31",
@@ -5082,8 +5082,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 83,
-      "roleRank": 37,
-      "overallRank": 83
+      "roleRank": 36,
+      "overallRank": 86
     },
     {
       "key": "744:31",
@@ -5129,8 +5129,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 32,
-      "overallRank": 161
+      "roleRank": 33,
+      "overallRank": 169
     },
     {
       "key": "860:6",
@@ -5222,9 +5222,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 80,
-      "roleRank": 15,
-      "overallRank": 124
+      "impact": 81,
+      "roleRank": 17,
+      "overallRank": 118
     },
     {
       "key": "2701:31",
@@ -5271,7 +5271,7 @@
       "penaltiesSaved": 1,
       "impact": 82,
       "roleRank": 19,
-      "overallRank": 105
+      "overallRank": 113
     },
     {
       "key": "10097:6",
@@ -5364,8 +5364,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 99,
-      "overallRank": 205
+      "roleRank": 103,
+      "overallRank": 215
     },
     {
       "key": "127769:6",
@@ -5552,8 +5552,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 119,
-      "overallRank": 328
+      "roleRank": 121,
+      "overallRank": 337
     },
     {
       "key": "278898:31",
@@ -5599,8 +5599,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 76,
-      "roleRank": 120,
-      "overallRank": 271
+      "roleRank": 124,
+      "overallRank": 281
     },
     {
       "key": "377122:6",
@@ -5692,9 +5692,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 76,
-      "roleRank": 35,
-      "overallRank": 254
+      "impact": 77,
+      "roleRank": 36,
+      "overallRank": 229
     },
     {
       "key": "438688:31",
@@ -5740,8 +5740,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 164,
-      "overallRank": 432
+      "roleRank": 166,
+      "overallRank": 437
     },
     {
       "key": "74:31",
@@ -6023,7 +6023,7 @@
       "penaltiesSaved": 0,
       "impact": 75,
       "roleRank": 34,
-      "overallRank": 306
+      "overallRank": 311
     },
     {
       "key": "129678:31",
@@ -6069,8 +6069,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 46,
-      "overallRank": 169
+      "roleRank": 47,
+      "overallRank": 177
     },
     {
       "key": "161897:31",
@@ -6115,9 +6115,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 76,
-      "roleRank": 29,
-      "overallRank": 250
+      "impact": 77,
+      "roleRank": 30,
+      "overallRank": 224
     },
     {
       "key": "162451:31",
@@ -6163,8 +6163,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 115,
-      "overallRank": 293
+      "roleRank": 119,
+      "overallRank": 301
     },
     {
       "key": "191289:31",
@@ -6304,8 +6304,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 134,
-      "overallRank": 299
+      "roleRank": 138,
+      "overallRank": 306
     },
     {
       "key": "336659:31",
@@ -6351,8 +6351,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 64,
-      "overallRank": 427
+      "roleRank": 65,
+      "overallRank": 432
     },
     {
       "key": "340573:31",
@@ -6398,8 +6398,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 111,
-      "overallRank": 323
+      "roleRank": 113,
+      "overallRank": 331
     },
     {
       "key": "369544:31",
@@ -6586,8 +6586,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 126,
-      "overallRank": 333
+      "roleRank": 129,
+      "overallRank": 342
     },
     {
       "key": "8601:2386",
@@ -6680,8 +6680,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 104,
-      "overallRank": 237
+      "roleRank": 107,
+      "overallRank": 248
     },
     {
       "key": "20655:2386",
@@ -6774,8 +6774,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 143,
-      "overallRank": 394
+      "roleRank": 145,
+      "overallRank": 400
     },
     {
       "key": "21613:2386",
@@ -6914,9 +6914,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 73,
-      "roleRank": 49,
-      "overallRank": 350
+      "impact": 74,
+      "roleRank": 48,
+      "overallRank": 318
     },
     {
       "key": "128766:2386",
@@ -7009,8 +7009,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 138,
-      "overallRank": 391
+      "roleRank": 140,
+      "overallRank": 397
     },
     {
       "key": "174915:2386",
@@ -7056,8 +7056,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 65,
-      "roleRank": 90,
-      "overallRank": 521
+      "roleRank": 91,
+      "overallRank": 528
     },
     {
       "key": "190747:2386",
@@ -7103,8 +7103,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 106,
-      "overallRank": 292
+      "roleRank": 109,
+      "overallRank": 300
     },
     {
       "key": "338367:2386",
@@ -7150,8 +7150,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 114,
-      "overallRank": 325
+      "roleRank": 116,
+      "overallRank": 333
     },
     {
       "key": "289:1108",
@@ -7197,8 +7197,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 164,
-      "overallRank": 408
+      "roleRank": 167,
+      "overallRank": 416
     },
     {
       "key": "903:1108",
@@ -7244,8 +7244,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 68,
-      "roleRank": 189,
-      "overallRank": 484
+      "roleRank": 191,
+      "overallRank": 492
     },
     {
       "key": "1111:1108",
@@ -7291,8 +7291,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 117,
-      "overallRank": 245
+      "roleRank": 121,
+      "overallRank": 255
     },
     {
       "key": "1125:1108",
@@ -7385,8 +7385,8 @@
       "cleanSheets": 1,
       "penaltiesSaved": 0,
       "impact": 86,
-      "roleRank": 14,
-      "overallRank": 46
+      "roleRank": 13,
+      "overallRank": 48
     },
     {
       "key": "19066:1108",
@@ -7433,7 +7433,7 @@
       "penaltiesSaved": 0,
       "impact": 82,
       "roleRank": 57,
-      "overallRank": 103
+      "overallRank": 110
     },
     {
       "key": "19077:1108",
@@ -7526,8 +7526,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 128,
-      "overallRank": 366
+      "roleRank": 130,
+      "overallRank": 373
     },
     {
       "key": "19524:1108",
@@ -7620,8 +7620,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 82,
-      "roleRank": 36,
-      "overallRank": 96
+      "roleRank": 39,
+      "overallRank": 104
     },
     {
       "key": "44871:1108",
@@ -7902,8 +7902,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 148,
-      "overallRank": 378
+      "roleRank": 151,
+      "overallRank": 385
     },
     {
       "key": "194242:2386",
@@ -7996,8 +7996,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 168,
-      "overallRank": 443
+      "roleRank": 170,
+      "overallRank": 450
     },
     {
       "key": "433272:1108",
@@ -8184,8 +8184,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 90,
-      "overallRank": 201
+      "roleRank": 92,
+      "overallRank": 210
     },
     {
       "key": "2532:1569",
@@ -8231,8 +8231,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 76,
-      "roleRank": 103,
-      "overallRank": 267
+      "roleRank": 106,
+      "overallRank": 275
     },
     {
       "key": "2535:1569",
@@ -8325,8 +8325,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 60,
-      "overallRank": 419
+      "roleRank": 61,
+      "overallRank": 426
     },
     {
       "key": "42207:1569",
@@ -8373,7 +8373,7 @@
       "penaltiesSaved": 0,
       "impact": 70,
       "roleRank": 40,
-      "overallRank": 458
+      "overallRank": 465
     },
     {
       "key": "44811:1108",
@@ -8607,8 +8607,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 167,
-      "overallRank": 434
+      "roleRank": 169,
+      "overallRank": 439
     },
     {
       "key": "377930:1569",
@@ -8748,8 +8748,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 76,
-      "overallRank": 147
+      "roleRank": 78,
+      "overallRank": 160
     },
     {
       "key": "2533:1569",
@@ -9030,8 +9030,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 65,
-      "overallRank": 381
+      "roleRank": 66,
+      "overallRank": 386
     },
     {
       "key": "2545:1569",
@@ -9124,8 +9124,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 77,
-      "overallRank": 148
+      "roleRank": 79,
+      "overallRank": 161
     },
     {
       "key": "2810:15",
@@ -9172,7 +9172,7 @@
       "penaltiesSaved": 0,
       "impact": 80,
       "roleRank": 64,
-      "overallRank": 138
+      "overallRank": 150
     },
     {
       "key": "25282:15",
@@ -9218,8 +9218,8 @@
       "cleanSheets": 1,
       "penaltiesSaved": 0,
       "impact": 86,
-      "roleRank": 17,
-      "overallRank": 47
+      "roleRank": 16,
+      "overallRank": 49
     },
     {
       "key": "42060:1569",
@@ -9452,9 +9452,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 75,
-      "roleRank": 36,
-      "overallRank": 276
+      "impact": 76,
+      "roleRank": 37,
+      "overallRank": 260
     },
     {
       "key": "951:15",
@@ -9594,8 +9594,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 175,
-      "overallRank": 450
+      "roleRank": 177,
+      "overallRank": 456
     },
     {
       "key": "1464:15",
@@ -9641,8 +9641,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 63,
-      "overallRank": 176
+      "roleRank": 62,
+      "overallRank": 184
     },
     {
       "key": "1631:15",
@@ -9688,8 +9688,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 74,
-      "overallRank": 145
+      "roleRank": 76,
+      "overallRank": 158
     },
     {
       "key": "2807:15",
@@ -9735,8 +9735,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 150,
-      "overallRank": 398
+      "roleRank": 152,
+      "overallRank": 406
     },
     {
       "key": "48372:15",
@@ -9875,9 +9875,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 81,
-      "roleRank": 6,
-      "overallRank": 106
+      "impact": 83,
+      "roleRank": 8,
+      "overallRank": 75
     },
     {
       "key": "48489:15",
@@ -9969,9 +9969,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 76,
-      "roleRank": 37,
-      "overallRank": 255
+      "impact": 77,
+      "roleRank": 38,
+      "overallRank": 230
     },
     {
       "key": "123469:15",
@@ -10064,8 +10064,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 172,
-      "overallRank": 446
+      "roleRank": 174,
+      "overallRank": 453
     },
     {
       "key": "264705:15",
@@ -10206,7 +10206,7 @@
       "penaltiesSaved": 0,
       "impact": 93,
       "roleRank": 1,
-      "overallRank": 3
+      "overallRank": 5
     },
     {
       "key": "497:25",
@@ -10253,7 +10253,7 @@
       "penaltiesSaved": 0,
       "impact": 74,
       "roleRank": 37,
-      "overallRank": 347
+      "overallRank": 358
     },
     {
       "key": "502:25",
@@ -10299,8 +10299,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 87,
-      "roleRank": 13,
-      "overallRank": 32
+      "roleRank": 12,
+      "overallRank": 33
     },
     {
       "key": "511:25",
@@ -10393,8 +10393,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 26,
-      "overallRank": 125
+      "roleRank": 27,
+      "overallRank": 137
     },
     {
       "key": "644:25",
@@ -10440,8 +10440,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 126,
-      "overallRank": 364
+      "roleRank": 128,
+      "overallRank": 371
     },
     {
       "key": "972:25",
@@ -10487,8 +10487,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 109,
-      "overallRank": 208
+      "roleRank": 112,
+      "overallRank": 218
     },
     {
       "key": "978:25",
@@ -10533,9 +10533,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 79,
-      "roleRank": 22,
-      "overallRank": 158
+      "impact": 80,
+      "roleRank": 23,
+      "overallRank": 135
     },
     {
       "key": "2285:25",
@@ -10581,8 +10581,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 140,
-      "overallRank": 301
+      "roleRank": 143,
+      "overallRank": 307
     },
     {
       "key": "25158:25",
@@ -10910,8 +10910,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 35,
-      "overallRank": 163
+      "roleRank": 38,
+      "overallRank": 172
     },
     {
       "key": "203224:25",
@@ -10957,8 +10957,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 88,
-      "roleRank": 4,
-      "overallRank": 19
+      "roleRank": 5,
+      "overallRank": 22
     },
     {
       "key": "280074:25",
@@ -11004,8 +11004,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 91,
-      "roleRank": 3,
-      "overallRank": 8
+      "roleRank": 2,
+      "overallRank": 9
     },
     {
       "key": "328033:25",
@@ -11051,8 +11051,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 140,
-      "overallRank": 392
+      "roleRank": 142,
+      "overallRank": 398
     },
     {
       "key": "221:5530",
@@ -11098,8 +11098,8 @@
       "cleanSheets": 1,
       "penaltiesSaved": 0,
       "impact": 86,
-      "roleRank": 11,
-      "overallRank": 44
+      "roleRank": 10,
+      "overallRank": 46
     },
     {
       "key": "228:5530",
@@ -11145,8 +11145,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 127,
-      "overallRank": 334
+      "roleRank": 130,
+      "overallRank": 343
     },
     {
       "key": "714:25",
@@ -11239,8 +11239,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 139,
-      "overallRank": 415
+      "roleRank": 141,
+      "overallRank": 422
     },
     {
       "key": "18970:25",
@@ -11334,7 +11334,7 @@
       "penaltiesSaved": 0,
       "impact": 67,
       "roleRank": 85,
-      "overallRank": 508
+      "overallRank": 515
     },
     {
       "key": "18997:5530",
@@ -11380,8 +11380,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 152,
-      "overallRank": 423
+      "roleRank": 154,
+      "overallRank": 428
     },
     {
       "key": "19047:5530",
@@ -11428,7 +11428,7 @@
       "penaltiesSaved": 0,
       "impact": 74,
       "roleRank": 86,
-      "overallRank": 311
+      "overallRank": 312
     },
     {
       "key": "36970:5530",
@@ -11475,7 +11475,7 @@
       "penaltiesSaved": 0,
       "impact": 80,
       "roleRank": 66,
-      "overallRank": 139
+      "overallRank": 151
     },
     {
       "key": "37175:5530",
@@ -11897,8 +11897,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 76,
-      "roleRank": 71,
-      "overallRank": 259
+      "roleRank": 72,
+      "overallRank": 264
     },
     {
       "key": "353808:5530",
@@ -11944,8 +11944,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 169,
-      "overallRank": 467
+      "roleRank": 172,
+      "overallRank": 473
     },
     {
       "key": "706:5530",
@@ -12038,8 +12038,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 142,
-      "overallRank": 302
+      "roleRank": 145,
+      "overallRank": 308
     },
     {
       "key": "30504:1501",
@@ -12414,8 +12414,8 @@
       "cleanSheets": 2,
       "penaltiesSaved": 0,
       "impact": 86,
-      "roleRank": 13,
-      "overallRank": 45
+      "roleRank": 12,
+      "overallRank": 47
     },
     {
       "key": "135068:1501",
@@ -12462,7 +12462,7 @@
       "penaltiesSaved": 0,
       "impact": 80,
       "roleRank": 61,
-      "overallRank": 135
+      "overallRank": 147
     },
     {
       "key": "161747:1501",
@@ -12509,7 +12509,7 @@
       "penaltiesSaved": 0,
       "impact": 80,
       "roleRank": 67,
-      "overallRank": 140
+      "overallRank": 152
     },
     {
       "key": "194645:5530",
@@ -12696,8 +12696,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 86,
-      "roleRank": 9,
-      "overallRank": 36
+      "roleRank": 10,
+      "overallRank": 38
     },
     {
       "key": "1642:1501",
@@ -12743,8 +12743,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 148,
-      "overallRank": 397
+      "roleRank": 150,
+      "overallRank": 403
     },
     {
       "key": "3243:1501",
@@ -12836,9 +12836,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 79,
-      "roleRank": 11,
-      "overallRank": 153
+      "impact": 81,
+      "roleRank": 14,
+      "overallRank": 117
     },
     {
       "key": "20836:1501",
@@ -12932,7 +12932,7 @@
       "penaltiesSaved": 0,
       "impact": 83,
       "roleRank": 24,
-      "overallRank": 78
+      "overallRank": 81
     },
     {
       "key": "30807:1501",
@@ -13025,8 +13025,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 96,
-      "overallRank": 233
+      "roleRank": 99,
+      "overallRank": 245
     },
     {
       "key": "137303:1501",
@@ -13118,9 +13118,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 85,
-      "roleRank": 4,
-      "overallRank": 48
+      "impact": 86,
+      "roleRank": 5,
+      "overallRank": 37
     },
     {
       "key": "162707:1501",
@@ -13212,9 +13212,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 67,
+      "impact": 68,
       "roleRank": 86,
-      "overallRank": 509
+      "overallRank": 499
     },
     {
       "key": "301771:1501",
@@ -13448,8 +13448,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 49,
-      "overallRank": 171
+      "roleRank": 50,
+      "overallRank": 179
     },
     {
       "key": "2575:2382",
@@ -13590,7 +13590,7 @@
       "penaltiesSaved": 0,
       "impact": 80,
       "roleRank": 55,
-      "overallRank": 133
+      "overallRank": 145
     },
     {
       "key": "16367:2382",
@@ -13637,7 +13637,7 @@
       "penaltiesSaved": 0,
       "impact": 80,
       "roleRank": 60,
-      "overallRank": 134
+      "overallRank": 146
     },
     {
       "key": "16369:2382",
@@ -13683,8 +13683,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 51,
-      "overallRank": 352
+      "roleRank": 52,
+      "overallRank": 362
     },
     {
       "key": "16380:2382",
@@ -13731,7 +13731,7 @@
       "penaltiesSaved": 0,
       "impact": 83,
       "roleRank": 22,
-      "overallRank": 92
+      "overallRank": 95
     },
     {
       "key": "25414:2382",
@@ -13778,7 +13778,7 @@
       "penaltiesSaved": 0,
       "impact": 77,
       "roleRank": 74,
-      "overallRank": 229
+      "overallRank": 242
     },
     {
       "key": "35533:2382",
@@ -13823,9 +13823,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 68,
+      "impact": 69,
       "roleRank": 79,
-      "overallRank": 488
+      "overallRank": 486
     },
     {
       "key": "63964:2382",
@@ -13918,8 +13918,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 44,
-      "overallRank": 128
+      "roleRank": 45,
+      "overallRank": 140
     },
     {
       "key": "127817:2382",
@@ -13966,7 +13966,7 @@
       "penaltiesSaved": 0,
       "impact": 80,
       "roleRank": 62,
-      "overallRank": 136
+      "overallRank": 148
     },
     {
       "key": "237078:2382",
@@ -14012,8 +14012,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 83,
-      "roleRank": 22,
-      "overallRank": 77
+      "roleRank": 23,
+      "overallRank": 80
     },
     {
       "key": "280695:2382",
@@ -14152,9 +14152,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 75,
-      "roleRank": 34,
-      "overallRank": 275
+      "impact": 76,
+      "roleRank": 35,
+      "overallRank": 259
     },
     {
       "key": "354027:2382",
@@ -14200,8 +14200,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 145,
-      "overallRank": 342
+      "roleRank": 148,
+      "overallRank": 352
     },
     {
       "key": "361966:2382",
@@ -14341,8 +14341,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 112,
-      "overallRank": 242
+      "roleRank": 114,
+      "overallRank": 252
     },
     {
       "key": "247:1118",
@@ -14387,9 +14387,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 80,
-      "roleRank": 12,
-      "overallRank": 122
+      "impact": 82,
+      "roleRank": 15,
+      "overallRank": 99
     },
     {
       "key": "249:1118",
@@ -14435,8 +14435,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 66,
-      "overallRank": 430
+      "roleRank": 67,
+      "overallRank": 435
     },
     {
       "key": "290:1118",
@@ -14483,7 +14483,7 @@
       "penaltiesSaved": 0,
       "impact": 83,
       "roleRank": 58,
-      "overallRank": 90
+      "overallRank": 93
     },
     {
       "key": "538:1118",
@@ -14530,7 +14530,7 @@
       "penaltiesSaved": 0,
       "impact": 77,
       "roleRank": 78,
-      "overallRank": 230
+      "overallRank": 243
     },
     {
       "key": "542:1118",
@@ -14576,8 +14576,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 84,
-      "overallRank": 282
+      "roleRank": 82,
+      "overallRank": 288
     },
     {
       "key": "667:1118",
@@ -14812,7 +14812,7 @@
       "penaltiesSaved": 0,
       "impact": 75,
       "roleRank": 75,
-      "overallRank": 278
+      "overallRank": 286
     },
     {
       "key": "37724:1118",
@@ -14857,9 +14857,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 83,
-      "roleRank": 5,
-      "overallRank": 73
+      "impact": 85,
+      "roleRank": 7,
+      "overallRank": 51
     },
     {
       "key": "38695:1118",
@@ -14905,8 +14905,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 91,
-      "roleRank": 5,
-      "overallRank": 9
+      "roleRank": 4,
+      "overallRank": 10
     },
     {
       "key": "38747:1118",
@@ -15046,8 +15046,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 81,
-      "roleRank": 23,
-      "overallRank": 119
+      "roleRank": 24,
+      "overallRank": 129
     },
     {
       "key": "152849:1118",
@@ -15093,8 +15093,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 128,
-      "overallRank": 296
+      "roleRank": 131,
+      "overallRank": 303
     },
     {
       "key": "544:1118",
@@ -15234,8 +15234,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 158,
-      "overallRank": 428
+      "roleRank": 160,
+      "overallRank": 433
     },
     {
       "key": "2601:12",
@@ -15282,7 +15282,7 @@
       "penaltiesSaved": 0,
       "impact": 76,
       "roleRank": 79,
-      "overallRank": 261
+      "overallRank": 267
     },
     {
       "key": "18861:1118",
@@ -15516,8 +15516,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 161,
-      "overallRank": 405
+      "roleRank": 163,
+      "overallRank": 413
     },
     {
       "key": "32954:12",
@@ -15563,8 +15563,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 172,
-      "overallRank": 451
+      "roleRank": 175,
+      "overallRank": 457
     },
     {
       "key": "33321:12",
@@ -15610,8 +15610,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 34,
-      "overallRank": 126
+      "roleRank": 37,
+      "overallRank": 138
     },
     {
       "key": "33889:12",
@@ -15657,8 +15657,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 50,
-      "overallRank": 172
+      "roleRank": 51,
+      "overallRank": 180
     },
     {
       "key": "36905:1118",
@@ -15750,9 +15750,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 80,
-      "roleRank": 8,
-      "overallRank": 120
+      "impact": 82,
+      "roleRank": 10,
+      "overallRank": 96
     },
     {
       "key": "199578:12",
@@ -15799,7 +15799,7 @@
       "penaltiesSaved": 0,
       "impact": 84,
       "roleRank": 18,
-      "overallRank": 71
+      "overallRank": 73
     },
     {
       "key": "341642:1118",
@@ -15892,8 +15892,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 76,
-      "roleRank": 124,
-      "overallRank": 272
+      "roleRank": 127,
+      "overallRank": 282
     },
     {
       "key": "440:12",
@@ -15986,8 +15986,8 @@
       "cleanSheets": 1,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 24,
-      "overallRank": 151
+      "roleRank": 25,
+      "overallRank": 164
     },
     {
       "key": "1942:12",
@@ -16032,9 +16032,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 73,
-      "roleRank": 48,
-      "overallRank": 348
+      "impact": 74,
+      "roleRank": 47,
+      "overallRank": 316
     },
     {
       "key": "2597:12",
@@ -16080,8 +16080,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 85,
-      "roleRank": 31,
-      "overallRank": 58
+      "roleRank": 30,
+      "overallRank": 59
     },
     {
       "key": "32862:12",
@@ -16221,8 +16221,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 76,
-      "roleRank": 83,
-      "overallRank": 263
+      "roleRank": 81,
+      "overallRank": 269
     },
     {
       "key": "33165:12",
@@ -16314,9 +16314,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 73,
-      "roleRank": 55,
-      "overallRank": 356
+      "impact": 74,
+      "roleRank": 56,
+      "overallRank": 329
     },
     {
       "key": "33289:12",
@@ -16455,9 +16455,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 78,
-      "roleRank": 24,
-      "overallRank": 186
+      "impact": 79,
+      "roleRank": 25,
+      "overallRank": 166
     },
     {
       "key": "106851:12",
@@ -16738,8 +16738,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 93,
-      "overallRank": 203
+      "roleRank": 96,
+      "overallRank": 212
     },
     {
       "key": "78:1",
@@ -16785,8 +16785,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 29,
-      "overallRank": 159
+      "roleRank": 30,
+      "overallRank": 167
     },
     {
       "key": "629:1",
@@ -16832,8 +16832,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 68,
-      "overallRank": 225
+      "roleRank": 69,
+      "overallRank": 239
     },
     {
       "key": "907:1",
@@ -16878,9 +16878,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 79,
-      "roleRank": 7,
-      "overallRank": 152
+      "impact": 81,
+      "roleRank": 9,
+      "overallRank": 115
     },
     {
       "key": "1417:1",
@@ -16973,8 +16973,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 103,
-      "overallRank": 317
+      "roleRank": 106,
+      "overallRank": 322
     },
     {
       "key": "1946:1",
@@ -17021,7 +17021,7 @@
       "penaltiesSaved": 0,
       "impact": 86,
       "roleRank": 12,
-      "overallRank": 38
+      "overallRank": 39
     },
     {
       "key": "2120:1",
@@ -17067,8 +17067,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 38,
-      "overallRank": 127
+      "roleRank": 41,
+      "overallRank": 139
     },
     {
       "key": "2920:1",
@@ -17115,7 +17115,7 @@
       "penaltiesSaved": 0,
       "impact": 82,
       "roleRank": 40,
-      "overallRank": 97
+      "overallRank": 105
     },
     {
       "key": "2926:1",
@@ -17161,8 +17161,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 48,
-      "overallRank": 129
+      "roleRank": 49,
+      "overallRank": 141
     },
     {
       "key": "147859:1",
@@ -17207,9 +17207,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 79,
-      "roleRank": 14,
-      "overallRank": 154
+      "impact": 80,
+      "roleRank": 16,
+      "overallRank": 130
     },
     {
       "key": "162007:1",
@@ -17255,8 +17255,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 76,
-      "roleRank": 125,
-      "overallRank": 273
+      "roleRank": 128,
+      "overallRank": 283
     },
     {
       "key": "162511:1",
@@ -17396,8 +17396,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 92,
-      "overallRank": 202
+      "roleRank": 95,
+      "overallRank": 211
     },
     {
       "key": "312964:1",
@@ -17443,8 +17443,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 82,
-      "roleRank": 45,
-      "overallRank": 99
+      "roleRank": 46,
+      "overallRank": 107
     },
     {
       "key": "340077:1",
@@ -17632,7 +17632,7 @@
       "penaltiesSaved": 0,
       "impact": 82,
       "roleRank": 19,
-      "overallRank": 93
+      "overallRank": 100
     },
     {
       "key": "2649:32",
@@ -17678,8 +17678,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 73,
-      "overallRank": 144
+      "roleRank": 75,
+      "overallRank": 157
     },
     {
       "key": "2654:32",
@@ -17725,8 +17725,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 138,
-      "overallRank": 339
+      "roleRank": 141,
+      "overallRank": 349
     },
     {
       "key": "2656:32",
@@ -17819,8 +17819,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 88,
-      "overallRank": 199
+      "roleRank": 90,
+      "overallRank": 208
     },
     {
       "key": "16805:32",
@@ -17867,7 +17867,7 @@
       "penaltiesSaved": 0,
       "impact": 83,
       "roleRank": 39,
-      "overallRank": 85
+      "overallRank": 88
     },
     {
       "key": "16813:32",
@@ -17914,7 +17914,7 @@
       "penaltiesSaved": 0,
       "impact": 84,
       "roleRank": 18,
-      "overallRank": 64
+      "overallRank": 65
     },
     {
       "key": "16841:32",
@@ -17961,7 +17961,7 @@
       "penaltiesSaved": 0,
       "impact": 75,
       "roleRank": 93,
-      "overallRank": 287
+      "overallRank": 295
     },
     {
       "key": "16871:32",
@@ -18054,8 +18054,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 67,
-      "overallRank": 224
+      "roleRank": 68,
+      "overallRank": 238
     },
     {
       "key": "25458:1",
@@ -18194,9 +18194,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 70,
+      "impact": 71,
       "roleRank": 71,
-      "overallRank": 452
+      "overallRank": 444
     },
     {
       "key": "190575:32",
@@ -18242,8 +18242,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 76,
-      "roleRank": 90,
-      "overallRank": 265
+      "roleRank": 89,
+      "overallRank": 272
     },
     {
       "key": "269174:32",
@@ -18289,8 +18289,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 2,
       "impact": 87,
-      "roleRank": 12,
-      "overallRank": 35
+      "roleRank": 11,
+      "overallRank": 36
     },
     {
       "key": "335056:1",
@@ -18383,8 +18383,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 62,
-      "overallRank": 221
+      "roleRank": 61,
+      "overallRank": 232
     },
     {
       "key": "550547:32",
@@ -18524,8 +18524,8 @@
       "cleanSheets": 1,
       "penaltiesSaved": 0,
       "impact": 91,
-      "roleRank": 3,
-      "overallRank": 7
+      "roleRank": 2,
+      "overallRank": 8
     },
     {
       "key": "2688:22",
@@ -18571,8 +18571,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 82,
-      "overallRank": 196
+      "roleRank": 85,
+      "overallRank": 205
     },
     {
       "key": "2691:22",
@@ -18619,7 +18619,7 @@
       "penaltiesSaved": 0,
       "impact": 87,
       "roleRank": 22,
-      "overallRank": 34
+      "overallRank": 35
     },
     {
       "key": "2699:22",
@@ -18665,8 +18665,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 159,
-      "overallRank": 429
+      "roleRank": 161,
+      "overallRank": 434
     },
     {
       "key": "19614:22",
@@ -18712,8 +18712,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 129,
-      "overallRank": 367
+      "roleRank": 131,
+      "overallRank": 374
     },
     {
       "key": "20844:32",
@@ -18806,8 +18806,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 84,
-      "roleRank": 34,
-      "overallRank": 68
+      "roleRank": 33,
+      "overallRank": 69
     },
     {
       "key": "42315:22",
@@ -18854,7 +18854,7 @@
       "penaltiesSaved": 0,
       "impact": 70,
       "roleRank": 72,
-      "overallRank": 455
+      "overallRank": 461
     },
     {
       "key": "69196:32",
@@ -18994,8 +18994,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 133,
-      "overallRank": 371
+      "roleRank": 135,
+      "overallRank": 378
     },
     {
       "key": "196343:32",
@@ -19370,8 +19370,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 131,
-      "overallRank": 335
+      "roleRank": 134,
+      "overallRank": 344
     },
     {
       "key": "18110:4673",
@@ -19418,7 +19418,7 @@
       "penaltiesSaved": 0,
       "impact": 70,
       "roleRank": 41,
-      "overallRank": 459
+      "overallRank": 466
     },
     {
       "key": "29720:22",
@@ -19605,8 +19605,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 181,
-      "overallRank": 499
+      "roleRank": 185,
+      "overallRank": 506
     },
     {
       "key": "94346:4673",
@@ -19652,8 +19652,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 66,
-      "roleRank": 185,
-      "overallRank": 515
+      "roleRank": 189,
+      "overallRank": 522
     },
     {
       "key": "136880:22",
@@ -19747,7 +19747,7 @@
       "penaltiesSaved": 0,
       "impact": 80,
       "roleRank": 54,
-      "overallRank": 132
+      "overallRank": 144
     },
     {
       "key": "341844:22",
@@ -19934,8 +19934,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 195,
-      "overallRank": 505
+      "roleRank": 197,
+      "overallRank": 512
     },
     {
       "key": "18931:4673",
@@ -19980,9 +19980,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 72,
-      "roleRank": 50,
-      "overallRank": 387
+      "impact": 73,
+      "roleRank": 49,
+      "overallRank": 360
     },
     {
       "key": "94322:4673",
@@ -20076,7 +20076,7 @@
       "penaltiesSaved": 0,
       "impact": 86,
       "roleRank": 13,
-      "overallRank": 39
+      "overallRank": 40
     },
     {
       "key": "94405:4673",
@@ -20169,8 +20169,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 166,
-      "overallRank": 442
+      "roleRank": 168,
+      "overallRank": 449
     },
     {
       "key": "158688:4673",
@@ -20310,8 +20310,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 127,
-      "overallRank": 365
+      "roleRank": 129,
+      "overallRank": 372
     },
     {
       "key": "430835:4673",
@@ -20404,8 +20404,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 182,
-      "overallRank": 472
+      "roleRank": 184,
+      "overallRank": 478
     },
     {
       "key": "44324:23",
@@ -20451,8 +20451,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 87,
-      "overallRank": 510
+      "roleRank": 88,
+      "overallRank": 517
     },
     {
       "key": "44339:23",
@@ -20498,8 +20498,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 149,
-      "overallRank": 420
+      "roleRank": 151,
+      "overallRank": 427
     },
     {
       "key": "44340:23",
@@ -20545,8 +20545,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 68,
-      "roleRank": 188,
-      "overallRank": 483
+      "roleRank": 190,
+      "overallRank": 491
     },
     {
       "key": "44349:23",
@@ -20592,8 +20592,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 118,
-      "overallRank": 327
+      "roleRank": 120,
+      "overallRank": 335
     },
     {
       "key": "44362:23",
@@ -20639,8 +20639,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 66,
-      "roleRank": 182,
-      "overallRank": 513
+      "roleRank": 186,
+      "overallRank": 520
     },
     {
       "key": "44382:23",
@@ -20734,7 +20734,7 @@
       "penaltiesSaved": 0,
       "impact": 88,
       "roleRank": 8,
-      "overallRank": 23
+      "overallRank": 25
     },
     {
       "key": "44475:23",
@@ -20780,8 +20780,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 108,
-      "overallRank": 239
+      "roleRank": 111,
+      "overallRank": 250
     },
     {
       "key": "44507:23",
@@ -20874,8 +20874,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 87,
-      "overallRank": 198
+      "roleRank": 89,
+      "overallRank": 207
     },
     {
       "key": "134995:23",
@@ -20968,8 +20968,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 180,
-      "overallRank": 498
+      "roleRank": 184,
+      "overallRank": 505
     },
     {
       "key": "306380:23",
@@ -21110,7 +21110,7 @@
       "penaltiesSaved": 0,
       "impact": 68,
       "roleRank": 43,
-      "overallRank": 493
+      "overallRank": 500
     },
     {
       "key": "756:7",
@@ -21156,8 +21156,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 160,
-      "overallRank": 401
+      "roleRank": 162,
+      "overallRank": 409
     },
     {
       "key": "863:7",
@@ -21203,8 +21203,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 91,
-      "overallRank": 286
+      "roleRank": 90,
+      "overallRank": 293
     },
     {
       "key": "1290:7",
@@ -21250,8 +21250,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 155,
-      "overallRank": 402
+      "roleRank": 157,
+      "overallRank": 410
     },
     {
       "key": "2639:23",
@@ -21438,8 +21438,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 87,
-      "roleRank": 9,
-      "overallRank": 29
+      "roleRank": 8,
+      "overallRank": 30
     },
     {
       "key": "51494:7",
@@ -21485,8 +21485,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 169,
-      "overallRank": 461
+      "roleRank": 171,
+      "overallRank": 468
     },
     {
       "key": "51530:7",
@@ -21532,8 +21532,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 68,
-      "roleRank": 191,
-      "overallRank": 486
+      "roleRank": 193,
+      "overallRank": 494
     },
     {
       "key": "51535:7",
@@ -21579,8 +21579,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 173,
-      "overallRank": 454
+      "roleRank": 176,
+      "overallRank": 460
     },
     {
       "key": "51572:7",
@@ -21673,8 +21673,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 56,
-      "overallRank": 359
+      "roleRank": 57,
+      "overallRank": 367
     },
     {
       "key": "51617:7",
@@ -21767,8 +21767,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 87,
-      "roleRank": 5,
-      "overallRank": 25
+      "roleRank": 7,
+      "overallRank": 26
     },
     {
       "key": "162891:7",
@@ -21814,8 +21814,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 144,
-      "overallRank": 395
+      "roleRank": 146,
+      "overallRank": 401
     },
     {
       "key": "44:9",
@@ -21832,37 +21832,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Midfielder",
       "number": 16,
-      "appearances": 7,
-      "starts": 7,
-      "minutes": 627,
-      "rating": 7.7,
+      "appearances": 8,
+      "starts": 8,
+      "minutes": 726,
+      "rating": 7.78,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
-      "shots": 3,
+      "shots": 4,
       "shotsOnTarget": 0,
-      "keyPasses": 9,
-      "passes": 706,
-      "passAccuracy": 92,
-      "tackles": 22,
+      "keyPasses": 11,
+      "passes": 812,
+      "passAccuracy": 93,
+      "tackles": 26,
       "interceptions": 2,
       "blocks": 2,
-      "defensiveActions": 26,
-      "duels": 63,
-      "duelsWon": 41,
-      "dribbles": 3,
-      "dribblesWon": 2,
-      "foulsDrawn": 6,
-      "foulsCommitted": 9,
+      "defensiveActions": 30,
+      "duels": 73,
+      "duelsWon": 49,
+      "dribbles": 4,
+      "dribblesWon": 3,
+      "foulsDrawn": 9,
+      "foulsCommitted": 11,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 81,
-      "roleRank": 41,
-      "overallRank": 112
+      "impact": 82,
+      "roleRank": 36,
+      "overallRank": 103
     },
     {
       "key": "328:9",
@@ -21879,24 +21879,24 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Midfielder",
       "number": 8,
-      "appearances": 7,
-      "starts": 3,
-      "minutes": 269,
-      "rating": 7.07,
+      "appearances": 8,
+      "starts": 4,
+      "minutes": 331,
+      "rating": 7.01,
       "goals": 1,
       "assists": 0,
       "goalContributions": 1,
       "shots": 6,
       "shotsOnTarget": 2,
-      "keyPasses": 5,
-      "passes": 242,
+      "keyPasses": 7,
+      "passes": 292,
       "passAccuracy": 90,
       "tackles": 7,
-      "interceptions": 3,
+      "interceptions": 4,
       "blocks": 0,
-      "defensiveActions": 10,
-      "duels": 15,
-      "duelsWon": 11,
+      "defensiveActions": 11,
+      "duels": 16,
+      "duelsWon": 12,
       "dribbles": 0,
       "dribblesWon": 0,
       "foulsDrawn": 3,
@@ -21907,9 +21907,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 78,
-      "roleRank": 57,
-      "overallRank": 189
+      "impact": 77,
+      "roleRank": 63,
+      "overallRank": 233
     },
     {
       "key": "622:9",
@@ -21926,37 +21926,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Defender",
       "number": 14,
-      "appearances": 7,
-      "starts": 7,
-      "minutes": 629,
-      "rating": 7.51,
+      "appearances": 8,
+      "starts": 8,
+      "minutes": 728,
+      "rating": 7.45,
       "goals": 0,
       "assists": 1,
       "goalContributions": 1,
-      "shots": 4,
-      "shotsOnTarget": 1,
+      "shots": 5,
+      "shotsOnTarget": 2,
       "keyPasses": 3,
-      "passes": 567,
+      "passes": 659,
       "passAccuracy": 93,
       "tackles": 5,
-      "interceptions": 13,
+      "interceptions": 15,
       "blocks": 0,
-      "defensiveActions": 18,
-      "duels": 45,
-      "duelsWon": 24,
+      "defensiveActions": 20,
+      "duels": 49,
+      "duelsWon": 26,
       "dribbles": 0,
       "dribblesWon": 0,
-      "foulsDrawn": 2,
-      "foulsCommitted": 4,
+      "foulsDrawn": 4,
+      "foulsCommitted": 5,
       "yellowCards": 1,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 87,
-      "roleRank": 16,
-      "overallRank": 33
+      "impact": 86,
+      "roleRank": 28,
+      "overallRank": 45
     },
     {
       "key": "753:9",
@@ -22002,8 +22002,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 87,
-      "roleRank": 10,
-      "overallRank": 30
+      "roleRank": 9,
+      "overallRank": 31
     },
     {
       "key": "931:9",
@@ -22020,37 +22020,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Attacker",
       "number": 7,
-      "appearances": 7,
+      "appearances": 8,
       "starts": 1,
-      "minutes": 225,
-      "rating": 6.33,
-      "goals": 0,
+      "minutes": 283,
+      "rating": 6.44,
+      "goals": 1,
       "assists": 1,
-      "goalContributions": 1,
-      "shots": 9,
-      "shotsOnTarget": 2,
+      "goalContributions": 2,
+      "shots": 12,
+      "shotsOnTarget": 4,
       "keyPasses": 2,
-      "passes": 79,
+      "passes": 87,
       "passAccuracy": 74,
       "tackles": 0,
       "interceptions": 0,
       "blocks": 0,
       "defensiveActions": 0,
-      "duels": 30,
-      "duelsWon": 10,
-      "dribbles": 8,
+      "duels": 34,
+      "duelsWon": 12,
+      "dribbles": 9,
       "dribblesWon": 3,
-      "foulsDrawn": 2,
-      "foulsCommitted": 5,
+      "foulsDrawn": 4,
+      "foulsCommitted": 6,
       "yellowCards": 1,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 69,
-      "roleRank": 67,
-      "overallRank": 462
+      "impact": 72,
+      "roleRank": 51,
+      "overallRank": 393
     },
     {
       "key": "16482:7",
@@ -22114,24 +22114,24 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Goalkeeper",
       "number": 23,
-      "appearances": 7,
-      "starts": 7,
-      "minutes": 630,
-      "rating": 7.13,
+      "appearances": 8,
+      "starts": 8,
+      "minutes": 750,
+      "rating": 7.05,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 0,
       "shotsOnTarget": 0,
       "keyPasses": 0,
-      "passes": 215,
-      "passAccuracy": 79,
+      "passes": 253,
+      "passAccuracy": 77,
       "tackles": 0,
       "interceptions": 0,
       "blocks": 0,
       "defensiveActions": 0,
-      "duels": 5,
-      "duelsWon": 4,
+      "duels": 6,
+      "duelsWon": 5,
       "dribbles": 0,
       "dribblesWon": 0,
       "foulsDrawn": 3,
@@ -22142,9 +22142,9 @@
       "conceded": 1,
       "cleanSheets": 6,
       "penaltiesSaved": 0,
-      "impact": 89,
-      "roleRank": 2,
-      "overallRank": 14
+      "impact": 87,
+      "roleRank": 7,
+      "overallRank": 29
     },
     {
       "key": "47323:9",
@@ -22161,28 +22161,28 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Attacker",
       "number": 21,
-      "appearances": 7,
-      "starts": 7,
-      "minutes": 543,
-      "rating": 7.27,
+      "appearances": 8,
+      "starts": 8,
+      "minutes": 605,
+      "rating": 7.19,
       "goals": 5,
       "assists": 1,
       "goalContributions": 6,
-      "shots": 20,
-      "shotsOnTarget": 11,
+      "shots": 21,
+      "shotsOnTarget": 12,
       "keyPasses": 6,
-      "passes": 140,
+      "passes": 154,
       "passAccuracy": 82,
-      "tackles": 5,
+      "tackles": 6,
       "interceptions": 1,
       "blocks": 0,
-      "defensiveActions": 6,
-      "duels": 38,
-      "duelsWon": 17,
-      "dribbles": 3,
-      "dribblesWon": 1,
-      "foulsDrawn": 4,
-      "foulsCommitted": 3,
+      "defensiveActions": 7,
+      "duels": 47,
+      "duelsWon": 20,
+      "dribbles": 4,
+      "dribblesWon": 2,
+      "foulsDrawn": 5,
+      "foulsCommitted": 4,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
@@ -22190,8 +22190,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 13,
-      "overallRank": 123
+      "roleRank": 20,
+      "overallRank": 133
     },
     {
       "key": "47380:9",
@@ -22208,28 +22208,28 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Defender",
       "number": 24,
-      "appearances": 7,
-      "starts": 7,
-      "minutes": 630,
-      "rating": 7.07,
+      "appearances": 8,
+      "starts": 8,
+      "minutes": 750,
+      "rating": 7.05,
       "goals": 0,
       "assists": 2,
       "goalContributions": 2,
-      "shots": 4,
+      "shots": 5,
       "shotsOnTarget": 3,
       "keyPasses": 6,
-      "passes": 344,
+      "passes": 423,
       "passAccuracy": 90,
-      "tackles": 7,
-      "interceptions": 5,
+      "tackles": 8,
+      "interceptions": 7,
       "blocks": 3,
-      "defensiveActions": 15,
-      "duels": 32,
-      "duelsWon": 15,
-      "dribbles": 3,
+      "defensiveActions": 18,
+      "duels": 38,
+      "duelsWon": 18,
+      "dribbles": 4,
       "dribblesWon": 2,
-      "foulsDrawn": 3,
-      "foulsCommitted": 7,
+      "foulsDrawn": 5,
+      "foulsCommitted": 8,
       "yellowCards": 1,
       "redCards": 0,
       "saves": 0,
@@ -22237,8 +22237,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 86,
-      "overallRank": 180
+      "roleRank": 93,
+      "overallRank": 190
     },
     {
       "key": "50077:7",
@@ -22349,37 +22349,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Midfielder",
       "number": 20,
-      "appearances": 7,
+      "appearances": 8,
       "starts": 5,
-      "minutes": 441,
-      "rating": 7.16,
+      "minutes": 499,
+      "rating": 7.2,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
-      "shots": 2,
-      "shotsOnTarget": 1,
-      "keyPasses": 9,
-      "passes": 410,
+      "shots": 3,
+      "shotsOnTarget": 2,
+      "keyPasses": 13,
+      "passes": 471,
       "passAccuracy": 88,
-      "tackles": 10,
-      "interceptions": 9,
+      "tackles": 12,
+      "interceptions": 10,
       "blocks": 3,
-      "defensiveActions": 22,
-      "duels": 40,
-      "duelsWon": 22,
+      "defensiveActions": 25,
+      "duels": 45,
+      "duelsWon": 24,
       "dribbles": 7,
       "dribblesWon": 4,
       "foulsDrawn": 5,
-      "foulsCommitted": 3,
+      "foulsCommitted": 4,
       "yellowCards": 1,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 78,
-      "roleRank": 61,
-      "overallRank": 192
+      "impact": 79,
+      "roleRank": 57,
+      "overallRank": 183
     },
     {
       "key": "396623:9",
@@ -22396,27 +22396,27 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Defender",
       "number": 22,
-      "appearances": 7,
-      "starts": 7,
-      "minutes": 630,
-      "rating": 7.56,
+      "appearances": 8,
+      "starts": 8,
+      "minutes": 750,
+      "rating": 7.65,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
-      "shots": 2,
-      "shotsOnTarget": 1,
-      "keyPasses": 7,
-      "passes": 572,
+      "shots": 3,
+      "shotsOnTarget": 2,
+      "keyPasses": 8,
+      "passes": 698,
       "passAccuracy": 96,
-      "tackles": 6,
+      "tackles": 8,
       "interceptions": 4,
       "blocks": 2,
-      "defensiveActions": 12,
-      "duels": 36,
-      "duelsWon": 20,
+      "defensiveActions": 14,
+      "duels": 46,
+      "duelsWon": 27,
       "dribbles": 0,
       "dribblesWon": 0,
-      "foulsDrawn": 2,
+      "foulsDrawn": 5,
       "foulsCommitted": 4,
       "yellowCards": 1,
       "redCards": 0,
@@ -22424,9 +22424,56 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 86,
-      "roleRank": 25,
-      "overallRank": 42
+      "impact": 87,
+      "roleRank": 15,
+      "overallRank": 34
+    },
+    {
+      "key": "619:9",
+      "id": 619,
+      "name": "Eric García",
+      "firstName": "Eric",
+      "lastName": "García Martret",
+      "photo": "https://media.api-sports.io/football/players/619.png",
+      "nationality": "Spain",
+      "age": 24,
+      "height": "180",
+      "teamId": 9,
+      "teamName": "Spain",
+      "teamLogo": "https://media.api-sports.io/football/teams/9.png",
+      "position": "Defender",
+      "number": 4,
+      "appearances": 1,
+      "starts": 0,
+      "minutes": 21,
+      "rating": 6.7,
+      "goals": 0,
+      "assists": 0,
+      "goalContributions": 0,
+      "shots": 0,
+      "shotsOnTarget": 0,
+      "keyPasses": 0,
+      "passes": 12,
+      "passAccuracy": 83,
+      "tackles": 0,
+      "interceptions": 0,
+      "blocks": 0,
+      "defensiveActions": 0,
+      "duels": 3,
+      "duelsWon": 0,
+      "dribbles": 0,
+      "dribblesWon": 0,
+      "foulsDrawn": 0,
+      "foulsCommitted": 1,
+      "yellowCards": 0,
+      "redCards": 0,
+      "saves": 0,
+      "conceded": 0,
+      "cleanSheets": 0,
+      "penaltiesSaved": 0,
+      "impact": 0,
+      "roleRank": 0,
+      "overallRank": 0
     },
     {
       "key": "1323:9",
@@ -22443,28 +22490,28 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Midfielder",
       "number": 10,
-      "appearances": 7,
-      "starts": 5,
-      "minutes": 420,
-      "rating": 7.09,
+      "appearances": 8,
+      "starts": 6,
+      "minutes": 495,
+      "rating": 7.08,
       "goals": 0,
       "assists": 2,
       "goalContributions": 2,
-      "shots": 7,
-      "shotsOnTarget": 1,
-      "keyPasses": 9,
-      "passes": 207,
-      "passAccuracy": 91,
+      "shots": 8,
+      "shotsOnTarget": 2,
+      "keyPasses": 10,
+      "passes": 232,
+      "passAccuracy": 90,
       "tackles": 7,
       "interceptions": 0,
       "blocks": 1,
       "defensiveActions": 8,
-      "duels": 40,
-      "duelsWon": 22,
-      "dribbles": 10,
-      "dribblesWon": 5,
-      "foulsDrawn": 8,
-      "foulsCommitted": 5,
+      "duels": 48,
+      "duelsWon": 28,
+      "dribbles": 13,
+      "dribblesWon": 8,
+      "foulsDrawn": 10,
+      "foulsCommitted": 6,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
@@ -22472,8 +22519,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 40,
-      "overallRank": 165
+      "roleRank": 52,
+      "overallRank": 181
     },
     {
       "key": "15304:1533",
@@ -22520,7 +22567,7 @@
       "penaltiesSaved": 0,
       "impact": 94,
       "roleRank": 1,
-      "overallRank": 2
+      "overallRank": 4
     },
     {
       "key": "22139:1533",
@@ -22566,8 +22613,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 179,
-      "overallRank": 497
+      "roleRank": 183,
+      "overallRank": 504
     },
     {
       "key": "41608:1533",
@@ -22614,7 +22661,7 @@
       "penaltiesSaved": 0,
       "impact": 83,
       "roleRank": 42,
-      "overallRank": 87
+      "overallRank": 90
     },
     {
       "key": "47311:9",
@@ -22631,28 +22678,75 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Midfielder",
       "number": 6,
-      "appearances": 7,
+      "appearances": 8,
       "starts": 1,
-      "minutes": 165,
-      "rating": 6.83,
+      "minutes": 210,
+      "rating": 6.88,
       "goals": 2,
       "assists": 0,
       "goalContributions": 2,
-      "shots": 3,
+      "shots": 4,
       "shotsOnTarget": 3,
-      "keyPasses": 4,
-      "passes": 83,
-      "passAccuracy": 86,
+      "keyPasses": 5,
+      "passes": 105,
+      "passAccuracy": 84,
       "tackles": 3,
       "interceptions": 3,
-      "blocks": 0,
-      "defensiveActions": 6,
-      "duels": 33,
-      "duelsWon": 16,
+      "blocks": 1,
+      "defensiveActions": 7,
+      "duels": 42,
+      "duelsWon": 21,
       "dribbles": 2,
       "dribblesWon": 0,
-      "foulsDrawn": 5,
-      "foulsCommitted": 5,
+      "foulsDrawn": 8,
+      "foulsCommitted": 6,
+      "yellowCards": 0,
+      "redCards": 0,
+      "saves": 0,
+      "conceded": 0,
+      "cleanSheets": 0,
+      "penaltiesSaved": 0,
+      "impact": 80,
+      "roleRank": 26,
+      "overallRank": 136
+    },
+    {
+      "key": "47315:9",
+      "id": 47315,
+      "name": "Martín Zubimendi",
+      "firstName": "Martín",
+      "lastName": "Zubimendi Ibáñez",
+      "photo": "https://media.api-sports.io/football/players/47315.png",
+      "nationality": "Spain",
+      "age": 26,
+      "height": "181",
+      "teamId": 9,
+      "teamName": "Spain",
+      "teamLogo": "https://media.api-sports.io/football/teams/9.png",
+      "position": "Midfielder",
+      "number": 18,
+      "appearances": 1,
+      "starts": 0,
+      "minutes": 21,
+      "rating": 7,
+      "goals": 0,
+      "assists": 0,
+      "goalContributions": 0,
+      "shots": 0,
+      "shotsOnTarget": 0,
+      "keyPasses": 0,
+      "passes": 26,
+      "passAccuracy": 84,
+      "tackles": 1,
+      "interceptions": 1,
+      "blocks": 0,
+      "defensiveActions": 2,
+      "duels": 4,
+      "duelsWon": 3,
+      "dribbles": 0,
+      "dribblesWon": 0,
+      "foulsDrawn": 0,
+      "foulsCommitted": 0,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
@@ -22725,37 +22819,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Defender",
       "number": 12,
-      "appearances": 5,
-      "starts": 5,
-      "minutes": 444,
-      "rating": 7.62,
+      "appearances": 6,
+      "starts": 6,
+      "minutes": 564,
+      "rating": 7.55,
       "goals": 2,
       "assists": 0,
       "goalContributions": 2,
       "shots": 7,
       "shotsOnTarget": 3,
-      "keyPasses": 9,
-      "passes": 262,
-      "passAccuracy": 88,
-      "tackles": 12,
-      "interceptions": 6,
+      "keyPasses": 11,
+      "passes": 361,
+      "passAccuracy": 89,
+      "tackles": 14,
+      "interceptions": 8,
       "blocks": 1,
-      "defensiveActions": 19,
-      "duels": 44,
-      "duelsWon": 27,
-      "dribbles": 5,
+      "defensiveActions": 23,
+      "duels": 58,
+      "duelsWon": 32,
+      "dribbles": 6,
       "dribblesWon": 3,
-      "foulsDrawn": 6,
-      "foulsCommitted": 7,
+      "foulsDrawn": 9,
+      "foulsCommitted": 10,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 92,
-      "roleRank": 2,
-      "overallRank": 6
+      "impact": 90,
+      "roleRank": 5,
+      "overallRank": 12
     },
     {
       "key": "69260:1533",
@@ -22801,8 +22895,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 86,
-      "roleRank": 12,
-      "overallRank": 41
+      "roleRank": 11,
+      "overallRank": 42
     },
     {
       "key": "182219:9",
@@ -22819,37 +22913,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Midfielder",
       "number": 15,
-      "appearances": 6,
-      "starts": 6,
-      "minutes": 412,
-      "rating": 7.15,
+      "appearances": 7,
+      "starts": 7,
+      "minutes": 487,
+      "rating": 7.09,
       "goals": 1,
       "assists": 1,
       "goalContributions": 2,
-      "shots": 6,
-      "shotsOnTarget": 4,
+      "shots": 7,
+      "shotsOnTarget": 5,
       "keyPasses": 10,
-      "passes": 195,
-      "passAccuracy": 82,
-      "tackles": 7,
+      "passes": 216,
+      "passAccuracy": 81,
+      "tackles": 8,
       "interceptions": 1,
       "blocks": 0,
-      "defensiveActions": 8,
-      "duels": 41,
-      "duelsWon": 15,
-      "dribbles": 6,
-      "dribblesWon": 1,
-      "foulsDrawn": 6,
-      "foulsCommitted": 9,
+      "defensiveActions": 9,
+      "duels": 48,
+      "duelsWon": 18,
+      "dribbles": 7,
+      "dribblesWon": 2,
+      "foulsDrawn": 7,
+      "foulsCommitted": 13,
       "yellowCards": 1,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 79,
-      "roleRank": 53,
-      "overallRank": 174
+      "impact": 77,
+      "roleRank": 66,
+      "overallRank": 235
     },
     {
       "key": "183799:9",
@@ -22866,28 +22960,28 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Attacker",
       "number": 17,
-      "appearances": 5,
+      "appearances": 6,
       "starts": 0,
-      "minutes": 76,
-      "rating": 6.42,
+      "minutes": 121,
+      "rating": 6.45,
       "goals": 0,
-      "assists": 0,
-      "goalContributions": 0,
-      "shots": 1,
-      "shotsOnTarget": 0,
-      "keyPasses": 0,
-      "passes": 29,
-      "passAccuracy": 79,
+      "assists": 1,
+      "goalContributions": 1,
+      "shots": 3,
+      "shotsOnTarget": 2,
+      "keyPasses": 2,
+      "passes": 51,
+      "passAccuracy": 86,
       "tackles": 1,
-      "interceptions": 0,
+      "interceptions": 1,
       "blocks": 0,
-      "defensiveActions": 1,
-      "duels": 6,
-      "duelsWon": 3,
-      "dribbles": 1,
-      "dribblesWon": 0,
+      "defensiveActions": 2,
+      "duels": 13,
+      "duelsWon": 4,
+      "dribbles": 5,
+      "dribblesWon": 1,
       "foulsDrawn": 1,
-      "foulsCommitted": 0,
+      "foulsCommitted": 2,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
@@ -23054,37 +23148,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/9.png",
       "position": "Attacker",
       "number": 19,
-      "appearances": 7,
-      "starts": 6,
-      "minutes": 495,
+      "appearances": 8,
+      "starts": 7,
+      "minutes": 615,
       "rating": 7.19,
       "goals": 1,
       "assists": 0,
       "goalContributions": 1,
-      "shots": 17,
-      "shotsOnTarget": 10,
-      "keyPasses": 6,
-      "passes": 217,
-      "passAccuracy": 82,
-      "tackles": 8,
+      "shots": 20,
+      "shotsOnTarget": 12,
+      "keyPasses": 7,
+      "passes": 268,
+      "passAccuracy": 83,
+      "tackles": 11,
       "interceptions": 2,
       "blocks": 0,
-      "defensiveActions": 10,
-      "duels": 85,
-      "duelsWon": 38,
-      "dribbles": 42,
-      "dribblesWon": 22,
-      "foulsDrawn": 8,
-      "foulsCommitted": 12,
+      "defensiveActions": 13,
+      "duels": 103,
+      "duelsWon": 47,
+      "dribbles": 51,
+      "dribblesWon": 27,
+      "foulsDrawn": 9,
+      "foulsCommitted": 14,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 76,
-      "roleRank": 38,
-      "overallRank": 256
+      "impact": 77,
+      "roleRank": 42,
+      "overallRank": 237
     },
     {
       "key": "1494:1533",
@@ -23224,8 +23318,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 69,
-      "overallRank": 226
+      "roleRank": 70,
+      "overallRank": 240
     },
     {
       "key": "37436:1533",
@@ -23365,8 +23459,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 99,
-      "overallRank": 315
+      "roleRank": 102,
+      "overallRank": 320
     },
     {
       "key": "50745:1533",
@@ -23412,8 +23506,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 171,
-      "overallRank": 444
+      "roleRank": 173,
+      "overallRank": 451
     },
     {
       "key": "96512:1533",
@@ -23460,7 +23554,7 @@
       "penaltiesSaved": 0,
       "impact": 77,
       "roleRank": 80,
-      "overallRank": 231
+      "overallRank": 244
     },
     {
       "key": "113580:1533",
@@ -23695,7 +23789,7 @@
       "penaltiesSaved": 0,
       "impact": 81,
       "roleRank": 53,
-      "overallRank": 115
+      "overallRank": 125
     },
     {
       "key": "332056:1533",
@@ -23806,28 +23900,28 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Attacker",
       "number": 10,
-      "appearances": 7,
-      "starts": 6,
-      "minutes": 620,
-      "rating": 9.07,
+      "appearances": 8,
+      "starts": 7,
+      "minutes": 740,
+      "rating": 8.85,
       "goals": 8,
       "assists": 4,
       "goalContributions": 12,
       "shots": 28,
       "shotsOnTarget": 18,
       "keyPasses": 26,
-      "passes": 314,
+      "passes": 348,
       "passAccuracy": 81,
-      "tackles": 10,
+      "tackles": 11,
       "interceptions": 1,
       "blocks": 0,
-      "defensiveActions": 11,
-      "duels": 90,
-      "duelsWon": 51,
-      "dribbles": 35,
-      "dribblesWon": 24,
-      "foulsDrawn": 16,
-      "foulsCommitted": 2,
+      "defensiveActions": 12,
+      "duels": 102,
+      "duelsWon": 60,
+      "dribbles": 38,
+      "dribblesWon": 27,
+      "foulsDrawn": 20,
+      "foulsCommitted": 3,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
@@ -23852,38 +23946,38 @@
       "teamName": "Argentina",
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Attacker",
-      "number": 22,
+      "number": 10,
       "appearances": 7,
       "starts": 4,
-      "minutes": 311,
-      "rating": 6.79,
-      "goals": 3,
-      "assists": 1,
-      "goalContributions": 4,
-      "shots": 8,
-      "shotsOnTarget": 4,
-      "keyPasses": 5,
-      "passes": 69,
-      "passAccuracy": 82,
-      "tackles": 3,
-      "interceptions": 0,
-      "blocks": 1,
-      "defensiveActions": 4,
-      "duels": 38,
-      "duelsWon": 9,
-      "dribbles": 6,
-      "dribblesWon": 0,
-      "foulsDrawn": 5,
-      "foulsCommitted": 8,
+      "minutes": 740,
+      "rating": 8.85,
+      "goals": 8,
+      "assists": 4,
+      "goalContributions": 12,
+      "shots": 28,
+      "shotsOnTarget": 18,
+      "keyPasses": 26,
+      "passes": 348,
+      "passAccuracy": 81,
+      "tackles": 11,
+      "interceptions": 1,
+      "blocks": 0,
+      "defensiveActions": 12,
+      "duels": 102,
+      "duelsWon": 60,
+      "dribbles": 38,
+      "dribblesWon": 27,
+      "foulsDrawn": 20,
+      "foulsCommitted": 3,
       "yellowCards": 1,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 77,
-      "roleRank": 18,
-      "overallRank": 213
+      "impact": 98,
+      "roleRank": 2,
+      "overallRank": 2
     },
     {
       "key": "624:26",
@@ -23900,37 +23994,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Defender",
       "number": 19,
-      "appearances": 6,
+      "appearances": 7,
       "starts": 1,
-      "minutes": 167,
-      "rating": 6.86,
+      "minutes": 243,
+      "rating": 6.77,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 1,
       "shotsOnTarget": 0,
       "keyPasses": 0,
-      "passes": 162,
-      "passAccuracy": 94,
+      "passes": 191,
+      "passAccuracy": 92,
       "tackles": 4,
-      "interceptions": 4,
+      "interceptions": 5,
       "blocks": 1,
-      "defensiveActions": 9,
-      "duels": 15,
-      "duelsWon": 10,
+      "defensiveActions": 10,
+      "duels": 23,
+      "duelsWon": 15,
       "dribbles": 0,
       "dribblesWon": 0,
-      "foulsDrawn": 0,
-      "foulsCommitted": 3,
+      "foulsDrawn": 4,
+      "foulsCommitted": 4,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 0,
-      "roleRank": 0,
-      "overallRank": 0
+      "impact": 80,
+      "roleRank": 68,
+      "overallRank": 153
     },
     {
       "key": "2467:26",
@@ -23947,37 +24041,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Defender",
       "number": 6,
-      "appearances": 6,
-      "starts": 6,
-      "minutes": 582,
-      "rating": 7.4,
+      "appearances": 7,
+      "starts": 7,
+      "minutes": 626,
+      "rating": 7.29,
       "goals": 1,
       "assists": 1,
       "goalContributions": 2,
       "shots": 3,
       "shotsOnTarget": 2,
       "keyPasses": 2,
-      "passes": 432,
-      "passAccuracy": 93,
-      "tackles": 11,
-      "interceptions": 5,
+      "passes": 461,
+      "passAccuracy": 92,
+      "tackles": 12,
+      "interceptions": 6,
       "blocks": 1,
-      "defensiveActions": 17,
-      "duels": 41,
-      "duelsWon": 28,
+      "defensiveActions": 19,
+      "duels": 46,
+      "duelsWon": 30,
       "dribbles": 5,
       "dribblesWon": 5,
       "foulsDrawn": 4,
-      "foulsCommitted": 6,
-      "yellowCards": 1,
+      "foulsCommitted": 7,
+      "yellowCards": 2,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 85,
-      "roleRank": 30,
-      "overallRank": 56
+      "impact": 84,
+      "roleRank": 38,
+      "overallRank": 71
     },
     {
       "key": "2468:26",
@@ -23994,37 +24088,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Defender",
       "number": 4,
-      "appearances": 5,
-      "starts": 1,
-      "minutes": 131,
-      "rating": 6.52,
+      "appearances": 6,
+      "starts": 2,
+      "minutes": 189,
+      "rating": 6.53,
       "goals": 0,
       "assists": 1,
       "goalContributions": 1,
       "shots": 0,
       "shotsOnTarget": 0,
       "keyPasses": 1,
-      "passes": 71,
-      "passAccuracy": 83,
-      "tackles": 2,
-      "interceptions": 1,
+      "passes": 84,
+      "passAccuracy": 79,
+      "tackles": 3,
+      "interceptions": 3,
       "blocks": 1,
-      "defensiveActions": 4,
-      "duels": 8,
-      "duelsWon": 2,
+      "defensiveActions": 7,
+      "duels": 13,
+      "duelsWon": 5,
       "dribbles": 0,
       "dribblesWon": 0,
-      "foulsDrawn": 0,
-      "foulsCommitted": 3,
+      "foulsDrawn": 2,
+      "foulsCommitted": 4,
       "yellowCards": 1,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 0,
-      "roleRank": 0,
-      "overallRank": 0
+      "impact": 73,
+      "roleRank": 156,
+      "overallRank": 389
     },
     {
       "key": "2472:26",
@@ -24041,27 +24135,27 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Midfielder",
       "number": 7,
-      "appearances": 6,
-      "starts": 5,
-      "minutes": 425,
-      "rating": 7.08,
+      "appearances": 7,
+      "starts": 6,
+      "minutes": 495,
+      "rating": 7,
       "goals": 0,
       "assists": 1,
       "goalContributions": 1,
       "shots": 1,
       "shotsOnTarget": 1,
       "keyPasses": 6,
-      "passes": 292,
-      "passAccuracy": 91,
+      "passes": 321,
+      "passAccuracy": 90,
       "tackles": 6,
       "interceptions": 6,
       "blocks": 1,
       "defensiveActions": 13,
-      "duels": 25,
-      "duelsWon": 12,
+      "duels": 28,
+      "duelsWon": 13,
       "dribbles": 1,
       "dribblesWon": 1,
-      "foulsDrawn": 4,
+      "foulsDrawn": 5,
       "foulsCommitted": 2,
       "yellowCards": 1,
       "redCards": 0,
@@ -24069,9 +24163,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 77,
-      "roleRank": 73,
-      "overallRank": 228
+      "impact": 75,
+      "roleRank": 91,
+      "overallRank": 294
     },
     {
       "key": "5996:26",
@@ -24088,37 +24182,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Midfielder",
       "number": 24,
-      "appearances": 6,
-      "starts": 6,
-      "minutes": 570,
-      "rating": 7.27,
+      "appearances": 7,
+      "starts": 7,
+      "minutes": 663,
+      "rating": 7.07,
       "goals": 2,
       "assists": 0,
       "goalContributions": 2,
       "shots": 8,
       "shotsOnTarget": 4,
       "keyPasses": 4,
-      "passes": 476,
+      "passes": 512,
       "passAccuracy": 93,
-      "tackles": 10,
-      "interceptions": 3,
-      "blocks": 0,
-      "defensiveActions": 13,
-      "duels": 55,
-      "duelsWon": 24,
-      "dribbles": 10,
-      "dribblesWon": 6,
-      "foulsDrawn": 5,
-      "foulsCommitted": 9,
-      "yellowCards": 0,
-      "redCards": 0,
+      "tackles": 11,
+      "interceptions": 5,
+      "blocks": 1,
+      "defensiveActions": 17,
+      "duels": 66,
+      "duelsWon": 28,
+      "dribbles": 12,
+      "dribblesWon": 7,
+      "foulsDrawn": 6,
+      "foulsCommitted": 12,
+      "yellowCards": 1,
+      "redCards": 1,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 78,
-      "roleRank": 64,
-      "overallRank": 193
+      "impact": 76,
+      "roleRank": 83,
+      "overallRank": 270
     },
     {
       "key": "6009:26",
@@ -24135,28 +24229,28 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Attacker",
       "number": 9,
-      "appearances": 7,
-      "starts": 4,
-      "minutes": 499,
-      "rating": 6.59,
+      "appearances": 8,
+      "starts": 5,
+      "minutes": 601,
+      "rating": 6.58,
       "goals": 1,
       "assists": 0,
       "goalContributions": 1,
       "shots": 9,
       "shotsOnTarget": 5,
       "keyPasses": 4,
-      "passes": 193,
-      "passAccuracy": 86,
-      "tackles": 4,
-      "interceptions": 2,
+      "passes": 209,
+      "passAccuracy": 85,
+      "tackles": 5,
+      "interceptions": 3,
       "blocks": 1,
-      "defensiveActions": 7,
-      "duels": 40,
-      "duelsWon": 12,
-      "dribbles": 4,
+      "defensiveActions": 9,
+      "duels": 51,
+      "duelsWon": 15,
+      "dribbles": 5,
       "dribblesWon": 3,
-      "foulsDrawn": 3,
-      "foulsCommitted": 8,
+      "foulsDrawn": 4,
+      "foulsCommitted": 11,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
@@ -24164,8 +24258,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 69,
-      "overallRank": 447
+      "roleRank": 70,
+      "overallRank": 458
     },
     {
       "key": "6067:26",
@@ -24211,8 +24305,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 131,
-      "overallRank": 369
+      "roleRank": 133,
+      "overallRank": 376
     },
     {
       "key": "6231:26",
@@ -24229,24 +24323,24 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Defender",
       "number": 25,
-      "appearances": 4,
+      "appearances": 5,
       "starts": 3,
-      "minutes": 259,
-      "rating": 7,
+      "minutes": 309,
+      "rating": 6.83,
       "goals": 0,
       "assists": 1,
       "goalContributions": 1,
       "shots": 0,
       "shotsOnTarget": 0,
       "keyPasses": 1,
-      "passes": 126,
+      "passes": 143,
       "passAccuracy": 92,
-      "tackles": 8,
-      "interceptions": 1,
+      "tackles": 9,
+      "interceptions": 2,
       "blocks": 2,
-      "defensiveActions": 11,
-      "duels": 20,
-      "duelsWon": 12,
+      "defensiveActions": 13,
+      "duels": 23,
+      "duelsWon": 14,
       "dribbles": 0,
       "dribblesWon": 0,
       "foulsDrawn": 2,
@@ -24257,9 +24351,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 82,
-      "roleRank": 48,
-      "overallRank": 101
+      "impact": 79,
+      "roleRank": 74,
+      "overallRank": 186
     },
     {
       "key": "6503:26",
@@ -24276,24 +24370,24 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Defender",
       "number": 26,
-      "appearances": 6,
+      "appearances": 7,
       "starts": 5,
-      "minutes": 469,
-      "rating": 6.47,
+      "minutes": 531,
+      "rating": 6.49,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 1,
       "shotsOnTarget": 0,
       "keyPasses": 3,
-      "passes": 225,
-      "passAccuracy": 86,
-      "tackles": 12,
-      "interceptions": 6,
-      "blocks": 0,
-      "defensiveActions": 18,
-      "duels": 27,
-      "duelsWon": 15,
+      "passes": 251,
+      "passAccuracy": 84,
+      "tackles": 15,
+      "interceptions": 8,
+      "blocks": 1,
+      "defensiveActions": 24,
+      "duels": 32,
+      "duelsWon": 18,
       "dribbles": 3,
       "dribblesWon": 2,
       "foulsDrawn": 0,
@@ -24304,9 +24398,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 73,
-      "roleRank": 150,
-      "overallRank": 379
+      "impact": 74,
+      "roleRank": 135,
+      "overallRank": 345
     },
     {
       "key": "6716:26",
@@ -24323,9 +24417,9 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Midfielder",
       "number": 20,
-      "appearances": 7,
-      "starts": 6,
-      "minutes": 629,
+      "appearances": 8,
+      "starts": 7,
+      "minutes": 749,
       "rating": 6.73,
       "goals": 1,
       "assists": 1,
@@ -24333,27 +24427,27 @@
       "shots": 9,
       "shotsOnTarget": 4,
       "keyPasses": 5,
-      "passes": 394,
-      "passAccuracy": 92,
-      "tackles": 19,
-      "interceptions": 10,
+      "passes": 424,
+      "passAccuracy": 91,
+      "tackles": 21,
+      "interceptions": 11,
       "blocks": 0,
-      "defensiveActions": 29,
-      "duels": 72,
-      "duelsWon": 33,
-      "dribbles": 2,
-      "dribblesWon": 1,
-      "foulsDrawn": 10,
-      "foulsCommitted": 6,
-      "yellowCards": 0,
+      "defensiveActions": 32,
+      "duels": 87,
+      "duelsWon": 40,
+      "dribbles": 3,
+      "dribblesWon": 2,
+      "foulsDrawn": 12,
+      "foulsCommitted": 9,
+      "yellowCards": 1,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 75,
-      "roleRank": 88,
-      "overallRank": 284
+      "impact": 74,
+      "roleRank": 100,
+      "overallRank": 317
     },
     {
       "key": "19599:26",
@@ -24370,18 +24464,18 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Goalkeeper",
       "number": 23,
-      "appearances": 7,
-      "starts": 7,
-      "minutes": 690,
-      "rating": 6.73,
+      "appearances": 8,
+      "starts": 8,
+      "minutes": 810,
+      "rating": 7.1,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 0,
       "shotsOnTarget": 0,
       "keyPasses": 0,
-      "passes": 193,
-      "passAccuracy": 74,
+      "passes": 246,
+      "passAccuracy": 71,
       "tackles": 0,
       "interceptions": 0,
       "blocks": 0,
@@ -24394,13 +24488,13 @@
       "foulsCommitted": 0,
       "yellowCards": 0,
       "redCards": 0,
-      "saves": 9,
-      "conceded": 7,
+      "saves": 20,
+      "conceded": 8,
       "cleanSheets": 2,
       "penaltiesSaved": 0,
-      "impact": 78,
-      "roleRank": 29,
-      "overallRank": 212
+      "impact": 82,
+      "roleRank": 23,
+      "overallRank": 114
     },
     {
       "key": "26315:26",
@@ -24417,27 +24511,27 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Attacker",
       "number": 15,
-      "appearances": 6,
-      "starts": 0,
-      "minutes": 208,
-      "rating": 6.8,
+      "appearances": 7,
+      "starts": 1,
+      "minutes": 253,
+      "rating": 6.79,
       "goals": 0,
       "assists": 1,
       "goalContributions": 1,
       "shots": 5,
       "shotsOnTarget": 1,
       "keyPasses": 6,
-      "passes": 101,
-      "passAccuracy": 82,
+      "passes": 110,
+      "passAccuracy": 80,
       "tackles": 5,
       "interceptions": 2,
       "blocks": 1,
       "defensiveActions": 8,
-      "duels": 34,
-      "duelsWon": 20,
-      "dribbles": 8,
-      "dribblesWon": 3,
-      "foulsDrawn": 2,
+      "duels": 41,
+      "duelsWon": 24,
+      "dribbles": 10,
+      "dribblesWon": 4,
+      "foulsDrawn": 3,
       "foulsCommitted": 4,
       "yellowCards": 0,
       "redCards": 0,
@@ -24446,8 +24540,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 46,
-      "overallRank": 310
+      "roleRank": 50,
+      "overallRank": 323
     },
     {
       "key": "30776:26",
@@ -24464,37 +24558,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Defender",
       "number": 13,
-      "appearances": 6,
-      "starts": 6,
-      "minutes": 541,
-      "rating": 7.25,
+      "appearances": 7,
+      "starts": 7,
+      "minutes": 611,
+      "rating": 7.2,
       "goals": 1,
       "assists": 0,
       "goalContributions": 1,
       "shots": 3,
       "shotsOnTarget": 1,
       "keyPasses": 0,
-      "passes": 391,
+      "passes": 431,
       "passAccuracy": 95,
-      "tackles": 14,
+      "tackles": 15,
       "interceptions": 10,
       "blocks": 3,
-      "defensiveActions": 27,
-      "duels": 49,
-      "duelsWon": 32,
+      "defensiveActions": 28,
+      "duels": 50,
+      "duelsWon": 33,
       "dribbles": 2,
       "dribblesWon": 2,
       "foulsDrawn": 3,
       "foulsCommitted": 9,
-      "yellowCards": 1,
+      "yellowCards": 2,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 87,
-      "roleRank": 8,
-      "overallRank": 28
+      "impact": 86,
+      "roleRank": 14,
+      "overallRank": 43
     },
     {
       "key": "291024:1533",
@@ -24652,37 +24746,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Midfielder",
       "number": 5,
-      "appearances": 6,
+      "appearances": 7,
       "starts": 4,
-      "minutes": 398,
-      "rating": 7.33,
+      "minutes": 473,
+      "rating": 7.17,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 3,
       "shotsOnTarget": 1,
       "keyPasses": 4,
-      "passes": 524,
-      "passAccuracy": 94,
-      "tackles": 9,
-      "interceptions": 3,
-      "blocks": 2,
-      "defensiveActions": 14,
-      "duels": 26,
-      "duelsWon": 16,
-      "dribbles": 3,
-      "dribblesWon": 2,
-      "foulsDrawn": 2,
-      "foulsCommitted": 5,
-      "yellowCards": 1,
+      "passes": 566,
+      "passAccuracy": 93,
+      "tackles": 10,
+      "interceptions": 5,
+      "blocks": 3,
+      "defensiveActions": 18,
+      "duels": 37,
+      "duelsWon": 19,
+      "dribbles": 5,
+      "dribblesWon": 3,
+      "foulsDrawn": 3,
+      "foulsCommitted": 9,
+      "yellowCards": 2,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 77,
-      "roleRank": 82,
-      "overallRank": 232
+      "impact": 76,
+      "roleRank": 95,
+      "overallRank": 273
     },
     {
       "key": "409:1532",
@@ -24728,8 +24822,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 100,
-      "overallRank": 290
+      "roleRank": 103,
+      "overallRank": 298
     },
     {
       "key": "529:26",
@@ -24746,37 +24840,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Defender",
       "number": 3,
-      "appearances": 6,
-      "starts": 4,
-      "minutes": 357,
-      "rating": 6.62,
+      "appearances": 7,
+      "starts": 5,
+      "minutes": 477,
+      "rating": 6.63,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 0,
       "shotsOnTarget": 0,
       "keyPasses": 2,
-      "passes": 163,
-      "passAccuracy": 87,
-      "tackles": 5,
-      "interceptions": 3,
+      "passes": 198,
+      "passAccuracy": 84,
+      "tackles": 8,
+      "interceptions": 6,
       "blocks": 1,
-      "defensiveActions": 9,
-      "duels": 39,
-      "duelsWon": 25,
-      "dribbles": 1,
-      "dribblesWon": 1,
-      "foulsDrawn": 13,
-      "foulsCommitted": 4,
+      "defensiveActions": 15,
+      "duels": 52,
+      "duelsWon": 33,
+      "dribbles": 2,
+      "dribblesWon": 2,
+      "foulsDrawn": 16,
+      "foulsCommitted": 9,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 75,
-      "roleRank": 122,
-      "overallRank": 295
+      "impact": 76,
+      "roleRank": 116,
+      "overallRank": 276
     },
     {
       "key": "658:1532",
@@ -24870,7 +24964,7 @@
       "penaltiesSaved": 0,
       "impact": 72,
       "roleRank": 39,
-      "overallRank": 413
+      "overallRank": 421
     },
     {
       "key": "1567:1532",
@@ -24916,8 +25010,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 107,
-      "overallRank": 238
+      "roleRank": 110,
+      "overallRank": 249
     },
     {
       "key": "1578:26",
@@ -25011,7 +25105,7 @@
       "penaltiesSaved": 0,
       "impact": 81,
       "roleRank": 50,
-      "overallRank": 113
+      "overallRank": 123
     },
     {
       "key": "4399:1532",
@@ -25122,27 +25216,27 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Defender",
       "number": 2,
-      "appearances": 1,
+      "appearances": 2,
       "starts": 1,
-      "minutes": 90,
-      "rating": 6.6,
+      "minutes": 108,
+      "rating": 6.4,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 1,
       "shotsOnTarget": 0,
       "keyPasses": 0,
-      "passes": 71,
-      "passAccuracy": 94,
+      "passes": 78,
+      "passAccuracy": 92,
       "tackles": 0,
       "interceptions": 2,
       "blocks": 1,
       "defensiveActions": 3,
-      "duels": 5,
-      "duelsWon": 3,
+      "duels": 7,
+      "duelsWon": 4,
       "dribbles": 0,
       "dribblesWon": 0,
-      "foulsDrawn": 2,
+      "foulsDrawn": 3,
       "foulsCommitted": 0,
       "yellowCards": 0,
       "redCards": 0,
@@ -25199,7 +25293,7 @@
       "penaltiesSaved": 0,
       "impact": 83,
       "roleRank": 17,
-      "overallRank": 80
+      "overallRank": 83
     },
     {
       "key": "85041:1532",
@@ -25244,9 +25338,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 71,
-      "roleRank": 62,
-      "overallRank": 422
+      "impact": 72,
+      "roleRank": 63,
+      "overallRank": 405
     },
     {
       "key": "276670:1532",
@@ -25293,7 +25387,7 @@
       "penaltiesSaved": 0,
       "impact": 68,
       "roleRank": 78,
-      "overallRank": 487
+      "overallRank": 495
     },
     {
       "key": "295513:26",
@@ -25308,30 +25402,30 @@
       "teamId": 26,
       "teamName": "Argentina",
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
-      "position": "Midfielder",
-      "number": 8,
+      "position": "Attacker",
+      "number": 21,
       "appearances": 2,
       "starts": 0,
-      "minutes": 19,
-      "rating": 6.9,
+      "minutes": 18,
+      "rating": 6.4,
       "goals": 0,
-      "assists": 0,
-      "goalContributions": 0,
+      "assists": 1,
+      "goalContributions": 1,
       "shots": 0,
       "shotsOnTarget": 0,
-      "keyPasses": 0,
-      "passes": 20,
-      "passAccuracy": 80,
+      "keyPasses": 1,
+      "passes": 3,
+      "passAccuracy": 66,
       "tackles": 1,
       "interceptions": 0,
       "blocks": 0,
       "defensiveActions": 1,
-      "duels": 2,
+      "duels": 6,
       "duelsWon": 2,
-      "dribbles": 0,
+      "dribbles": 1,
       "dribblesWon": 0,
-      "foulsDrawn": 1,
-      "foulsCommitted": 0,
+      "foulsDrawn": 0,
+      "foulsCommitted": 1,
       "yellowCards": 1,
       "redCards": 0,
       "saves": 0,
@@ -25386,8 +25480,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 89,
-      "overallRank": 200
+      "roleRank": 91,
+      "overallRank": 209
     },
     {
       "key": "319572:26",
@@ -25451,37 +25545,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/26.png",
       "position": "Attacker",
       "number": 17,
-      "appearances": 2,
+      "appearances": 3,
       "starts": 2,
-      "minutes": 143,
-      "rating": 6.2,
+      "minutes": 193,
+      "rating": 6.23,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
-      "shots": 0,
+      "shots": 1,
       "shotsOnTarget": 0,
-      "keyPasses": 2,
-      "passes": 69,
-      "passAccuracy": 85,
-      "tackles": 4,
+      "keyPasses": 3,
+      "passes": 87,
+      "passAccuracy": 82,
+      "tackles": 6,
       "interceptions": 1,
       "blocks": 0,
-      "defensiveActions": 5,
-      "duels": 19,
-      "duelsWon": 7,
+      "defensiveActions": 7,
+      "duels": 27,
+      "duelsWon": 10,
       "dribbles": 1,
       "dribblesWon": 0,
       "foulsDrawn": 1,
-      "foulsCommitted": 6,
+      "foulsCommitted": 9,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 0,
-      "roleRank": 0,
-      "overallRank": 0
+      "impact": 67,
+      "roleRank": 87,
+      "overallRank": 516
     },
     {
       "key": "326067:1532",
@@ -25574,8 +25668,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 147,
-      "overallRank": 418
+      "roleRank": 149,
+      "overallRank": 425
     },
     {
       "key": "505:775",
@@ -25621,8 +25715,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 81,
-      "roleRank": 71,
-      "overallRank": 118
+      "roleRank": 72,
+      "overallRank": 128
     },
     {
       "key": "635:1532",
@@ -25667,9 +25761,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 81,
-      "roleRank": 10,
-      "overallRank": 107
+      "impact": 82,
+      "roleRank": 12,
+      "overallRank": 98
     },
     {
       "key": "711:775",
@@ -25715,8 +25809,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 177,
-      "overallRank": 495
+      "roleRank": 181,
+      "overallRank": 502
     },
     {
       "key": "4414:1532",
@@ -25856,8 +25950,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 141,
-      "overallRank": 393
+      "roleRank": 143,
+      "overallRank": 399
     },
     {
       "key": "7525:775",
@@ -25904,7 +25998,7 @@
       "penaltiesSaved": 0,
       "impact": 72,
       "roleRank": 38,
-      "overallRank": 412
+      "overallRank": 420
     },
     {
       "key": "20869:1532",
@@ -26044,8 +26138,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 174,
-      "overallRank": 474
+      "roleRank": 177,
+      "overallRank": 480
     },
     {
       "key": "129047:1532",
@@ -26420,8 +26514,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 97,
-      "overallRank": 349
+      "roleRank": 98,
+      "overallRank": 359
     },
     {
       "key": "1157:775",
@@ -26467,8 +26561,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 145,
-      "overallRank": 417
+      "roleRank": 147,
+      "overallRank": 424
     },
     {
       "key": "1159:775",
@@ -26514,8 +26608,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 101,
-      "overallRank": 316
+      "roleRank": 104,
+      "overallRank": 321
     },
     {
       "key": "7327:775",
@@ -26608,8 +26702,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 130,
-      "overallRank": 368
+      "roleRank": 132,
+      "overallRank": 375
     },
     {
       "key": "7722:775",
@@ -26749,8 +26843,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 147,
-      "overallRank": 343
+      "roleRank": 150,
+      "overallRank": 353
     },
     {
       "key": "25297:775",
@@ -26797,7 +26891,7 @@
       "penaltiesSaved": 0,
       "impact": 70,
       "roleRank": 68,
-      "overallRank": 445
+      "overallRank": 452
     },
     {
       "key": "25314:775",
@@ -26984,8 +27078,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 68,
-      "roleRank": 186,
-      "overallRank": 481
+      "roleRank": 188,
+      "overallRank": 489
     },
     {
       "key": "15286:1548",
@@ -27030,9 +27124,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 77,
-      "roleRank": 26,
-      "overallRank": 217
+      "impact": 78,
+      "roleRank": 27,
+      "overallRank": 196
     },
     {
       "key": "53900:1548",
@@ -27078,8 +27172,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 132,
-      "overallRank": 375
+      "roleRank": 136,
+      "overallRank": 382
     },
     {
       "key": "53902:1548",
@@ -27125,8 +27219,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 162,
-      "overallRank": 441
+      "roleRank": 164,
+      "overallRank": 448
     },
     {
       "key": "72140:1548",
@@ -27314,7 +27408,7 @@
       "penaltiesSaved": 0,
       "impact": 70,
       "roleRank": 42,
-      "overallRank": 460
+      "overallRank": 467
     },
     {
       "key": "140609:1548",
@@ -27360,8 +27454,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 109,
-      "overallRank": 355
+      "roleRank": 111,
+      "overallRank": 364
     },
     {
       "key": "164026:1548",
@@ -27407,8 +27501,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 47,
-      "overallRank": 312
+      "roleRank": 46,
+      "overallRank": 313
     },
     {
       "key": "213980:1548",
@@ -27454,8 +27548,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 115,
-      "overallRank": 358
+      "roleRank": 117,
+      "overallRank": 366
     },
     {
       "key": "310785:1548",
@@ -27501,8 +27595,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 116,
-      "overallRank": 360
+      "roleRank": 118,
+      "overallRank": 368
     },
     {
       "key": "310835:1548",
@@ -27548,8 +27642,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 139,
-      "overallRank": 340
+      "roleRank": 142,
+      "overallRank": 350
     },
     {
       "key": "575283:1548",
@@ -27613,27 +27707,27 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Midfielder",
       "number": 7,
-      "appearances": 7,
+      "appearances": 8,
       "starts": 7,
-      "minutes": 552,
-      "rating": 7.84,
-      "goals": 5,
+      "minutes": 597,
+      "rating": 7.89,
+      "goals": 6,
       "assists": 2,
-      "goalContributions": 7,
-      "shots": 13,
-      "shotsOnTarget": 8,
-      "keyPasses": 16,
-      "passes": 265,
-      "passAccuracy": 78,
+      "goalContributions": 8,
+      "shots": 15,
+      "shotsOnTarget": 10,
+      "keyPasses": 18,
+      "passes": 293,
+      "passAccuracy": 79,
       "tackles": 3,
       "interceptions": 0,
       "blocks": 0,
       "defensiveActions": 3,
-      "duels": 30,
-      "duelsWon": 13,
-      "dribbles": 12,
-      "dribblesWon": 5,
-      "foulsDrawn": 3,
+      "duels": 33,
+      "duelsWon": 15,
+      "dribbles": 13,
+      "dribblesWon": 6,
+      "foulsDrawn": 4,
       "foulsCommitted": 0,
       "yellowCards": 0,
       "redCards": 0,
@@ -27641,9 +27735,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 88,
-      "roleRank": 6,
-      "overallRank": 20
+      "impact": 89,
+      "roleRank": 4,
+      "overallRank": 16
     },
     {
       "key": "272:2",
@@ -27660,37 +27754,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Midfielder",
       "number": 14,
-      "appearances": 6,
-      "starts": 6,
-      "minutes": 495,
-      "rating": 7.02,
+      "appearances": 7,
+      "starts": 7,
+      "minutes": 585,
+      "rating": 6.91,
       "goals": 0,
       "assists": 1,
       "goalContributions": 1,
-      "shots": 7,
+      "shots": 8,
       "shotsOnTarget": 1,
-      "keyPasses": 6,
-      "passes": 322,
+      "keyPasses": 8,
+      "passes": 361,
       "passAccuracy": 90,
-      "tackles": 7,
-      "interceptions": 9,
+      "tackles": 9,
+      "interceptions": 11,
       "blocks": 0,
-      "defensiveActions": 16,
-      "duels": 41,
-      "duelsWon": 20,
-      "dribbles": 1,
+      "defensiveActions": 20,
+      "duels": 51,
+      "duelsWon": 23,
+      "dribbles": 2,
       "dribblesWon": 1,
-      "foulsDrawn": 3,
-      "foulsCommitted": 11,
+      "foulsDrawn": 4,
+      "foulsCommitted": 13,
       "yellowCards": 1,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 76,
-      "roleRank": 81,
-      "overallRank": 262
+      "impact": 75,
+      "roleRank": 85,
+      "overallRank": 290
     },
     {
       "key": "278:2",
@@ -27707,26 +27801,26 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Attacker",
       "number": 10,
-      "appearances": 7,
-      "starts": 7,
-      "minutes": 608,
-      "rating": 7.96,
-      "goals": 8,
-      "assists": 3,
-      "goalContributions": 11,
-      "shots": 30,
-      "shotsOnTarget": 19,
-      "keyPasses": 16,
-      "passes": 202,
+      "appearances": 8,
+      "starts": 8,
+      "minutes": 698,
+      "rating": 8.21,
+      "goals": 10,
+      "assists": 4,
+      "goalContributions": 14,
+      "shots": 36,
+      "shotsOnTarget": 23,
+      "keyPasses": 18,
+      "passes": 234,
       "passAccuracy": 85,
       "tackles": 1,
       "interceptions": 0,
       "blocks": 0,
       "defensiveActions": 1,
-      "duels": 55,
-      "duelsWon": 21,
-      "dribbles": 29,
-      "dribblesWon": 11,
+      "duels": 70,
+      "duelsWon": 23,
+      "dribbles": 36,
+      "dribblesWon": 13,
       "foulsDrawn": 8,
       "foulsCommitted": 6,
       "yellowCards": 1,
@@ -27735,9 +27829,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 89,
-      "roleRank": 2,
-      "overallRank": 13
+      "impact": 95,
+      "roleRank": 3,
+      "overallRank": 3
     },
     {
       "key": "1149:2",
@@ -27754,28 +27848,28 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Defender",
       "number": 4,
-      "appearances": 7,
+      "appearances": 8,
       "starts": 7,
-      "minutes": 616,
-      "rating": 7.27,
+      "minutes": 661,
+      "rating": 7.18,
       "goals": 0,
-      "assists": 0,
-      "goalContributions": 0,
-      "shots": 2,
-      "shotsOnTarget": 1,
-      "keyPasses": 3,
-      "passes": 432,
+      "assists": 1,
+      "goalContributions": 1,
+      "shots": 3,
+      "shotsOnTarget": 2,
+      "keyPasses": 4,
+      "passes": 445,
       "passAccuracy": 91,
-      "tackles": 14,
-      "interceptions": 13,
+      "tackles": 17,
+      "interceptions": 15,
       "blocks": 5,
-      "defensiveActions": 32,
-      "duels": 57,
-      "duelsWon": 31,
+      "defensiveActions": 37,
+      "duels": 66,
+      "duelsWon": 34,
       "dribbles": 3,
       "dribblesWon": 2,
       "foulsDrawn": 4,
-      "foulsCommitted": 6,
+      "foulsCommitted": 7,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
@@ -27784,7 +27878,7 @@
       "penaltiesSaved": 0,
       "impact": 87,
       "roleRank": 7,
-      "overallRank": 27
+      "overallRank": 28
     },
     {
       "key": "1257:2",
@@ -27801,23 +27895,23 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Defender",
       "number": 5,
-      "appearances": 7,
+      "appearances": 8,
       "starts": 7,
-      "minutes": 602,
-      "rating": 6.83,
+      "minutes": 610,
+      "rating": 6.75,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 0,
       "shotsOnTarget": 0,
       "keyPasses": 4,
-      "passes": 320,
+      "passes": 325,
       "passAccuracy": 86,
       "tackles": 14,
       "interceptions": 3,
       "blocks": 1,
       "defensiveActions": 18,
-      "duels": 46,
+      "duels": 47,
       "duelsWon": 31,
       "dribbles": 2,
       "dribblesWon": 1,
@@ -27829,9 +27923,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 77,
-      "roleRank": 102,
-      "overallRank": 236
+      "impact": 76,
+      "roleRank": 118,
+      "overallRank": 277
     },
     {
       "key": "1271:2",
@@ -27877,8 +27971,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 81,
-      "roleRank": 31,
-      "overallRank": 110
+      "roleRank": 32,
+      "overallRank": 120
     },
     {
       "key": "19617:2",
@@ -27895,37 +27989,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Midfielder",
       "number": 11,
-      "appearances": 7,
-      "starts": 7,
-      "minutes": 560,
-      "rating": 7.39,
+      "appearances": 8,
+      "starts": 8,
+      "minutes": 650,
+      "rating": 7.34,
       "goals": 0,
-      "assists": 5,
-      "goalContributions": 5,
-      "shots": 11,
+      "assists": 7,
+      "goalContributions": 7,
+      "shots": 14,
       "shotsOnTarget": 5,
-      "keyPasses": 13,
-      "passes": 355,
+      "keyPasses": 17,
+      "passes": 411,
       "passAccuracy": 86,
-      "tackles": 10,
+      "tackles": 15,
       "interceptions": 3,
       "blocks": 0,
-      "defensiveActions": 13,
-      "duels": 78,
-      "duelsWon": 42,
-      "dribbles": 29,
-      "dribblesWon": 15,
+      "defensiveActions": 18,
+      "duels": 92,
+      "duelsWon": 48,
+      "dribbles": 34,
+      "dribblesWon": 16,
       "foulsDrawn": 16,
-      "foulsCommitted": 4,
+      "foulsCommitted": 5,
       "yellowCards": 1,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 86,
-      "roleRank": 10,
-      "overallRank": 37
+      "impact": 87,
+      "roleRank": 8,
+      "overallRank": 27
     },
     {
       "key": "22090:2",
@@ -27971,8 +28065,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 113,
-      "overallRank": 243
+      "roleRank": 115,
+      "overallRank": 253
     },
     {
       "key": "22221:2",
@@ -27989,23 +28083,23 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Goalkeeper",
       "number": 16,
-      "appearances": 7,
-      "starts": 7,
-      "minutes": 630,
-      "rating": 6.81,
+      "appearances": 8,
+      "starts": 8,
+      "minutes": 720,
+      "rating": 6.71,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 0,
       "shotsOnTarget": 0,
       "keyPasses": 0,
-      "passes": 178,
-      "passAccuracy": 75,
+      "passes": 190,
+      "passAccuracy": 76,
       "tackles": 0,
       "interceptions": 0,
       "blocks": 0,
       "defensiveActions": 0,
-      "duels": 3,
+      "duels": 4,
       "duelsWon": 3,
       "dribbles": 0,
       "dribblesWon": 0,
@@ -28013,13 +28107,13 @@
       "foulsCommitted": 0,
       "yellowCards": 0,
       "redCards": 0,
-      "saves": 9,
-      "conceded": 4,
+      "saves": 13,
+      "conceded": 10,
       "cleanSheets": 4,
       "penaltiesSaved": 1,
-      "impact": 85,
-      "roleRank": 10,
-      "overallRank": 57
+      "impact": 82,
+      "roleRank": 17,
+      "overallRank": 112
     },
     {
       "key": "47300:2",
@@ -28036,22 +28130,22 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Defender",
       "number": 19,
-      "appearances": 4,
-      "starts": 2,
-      "minutes": 210,
-      "rating": 6.5,
+      "appearances": 5,
+      "starts": 3,
+      "minutes": 255,
+      "rating": 6.38,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 2,
       "shotsOnTarget": 0,
       "keyPasses": 2,
-      "passes": 118,
-      "passAccuracy": 94,
+      "passes": 142,
+      "passAccuracy": 92,
       "tackles": 2,
-      "interceptions": 2,
-      "blocks": 0,
-      "defensiveActions": 4,
+      "interceptions": 3,
+      "blocks": 1,
+      "defensiveActions": 6,
       "duels": 23,
       "duelsWon": 10,
       "dribbles": 2,
@@ -28064,9 +28158,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 73,
-      "roleRank": 151,
-      "overallRank": 380
+      "impact": 71,
+      "roleRank": 164,
+      "overallRank": 441
     },
     {
       "key": "72142:1548",
@@ -28130,27 +28224,27 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Midfielder",
       "number": 24,
-      "appearances": 6,
-      "starts": 0,
-      "minutes": 104,
-      "rating": 6.58,
+      "appearances": 7,
+      "starts": 1,
+      "minutes": 149,
+      "rating": 6.57,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
-      "shots": 0,
-      "shotsOnTarget": 0,
+      "shots": 1,
+      "shotsOnTarget": 1,
       "keyPasses": 2,
-      "passes": 75,
-      "passAccuracy": 82,
+      "passes": 104,
+      "passAccuracy": 83,
       "tackles": 1,
       "interceptions": 1,
       "blocks": 0,
       "defensiveActions": 2,
-      "duels": 10,
-      "duelsWon": 5,
+      "duels": 12,
+      "duelsWon": 6,
       "dribbles": 6,
       "dribblesWon": 3,
-      "foulsDrawn": 1,
+      "foulsDrawn": 2,
       "foulsCommitted": 2,
       "yellowCards": 0,
       "redCards": 0,
@@ -28177,37 +28271,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Attacker",
       "number": 12,
-      "appearances": 7,
+      "appearances": 8,
       "starts": 4,
-      "minutes": 339,
-      "rating": 7.07,
-      "goals": 2,
+      "minutes": 384,
+      "rating": 7.18,
+      "goals": 3,
       "assists": 1,
-      "goalContributions": 3,
-      "shots": 8,
-      "shotsOnTarget": 4,
-      "keyPasses": 7,
-      "passes": 112,
-      "passAccuracy": 85,
-      "tackles": 4,
+      "goalContributions": 4,
+      "shots": 9,
+      "shotsOnTarget": 5,
+      "keyPasses": 8,
+      "passes": 124,
+      "passAccuracy": 87,
+      "tackles": 5,
       "interceptions": 1,
       "blocks": 1,
-      "defensiveActions": 6,
-      "duels": 43,
-      "duelsWon": 23,
-      "dribbles": 21,
-      "dribblesWon": 12,
+      "defensiveActions": 7,
+      "duels": 49,
+      "duelsWon": 25,
+      "dribbles": 22,
+      "dribblesWon": 13,
       "foulsDrawn": 1,
-      "foulsCommitted": 3,
+      "foulsCommitted": 5,
       "yellowCards": 1,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 78,
-      "roleRank": 17,
-      "overallRank": 185
+      "impact": 81,
+      "roleRank": 13,
+      "overallRank": 116
     },
     {
       "key": "198211:1548",
@@ -28271,37 +28365,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Midfielder",
       "number": 20,
-      "appearances": 7,
-      "starts": 3,
-      "minutes": 353,
-      "rating": 6.97,
+      "appearances": 8,
+      "starts": 4,
+      "minutes": 398,
+      "rating": 6.84,
       "goals": 1,
       "assists": 1,
       "goalContributions": 2,
       "shots": 10,
       "shotsOnTarget": 8,
       "keyPasses": 13,
-      "passes": 175,
-      "passAccuracy": 83,
-      "tackles": 9,
+      "passes": 195,
+      "passAccuracy": 84,
+      "tackles": 10,
       "interceptions": 2,
       "blocks": 0,
-      "defensiveActions": 11,
-      "duels": 58,
-      "duelsWon": 25,
-      "dribbles": 23,
-      "dribblesWon": 8,
-      "foulsDrawn": 6,
-      "foulsCommitted": 3,
+      "defensiveActions": 12,
+      "duels": 65,
+      "duelsWon": 29,
+      "dribbles": 25,
+      "dribblesWon": 9,
+      "foulsDrawn": 8,
+      "foulsCommitted": 4,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 81,
-      "roleRank": 23,
-      "overallRank": 108
+      "impact": 79,
+      "roleRank": 34,
+      "overallRank": 170
     },
     {
       "key": "81:13",
@@ -28348,7 +28442,7 @@
       "penaltiesSaved": 0,
       "impact": 80,
       "roleRank": 63,
-      "overallRank": 137
+      "overallRank": 149
     },
     {
       "key": "318:13",
@@ -28412,28 +28506,28 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Defender",
       "number": 15,
-      "appearances": 1,
-      "starts": 0,
-      "minutes": 14,
-      "rating": 6.6,
+      "appearances": 2,
+      "starts": 1,
+      "minutes": 59,
+      "rating": 5.95,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 0,
       "shotsOnTarget": 0,
       "keyPasses": 0,
-      "passes": 12,
+      "passes": 35,
       "passAccuracy": 91,
       "tackles": 0,
       "interceptions": 3,
       "blocks": 0,
       "defensiveActions": 3,
-      "duels": 1,
-      "duelsWon": 1,
+      "duels": 5,
+      "duelsWon": 2,
       "dribbles": 0,
       "dribblesWon": 0,
-      "foulsDrawn": 0,
-      "foulsCommitted": 0,
+      "foulsDrawn": 1,
+      "foulsCommitted": 2,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
@@ -28489,7 +28583,7 @@
       "penaltiesSaved": 0,
       "impact": 86,
       "roleRank": 14,
-      "overallRank": 40
+      "overallRank": 41
     },
     {
       "key": "2724:2",
@@ -28506,37 +28600,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Defender",
       "number": 3,
-      "appearances": 5,
+      "appearances": 6,
       "starts": 5,
-      "minutes": 420,
-      "rating": 6.8,
+      "minutes": 465,
+      "rating": 6.72,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 2,
       "shotsOnTarget": 1,
       "keyPasses": 1,
-      "passes": 235,
-      "passAccuracy": 85,
+      "passes": 253,
+      "passAccuracy": 86,
       "tackles": 5,
-      "interceptions": 3,
+      "interceptions": 4,
       "blocks": 0,
-      "defensiveActions": 8,
-      "duels": 27,
-      "duelsWon": 17,
-      "dribbles": 3,
+      "defensiveActions": 9,
+      "duels": 33,
+      "duelsWon": 20,
+      "dribbles": 4,
       "dribblesWon": 2,
       "foulsDrawn": 2,
-      "foulsCommitted": 5,
+      "foulsCommitted": 7,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 75,
-      "roleRank": 149,
-      "overallRank": 304
+      "impact": 74,
+      "roleRank": 152,
+      "overallRank": 354
     },
     {
       "key": "2986:13",
@@ -28629,8 +28723,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 76,
-      "roleRank": 98,
-      "overallRank": 266
+      "roleRank": 99,
+      "overallRank": 274
     },
     {
       "key": "20696:13",
@@ -28677,7 +28771,7 @@
       "penaltiesSaved": 0,
       "impact": 83,
       "roleRank": 17,
-      "overallRank": 75
+      "overallRank": 77
     },
     {
       "key": "20995:2",
@@ -28694,37 +28788,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Defender",
       "number": 26,
-      "appearances": 2,
-      "starts": 1,
-      "minutes": 150,
-      "rating": 6.5,
+      "appearances": 3,
+      "starts": 2,
+      "minutes": 240,
+      "rating": 6.83,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 0,
       "shotsOnTarget": 0,
       "keyPasses": 0,
-      "passes": 100,
+      "passes": 135,
       "passAccuracy": 94,
-      "tackles": 2,
-      "interceptions": 2,
-      "blocks": 1,
-      "defensiveActions": 5,
-      "duels": 17,
-      "duelsWon": 7,
-      "dribbles": 1,
-      "dribblesWon": 1,
+      "tackles": 3,
+      "interceptions": 3,
+      "blocks": 5,
+      "defensiveActions": 11,
+      "duels": 27,
+      "duelsWon": 14,
+      "dribbles": 2,
+      "dribblesWon": 2,
       "foulsDrawn": 0,
-      "foulsCommitted": 4,
+      "foulsCommitted": 5,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 0,
-      "roleRank": 0,
-      "overallRank": 0
+      "impact": 81,
+      "roleRank": 45,
+      "overallRank": 122
     },
     {
       "key": "21509:2",
@@ -28817,8 +28911,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 135,
-      "overallRank": 373
+      "roleRank": 137,
+      "overallRank": 380
     },
     {
       "key": "25916:13",
@@ -28864,8 +28958,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 81,
-      "roleRank": 68,
-      "overallRank": 117
+      "roleRank": 69,
+      "overallRank": 127
     },
     {
       "key": "25927:2",
@@ -28929,28 +29023,28 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Defender",
       "number": 2,
-      "appearances": 4,
-      "starts": 0,
-      "minutes": 44,
-      "rating": 6.73,
+      "appearances": 5,
+      "starts": 1,
+      "minutes": 133,
+      "rating": 6.44,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 0,
       "shotsOnTarget": 0,
       "keyPasses": 1,
-      "passes": 34,
-      "passAccuracy": 91,
-      "tackles": 2,
-      "interceptions": 1,
-      "blocks": 0,
-      "defensiveActions": 3,
-      "duels": 5,
-      "duelsWon": 2,
-      "dribbles": 0,
+      "passes": 76,
+      "passAccuracy": 88,
+      "tackles": 5,
+      "interceptions": 2,
+      "blocks": 2,
+      "defensiveActions": 9,
+      "duels": 16,
+      "duelsWon": 7,
+      "dribbles": 1,
       "dribblesWon": 0,
-      "foulsDrawn": 0,
-      "foulsCommitted": 2,
+      "foulsDrawn": 2,
+      "foulsCommitted": 4,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
@@ -29023,24 +29117,24 @@
       "teamLogo": "https://media.api-sports.io/football/teams/2.png",
       "position": "Midfielder",
       "number": 18,
-      "appearances": 1,
-      "starts": 0,
-      "minutes": 19,
+      "appearances": 2,
+      "starts": 1,
+      "minutes": 109,
       "rating": 6.7,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 0,
       "shotsOnTarget": 0,
-      "keyPasses": 0,
-      "passes": 13,
-      "passAccuracy": 84,
+      "keyPasses": 2,
+      "passes": 70,
+      "passAccuracy": 92,
       "tackles": 0,
       "interceptions": 1,
       "blocks": 0,
       "defensiveActions": 1,
-      "duels": 1,
-      "duelsWon": 0,
+      "duels": 5,
+      "duelsWon": 1,
       "dribbles": 0,
       "dribblesWon": 0,
       "foulsDrawn": 0,
@@ -29146,8 +29240,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 52,
-      "overallRank": 187
+      "roleRank": 54,
+      "overallRank": 199
     },
     {
       "key": "2932:10",
@@ -29193,8 +29287,8 @@
       "cleanSheets": 2,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 28,
-      "overallRank": 211
+      "roleRank": 29,
+      "overallRank": 221
     },
     {
       "key": "8450:13",
@@ -29305,26 +29399,26 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Defender",
       "number": 24,
-      "appearances": 4,
+      "appearances": 5,
       "starts": 3,
-      "minutes": 311,
-      "rating": 6.78,
+      "minutes": 327,
+      "rating": 6.76,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 0,
       "shotsOnTarget": 0,
       "keyPasses": 3,
-      "passes": 165,
+      "passes": 167,
       "passAccuracy": 89,
-      "tackles": 5,
-      "interceptions": 3,
-      "blocks": 2,
-      "defensiveActions": 10,
-      "duels": 25,
-      "duelsWon": 12,
-      "dribbles": 3,
-      "dribblesWon": 1,
+      "tackles": 6,
+      "interceptions": 4,
+      "blocks": 3,
+      "defensiveActions": 13,
+      "duels": 27,
+      "duelsWon": 14,
+      "dribbles": 4,
+      "dribblesWon": 2,
       "foulsDrawn": 1,
       "foulsCommitted": 3,
       "yellowCards": 0,
@@ -29333,9 +29427,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 77,
-      "roleRank": 98,
-      "overallRank": 234
+      "impact": 79,
+      "roleRank": 83,
+      "overallRank": 188
     },
     {
       "key": "41552:13",
@@ -29381,8 +29475,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 165,
-      "overallRank": 433
+      "roleRank": 167,
+      "overallRank": 438
     },
     {
       "key": "119853:13",
@@ -29428,8 +29522,8 @@
       "cleanSheets": 1,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 27,
-      "overallRank": 210
+      "roleRank": 28,
+      "overallRank": 220
     },
     {
       "key": "158121:13",
@@ -29475,8 +29569,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 121,
-      "overallRank": 294
+      "roleRank": 125,
+      "overallRank": 302
     },
     {
       "key": "237129:13",
@@ -29569,8 +29663,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 63,
-      "overallRank": 426
+      "roleRank": 64,
+      "overallRank": 431
     },
     {
       "key": "284072:13",
@@ -29711,7 +29805,7 @@
       "penaltiesSaved": 0,
       "impact": 75,
       "roleRank": 77,
-      "overallRank": 280
+      "overallRank": 287
     },
     {
       "key": "400948:13",
@@ -29897,9 +29991,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 79,
-      "roleRank": 16,
-      "overallRank": 155
+      "impact": 80,
+      "roleRank": 18,
+      "overallRank": 131
     },
     {
       "key": "292:10",
@@ -29992,8 +30086,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 170,
-      "overallRank": 437
+      "roleRank": 173,
+      "overallRank": 443
     },
     {
       "key": "909:10",
@@ -30010,26 +30104,26 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Attacker",
       "number": 11,
-      "appearances": 5,
-      "starts": 2,
-      "minutes": 184,
-      "rating": 6.8,
+      "appearances": 6,
+      "starts": 3,
+      "minutes": 229,
+      "rating": 6.82,
       "goals": 1,
-      "assists": 0,
-      "goalContributions": 1,
-      "shots": 9,
-      "shotsOnTarget": 3,
-      "keyPasses": 1,
-      "passes": 82,
-      "passAccuracy": 86,
+      "assists": 1,
+      "goalContributions": 2,
+      "shots": 11,
+      "shotsOnTarget": 5,
+      "keyPasses": 4,
+      "passes": 102,
+      "passAccuracy": 87,
       "tackles": 2,
       "interceptions": 0,
       "blocks": 0,
       "defensiveActions": 2,
-      "duels": 26,
-      "duelsWon": 8,
-      "dribbles": 11,
-      "dribblesWon": 4,
+      "duels": 30,
+      "duelsWon": 10,
+      "dribbles": 14,
+      "dribblesWon": 6,
       "foulsDrawn": 1,
       "foulsCommitted": 5,
       "yellowCards": 0,
@@ -30038,9 +30132,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 74,
-      "roleRank": 42,
-      "overallRank": 308
+      "impact": 77,
+      "roleRank": 26,
+      "overallRank": 222
     },
     {
       "key": "1460:10",
@@ -30057,27 +30151,27 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Attacker",
       "number": 7,
-      "appearances": 6,
-      "starts": 2,
-      "minutes": 267,
-      "rating": 7,
-      "goals": 0,
+      "appearances": 7,
+      "starts": 3,
+      "minutes": 357,
+      "rating": 7.33,
+      "goals": 3,
       "assists": 3,
-      "goalContributions": 3,
-      "shots": 6,
-      "shotsOnTarget": 3,
-      "keyPasses": 5,
-      "passes": 75,
-      "passAccuracy": 81,
-      "tackles": 10,
+      "goalContributions": 6,
+      "shots": 10,
+      "shotsOnTarget": 7,
+      "keyPasses": 8,
+      "passes": 98,
+      "passAccuracy": 80,
+      "tackles": 13,
       "interceptions": 1,
       "blocks": 0,
-      "defensiveActions": 11,
-      "duels": 40,
-      "duelsWon": 24,
-      "dribbles": 12,
-      "dribblesWon": 6,
-      "foulsDrawn": 7,
+      "defensiveActions": 14,
+      "duels": 51,
+      "duelsWon": 30,
+      "dribbles": 13,
+      "dribblesWon": 7,
+      "foulsDrawn": 9,
       "foulsCommitted": 4,
       "yellowCards": 0,
       "redCards": 0,
@@ -30085,9 +30179,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 77,
-      "roleRank": 25,
-      "overallRank": 216
+      "impact": 85,
+      "roleRank": 6,
+      "overallRank": 50
     },
     {
       "key": "2937:10",
@@ -30104,37 +30198,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Midfielder",
       "number": 4,
-      "appearances": 6,
-      "starts": 6,
-      "minutes": 481,
-      "rating": 7.03,
-      "goals": 0,
-      "assists": 1,
-      "goalContributions": 1,
-      "shots": 4,
-      "shotsOnTarget": 2,
-      "keyPasses": 15,
-      "passes": 240,
-      "passAccuracy": 91,
-      "tackles": 4,
-      "interceptions": 2,
-      "blocks": 2,
-      "defensiveActions": 8,
-      "duels": 22,
-      "duelsWon": 12,
+      "appearances": 7,
+      "starts": 7,
+      "minutes": 571,
+      "rating": 7.36,
+      "goals": 1,
+      "assists": 2,
+      "goalContributions": 3,
+      "shots": 5,
+      "shotsOnTarget": 3,
+      "keyPasses": 17,
+      "passes": 331,
+      "passAccuracy": 92,
+      "tackles": 11,
+      "interceptions": 5,
+      "blocks": 4,
+      "defensiveActions": 20,
+      "duels": 31,
+      "duelsWon": 19,
       "dribbles": 8,
       "dribblesWon": 5,
       "foulsDrawn": 0,
-      "foulsCommitted": 3,
+      "foulsCommitted": 4,
       "yellowCards": 2,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 78,
-      "roleRank": 59,
-      "overallRank": 191
+      "impact": 83,
+      "roleRank": 22,
+      "overallRank": 79
     },
     {
       "key": "18961:10",
@@ -30184,6 +30278,53 @@
       "overallRank": 0
     },
     {
+      "key": "19088:10",
+      "id": 19088,
+      "name": "D. Henderson",
+      "firstName": "Dean Bradley",
+      "lastName": "Henderson",
+      "photo": "https://media.api-sports.io/football/players/19088.png",
+      "nationality": "England",
+      "age": 28,
+      "height": "188",
+      "teamId": 10,
+      "teamName": "England",
+      "teamLogo": "https://media.api-sports.io/football/teams/10.png",
+      "position": "Goalkeeper",
+      "number": 13,
+      "appearances": 1,
+      "starts": 1,
+      "minutes": 90,
+      "rating": 7,
+      "goals": 0,
+      "assists": 0,
+      "goalContributions": 0,
+      "shots": 0,
+      "shotsOnTarget": 0,
+      "keyPasses": 0,
+      "passes": 37,
+      "passAccuracy": 75,
+      "tackles": 0,
+      "interceptions": 1,
+      "blocks": 0,
+      "defensiveActions": 1,
+      "duels": 0,
+      "duelsWon": 0,
+      "dribbles": 0,
+      "dribblesWon": 0,
+      "foulsDrawn": 0,
+      "foulsCommitted": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "saves": 5,
+      "conceded": 4,
+      "cleanSheets": 0,
+      "penaltiesSaved": 0,
+      "impact": 0,
+      "roleRank": 0,
+      "overallRank": 0
+    },
+    {
       "key": "19170:10",
       "id": 19170,
       "name": "M. Rogers",
@@ -30198,27 +30339,27 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Midfielder",
       "number": 17,
-      "appearances": 6,
-      "starts": 2,
-      "minutes": 259,
-      "rating": 6.63,
+      "appearances": 7,
+      "starts": 3,
+      "minutes": 349,
+      "rating": 6.64,
       "goals": 0,
       "assists": 1,
       "goalContributions": 1,
       "shots": 1,
       "shotsOnTarget": 1,
-      "keyPasses": 4,
-      "passes": 78,
-      "passAccuracy": 80,
-      "tackles": 4,
+      "keyPasses": 7,
+      "passes": 120,
+      "passAccuracy": 84,
+      "tackles": 5,
       "interceptions": 0,
       "blocks": 0,
-      "defensiveActions": 4,
-      "duels": 26,
-      "duelsWon": 12,
-      "dribbles": 5,
-      "dribblesWon": 3,
-      "foulsDrawn": 3,
+      "defensiveActions": 5,
+      "duels": 35,
+      "duelsWon": 17,
+      "dribbles": 8,
+      "dribblesWon": 5,
+      "foulsDrawn": 5,
       "foulsCommitted": 5,
       "yellowCards": 0,
       "redCards": 0,
@@ -30226,9 +30367,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 73,
-      "roleRank": 106,
-      "overallRank": 353
+      "impact": 74,
+      "roleRank": 101,
+      "overallRank": 319
     },
     {
       "key": "19235:10",
@@ -30245,28 +30386,28 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Defender",
       "number": 25,
-      "appearances": 7,
-      "starts": 3,
-      "minutes": 325,
-      "rating": 7.04,
+      "appearances": 8,
+      "starts": 4,
+      "minutes": 415,
+      "rating": 7.03,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 2,
       "shotsOnTarget": 2,
       "keyPasses": 0,
-      "passes": 138,
+      "passes": 175,
       "passAccuracy": 86,
-      "tackles": 14,
-      "interceptions": 4,
+      "tackles": 18,
+      "interceptions": 5,
       "blocks": 2,
-      "defensiveActions": 20,
-      "duels": 36,
-      "duelsWon": 22,
-      "dribbles": 6,
-      "dribblesWon": 3,
-      "foulsDrawn": 3,
-      "foulsCommitted": 1,
+      "defensiveActions": 25,
+      "duels": 50,
+      "duelsWon": 31,
+      "dribbles": 10,
+      "dribblesWon": 6,
+      "foulsDrawn": 5,
+      "foulsCommitted": 3,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
@@ -30274,8 +30415,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 85,
-      "roleRank": 14,
-      "overallRank": 50
+      "roleRank": 13,
+      "overallRank": 53
     },
     {
       "key": "19354:10",
@@ -30292,37 +30433,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Defender",
       "number": 2,
-      "appearances": 7,
-      "starts": 6,
-      "minutes": 570,
-      "rating": 6.74,
-      "goals": 0,
+      "appearances": 8,
+      "starts": 7,
+      "minutes": 660,
+      "rating": 6.81,
+      "goals": 1,
       "assists": 0,
-      "goalContributions": 0,
-      "shots": 2,
-      "shotsOnTarget": 1,
+      "goalContributions": 1,
+      "shots": 3,
+      "shotsOnTarget": 2,
       "keyPasses": 0,
-      "passes": 421,
+      "passes": 468,
       "passAccuracy": 96,
-      "tackles": 3,
-      "interceptions": 4,
-      "blocks": 3,
-      "defensiveActions": 10,
-      "duels": 38,
-      "duelsWon": 23,
-      "dribbles": 2,
-      "dribblesWon": 1,
+      "tackles": 5,
+      "interceptions": 8,
+      "blocks": 4,
+      "defensiveActions": 17,
+      "duels": 45,
+      "duelsWon": 28,
+      "dribbles": 3,
+      "dribblesWon": 2,
       "foulsDrawn": 11,
-      "foulsCommitted": 7,
+      "foulsCommitted": 8,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 75,
-      "roleRank": 135,
-      "overallRank": 300
+      "impact": 77,
+      "roleRank": 102,
+      "overallRank": 246
     },
     {
       "key": "19586:10",
@@ -30339,37 +30480,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Midfielder",
       "number": 21,
-      "appearances": 4,
-      "starts": 0,
-      "minutes": 130,
-      "rating": 6.63,
+      "appearances": 5,
+      "starts": 1,
+      "minutes": 209,
+      "rating": 6.76,
       "goals": 0,
-      "assists": 0,
-      "goalContributions": 0,
-      "shots": 0,
+      "assists": 1,
+      "goalContributions": 1,
+      "shots": 1,
       "shotsOnTarget": 0,
-      "keyPasses": 3,
-      "passes": 39,
-      "passAccuracy": 87,
+      "keyPasses": 5,
+      "passes": 95,
+      "passAccuracy": 94,
       "tackles": 0,
       "interceptions": 0,
       "blocks": 0,
       "defensiveActions": 0,
-      "duels": 16,
-      "duelsWon": 7,
-      "dribbles": 4,
-      "dribblesWon": 3,
-      "foulsDrawn": 3,
-      "foulsCommitted": 1,
+      "duels": 21,
+      "duelsWon": 11,
+      "dribbles": 7,
+      "dribblesWon": 6,
+      "foulsDrawn": 4,
+      "foulsCommitted": 2,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 0,
-      "roleRank": 0,
-      "overallRank": 0
+      "impact": 77,
+      "roleRank": 58,
+      "overallRank": 227
     },
     {
       "key": "67971:10",
@@ -30386,37 +30527,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Defender",
       "number": 6,
-      "appearances": 7,
-      "starts": 6,
-      "minutes": 593,
-      "rating": 6.97,
+      "appearances": 8,
+      "starts": 7,
+      "minutes": 682,
+      "rating": 7,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 1,
       "shotsOnTarget": 0,
-      "keyPasses": 1,
-      "passes": 458,
-      "passAccuracy": 96,
-      "tackles": 0,
-      "interceptions": 4,
+      "keyPasses": 2,
+      "passes": 535,
+      "passAccuracy": 95,
+      "tackles": 2,
+      "interceptions": 6,
       "blocks": 2,
-      "defensiveActions": 6,
-      "duels": 36,
-      "duelsWon": 25,
-      "dribbles": 2,
-      "dribblesWon": 1,
-      "foulsDrawn": 12,
-      "foulsCommitted": 3,
+      "defensiveActions": 10,
+      "duels": 41,
+      "duelsWon": 29,
+      "dribbles": 3,
+      "dribblesWon": 2,
+      "foulsDrawn": 13,
+      "foulsCommitted": 4,
       "yellowCards": 1,
       "redCards": 0,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 77,
-      "roleRank": 111,
-      "overallRank": 241
+      "impact": 78,
+      "roleRank": 100,
+      "overallRank": 214
     },
     {
       "key": "129718:10",
@@ -30433,27 +30574,27 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Midfielder",
       "number": 10,
-      "appearances": 7,
+      "appearances": 8,
       "starts": 7,
-      "minutes": 618,
-      "rating": 7.73,
-      "goals": 6,
+      "minutes": 629,
+      "rating": 7.8,
+      "goals": 7,
       "assists": 1,
-      "goalContributions": 7,
-      "shots": 15,
-      "shotsOnTarget": 11,
+      "goalContributions": 8,
+      "shots": 17,
+      "shotsOnTarget": 13,
       "keyPasses": 8,
-      "passes": 223,
-      "passAccuracy": 82,
+      "passes": 231,
+      "passAccuracy": 81,
       "tackles": 14,
       "interceptions": 3,
       "blocks": 0,
       "defensiveActions": 17,
-      "duels": 84,
-      "duelsWon": 44,
-      "dribbles": 21,
-      "dribblesWon": 13,
-      "foulsDrawn": 16,
+      "duels": 92,
+      "duelsWon": 50,
+      "dribbles": 26,
+      "dribblesWon": 18,
+      "foulsDrawn": 17,
       "foulsCommitted": 9,
       "yellowCards": 1,
       "redCards": 0,
@@ -30461,9 +30602,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 87,
-      "roleRank": 8,
-      "overallRank": 26
+      "impact": 89,
+      "roleRank": 6,
+      "overallRank": 17
     },
     {
       "key": "136723:10",
@@ -30510,7 +30651,7 @@
       "penaltiesSaved": 0,
       "impact": 76,
       "roleRank": 76,
-      "overallRank": 260
+      "overallRank": 265
     },
     {
       "key": "138787:10",
@@ -30556,8 +30697,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 30,
-      "overallRank": 160
+      "roleRank": 31,
+      "overallRank": 168
     },
     {
       "key": "138908:10",
@@ -30574,24 +30715,24 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Midfielder",
       "number": 8,
-      "appearances": 7,
+      "appearances": 8,
       "starts": 7,
-      "minutes": 623,
-      "rating": 7.33,
+      "minutes": 634,
+      "rating": 7.2,
       "goals": 0,
       "assists": 1,
       "goalContributions": 1,
       "shots": 4,
       "shotsOnTarget": 1,
       "keyPasses": 4,
-      "passes": 442,
+      "passes": 453,
       "passAccuracy": 87,
-      "tackles": 19,
+      "tackles": 20,
       "interceptions": 8,
       "blocks": 2,
-      "defensiveActions": 29,
-      "duels": 85,
-      "duelsWon": 54,
+      "defensiveActions": 30,
+      "duels": 87,
+      "duelsWon": 55,
       "dribbles": 3,
       "dribblesWon": 3,
       "foulsDrawn": 13,
@@ -30602,9 +30743,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 79,
-      "roleRank": 56,
-      "overallRank": 175
+      "impact": 78,
+      "roleRank": 64,
+      "overallRank": 202
     },
     {
       "key": "158698:10",
@@ -30621,37 +30762,37 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Defender",
       "number": 26,
-      "appearances": 2,
-      "starts": 2,
-      "minutes": 117,
-      "rating": 6.3,
+      "appearances": 3,
+      "starts": 3,
+      "minutes": 200,
+      "rating": 6.27,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
       "shots": 0,
       "shotsOnTarget": 0,
       "keyPasses": 0,
-      "passes": 66,
-      "passAccuracy": 87,
-      "tackles": 2,
+      "passes": 101,
+      "passAccuracy": 89,
+      "tackles": 3,
       "interceptions": 0,
       "blocks": 0,
-      "defensiveActions": 2,
-      "duels": 13,
-      "duelsWon": 10,
+      "defensiveActions": 3,
+      "duels": 19,
+      "duelsWon": 13,
       "dribbles": 1,
       "dribblesWon": 1,
-      "foulsDrawn": 0,
-      "foulsCommitted": 1,
+      "foulsDrawn": 2,
+      "foulsCommitted": 2,
       "yellowCards": 1,
       "redCards": 1,
       "saves": 0,
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 0,
-      "roleRank": 0,
-      "overallRank": 0
+      "impact": 69,
+      "roleRank": 178,
+      "overallRank": 481
     },
     {
       "key": "307123:10",
@@ -30697,8 +30838,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 137,
-      "overallRank": 338
+      "roleRank": 140,
+      "overallRank": 348
     },
     {
       "key": "207:3",
@@ -30744,8 +30885,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 54,
-      "overallRank": 188
+      "roleRank": 55,
+      "overallRank": 200
     },
     {
       "key": "726:3",
@@ -30838,8 +30979,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 58,
-      "overallRank": 190
+      "roleRank": 59,
+      "overallRank": 201
     },
     {
       "key": "842:3",
@@ -30886,7 +31027,7 @@
       "penaltiesSaved": 0,
       "impact": 74,
       "roleRank": 92,
-      "overallRank": 313
+      "overallRank": 314
     },
     {
       "key": "1305:3",
@@ -30932,8 +31073,8 @@
       "cleanSheets": 1,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 26,
-      "overallRank": 184
+      "roleRank": 27,
+      "overallRank": 194
     },
     {
       "key": "2291:3",
@@ -30979,8 +31120,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 89,
-      "overallRank": 285
+      "roleRank": 88,
+      "overallRank": 292
     },
     {
       "key": "2763:3",
@@ -31073,8 +31214,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 94,
-      "overallRank": 204
+      "roleRank": 97,
+      "overallRank": 213
     },
     {
       "key": "19366:10",
@@ -31091,28 +31232,28 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Attacker",
       "number": 19,
-      "appearances": 1,
+      "appearances": 2,
       "starts": 0,
-      "minutes": 12,
-      "rating": 6.3,
+      "minutes": 57,
+      "rating": 6.25,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
-      "shots": 0,
+      "shots": 1,
       "shotsOnTarget": 0,
-      "keyPasses": 0,
-      "passes": 1,
-      "passAccuracy": 100,
-      "tackles": 0,
+      "keyPasses": 2,
+      "passes": 12,
+      "passAccuracy": 83,
+      "tackles": 1,
       "interceptions": 0,
       "blocks": 0,
-      "defensiveActions": 0,
-      "duels": 0,
-      "duelsWon": 0,
-      "dribbles": 0,
-      "dribblesWon": 0,
+      "defensiveActions": 1,
+      "duels": 10,
+      "duelsWon": 4,
+      "dribbles": 3,
+      "dribblesWon": 2,
       "foulsDrawn": 0,
-      "foulsCommitted": 0,
+      "foulsCommitted": 1,
       "yellowCards": 0,
       "redCards": 0,
       "saves": 0,
@@ -31138,27 +31279,27 @@
       "teamLogo": "https://media.api-sports.io/football/teams/10.png",
       "position": "Attacker",
       "number": 22,
-      "appearances": 1,
-      "starts": 0,
-      "minutes": 1,
-      "rating": 0,
+      "appearances": 2,
+      "starts": 1,
+      "minutes": 80,
+      "rating": 6.9,
       "goals": 0,
       "assists": 0,
       "goalContributions": 0,
-      "shots": 0,
-      "shotsOnTarget": 0,
+      "shots": 1,
+      "shotsOnTarget": 1,
       "keyPasses": 0,
-      "passes": 1,
-      "passAccuracy": 100,
-      "tackles": 0,
+      "passes": 19,
+      "passAccuracy": 78,
+      "tackles": 2,
       "interceptions": 0,
       "blocks": 0,
-      "defensiveActions": 0,
-      "duels": 0,
-      "duelsWon": 0,
+      "defensiveActions": 2,
+      "duels": 10,
+      "duelsWon": 6,
       "dribbles": 0,
       "dribblesWon": 0,
-      "foulsDrawn": 0,
+      "foulsDrawn": 3,
       "foulsCommitted": 0,
       "yellowCards": 0,
       "redCards": 0,
@@ -31261,8 +31402,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 122,
-      "overallRank": 362
+      "roleRank": 124,
+      "overallRank": 369
     },
     {
       "key": "129033:3",
@@ -31448,9 +31589,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 75,
+      "impact": 76,
       "roleRank": 44,
-      "overallRank": 281
+      "overallRank": 268
     },
     {
       "key": "348205:3",
@@ -31495,9 +31636,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 75,
+      "impact": 76,
       "roleRank": 41,
-      "overallRank": 277
+      "overallRank": 262
     },
     {
       "key": "387521:3",
@@ -31590,8 +31731,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 165,
-      "overallRank": 409
+      "roleRank": 168,
+      "overallRank": 417
     },
     {
       "key": "3412:1504",
@@ -31683,9 +31824,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 68,
+      "impact": 69,
       "roleRank": 82,
-      "overallRank": 491
+      "overallRank": 487
     },
     {
       "key": "7332:3",
@@ -31779,7 +31920,7 @@
       "penaltiesSaved": 0,
       "impact": 83,
       "roleRank": 43,
-      "overallRank": 88
+      "overallRank": 91
     },
     {
       "key": "19281:1504",
@@ -31825,8 +31966,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 193,
-      "overallRank": 502
+      "roleRank": 195,
+      "overallRank": 509
     },
     {
       "key": "21010:1504",
@@ -31966,8 +32107,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 95,
-      "overallRank": 182
+      "roleRank": 98,
+      "overallRank": 192
     },
     {
       "key": "191240:1504",
@@ -32013,8 +32154,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 89,
-      "roleRank": 4,
-      "overallRank": 15
+      "roleRank": 3,
+      "overallRank": 18
     },
     {
       "key": "199837:1504",
@@ -32154,8 +32295,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 91,
-      "overallRank": 181
+      "roleRank": 94,
+      "overallRank": 191
     },
     {
       "key": "475575:1504",
@@ -32201,8 +32342,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 132,
-      "overallRank": 370
+      "roleRank": 134,
+      "overallRank": 377
     },
     {
       "key": "2968:11",
@@ -32249,7 +32390,7 @@
       "penaltiesSaved": 0,
       "impact": 77,
       "roleRank": 32,
-      "overallRank": 248
+      "overallRank": 258
     },
     {
       "key": "2973:11",
@@ -32296,7 +32437,7 @@
       "penaltiesSaved": 0,
       "impact": 75,
       "roleRank": 87,
-      "overallRank": 283
+      "overallRank": 291
     },
     {
       "key": "3608:1504",
@@ -32342,8 +32483,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 68,
-      "roleRank": 190,
-      "overallRank": 485
+      "roleRank": 192,
+      "overallRank": 493
     },
     {
       "key": "7197:11",
@@ -32389,8 +32530,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 69,
-      "overallRank": 141
+      "roleRank": 70,
+      "overallRank": 154
     },
     {
       "key": "21996:1504",
@@ -32484,7 +32625,7 @@
       "penaltiesSaved": 0,
       "impact": 82,
       "roleRank": 59,
-      "overallRank": 104
+      "overallRank": 111
     },
     {
       "key": "47294:1504",
@@ -32624,8 +32765,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 162,
-      "overallRank": 406
+      "roleRank": 165,
+      "overallRank": 414
     },
     {
       "key": "71230:11",
@@ -32671,8 +32812,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 178,
-      "overallRank": 466
+      "roleRank": 180,
+      "overallRank": 472
     },
     {
       "key": "82090:1504",
@@ -33188,8 +33329,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 66,
-      "roleRank": 89,
-      "overallRank": 518
+      "roleRank": 90,
+      "overallRank": 525
     },
     {
       "key": "2983:11",
@@ -33282,8 +33423,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 137,
-      "overallRank": 374
+      "roleRank": 139,
+      "overallRank": 381
     },
     {
       "key": "51648:11",
@@ -33564,8 +33705,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 171,
-      "overallRank": 470
+      "roleRank": 174,
+      "overallRank": 476
     },
     {
       "key": "50272:1568",
@@ -33611,8 +33752,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 181,
-      "overallRank": 471
+      "roleRank": 183,
+      "overallRank": 477
     },
     {
       "key": "53535:1568",
@@ -33657,9 +33798,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 71,
-      "roleRank": 59,
-      "overallRank": 414
+      "impact": 72,
+      "roleRank": 60,
+      "overallRank": 396
     },
     {
       "key": "53834:1568",
@@ -33940,8 +34081,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 133,
-      "overallRank": 336
+      "roleRank": 137,
+      "overallRank": 346
     },
     {
       "key": "73507:1568",
@@ -33988,7 +34129,7 @@
       "penaltiesSaved": 0,
       "impact": 67,
       "roleRank": 46,
-      "overallRank": 512
+      "overallRank": 519
     },
     {
       "key": "73514:1568",
@@ -34034,8 +34175,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 198,
-      "overallRank": 506
+      "roleRank": 200,
+      "overallRank": 513
     },
     {
       "key": "73522:1568",
@@ -34081,8 +34222,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 142,
-      "overallRank": 416
+      "roleRank": 144,
+      "overallRank": 423
     },
     {
       "key": "73534:1568",
@@ -34174,9 +34315,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 73,
-      "roleRank": 57,
-      "overallRank": 361
+      "impact": 74,
+      "roleRank": 58,
+      "overallRank": 336
     },
     {
       "key": "358427:1568",
@@ -34269,8 +34410,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 168,
-      "overallRank": 449
+      "roleRank": 171,
+      "overallRank": 455
     },
     {
       "key": "416964:1568",
@@ -34364,7 +34505,7 @@
       "penaltiesSaved": 0,
       "impact": 82,
       "roleRank": 49,
-      "overallRank": 102
+      "overallRank": 109
     },
     {
       "key": "517:8",
@@ -34410,8 +34551,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 52,
-      "overallRank": 319
+      "roleRank": 53,
+      "overallRank": 325
     },
     {
       "key": "1929:8",
@@ -34457,8 +34598,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 123,
-      "overallRank": 246
+      "roleRank": 126,
+      "overallRank": 256
     },
     {
       "key": "2482:8",
@@ -34504,8 +34645,8 @@
       "cleanSheets": 3,
       "penaltiesSaved": 0,
       "impact": 84,
-      "roleRank": 16,
-      "overallRank": 70
+      "roleRank": 15,
+      "overallRank": 72
     },
     {
       "key": "2489:8",
@@ -34550,9 +34691,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 74,
+      "impact": 75,
       "roleRank": 45,
-      "overallRank": 309
+      "overallRank": 289
     },
     {
       "key": "2490:8",
@@ -34598,8 +34739,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 151,
-      "overallRank": 399
+      "roleRank": 153,
+      "overallRank": 407
     },
     {
       "key": "13376:8",
@@ -34692,8 +34833,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 81,
-      "roleRank": 28,
-      "overallRank": 109
+      "roleRank": 29,
+      "overallRank": 119
     },
     {
       "key": "13736:8",
@@ -34740,7 +34881,7 @@
       "penaltiesSaved": 0,
       "impact": 85,
       "roleRank": 29,
-      "overallRank": 55
+      "overallRank": 58
     },
     {
       "key": "47237:8",
@@ -34787,7 +34928,7 @@
       "penaltiesSaved": 0,
       "impact": 69,
       "roleRank": 74,
-      "overallRank": 477
+      "overallRank": 484
     },
     {
       "key": "47582:8",
@@ -34927,8 +35068,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 85,
-      "overallRank": 150
+      "roleRank": 88,
+      "overallRank": 163
     },
     {
       "key": "65576:1568",
@@ -35162,8 +35303,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 76,
-      "roleRank": 85,
-      "overallRank": 264
+      "roleRank": 84,
+      "overallRank": 271
     },
     {
       "key": "363723:1568",
@@ -35492,7 +35633,7 @@
       "penaltiesSaved": 0,
       "impact": 84,
       "roleRank": 21,
-      "overallRank": 63
+      "overallRank": 64
     },
     {
       "key": "50816:5529",
@@ -35538,8 +35679,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 85,
-      "roleRank": 35,
-      "overallRank": 60
+      "roleRank": 34,
+      "overallRank": 61
     },
     {
       "key": "51016:5529",
@@ -35585,8 +35726,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 176,
-      "overallRank": 464
+      "roleRank": 178,
+      "overallRank": 470
     },
     {
       "key": "51274:5529",
@@ -35633,7 +35774,7 @@
       "penaltiesSaved": 0,
       "impact": 76,
       "roleRank": 30,
-      "overallRank": 274
+      "overallRank": 284
     },
     {
       "key": "51295:5529",
@@ -35679,8 +35820,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 141,
-      "overallRank": 341
+      "roleRank": 144,
+      "overallRank": 351
     },
     {
       "key": "78547:5529",
@@ -35726,8 +35867,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 105,
-      "overallRank": 207
+      "roleRank": 108,
+      "overallRank": 217
     },
     {
       "key": "289592:8",
@@ -35820,8 +35961,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 76,
-      "roleRank": 116,
-      "overallRank": 268
+      "roleRank": 120,
+      "overallRank": 278
     },
     {
       "key": "328046:5529",
@@ -36007,9 +36148,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 77,
-      "roleRank": 21,
-      "overallRank": 214
+      "impact": 78,
+      "roleRank": 22,
+      "overallRank": 195
     },
     {
       "key": "2892:17",
@@ -36056,7 +36197,7 @@
       "penaltiesSaved": 0,
       "impact": 75,
       "roleRank": 33,
-      "overallRank": 305
+      "overallRank": 310
     },
     {
       "key": "8489:5529",
@@ -36101,9 +36242,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 74,
+      "impact": 75,
       "roleRank": 40,
-      "overallRank": 307
+      "overallRank": 285
     },
     {
       "key": "44798:5529",
@@ -36384,8 +36525,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 101,
-      "overallRank": 235
+      "roleRank": 105,
+      "overallRank": 247
     },
     {
       "key": "294824:5529",
@@ -36432,7 +36573,7 @@
       "penaltiesSaved": 0,
       "impact": 92,
       "roleRank": 2,
-      "overallRank": 4
+      "overallRank": 6
     },
     {
       "key": "313353:5529",
@@ -36525,8 +36666,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 70,
-      "overallRank": 436
+      "roleRank": 69,
+      "overallRank": 442
     },
     {
       "key": "362145:5529",
@@ -36572,8 +36713,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 113,
-      "overallRank": 324
+      "roleRank": 115,
+      "overallRank": 332
     },
     {
       "key": "407017:5529",
@@ -36619,8 +36760,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 186,
-      "overallRank": 504
+      "roleRank": 190,
+      "overallRank": 511
     },
     {
       "key": "416901:5529",
@@ -36806,9 +36947,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 77,
-      "roleRank": 30,
-      "overallRank": 219
+      "impact": 78,
+      "roleRank": 31,
+      "overallRank": 198
     },
     {
       "key": "2897:17",
@@ -36854,8 +36995,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 78,
-      "overallRank": 178
+      "roleRank": 80,
+      "overallRank": 187
     },
     {
       "key": "2901:17",
@@ -36901,8 +37042,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 82,
-      "roleRank": 27,
-      "overallRank": 95
+      "roleRank": 28,
+      "overallRank": 102
     },
     {
       "key": "2906:17",
@@ -36995,8 +37136,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 183,
-      "overallRank": 453
+      "roleRank": 185,
+      "overallRank": 459
     },
     {
       "key": "2912:17",
@@ -37277,8 +37418,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 170,
-      "overallRank": 435
+      "roleRank": 172,
+      "overallRank": 440
     },
     {
       "key": "237050:17",
@@ -37419,7 +37560,7 @@
       "penaltiesSaved": 0,
       "impact": 85,
       "roleRank": 20,
-      "overallRank": 53
+      "overallRank": 56
     },
     {
       "key": "304958:17",
@@ -37512,8 +37653,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 163,
-      "overallRank": 431
+      "roleRank": 165,
+      "overallRank": 436
     },
     {
       "key": "2751:20",
@@ -37653,8 +37794,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 121,
-      "overallRank": 330
+      "roleRank": 123,
+      "overallRank": 339
     },
     {
       "key": "7050:20",
@@ -37700,8 +37841,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 123,
-      "overallRank": 332
+      "roleRank": 125,
+      "overallRank": 341
     },
     {
       "key": "20079:20",
@@ -37747,8 +37888,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 82,
-      "roleRank": 46,
-      "overallRank": 100
+      "roleRank": 47,
+      "overallRank": 108
     },
     {
       "key": "20457:20",
@@ -38076,8 +38217,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 80,
-      "overallRank": 194
+      "roleRank": 82,
+      "overallRank": 203
     },
     {
       "key": "338014:20",
@@ -38122,9 +38263,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 73,
-      "roleRank": 54,
-      "overallRank": 354
+      "impact": 74,
+      "roleRank": 55,
+      "overallRank": 328
     },
     {
       "key": "342035:20",
@@ -38218,7 +38359,7 @@
       "penaltiesSaved": 0,
       "impact": 88,
       "roleRank": 6,
-      "overallRank": 22
+      "overallRank": 24
     },
     {
       "key": "353883:20",
@@ -38264,8 +38405,8 @@
       "cleanSheets": 2,
       "penaltiesSaved": 0,
       "impact": 90,
-      "roleRank": 5,
-      "overallRank": 11
+      "roleRank": 4,
+      "overallRank": 13
     },
     {
       "key": "441269:20",
@@ -38312,7 +38453,7 @@
       "penaltiesSaved": 0,
       "impact": 77,
       "roleRank": 60,
-      "overallRank": 220
+      "overallRank": 231
     },
     {
       "key": "225:20",
@@ -38358,8 +38499,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 158,
-      "overallRank": 385
+      "roleRank": 160,
+      "overallRank": 391
     },
     {
       "key": "2741:20",
@@ -38546,8 +38687,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 65,
-      "roleRank": 199,
-      "overallRank": 520
+      "roleRank": 201,
+      "overallRank": 527
     },
     {
       "key": "21587:28",
@@ -38593,8 +38734,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 192,
-      "overallRank": 500
+      "roleRank": 194,
+      "overallRank": 507
     },
     {
       "key": "38123:20",
@@ -38688,7 +38829,7 @@
       "penaltiesSaved": 0,
       "impact": 68,
       "roleRank": 44,
-      "overallRank": 494
+      "overallRank": 501
     },
     {
       "key": "49583:28",
@@ -38734,8 +38875,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 66,
-      "roleRank": 197,
-      "overallRank": 517
+      "roleRank": 199,
+      "overallRank": 524
     },
     {
       "key": "50030:28",
@@ -38781,8 +38922,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 143,
-      "overallRank": 376
+      "roleRank": 146,
+      "overallRank": 383
     },
     {
       "key": "153622:20",
@@ -38875,8 +39016,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 152,
-      "overallRank": 382
+      "roleRank": 153,
+      "overallRank": 387
     },
     {
       "key": "180560:28",
@@ -38923,7 +39064,7 @@
       "penaltiesSaved": 0,
       "impact": 76,
       "roleRank": 39,
-      "overallRank": 257
+      "overallRank": 261
     },
     {
       "key": "199310:28",
@@ -38969,8 +39110,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 194,
-      "overallRank": 503
+      "roleRank": 196,
+      "overallRank": 510
     },
     {
       "key": "296645:20",
@@ -39110,8 +39251,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 153,
-      "overallRank": 344
+      "roleRank": 154,
+      "overallRank": 355
     },
     {
       "key": "1119:1090",
@@ -39157,8 +39298,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 84,
-      "overallRank": 179
+      "roleRank": 87,
+      "overallRank": 189
     },
     {
       "key": "2962:28",
@@ -39252,7 +39393,7 @@
       "penaltiesSaved": 1,
       "impact": 84,
       "roleRank": 20,
-      "overallRank": 72
+      "overallRank": 74
     },
     {
       "key": "24845:1090",
@@ -39298,8 +39439,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 83,
-      "roleRank": 32,
-      "overallRank": 82
+      "roleRank": 31,
+      "overallRank": 85
     },
     {
       "key": "25300:28",
@@ -39581,7 +39722,7 @@
       "penaltiesSaved": 0,
       "impact": 80,
       "roleRank": 51,
-      "overallRank": 131
+      "overallRank": 143
     },
     {
       "key": "310196:28",
@@ -39767,9 +39908,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 87,
-      "roleRank": 3,
-      "overallRank": 24
+      "impact": 89,
+      "roleRank": 4,
+      "overallRank": 15
     },
     {
       "key": "1934:1090",
@@ -39815,8 +39956,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 117,
-      "overallRank": 326
+      "roleRank": 119,
+      "overallRank": 334
     },
     {
       "key": "8492:1090",
@@ -39863,7 +40004,7 @@
       "penaltiesSaved": 0,
       "impact": 68,
       "roleRank": 80,
-      "overallRank": 489
+      "overallRank": 496
     },
     {
       "key": "18967:1090",
@@ -39956,8 +40097,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 33,
-      "overallRank": 162
+      "roleRank": 35,
+      "overallRank": 171
     },
     {
       "key": "39043:1090",
@@ -40003,8 +40144,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 134,
-      "overallRank": 372
+      "roleRank": 136,
+      "overallRank": 379
     },
     {
       "key": "39058:1090",
@@ -40097,8 +40238,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 76,
-      "roleRank": 70,
-      "overallRank": 258
+      "roleRank": 71,
+      "overallRank": 263
     },
     {
       "key": "39082:1090",
@@ -40238,8 +40379,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 129,
-      "overallRank": 297
+      "roleRank": 132,
+      "overallRank": 304
     },
     {
       "key": "39362:1090",
@@ -40285,8 +40426,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 176,
-      "overallRank": 476
+      "roleRank": 180,
+      "overallRank": 483
     },
     {
       "key": "180937:1090",
@@ -40426,8 +40567,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 114,
-      "overallRank": 244
+      "roleRank": 117,
+      "overallRank": 254
     },
     {
       "key": "277930:1090",
@@ -40520,8 +40661,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 107,
-      "overallRank": 320
+      "roleRank": 109,
+      "overallRank": 326
     },
     {
       "key": "301528:1090",
@@ -40566,9 +40707,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 80,
-      "roleRank": 9,
-      "overallRank": 121
+      "impact": 82,
+      "roleRank": 11,
+      "overallRank": 97
     },
     {
       "key": "314511:1090",
@@ -40613,9 +40754,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 71,
-      "roleRank": 61,
-      "overallRank": 421
+      "impact": 72,
+      "roleRank": 62,
+      "overallRank": 404
     },
     {
       "key": "49:1504",
@@ -40661,8 +40802,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 146,
-      "overallRank": 396
+      "roleRank": 148,
+      "overallRank": 402
     },
     {
       "key": "130:27",
@@ -40755,8 +40896,8 @@
       "cleanSheets": 2,
       "penaltiesSaved": 0,
       "impact": 89,
-      "roleRank": 7,
-      "overallRank": 17
+      "roleRank": 6,
+      "overallRank": 20
     },
     {
       "key": "567:27",
@@ -40802,8 +40943,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 85,
-      "roleRank": 33,
-      "overallRank": 59
+      "roleRank": 32,
+      "overallRank": 60
     },
     {
       "key": "583:27",
@@ -40849,8 +40990,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 102,
-      "overallRank": 351
+      "roleRank": 105,
+      "overallRank": 361
     },
     {
       "key": "636:27",
@@ -40944,7 +41085,7 @@
       "penaltiesSaved": 0,
       "impact": 81,
       "roleRank": 52,
-      "overallRank": 114
+      "overallRank": 124
     },
     {
       "key": "874:27",
@@ -40989,9 +41130,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 76,
-      "roleRank": 33,
-      "overallRank": 253
+      "impact": 77,
+      "roleRank": 34,
+      "overallRank": 228
     },
     {
       "key": "1485:27",
@@ -41037,8 +41178,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 55,
-      "overallRank": 130
+      "roleRank": 56,
+      "overallRank": 142
     },
     {
       "key": "1864:27",
@@ -41084,8 +41225,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 124,
-      "overallRank": 363
+      "roleRank": 126,
+      "overallRank": 370
     },
     {
       "key": "2032:1090",
@@ -41123,6 +41264,53 @@
       "dribbles": 1,
       "dribblesWon": 1,
       "foulsDrawn": 2,
+      "foulsCommitted": 0,
+      "yellowCards": 0,
+      "redCards": 0,
+      "saves": 0,
+      "conceded": 0,
+      "cleanSheets": 0,
+      "penaltiesSaved": 0,
+      "impact": 0,
+      "roleRank": 0,
+      "overallRank": 0
+    },
+    {
+      "key": "19720:10",
+      "id": 19720,
+      "name": "T. Chalobah",
+      "firstName": "Trevoh Thomas",
+      "lastName": "Chalobah",
+      "photo": "https://media.api-sports.io/football/players/19720.png",
+      "nationality": "England",
+      "age": 26,
+      "height": "190",
+      "teamId": 10,
+      "teamName": "England",
+      "teamLogo": "https://media.api-sports.io/football/teams/10.png",
+      "position": "Defender",
+      "number": 12,
+      "appearances": 1,
+      "starts": 0,
+      "minutes": 1,
+      "rating": 0,
+      "goals": 0,
+      "assists": 0,
+      "goalContributions": 0,
+      "shots": 0,
+      "shotsOnTarget": 0,
+      "keyPasses": 0,
+      "passes": 0,
+      "passAccuracy": 0,
+      "tackles": 0,
+      "interceptions": 0,
+      "blocks": 0,
+      "defensiveActions": 0,
+      "duels": 1,
+      "duelsWon": 0,
+      "dribbles": 0,
+      "dribblesWon": 0,
+      "foulsDrawn": 0,
       "foulsCommitted": 0,
       "yellowCards": 0,
       "redCards": 0,
@@ -41319,8 +41507,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 104,
-      "overallRank": 291
+      "roleRank": 107,
+      "overallRank": 299
     },
     {
       "key": "161585:27",
@@ -41413,8 +41601,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 87,
-      "roleRank": 11,
-      "overallRank": 31
+      "roleRank": 10,
+      "overallRank": 32
     },
     {
       "key": "335051:27",
@@ -41460,8 +41648,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 66,
-      "overallRank": 223
+      "roleRank": 67,
+      "overallRank": 236
     },
     {
       "key": "336671:27",
@@ -41507,8 +41695,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 84,
-      "roleRank": 36,
-      "overallRank": 69
+      "roleRank": 35,
+      "overallRank": 70
     },
     {
       "key": "276:6",
@@ -41648,8 +41836,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 95,
-      "overallRank": 314
+      "roleRank": 96,
+      "overallRank": 315
     },
     {
       "key": "1243:770",
@@ -41931,7 +42119,7 @@
       "penaltiesSaved": 0,
       "impact": 81,
       "roleRank": 65,
-      "overallRank": 116
+      "overallRank": 126
     },
     {
       "key": "138804:770",
@@ -41978,7 +42166,7 @@
       "penaltiesSaved": 0,
       "impact": 74,
       "roleRank": 35,
-      "overallRank": 345
+      "overallRank": 356
     },
     {
       "key": "161939:27",
@@ -42071,8 +42259,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 66,
-      "roleRank": 184,
-      "overallRank": 514
+      "roleRank": 188,
+      "overallRank": 521
     },
     {
       "key": "190485:27",
@@ -42212,8 +42400,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 77,
-      "roleRank": 72,
-      "overallRank": 227
+      "roleRank": 73,
+      "overallRank": 241
     },
     {
       "key": "794:770",
@@ -42259,8 +42447,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 88,
-      "overallRank": 511
+      "roleRank": 89,
+      "overallRank": 518
     },
     {
       "key": "818:770",
@@ -42681,9 +42869,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 69,
+      "impact": 70,
       "roleRank": 77,
-      "overallRank": 479
+      "overallRank": 464
     },
     {
       "key": "128772:770",
@@ -42917,8 +43105,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 177,
-      "overallRank": 465
+      "roleRank": 179,
+      "overallRank": 471
     },
     {
       "key": "1442:1113",
@@ -42964,8 +43152,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 136,
-      "overallRank": 337
+      "roleRank": 139,
+      "overallRank": 347
     },
     {
       "key": "1741:1113",
@@ -43012,7 +43200,7 @@
       "penaltiesSaved": 0,
       "impact": 84,
       "roleRank": 24,
-      "overallRank": 66
+      "overallRank": 67
     },
     {
       "key": "7318:1113",
@@ -43058,8 +43246,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 146,
-      "overallRank": 377
+      "roleRank": 149,
+      "overallRank": 384
     },
     {
       "key": "9026:1113",
@@ -43106,7 +43294,7 @@
       "penaltiesSaved": 0,
       "impact": 66,
       "roleRank": 45,
-      "overallRank": 519
+      "overallRank": 526
     },
     {
       "key": "25129:1113",
@@ -43200,7 +43388,7 @@
       "penaltiesSaved": 0,
       "impact": 68,
       "roleRank": 83,
-      "overallRank": 492
+      "overallRank": 498
     },
     {
       "key": "70514:1113",
@@ -43387,8 +43575,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 70,
-      "roleRank": 173,
-      "overallRank": 448
+      "roleRank": 175,
+      "overallRank": 454
     },
     {
       "key": "271350:1113",
@@ -43434,8 +43622,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 80,
-      "roleRank": 72,
-      "overallRank": 143
+      "roleRank": 73,
+      "overallRank": 156
     },
     {
       "key": "314377:1113",
@@ -43528,8 +43716,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 66,
-      "roleRank": 196,
-      "overallRank": 516
+      "roleRank": 198,
+      "overallRank": 523
     },
     {
       "key": "329409:1113",
@@ -43575,8 +43763,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 68,
-      "roleRank": 185,
-      "overallRank": 480
+      "roleRank": 187,
+      "overallRank": 488
     },
     {
       "key": "395559:1113",
@@ -43621,9 +43809,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 72,
-      "roleRank": 53,
-      "overallRank": 388
+      "impact": 73,
+      "roleRank": 54,
+      "overallRank": 363
     },
     {
       "key": "409670:1113",
@@ -43857,8 +44045,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 51,
-      "overallRank": 173
+      "roleRank": 53,
+      "overallRank": 182
     },
     {
       "key": "14301:1113",
@@ -43904,8 +44092,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 144,
-      "overallRank": 303
+      "roleRank": 147,
+      "overallRank": 309
     },
     {
       "key": "22222:777",
@@ -44045,8 +44233,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 130,
-      "overallRank": 298
+      "roleRank": 133,
+      "overallRank": 305
     },
     {
       "key": "37155:777",
@@ -44140,7 +44328,7 @@
       "penaltiesSaved": 0,
       "impact": 74,
       "roleRank": 36,
-      "overallRank": 346
+      "overallRank": 357
     },
     {
       "key": "50006:1113",
@@ -44281,7 +44469,7 @@
       "penaltiesSaved": 0,
       "impact": 85,
       "roleRank": 19,
-      "overallRank": 52
+      "overallRank": 55
     },
     {
       "key": "63274:777",
@@ -44469,7 +44657,7 @@
       "penaltiesSaved": 0,
       "impact": 83,
       "roleRank": 25,
-      "overallRank": 79
+      "overallRank": 82
     },
     {
       "key": "339883:777",
@@ -44515,8 +44703,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 74,
-      "roleRank": 58,
-      "overallRank": 331
+      "roleRank": 59,
+      "overallRank": 340
     },
     {
       "key": "340173:1113",
@@ -44609,8 +44797,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 178,
-      "overallRank": 496
+      "roleRank": 182,
+      "overallRank": 503
     },
     {
       "key": "1719:777",
@@ -44704,7 +44892,7 @@
       "penaltiesSaved": 0,
       "impact": 65,
       "roleRank": 47,
-      "overallRank": 522
+      "overallRank": 529
     },
     {
       "key": "18776:777",
@@ -44938,8 +45126,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 68,
-      "roleRank": 187,
-      "overallRank": 482
+      "roleRank": 189,
+      "overallRank": 490
     },
     {
       "key": "48002:5",
@@ -45220,8 +45408,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 81,
-      "overallRank": 195
+      "roleRank": 84,
+      "overallRank": 204
     },
     {
       "key": "137976:5",
@@ -45267,8 +45455,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 159,
-      "overallRank": 404
+      "roleRank": 161,
+      "overallRank": 412
     },
     {
       "key": "339887:777",
@@ -45454,9 +45642,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 77,
-      "roleRank": 23,
-      "overallRank": 215
+      "impact": 79,
+      "roleRank": 24,
+      "overallRank": 165
     },
     {
       "key": "15683:5",
@@ -45548,9 +45736,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 76,
-      "roleRank": 28,
-      "overallRank": 249
+      "impact": 77,
+      "roleRank": 29,
+      "overallRank": 223
     },
     {
       "key": "24012:1508",
@@ -45597,7 +45785,7 @@
       "penaltiesSaved": 0,
       "impact": 77,
       "roleRank": 31,
-      "overallRank": 247
+      "overallRank": 257
     },
     {
       "key": "30484:5",
@@ -45690,8 +45878,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 155,
-      "overallRank": 400
+      "roleRank": 157,
+      "overallRank": 408
     },
     {
       "key": "47988:5",
@@ -45785,7 +45973,7 @@
       "penaltiesSaved": 0,
       "impact": 89,
       "roleRank": 9,
-      "overallRank": 18
+      "overallRank": 21
     },
     {
       "key": "153430:5",
@@ -45830,9 +46018,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 79,
+      "impact": 80,
       "roleRank": 19,
-      "overallRank": 156
+      "overallRank": 132
     },
     {
       "key": "160925:5",
@@ -46019,8 +46207,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 79,
-      "roleRank": 47,
-      "overallRank": 170
+      "roleRank": 48,
+      "overallRank": 178
     },
     {
       "key": "347316:5",
@@ -46160,8 +46348,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 72,
-      "roleRank": 163,
-      "overallRank": 407
+      "roleRank": 166,
+      "overallRank": 415
     },
     {
       "key": "1424:1508",
@@ -46255,7 +46443,7 @@
       "penaltiesSaved": 0,
       "impact": 67,
       "roleRank": 84,
-      "overallRank": 507
+      "overallRank": 514
     },
     {
       "key": "8627:1508",
@@ -46348,8 +46536,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 78,
-      "roleRank": 100,
-      "overallRank": 206
+      "roleRank": 104,
+      "overallRank": 216
     },
     {
       "key": "18846:1508",
@@ -46396,7 +46584,7 @@
       "penaltiesSaved": 0,
       "impact": 82,
       "roleRank": 44,
-      "overallRank": 98
+      "overallRank": 106
     },
     {
       "key": "19182:1508",
@@ -46442,8 +46630,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 156,
-      "overallRank": 384
+      "roleRank": 158,
+      "overallRank": 390
     },
     {
       "key": "20649:1508",
@@ -46488,9 +46676,9 @@
       "conceded": 0,
       "cleanSheets": 0,
       "penaltiesSaved": 0,
-      "impact": 76,
-      "roleRank": 32,
-      "overallRank": 252
+      "impact": 77,
+      "roleRank": 33,
+      "overallRank": 226
     },
     {
       "key": "20674:1508",
@@ -46630,8 +46818,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 154,
-      "overallRank": 425
+      "roleRank": 156,
+      "overallRank": 430
     },
     {
       "key": "24245:1508",
@@ -46818,8 +47006,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 67,
-      "roleRank": 183,
-      "overallRank": 501
+      "roleRank": 187,
+      "overallRank": 508
     },
     {
       "key": "365331:1508",
@@ -46865,8 +47053,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 75,
-      "roleRank": 96,
-      "overallRank": 289
+      "roleRank": 97,
+      "overallRank": 297
     },
     {
       "key": "375598:1508",
@@ -46912,8 +47100,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 180,
-      "overallRank": 469
+      "roleRank": 182,
+      "overallRank": 475
     },
     {
       "key": "3034:1508",
@@ -47006,8 +47194,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 73,
-      "roleRank": 112,
-      "overallRank": 357
+      "roleRank": 114,
+      "overallRank": 365
     },
     {
       "key": "49451:1567",
@@ -47147,8 +47335,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 174,
-      "overallRank": 463
+      "roleRank": 176,
+      "overallRank": 469
     },
     {
       "key": "145465:1567",
@@ -47383,7 +47571,7 @@
       "penaltiesSaved": 0,
       "impact": 79,
       "roleRank": 56,
-      "overallRank": 177
+      "overallRank": 185
     },
     {
       "key": "279482:1508",
@@ -47476,8 +47664,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 71,
-      "roleRank": 153,
-      "overallRank": 424
+      "roleRank": 155,
+      "overallRank": 429
     },
     {
       "key": "296373:1567",
@@ -47571,7 +47759,7 @@
       "penaltiesSaved": 0,
       "impact": 69,
       "roleRank": 76,
-      "overallRank": 478
+      "overallRank": 485
     },
     {
       "key": "427187:1567",
@@ -47664,8 +47852,8 @@
       "cleanSheets": 0,
       "penaltiesSaved": 0,
       "impact": 69,
-      "roleRank": 175,
-      "overallRank": 475
+      "roleRank": 179,
+      "overallRank": 482
     },
     {
       "key": "542644:1567",
