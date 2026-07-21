@@ -1,5 +1,5 @@
 {
- "updatedAt": "2026-07-21T14:26:33.224Z",
+ "updatedAt": "2026-07-21T17:47:45.257Z",
  "divisions": [
   {
    "name": "Men's Pound-for-Pound",
@@ -553,18 +553,18 @@
     },
     {
      "rank": 8,
-     "name": "Reinier de Ridder",
-     "id": "4423880"
-    },
-    {
-     "rank": 9,
      "name": "Israel Adesanya",
      "id": "4285679"
     },
     {
+     "rank": 9,
+     "name": "Reinier de Ridder",
+     "id": "4423880"
+    },
+    {
      "rank": 10,
-     "name": "Jared Cannonier",
-     "id": "3154860"
+     "name": "Christian Leroy Duncan",
+     "id": "4848674"
     },
     {
      "rank": 11,
@@ -573,8 +573,8 @@
     },
     {
      "rank": 12,
-     "name": "Christian Leroy Duncan",
-     "id": "4848674"
+     "name": "Jared Cannonier",
+     "id": "3154860"
     },
     {
      "rank": 13,
@@ -643,38 +643,38 @@
     },
     {
      "rank": 9,
-     "name": "Volkan Oezdemir",
-     "id": "3110836"
-    },
-    {
-     "rank": 9,
      "name": "Bogdan Guskov",
      "id": "5152109"
     },
     {
-     "rank": 11,
+     "rank": 10,
      "name": "Dominick Reyes",
      "id": "4233039"
     },
     {
-     "rank": 12,
+     "rank": 11,
      "name": "Robert Whittaker",
      "id": "3009717"
     },
     {
-     "rank": 13,
+     "rank": 12,
      "name": "Johnny Walker",
      "id": "3146944"
     },
     {
-     "rank": 14,
+     "rank": 13,
      "name": "Aleksandar Rakić",
      "id": "4079314"
     },
     {
+     "rank": 14,
+     "name": "Alonzo Menifield",
+     "id": "3948876"
+    },
+    {
      "rank": 15,
-     "name": "Nikita Krylov",
-     "id": "3026263"
+     "name": "Navajo Stirling",
+     "id": "5216713"
     }
    ]
   },
@@ -880,18 +880,18 @@
     },
     {
      "rank": 6,
+     "name": "Fatima Kline",
+     "id": "5028019"
+    },
+    {
+     "rank": 7,
      "name": "Loopy Godinez",
      "id": "4700617"
     },
     {
-     "rank": 7,
+     "rank": 8,
      "name": "Amanda Lemos",
      "id": "4233196"
-    },
-    {
-     "rank": 8,
-     "name": "Tabatha Ricci",
-     "id": "4868095"
     },
     {
      "rank": 9,
@@ -900,13 +900,13 @@
     },
     {
      "rank": 10,
-     "name": "Amanda Ribas",
-     "id": "4221863"
+     "name": "Tabatha Ricci",
+     "id": "4868095"
     },
     {
      "rank": 11,
-     "name": "Fatima Kline",
-     "id": "5028019"
+     "name": "Amanda Ribas",
+     "id": "4221863"
     },
     {
      "rank": 12,
@@ -1055,8 +1055,8 @@
     },
     {
      "rank": 7,
-     "name": "Irene Aldana",
-     "id": "3136286"
+     "name": "Luana Santos",
+     "id": "5110469"
     },
     {
      "rank": 8,
@@ -1065,23 +1065,23 @@
     },
     {
      "rank": 9,
-     "name": "Luana Santos",
-     "id": "5110469"
-    },
-    {
-     "rank": 10,
      "name": "Jacqueline Cavalcanti",
      "id": "4916251"
     },
     {
-     "rank": 11,
+     "rank": 10,
      "name": "Karol Rosa",
      "id": "4292349"
     },
     {
-     "rank": 12,
+     "rank": 11,
      "name": "Bia Mesquita",
      "id": "5310274"
+    },
+    {
+     "rank": 12,
+     "name": "Michelle Montague",
+     "id": "4916259"
     },
     {
      "rank": 13,
@@ -1090,13 +1090,13 @@
     },
     {
      "rank": 14,
-     "name": "Michelle Montague",
-     "id": "4916259"
+     "name": "Miesha Tate",
+     "id": "2553021"
     },
     {
      "rank": 15,
-     "name": "Miesha Tate",
-     "id": "2553021"
+     "name": "Melissa Croden",
+     "id": "4947922"
     }
    ]
   }
