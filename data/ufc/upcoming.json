@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-20T23:17:22.242Z",
+ "fetchedAt": "2026-07-21T03:49:50.775Z",
  "cards": [
   {
    "eventId": "600059667",
@@ -8,6 +8,25 @@
    "date": "2026-07-25T13:00Z",
    "venue": "Etihad Arena",
    "fights": [
+    {
+     "boutId": "401898030",
+     "date": "2026-07-25T13:00Z",
+     "weightClass": "Bantamweight",
+     "segment": "Prelims",
+     "matchNumber": 13,
+     "a": {
+      "id": "2591306",
+      "name": "Cody Gibson",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "22-12-0"
+     },
+     "b": {
+      "id": "4905308",
+      "name": "Abdul Hussein",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/fin.png",
+      "record": "15-2-0"
+     }
+    },
     {
      "boutId": "401886737",
      "date": "2026-07-25T13:00Z",
@@ -50,8 +69,8 @@
      "boutId": "401874317",
      "date": "2026-07-25T13:00Z",
      "weightClass": "Lightweight",
-     "segment": "Main Card",
-     "matchNumber": 7,
+     "segment": "Prelims",
+     "matchNumber": 10,
      "a": {
       "id": "3093513",
       "name": "Ismael Bonfim",
@@ -70,7 +89,7 @@
      "date": "2026-07-25T13:00Z",
      "weightClass": "Welterweight",
      "segment": "Prelims",
-     "matchNumber": 10,
+     "matchNumber": 9,
      "a": {
       "id": "3043484",
       "name": "Santiago Ponzinibbio",
@@ -85,11 +104,30 @@
      }
     },
     {
+     "boutId": "401898040",
+     "date": "2026-07-25T13:00Z",
+     "weightClass": "Light Heavyweight",
+     "segment": "Prelims",
+     "matchNumber": 8,
+     "a": {
+      "id": "2594871",
+      "name": "Dustin Jacoby",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+      "record": "22-9-1"
+     },
+     "b": {
+      "id": "5369438",
+      "name": "Muhammad Said",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/rus.png",
+      "record": "9-0-0"
+     }
+    },
+    {
      "boutId": "401874312",
      "date": "2026-07-25T13:00Z",
      "weightClass": "Heavyweight",
      "segment": "Prelims",
-     "matchNumber": 8,
+     "matchNumber": 7,
      "a": {
       "id": "4869702",
       "name": "Thomas Petersen",
@@ -1430,6 +1468,34 @@
     {
      "boutId": "401897730",
      "date": "2026-09-13T00:00Z",
+     "weightClass": null,
+     "segment": "Main Card",
+     "matchNumber": 1,
+     "a": {
+      "id": "2431356",
+      "name": "TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     },
+     "b": {
+      "id": "4402367",
+      "name": "Opponent TBA",
+      "flag": "https://www.espn.com/i/teamlogos/countries/500/blank.png",
+      "record": null
+     }
+    }
+   ]
+  },
+  {
+   "eventId": "600060737",
+   "name": "Dana White's Contender Series: Season 10, Week 6",
+   "shortName": "Dana White's Contender Series",
+   "date": "2026-09-16T00:00Z",
+   "venue": "Meta APEX",
+   "fights": [
+    {
+     "boutId": "401891541",
+     "date": "2026-09-16T00:00Z",
      "weightClass": null,
      "segment": "Main Card",
      "matchNumber": 1,
