@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-21T19:54:34.564Z",
+ "computedAt": "2026-07-21T21:34:57.081Z",
  "config": {
   "k": 80,
   "provFights": 5,
@@ -2265,7 +2265,7 @@
   "2335844": {
    "name": "Aleksei Oleinik",
    "rating": 1608.4,
-   "p4p": 1517.3,
+   "p4p": 1517.2,
    "division": "Heavyweight",
    "fights": 17,
    "wins": 9,
@@ -5982,7 +5982,7 @@
   "2504168": {
    "name": "Darren Elkins",
    "rating": 1671.8,
-   "p4p": 1657.8,
+   "p4p": 1657.7,
    "division": "Featherweight",
    "fights": 30,
    "wins": 19,
@@ -6684,7 +6684,7 @@
   "2506549": {
    "name": "Dustin Poirier",
    "rating": 1896.5,
-   "p4p": 1896.1,
+   "p4p": 1896,
    "division": "Lightweight",
    "fights": 31,
    "wins": 22,
@@ -9339,7 +9339,7 @@
   "2611719": {
    "name": "TJ Dillashaw",
    "rating": 1748.2,
-   "p4p": 1543.8,
+   "p4p": 1543.7,
    "division": "Bantamweight",
    "fights": 18,
    "wins": 13,
@@ -10545,7 +10545,7 @@
   "2959588": {
    "name": "Philipe Lins",
    "rating": 1714.7,
-   "p4p": 1626.8,
+   "p4p": 1626.7,
    "division": "Light Heavyweight",
    "fights": 6,
    "wins": 4,
@@ -12048,7 +12048,7 @@
   "3028064": {
    "name": "Joanne Wood",
    "rating": 1603.6,
-   "p4p": 1561.2,
+   "p4p": 1561.1,
    "division": "W Flyweight",
    "fights": 17,
    "wins": 9,
@@ -12543,7 +12543,7 @@
   "3046022": {
    "name": "Ashlee Evans-Smith",
    "rating": 1424.9,
-   "p4p": 1470.3,
+   "p4p": 1470.4,
    "division": "W Bantamweight",
    "fights": 9,
    "wins": 3,
@@ -13065,7 +13065,7 @@
   "3084459": {
    "name": "Kevin Lee",
    "rating": 1630,
-   "p4p": 1549.9,
+   "p4p": 1549.8,
    "division": "Welterweight",
    "fights": 19,
    "wins": 11,
@@ -14721,7 +14721,7 @@
   "3153106": {
    "name": "Andrea Lee",
    "rating": 1446.9,
-   "p4p": 1453,
+   "p4p": 1453.1,
    "division": "W Flyweight",
    "fights": 14,
    "wins": 5,
@@ -15585,7 +15585,7 @@
   "3897242": {
    "name": "Nikolas Motta",
    "rating": 1626.3,
-   "p4p": 1623.3,
+   "p4p": 1623.2,
    "division": "Lightweight",
    "fights": 7,
    "wins": 4,
@@ -17493,7 +17493,7 @@
   "4064692": {
    "name": "Askar Askarov",
    "rating": 1714.2,
-   "p4p": 1500.9,
+   "p4p": 1500.8,
    "division": "Flyweight",
    "fights": 4,
    "wins": 3,
@@ -18060,7 +18060,7 @@
   "4195518": {
    "name": "Istela Nunes",
    "rating": 1347.7,
-   "p4p": 1361,
+   "p4p": 1361.1,
    "division": "W Strawweight",
    "fights": 5,
    "wins": 0,
@@ -18852,7 +18852,7 @@
   "4251497": {
    "name": "Harry Hunsucker",
    "rating": 1306.5,
-   "p4p": 1475.8,
+   "p4p": 1475.9,
    "division": "Light Heavyweight",
    "fights": 4,
    "wins": 0,
@@ -19068,7 +19068,7 @@
   "4284870": {
    "name": "Song Kenan",
    "rating": 1565,
-   "p4p": 1552.2,
+   "p4p": 1552.1,
    "division": "Welterweight",
    "fights": 11,
    "wins": 6,
@@ -19230,7 +19230,7 @@
   "4293183": {
    "name": "Victor Hugo",
    "rating": 1657.4,
-   "p4p": 1622.8,
+   "p4p": 1622.7,
    "division": "Featherweight",
    "fights": 3,
    "wins": 2,
@@ -19374,7 +19374,7 @@
   "4295932": {
    "name": "Liang Na",
    "rating": 1305.7,
-   "p4p": 1377.4,
+   "p4p": 1377.5,
    "division": "W Flyweight",
    "fights": 4,
    "wins": 0,
@@ -20895,7 +20895,7 @@
   "4417235": {
    "name": "Nicolae Negumereanu",
    "rating": 1682,
-   "p4p": 1535.3,
+   "p4p": 1535.2,
    "division": "Light Heavyweight",
    "fights": 6,
    "wins": 4,
@@ -20994,7 +20994,7 @@
   "4420801": {
    "name": "Alex da Silva",
    "rating": 1487.8,
-   "p4p": 1499.2,
+   "p4p": 1499.3,
    "division": "Lightweight",
    "fights": 4,
    "wins": 1,
@@ -21111,7 +21111,7 @@
   "4422319": {
    "name": "Alan Baudot",
    "rating": 1378.9,
-   "p4p": 1490.4,
+   "p4p": 1490.5,
    "division": "Heavyweight",
    "fights": 3,
    "wins": 0,
@@ -21579,7 +21579,7 @@
   "4565671": {
    "name": "Cory McKenna",
    "rating": 1539,
-   "p4p": 1530,
+   "p4p": 1529.9,
    "division": "W Strawweight",
    "fights": 7,
    "wins": 4,
@@ -24018,7 +24018,7 @@
   "4905261": {
    "name": "Muhammad Mokaev",
    "rating": 1877.6,
-   "p4p": 1766.4,
+   "p4p": 1766.3,
    "division": "Flyweight",
    "fights": 7,
    "wins": 7,
@@ -24297,7 +24297,7 @@
   "4969973": {
    "name": "Denis Tiuliulin",
    "rating": 1375.2,
-   "p4p": 1411.2,
+   "p4p": 1411.3,
    "division": "Middleweight",
    "fights": 6,
    "wins": 1,
@@ -24918,7 +24918,7 @@
   "5077398": {
    "name": "Lucas Alexander",
    "rating": 1405.4,
-   "p4p": 1418.6,
+   "p4p": 1418.7,
    "division": "Featherweight",
    "fights": 4,
    "wins": 1,
@@ -26142,7 +26142,7 @@
   "5157668": {
    "name": "MarQuel Mederos",
    "rating": 1725.2,
-   "p4p": 1717.2,
+   "p4p": 1717.1,
    "division": "Lightweight",
    "fights": 4,
    "wins": 4,
@@ -26394,7 +26394,7 @@
   "5211222": {
    "name": "Shannon Clark",
    "rating": 1469.1,
-   "p4p": 1477.2,
+   "p4p": 1477.3,
    "division": "W Flyweight",
    "fights": 1,
    "wins": 0,
