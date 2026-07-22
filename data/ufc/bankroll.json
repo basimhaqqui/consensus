@@ -1,6 +1,6 @@
 {
  "start": 1000,
- "cash": 347.77,
+ "cash": 297.77,
  "open": [
   {
    "kind": "single",
@@ -202,6 +202,27 @@
    "event": "UFC Fight Night: Ankalaev vs. Guskov",
    "analysis": "model P(over)=51.8% vs implied 48.8% (dec 36%)",
    "placedAt": "2026-07-19T13:56:21.060Z"
+  },
+  {
+   "kind": "single",
+   "title": "Davis-Aliev Under 2.5 @ 2.71",
+   "legs": [
+    {
+     "boutId": "401886737",
+     "type": "total",
+     "point": 2.5,
+     "side": "under",
+     "price": 2.71,
+     "label": "Under 2.5 rds"
+    }
+   ],
+   "stake": 50,
+   "price": 2.71,
+   "p": 0.382,
+   "ev": 0.035,
+   "event": "UFC Fight Night: Ankalaev vs. Guskov",
+   "analysis": "model P(under)=38.2% vs implied 36.9% (finish 45%)",
+   "placedAt": "2026-07-22T14:26:58.977Z"
   }
  ],
  "settled": [
@@ -1288,6 +1309,11 @@
    "at": "2026-07-22T10:35:11.666Z",
    "cash": 347.77,
    "exposure": 366.42
+  },
+  {
+   "at": "2026-07-22T14:26:58.977Z",
+   "cash": 297.77,
+   "exposure": 416.42
   }
  ]
 }
