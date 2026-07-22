@@ -142,13 +142,18 @@ async function clubFootballSignal(id: string): Promise<ShareSignal | null> {
     pickName: signal.pickName,
     opponentName: signal.opponentName,
     outcomeLabel: "to win",
-    methodLabel: "Independent model",
+    methodLabel: signal.marketProbability === undefined
+      ? "Independent model"
+      : "Consensus",
     probability: signal.probability,
-    modelProbability: signal.probability,
+    modelProbability: signal.modelProbability,
+    marketProbability: signal.marketProbability,
     reason,
-    caption: `${signal.pickName} is the independent model call at ${pct(
+    caption: `${signal.pickName} is the ${
+      signal.marketProbability === undefined ? "independent model" : "consensus"
+    } call at ${pct(
       signal.probability
-    )} to beat ${signal.opponentName}. ${signal.reasons[0]} #${hashtag}`,
+    )} to beat ${signal.opponentName}. ${signal.reasons[1]} #${hashtag}`,
     actionLabel: "Open match briefing",
   };
 }

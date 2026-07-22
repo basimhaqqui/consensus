@@ -7,6 +7,11 @@ import {
 } from "@/lib/leagues";
 import { getStandings } from "@/lib/standings";
 import { leagueRatings, CLUBELO_SLUGS } from "@/lib/clubelo";
+import {
+  fetchClubMarketOdds,
+  findClubMarketLine,
+  type ClubMarketEvent,
+} from "@/lib/clubOdds";
 import { forecastClub, inPlay } from "@/lib/model";
 import {
   getRemainingFixtures,
@@ -34,9 +39,10 @@ export default async function LeaguePage({
   const comp = competitionBySlug(slug);
   if (!comp) notFound();
 
-  const [board, rawStandings] = await Promise.all([
+  const [board, rawStandings, marketEvents] = await Promise.all([
     getLeagueScoreboard(slug),
     getStandings(slug),
+    fetchClubMarketOdds(slug),
   ]);
   const matches = board?.matches ?? [];
 
@@ -122,7 +128,13 @@ export default async function LeaguePage({
               </div>
               <div className="grid gap-2 sm:grid-cols-2">
                 {ms.map((m) => (
-                  <LeagueCard key={m.id} slug={slug} m={m} rmap={rmap} />
+                  <LeagueCard
+                    key={m.id}
+                    slug={slug}
+                    m={m}
+                    rmap={rmap}
+                    marketEvents={marketEvents}
+                  />
                 ))}
               </div>
             </section>
@@ -289,16 +301,26 @@ function LeagueCard({
   slug,
   m,
   rmap,
+  marketEvents,
 }: {
   slug: string;
   m: LeagueMatch;
   rmap: Map<string, number>;
+  marketEvents: ClubMarketEvent[] | null;
 }) {
   const live = m.status === "in";
   const done = m.status === "post";
   const showScore = live || done;
+  const market = !done
+    ? findClubMarketLine(
+        marketEvents,
+        m.home.name,
+        m.away.name,
+        m.dateISO
+      )
+    : null;
 
-  // form-based forecast (W/D/W), in-play when live
+  // ClubElo/table forecast (W/D/W), in-play when live.
   let probs: { pHome: number; pDraw: number; pAway: number } | null = null;
   const rh = rmap.get(m.home.abbr);
   const ra = rmap.get(m.away.abbr);
@@ -344,7 +366,11 @@ function LeagueCard({
           <div className="mb-0.5 text-[10px] uppercase tracking-wider text-muted">
             {live ? `In-play · ${m.minute}'` : "Model"}
           </div>
-          <div className="flex h-1.5 w-full overflow-hidden rounded-full bg-zinc-800">
+          <div
+            className="flex h-1.5 w-full overflow-hidden rounded-full bg-zinc-800"
+            role="img"
+            aria-label={`Model: ${m.home.name} ${pct(probs.pHome)}, draw ${pct(probs.pDraw)}, ${m.away.name} ${pct(probs.pAway)}`}
+          >
             <div className="bg-accent/80" style={{ width: pct(probs.pHome) }} />
             <div className="bg-zinc-600" style={{ width: pct(probs.pDraw) }} />
             <div className="bg-sky-400/70" style={{ width: pct(probs.pAway) }} />
@@ -353,6 +379,28 @@ function LeagueCard({
             <span>{pct(probs.pHome)}</span>
             <span>D {pct(probs.pDraw)}</span>
             <span>{pct(probs.pAway)}</span>
+          </div>
+        </div>
+      )}
+
+      {market && !live && (
+        <div className="mt-2">
+          <div className="mb-0.5 text-[10px] uppercase tracking-wider text-muted">
+            Market · {market.books} books
+          </div>
+          <div
+            className="flex h-1.5 w-full overflow-hidden rounded-full bg-zinc-800"
+            role="img"
+            aria-label={`Market: ${m.home.name} ${pct(market.pHome)}, draw ${pct(market.pDraw)}, ${m.away.name} ${pct(market.pAway)}`}
+          >
+            <div className="bg-amber-400/80" style={{ width: pct(market.pHome) }} />
+            <div className="bg-zinc-600" style={{ width: pct(market.pDraw) }} />
+            <div className="bg-orange-300/70" style={{ width: pct(market.pAway) }} />
+          </div>
+          <div className="mt-0.5 flex justify-between text-[10px] text-muted tabnums">
+            <span>{pct(market.pHome)}</span>
+            <span>D {pct(market.pDraw)}</span>
+            <span>{pct(market.pAway)}</span>
           </div>
         </div>
       )}

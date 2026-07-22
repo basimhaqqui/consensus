@@ -182,8 +182,12 @@ export default async function SignalsPage() {
                 <div className={styles.contextGrid}>
                   <ContextCard
                     label="Method"
-                    value={marketGap ? "Mixed sources" : "Independent"}
-                    sub={marketGap ? "model + market where posted" : "model first · lines pending"}
+                    value={clubFeed.marketSignals > 0 ? "Market-linked" : marketGap ? "Mixed sources" : "Independent"}
+                    sub={clubFeed.marketSignals > 0
+                      ? `${clubFeed.marketSignals} club lines · model + books`
+                      : marketGap
+                        ? "model + market where posted"
+                        : "model first · lines pending"}
                   />
                   <ContextCard
                     label="Refresh"
@@ -260,12 +264,15 @@ function buildClubFootballSignal(club: ClubSignal): Signal {
     right: club.right,
     pickSide: club.pickSide,
     outcomeLabel: "to win",
-    methodLabel: "Independent model",
+    methodLabel: club.marketProbability === undefined
+      ? "Independent model"
+      : "Consensus",
     leftProbability: club.homeProbability,
     rightProbability: club.awayProbability,
     drawProbability: club.drawProbability,
     probability: club.probability,
-    modelProbability: club.probability,
+    modelProbability: club.modelProbability,
+    marketProbability: club.marketProbability,
     priority: club.priority,
     reasons: club.reasons,
   };

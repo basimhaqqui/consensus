@@ -3,7 +3,8 @@ import Link from "next/link";
 import { fetchSummary, fetchPredictedSquads, type Goal } from "@/lib/match";
 import { competitionBySlug } from "@/lib/leagues";
 import { getStandings } from "@/lib/standings";
-import { leagueRatings } from "@/lib/clubelo";
+import { leagueRatings, CLUBELO_SLUGS } from "@/lib/clubelo";
+import { fetchClubMarketOdds, findClubMarketLine } from "@/lib/clubOdds";
 import { forecastClub } from "@/lib/model";
 import Crest from "@/components/Crest";
 import Lineups from "@/components/Lineups";
@@ -23,9 +24,10 @@ export default async function LeagueMatchPage({
   params: Promise<{ league: string; id: string }>;
 }) {
   const { league, id } = await params;
-  const [detail, standings] = await Promise.all([
+  const [detail, standings, marketEvents] = await Promise.all([
     fetchSummary(league, id),
     getStandings(league),
+    fetchClubMarketOdds(league),
   ]);
   if (!detail) notFound();
 
@@ -35,6 +37,12 @@ export default async function LeagueMatchPage({
   const rAway = rmap.get(detail.away.abbr);
   const outcome =
     rHome && rAway ? forecastClub(rHome, rAway) : null;
+  const market = findClubMarketLine(
+    marketEvents,
+    detail.home.name,
+    detail.away.name,
+    detail.date
+  );
 
   const comp = competitionBySlug(league);
   const live = detail.status === "in";
@@ -131,9 +139,13 @@ export default async function LeagueMatchPage({
       {outcome && (
         <section className="terminal-panel mt-5 p-4">
           <h2 className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 mb-3">
-            Model forecast · form-based
+            Model forecast · {CLUBELO_SLUGS.has(league) ? "ClubElo" : "table form"}
           </h2>
-          <div className="flex h-3 w-full overflow-hidden rounded-full bg-zinc-800">
+          <div
+            className="flex h-3 w-full overflow-hidden rounded-full bg-zinc-800"
+            role="img"
+            aria-label={`Model: ${detail.home.name} ${pct(outcome.pHome)}, draw ${pct(outcome.pDraw)}, ${detail.away.name} ${pct(outcome.pAway)}`}
+          >
             <div className="bg-accent/80" style={{ width: pct(outcome.pHome) }} />
             <div className="bg-zinc-600" style={{ width: pct(outcome.pDraw) }} />
             <div className="bg-sky-400/70" style={{ width: pct(outcome.pAway) }} />
@@ -147,6 +159,27 @@ export default async function LeagueMatchPage({
               {pct(outcome.pAway)} {detail.away.name}
             </span>
           </div>
+          {market && (
+            <>
+              <div className="mt-4 mb-1 text-[10px] uppercase tracking-[0.16em] text-zinc-400">
+                Sportsbooks · {market.books}-book de-vigged average
+              </div>
+              <div
+                className="flex h-2 w-full overflow-hidden rounded-full bg-zinc-800"
+                role="img"
+                aria-label={`Sportsbooks: ${detail.home.name} ${pct(market.pHome)}, draw ${pct(market.pDraw)}, ${detail.away.name} ${pct(market.pAway)}`}
+              >
+                <div className="bg-amber-400/80" style={{ width: pct(market.pHome) }} />
+                <div className="bg-zinc-600" style={{ width: pct(market.pDraw) }} />
+                <div className="bg-orange-300/70" style={{ width: pct(market.pAway) }} />
+              </div>
+              <div className="mt-1.5 flex justify-between text-[11px] text-muted tabnums">
+                <span>{detail.home.name} {pct(market.pHome)}</span>
+                <span>Draw {pct(market.pDraw)}</span>
+                <span>{pct(market.pAway)} {detail.away.name}</span>
+              </div>
+            </>
+          )}
           <div className="mt-3 grid grid-cols-2 gap-2 text-center text-xs">
             <div className="rounded-lg bg-panel2/60 py-2">
               <div className="text-[10px] uppercase tracking-wider text-muted">
@@ -166,8 +199,8 @@ export default async function LeagueMatchPage({
             </div>
           </div>
           <p className="mt-2 text-[10px] text-zinc-600">
-            Ratings derived from this season&apos;s table (points &amp; goal
-            difference per game). For entertainment.
+            Model and market are independent reads. Sportsbook probabilities are
+            de-vigged before averaging. For entertainment, not betting advice.
           </p>
         </section>
       )}

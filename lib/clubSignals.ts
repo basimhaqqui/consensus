@@ -1,5 +1,6 @@
 import { cache } from "react";
 import { leagueRatings, CLUBELO_SLUGS } from "./clubelo";
+import { fetchClubMarketOdds, findClubMarketLine } from "./clubOdds";
 import {
   COMPETITIONS,
   competitionBySlug,
@@ -41,12 +42,16 @@ export type ClubSignal = {
   drawProbability: number;
   lambdaHome: number;
   lambdaAway: number;
+  modelProbability: number;
+  marketProbability?: number;
+  books?: number;
   priority: number;
   reasons: [string, string];
 };
 
 export type ClubSignalFeed = {
   signals: ClubSignal[];
+  marketSignals: number;
   feedsOnline: number;
   competitionsChecked: number;
 };
@@ -76,8 +81,12 @@ export const getClubSignalFeed = cache(async (): Promise<ClubSignalFeed> => {
     )
   );
 
+  const signals = groups.flat().sort(rankSignals);
   return {
-    signals: groups.flat().sort(rankSignals),
+    signals,
+    marketSignals: signals.filter(
+      (signal) => signal.marketProbability !== undefined
+    ).length,
     feedsOnline: boards.filter(({ board }) => board !== null).length,
     competitionsChecked: CLUB_COMPETITIONS.length,
   };
@@ -117,8 +126,12 @@ async function buildCompetitionSignals(
   matches: LeagueMatch[],
   now: number
 ): Promise<ClubSignal[]> {
+  const marketPromise = fetchClubMarketOdds(competition.slug);
   const standings = await getStandings(competition.slug);
-  const ratings = await leagueRatings(competition.slug, standings);
+  const [ratings, marketEvents] = await Promise.all([
+    leagueRatings(competition.slug, standings),
+    marketPromise,
+  ]);
   if (ratings.size < 2) return [];
 
   return matches.flatMap((match) => {
@@ -127,11 +140,32 @@ async function buildCompetitionSignals(
     if (ratingHome === undefined || ratingAway === undefined) return [];
 
     const outcome = forecastClub(ratingHome, ratingAway);
-    const probabilities = liveProbabilities(match, outcome);
+    const model = liveProbabilities(match, outcome);
+    const market = match.status === "pre"
+      ? findClubMarketLine(
+          marketEvents,
+          match.home.name,
+          match.away.name,
+          match.dateISO
+        )
+      : null;
+    const probabilities = market
+      ? {
+          pHome: (model.pHome + market.pHome) / 2,
+          pDraw: (model.pDraw + market.pDraw) / 2,
+          pAway: (model.pAway + market.pAway) / 2,
+        }
+      : model;
     const pickLeft = probabilities.pHome >= probabilities.pAway;
     const pick = pickLeft ? match.home : match.away;
     const opponent = pickLeft ? match.away : match.home;
     const probability = pickLeft ? probabilities.pHome : probabilities.pAway;
+    const modelProbability = pickLeft ? model.pHome : model.pAway;
+    const marketProbability = market
+      ? pickLeft
+        ? market.pHome
+        : market.pAway
+      : undefined;
     const ratingGap = Math.abs(clubRatingGap(ratingHome, ratingAway));
     const xgEdge = pickLeft
       ? outcome.lambdaHome - outcome.lambdaAway
@@ -151,7 +185,13 @@ async function buildCompetitionSignals(
       sharePath: `/signal/football/${id}`,
       status: match.status,
       date: match.status === "in" ? `Live · ${match.detail}` : formatKickoff(match.dateISO),
-      meta: `${source} · ${match.status === "in" ? "in-play" : "model only"}`,
+      meta: `${source} · ${
+        match.status === "in"
+          ? "in-play"
+          : market
+            ? `${market.books}-book market`
+            : "model only"
+      }`,
       left: side(match.home),
       right: side(match.away),
       pickSide: pickLeft ? "left" : "right",
@@ -163,15 +203,36 @@ async function buildCompetitionSignals(
       drawProbability: probabilities.pDraw,
       lambdaHome: outcome.lambdaHome,
       lambdaAway: outcome.lambdaAway,
-      priority: probability * 0.7 + relevance(match, now) * 0.3,
-      reasons: [
-        `${pick.name} has the strongest 90-minute result probability at ${pct(
-          probability
-        )}; the draw remains ${pct(probabilities.pDraw)}.`,
-        `${source} produces a ${Math.round(ratingGap)}-point adjusted rating edge and a ${Math.abs(
-          xgEdge
-        ).toFixed(1)} expected-goal advantage.`,
-      ],
+      modelProbability,
+      marketProbability,
+      books: market?.books,
+      priority: market === null
+        ? probability * 0.7 + relevance(match, now) * 0.3
+        : probability * 0.55 +
+          relevance(match, now) * 0.25 +
+          Math.min(
+            1,
+            Math.abs(
+              modelProbability - (pickLeft ? market.pHome : market.pAway)
+            ) / 0.2
+          ) * 0.2,
+      reasons: market === null
+        ? [
+            `${pick.name} has the strongest 90-minute result probability at ${pct(
+              probability
+            )}; the draw remains ${pct(probabilities.pDraw)}.`,
+            `${source} produces a ${Math.round(ratingGap)}-point adjusted rating edge and a ${Math.abs(
+              xgEdge
+            ).toFixed(1)} expected-goal advantage.`,
+          ]
+        : [
+            `${pick.name} leads the 50/50 model-market consensus at ${pct(
+              probability
+            )}; the draw remains ${pct(probabilities.pDraw)}.`,
+            `Independent model ${pct(modelProbability)} · ${market.books}-book market ${pct(
+              pickLeft ? market.pHome : market.pAway
+            )} · ${Math.abs(Math.round((modelProbability - (pickLeft ? market.pHome : market.pAway)) * 100))}-point disagreement.`,
+          ],
     } satisfies ClubSignal];
   });
 }
