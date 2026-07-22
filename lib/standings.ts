@@ -3,6 +3,7 @@
 // generalises beyond the World Cup.
 
 export type StandingRow = {
+  id?: string;
   name: string;
   abbr: string;
   logo?: string;
@@ -62,6 +63,7 @@ export async function getStandings(
             }
           : undefined;
         return {
+          id: e.team?.id ? String(e.team.id) : undefined,
           name: e.team?.displayName ?? "",
           abbr: e.team?.abbreviation ?? "",
           logo: e.team?.logos?.[0]?.href ?? e.team?.logo,

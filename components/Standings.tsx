@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { StandingsGroup } from "@/lib/standings";
 import Crest from "./Crest";
 
@@ -15,9 +16,11 @@ function zoneColor(text: string, fallback: string): string {
 
 export default function Standings({
   groups,
+  league,
   highlightTop,
 }: {
   groups: StandingsGroup[];
+  league?: string;
   highlightTop?: number; // accent the top N (e.g. 2 for WC groups that advance)
 }) {
   const multi = groups.length > 1;
@@ -67,10 +70,18 @@ export default function Standings({
                       {r.rank}
                     </td>
                     <td className="py-1.5">
-                      <div className="flex items-center gap-1.5 min-w-0">
-                        <Crest src={r.logo} code={r.abbr} size={14} className="w-4" />
-                        <span className="truncate">{r.name}</span>
-                      </div>
+                      {league ? (
+                        <Link
+                          href={`/club/${league}/${r.abbr}`}
+                          className="flex min-w-0 items-center gap-1.5 hover:text-accent"
+                        >
+                          <TeamName logo={r.logo} abbr={r.abbr} name={r.name} />
+                        </Link>
+                      ) : (
+                        <span className="flex min-w-0 items-center gap-1.5">
+                          <TeamName logo={r.logo} abbr={r.abbr} name={r.name} />
+                        </span>
+                      )}
                     </td>
                     <td className="text-right text-muted">{r.gp}</td>
                     <td className="text-right text-muted hidden sm:table-cell">{r.w}</td>
@@ -89,6 +100,15 @@ export default function Standings({
         </div>
       ))}
     </div>
+  );
+}
+
+function TeamName({ logo, abbr, name }: { logo?: string; abbr: string; name: string }) {
+  return (
+    <>
+      <Crest src={logo} code={abbr} size={14} className="w-4" />
+      <span className="truncate">{name}</span>
+    </>
   );
 }
 

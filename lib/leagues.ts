@@ -22,6 +22,7 @@ export const competitionBySlug = (slug: string) =>
   COMPETITIONS.find((c) => c.slug === slug);
 
 export type LeagueSide = {
+  id?: string;
   name: string;
   abbr: string;
   logo?: string;
@@ -54,12 +55,40 @@ export type LeagueScoreboard = {
 };
 
 function side(c: any): LeagueSide {
+  const id = c?.team?.id ? String(c.team.id) : c?.id ? String(c.id) : undefined;
+  const rawScore = c?.score;
+  const score = rawScore && typeof rawScore === "object"
+    ? rawScore.displayValue ?? String(rawScore.value ?? "")
+    : rawScore;
   return {
+    id,
     name: c?.team?.displayName ?? c?.team?.shortDisplayName ?? "",
     abbr: c?.team?.abbreviation ?? "",
-    logo: c?.team?.logo,
-    score: c?.score,
+    logo:
+      c?.team?.logo ??
+      c?.team?.logos?.[0]?.href ??
+      (id ? `https://a.espncdn.com/i/teamlogos/soccer/500/${id}.png` : undefined),
+    score,
     winner: c?.winner,
+  };
+}
+
+function parseLeagueMatch(e: any): LeagueMatch | null {
+  const comp = e.competitions?.[0];
+  const cs = comp?.competitors ?? [];
+  const home = cs.find((c: any) => c.homeAway === "home") ?? cs[0];
+  const away = cs.find((c: any) => c.homeAway === "away") ?? cs[1];
+  if (!home || !away) return null;
+  const st = comp?.status?.type ?? e.status?.type ?? {};
+  const state = (st.state as LeagueMatch["status"]) ?? "pre";
+  return {
+    id: String(e.id ?? comp?.id ?? ""),
+    dateISO: e.date ?? comp?.date ?? "",
+    status: state,
+    detail: st.shortDetail ?? st.detail ?? "",
+    minute: state === "in" ? parseMinute(comp?.status ?? e.status) : undefined,
+    home: side(home),
+    away: side(away),
   };
 }
 
@@ -80,24 +109,7 @@ export async function getLeagueScoreboard(
   }
 
   const matches: LeagueMatch[] = (data.events ?? [])
-    .map((e: any): LeagueMatch | null => {
-      const comp = e.competitions?.[0];
-      const cs = comp?.competitors ?? [];
-      const home = cs.find((c: any) => c.homeAway === "home") ?? cs[0];
-      const away = cs.find((c: any) => c.homeAway === "away") ?? cs[1];
-      if (!home || !away) return null;
-      const st = e.status?.type ?? {};
-      const state = (st.state as LeagueMatch["status"]) ?? "pre";
-      return {
-        id: e.id,
-        dateISO: e.date,
-        status: state,
-        detail: st.shortDetail ?? st.detail ?? "",
-        minute: state === "in" ? parseMinute(e.status) : undefined,
-        home: side(home),
-        away: side(away),
-      };
-    })
+    .map(parseLeagueMatch)
     .filter((m: LeagueMatch | null): m is LeagueMatch => m !== null)
     .sort((a: LeagueMatch, b: LeagueMatch) => a.dateISO.localeCompare(b.dateISO));
 
@@ -106,4 +118,58 @@ export async function getLeagueScoreboard(
     season: data.leagues?.[0]?.season?.displayName,
     matches,
   };
+}
+
+export async function getClubSchedule(
+  slug: string,
+  teamId: string,
+  abbr: string
+): Promise<LeagueMatch[]> {
+  const now = new Date();
+  const ranges = Array.from({ length: 4 }, (_, offset) => {
+    const start = new Date(Date.UTC(
+      now.getUTCFullYear(),
+      now.getUTCMonth() + offset,
+      1
+    ));
+    const end = new Date(Date.UTC(
+      now.getUTCFullYear(),
+      now.getUTCMonth() + offset + 1,
+      0
+    ));
+    return `${formatEspnDate(start)}-${formatEspnDate(end)}`;
+  });
+  const urls = [
+    `https://site.api.espn.com/apis/site/v2/sports/soccer/${slug}/teams/${teamId}/schedule`,
+    ...ranges.map(
+      (range) =>
+        `https://site.api.espn.com/apis/site/v2/sports/soccer/${slug}/scoreboard?dates=${range}`
+    ),
+  ];
+
+  const payloads = await Promise.all(
+    urls.map((url) =>
+      fetch(url, {
+        next: { revalidate: 1_800 },
+        signal: AbortSignal.timeout(5_000),
+      })
+        .then((response) => (response.ok ? response.json() : null))
+        .catch(() => null)
+    )
+  );
+  const byId = new Map<string, LeagueMatch>();
+  for (const payload of payloads) {
+    for (const event of payload?.events ?? []) {
+      const match = parseLeagueMatch(event);
+      if (!match || (match.home.abbr !== abbr && match.away.abbr !== abbr)) {
+        continue;
+      }
+      byId.set(match.id, match);
+    }
+  }
+  return [...byId.values()].sort((a, b) => a.dateISO.localeCompare(b.dateISO));
+}
+
+function formatEspnDate(date: Date) {
+  return date.toISOString().slice(0, 10).replace(/-/g, "");
 }

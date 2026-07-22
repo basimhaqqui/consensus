@@ -6,7 +6,7 @@ import {
   type LeagueMatch,
 } from "@/lib/leagues";
 import { getStandings } from "@/lib/standings";
-import { leagueRatings, CLUBELO_SLUGS } from "@/lib/clubelo";
+import { leagueRatings } from "@/lib/clubelo";
 import {
   fetchClubMarketOdds,
   findClubMarketLine,
@@ -14,13 +14,11 @@ import {
 } from "@/lib/clubOdds";
 import { forecastClub, inPlay } from "@/lib/model";
 import {
-  getRemainingFixtures,
-  priorSeasonRatings,
-  projectSeason,
-  qualStructure,
-  type ProjRow,
-} from "@/lib/projection";
-import { applyZoneNotes, zoneCounts } from "@/lib/qualification";
+  buildConferenceProjections,
+  buildProjection,
+} from "@/lib/leagueProjection";
+import type { ProjRow } from "@/lib/projection";
+import { applyZoneNotes } from "@/lib/qualification";
 import Crest from "@/components/Crest";
 import CompetitionNav from "@/components/CompetitionNav";
 import Standings from "@/components/Standings";
@@ -60,8 +58,7 @@ export default async function LeaguePage({
   // season projection — single-table leagues (mid-season, pre-season, or finished)
   let projection: Awaited<ReturnType<typeof buildProjection>> = null;
   if (standings && standings.length === 1) {
-    projection = await buildProjection(slug, standings[0].rows, rmap,
-      CLUBELO_SLUGS.has(slug) && rmap.size >= standings[0].rows.length * 0.7);
+    projection = await buildProjection(slug, standings[0].rows, rmap);
   }
 
   // conference leagues (MLS): project each conference to playoff odds —
@@ -184,115 +181,16 @@ export default async function LeaguePage({
               {standings.length > 1 ? "Groups" : "Table"}
             </h2>
           </div>
-          <Standings groups={standings} highlightTop={standings.length > 1 ? 2 : undefined} />
+          <Standings
+            groups={standings}
+            league={slug}
+            highlightTop={standings.length > 1 ? 2 : undefined}
+          />
         </section>
       )}
       <Footer />
     </main>
   );
-}
-
-// MLS-style conference projection: playoff odds per conference. Fixtures are
-// league-wide (teams play cross-conference), which is correct — every result
-// counts toward a team's own conference table.
-async function buildConferenceProjections(
-  slug: string,
-  groups: import("@/lib/standings").StandingsGroup[],
-  rmap: Map<string, number>
-): Promise<{ name: string; rows: ProjRow[] }[]> {
-  const fixtures = await getRemainingFixtures(slug, 6);
-  if (fixtures.length < 1) return [];
-  const out: { name: string; rows: ProjRow[] }[] = [];
-  for (const g of groups) {
-    const maxGp = Math.max(0, ...g.rows.map((r) => r.gp));
-    if (maxGp === 0) continue; // pre-season: form ratings don't exist yet
-    const playoffSpots =
-      g.rows.filter((r) => /playoff|wild card/i.test(r.note?.text ?? ""))
-        .length || 9;
-    const rows = projectSeason(
-      g.rows,
-      rmap,
-      fixtures,
-      { uclSpots: playoffSpots, uelSpots: 0, ueclSpots: 0, relegSpots: 0 },
-      3000,
-      true
-    );
-    if (rows.length) out.push({ name: g.name, rows });
-  }
-  return out;
-}
-
-async function buildProjection(
-  slug: string,
-  rows: import("@/lib/standings").StandingRow[],
-  rmap: Map<string, number>,
-  // ClubElo-backed maps are results-based and always current, so the
-  // prior-season shrinkage below is unnecessary (and worse) — skip it.
-  realRatings = false
-) {
-  const n = rows.length;
-  const full = 2 * (n - 1); // full single round-robin season length
-  const maxGp = Math.max(...rows.map((r) => r.gp), 0);
-
-  let ratings = rmap;
-  let useCurrent = true;
-  let label = "Season projection — our model";
-
-  // ESPN season params are start-years; which year is "last season" depends
-  // on where we are in the calendar (autumn: y-1, spring: y-2).
-  const now = new Date();
-  const priorYear =
-    now.getUTCMonth() >= 6
-      ? now.getUTCFullYear() - 1
-      : now.getUTCFullYear() - 2;
-
-  if (maxGp === 0) {
-    // pre-season: rate from last season's final table (or ClubElo directly)
-    if (!realRatings) ratings = await priorSeasonRatings(slug, priorYear);
-    useCurrent = false;
-    label = "Title race — projected season";
-  } else if (maxGp >= full) {
-    // last season complete: project the upcoming one from current strength
-    useCurrent = false;
-    label = "Title race — next season";
-  } else {
-    // mid-season: shrink noisy early-season form toward last season's level,
-    // trusting the current table more as games accumulate
-    const prior = realRatings
-      ? new Map<string, number>()
-      : await priorSeasonRatings(slug, priorYear);
-    if (prior.size) {
-      const blended = new Map<string, number>();
-      for (const r of rows) {
-        const cur = rmap.get(r.abbr);
-        const prev = prior.get(r.abbr);
-        if (cur != null && prev != null) {
-          const w = r.gp / (r.gp + 10);
-          blended.set(r.abbr, Math.round(w * cur + (1 - w) * prev));
-        } else if (cur != null) blended.set(r.abbr, cur);
-        else if (prev != null) blended.set(r.abbr, prev);
-      }
-      ratings = blended;
-    }
-  }
-
-  if (ratings.size < 4) return null;
-  const fixtures = await getRemainingFixtures(slug, useCurrent ? 6 : 12);
-  if (fixtures.length < 1) return null;
-
-  // Config-driven European spots (knows the Conference berth) where we have it;
-  // otherwise fall back to ESPN's standings notes (e.g. Brazil — Libertadores).
-  const struct = zoneCounts(slug) ?? qualStructure(rows);
-  const proj = projectSeason(rows, ratings, fixtures, struct, 3000, useCurrent);
-  if (!proj.length) return null;
-  return {
-    rows: proj,
-    showUcl: struct.uclSpots > 0,
-    showUecl: struct.ueclSpots > 0,
-    showReleg: struct.relegSpots > 0,
-    topLabel: struct.topLabel,
-    label,
-  };
 }
 
 const pct = (n: number) => `${Math.round(n * 100)}%`;

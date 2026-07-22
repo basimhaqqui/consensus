@@ -320,6 +320,7 @@ function MarketAlertCard({
 }) {
   const upward = alert.delta > 0;
   const direction = upward ? "+" : "";
+  const clubAbbr = alert.clubKey.match(/^club:[^:]+:([^:]+)$/)?.[1];
 
   return (
     <article className="terminal-panel p-4">
@@ -329,7 +330,7 @@ function MarketAlertCard({
             {alert.league} · {alert.books} books
           </div>
           <Link
-            href={`/league/${alert.league}`}
+            href={clubAbbr ? `/club/${alert.league}/${clubAbbr}` : `/league/${alert.league}`}
             className="display mt-2 block text-xl font-bold text-zinc-100 hover:text-accent"
           >
             {alert.club}

@@ -96,7 +96,7 @@ export default async function LeagueMatchPage({
               kind: "club",
               title: detail.home.name,
               context: comp?.name ?? league,
-              href: `/league/${league}`,
+              href: `/club/${league}/${detail.home.abbr}`,
               image: detail.home.logo,
             } : undefined}
           />
@@ -132,7 +132,7 @@ export default async function LeagueMatchPage({
               kind: "club",
               title: detail.away.name,
               context: comp?.name ?? league,
-              href: `/league/${league}`,
+              href: `/club/${league}/${detail.away.abbr}`,
               image: detail.away.logo,
             } : undefined}
           />

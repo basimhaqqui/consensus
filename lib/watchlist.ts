@@ -53,10 +53,20 @@ export function parseStoredItems(value: string | null): WatchItem[] {
   try {
     const parsed = JSON.parse(value) as unknown;
     if (!Array.isArray(parsed)) return [];
-    return parsed.filter(isWatchItem).slice(0, 50);
+    return parsed.filter(isWatchItem).map(normalizeWatchItem).slice(0, 50);
   } catch {
     return [];
   }
+}
+
+function normalizeWatchItem(item: WatchItem): WatchItem {
+  if (item.kind !== "club") return item;
+  const match = item.key.match(/^club:([^:]+):([^:]+)$/);
+  if (!match) return item;
+  return {
+    ...item,
+    href: `/club/${encodeURIComponent(match[1])}/${encodeURIComponent(match[2])}`,
+  };
 }
 
 export function parseStoredPreferences(value: string | null): AlertPreferences {
