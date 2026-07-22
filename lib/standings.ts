@@ -35,7 +35,10 @@ export async function getStandings(
   }`;
   let d: any;
   try {
-    const r = await fetch(url, { next: { revalidate: 300 } });
+    const r = await fetch(url, {
+      next: { revalidate: 300 },
+      signal: AbortSignal.timeout(5_000),
+    });
     if (!r.ok) return null;
     d = await r.json();
   } catch {

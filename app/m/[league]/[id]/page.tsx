@@ -4,7 +4,7 @@ import { fetchSummary, fetchPredictedSquads, type Goal } from "@/lib/match";
 import { competitionBySlug } from "@/lib/leagues";
 import { getStandings } from "@/lib/standings";
 import { leagueRatings } from "@/lib/clubelo";
-import { forecast, MU_CLUB } from "@/lib/model";
+import { forecastClub } from "@/lib/model";
 import Crest from "@/components/Crest";
 import Lineups from "@/components/Lineups";
 import { BallIcon } from "@/components/PlayerMarkers";
@@ -34,7 +34,7 @@ export default async function LeagueMatchPage({
   const rHome = rmap.get(detail.home.abbr);
   const rAway = rmap.get(detail.away.abbr);
   const outcome =
-    rHome && rAway ? forecast(rHome + 100, rAway, MU_CLUB) : null;
+    rHome && rAway ? forecastClub(rHome, rAway) : null;
 
   const comp = competitionBySlug(league);
   const live = detail.status === "in";

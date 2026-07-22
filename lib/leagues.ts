@@ -1,6 +1,6 @@
 // Multi-competition support. ESPN uses the same endpoints for every league —
 // just a different slug — so live scores + match detail generalise to any of
-// these. (Our forecast model/simulator stay World-Cup-only.)
+// these. The tournament simulator remains World-Cup-only; club pages use match forecasts.
 
 export type Competition = { slug: string; name: string; short: string };
 

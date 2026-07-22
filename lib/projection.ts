@@ -2,7 +2,7 @@
 // Monte-Carlo the rest of the season to estimate each team's title / European
 // qualification / relegation odds and projected points.
 
-import { forecast, MU_CLUB } from "./model";
+import { forecastClub } from "./model";
 import { getStandings, ratingMap, type StandingRow } from "./standings";
 
 export type RemFixture = { home: string; away: string };
@@ -171,7 +171,7 @@ export function projectSeason(
     const fx = fixtures.map((f) => {
       const rh = noisy.get(f.home) ?? floor;
       const ra = noisy.get(f.away) ?? floor;
-      const o = forecast(rh + 100, ra, MU_CLUB); // home edge = the fitted 100 Elo
+      const o = forecastClub(rh, ra);
       return { home: f.home, away: f.away, lh: o.lambdaHome, la: o.lambdaAway };
     });
 

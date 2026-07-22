@@ -1,4 +1,5 @@
 import { cache } from "react";
+import { getClubSignal } from "./clubSignals";
 import { getBoards } from "./live";
 import {
   consensusPA,
@@ -12,6 +13,7 @@ export type ShareSignalSport = "football" | "ufc";
 export type ShareSignalSide = {
   name: string;
   code: string;
+  logo?: string;
   teamKey?: string;
   fighter?: FighterRef;
 };
@@ -30,6 +32,8 @@ export type ShareSignal = {
   pickSide: "left" | "right";
   pickName: string;
   opponentName: string;
+  outcomeLabel: "to win" | "to advance";
+  methodLabel: "Consensus" | "Independent model";
   probability: number;
   modelProbability: number;
   marketProbability?: number;
@@ -52,6 +56,8 @@ export const getShareSignal = cache(
 );
 
 async function footballSignal(id: string): Promise<ShareSignal | null> {
+  if (id.startsWith("club_")) return clubFootballSignal(id);
+
   const boards = await getBoards();
   const match = boards.blend.matches.find((item) => item.id === id);
   if (!match || match.status === "final") return null;
@@ -99,6 +105,8 @@ async function footballSignal(id: string): Promise<ShareSignal | null> {
     pickSide: pickLeft ? "left" : "right",
     pickName: pick.name,
     opponentName: opponent.name,
+    outcomeLabel: "to advance",
+    methodLabel: "Consensus",
     probability,
     modelProbability,
     marketProbability,
@@ -106,6 +114,41 @@ async function footballSignal(id: string): Promise<ShareSignal | null> {
     caption: `${pick.name} is the consensus call at ${pct(
       probability
     )} to advance against ${opponent.name}. ${reason} #WorldCup2026`,
+    actionLabel: "Open match briefing",
+  };
+}
+
+async function clubFootballSignal(id: string): Promise<ShareSignal | null> {
+  const signal = await getClubSignal(id);
+  if (!signal) return null;
+
+  const reason = signal.reasons.join(" ");
+  const hashtag = signal.competitionShort.replace(/[^a-z0-9]/gi, "");
+
+  return {
+    id,
+    sport: "football",
+    destination: signal.destination,
+    sharePath: signal.sharePath,
+    desk: signal.status === "in"
+      ? `${signal.competitionShort} · live signal`
+      : `${signal.competitionShort} · club forecast`,
+    event: signal.competition,
+    date: signal.date,
+    meta: signal.meta,
+    left: signal.left,
+    right: signal.right,
+    pickSide: signal.pickSide,
+    pickName: signal.pickName,
+    opponentName: signal.opponentName,
+    outcomeLabel: "to win",
+    methodLabel: "Independent model",
+    probability: signal.probability,
+    modelProbability: signal.probability,
+    reason,
+    caption: `${signal.pickName} is the independent model call at ${pct(
+      signal.probability
+    )} to beat ${signal.opponentName}. ${signal.reasons[0]} #${hashtag}`,
     actionLabel: "Open match briefing",
   };
 }
@@ -159,6 +202,8 @@ function ufcSignal(id: string): ShareSignal | null {
       pickSide: pickLeft ? "left" : "right",
       pickName,
       opponentName,
+      outcomeLabel: "to win",
+      methodLabel: "Consensus",
       probability,
       modelProbability,
       marketProbability,

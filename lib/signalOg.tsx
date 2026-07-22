@@ -143,7 +143,7 @@ export function signalSocialImage(signal: ShareSignal) {
                 textTransform: "uppercase",
               }}
             >
-              Consensus call · {signal.event}
+              {signal.methodLabel} call · {signal.event}
             </span>
             <div
               style={{

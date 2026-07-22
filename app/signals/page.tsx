@@ -4,6 +4,7 @@ import Crest from "@/components/Crest";
 import Footer from "@/components/Footer";
 import MatchShareButton from "@/components/MatchShareButton";
 import Nav from "@/components/Nav";
+import { getClubSignalFeed, type ClubSignal } from "@/lib/clubSignals";
 import FighterFace from "@/components/ufc/FighterFace";
 import type { MatchView } from "@/lib/compute";
 import { ledgerSummary } from "@/lib/ledger";
@@ -45,6 +46,7 @@ type SignalSport = "football" | "ufc";
 type SignalSide = {
   name: string;
   code: string;
+  logo?: string;
   teamKey?: string;
   fighter?: FighterRef;
 };
@@ -62,6 +64,11 @@ type Signal = {
   left: SignalSide;
   right: SignalSide;
   pickSide: "left" | "right";
+  outcomeLabel: "to win" | "to advance";
+  methodLabel: "Consensus" | "Independent model";
+  leftProbability: number;
+  rightProbability: number;
+  drawProbability?: number;
   probability: number;
   modelProbability: number;
   marketProbability?: number;
@@ -73,15 +80,18 @@ const pct = (n: number) => `${Math.round(n * 100)}%`;
 const points = (n: number) => `${Math.abs(Math.round(n * 100))}pt`;
 
 export default async function SignalsPage() {
-  const boards = await getBoards();
+  const [boards, clubFeed] = await Promise.all([
+    getBoards(),
+    getClubSignalFeed(),
+  ]);
   const cards = getCards();
   const nextCard =
     cards.find((card) => Date.parse(card.date) >= Date.now() - 12 * 3600e3) ??
     cards[0];
-  const footballSignals = buildFootballSignals(
-    boards.blend.matches,
-    boards.model.matches
-  );
+  const footballSignals = [
+    ...clubFeed.signals.map(buildClubFootballSignal),
+    ...buildFootballSignals(boards.blend.matches, boards.model.matches),
+  ];
   const ufcSignals = nextCard
     ? nextCard.fights.map((fight) => buildUfcSignal(fight, nextCard.eventId, nextCard.name))
     : [];
@@ -141,7 +151,7 @@ export default async function SignalsPage() {
       <div className={styles.summaryRail}>
         <SummaryStat
           label="Calls ranked"
-          value={String(signals.length).padStart(2, "0")}
+          value={String(footballSignals.length + ufcSignals.length).padStart(2, "0")}
           sub="football + UFC"
         />
         <SummaryStat
@@ -150,7 +160,7 @@ export default async function SignalsPage() {
           sub={signals[0]?.pickSide === "left" ? signals[0].left.name : signals[0]?.right.name ?? "awaiting board"}
         />
         <SummaryStat
-          label="Graded record"
+          label="WC graded record"
           value={hitRate === null ? "—" : `${hitRate}%`}
           sub={`${ledger.blend.hits}/${ledger.blend.n} football calls`}
         />
@@ -172,14 +182,14 @@ export default async function SignalsPage() {
                 <div className={styles.contextGrid}>
                   <ContextCard
                     label="Method"
-                    value="Consensus"
-                    sub="model + market blend"
+                    value={marketGap ? "Mixed sources" : "Independent"}
+                    sub={marketGap ? "model + market where posted" : "model first · lines pending"}
                   />
                   <ContextCard
                     label="Refresh"
-                    value={boards.live ? "Live" : "Fallback"}
-                    sub={boards.live ? "scores feed online" : "latest safe snapshot"}
-                    live={boards.live}
+                    value={clubFeed.feedsOnline > 0 || boards.live ? "Live" : "Fallback"}
+                    sub={`${clubFeed.feedsOnline}/${clubFeed.competitionsChecked} club feeds online`}
+                    live={clubFeed.feedsOnline > 0 || boards.live}
                   />
                 </div>
               </aside>
@@ -231,6 +241,34 @@ export default async function SignalsPage() {
       <Footer />
     </main>
   );
+}
+
+function buildClubFootballSignal(club: ClubSignal): Signal {
+  return {
+    id: `football-${club.id}`,
+    shareId: club.id,
+    shareHref: `${club.sharePath}?utm_source=shared_signal&utm_medium=social_card`,
+    sport: "football",
+    href: club.destination,
+    desk: club.status === "in"
+      ? `${club.competitionShort} · live`
+      : `${club.competitionShort} · club forecast`,
+    event: club.competition,
+    date: club.date,
+    meta: club.meta,
+    left: club.left,
+    right: club.right,
+    pickSide: club.pickSide,
+    outcomeLabel: "to win",
+    methodLabel: "Independent model",
+    leftProbability: club.homeProbability,
+    rightProbability: club.awayProbability,
+    drawProbability: club.drawProbability,
+    probability: club.probability,
+    modelProbability: club.probability,
+    priority: club.priority,
+    reasons: club.reasons,
+  };
 }
 
 function buildFootballSignals(
@@ -285,6 +323,10 @@ function buildFootballSignals(
           teamKey: match.awayKey,
         },
         pickSide: pickLeft ? "left" as const : "right" as const,
+        outcomeLabel: "to advance" as const,
+        methodLabel: "Consensus" as const,
+        leftProbability: advance.home,
+        rightProbability: advance.away,
         probability: pickLeft ? advance.home : advance.away,
         modelProbability,
         marketProbability,
@@ -342,6 +384,10 @@ function buildUfcSignal(
       fighter: fight.b,
     },
     pickSide: pickLeft ? "left" : "right",
+    outcomeLabel: "to win",
+    methodLabel: "Consensus",
+    leftProbability: consensus.p,
+    rightProbability: 1 - consensus.p,
     probability,
     modelProbability,
     marketProbability,
@@ -399,7 +445,7 @@ function SignalCard({
 }) {
   const pick = signal.pickSide === "left" ? signal.left : signal.right;
   const shareTitle = `${pick.name} ${pct(signal.probability)} — CONSENSUS`;
-  const shareText = `${pick.name} is the consensus call at ${pct(signal.probability)} in ${signal.left.name} vs ${signal.right.name}.`;
+  const shareText = `${pick.name} is the ${signal.methodLabel.toLowerCase()} call at ${pct(signal.probability)} ${signal.outcomeLabel} in ${signal.left.name} vs ${signal.right.name}.`;
 
   return (
     <article
@@ -425,7 +471,11 @@ function SignalCard({
 
       <div className={styles.callout}>
         <div>
-          <span>{signal.probability < 0.56 ? "Consensus lean" : "Consensus call"}</span>
+          <span>
+            {signal.probability < 0.56
+              ? `${signal.methodLabel} lean`
+              : `${signal.methodLabel} call`}
+          </span>
           <strong>{pick.name}</strong>
         </div>
         <div className={styles.callProbability}>
@@ -433,9 +483,7 @@ function SignalCard({
           <span>
             {signal.probability < 0.56
               ? "close call"
-              : signal.sport === "football"
-                ? "to advance"
-                : "to win"}
+              : signal.outcomeLabel}
           </span>
         </div>
       </div>
@@ -443,24 +491,27 @@ function SignalCard({
       <div
         className={styles.probabilityTrack}
         role="img"
-        aria-label={`${signal.left.name} ${pct(
-          signal.pickSide === "left" ? signal.probability : 1 - signal.probability
-        )}, ${signal.right.name} ${pct(
-          signal.pickSide === "right" ? signal.probability : 1 - signal.probability
-        )}`}
+        aria-label={signal.drawProbability === undefined
+          ? `${signal.left.name} ${pct(signal.leftProbability)}, ${signal.right.name} ${pct(signal.rightProbability)}`
+          : `${signal.left.name} ${pct(signal.leftProbability)}, draw ${pct(signal.drawProbability)}, ${signal.right.name} ${pct(signal.rightProbability)}`}
       >
         <span
           style={{
-            width: pct(
-              signal.pickSide === "left"
-                ? signal.probability
-                : 1 - signal.probability
-            ),
+            width: pct(signal.leftProbability),
           }}
         />
+        {signal.drawProbability !== undefined ? (
+          <span
+            className={styles.drawProbability}
+            style={{ width: pct(signal.drawProbability) }}
+          />
+        ) : null}
       </div>
       <div className={styles.probabilityLabels}>
         <span>{signal.left.code}</span>
+        {signal.drawProbability !== undefined ? (
+          <span>D {pct(signal.drawProbability)}</span>
+        ) : null}
         <span>{signal.right.code}</span>
       </div>
 
@@ -509,7 +560,7 @@ function SignalIdentity({
   return (
     <div className={`${styles.identity} ${right ? styles.identityRight : ""}`}>
       {sport === "football" ? (
-        <Crest teamKey={side.teamKey} code={side.code} size={40} />
+        <Crest teamKey={side.teamKey} src={side.logo} code={side.code} size={40} />
       ) : (
         <FighterFace
           id={side.fighter?.id ?? null}

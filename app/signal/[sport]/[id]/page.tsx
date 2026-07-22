@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!signal) return { title: "Signal unavailable — CONSENSUS" };
 
   const title = `${signal.pickName} ${pct(signal.probability)} — CONSENSUS Signal`;
-  const description = `${signal.pickName} is the consensus call against ${signal.opponentName}. ${signal.reason}`;
+  const description = `${signal.pickName} is the ${signal.methodLabel.toLowerCase()} call against ${signal.opponentName}. ${signal.reason}`;
 
   return {
     title,
@@ -82,13 +82,13 @@ export default async function SignalPage({ params }: Props) {
 
         <div className={styles.consensusCall}>
           <div>
-            <span>Consensus call</span>
+            <span>{signal.methodLabel} call</span>
             <h1>{signal.pickName}</h1>
             <p>{signal.event}</p>
           </div>
           <div className={styles.probability}>
             <strong className="tabnums">{pct(signal.probability)}</strong>
-            <span>{signal.sport === "football" ? "to advance" : "to win"}</span>
+            <span>{signal.outcomeLabel}</span>
           </div>
         </div>
 
@@ -181,7 +181,7 @@ function Identity({
   return (
     <div className={`${styles.identity} ${right ? styles.identityRight : ""}`}>
       {sport === "football" ? (
-        <Crest teamKey={side.teamKey} code={side.code} size={48} />
+        <Crest teamKey={side.teamKey} code={side.code} src={side.logo} size={48} />
       ) : (
         <FighterFace
           id={side.fighter?.id ?? null}

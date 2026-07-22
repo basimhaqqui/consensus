@@ -44,6 +44,7 @@ function poisson(k: number, lambda: number): number {
 // lower-scoring than club football, so club surfaces pass MU_CLUB.
 export const MU_INTL = 0.2; // exp(0.2)*2 ~ 2.44 goals at even strength
 export const MU_CLUB = 0.32; // exp(0.32)*2 ~ 2.75, the club-league norm
+export const CLUB_MAX_RATING_GAP = 400;
 
 // Per-team attack/concede residuals (see compute-ratings.mjs) — one rating
 // can't distinguish 3-1 teams from 1-0 teams; these can. Validated by
@@ -130,6 +131,20 @@ export function forecast(
     topScore: topScores[0],
     topScores,
   };
+}
+
+// Table-derived ratings can become extreme when a short or uneven schedule
+// creates a large goal-difference spread. Keep pre-match club forecasts inside
+// a credible range while preserving the fitted 100-point home advantage.
+export function clubRatingGap(ratingHome: number, ratingAway: number) {
+  return Math.max(
+    -CLUB_MAX_RATING_GAP,
+    Math.min(CLUB_MAX_RATING_GAP, ratingHome + 100 - ratingAway)
+  );
+}
+
+export function forecastClub(ratingHome: number, ratingAway: number) {
+  return forecast(clubRatingGap(ratingHome, ratingAway), 0, MU_CLUB);
 }
 
 // Probability a side advances given win/draw/win probs — draws resolve by

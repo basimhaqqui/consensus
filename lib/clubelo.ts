@@ -85,6 +85,7 @@ async function fetchTable(): Promise<EloRow[]> {
   try {
     const res = await fetch(`http://api.clubelo.com/${day}`, {
       next: { revalidate: 86400 },
+      signal: AbortSignal.timeout(5_000),
     });
     if (!res.ok) return [];
     const csv = await res.text();

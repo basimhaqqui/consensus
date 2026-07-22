@@ -7,7 +7,7 @@ import {
 } from "@/lib/leagues";
 import { getStandings } from "@/lib/standings";
 import { leagueRatings, CLUBELO_SLUGS } from "@/lib/clubelo";
-import { forecast, inPlay, MU_CLUB } from "@/lib/model";
+import { forecastClub, inPlay } from "@/lib/model";
 import {
   getRemainingFixtures,
   priorSeasonRatings,
@@ -303,7 +303,7 @@ function LeagueCard({
   const rh = rmap.get(m.home.abbr);
   const ra = rmap.get(m.away.abbr);
   if (rh && ra && !done) {
-    const o = forecast(rh + 100, ra, MU_CLUB);
+    const o = forecastClub(rh, ra);
     if (live && m.minute != null && m.home.score != null && m.away.score != null) {
       probs = inPlay(
         o.lambdaHome,
