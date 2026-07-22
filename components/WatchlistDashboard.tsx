@@ -7,11 +7,13 @@ import { useWatchlist } from "./WatchlistProvider";
 import {
   parseStoredItems,
   type AlertPreferences,
+  type MarketMovementAlert,
   type WatchItem,
   type WatchKind,
 } from "@/lib/watchlist";
 
 const GROUPS: Array<{ kind: WatchKind; label: string; empty: string }> = [
+  { kind: "club", label: "Clubs", empty: "Watch a club from its match center to track meaningful market moves." },
   { kind: "match", label: "Matches", empty: "Watch a football match to pin kickoff and live updates here." },
   { kind: "player", label: "Football players", empty: "Open a lineup card and watch a player to keep their competition profile close." },
   { kind: "fighter", label: "UFC fighters", empty: "Watch a fighter from any combat dossier to pin their profile." },
@@ -22,6 +24,7 @@ const ALERTS: Array<{
   label: string;
   detail: string;
 }> = [
+  { key: "market", label: "Market movement", detail: "When a watched club moves by 3 percentage points" },
   { key: "kickoff", label: "Kickoff reminder", detail: "15 minutes before a watched match" },
   { key: "live", label: "Match goes live", detail: "When a watched match moves in-play" },
   { key: "results", label: "Final result", detail: "Score plus ledger update when the match ends" },
@@ -33,14 +36,22 @@ export default function WatchlistDashboard() {
   const {
     items,
     preferences,
+    marketAlerts,
     permission,
     ready,
     importItems,
+    dismissMarketAlert,
     updatePreference,
     enableBrowserAlerts,
   } = useWatchlist();
   const matches = items.filter((item) => item.kind === "match").length;
-  const people = items.length - matches;
+  const clubs = items.filter((item) => item.kind === "club").length;
+  const watchedClubKeys = new Set(
+    items.filter((item) => item.kind === "club").map((item) => item.key)
+  );
+  const activeMarketAlerts = marketAlerts.filter((alert) =>
+    watchedClubKeys.has(alert.clubKey)
+  );
 
   useEffect(() => {
     const encoded = new URLSearchParams(window.location.search).get("list");
@@ -97,7 +108,7 @@ export default function WatchlistDashboard() {
           <div>
             <h1 className="site-title">Your watchlist</h1>
             <p className="site-subtitle">
-              Keep the matches and people you care about in one focused board.
+              Keep the clubs, matches and people you care about in one focused board.
               Everything stays on this browser—no account required.
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-2">
@@ -127,8 +138,8 @@ export default function WatchlistDashboard() {
           </div>
           <div className="terminal-kpi-grid grid grid-cols-3 gap-px overflow-hidden rounded-[9px]">
             <WatchStat label="Saved" value={ready ? items.length : "—"} />
+            <WatchStat label="Clubs" value={ready ? clubs : "—"} />
             <WatchStat label="Matches" value={ready ? matches : "—"} />
-            <WatchStat label="People" value={ready ? people : "—"} />
           </div>
         </div>
       </section>
@@ -159,13 +170,49 @@ export default function WatchlistDashboard() {
 
       <section className="mt-10 grid gap-5 lg:grid-cols-[minmax(0,1fr)_330px] lg:items-start">
         <div className="space-y-8">
+          <section>
+            <div className="section-heading" data-index="01">
+              <h2>Market movement</h2>
+              <span className="tabnums text-[10px] text-zinc-600">
+                [{activeMarketAlerts.length}]
+              </span>
+            </div>
+            {activeMarketAlerts.length > 0 ? (
+              <div className="grid gap-3 sm:grid-cols-2">
+                {activeMarketAlerts.map((alert) => (
+                  <MarketAlertCard
+                    key={alert.id}
+                    alert={alert}
+                    onDismiss={() => dismissMarketAlert(alert.id)}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="terminal-empty px-5 py-7">
+                <p className="max-w-xl text-xs leading-relaxed text-muted">
+                  {clubs > 0
+                    ? `Baseline active for ${clubs} watched ${clubs === 1 ? "club" : "clubs"}. A move of 3 percentage points or more will land here.`
+                    : "Watch a club from any club match center to establish its market baseline."}
+                </p>
+                {clubs === 0 && (
+                  <Link
+                    href="/football"
+                    className="mt-3 inline-flex text-[10px] uppercase tracking-[0.15em] text-accent hover:text-emerald-300"
+                  >
+                    Explore football →
+                  </Link>
+                )}
+              </div>
+            )}
+          </section>
+
           {GROUPS.map((group, index) => {
             const groupItems = items
               .filter((item) => item.kind === group.kind)
               .sort(sortWatchItems);
             return (
               <section key={group.kind}>
-                <div className="section-heading" data-index={String(index + 1).padStart(2, "0")}>
+                <div className="section-heading" data-index={String(index + 2).padStart(2, "0")}>
                   <h2>{group.label}</h2>
                   <span className="tabnums text-[10px] text-zinc-600">[{groupItems.length}]</span>
                 </div>
@@ -200,8 +247,8 @@ export default function WatchlistDashboard() {
           </div>
           <div className="p-4">
             <p className="text-[11px] leading-relaxed text-muted">
-              Get lightweight reminders for watched football matches while
-              Consensus is open. Your choices remain on this device.
+              Get lightweight reminders for watched club markets and football
+              matches while Consensus is open. Your choices remain on this device.
             </p>
             {permission === "default" && (
               <button
@@ -255,12 +302,72 @@ export default function WatchlistDashboard() {
             </div>
             <div className="mt-4 flex items-start gap-2 text-[10px] leading-relaxed text-zinc-600">
               <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent/70" />
-              Alerts poll the same live score feed as the football desk.
+              Market baselines and alert history stay in this browser.
             </div>
           </div>
         </aside>
       </section>
     </>
+  );
+}
+
+function MarketAlertCard({
+  alert,
+  onDismiss,
+}: {
+  alert: MarketMovementAlert;
+  onDismiss: () => void;
+}) {
+  const upward = alert.delta > 0;
+  const direction = upward ? "+" : "";
+
+  return (
+    <article className="terminal-panel p-4">
+      <div className="flex items-start justify-between gap-3">
+        <div>
+          <div className="text-[10px] uppercase tracking-[0.16em] text-muted">
+            {alert.league} · {alert.books} books
+          </div>
+          <Link
+            href={`/league/${alert.league}`}
+            className="display mt-2 block text-xl font-bold text-zinc-100 hover:text-accent"
+          >
+            {alert.club}
+          </Link>
+          <p className="mt-1 text-[11px] text-muted">vs {alert.opponent}</p>
+        </div>
+        <button
+          type="button"
+          onClick={onDismiss}
+          aria-label={`Dismiss ${alert.club} market alert`}
+          className="text-lg leading-none text-zinc-600 transition hover:text-zinc-300"
+        >
+          ×
+        </button>
+      </div>
+      <div className="mt-4 flex items-end justify-between gap-3 border-t border-line/60 pt-3">
+        <div className="tabnums text-sm text-zinc-300">
+          {Math.round(alert.previousProbability * 100)}%
+          <span className="px-1.5 text-zinc-600">→</span>
+          <strong className="text-zinc-100">{Math.round(alert.probability * 100)}%</strong>
+        </div>
+        <span
+          className={`rounded border px-2 py-1 text-[10px] font-semibold tabnums ${
+            upward
+              ? "border-accent/35 bg-accent/10 text-accent"
+              : "border-warn/35 bg-warn/[0.08] text-warn"
+          }`}
+        >
+          {direction}{Math.round(alert.delta * 100)} pts
+        </span>
+      </div>
+      <time
+        dateTime={alert.observedAt}
+        className="mt-2 block text-[10px] uppercase tracking-[0.12em] text-zinc-600"
+      >
+        Detected {formatObserved(alert.observedAt)}
+      </time>
+    </article>
   );
 }
 
@@ -343,6 +450,17 @@ function formatStart(value: string) {
   if (Number.isNaN(date.getTime())) return "Schedule pending";
   return new Intl.DateTimeFormat("en-US", {
     weekday: "short",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+  }).format(date);
+}
+
+function formatObserved(value: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "recently";
+  return new Intl.DateTimeFormat("en-US", {
     month: "short",
     day: "numeric",
     hour: "numeric",

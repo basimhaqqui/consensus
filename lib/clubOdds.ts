@@ -13,6 +13,8 @@ const SPORT_KEYS: Record<string, string> = {
   "bra.1": "soccer_brazil_campeonato",
 };
 
+export const CLUB_MARKET_LEAGUES = new Set(Object.keys(SPORT_KEYS));
+
 export type ClubMarketEvent = {
   homeName: string;
   awayName: string;
@@ -28,6 +30,15 @@ export type ClubMarketLine = {
   pDraw: number;
   pAway: number;
   books: number;
+};
+
+export type ClubTeamMarketLine = ClubMarketLine & {
+  homeName: string;
+  awayName: string;
+  commenceTime: string;
+  side: "home" | "away";
+  probability: number;
+  opponent: string;
 };
 
 export const fetchClubMarketOdds = cache(
@@ -119,6 +130,53 @@ export function findClubMarketLine(
         pAway: best.event.pAway,
         books: best.event.books,
       };
+}
+
+export function findNextClubTeamMarketLine(
+  events: ClubMarketEvent[] | null,
+  teamName: string,
+  now = Date.now()
+): ClubTeamMarketLine | null {
+  if (!events?.length) return null;
+
+  const candidates = events.flatMap((event) => {
+    const kickoff = Date.parse(event.commenceTime);
+    if (!Number.isFinite(kickoff) || kickoff < now - 2 * 60 * 60 * 1000) {
+      return [];
+    }
+
+    const homeScore = teamSimilarity(teamName, event.homeName);
+    const awayScore = teamSimilarity(teamName, event.awayName);
+    const side: "home" | "away" = homeScore >= awayScore ? "home" : "away";
+    const score = Math.max(homeScore, awayScore);
+    if (score < 0.68) return [];
+
+    return [{ event, kickoff, score, side }];
+  });
+
+  candidates.sort((left, right) => {
+    const confidenceGap = right.score - left.score;
+    return Math.abs(confidenceGap) >= 0.08
+      ? confidenceGap
+      : left.kickoff - right.kickoff;
+  });
+  const best = candidates[0];
+  if (!best) return null;
+
+  return {
+    homeName: best.event.homeName,
+    awayName: best.event.awayName,
+    commenceTime: best.event.commenceTime,
+    pHome: best.event.pHome,
+    pDraw: best.event.pDraw,
+    pAway: best.event.pAway,
+    books: best.event.books,
+    side: best.side,
+    probability:
+      best.side === "home" ? best.event.pHome : best.event.pAway,
+    opponent:
+      best.side === "home" ? best.event.awayName : best.event.homeName,
+  };
 }
 
 function parseEvent(event: any): ClubMarketEvent[] {

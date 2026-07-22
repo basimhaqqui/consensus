@@ -12,11 +12,17 @@ import {
 import {
   ALERTS_STORAGE_KEY,
   DEFAULT_ALERT_PREFERENCES,
+  MARKET_ALERTS_STORAGE_KEY,
+  MARKET_SNAPSHOTS_STORAGE_KEY,
   NOTIFIED_STORAGE_KEY,
   WATCHLIST_STORAGE_KEY,
   parseStoredItems,
+  parseStoredMarketAlerts,
+  parseStoredMarketSnapshots,
   parseStoredPreferences,
   type AlertPreferences,
+  type ClubMarketQuote,
+  type MarketMovementAlert,
   type WatchItem,
 } from "@/lib/watchlist";
 
@@ -25,12 +31,14 @@ type NotificationPermissionState = NotificationPermission | "unsupported";
 type WatchlistContextValue = {
   items: WatchItem[];
   preferences: AlertPreferences;
+  marketAlerts: MarketMovementAlert[];
   permission: NotificationPermissionState;
   ready: boolean;
   isWatching: (key: string) => boolean;
   toggleItem: (item: WatchItem) => void;
   removeItem: (key: string) => void;
   importItems: (items: WatchItem[]) => void;
+  dismissMarketAlert: (id: string) => void;
   updatePreference: (key: keyof AlertPreferences, value: boolean) => void;
   enableBrowserAlerts: () => Promise<NotificationPermissionState>;
 };
@@ -50,13 +58,21 @@ type ScoresPayload = {
   };
 };
 
+type ClubMarketsPayload = {
+  quotes?: ClubMarketQuote[];
+  observedAt?: string;
+};
+
 const SCORE_REFRESH_MS = 30_000;
+const MARKET_REFRESH_MS = 5 * 60_000;
+const MARKET_MOVE_THRESHOLD = 0.03;
 
 export default function WatchlistProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<WatchItem[]>([]);
   const [preferences, setPreferences] = useState<AlertPreferences>(
     DEFAULT_ALERT_PREFERENCES
   );
+  const [marketAlerts, setMarketAlerts] = useState<MarketMovementAlert[]>([]);
   const [permission, setPermission] =
     useState<NotificationPermissionState>("unsupported");
   const [ready, setReady] = useState(false);
@@ -66,6 +82,9 @@ export default function WatchlistProvider({ children }: { children: React.ReactN
     setItems(parseStoredItems(localStorage.getItem(WATCHLIST_STORAGE_KEY)));
     setPreferences(
       parseStoredPreferences(localStorage.getItem(ALERTS_STORAGE_KEY))
+    );
+    setMarketAlerts(
+      parseStoredMarketAlerts(localStorage.getItem(MARKET_ALERTS_STORAGE_KEY))
     );
     setPermission(
       "Notification" in window ? Notification.permission : "unsupported"
@@ -78,6 +97,9 @@ export default function WatchlistProvider({ children }: { children: React.ReactN
       }
       if (event.key === ALERTS_STORAGE_KEY) {
         setPreferences(parseStoredPreferences(event.newValue));
+      }
+      if (event.key === MARKET_ALERTS_STORAGE_KEY) {
+        setMarketAlerts(parseStoredMarketAlerts(event.newValue));
       }
     };
     window.addEventListener("storage", syncStorage);
@@ -93,6 +115,11 @@ export default function WatchlistProvider({ children }: { children: React.ReactN
     if (!ready) return;
     localStorage.setItem(ALERTS_STORAGE_KEY, JSON.stringify(preferences));
   }, [preferences, ready]);
+
+  useEffect(() => {
+    if (!ready) return;
+    localStorage.setItem(MARKET_ALERTS_STORAGE_KEY, JSON.stringify(marketAlerts));
+  }, [marketAlerts, ready]);
 
   const toggleItem = useCallback((item: WatchItem) => {
     setItems((current) => {
@@ -118,6 +145,10 @@ export default function WatchlistProvider({ children }: { children: React.ReactN
     });
   }, []);
 
+  const dismissMarketAlert = useCallback((id: string) => {
+    setMarketAlerts((current) => current.filter((alert) => alert.id !== id));
+  }, []);
+
   const updatePreference = useCallback(
     (key: keyof AlertPreferences, enabled: boolean) => {
       setPreferences((current) => {
@@ -136,7 +167,7 @@ export default function WatchlistProvider({ children }: { children: React.ReactN
     setPermission(next);
     if (next === "granted") {
       new Notification("CONSENSUS alerts enabled", {
-        body: "Watched match changes will appear while the terminal is open.",
+        body: "Watched match and club market changes will appear while the terminal is open.",
         icon: "/favicon.ico",
       });
     }
@@ -222,22 +253,124 @@ export default function WatchlistProvider({ children }: { children: React.ReactN
     };
   }, [items, permission, preferences, ready]);
 
+  useEffect(() => {
+    if (!ready) return;
+    const clubItems = items.filter((item) => item.kind === "club").slice(0, 20);
+    if (clubItems.length === 0) return;
+
+    const search = new URLSearchParams();
+    for (const item of clubItems) {
+      const league = item.key.split(":")[1];
+      if (!league) continue;
+      search.append("club", JSON.stringify({
+        key: item.key,
+        league,
+        name: item.title,
+      }));
+    }
+
+    let alive = true;
+    const pullMarkets = async () => {
+      try {
+        const response = await fetch(`/api/club-markets?${search}`, {
+          cache: "no-store",
+        });
+        if (!response.ok || !alive) return;
+        const data = (await response.json()) as ClubMarketsPayload;
+        if (!Array.isArray(data.quotes)) return;
+
+        const quotes = parseStoredMarketSnapshots(JSON.stringify(
+          Object.fromEntries(data.quotes.map((quote) => [quote.clubKey, quote]))
+        ));
+        const previous = parseStoredMarketSnapshots(
+          localStorage.getItem(MARKET_SNAPSHOTS_STORAGE_KEY)
+        );
+        const next = { ...previous };
+        const observedAt = data.observedAt && !Number.isNaN(Date.parse(data.observedAt))
+          ? data.observedAt
+          : new Date().toISOString();
+        const movements: MarketMovementAlert[] = [];
+
+        for (const quote of Object.values(quotes)) {
+          const baseline = previous[quote.clubKey];
+          if (!baseline || baseline.fixtureKey !== quote.fixtureKey) {
+            next[quote.clubKey] = quote;
+            continue;
+          }
+
+          const delta = quote.probability - baseline.probability;
+          if (Math.abs(delta) < MARKET_MOVE_THRESHOLD) continue;
+          const alert: MarketMovementAlert = {
+            ...quote,
+            id: [
+              quote.clubKey,
+              quote.fixtureKey,
+              Math.round(quote.probability * 1_000),
+            ].join(":"),
+            previousProbability: baseline.probability,
+            delta,
+            observedAt,
+          };
+          movements.push(alert);
+          next[quote.clubKey] = quote;
+        }
+
+        localStorage.setItem(MARKET_SNAPSHOTS_STORAGE_KEY, JSON.stringify(next));
+        if (movements.length === 0) return;
+
+        setMarketAlerts((current) => {
+          const byId = new Map(current.map((alert) => [alert.id, alert]));
+          for (const alert of movements) byId.set(alert.id, alert);
+          return [...byId.values()]
+            .sort((left, right) => right.observedAt.localeCompare(left.observedAt))
+            .slice(0, 30);
+        });
+
+        if (permission === "granted" && preferences.market) {
+          for (const alert of movements) {
+            const direction = alert.delta > 0 ? "+" : "";
+            new Notification(
+              `${alert.club} market ${direction}${Math.round(alert.delta * 100)} pts`,
+              {
+                body: `vs ${alert.opponent} · ${Math.round(alert.previousProbability * 100)}% → ${Math.round(alert.probability * 100)}% across ${alert.books} books`,
+                icon: "/favicon.ico",
+              }
+            );
+          }
+        }
+      } catch {
+        // Stored watchlist and market alerts remain available if the feed drops.
+      }
+    };
+
+    void pullMarkets();
+    const marketTimer = window.setInterval(pullMarkets, MARKET_REFRESH_MS);
+    return () => {
+      alive = false;
+      window.clearInterval(marketTimer);
+    };
+  }, [items, permission, preferences.market, ready]);
+
   const value = useMemo<WatchlistContextValue>(
     () => ({
       items,
       preferences,
+      marketAlerts,
       permission,
       ready,
       isWatching: (key) => items.some((item) => item.key === key),
       toggleItem,
       removeItem,
       importItems,
+      dismissMarketAlert,
       updatePreference,
       enableBrowserAlerts,
     }),
     [
       enableBrowserAlerts,
+      dismissMarketAlert,
       items,
+      marketAlerts,
       permission,
       preferences,
       ready,

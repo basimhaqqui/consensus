@@ -4,7 +4,11 @@ import { fetchSummary, fetchPredictedSquads, type Goal } from "@/lib/match";
 import { competitionBySlug } from "@/lib/leagues";
 import { getStandings } from "@/lib/standings";
 import { leagueRatings, CLUBELO_SLUGS } from "@/lib/clubelo";
-import { fetchClubMarketOdds, findClubMarketLine } from "@/lib/clubOdds";
+import {
+  CLUB_MARKET_LEAGUES,
+  fetchClubMarketOdds,
+  findClubMarketLine,
+} from "@/lib/clubOdds";
 import { forecastClub } from "@/lib/model";
 import Crest from "@/components/Crest";
 import Lineups from "@/components/Lineups";
@@ -13,6 +17,8 @@ import TeamStats from "@/components/TeamStats";
 import RecentMeetings from "@/components/RecentMeetings";
 import CompetitionNav from "@/components/CompetitionNav";
 import Footer from "@/components/Footer";
+import WatchlistButton from "@/components/WatchlistButton";
+import type { WatchItem } from "@/lib/watchlist";
 
 export const dynamic = "force-dynamic";
 
@@ -45,6 +51,7 @@ export default async function LeagueMatchPage({
   );
 
   const comp = competitionBySlug(league);
+  const canWatchClubs = CLUB_MARKET_LEAGUES.has(league);
   const live = detail.status === "in";
   const decided = detail.status === "post";
   const showScore = live || decided;
@@ -80,7 +87,19 @@ export default async function LeagueMatchPage({
       {/* scoreline */}
       <div className="terminal-panel blueprint-surface mt-8 p-5">
         <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4">
-          <Side name={detail.home.name} logo={detail.home.logo} align="right" />
+          <Side
+            name={detail.home.name}
+            logo={detail.home.logo}
+            align="right"
+            watchItem={canWatchClubs ? {
+              key: `club:${league}:${detail.home.abbr}`,
+              kind: "club",
+              title: detail.home.name,
+              context: comp?.name ?? league,
+              href: `/league/${league}`,
+              image: detail.home.logo,
+            } : undefined}
+          />
           <div className="text-center">
             {showScore ? (
               <div className="text-3xl font-bold tabnums">
@@ -104,7 +123,19 @@ export default async function LeagueMatchPage({
               {detail.detail}
             </div>
           </div>
-          <Side name={detail.away.name} logo={detail.away.logo} align="left" />
+          <Side
+            name={detail.away.name}
+            logo={detail.away.logo}
+            align="left"
+            watchItem={canWatchClubs ? {
+              key: `club:${league}:${detail.away.abbr}`,
+              kind: "club",
+              title: detail.away.name,
+              context: comp?.name ?? league,
+              href: `/league/${league}`,
+              image: detail.away.logo,
+            } : undefined}
+          />
         </div>
 
         {detail.goals.length > 0 && (
@@ -238,10 +269,12 @@ function Side({
   name,
   logo,
   align,
+  watchItem,
 }: {
   name: string;
   logo?: string;
   align: "left" | "right";
+  watchItem?: WatchItem;
 }) {
   return (
     <div
@@ -250,7 +283,12 @@ function Side({
       }`}
     >
       <Crest src={logo} code={name} size={44} />
-      <div className="font-semibold leading-tight">{name}</div>
+      <div className={align === "right" ? "flex flex-col items-end" : "flex flex-col items-start"}>
+        <div className="font-semibold leading-tight">{name}</div>
+        {watchItem && (
+          <WatchlistButton item={watchItem} compact className="mt-2" />
+        )}
+      </div>
     </div>
   );
 }
