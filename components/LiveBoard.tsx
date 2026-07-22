@@ -25,13 +25,20 @@ const INITIAL_RESULTS = 6;
 
 const pct = (n: number) => `${Math.round(n * 100)}%`;
 
-export default function LiveBoard({ initial }: { initial: Payload }) {
+export default function LiveBoard({
+  initial,
+  archived = false,
+}: {
+  initial: Payload;
+  archived?: boolean;
+}) {
   const [data, setData] = useState<Payload>(initial);
   const [source, setSource] = useState<RatingSource>("blend");
   const [showAllUpcoming, setShowAllUpcoming] = useState(false);
   const [showAllResults, setShowAllResults] = useState(false);
 
   useEffect(() => {
+    if (archived) return;
     let alive = true;
     async function pull() {
       try {
@@ -48,7 +55,7 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
       alive = false;
       clearInterval(id);
     };
-  }, []);
+  }, [archived]);
 
   const board = data[source];
   const matches = board.matches;
@@ -117,9 +124,9 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
           </div>
         </div>
         <div className={styles.feedStatus}>
-          <span className={data.live ? "signal-dot" : styles.offlineDot} />
-          <span>{data.live ? "Live · ESPN" : "Feed offline"}</span>
-          <FeedAge updatedAt={data.updatedAt} />
+          <span className={archived ? styles.offlineDot : data.live ? "signal-dot" : styles.offlineDot} />
+          <span>{archived ? "Final tournament record" : data.live ? "Live · ESPN" : "Feed offline"}</span>
+          {!archived && <FeedAge updatedAt={data.updatedAt} />}
         </div>
       </div>
 
@@ -134,10 +141,16 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
       <section id="today" className={styles.today}>
         <div className={styles.todayHeading}>
           <div>
-            <span className="signal-dot" />
-            <h2>Today&apos;s command center</h2>
+            <span className={archived ? styles.offlineDot : "signal-dot"} />
+            <h2>{archived ? "Tournament closeout" : "Today&apos;s command center"}</h2>
           </div>
-          <span>{live.length > 0 ? `${live.length} live now` : `${upcoming.length} matches ahead`}</span>
+          <span>
+            {archived
+              ? `${finals.length} knockout results preserved`
+              : live.length > 0
+                ? `${live.length} live now`
+                : `${upcoming.length} matches ahead`}
+          </span>
         </div>
 
         <div className={styles.todayGrid}>
@@ -152,7 +165,7 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
 
           <div className={styles.signalGrid}>
             <SignalCard
-              label="Title favorite"
+              label={archived ? "Final model leader" : "Title favorite"}
               value={topTitle?.name ?? fav?.name ?? "—"}
               sub={
                 topTitle
@@ -161,7 +174,7 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
               }
             />
             <SignalCard
-              label="Strongest call"
+              label={archived ? "Open calls" : "Strongest call"}
               value={strongest ? strongestPick(strongest) : "No open call"}
               sub={
                 strongest
@@ -170,7 +183,7 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
               }
             />
             <SignalCard
-              label="Market watch"
+              label={archived ? "Market comparison" : "Market watch"}
               value={marketWatch ? marketRead(marketWatch.match, marketWatch.edge) : "No line yet"}
               sub={
                 marketWatch
@@ -199,9 +212,9 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
             <small>{fav ? favoriteDetail(fav, source) : "Awaiting bracket"}</small>
           </div>
           <div>
-            <span>Feed</span>
-            <strong>{data.live ? "Online" : "Fallback"}</strong>
-            <small>Refreshes every 30 seconds</small>
+            <span>{archived ? "Record" : "Feed"}</span>
+            <strong>{archived ? "Closed" : data.live ? "Online" : "Fallback"}</strong>
+            <small>{archived ? "Preserved after the final" : "Refreshes every 30 seconds"}</small>
           </div>
         </div>
       </section>
@@ -217,7 +230,12 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
       )}
 
       {board.sim.length > 0 && (
-        <Section id="forecasts" index="02" title="Title race · 10k simulations" count={board.sim.length}>
+        <Section
+          id="forecasts"
+          index="02"
+          title={archived ? "Final simulation board · 10k runs" : "Title race · 10k simulations"}
+          count={board.sim.length}
+        >
           <TitleRace rows={board.sim} />
         </Section>
       )}
@@ -242,7 +260,7 @@ export default function LiveBoard({ initial }: { initial: Payload }) {
       )}
 
       {finals.length > 0 && (
-        <Section id="results" index="04" title="Recent results" count={finals.length}>
+        <Section id="results" index="04" title={archived ? "Knockout results" : "Recent results"} count={finals.length}>
           <Grid>
             {shownResults.map((m) => (
               <MatchCard key={m.id} m={m} />

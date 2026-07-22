@@ -4,11 +4,13 @@ import Link from "next/link";
 import { COMPETITIONS } from "@/lib/leagues";
 
 const ITEMS = [
-  ...COMPETITIONS.map((competition) => ({
+  { key: "football", href: "/football", label: "Desk" },
+  ...COMPETITIONS.filter((competition) => competition.slug !== "fifa.world").map((competition) => ({
     key: competition.slug,
-    href: competition.slug === "fifa.world" ? "/wc" : `/league/${competition.slug}`,
+    href: `/league/${competition.slug}`,
     label: competition.short,
   })),
+  { key: "fifa.world", href: "/wc", label: "WC26" },
   { key: "ufc", href: "/ufc", label: "UFC" },
 ];
 

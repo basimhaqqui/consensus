@@ -7,8 +7,7 @@ import { useWatchlist } from "./WatchlistProvider";
 const LINKS = [
   { href: "/", label: "Home" },
   { href: "/signals", label: "Signals" },
-  { href: "/wc", label: "World Cup" },
-  { href: "/bracket", label: "Bracket" },
+  { href: "/football", label: "Football" },
   { href: "/ufc", label: "UFC" },
   { href: "/watchlist", label: "Watchlist" },
 ];
@@ -54,9 +53,11 @@ function isActivePath(path: string, href: string) {
   if (href === "/signals") {
     return path === "/signals" || path.startsWith("/signal/");
   }
-  if (href === "/wc") {
+  if (href === "/football") {
     return (
+      path === "/football" ||
       path === "/wc" ||
+      path === "/bracket" ||
       path.startsWith("/match/") ||
       path.startsWith("/m/") ||
       path.startsWith("/league/") ||

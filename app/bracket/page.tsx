@@ -4,8 +4,14 @@ import BracketView from "@/components/BracketView";
 import AutoRefresh from "@/components/AutoRefresh";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "World Cup 2026 Final Bracket — CONSENSUS",
+  description: "The completed World Cup 2026 knockout bracket and final results.",
+};
 
 export default async function BracketPage() {
   const { matches } = await getLiveMatches();
@@ -23,14 +29,14 @@ export default async function BracketPage() {
       <header className="site-header">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <div>
-            <div className="site-kicker">02 / Tournament map</div>
-            <h1 className="site-title">Knockout bracket</h1>
+            <div className="site-kicker">Archive / tournament map</div>
+            <h1 className="site-title">Final knockout bracket</h1>
           </div>
           <AutoRefresh updatedAt={updatedAt} />
         </div>
         <p className="site-subtitle">
-          The full knockout tree, filling in live as results land. Decided games
-          show the winner advancing; later rounds resolve as their feeders finish.
+          The completed knockout tree from the round of 32 through the final,
+          preserved as part of the World Cup 2026 record.
         </p>
       </header>
 

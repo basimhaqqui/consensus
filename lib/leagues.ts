@@ -69,7 +69,10 @@ export async function getLeagueScoreboard(
   const url = `https://site.api.espn.com/apis/site/v2/sports/soccer/${slug}/scoreboard`;
   let data: any;
   try {
-    const r = await fetch(url, { next: { revalidate: 30 } });
+    const r = await fetch(url, {
+      next: { revalidate: 30 },
+      signal: AbortSignal.timeout(5_000),
+    });
     if (!r.ok) return null;
     data = await r.json();
   } catch {

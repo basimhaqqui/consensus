@@ -23,8 +23,8 @@ export default function NotFound() {
           <Link href="/signals" className="action-primary">
             Today&apos;s signals
           </Link>
-          <Link href="/wc" className="action-secondary">
-            World Cup
+          <Link href="/football" className="action-secondary">
+            Football
           </Link>
           <Link href="/ufc" className="action-secondary">
             UFC

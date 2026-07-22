@@ -94,10 +94,10 @@ export default async function LeaguePage({
             </h1>
           </div>
           <Link
-            href="/"
+            href="/football"
             className="back-link"
           >
-            World Cup →
+            Football desk →
           </Link>
         </div>
       </header>

@@ -7,7 +7,7 @@ import WatchlistDashboard from "@/components/WatchlistDashboard";
 export const metadata: Metadata = {
   title: "Your Watchlist — CONSENSUS",
   description:
-    "A personal sports intelligence board for saved World Cup matches, football players, and UFC fighters.",
+    "A personal sports intelligence board for saved football matches, players, and UFC fighters.",
   alternates: { canonical: "/watchlist" },
 };
 

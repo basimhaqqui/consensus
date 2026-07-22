@@ -17,23 +17,23 @@ import { getCompetitionPerformance } from "@/lib/competition";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "World Cup 2026 Intelligence — CONSENSUS",
+  title: "World Cup 2026 Archive — CONSENSUS",
   description:
-    "Live World Cup scores, calibrated forecasts, title simulations, best performers, standings, and a public prediction ledger.",
+    "The complete World Cup 2026 record: final bracket, forecasts, best performers, standings, and the public prediction ledger.",
   alternates: { canonical: "/wc" },
   openGraph: {
-    title: "World Cup 2026 Intelligence — CONSENSUS",
+    title: "World Cup 2026 Archive — CONSENSUS",
     description:
-      "Live scores, calibrated forecasts, title simulations, best performers, and a public prediction ledger.",
+      "Final results, calibrated forecasts, best performers, and the public prediction ledger.",
     type: "website",
     url: "/wc",
     siteName: "CONSENSUS",
   },
   twitter: {
     card: "summary_large_image",
-    title: "World Cup 2026 Intelligence — CONSENSUS",
+    title: "World Cup 2026 Archive — CONSENSUS",
     description:
-      "Live scores, calibrated forecasts, title simulations, best performers, and a public prediction ledger.",
+      "The completed tournament, preserved with every forecast and result.",
   },
 };
 
@@ -61,22 +61,21 @@ export default async function WorldCup() {
       <header className="site-header pb-5">
         <div className="flex flex-wrap items-end justify-between gap-5">
           <div>
-            <div className="site-kicker">01 / Tournament command</div>
+            <div className="site-kicker">Archive / tournament complete</div>
             <h1 className="site-title">
               2026 World Cup
             </h1>
             <p className="site-subtitle">
-              Live scores plus our own model — win probability, to-advance odds,
-              expected scoreline — for every knockout match, with a tournament
-              simulator and bracket.
+              The completed tournament preserved as it happened: every knockout
+              forecast, final result, simulation, performer, and graded call.
             </p>
           </div>
           <div className="flex items-center gap-3">
             <Link
-              href="/builder"
+              href="/bracket"
               className="rounded-[7px] border border-accent/40 bg-accent/10 px-3 py-1.5 text-[10px] uppercase tracking-[0.14em] text-accent shadow-[0_12px_30px_-18px_rgba(52,211,153,0.7)] hover:-translate-y-0.5 hover:border-accent/70 hover:bg-accent/15"
             >
-              Bet builder
+              Final bracket
             </Link>
             <Nav hideUfc />
             <span className="hidden sm:inline text-[11px] uppercase tracking-wider text-muted">
@@ -90,7 +89,7 @@ export default async function WorldCup() {
           className="segmented-control mt-6 flex w-full items-center gap-0.5 overflow-x-auto p-0.5 text-[10px] uppercase tracking-[0.14em]"
         >
           <a href="#today" className="shrink-0 rounded-[6px] bg-accent/12 px-3 py-1.5 text-accent">
-            Today
+            Closeout
           </a>
           <a href="#forecasts" className="shrink-0 rounded-[6px] px-3 py-1.5 text-muted hover:bg-white/[0.035] hover:text-text">
             Forecasts
@@ -113,7 +112,7 @@ export default async function WorldCup() {
         </nav>
       </header>
 
-      <LiveBoard initial={initial} />
+      <LiveBoard initial={initial} archived />
 
       <section id="performers" className="mt-12 scroll-mt-6">
         <div className="section-heading" data-index="05">
@@ -142,8 +141,8 @@ export default async function WorldCup() {
           Methodology
         </h2>
         <p>
-          <span className="text-zinc-400">Live scores &amp; status</span> stream
-          from ESPN and auto-refresh every 30s. The{" "}
+          <span className="text-zinc-400">Scores &amp; results</span> were captured
+          from ESPN throughout the tournament. The{" "}
           <span className="text-zinc-400">forecast</span>{" "}is our own Elo rating
           (computed from 49,000+ real international results) fed through a Poisson
           goals model — win / draw / win, to-advance odds (incl. ET &amp; pens),

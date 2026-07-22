@@ -12,7 +12,7 @@ import {
 } from "@/lib/watchlist";
 
 const GROUPS: Array<{ kind: WatchKind; label: string; empty: string }> = [
-  { kind: "match", label: "Matches", empty: "Watch a World Cup match to pin kickoff and live updates here." },
+  { kind: "match", label: "Matches", empty: "Watch a football match to pin kickoff and live updates here." },
   { kind: "player", label: "Football players", empty: "Open a lineup card and watch a player to keep their competition profile close." },
   { kind: "fighter", label: "UFC fighters", empty: "Watch a fighter from any combat dossier to pin their profile." },
 ];
@@ -179,10 +179,10 @@ export default function WatchlistDashboard() {
                   <div className="terminal-empty px-5 py-7">
                     <p className="max-w-xl text-xs leading-relaxed text-muted">{group.empty}</p>
                     <Link
-                      href={group.kind === "fighter" ? "/ufc" : "/wc"}
+                      href={group.kind === "fighter" ? "/ufc" : "/football"}
                       className="mt-3 inline-flex text-[10px] uppercase tracking-[0.15em] text-accent hover:text-emerald-300"
                     >
-                      Explore {group.kind === "fighter" ? "UFC" : "World Cup"} →
+                      Explore {group.kind === "fighter" ? "UFC" : "football"} →
                     </Link>
                   </div>
                 )}
@@ -200,7 +200,7 @@ export default function WatchlistDashboard() {
           </div>
           <div className="p-4">
             <p className="text-[11px] leading-relaxed text-muted">
-              Get lightweight reminders for watched World Cup matches while
+              Get lightweight reminders for watched football matches while
               Consensus is open. Your choices remain on this device.
             </p>
             {permission === "default" && (
@@ -255,7 +255,7 @@ export default function WatchlistDashboard() {
             </div>
             <div className="mt-4 flex items-start gap-2 text-[10px] leading-relaxed text-zinc-600">
               <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent/70" />
-              Alerts poll the same live score feed as the World Cup terminal.
+              Alerts poll the same live score feed as the football desk.
             </div>
           </div>
         </aside>

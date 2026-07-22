@@ -1,0 +1,478 @@
+.shell {
+  overflow: hidden;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(290px, 0.65fr);
+  gap: clamp(40px, 8vw, 96px);
+  align-items: end;
+  padding: clamp(62px, 9vw, 108px) 0 52px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.title {
+  max-width: 760px;
+  color: #f4f7f9;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(46px, 6.5vw, 78px);
+  font-weight: 520;
+  letter-spacing: -0.06em;
+  line-height: 0.94;
+}
+
+.title span {
+  display: block;
+  margin-top: 0.13em;
+  color: #8794a2;
+}
+
+.subtitle {
+  max-width: 680px;
+  margin-top: 24px;
+  color: #84909d;
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.heroPanel {
+  padding: 20px;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  background: linear-gradient(145deg, rgba(17, 24, 33, 0.92), rgba(10, 14, 20, 0.88));
+  box-shadow: 0 24px 80px -50px rgba(52, 211, 153, 0.45);
+}
+
+.heroStatus {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #c7d0d8;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.heroMetrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin: 20px 0;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  border-radius: 7px;
+  background: var(--hairline);
+}
+
+.heroMetrics > div {
+  min-width: 0;
+  padding: 13px 10px;
+  background: #0a0e14;
+}
+
+.heroMetrics strong,
+.heroMetrics span {
+  display: block;
+}
+
+.heroMetrics strong {
+  overflow: hidden;
+  color: #e8edf1;
+  font-size: 14px;
+  text-overflow: ellipsis;
+}
+
+.heroMetrics span {
+  margin-top: 3px;
+  color: #596572;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.primaryAction {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  border-radius: 7px;
+  background: rgba(52, 211, 153, 0.09);
+  color: #d9f9ec;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.primaryAction:hover {
+  border-color: rgba(52, 211, 153, 0.7);
+  background: rgba(52, 211, 153, 0.14);
+  transform: translateY(-1px);
+}
+
+.statusRail {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.statusRail > div {
+  min-width: 0;
+  padding: 18px 18px 18px 0;
+}
+
+.statusRail > div + div {
+  padding-left: 18px;
+  border-left: 1px solid var(--hairline);
+}
+
+.statusRail span,
+.statusRail strong,
+.statusRail a {
+  display: block;
+}
+
+.statusRail span {
+  color: #53606e;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.statusRail strong,
+.statusRail a {
+  margin-top: 5px;
+  overflow: hidden;
+  color: #aeb8c2;
+  font-size: 11px;
+  font-weight: 520;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.statusRail a:hover {
+  color: var(--accent);
+}
+
+.section {
+  margin-top: 48px;
+}
+
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  color: #5d6875;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sectionHeading > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.sectionHeading h2 {
+  color: #cbd3da;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.sectionHeading i {
+  width: 5px;
+  height: 5px;
+}
+
+.headingLine {
+  height: 1px;
+  flex: 1;
+  background: var(--hairline);
+}
+
+.matchGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.matchCard {
+  display: block;
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid var(--hairline);
+  border-radius: 9px;
+  background: linear-gradient(150deg, rgba(15, 21, 29, 0.94), rgba(10, 14, 20, 0.9));
+}
+
+.matchCard:hover {
+  border-color: var(--hairline-strong);
+  background: rgba(17, 24, 33, 0.96);
+  transform: translateY(-2px);
+}
+
+.matchCardLive {
+  border-color: rgba(52, 211, 153, 0.42);
+  box-shadow: inset 3px 0 0 rgba(52, 211, 153, 0.75);
+}
+
+.matchTopline,
+.matchFooter,
+.competitionTopline,
+.competitionMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.matchTopline {
+  margin-bottom: 12px;
+  color: #657180;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.teamRow {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) auto;
+  gap: 9px;
+  align-items: center;
+  min-height: 34px;
+  color: #c3cbd3;
+  font-size: 13px;
+}
+
+.teamRow > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.teamRow strong,
+.winner {
+  color: #f0f3f5;
+  font-weight: 650;
+}
+
+.matchFooter {
+  margin-top: 11px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.045);
+  color: #596572;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.liveText {
+  color: var(--accent) !important;
+}
+
+.competitionGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.competitionCard {
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  background: rgba(13, 18, 25, 0.74);
+}
+
+.competitionCard:hover {
+  border-color: rgba(52, 211, 153, 0.35);
+  background: rgba(52, 211, 153, 0.045);
+  transform: translateY(-2px);
+}
+
+.competitionTopline {
+  color: #53606d;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.competitionCard h3 {
+  min-height: 38px;
+  margin-top: 20px;
+  color: #cbd2d9;
+  font-size: 13px;
+  font-weight: 580;
+  line-height: 1.35;
+}
+
+.competitionMeta {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  color: #56616d;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.archive {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 52px;
+  padding: clamp(24px, 4vw, 38px);
+  border: 1px solid rgba(125, 136, 150, 0.2);
+  border-radius: 10px;
+  background:
+    linear-gradient(90deg, rgba(9, 13, 19, 0.96), rgba(13, 20, 28, 0.88)),
+    repeating-linear-gradient(90deg, transparent 0 47px, rgba(255, 255, 255, 0.02) 48px);
+}
+
+.archiveLabel {
+  color: #697584;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.archive h2 {
+  margin-top: 10px;
+  color: #e3e8ec;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 540;
+  letter-spacing: -0.035em;
+}
+
+.archive p {
+  max-width: 620px;
+  margin-top: 9px;
+  color: #778391;
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.archiveActions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 8px;
+}
+
+.archiveActions a {
+  padding: 10px 12px;
+  border: 1px solid var(--hairline);
+  border-radius: 7px;
+  color: #aeb7c0;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.archiveActions a:hover {
+  border-color: rgba(52, 211, 153, 0.42);
+  color: var(--accent);
+}
+
+.resultStrip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.matchCardCompact {
+  padding: 12px;
+}
+
+.matchCardCompact .teamRow {
+  min-height: 29px;
+  font-size: 12px;
+}
+
+.emptyState {
+  padding: 42px;
+  border: 1px dashed var(--hairline-strong);
+  border-radius: 9px;
+  text-align: center;
+}
+
+.emptyState span {
+  color: #bdc6ce;
+  font-size: 14px;
+}
+
+.emptyState p {
+  max-width: 580px;
+  margin: 8px auto 0;
+  color: #66727f;
+  font-size: 11px;
+  line-height: 1.65;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .heroPanel {
+    max-width: 620px;
+  }
+
+  .competitionGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .matchGrid,
+  .resultStrip {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .statusRail {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .statusRail > div:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .statusRail > div:nth-child(4) {
+    border-top: 1px solid var(--hairline);
+  }
+
+  .archive {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding-top: 48px;
+  }
+
+  .matchGrid,
+  .resultStrip,
+  .competitionGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .competitionCard h3 {
+    min-height: 0;
+    margin-top: 14px;
+  }
+
+  .archiveActions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .archiveActions a {
+    text-align: center;
+  }
+}

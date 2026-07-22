@@ -25,7 +25,7 @@ export default function Footer() {
           Player faces <span className="text-zinc-500">TheSportsDB</span>
         </span>
         <span>
-          Bracket <span className="text-zinc-500">ESPN feeders</span>
+          Coverage <span className="text-zinc-500">club football · UFC · WC26 archive</span>
         </span>
       </div>
     </footer>

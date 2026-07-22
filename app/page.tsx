@@ -13,6 +13,11 @@ import styles from "./page.module.css";
 
 export const dynamic = "force-dynamic";
 
+const HOME_COMPETITIONS = [
+  ...COMPETITIONS.filter((competition) => competition.slug !== "fifa.world"),
+  ...COMPETITIONS.filter((competition) => competition.slug === "fifa.world"),
+];
+
 export const metadata: Metadata = {
   title: "CONSENSUS // Sports Intelligence, Distilled",
   description:
@@ -109,7 +114,7 @@ export default async function Landing() {
               <span aria-hidden="true">↗</span>
             </Link>
             <div className={styles.deskActions}>
-              <Link href="/wc" className={styles.secondaryAction}>
+              <Link href="/football" className={styles.secondaryAction}>
                 Football desk
                 <span aria-hidden="true">↗</span>
               </Link>
@@ -167,17 +172,17 @@ export default async function Landing() {
               </div>
             </Link>
           ) : (
-            <Link href="/wc" className={`${styles.previewCard} ${styles.footballPreview}`}>
+            <Link href="/football" className={`${styles.previewCard} ${styles.footballPreview}`}>
               <div className={styles.previewTopline}>
                 <span>Football desk</span>
-                <span>2026</span>
+                <span>Always on</span>
               </div>
               <div className={styles.emptyPreview}>
-                <span>World Cup forecast center</span>
-                <strong>Elo simulations, bracket paths, and a graded ledger.</strong>
+                <span>Club football intelligence</span>
+                <strong>Live fixtures, ClubElo forecasts, and season projections.</strong>
               </div>
               <div className={styles.previewFooter}>
-                <span>Forecast · bracket · ledger</span>
+                <span>Fixtures · forecasts · projections</span>
                 <strong>Open football ↗</strong>
               </div>
             </Link>
@@ -274,7 +279,7 @@ export default async function Landing() {
           detail={`${String(COMPETITIONS.length + 1).padStart(2, "0")} tracked`}
         />
         <div className={styles.competitionGrid}>
-          {COMPETITIONS.map((c, index) => {
+          {HOME_COMPETITIONS.map((c, index) => {
             const ct = counts.get(c.slug);
             const href = c.slug === "fifa.world" ? "/wc" : `/league/${c.slug}`;
             return (
@@ -286,7 +291,7 @@ export default async function Landing() {
                 <div className={styles.competitionName}>
                   <h3>{c.name}</h3>
                   {c.slug === "fifa.world" && (
-                    <span className={styles.modelBadge}>Model</span>
+                    <span className={styles.modelBadge}>Archive</span>
                   )}
                 </div>
                 <div className={styles.competitionFooter}>
@@ -295,7 +300,9 @@ export default async function Landing() {
                       ? `${ct.live} live now`
                       : ct?.total
                         ? `${ct.total} fixtures`
-                        : "off-season"}
+                        : c.slug === "fifa.world"
+                          ? "2026 archive"
+                          : "off-season"}
                   </span>
                   <span className={styles.cardArrow} aria-hidden="true">
                     ↗

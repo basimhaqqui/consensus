@@ -100,7 +100,6 @@ export default async function SignalsPage() {
   const hitRate = ledger.blend.n
     ? Math.round((ledger.blend.hits / ledger.blend.n) * 100)
     : null;
-  const titleFavorite = boards.blend.sim[0];
   const dateLabel = new Intl.DateTimeFormat("en-US", {
     weekday: "long",
     month: "long",
@@ -156,9 +155,9 @@ export default async function SignalsPage() {
           sub={`${ledger.blend.hits}/${ledger.blend.n} football calls`}
         />
         <SummaryStat
-          label="World Cup favorite"
-          value={titleFavorite?.name ?? "—"}
-          sub={titleFavorite ? `${pct(titleFavorite.champ)} title chance` : "simulation pending"}
+          label="Football model"
+          value="49k+"
+          sub="results in the Elo base"
         />
       </div>
 
