@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-22T14:26:58.207Z",
+ "fetchedAt": "2026-07-22T17:43:22.326Z",
  "byBout": {
   "401874311": {
    "pA": 0.735,
@@ -10,8 +10,8 @@
    "totals": [
     {
      "point": 2.5,
-     "over": 1.69,
-     "under": 2.18,
+     "over": 1.67,
+     "under": 2.2,
      "books": 5
     }
    ]
@@ -38,46 +38,46 @@
    ]
   },
   "401874314": {
-   "pA": 0.149,
+   "pA": 0.148,
    "books": 7,
    "commence": "2026-07-25T13:45:00Z",
-   "priceA": 6.39,
+   "priceA": 6.45,
    "priceB": 1.12,
    "totals": [
     {
      "point": 1.5,
-     "over": 2.92,
+     "over": 2.93,
      "under": 1.41,
      "books": 4
     }
    ]
   },
   "401874315": {
-   "pA": 0.506,
+   "pA": 0.509,
    "books": 6,
    "commence": "2026-07-25T09:00:00Z",
-   "priceA": 1.88,
-   "priceB": 1.93,
+   "priceA": 1.87,
+   "priceB": 1.94,
    "totals": [
     {
      "point": 2.5,
      "over": 1.55,
-     "under": 2.45,
+     "under": 2.44,
      "books": 5
     }
    ]
   },
   "401874316": {
-   "pA": 0.131,
+   "pA": 0.132,
    "books": 8,
    "commence": "2026-07-25T09:00:00Z",
-   "priceA": 7.33,
+   "priceA": 7.26,
    "priceB": 1.1,
    "totals": [
     {
      "point": 1.5,
-     "over": 3.16,
-     "under": 1.37,
+     "over": 3.22,
+     "under": 1.36,
      "books": 4
     },
     {
@@ -97,8 +97,8 @@
    "totals": [
     {
      "point": 2.5,
-     "over": 2.01,
-     "under": 1.79,
+     "over": 2.09,
+     "under": 1.75,
      "books": 4
     }
    ]
@@ -133,11 +133,11 @@
    ]
   },
   "401886737": {
-   "pA": 0.341,
+   "pA": 0.338,
    "books": 8,
    "commence": "2026-07-25T09:00:00Z",
-   "priceA": 2.81,
-   "priceB": 1.45,
+   "priceA": 2.83,
+   "priceB": 1.44,
    "totals": [
     {
      "point": 2.5,
@@ -167,7 +167,7 @@
    "pA": 0.228,
    "books": 8,
    "commence": "2026-07-25T09:00:00Z",
-   "priceA": 4.19,
+   "priceA": 4.2,
    "priceB": 1.24,
    "totals": [
     {
@@ -187,29 +187,35 @@
    "totals": [
     {
      "point": 2.5,
-     "over": 2.14,
-     "under": 1.71,
+     "over": 2.12,
+     "under": 1.72,
      "books": 5
     }
    ]
   },
   "401898030": {
-   "pA": 0.206,
+   "pA": 0.205,
    "books": 8,
    "commence": "2026-07-25T13:10:00Z",
-   "priceA": 4.63,
+   "priceA": 4.66,
    "priceB": 1.2,
    "totals": [
     {
      "point": 2.5,
-     "over": 2.47,
+     "over": 2.49,
      "under": 1.56,
-     "books": 4
+     "books": 3
+    },
+    {
+     "point": 1.5,
+     "over": 1.74,
+     "under": 2.05,
+     "books": 1
     }
    ]
   },
   "401898040": {
-   "pA": 0.593,
+   "pA": 0.592,
    "books": 8,
    "commence": "2026-07-25T15:15:00Z",
    "priceA": 1.62,
