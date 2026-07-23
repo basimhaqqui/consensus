@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-23T17:49:09.928Z",
+ "computedAt": "2026-07-23T19:48:38.028Z",
  "config": {
   "k": 80,
   "provFights": 5,
@@ -2346,7 +2346,7 @@
   "2335888": {
    "name": "Dominick Cruz",
    "rating": 1665.7,
-   "p4p": 1519.5,
+   "p4p": 1519.4,
    "division": "Bantamweight",
    "fights": 10,
    "wins": 7,
@@ -5226,7 +5226,7 @@
   "2500857": {
    "name": "Jorge Masvidal",
    "rating": 1773.4,
-   "p4p": 1585.6,
+   "p4p": 1585.5,
    "division": "Welterweight",
    "fights": 22,
    "wins": 12,
@@ -7593,7 +7593,7 @@
   "2552906": {
    "name": "Alex Caceres",
    "rating": 1681.3,
-   "p4p": 1616.2,
+   "p4p": 1616.1,
    "division": "Featherweight",
    "fights": 29,
    "wins": 16,
@@ -7728,7 +7728,7 @@
   "2553996": {
    "name": "Uriah Hall",
    "rating": 1750.3,
-   "p4p": 1520.8,
+   "p4p": 1520.7,
    "division": "Middleweight",
    "fights": 19,
    "wins": 10,
@@ -8799,7 +8799,7 @@
   "2559934": {
    "name": "Carla Esparza",
    "rating": 1658.7,
-   "p4p": 1620.9,
+   "p4p": 1620.8,
    "division": "W Strawweight",
    "fights": 16,
    "wins": 10,
@@ -10248,7 +10248,7 @@
   "2951361": {
    "name": "Julianna Peña",
    "rating": 1644.6,
-   "p4p": 1639.3,
+   "p4p": 1639.2,
    "division": "W Bantamweight",
    "fights": 12,
    "wins": 8,
@@ -12066,7 +12066,7 @@
   "3028404": {
    "name": "Holly Holm",
    "rating": 1596.4,
-   "p4p": 1559.6,
+   "p4p": 1559.5,
    "division": "W Bantamweight",
    "fights": 15,
    "wins": 8,
@@ -13182,7 +13182,7 @@
   "3088682": {
    "name": "Albert Duraev",
    "rating": 1604.3,
-   "p4p": 1541.1,
+   "p4p": 1541,
    "division": "Middleweight",
    "fights": 5,
    "wins": 3,
@@ -13533,7 +13533,7 @@
   "3094635": {
    "name": "Abu Azaitar",
    "rating": 1431.3,
-   "p4p": 1467.4,
+   "p4p": 1467.5,
    "division": "Middleweight",
    "fights": 3,
    "wins": 1,
@@ -15585,7 +15585,7 @@
   "3897242": {
    "name": "Nikolas Motta",
    "rating": 1626.3,
-   "p4p": 1623.1,
+   "p4p": 1623,
    "division": "Lightweight",
    "fights": 7,
    "wins": 4,
@@ -16530,7 +16530,7 @@
   "3983481": {
    "name": "Shane Young",
    "rating": 1416.1,
-   "p4p": 1463.1,
+   "p4p": 1463.2,
    "division": "Featherweight",
    "fights": 7,
    "wins": 2,
@@ -16773,7 +16773,7 @@
   "4010976": {
    "name": "Tom Aspinall",
    "rating": 1998.1,
-   "p4p": 1850.7,
+   "p4p": 1850.6,
    "division": "Heavyweight",
    "fights": 9,
    "wins": 8,
@@ -17709,7 +17709,7 @@
   "4076470": {
    "name": "Shane Burgos",
    "rating": 1761.7,
-   "p4p": 1524.7,
+   "p4p": 1524.6,
    "division": "Featherweight",
    "fights": 11,
    "wins": 8,
@@ -18177,7 +18177,7 @@
   "4217382": {
    "name": "Dalcha Lungiambula",
    "rating": 1383.1,
-   "p4p": 1474.8,
+   "p4p": 1474.9,
    "division": "Middleweight",
    "fights": 7,
    "wins": 2,
@@ -18303,7 +18303,7 @@
   "4227122": {
    "name": "Julio Arce",
    "rating": 1651.4,
-   "p4p": 1591.8,
+   "p4p": 1591.7,
    "division": "Featherweight",
    "fights": 11,
    "wins": 7,
@@ -18708,7 +18708,7 @@
   "4245092": {
    "name": "Jonathan Pearce",
    "rating": 1643.5,
-   "p4p": 1610.1,
+   "p4p": 1610,
    "division": "Featherweight",
    "fights": 10,
    "wins": 6,
@@ -18717,7 +18717,7 @@
   "4245094": {
    "name": "Kennedy Nzechukwu",
    "rating": 1640.7,
-   "p4p": 1639.5,
+   "p4p": 1639.4,
    "division": "Heavyweight",
    "fights": 16,
    "wins": 10,
@@ -18852,7 +18852,7 @@
   "4251497": {
    "name": "Harry Hunsucker",
    "rating": 1306.5,
-   "p4p": 1476.1,
+   "p4p": 1476.2,
    "division": "Light Heavyweight",
    "fights": 4,
    "wins": 0,
@@ -19050,7 +19050,7 @@
   "4283575": {
    "name": "Khalid Taha",
    "rating": 1438.6,
-   "p4p": 1491.7,
+   "p4p": 1491.8,
    "division": "Bantamweight",
    "fights": 5,
    "wins": 1,
@@ -19068,7 +19068,7 @@
   "4284870": {
    "name": "Song Kenan",
    "rating": 1565,
-   "p4p": 1552.1,
+   "p4p": 1552,
    "division": "Welterweight",
    "fights": 11,
    "wins": 6,
@@ -19320,7 +19320,7 @@
   "4294918": {
    "name": "Michael Trizano",
    "rating": 1585.6,
-   "p4p": 1516.5,
+   "p4p": 1516.4,
    "division": "Featherweight",
    "fights": 7,
    "wins": 4,
@@ -21642,7 +21642,7 @@
   "4566310": {
    "name": "Gloria de Paula",
    "rating": 1413.8,
-   "p4p": 1493.8,
+   "p4p": 1493.9,
    "division": "W Strawweight",
    "fights": 5,
    "wins": 2,
@@ -21651,7 +21651,7 @@
   "4566991": {
    "name": "Sean Woodson",
    "rating": 1721.3,
-   "p4p": 1702.9,
+   "p4p": 1702.8,
    "division": "Featherweight",
    "fights": 10,
    "wins": 8,
@@ -22029,7 +22029,7 @@
   "4683892": {
    "name": "Mounir Lazzez",
    "rating": 1539.5,
-   "p4p": 1509.9,
+   "p4p": 1509.8,
    "division": "Welterweight",
    "fights": 4,
    "wins": 2,
@@ -23442,7 +23442,7 @@
   "4873639": {
    "name": "Darian Weeks",
    "rating": 1394.9,
-   "p4p": 1485.2,
+   "p4p": 1485.3,
    "division": "Welterweight",
    "fights": 3,
    "wins": 0,
@@ -23649,7 +23649,7 @@
   "4880114": {
    "name": "Jonny Parsons",
    "rating": 1643.5,
-   "p4p": 1557.3,
+   "p4p": 1557.2,
    "division": "Welterweight",
    "fights": 2,
    "wins": 2,
@@ -23766,7 +23766,7 @@
   "4892422": {
    "name": "Reyes Cortez Jr.",
    "rating": 1430.2,
-   "p4p": 1471.1,
+   "p4p": 1471.2,
    "division": "Bantamweight",
    "fights": 2,
    "wins": 0,
@@ -23955,7 +23955,7 @@
   "4899729": {
    "name": "Blood Diamond",
    "rating": 1378.3,
-   "p4p": 1446.5,
+   "p4p": 1446.6,
    "division": "Welterweight",
    "fights": 3,
    "wins": 0,
@@ -24018,7 +24018,7 @@
   "4905261": {
    "name": "Muhammad Mokaev",
    "rating": 1877.6,
-   "p4p": 1765.8,
+   "p4p": 1765.7,
    "division": "Flyweight",
    "fights": 7,
    "wins": 7,
@@ -24297,7 +24297,7 @@
   "4969973": {
    "name": "Denis Tiuliulin",
    "rating": 1375.2,
-   "p4p": 1411.4,
+   "p4p": 1411.5,
    "division": "Middleweight",
    "fights": 6,
    "wins": 1,
@@ -24378,7 +24378,7 @@
   "5007668": {
    "name": "Caio Machado",
    "rating": 1433.4,
-   "p4p": 1447.7,
+   "p4p": 1447.8,
    "division": "Light Heavyweight",
    "fights": 4,
    "wins": 1,
@@ -24639,7 +24639,7 @@
   "5060505": {
    "name": "Mick Parkin",
    "rating": 1762.4,
-   "p4p": 1736,
+   "p4p": 1735.9,
    "division": "Heavyweight",
    "fights": 6,
    "wins": 5,
@@ -24738,7 +24738,7 @@
   "5070502": {
    "name": "Jeka Saragih",
    "rating": 1414,
-   "p4p": 1417.2,
+   "p4p": 1417.3,
    "division": "Featherweight",
    "fights": 4,
    "wins": 1,
@@ -25251,7 +25251,7 @@
   "5101694": {
    "name": "Felipe Lima",
    "rating": 1669.6,
-   "p4p": 1666.2,
+   "p4p": 1666.1,
    "division": "Bantamweight",
    "fights": 3,
    "wins": 2,
@@ -25386,7 +25386,7 @@
   "5121866": {
    "name": "Greg Velasco",
    "rating": 1461.5,
-   "p4p": 1482.7,
+   "p4p": 1482.8,
    "division": "Heavyweight",
    "fights": 1,
    "wins": 0,
@@ -26466,7 +26466,7 @@
   "5212748": {
    "name": "Islam Dulatov",
    "rating": 1694.5,
-   "p4p": 1694,
+   "p4p": 1693.9,
    "division": "Welterweight",
    "fights": 2,
    "wins": 2,
@@ -26664,7 +26664,7 @@
   "5217935": {
    "name": "Artem Vakhitov",
    "rating": 1583.6,
-   "p4p": 1563.9,
+   "p4p": 1563.8,
    "division": "Light Heavyweight",
    "fights": 1,
    "wins": 1,
@@ -26691,7 +26691,7 @@
   "5218420": {
    "name": "Yura Naito",
    "rating": 1458.4,
-   "p4p": 1468.9,
+   "p4p": 1469,
    "division": "Middleweight",
    "fights": 1,
    "wins": 0,
