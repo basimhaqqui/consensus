@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-23T21:30:14.787Z",
+ "computedAt": "2026-07-23T23:13:52.627Z",
  "cards": [
   {
    "eventId": "600059667",
@@ -750,7 +750,7 @@
      "date": "2026-08-08T21:00Z",
      "weightClass": "Heavyweight",
      "segment": "Main Card",
-     "matchNumber": 6,
+     "matchNumber": 7,
      "a": {
       "id": "5239615",
       "name": "Steven Asplund",
@@ -808,7 +808,7 @@
      "date": "2026-08-08T21:00Z",
      "weightClass": "Heavyweight",
      "segment": "Main Card",
-     "matchNumber": 4,
+     "matchNumber": 5,
      "a": {
       "id": "5080572",
       "name": "Louie Sutherland",
@@ -866,7 +866,7 @@
      "date": "2026-08-08T18:00Z",
      "weightClass": "W Strawweight",
      "segment": "Prelims",
-     "matchNumber": 2,
+     "matchNumber": 9,
      "a": {
       "id": "4233196",
       "name": "Amanda Lemos",

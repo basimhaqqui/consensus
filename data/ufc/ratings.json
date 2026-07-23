@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-23T21:30:14.787Z",
+ "computedAt": "2026-07-23T23:13:52.627Z",
  "config": {
   "k": 80,
   "provFights": 5,
@@ -4974,7 +4974,7 @@
   "2500425": {
    "name": "Leonardo Santos",
    "rating": 1596.3,
-   "p4p": 1511.9,
+   "p4p": 1511.8,
    "division": "Lightweight",
    "fights": 10,
    "wins": 7,
@@ -6495,7 +6495,7 @@
   "2504929": {
    "name": "Glover Teixeira",
    "rating": 1879.9,
-   "p4p": 1594.9,
+   "p4p": 1594.8,
    "division": "Light Heavyweight",
    "fights": 23,
    "wins": 16,
@@ -7062,7 +7062,7 @@
   "2516131": {
    "name": "Amanda Nunes",
    "rating": 1937.3,
-   "p4p": 1659.5,
+   "p4p": 1659.4,
    "division": "W Bantamweight",
    "fights": 18,
    "wins": 16,
@@ -8691,7 +8691,7 @@
   "2558526": {
    "name": "Gabriel Miranda",
    "rating": 1424.8,
-   "p4p": 1431.9,
+   "p4p": 1432,
    "division": "Featherweight",
    "fights": 4,
    "wins": 1,
@@ -11580,7 +11580,7 @@
   "3019246": {
    "name": "Kurt Holobaugh",
    "rating": 1529.8,
-   "p4p": 1528.6,
+   "p4p": 1528.5,
    "division": "Lightweight",
    "fights": 10,
    "wins": 3,
@@ -13200,7 +13200,7 @@
   "3088810": {
    "name": "Colby Covington",
    "rating": 1771.2,
-   "p4p": 1722.1,
+   "p4p": 1722,
    "division": "Welterweight",
    "fights": 17,
    "wins": 12,
@@ -13722,7 +13722,7 @@
   "3099958": {
    "name": "Charlie Ontiveros",
    "rating": 1379.2,
-   "p4p": 1485.8,
+   "p4p": 1485.9,
    "division": "Lightweight",
    "fights": 3,
    "wins": 0,
@@ -14199,7 +14199,7 @@
   "3114234": {
    "name": "Victor Henry",
    "rating": 1659.4,
-   "p4p": 1645.2,
+   "p4p": 1645.1,
    "division": "Bantamweight",
    "fights": 6,
    "wins": 4,
@@ -14559,7 +14559,7 @@
   "3136288": {
    "name": "Jinh Yu Frey",
    "rating": 1377.4,
-   "p4p": 1441.9,
+   "p4p": 1442,
    "division": "W Strawweight",
    "fights": 8,
    "wins": 2,
@@ -16863,7 +16863,7 @@
   "4020699": {
    "name": "Shavkat Rakhmonov",
    "rating": 2042.1,
-   "p4p": 1940.8,
+   "p4p": 1940.7,
    "division": "Welterweight",
    "fights": 7,
    "wins": 7,
@@ -17583,7 +17583,7 @@
   "4065598": {
    "name": "Miranda Maverick",
    "rating": 1703.2,
-   "p4p": 1696.8,
+   "p4p": 1696.7,
    "division": "W Flyweight",
    "fights": 12,
    "wins": 8,
@@ -19221,7 +19221,7 @@
   "4292760": {
    "name": "Puja Tomar",
    "rating": 1487.3,
-   "p4p": 1488.5,
+   "p4p": 1488.6,
    "division": "W Strawweight",
    "fights": 2,
    "wins": 1,
@@ -19536,7 +19536,7 @@
   "4332765": {
    "name": "Kayla Harrison",
    "rating": 1802.3,
-   "p4p": 1791,
+   "p4p": 1790.9,
    "division": "W Bantamweight",
    "fights": 3,
    "wins": 3,
@@ -19563,7 +19563,7 @@
   "4335947": {
    "name": "Erick Gonzalez",
    "rating": 1403.1,
-   "p4p": 1473,
+   "p4p": 1473.1,
    "division": "Lightweight",
    "fights": 3,
    "wins": 0,
@@ -19761,7 +19761,7 @@
   "4348793": {
    "name": "Maria Oliveira",
    "rating": 1386.3,
-   "p4p": 1458.5,
+   "p4p": 1458.6,
    "division": "W Strawweight",
    "fights": 5,
    "wins": 1,
@@ -20211,7 +20211,7 @@
   "4372195": {
    "name": "Raulian Paiva",
    "rating": 1609.7,
-   "p4p": 1508.5,
+   "p4p": 1508.4,
    "division": "Bantamweight",
    "fights": 8,
    "wins": 4,
@@ -20355,7 +20355,7 @@
   "4379258": {
    "name": "Marina Rodriguez",
    "rating": 1631.2,
-   "p4p": 1622.6,
+   "p4p": 1622.5,
    "division": "W Strawweight",
    "fights": 14,
    "wins": 8,
@@ -20895,7 +20895,7 @@
   "4417235": {
    "name": "Nicolae Negumereanu",
    "rating": 1682,
-   "p4p": 1535,
+   "p4p": 1534.9,
    "division": "Light Heavyweight",
    "fights": 6,
    "wins": 4,
@@ -21237,7 +21237,7 @@
   "4424020": {
    "name": "Ottman Azaitar",
    "rating": 1428.2,
-   "p4p": 1441.2,
+   "p4p": 1441.3,
    "division": "Lightweight",
    "fights": 5,
    "wins": 2,
@@ -21309,7 +21309,7 @@
   "4425603": {
    "name": "Brendon Marotte",
    "rating": 1422.8,
-   "p4p": 1443,
+   "p4p": 1443.1,
    "division": "Featherweight",
    "fights": 2,
    "wins": 0,
@@ -21867,7 +21867,7 @@
   "4601333": {
    "name": "Rayanne dos Santos",
    "rating": 1332,
-   "p4p": 1339.2,
+   "p4p": 1339.3,
    "division": "W Strawweight",
    "fights": 4,
    "wins": 0,
@@ -22884,7 +22884,7 @@
   "4713086": {
    "name": "Denys Bondar",
    "rating": 1367.9,
-   "p4p": 1423.7,
+   "p4p": 1423.8,
    "division": "Flyweight",
    "fights": 3,
    "wins": 0,
@@ -23883,7 +23883,7 @@
   "4895772": {
    "name": "Daniel Lacerda",
    "rating": 1283.9,
-   "p4p": 1375.2,
+   "p4p": 1375.3,
    "division": "Flyweight",
    "fights": 5,
    "wins": 0,
@@ -26628,7 +26628,7 @@
   "5216851": {
    "name": "Danylo Voievodkin",
    "rating": 1608.4,
-   "p4p": 1581.6,
+   "p4p": 1581.5,
    "division": "Heavyweight",
    "fights": 1,
    "wins": 1,
