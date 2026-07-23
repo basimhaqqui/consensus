@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-23T19:48:38.028Z",
+ "computedAt": "2026-07-23T21:30:14.787Z",
  "config": {
   "k": 80,
   "provFights": 5,
@@ -960,7 +960,7 @@
   "2335674": {
    "name": "Clay Guida",
    "rating": 1525,
-   "p4p": 1520.4,
+   "p4p": 1520.3,
    "division": "Lightweight",
    "fights": 37,
    "wins": 18,
@@ -3534,7 +3534,7 @@
   "2431258": {
    "name": "Robbie Lawler",
    "rating": 1714.8,
-   "p4p": 1583.3,
+   "p4p": 1583.2,
    "division": "Welterweight",
    "fights": 25,
    "wins": 15,
@@ -5460,7 +5460,7 @@
   "2501685": {
    "name": "Chan Sung Jung",
    "rating": 1706.5,
-   "p4p": 1588.3,
+   "p4p": 1588.2,
    "division": "Featherweight",
    "fights": 12,
    "wins": 7,
@@ -6657,7 +6657,7 @@
   "2506250": {
    "name": "Jan Blachowicz",
    "rating": 1773,
-   "p4p": 1745.5,
+   "p4p": 1745.4,
    "division": "Light Heavyweight",
    "fights": 20,
    "wins": 12,
@@ -7584,7 +7584,7 @@
   "2552777": {
    "name": "Germaine de Randamie",
    "rating": 1540.1,
-   "p4p": 1524.6,
+   "p4p": 1524.5,
    "division": "W Bantamweight",
    "fights": 10,
    "wins": 7,
@@ -9339,7 +9339,7 @@
   "2611719": {
    "name": "TJ Dillashaw",
    "rating": 1748.2,
-   "p4p": 1543.4,
+   "p4p": 1543.3,
    "division": "Bantamweight",
    "fights": 18,
    "wins": 13,
@@ -11085,7 +11085,7 @@
   "2989857": {
    "name": "Guido Cannetti",
    "rating": 1492.2,
-   "p4p": 1497.7,
+   "p4p": 1497.8,
    "division": "Bantamweight",
    "fights": 10,
    "wins": 4,
@@ -11139,7 +11139,7 @@
   "2995167": {
    "name": "Raquel Pennington",
    "rating": 1753.6,
-   "p4p": 1693.1,
+   "p4p": 1693,
    "division": "W Bantamweight",
    "fights": 19,
    "wins": 13,
@@ -12525,7 +12525,7 @@
   "3045798": {
    "name": "Thiago Santos",
    "rating": 1693,
-   "p4p": 1521.6,
+   "p4p": 1521.5,
    "division": "Light Heavyweight",
    "fights": 24,
    "wins": 14,
@@ -12723,7 +12723,7 @@
   "3074465": {
    "name": "Krzysztof Jotko",
    "rating": 1706.7,
-   "p4p": 1532.6,
+   "p4p": 1532.5,
    "division": "Middleweight",
    "fights": 17,
    "wins": 11,
@@ -14802,7 +14802,7 @@
   "3154389": {
    "name": "Alatengheili",
    "rating": 1642.3,
-   "p4p": 1632.1,
+   "p4p": 1632,
    "division": "Bantamweight",
    "fights": 8,
    "wins": 5,
@@ -15252,7 +15252,7 @@
   "3250441": {
    "name": "Randy Costa",
    "rating": 1422.8,
-   "p4p": 1487.8,
+   "p4p": 1487.9,
    "division": "Bantamweight",
    "fights": 6,
    "wins": 2,
@@ -15909,7 +15909,7 @@
   "3928690": {
    "name": "Jonathan Martinez",
    "rating": 1754.3,
-   "p4p": 1702.4,
+   "p4p": 1702.3,
    "division": "Bantamweight",
    "fights": 15,
    "wins": 10,
@@ -16512,7 +16512,7 @@
   "3977987": {
    "name": "Diana Belbita",
    "rating": 1399.1,
-   "p4p": 1408.1,
+   "p4p": 1408.2,
    "division": "W Flyweight",
    "fights": 8,
    "wins": 2,
@@ -16566,7 +16566,7 @@
   "3991050": {
    "name": "Cameron Else",
    "rating": 1403.2,
-   "p4p": 1497.5,
+   "p4p": 1497.6,
    "division": "Bantamweight",
    "fights": 2,
    "wins": 0,
@@ -17466,7 +17466,7 @@
   "4063667": {
    "name": "TJ Brown",
    "rating": 1521.7,
-   "p4p": 1510.2,
+   "p4p": 1510.1,
    "division": "Featherweight",
    "fights": 9,
    "wins": 4,
@@ -18168,7 +18168,7 @@
   "4215563": {
    "name": "Damir Ismagulov",
    "rating": 1711.2,
-   "p4p": 1580.7,
+   "p4p": 1580.6,
    "division": "Lightweight",
    "fights": 7,
    "wins": 5,
@@ -18366,7 +18366,7 @@
   "4231391": {
    "name": "Ronnie Lawrence",
    "rating": 1609,
-   "p4p": 1509.7,
+   "p4p": 1509.6,
    "division": "Bantamweight",
    "fights": 4,
    "wins": 3,
@@ -21039,7 +21039,7 @@
   "4421473": {
    "name": "Alexandr Romanov",
    "rating": 1763.6,
-   "p4p": 1706.8,
+   "p4p": 1706.7,
    "division": "Heavyweight",
    "fights": 10,
    "wins": 7,
@@ -21111,7 +21111,7 @@
   "4422319": {
    "name": "Alan Baudot",
    "rating": 1378.9,
-   "p4p": 1490.6,
+   "p4p": 1490.7,
    "division": "Heavyweight",
    "fights": 3,
    "wins": 0,
@@ -22974,7 +22974,7 @@
   "4781218": {
    "name": "Shayilan Nuerdanbieke",
    "rating": 1531.2,
-   "p4p": 1520.9,
+   "p4p": 1520.8,
    "division": "Featherweight",
    "fights": 6,
    "wins": 3,
@@ -23739,7 +23739,7 @@
   "4892412": {
    "name": "Shimon Smotritsky",
    "rating": 1418.3,
-   "p4p": 1491.1,
+   "p4p": 1491.2,
    "division": "Welterweight",
    "fights": 2,
    "wins": 0,
@@ -25872,7 +25872,7 @@
   "5146229": {
    "name": "Serhiy Sidey",
    "rating": 1660.3,
-   "p4p": 1649.7,
+   "p4p": 1649.6,
    "division": "Bantamweight",
    "fights": 4,
    "wins": 3,
