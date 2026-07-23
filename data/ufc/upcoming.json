@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-23T14:35:34.776Z",
+ "fetchedAt": "2026-07-23T17:49:08.715Z",
  "cards": [
   {
    "eventId": "600059667",
@@ -269,7 +269,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "Lightweight",
      "segment": "Prelims",
-     "matchNumber": 12,
+     "matchNumber": 10,
      "a": {
       "id": "3084914",
       "name": "Kyle Prepolec",
@@ -288,7 +288,7 @@
      "date": "2026-08-01T14:00Z",
      "weightClass": "Heavyweight",
      "segment": "Prelims",
-     "matchNumber": 11,
+     "matchNumber": 12,
      "a": {
       "id": "5312090",
       "name": "Jovan Leka",
