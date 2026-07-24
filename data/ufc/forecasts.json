@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-23T23:13:52.627Z",
+ "computedAt": "2026-07-24T03:47:06.555Z",
  "cards": [
   {
    "eventId": "600059667",
@@ -397,20 +397,20 @@
      "segment": "Prelims",
      "matchNumber": 12,
      "a": {
+      "id": "4064714",
+      "name": "Alexander Poppeck",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+      "record": "12-4-0"
+     },
+     "b": {
       "id": "5312090",
       "name": "Jovan Leka",
       "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ser.png",
       "record": "13-2-0"
      },
-     "b": {
-      "id": "5316622",
-      "name": "Max Gimenis",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-      "record": "6-2-0"
-     },
-     "ratingA": 1622,
-     "ratingB": 1325,
-     "pA": 0.758,
+     "ratingA": 1334,
+     "ratingB": 1622,
+     "pA": 0.248,
      "fightsA": 1,
      "fightsB": 1,
      "method": {
@@ -746,6 +746,35 @@
    "date": "2026-08-08T18:00Z",
    "fights": [
     {
+     "boutId": "401887661",
+     "date": "2026-08-08T18:00Z",
+     "weightClass": "W Strawweight",
+     "segment": "Prelims",
+     "matchNumber": 9,
+     "a": {
+      "id": "4233196",
+      "name": "Amanda Lemos",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "15-6-1"
+     },
+     "b": {
+      "id": "5075992",
+      "name": "Alexia Thainara",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "14-1-0"
+     },
+     "ratingA": 1443,
+     "ratingB": 1659,
+     "pA": 0.304,
+     "fightsA": 15,
+     "fightsB": 4,
+     "method": {
+      "ko": 0.17,
+      "sub": 0.24,
+      "dec": 0.6
+     }
+    },
+    {
      "boutId": "401897979",
      "date": "2026-08-08T21:00Z",
      "weightClass": "Heavyweight",
@@ -772,6 +801,35 @@
       "ko": 0.46,
       "sub": 0.09,
       "dec": 0.45
+     }
+    },
+    {
+     "boutId": "401897978",
+     "date": "2026-08-08T21:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 5,
+     "a": {
+      "id": "4389073",
+      "name": "Henrique da Silva Lopes",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "5-2-0"
+     },
+     "b": {
+      "id": "5080572",
+      "name": "Louie Sutherland",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "record": "11-5-0"
+     },
+     "ratingA": 1210,
+     "ratingB": 1400,
+     "pA": 0.325,
+     "fightsA": 0,
+     "fightsB": 3,
+     "method": {
+      "ko": 0.47,
+      "sub": 0.19,
+      "dec": 0.34
      }
     },
     {
@@ -804,35 +862,6 @@
      }
     },
     {
-     "boutId": "401897978",
-     "date": "2026-08-08T21:00Z",
-     "weightClass": "Heavyweight",
-     "segment": "Main Card",
-     "matchNumber": 5,
-     "a": {
-      "id": "5080572",
-      "name": "Louie Sutherland",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-      "record": "11-5-0"
-     },
-     "b": {
-      "id": "5351808",
-      "name": "José Montanha",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-      "record": "6-1-0"
-     },
-     "ratingA": 1400,
-     "ratingB": 1451,
-     "pA": 0.451,
-     "fightsA": 3,
-     "fightsB": 0,
-     "method": {
-      "ko": 0.47,
-      "sub": 0.19,
-      "dec": 0.34
-     }
-    },
-    {
      "boutId": "401897976",
      "date": "2026-08-08T21:00Z",
      "weightClass": "Light Heavyweight",
@@ -859,35 +888,6 @@
       "ko": 0.5,
       "sub": 0.21,
       "dec": 0.29
-     }
-    },
-    {
-     "boutId": "401887661",
-     "date": "2026-08-08T18:00Z",
-     "weightClass": "W Strawweight",
-     "segment": "Prelims",
-     "matchNumber": 9,
-     "a": {
-      "id": "4233196",
-      "name": "Amanda Lemos",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-      "record": "15-6-1"
-     },
-     "b": {
-      "id": "5075992",
-      "name": "Alexia Thainara",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-      "record": "14-1-0"
-     },
-     "ratingA": 1443,
-     "ratingB": 1659,
-     "pA": 0.304,
-     "fightsA": 15,
-     "fightsB": 4,
-     "method": {
-      "ko": 0.17,
-      "sub": 0.24,
-      "dec": 0.6
      }
     },
     {

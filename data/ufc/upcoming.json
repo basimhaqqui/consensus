@@ -1,5 +1,5 @@
 {
- "fetchedAt": "2026-07-23T23:13:51.402Z",
+ "fetchedAt": "2026-07-24T03:47:04.887Z",
  "cards": [
   {
    "eventId": "600059667",
@@ -271,16 +271,16 @@
      "segment": "Prelims",
      "matchNumber": 12,
      "a": {
+      "id": "4064714",
+      "name": "Alexander Poppeck",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+      "record": "12-4-0"
+     },
+     "b": {
       "id": "5312090",
       "name": "Jovan Leka",
       "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ser.png",
       "record": "13-2-0"
-     },
-     "b": {
-      "id": "5316622",
-      "name": "Max Gimenis",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-      "record": "6-2-0"
      }
     },
     {
@@ -502,6 +502,25 @@
    "venue": "Meta APEX",
    "fights": [
     {
+     "boutId": "401887661",
+     "date": "2026-08-08T18:00Z",
+     "weightClass": "W Strawweight",
+     "segment": "Prelims",
+     "matchNumber": 9,
+     "a": {
+      "id": "4233196",
+      "name": "Amanda Lemos",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "15-6-1"
+     },
+     "b": {
+      "id": "5075992",
+      "name": "Alexia Thainara",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "14-1-0"
+     }
+    },
+    {
      "boutId": "401897979",
      "date": "2026-08-08T21:00Z",
      "weightClass": "Heavyweight",
@@ -518,6 +537,25 @@
       "name": "Guilherme Pat",
       "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
       "record": "6-1-0"
+     }
+    },
+    {
+     "boutId": "401897978",
+     "date": "2026-08-08T21:00Z",
+     "weightClass": "Heavyweight",
+     "segment": "Main Card",
+     "matchNumber": 5,
+     "a": {
+      "id": "4389073",
+      "name": "Henrique da Silva Lopes",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "5-2-0"
+     },
+     "b": {
+      "id": "5080572",
+      "name": "Louie Sutherland",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+      "record": "11-5-0"
      }
     },
     {
@@ -540,25 +578,6 @@
      }
     },
     {
-     "boutId": "401897978",
-     "date": "2026-08-08T21:00Z",
-     "weightClass": "Heavyweight",
-     "segment": "Main Card",
-     "matchNumber": 5,
-     "a": {
-      "id": "5080572",
-      "name": "Louie Sutherland",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-      "record": "11-5-0"
-     },
-     "b": {
-      "id": "5351808",
-      "name": "José Montanha",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-      "record": "6-1-0"
-     }
-    },
-    {
      "boutId": "401897976",
      "date": "2026-08-08T21:00Z",
      "weightClass": "Light Heavyweight",
@@ -575,25 +594,6 @@
       "name": "Diyar Nurgozhay",
       "flag": "https://a.espncdn.com/i/teamlogos/countries/500/kaz.png",
       "record": "11-2-0"
-     }
-    },
-    {
-     "boutId": "401887661",
-     "date": "2026-08-08T18:00Z",
-     "weightClass": "W Strawweight",
-     "segment": "Prelims",
-     "matchNumber": 9,
-     "a": {
-      "id": "4233196",
-      "name": "Amanda Lemos",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-      "record": "15-6-1"
-     },
-     "b": {
-      "id": "5075992",
-      "name": "Alexia Thainara",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-      "record": "14-1-0"
      }
     },
     {
