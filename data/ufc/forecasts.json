@@ -1,5 +1,5 @@
 {
- "computedAt": "2026-07-24T14:15:52.379Z",
+ "computedAt": "2026-07-24T15:49:24.143Z",
  "cards": [
   {
    "eventId": "600059667",
@@ -397,20 +397,20 @@
      "segment": "Prelims",
      "matchNumber": 12,
      "a": {
-      "id": "4064714",
-      "name": "Alexander Poppeck",
-      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
-      "record": "12-4-0"
-     },
-     "b": {
       "id": "5312090",
       "name": "Jovan Leka",
       "flag": "https://a.espncdn.com/i/teamlogos/countries/500/ser.png",
       "record": "13-2-0"
      },
-     "ratingA": 1334,
-     "ratingB": 1622,
-     "pA": 0.248,
+     "b": {
+      "id": "5316622",
+      "name": "Max Gimenis",
+      "flag": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+      "record": "6-2-0"
+     },
+     "ratingA": 1622,
+     "ratingB": 1325,
+     "pA": 0.758,
      "fightsA": 1,
      "fightsB": 1,
      "method": {
